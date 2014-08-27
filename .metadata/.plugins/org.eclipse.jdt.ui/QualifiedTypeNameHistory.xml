@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="advanced.physics.scenes.Nuevo"/>
+<fullyQualifiedTypeName name="org.mt4j.components.MTComponent"/>
+<fullyQualifiedTypeName name="TUIO.TuioPoint"/>
+<fullyQualifiedTypeName name="org.mt4j.input.inputData.ActiveCursorPool"/>
+<fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.widgets.MTTextArea"/>
+<fullyQualifiedTypeName name="org.mt4j.MTApplication"/>
+<fullyQualifiedTypeName name="advanced.physics.physicsShapes.IPhysicsComponent"/>
+<fullyQualifiedTypeName name="org.jbox2d.dynamics.BodyDef"/>
+<fullyQualifiedTypeName name="advanced.physics.scenes.Nuevo.PersonPolygon"/>
+<fullyQualifiedTypeName name="org.mt4j.util.math.Vertex"/>
+<fullyQualifiedTypeName name="org.mt4j.util.MTColor"/>
+<fullyQualifiedTypeName name="advanced.physics.physicsShapes.PhysicsCircle"/>
+<fullyQualifiedTypeName name="org.jbox2d.collision.shapes.CircleShape"/>
+<fullyQualifiedTypeName name="org.jbox2d.collision.shapes.PolygonShape"/>
+<fullyQualifiedTypeName name="org.mt4j.util.math.Vector3D"/>
+<fullyQualifiedTypeName name="advanced.physics.physicsShapes.Poligono"/>
+<fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.MTPolygon"/>
+<fullyQualifiedTypeName name="org.mt4j.input.inputData.InputCursor"/>
+</qualifiedTypeNameHistroy>
