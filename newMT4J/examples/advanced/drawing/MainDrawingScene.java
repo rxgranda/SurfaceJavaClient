@@ -33,6 +33,8 @@ import processing.core.PImage;
 public class MainDrawingScene extends AbstractScene {
 	private MTApplication pa;
 	private MTRectangle textureBrush;
+	//
+	private MTRectangle textureBrush2;
 	private MTEllipse pencilBrush;
 	private DrawSurfaceScene drawingScene;
 	
@@ -65,8 +67,20 @@ public class MainDrawingScene extends AbstractScene {
 		textureBrush.setNoStroke(true);
 		textureBrush.setDrawSmooth(true);
 		textureBrush.setFillColor(new MTColor(0,0,0));
+		//////////
+		
+		textureBrush2 = new MTRectangle(getMTApplication(), brushImage);
+		textureBrush2.setPickable(false);
+		textureBrush2.setNoFill(false);
+		textureBrush2.setNoStroke(true);
+		textureBrush2.setDrawSmooth(true);
+		textureBrush2.setFillColor(new MTColor(0,0,0));		
+		drawingScene.setBrush2(textureBrush2);
+		
+		//////////
 		//Set texture brush as default
 		drawingScene.setBrush(textureBrush);
+		//drawingScene.setBrushColor(new MTColor(255,255,255));
 		
 		//Create pencil brush
 		pencilBrush = new MTEllipse(pa, new Vector3D(brushImage.width/2f,brushImage.height/2f,0), brushImage.width/2f, brushImage.width/2f, 60);
