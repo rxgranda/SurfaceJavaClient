@@ -1,5 +1,7 @@
 package advanced.drawing;
 
+import java.awt.Point;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import org.mt4j.MTApplication;
@@ -25,6 +27,8 @@ public class DrawSurfaceScene extends AbstractScene {
 	private MTApplication mtApp;
 
 	private AbstractShape drawShape;
+	
+	private AbstractShape drawShape2;
 
 	private float stepDistance;
 
@@ -47,7 +51,103 @@ public class DrawSurfaceScene extends AbstractScene {
 	//TODO scale smaller at higher speeds?
 	//TODO eraser?
 	//TODO get blobwidth from win7 touch events and adjust the brush scale
-	
+	ArrayList<Vector3D> puntos;
+	public void add(Vector3D vec){
+		puntos.add(vec);
+
+	}
+	public void limpiar(){
+		Vector3D ultimo=null;
+		for(Vector3D vec:puntos){
+			boolean firstPoint = false;
+			Vector3D lastDrawnPoint = ultimo;
+			Vector3D pos = new Vector3D(vec.x, vec.y, 0);
+			//Proyecto
+			//System.out.println("ID: " + m.sessionID);
+			System.out.println("Eliminar: X:"+vec.x+"Y:"+ vec.y);
+						
+			//Proyecto								
+			if (lastDrawnPoint == null){
+				lastDrawnPoint = new Vector3D(pos);
+				ultimo=lastDrawnPoint;
+				firstPoint = true;
+			}else{
+				if (lastDrawnPoint.equalsVector(pos))
+					return;	
+			}
+			
+			float scaledStepDistance = stepDistance*brushScale;
+
+			Vector3D direction = pos.getSubtracted(lastDrawnPoint);
+			float distance = direction.length();
+			direction.normalizeLocal();
+			direction.scaleLocal(scaledStepDistance);
+
+			float howManySteps = distance/scaledStepDistance;
+			int stepsToTake = Math.round(howManySteps);
+
+			//Force draw at 1st point
+			if (firstPoint && stepsToTake == 0){
+				stepsToTake = 1;
+			}
+//			System.out.println("Steps: " + stepsToTake);
+
+//			GL gl = Tools3D.getGL(mtApp);
+//			gl.glBlendFuncSeparate(GL.GL_SRC_ALPHA, GL.GL_ONE_MINUS_SRC_ALPHA, GL.GL_ONE, GL.GL_ONE_MINUS_SRC_ALPHA);
+
+			mtApp.pushMatrix();
+			//We would have to set up a default view here for stability? (default cam etc?)
+			getSceneCam().update(); 
+
+			Vector3D currentPos = new Vector3D(lastDrawnPoint);
+			for (int i = 0; i < stepsToTake; i++) { //start i at 1? no, we add first step at 0 already
+				currentPos.addLocal(direction);
+				//Draw new brush into FBO at correct position
+				Vector3D diff = currentPos.getSubtracted(localBrushCenter);
+				//Vector3D diff=	new Vector3D(currentPos);
+				mtApp.pushMatrix();
+				mtApp.translate(diff.x, diff.y);
+				System.out.println("X:"+diff.x+"Y:"+ diff.y);
+			
+				//NOTE: works only if brush upper left at 0,0
+				mtApp.translate(brushWidthHalf, brushHeightHalf);
+				mtApp.scale(brushScale);
+				
+				if (dynamicBrush){
+				//Rotate brush randomly
+//				mtApp.rotateZ(PApplet.radians(Tools3D.getRandom(0, 179)));
+//				mtApp.rotateZ(PApplet.radians(Tools3D.getRandom(-85, 85)));
+				mtApp.rotateZ(PApplet.radians(ToolsMath.getRandom(-25, 25)));
+//				mtApp.rotateZ(PApplet.radians(Tools3D.getRandom(-9, 9)));
+				mtApp.translate(-brushWidthHalf, -brushHeightHalf);
+				}
+
+				/*
+				//Use random brush from brushes
+				int brushIndex = Math.round(Tools3D.getRandom(0, brushes.length-1));
+				AbstractShape brushToDraw = brushes[brushIndex];
+				 */
+				AbstractShape brushToDraw = drawShape;
+
+				//Draw brush
+				brushToDraw.drawComponent(mtApp.g);
+				
+				//mtApp.translate(diff.x + 10, diff.y +10);
+				 //brushToDraw = drawShape;
+
+				//Draw brush
+				//brushToDraw.drawComponent(mtApp.g);
+				//brushToDraw = drawShape2;
+				//brushToDraw.drawComponent(mtApp.g);
+
+				mtApp.popMatrix();
+			}
+			mtApp.popMatrix();
+
+		}
+		
+		puntos=new ArrayList<Vector3D>();
+	}
 	public DrawSurfaceScene(MTApplication mtApplication, String name) {
 		super(mtApplication, name);
 		this.mtApp = mtApplication;
@@ -71,6 +171,7 @@ public class DrawSurfaceScene extends AbstractScene {
 	
 		//Proyecto
 		final Recognizer recognizer=new Recognizer();
+		puntos=new ArrayList<Vector3D>();
 		//Proyecto
 		    
 		this.getCanvas().addInputListener(new IMTInputEventListener() {
@@ -86,8 +187,11 @@ public class DrawSurfaceScene extends AbstractScene {
 								Vector3D lastDrawnPoint = cursorToLastDrawnPoint.get(m);
 								Vector3D pos = new Vector3D(posEvt.getX(), posEvt.getY(), 0);
 								//Proyecto
-								System.out.println("ID: " + m.sessionID);
+								//System.out.println("ID: " + m.sessionID);
+								System.out.println("Pos: X:"+posEvt.getX()+"Y:"+ posEvt.getY());
 								recognizer.addPoint(posEvt.getX(), posEvt.getY());
+								add(new Vector3D(posEvt.getX(),posEvt.getY(),0));
+								
 								//Proyecto								
 								if (lastDrawnPoint == null){
 									lastDrawnPoint = new Vector3D(pos);
@@ -126,10 +230,11 @@ public class DrawSurfaceScene extends AbstractScene {
 									currentPos.addLocal(direction);
 									//Draw new brush into FBO at correct position
 									Vector3D diff = currentPos.getSubtracted(localBrushCenter);
-
+									//Vector3D diff=	new Vector3D(currentPos);
 									mtApp.pushMatrix();
 									mtApp.translate(diff.x, diff.y);
-
+									System.out.println("X:"+diff.x+"Y:"+ diff.y);
+									add(new Vector3D(currentPos.x+diff.x, currentPos.y+diff.y,0));
 									//NOTE: works only if brush upper left at 0,0
 									mtApp.translate(brushWidthHalf, brushHeightHalf);
 									mtApp.scale(brushScale);
@@ -148,10 +253,18 @@ public class DrawSurfaceScene extends AbstractScene {
 		        					int brushIndex = Math.round(Tools3D.getRandom(0, brushes.length-1));
 		        					AbstractShape brushToDraw = brushes[brushIndex];
 									 */
-									AbstractShape brushToDraw = drawShape;
+									AbstractShape brushToDraw = drawShape2;
 
 									//Draw brush
 									brushToDraw.drawComponent(mtApp.g);
+									
+									//mtApp.translate(diff.x + 10, diff.y +10);
+									 //brushToDraw = drawShape;
+
+									//Draw brush
+									//brushToDraw.drawComponent(mtApp.g);
+									//brushToDraw = drawShape2;
+									//brushToDraw.drawComponent(mtApp.g);
 
 									mtApp.popMatrix();
 								}
@@ -166,10 +279,11 @@ public class DrawSurfaceScene extends AbstractScene {
 						});
 					}else{
 						cursorToLastDrawnPoint.remove(m);
-						//IRecognitionResult res = psr.recognize();
-						//System.out.println("paleo says: " + res.getBestShape().getInterpretation().label);
+						
 						recognizer.recognize();
 						System.out.println("Termino Input");
+						//setBrushColor(new MTColor(255,0,0));
+						limpiar();
 					}
 				}
 				return false;
@@ -187,6 +301,17 @@ public class DrawSurfaceScene extends AbstractScene {
 		this.stepDistance = brushWidthHalf/2.8f;
 		this.drawShape.setFillColor(this.brushColor);
 		this.drawShape.setStrokeColor(this.brushColor);
+	}
+	public void setBrush2(AbstractShape brush){
+		this.drawShape2 = brush;
+		drawShape2.setFillColor(new MTColor(0,255,0));
+		drawShape2.setStrokeColor(new MTColor(0,255,0));
+		this.localBrushCenter = drawShape2.getCenterPointLocal();
+		this.brushWidthHalf = drawShape2.getWidthXY(TransformSpace.LOCAL)/2f;
+		this.brushHeightHalf = drawShape2.getHeightXY(TransformSpace.LOCAL)/2f;
+		this.stepDistance = brushWidthHalf/2.8f;
+		//this.drawShape2.setFillColor(this.brushColor);
+		//this.drawShape2.setStrokeColor(this.brushColor);
 	}
 	
 	public void setBrushColor(MTColor color){

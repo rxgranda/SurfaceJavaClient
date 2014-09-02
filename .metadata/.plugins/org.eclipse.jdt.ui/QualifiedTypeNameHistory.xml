@@ -18,4 +18,13 @@
 <fullyQualifiedTypeName name="advanced.physics.physicsShapes.Poligono"/>
 <fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.MTPolygon"/>
 <fullyQualifiedTypeName name="org.mt4j.input.inputData.InputCursor"/>
+<fullyQualifiedTypeName name="srl.core.sketch.Sketch"/>
+<fullyQualifiedTypeName name="srl.core.sketch.Stroke"/>
+<fullyQualifiedTypeName name="srl.core.sketch.Point"/>
+<fullyQualifiedTypeName name="advanced.umleditor.Recognizer"/>
+<fullyQualifiedTypeName name="java.sql.Date"/>
+<fullyQualifiedTypeName name="java.util.Calendar"/>
+<fullyQualifiedTypeName name="java.sql.Timestamp"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.awt.Point"/>
 </qualifiedTypeNameHistroy>

@@ -13,14 +13,16 @@
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="" key="selection"/>
+		<item value="setBrushColor" key="selection"/>
 		<list key="findhistory">
+			<item value="setBrushColor"/>
+			<item value="localBrushCenter"/>
+			<item value="brush"/>
+			<item value="drawShape"/>
 			<item value="tcur"/>
 			<item value="InputCursor"/>
 			<item value="3"/>
 			<item value="displaylis"/>
-			<item value="Active"/>
-			<item value="Client"/>
 		</list>
 		<list key="replacehistory">
 		</list>
