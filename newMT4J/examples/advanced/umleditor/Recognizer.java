@@ -21,12 +21,21 @@ public class Recognizer {
 		stroke.addPoint(new Point(x,y));
 	}
 	
-	public void recognize(){
+	public int  recognize(){
 		IRecognitionResult result = recognizer.recognize(stroke);	
 	    //if(result.getBestShape().label.equalsLowerCase("line"))
 		if(result.getBestShape() != null){
 			System.out.println(result.getBestShape().getInterpretation().label);
-		}	     
-		stroke=new Stroke();		
+			String shapeLabel=result.getBestShape().getInterpretation().label;
+			stroke=new Stroke();
+			
+			if(shapeLabel.equals("Rectangle"))					
+				return UMLCollection.ENTIDAD;
+			else if(shapeLabel.equals("Line"))	
+				return UMLCollection.RELACION;
+		}
+		stroke=new Stroke();
+		return UMLCollection.INVALIDO;
+				
 	}
 }

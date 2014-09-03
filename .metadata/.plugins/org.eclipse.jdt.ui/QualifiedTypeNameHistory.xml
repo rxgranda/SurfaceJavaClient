@@ -27,4 +27,13 @@
 <fullyQualifiedTypeName name="java.sql.Timestamp"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.awt.Point"/>
+<fullyQualifiedTypeName name="java.util.LinkedList"/>
+<fullyQualifiedTypeName name="java.util.Collection"/>
+<fullyQualifiedTypeName name="advanced.umleditor.logic.ObjetoUML"/>
+<fullyQualifiedTypeName name="advanced.umleditor.logic.Entidad"/>
+<fullyQualifiedTypeName name="advanced.umleditor.logic.Relacion"/>
+<fullyQualifiedTypeName name="srl.recognition.paleo.PaleoConfig"/>
+<fullyQualifiedTypeName name="srl.recognition.paleo.PaleoConfig.Option"/>
+<fullyQualifiedTypeName name="advanced.umleditor.UMLCollection"/>
+<fullyQualifiedTypeName name="advanced.umleditor.logic.Persona"/>
 </qualifiedTypeNameHistroy>

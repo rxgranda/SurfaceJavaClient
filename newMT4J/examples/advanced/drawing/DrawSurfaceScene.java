@@ -18,6 +18,8 @@ import org.mt4j.util.math.ToolsMath;
 import org.mt4j.util.math.Vector3D;
 
 import advanced.umleditor.Recognizer;
+import advanced.umleditor.UMLCollection;
+import advanced.umleditor.logic.Persona;
 import processing.core.PApplet;
 
 
@@ -46,17 +48,27 @@ public class DrawSurfaceScene extends AbstractScene {
 	
 	private boolean dynamicBrush;
 	
+	//test
+	private static Persona persona=new Persona("roger","granda",1);
+	//
+	
 	//TODO only works as lightweight scene atm because the framebuffer isnt cleared each frame
 	//TODO make it work as a heavywight scene
 	//TODO scale smaller at higher speeds?
 	//TODO eraser?
 	//TODO get blobwidth from win7 touch events and adjust the brush scale
 	ArrayList<Vector3D> puntos;
+	Vector3D esquinaA,esquinaB,anterior; double centroideX,centroideY;int numMuestas;
 	public void add(Vector3D vec){
 		puntos.add(vec);
 
 	}
+	 public synchronized void eliminarPuntos() {
+		 puntos=new ArrayList<Vector3D>();
+	    }
 	public void limpiar(){
+		registerPreDrawAction(new IPreDrawAction() {
+			public void processAction() {
 		Vector3D ultimo=null;
 		for(Vector3D vec:puntos){
 			boolean firstPoint = false;
@@ -69,7 +81,7 @@ public class DrawSurfaceScene extends AbstractScene {
 			//Proyecto								
 			if (lastDrawnPoint == null){
 				lastDrawnPoint = new Vector3D(pos);
-				ultimo=lastDrawnPoint;
+				ultimo=new Vector3D(pos);
 				firstPoint = true;
 			}else{
 				if (lastDrawnPoint.equalsVector(pos))
@@ -117,7 +129,7 @@ public class DrawSurfaceScene extends AbstractScene {
 				//Rotate brush randomly
 //				mtApp.rotateZ(PApplet.radians(Tools3D.getRandom(0, 179)));
 //				mtApp.rotateZ(PApplet.radians(Tools3D.getRandom(-85, 85)));
-				mtApp.rotateZ(PApplet.radians(ToolsMath.getRandom(-25, 25)));
+				//mtApp.rotateZ(PApplet.radians(ToolsMath.getRandom(-25, 25)));
 //				mtApp.rotateZ(PApplet.radians(Tools3D.getRandom(-9, 9)));
 				mtApp.translate(-brushWidthHalf, -brushHeightHalf);
 				}
@@ -127,7 +139,7 @@ public class DrawSurfaceScene extends AbstractScene {
 				int brushIndex = Math.round(Tools3D.getRandom(0, brushes.length-1));
 				AbstractShape brushToDraw = brushes[brushIndex];
 				 */
-				AbstractShape brushToDraw = drawShape;
+				AbstractShape brushToDraw = drawShape2;
 
 				//Draw brush
 				brushToDraw.drawComponent(mtApp.g);
@@ -142,11 +154,33 @@ public class DrawSurfaceScene extends AbstractScene {
 
 				mtApp.popMatrix();
 			}
+			mtApp.popMatrix(); 
+			ultimo=new Vector3D(currentPos);/*
+			mtApp.pushMatrix();
+			getSceneCam().update(); 
+			mtApp.pushMatrix();
+			AbstractShape brushToDraw = drawShape2;
+			System.out.println("Eliminar: X:"+vec.x+"Y:"+ vec.y);
+			mtApp.translate(vec.x, vec.y);
+			//Draw brush
+			brushToDraw.drawComponent(mtApp.g);
 			mtApp.popMatrix();
+			mtApp.popMatrix();*/
+			
+			
 
-		}
-		
-		puntos=new ArrayList<Vector3D>();
+		}		
+		System.out.println("Eliminado");
+		eliminarPuntos();
+			}	
+
+			@Override
+			public boolean isLoop() {
+				// TODO Auto-generated method stub
+				return false;
+			}
+			});
+		//
 	}
 	public DrawSurfaceScene(MTApplication mtApplication, String name) {
 		super(mtApplication, name);
@@ -196,6 +230,12 @@ public class DrawSurfaceScene extends AbstractScene {
 								if (lastDrawnPoint == null){
 									lastDrawnPoint = new Vector3D(pos);
 									cursorToLastDrawnPoint.put(m, lastDrawnPoint);
+									//test
+									anterior= new Vector3D(pos);//->
+									esquinaA= new Vector3D(pos);
+									esquinaB= new Vector3D(pos);
+									//centroideX=0;centroideY=0; numMuestas=0;
+									//test
 									firstPoint = true;
 								}else{
 									if (lastDrawnPoint.equalsVector(pos))
@@ -228,13 +268,24 @@ public class DrawSurfaceScene extends AbstractScene {
 								Vector3D currentPos = new Vector3D(lastDrawnPoint);
 								for (int i = 0; i < stepsToTake; i++) { //start i at 1? no, we add first step at 0 already
 									currentPos.addLocal(direction);
+									centroideX+=currentPos.getX();centroideY+=currentPos.getY(); numMuestas++;
+
 									//Draw new brush into FBO at correct position
 									Vector3D diff = currentPos.getSubtracted(localBrushCenter);
 									//Vector3D diff=	new Vector3D(currentPos);
 									mtApp.pushMatrix();
 									mtApp.translate(diff.x, diff.y);
 									System.out.println("X:"+diff.x+"Y:"+ diff.y);
-									add(new Vector3D(currentPos.x+diff.x, currentPos.y+diff.y,0));
+									
+									/*/test
+									if(currentPos.x>anterior.x&&currentPos.y>anterior.y)
+										esquinaB=new Vector3D(new Vector3D(currentPos.x-diff.x, currentPos.y-diff.y,0));
+									if (currentPos.x<anterior.x&&currentPos.y<anterior.y)
+										esquinaA=new Vector3D(new Vector3D(currentPos.x-diff.x, currentPos.y-diff.y,0));
+									anterior=new Vector3D(currentPos.x, currentPos.y,0);
+									//test*/
+									
+									//add(new Vector3D(currentPos.x+diff.x, currentPos.y+diff.y,0));
 									//NOTE: works only if brush upper left at 0,0
 									mtApp.translate(brushWidthHalf, brushHeightHalf);
 									mtApp.scale(brushScale);
@@ -243,7 +294,7 @@ public class DrawSurfaceScene extends AbstractScene {
 									//Rotate brush randomly
 //									mtApp.rotateZ(PApplet.radians(Tools3D.getRandom(0, 179)));
 //									mtApp.rotateZ(PApplet.radians(Tools3D.getRandom(-85, 85)));
-									mtApp.rotateZ(PApplet.radians(ToolsMath.getRandom(-25, 25)));
+									//mtApp.rotateZ(PApplet.radians(ToolsMath.getRandom(-25, 25)));
 //									mtApp.rotateZ(PApplet.radians(Tools3D.getRandom(-9, 9)));
 									mtApp.translate(-brushWidthHalf, -brushHeightHalf);
 									}
@@ -253,7 +304,7 @@ public class DrawSurfaceScene extends AbstractScene {
 		        					int brushIndex = Math.round(Tools3D.getRandom(0, brushes.length-1));
 		        					AbstractShape brushToDraw = brushes[brushIndex];
 									 */
-									AbstractShape brushToDraw = drawShape2;
+									AbstractShape brushToDraw = drawShape;
 
 									//Draw brush
 									brushToDraw.drawComponent(mtApp.g);
@@ -269,8 +320,10 @@ public class DrawSurfaceScene extends AbstractScene {
 									mtApp.popMatrix();
 								}
 								mtApp.popMatrix();
-
+								
+								
 								cursorToLastDrawnPoint.put(m, currentPos);
+							
 							}
 
 							public boolean isLoop() {
@@ -280,10 +333,44 @@ public class DrawSurfaceScene extends AbstractScene {
 					}else{
 						cursorToLastDrawnPoint.remove(m);
 						
-						recognizer.recognize();
+						
+						int resultado=recognizer.recognize();
+						if(resultado==UMLCollection.INVALIDO){
+							limpiar();
+						}else{
+							UMLCollection.anadirObjeto(resultado,persona );
+							eliminarPuntos();
+						}
 						System.out.println("Termino Input");
+						registerPreDrawAction(new IPreDrawAction() {
+							public void processAction() {
+							//	setBrushColor(new MTColor(255,0,0));
+								
+centroideX=centroideX/numMuestas -10; centroideY=centroideY/numMuestas -10;
+								mtApp.pushMatrix();
+								getSceneCam().update(); 
+								mtApp.translate((float)centroideX, (float)centroideY);
+								mtApp.scale(brushScale);														
+								
+						AbstractShape brushToDraw = drawShape2;
+						brushToDraw.drawComponent(mtApp.g);
+						mtApp.popMatrix();
+						centroideX=0;centroideY=0; numMuestas=0;
+						/*mtApp.pushMatrix();
+						mtApp.translate((float)centroideX, (float)centroideY);
+						mtApp.scale(brushScale);
+				brushToDraw.drawComponent(mtApp.g);
+				mtApp.popMatrix();
+				esquinaA=null;
+				esquinaB=null;
+				anterior=null;*/
+							}
+							
+						public boolean isLoop() {
+							return false;
+						}});
 						//setBrushColor(new MTColor(255,0,0));
-						limpiar();
+						
 					}
 				}
 				return false;
@@ -304,8 +391,8 @@ public class DrawSurfaceScene extends AbstractScene {
 	}
 	public void setBrush2(AbstractShape brush){
 		this.drawShape2 = brush;
-		drawShape2.setFillColor(new MTColor(0,255,0));
-		drawShape2.setStrokeColor(new MTColor(0,255,0));
+		drawShape2.setFillColor(new MTColor(255,0,0,255));
+		drawShape2.setStrokeColor(new MTColor(255,255,255,255));
 		this.localBrushCenter = drawShape2.getCenterPointLocal();
 		this.brushWidthHalf = drawShape2.getWidthXY(TransformSpace.LOCAL)/2f;
 		this.brushHeightHalf = drawShape2.getHeightXY(TransformSpace.LOCAL)/2f;

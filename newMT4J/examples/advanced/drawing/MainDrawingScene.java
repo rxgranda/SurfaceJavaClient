@@ -36,6 +36,7 @@ public class MainDrawingScene extends AbstractScene {
 	//
 	private MTRectangle textureBrush2;
 	private MTEllipse pencilBrush;
+	private MTEllipse pencilBrush2;
 	private DrawSurfaceScene drawingScene;
 	
 //	private String imagesPath = System.getProperty("user.dir")+File.separator + "examples"+  File.separator +"advanced"+ File.separator + File.separator +"drawing"+ File.separator + File.separator +"data"+ File.separator +  File.separator +"images" + File.separator ;
@@ -80,16 +81,26 @@ public class MainDrawingScene extends AbstractScene {
 		//////////
 		//Set texture brush as default
 		drawingScene.setBrush(textureBrush);
-		//drawingScene.setBrushColor(new MTColor(255,255,255));
+		//drawingScene.setBrushColor(new MTColor(255,255,255,1));
 		
 		//Create pencil brush
 		pencilBrush = new MTEllipse(pa, new Vector3D(brushImage.width/2f,brushImage.height/2f,0), brushImage.width/2f, brushImage.width/2f, 60);
 		pencilBrush.setPickable(false);
 		pencilBrush.setNoFill(false);
-		pencilBrush.setNoStroke(false);
+		pencilBrush.setNoStroke(true);
 		pencilBrush.setDrawSmooth(true);
 		pencilBrush.setStrokeColor(new MTColor(0, 0, 0, 255));
-		pencilBrush.setFillColor(new MTColor(0, 0, 0, 255));
+		pencilBrush.setFillColor(new MTColor(255, 255, 255, 255));
+		
+		
+		pencilBrush2 = new MTEllipse(pa, new Vector3D(brushImage.width/2f,brushImage.height/2f,0), brushImage.width/2f, brushImage.width/2f, 60);
+		pencilBrush2.setPickable(false);
+		pencilBrush2.setNoFill(false);
+		pencilBrush2.setNoStroke(false);
+		pencilBrush2.setDrawSmooth(true);
+		pencilBrush2.setStrokeColor(new MTColor(255, 255, 255, 255));
+		pencilBrush2.setFillColor(new MTColor(255, 255, 255, 255));
+		drawingScene.setBrush2(pencilBrush2);
 		
         //Create the frame/window that displays the drawing scene through a FBO
 //        final MTSceneTexture sceneWindow = new MTSceneTexture(0,0, pa, drawingScene);
