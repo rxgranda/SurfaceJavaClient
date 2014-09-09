@@ -5,27 +5,82 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Calendar;
 
+import org.mt4j.util.math.Vector3D;
+
+import advanced.umleditor.UMLRecognizer;
+
 public abstract class ObjetoUML {
+	public static final int  INVALIDO=-1;
+	public static final int  ENTIDAD=1;
+	public static final int  RELACION=2;
+	private static Calendar calendar = Calendar.getInstance();	
+	public  static ObjetoUML OBJETO_INVALIDO=new ObjetoInvalido(new Persona("","",-1)) ;	
+
+	private Vector3D centroide;
+	//Esquina superior izquierda
+	private Vector3D posicion;
+	private float width,heigth;
+	
+	
 	private Persona persona;
 	private Timestamp tiempoInicio;
 	//private Timestamp tiempoFin;
-	private ArrayList<Point> puntos;
-	private static Calendar calendar = Calendar.getInstance();
+	//private ArrayList<Point> puntos;
+
 
 	
 	public ObjetoUML(Persona p){
 		tiempoInicio= new java.sql.Timestamp(calendar.getTime().getTime());		
-		puntos=new ArrayList<Point>();
+		//puntos=new ArrayList<Point>();	
 		this.persona=p;
 	}
-	public void anadirPunto(int x,int y){
-		puntos.add(new Point(x,y));
+
+
+	public float getWidth() {
+		return width;
 	}
-	public Point getPunto(int index){
-		if (index>=puntos.size())
-			return null;
-		return puntos.get(index);
+
+
+	public void setWidth(float width) {
+		this.width = width;
 	}
+
+
+	public float getHeigth() {
+		return heigth;
+	}
+
+
+	public void setHeigth(float heigth) {
+		this.heigth = heigth;
+	}
+
+
+	public Vector3D getCentroide() {
+		return centroide;
+	}
+
+
+	public void setCentroide(float x,float y) {		
+		this.centroide = new Vector3D(x,y,0);
+		
+	}
+	
+	
+	public void anadirPunto(float x,float y){
+		
+	}
+
+
+	public Vector3D getPosicion() {
+		return posicion;
+	}
+
+
+	public void setPosicion(Vector3D posicion) {
+		this.posicion = posicion;
+	}
+	
 	/*public int getIdPersona() {
 		return idPersona;
 	}
@@ -33,4 +88,14 @@ public abstract class ObjetoUML {
 		this.idPersona = idPersona;
 	}
 	*/
+}
+
+class ObjetoInvalido extends ObjetoUML{
+
+	//public final ObjetoUML invalido=new ObjetoInvalido(new Persona("","",-1)) ;
+	public ObjetoInvalido(Persona p) {
+		super(p);
+		// TODO Auto-generated constructor stub
+	}
+	
 }

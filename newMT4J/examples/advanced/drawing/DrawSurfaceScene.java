@@ -7,6 +7,7 @@ import java.util.HashMap;
 import org.mt4j.MTApplication;
 import org.mt4j.components.TransformSpace;
 import org.mt4j.components.visibleComponents.shapes.AbstractShape;
+import org.mt4j.components.visibleComponents.shapes.MTEllipse;
 import org.mt4j.input.IMTInputEventListener;
 import org.mt4j.input.inputData.AbstractCursorInputEvt;
 import org.mt4j.input.inputData.InputCursor;
@@ -17,10 +18,14 @@ import org.mt4j.util.MTColor;
 import org.mt4j.util.math.ToolsMath;
 import org.mt4j.util.math.Vector3D;
 
-import advanced.umleditor.Recognizer;
+import advanced.umleditor.UMLFacade;
+import advanced.umleditor.UMLRecognizer;
 import advanced.umleditor.UMLCollection;
+import advanced.umleditor.logic.ObjetoUML;
 import advanced.umleditor.logic.Persona;
 import processing.core.PApplet;
+
+import org.mt4j.components.visibleComponents.shapes.MTRoundRectangle;;
 
 
 
@@ -50,6 +55,8 @@ public class DrawSurfaceScene extends AbstractScene {
 	
 	//test
 	private static Persona persona=new Persona("roger","granda",1);
+	
+
 	//
 	
 	//TODO only works as lightweight scene atm because the framebuffer isnt cleared each frame
@@ -58,7 +65,8 @@ public class DrawSurfaceScene extends AbstractScene {
 	//TODO eraser?
 	//TODO get blobwidth from win7 touch events and adjust the brush scale
 	ArrayList<Vector3D> puntos;
-	Vector3D esquinaA,esquinaB,anterior; double centroideX,centroideY;int numMuestas;
+	Vector3D puntoInicio,puntoFin;
+	float centroideX,centroideY,minX=100000,maxX,minY=100000,MaxY,numMuestras;
 	public void add(Vector3D vec){
 		puntos.add(vec);
 
@@ -83,11 +91,13 @@ public class DrawSurfaceScene extends AbstractScene {
 				lastDrawnPoint = new Vector3D(pos);
 				ultimo=new Vector3D(pos);
 				firstPoint = true;
+			
 			}else{
 				if (lastDrawnPoint.equalsVector(pos))
 					return;	
 			}
-			
+		
+				
 			float scaledStepDistance = stepDistance*brushScale;
 
 			Vector3D direction = pos.getSubtracted(lastDrawnPoint);
@@ -204,7 +214,7 @@ public class DrawSurfaceScene extends AbstractScene {
 		this.cursorToLastDrawnPoint = new HashMap<InputCursor, Vector3D>();
 	
 		//Proyecto
-		final Recognizer recognizer=new Recognizer();
+		final UMLFacade recognizer=new UMLFacade(persona);
 		puntos=new ArrayList<Vector3D>();
 		//Proyecto
 		    
@@ -223,7 +233,7 @@ public class DrawSurfaceScene extends AbstractScene {
 								//Proyecto
 								//System.out.println("ID: " + m.sessionID);
 								System.out.println("Pos: X:"+posEvt.getX()+"Y:"+ posEvt.getY());
-								recognizer.addPoint(posEvt.getX(), posEvt.getY());
+								
 								add(new Vector3D(posEvt.getX(),posEvt.getY(),0));
 								
 								//Proyecto								
@@ -231,16 +241,27 @@ public class DrawSurfaceScene extends AbstractScene {
 									lastDrawnPoint = new Vector3D(pos);
 									cursorToLastDrawnPoint.put(m, lastDrawnPoint);
 									//test
-									anterior= new Vector3D(pos);//->
-									esquinaA= new Vector3D(pos);
-									esquinaB= new Vector3D(pos);
-									//centroideX=0;centroideY=0; numMuestas=0;
+									//anterior= new Vector3D(pos);//->
+									//esquinaA= new Vector3D(pos);
+									//esquinaB= new Vector3D(pos);
+									centroideX=0;centroideY=0; numMuestras=0;
+									
 									//test
 									firstPoint = true;
 								}else{
 									if (lastDrawnPoint.equalsVector(pos))
 										return;	
 								}
+								if(minX>pos.x)
+									minX=pos.x;
+								if(minY>pos.y)
+									minY=pos.y;
+								if(maxX<pos.x)
+									maxX=pos.x;
+								if(MaxY<pos.y)
+									MaxY=pos.y;
+
+								//centroideX+=pos.x;centroideY+=pos.y; numMuestras++;
 								
 								float scaledStepDistance = stepDistance*brushScale;
 
@@ -268,14 +289,22 @@ public class DrawSurfaceScene extends AbstractScene {
 								Vector3D currentPos = new Vector3D(lastDrawnPoint);
 								for (int i = 0; i < stepsToTake; i++) { //start i at 1? no, we add first step at 0 already
 									currentPos.addLocal(direction);
-									centroideX+=currentPos.getX();centroideY+=currentPos.getY(); numMuestas++;
+									recognizer.anadirPunto(currentPos.x, currentPos.y);
+									centroideX+=currentPos.x;centroideY+=currentPos.y; numMuestras++;
+									
+									
 
+									
+									
+									
 									//Draw new brush into FBO at correct position
 									Vector3D diff = currentPos.getSubtracted(localBrushCenter);
 									//Vector3D diff=	new Vector3D(currentPos);
 									mtApp.pushMatrix();
 									mtApp.translate(diff.x, diff.y);
 									System.out.println("X:"+diff.x+"Y:"+ diff.y);
+									//centroideX+=currentPos.x+diff.x;centroideY+=currentPos.y+diff.y; numMuestras++;
+								//	recognizer.anadirPunto(currentPos.x+diff.x, currentPos.y+diff.y);
 									
 									/*/test
 									if(currentPos.x>anterior.x&&currentPos.y>anterior.y)
@@ -319,9 +348,7 @@ public class DrawSurfaceScene extends AbstractScene {
 
 									mtApp.popMatrix();
 								}
-								mtApp.popMatrix();
-								
-								
+								mtApp.popMatrix();															
 								cursorToLastDrawnPoint.put(m, currentPos);
 							
 							}
@@ -334,36 +361,43 @@ public class DrawSurfaceScene extends AbstractScene {
 						cursorToLastDrawnPoint.remove(m);
 						
 						
-						int resultado=recognizer.recognize();
-						if(resultado==UMLCollection.INVALIDO){
-							limpiar();
-						}else{
-							UMLCollection.anadirObjeto(resultado,persona );
-							eliminarPuntos();
-						}
+					//	int resultado=recognizer.recognize();
+						recognizer.reconocerObjeto();
+						//if(resultado==UMLCollection.INVALIDO){
+						limpiar();
+					//	}else{
+						//	UMLCollection.anadirObjeto(resultado,persona );
+							//eliminarPuntos();
+						//}
 						System.out.println("Termino Input");
+						if(recognizer.getObjeto()!=ObjetoUML.OBJETO_INVALIDO){
 						registerPreDrawAction(new IPreDrawAction() {
 							public void processAction() {
-							//	setBrushColor(new MTColor(255,0,0));
+								//setBrushColor2(new MTColor(255,0,0));
 								
-centroideX=centroideX/numMuestas -10; centroideY=centroideY/numMuestas -10;
+								centroideX=centroideX/numMuestras-5;
+								centroideY=centroideY/numMuestras-5;
+								//drawShape2.setFillColor(new MTColor(255,0,0,255));
 								mtApp.pushMatrix();
 								getSceneCam().update(); 
-								mtApp.translate((float)centroideX, (float)centroideY);
-								mtApp.scale(brushScale);														
+								mtApp.translate(recognizer.getCentroide().x,recognizer.getCentroide().y);
+								mtApp.scale(brushScale);																						
+								AbstractShape brushToDraw = drawShape2;
+								brushToDraw.drawComponent(mtApp.g);
 								
-						AbstractShape brushToDraw = drawShape2;
-						brushToDraw.drawComponent(mtApp.g);
-						mtApp.popMatrix();
-						centroideX=0;centroideY=0; numMuestas=0;
-						/*mtApp.pushMatrix();
-						mtApp.translate((float)centroideX, (float)centroideY);
-						mtApp.scale(brushScale);
-				brushToDraw.drawComponent(mtApp.g);
-				mtApp.popMatrix();
-				esquinaA=null;
-				esquinaB=null;
-				anterior=null;*/
+								mtApp.popMatrix();
+							//	MTEllipse ellipse = new MTEllipse(mtApp, new Vector3D((float)centroideX,(float)centroideY,0), 60, 40);
+							//	MTRoundRectangle a=new MTRoundRectangle(recognizer.getPosicion().x,recognizer.getPosicion().y,0, recognizer.getWidth(), recognizer.getHeigth(), 1, 1, mtApp);
+								
+								MTRoundRectangle a=new MTRoundRectangle(recognizer.getPosicion().x,recognizer.getPosicion().y,0, recognizer.getWidth(),  recognizer.getHeigth(), 1, 1, mtApp);
+								centroideX=0;centroideY=0; numMuestras=0;maxX=0;minX=0;MaxY=0;minY=0;
+								//ellipse.setFillColor(new MTColor(0,0,255));
+								a.setFillColor(new MTColor(255,255,255));
+								a.setStrokeColor(new MTColor(0,0,0));
+								a.setNoStroke(false);
+								//getCanvas().addChild(ellipse);
+								getCanvas().addChild(a);								
+								
 							}
 							
 						public boolean isLoop() {
@@ -371,6 +405,7 @@ centroideX=centroideX/numMuestas -10; centroideY=centroideY/numMuestas -10;
 						}});
 						//setBrushColor(new MTColor(255,0,0));
 						
+					}
 					}
 				}
 				return false;
@@ -392,7 +427,7 @@ centroideX=centroideX/numMuestas -10; centroideY=centroideY/numMuestas -10;
 	public void setBrush2(AbstractShape brush){
 		this.drawShape2 = brush;
 		drawShape2.setFillColor(new MTColor(255,0,0,255));
-		drawShape2.setStrokeColor(new MTColor(255,255,255,255));
+		drawShape2.setStrokeColor(new MTColor(255,0,0,255));
 		this.localBrushCenter = drawShape2.getCenterPointLocal();
 		this.brushWidthHalf = drawShape2.getWidthXY(TransformSpace.LOCAL)/2f;
 		this.brushHeightHalf = drawShape2.getHeightXY(TransformSpace.LOCAL)/2f;

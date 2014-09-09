@@ -14,7 +14,6 @@
 <fullyQualifiedTypeName name="advanced.physics.physicsShapes.PhysicsCircle"/>
 <fullyQualifiedTypeName name="org.jbox2d.collision.shapes.CircleShape"/>
 <fullyQualifiedTypeName name="org.jbox2d.collision.shapes.PolygonShape"/>
-<fullyQualifiedTypeName name="org.mt4j.util.math.Vector3D"/>
 <fullyQualifiedTypeName name="advanced.physics.physicsShapes.Poligono"/>
 <fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.MTPolygon"/>
 <fullyQualifiedTypeName name="org.mt4j.input.inputData.InputCursor"/>
@@ -26,14 +25,19 @@
 <fullyQualifiedTypeName name="java.util.Calendar"/>
 <fullyQualifiedTypeName name="java.sql.Timestamp"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="java.awt.Point"/>
 <fullyQualifiedTypeName name="java.util.LinkedList"/>
 <fullyQualifiedTypeName name="java.util.Collection"/>
-<fullyQualifiedTypeName name="advanced.umleditor.logic.ObjetoUML"/>
 <fullyQualifiedTypeName name="advanced.umleditor.logic.Entidad"/>
 <fullyQualifiedTypeName name="advanced.umleditor.logic.Relacion"/>
 <fullyQualifiedTypeName name="srl.recognition.paleo.PaleoConfig"/>
 <fullyQualifiedTypeName name="srl.recognition.paleo.PaleoConfig.Option"/>
-<fullyQualifiedTypeName name="advanced.umleditor.UMLCollection"/>
+<fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.MTEllipse"/>
+<fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.MTRoundRectangle"/>
+<fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.unistrokeProcessor.UnistrokeUtils.Recognizer"/>
 <fullyQualifiedTypeName name="advanced.umleditor.logic.Persona"/>
+<fullyQualifiedTypeName name="advanced.umleditor.UMLFacade"/>
+<fullyQualifiedTypeName name="java.awt.Point"/>
+<fullyQualifiedTypeName name="org.mt4j.util.math.Vector3D"/>
+<fullyQualifiedTypeName name="advanced.umleditor.UMLCollection"/>
+<fullyQualifiedTypeName name="advanced.umleditor.logic.ObjetoUML"/>
 </qualifiedTypeNameHistroy>
