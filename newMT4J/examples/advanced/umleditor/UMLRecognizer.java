@@ -22,6 +22,10 @@ public class UMLRecognizer {
 		stroke.addPoint(new Point(x,y));
 	}
 	
+	public void reiniciar(){
+		// Para iniciar un nuevo trazo
+		stroke = new Stroke();	
+	}
 	public int  recognize(){
 		IRecognitionResult result = recognizer.recognize(stroke);	
 	    //if(result.getBestShape().label.equalsLowerCase("line"))

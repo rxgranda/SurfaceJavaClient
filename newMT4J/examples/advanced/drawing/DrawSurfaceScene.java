@@ -252,14 +252,14 @@ public class DrawSurfaceScene extends AbstractScene {
 									if (lastDrawnPoint.equalsVector(pos))
 										return;	
 								}
-								if(minX>pos.x)
+								/*if(minX>pos.x)
 									minX=pos.x;
 								if(minY>pos.y)
 									minY=pos.y;
 								if(maxX<pos.x)
 									maxX=pos.x;
 								if(MaxY<pos.y)
-									MaxY=pos.y;
+									MaxY=pos.y;*/
 
 								//centroideX+=pos.x;centroideY+=pos.y; numMuestras++;
 								
@@ -290,12 +290,11 @@ public class DrawSurfaceScene extends AbstractScene {
 								for (int i = 0; i < stepsToTake; i++) { //start i at 1? no, we add first step at 0 already
 									currentPos.addLocal(direction);
 									recognizer.anadirPunto(currentPos.x, currentPos.y);
-									centroideX+=currentPos.x;centroideY+=currentPos.y; numMuestras++;
+									//centroideX+=currentPos.x;centroideY+=currentPos.y; numMuestras++;
 									
 									
 
-									
-									
+																	
 									
 									//Draw new brush into FBO at correct position
 									Vector3D diff = currentPos.getSubtracted(localBrushCenter);
@@ -375,8 +374,8 @@ public class DrawSurfaceScene extends AbstractScene {
 							public void processAction() {
 								//setBrushColor2(new MTColor(255,0,0));
 								
-								centroideX=centroideX/numMuestras-5;
-								centroideY=centroideY/numMuestras-5;
+								//centroideX=centroideX/numMuestras-5;
+								//centroideY=centroideY/numMuestras-5;
 								//drawShape2.setFillColor(new MTColor(255,0,0,255));
 								mtApp.pushMatrix();
 								getSceneCam().update(); 
@@ -390,7 +389,7 @@ public class DrawSurfaceScene extends AbstractScene {
 							//	MTRoundRectangle a=new MTRoundRectangle(recognizer.getPosicion().x,recognizer.getPosicion().y,0, recognizer.getWidth(), recognizer.getHeigth(), 1, 1, mtApp);
 								
 								MTRoundRectangle a=new MTRoundRectangle(recognizer.getPosicion().x,recognizer.getPosicion().y,0, recognizer.getWidth(),  recognizer.getHeigth(), 1, 1, mtApp);
-								centroideX=0;centroideY=0; numMuestras=0;maxX=0;minX=0;MaxY=0;minY=0;
+								//centroideX=0;centroideY=0; numMuestras=0;maxX=0;minX=0;MaxY=0;minY=0;
 								//ellipse.setFillColor(new MTColor(0,0,255));
 								a.setFillColor(new MTColor(255,255,255));
 								a.setStrokeColor(new MTColor(0,0,0));
@@ -426,8 +425,8 @@ public class DrawSurfaceScene extends AbstractScene {
 	}
 	public void setBrush2(AbstractShape brush){
 		this.drawShape2 = brush;
-		drawShape2.setFillColor(new MTColor(255,0,0,255));
-		drawShape2.setStrokeColor(new MTColor(255,0,0,255));
+		drawShape2.setFillColor(new MTColor(255,255,255,255));
+		drawShape2.setStrokeColor(new MTColor(255,255,255,255));
 		this.localBrushCenter = drawShape2.getCenterPointLocal();
 		this.brushWidthHalf = drawShape2.getWidthXY(TransformSpace.LOCAL)/2f;
 		this.brushHeightHalf = drawShape2.getHeightXY(TransformSpace.LOCAL)/2f;

@@ -17,7 +17,7 @@ public class UMLFacade {
 	
 	//Util
 	private int numMuestas; 
-	private float minX=100000000,minY=10000000,maxX,maxY,acumCentroideX,acumCentroideY=0;
+	private float minX=100000000,minY=10000000,maxX,maxY,acumCentroideX,acumCentroideY;
 	//Util
 	
 	
@@ -48,7 +48,7 @@ public class UMLFacade {
 	public ObjetoUML reconocerObjeto(){
 	
 		int resultado=recognizer.recognize();
-		if(resultado!=ObjetoUML.INVALIDO){			
+		if(resultado!=ObjetoUML.INVALIDO&&this.numMuestas>0){			
 			objeto=UMLCollection.anadirObjeto(resultado,persona );
 			
 			//// Calcular centroide,posicion y dimensiones
@@ -56,15 +56,26 @@ public class UMLFacade {
 			this.getObjeto().setWidth((maxX-minX));
 			this.getObjeto().setHeigth((maxY-minY));
 			this.getObjeto().setPosicion(new Vector3D((this.getObjeto().getCentroide().x- (maxX-minX)/2),	(this.getObjeto().getCentroide().y-(maxY-minY)/2)));		
-			//// Calcular centroide,posicion y dimensiones
 			
+			//// Calcular centroide,posicion y dimensiones
+			reiniciar();
 			return objeto;
 		}
+		reiniciar();
 		objeto=ObjetoUML.OBJETO_INVALIDO;
 		return objeto;		
 	}
 		
-	
+	private void reiniciar(){
+		this.minX=100000000;
+		this.minY=10000000;
+		this.maxX=0;
+		this.maxY=0;
+		this.acumCentroideX=0;
+		this.acumCentroideY=0;
+		this.numMuestas=0;
+		this.recognizer.reiniciar();
+	}
 	
 	public Vector3D getPosicion(){
 		return this.objeto.getPosicion();
