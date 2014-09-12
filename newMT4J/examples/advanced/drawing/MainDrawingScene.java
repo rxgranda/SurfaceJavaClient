@@ -42,6 +42,7 @@ public class MainDrawingScene extends AbstractScene {
 	private MTEllipse pencilBrush;
 	private MTEllipse pencilBrush2;
 	private DrawSurfaceScene drawingScene;
+	private MTRectangle container;
 	
 //	private String imagesPath = System.getProperty("user.dir")+File.separator + "examples"+  File.separator +"advanced"+ File.separator + File.separator +"drawing"+ File.separator + File.separator +"data"+ File.separator +  File.separator +"images" + File.separator ;
 	private String imagesPath = "advanced" + MTApplication.separator + "drawing" + MTApplication.separator + "data" + MTApplication.separator + "images" + MTApplication.separator;
@@ -55,17 +56,17 @@ public class MainDrawingScene extends AbstractScene {
 			return;
 		}
 		this.registerGlobalInputProcessor(new CursorTracer(mtApplication, this));
-		
-		
-		
-		
+							
 		//Create window frame
-        MTRoundRectangle frame = new MTRoundRectangle(pa,-50, -50, 0, pa.width+100, pa.height+100,25, 25);
+        MTRoundRectangle frame = new MTRoundRectangle(pa,-0, -0, 0, pa.width+0, pa.height+0,25, 25);
         frame.setSizeXYGlobal(pa.width-10, pa.height-10);
         this.getCanvas().addChild(frame);
+        //Container Superficie donde se guardan todas las figuras que se han reconocido
+        container = new MTRectangle(0,0,mtApplication.width, mtApplication.height , mtApplication);
+        container.setFillColor(new MTColor(255,255,255,255));
+      
         //Create the scene in which we actually draw
-        drawingScene = new DrawSurfaceScene(pa, "DrawSurface Scene");
-        
+        drawingScene = new DrawSurfaceScene(pa, "DrawSurface Scene", container);        
         drawingScene.setClear(false);
        
         
@@ -73,7 +74,8 @@ public class MainDrawingScene extends AbstractScene {
         //test.setClear(false);
         //Create texture brush
         PImage brushImage = getMTApplication().loadImage(imagesPath + "brush1.png");
-		textureBrush = new MTRectangle(getMTApplication(), brushImage);
+		
+        /*textureBrush = new MTRectangle(getMTApplication(), brushImage);
 		textureBrush.setPickable(false);
 		textureBrush.setNoFill(false);
 		textureBrush.setNoStroke(true);
@@ -87,7 +89,7 @@ public class MainDrawingScene extends AbstractScene {
 		textureBrush2.setNoStroke(true);
 		textureBrush2.setDrawSmooth(true);
 		textureBrush2.setFillColor(new MTColor(0,0,0));		
-		drawingScene.setBrush2(textureBrush2);
+		drawingScene.setBrush2(textureBrush2);¨*/
 		
 		//////////
 		//Set texture brush as default
@@ -118,22 +120,20 @@ public class MainDrawingScene extends AbstractScene {
         //Create the frame/window that displays the drawing scene through a FBO
 //        final MTSceneTexture sceneWindow = new MTSceneTexture(0,0, pa, drawingScene);
 		//We have to create a fullscreen fbo in order to save the image uncompressed
-		final MTSceneTexture sceneTexture = new MTSceneTexture(pa,0, 0, pa.width, pa.height, drawingScene);
+		final MTSceneTexture sceneTexture = new MTSceneTexture(pa,0, -0, pa.width+0, pa.height+0, drawingScene);
         sceneTexture.getFbo().clear(true, 255, 255, 255, 0, true);
       
         sceneTexture.setStrokeColor(new MTColor(155,0,0));
-        //Background
-        MTRectangle background = new MTRectangle(0,0,mtApplication.width, mtApplication.height , mtApplication);
-        background.setFillColor(new MTColor(255,244,150,255));
+       
 
         //Add the scene texture as a child of the background rectangle so the scene texture is drawn in front
-        background.addChild(sceneTexture);
-        frame.addChild(background);
+        container.addChild(sceneTexture);
+        frame.addChild(container);
 
         
         
        // frame.addChild(sceneTexture);
-        
+        /*
         //Eraser button
         PImage eraser = pa.loadImage(imagesPath + "Kde_crystalsvg_eraser.png");
         MTImageButton b = new MTImageButton(pa, eraser);
@@ -155,7 +155,7 @@ public class MainDrawingScene extends AbstractScene {
 				}
 			}
         });
-        frame.addChild(b);
+        frame.addChild(b);*/
         
         /*//Pen brush selector button
         PImage penIcon = pa.loadImage(imagesPath + "pen.png");
@@ -199,7 +199,7 @@ public class MainDrawingScene extends AbstractScene {
 			}
         });
         */
-        //Save to file button
+     /*   //Save to file button
         PImage floppyIcon = pa.loadImage(imagesPath + "floppy.png");
         final MTImageButton floppyButton = new MTImageButton(pa, floppyIcon);
         frame.addChild(floppyButton);
@@ -230,7 +230,7 @@ public class MainDrawingScene extends AbstractScene {
 					break;
 				}
 			}
-        });
+        });*/
        /* 
         /////////////////////////
         //ColorPicker and colorpicker button
@@ -314,7 +314,7 @@ public class MainDrawingScene extends AbstractScene {
 		a.setFillColor(new MTColor(255,255,255));
 		a.setStrokeColor(new MTColor(0,0,0));
 		a.setNoStroke(false);
-		background.addChild(a);
+		container.addChild(a);
 		
 		//a.removeAllGestureEventListeners();
 		//a.addGestureListener(DragProcessor.class, new InertiaDragAction());
