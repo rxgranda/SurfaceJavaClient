@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="advanced.physics.scenes.Nuevo"/>
-<fullyQualifiedTypeName name="org.mt4j.components.MTComponent"/>
 <fullyQualifiedTypeName name="TUIO.TuioPoint"/>
 <fullyQualifiedTypeName name="org.mt4j.input.inputData.ActiveCursorPool"/>
 <fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.widgets.MTTextArea"/>
@@ -40,4 +39,13 @@
 <fullyQualifiedTypeName name="org.mt4j.util.math.Vector3D"/>
 <fullyQualifiedTypeName name="advanced.umleditor.UMLCollection"/>
 <fullyQualifiedTypeName name="advanced.umleditor.logic.ObjetoUML"/>
+<fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapProcessor"/>
+<fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.IGestureEventListener"/>
+<fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.MTGestureEvent"/>
+<fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapEvent"/>
+<fullyQualifiedTypeName name="org.mt4j.components.interfaces.IMTComponent3D"/>
+<fullyQualifiedTypeName name="org.mt4j.components.MTComponent"/>
+<fullyQualifiedTypeName name="org.mt4j.components.MTCanvas"/>
+<fullyQualifiedTypeName name="org.mt4j.input.gestureAction.InertiaDragAction"/>
+<fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragProcessor"/>
 </qualifiedTypeNameHistroy>

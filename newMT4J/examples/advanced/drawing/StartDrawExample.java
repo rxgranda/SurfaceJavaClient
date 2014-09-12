@@ -15,6 +15,7 @@ public class StartDrawExample extends MTApplication{
 	
 	//@Override
 	public void startUp(){
+		
 		this.addScene(new MainDrawingScene(this, "Main drawing scene"));
 //		DrawingScene scene = new DrawingScene(this, "scene");
 //		scene.setClear(false);

@@ -5,13 +5,21 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import org.mt4j.MTApplication;
+import org.mt4j.components.MTCanvas;
 import org.mt4j.components.TransformSpace;
+import org.mt4j.components.interfaces.IMTComponent3D;
 import org.mt4j.components.visibleComponents.shapes.AbstractShape;
 import org.mt4j.components.visibleComponents.shapes.MTEllipse;
 import org.mt4j.input.IMTInputEventListener;
+import org.mt4j.input.gestureAction.InertiaDragAction;
 import org.mt4j.input.inputData.AbstractCursorInputEvt;
 import org.mt4j.input.inputData.InputCursor;
 import org.mt4j.input.inputData.MTInputEvent;
+import org.mt4j.input.inputProcessors.IGestureEventListener;
+import org.mt4j.input.inputProcessors.MTGestureEvent;
+import org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragProcessor;
+import org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapEvent;
+import org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapProcessor;
 import org.mt4j.sceneManagement.AbstractScene;
 import org.mt4j.sceneManagement.IPreDrawAction;
 import org.mt4j.util.MTColor;
@@ -30,7 +38,10 @@ import org.mt4j.components.visibleComponents.shapes.MTRoundRectangle;;
 
 
 public class DrawSurfaceScene extends AbstractScene {
-
+	MTRoundRectangle a=null;
+public MTRoundRectangle getA(){
+	return a;
+}
 	private MTApplication mtApp;
 
 	private AbstractShape drawShape;
@@ -129,7 +140,7 @@ public class DrawSurfaceScene extends AbstractScene {
 				//Vector3D diff=	new Vector3D(currentPos);
 				mtApp.pushMatrix();
 				mtApp.translate(diff.x, diff.y);
-				System.out.println("X:"+diff.x+"Y:"+ diff.y);
+				//System.out.println("X:"+diff.x+"Y:"+ diff.y);
 			
 				//NOTE: works only if brush upper left at 0,0
 				mtApp.translate(brushWidthHalf, brushHeightHalf);
@@ -180,7 +191,7 @@ public class DrawSurfaceScene extends AbstractScene {
 			
 
 		}		
-		System.out.println("Eliminado");
+		//System.out.println("Eliminado");
 		eliminarPuntos();
 			}	
 
@@ -193,6 +204,7 @@ public class DrawSurfaceScene extends AbstractScene {
 		//
 	}
 	public DrawSurfaceScene(MTApplication mtApplication, String name) {
+		
 		super(mtApplication, name);
 		this.mtApp = mtApplication;
 		
@@ -207,7 +219,7 @@ public class DrawSurfaceScene extends AbstractScene {
 		*/
 		
 		this.brushColor = new MTColor(0,0,0);
-		this.brushScale = 1.0f;
+		this.brushScale = 0.05f;
 		this.dynamicBrush = true;
 //		this.stepDistance = 5.5f;
 		
@@ -223,6 +235,16 @@ public class DrawSurfaceScene extends AbstractScene {
 				if(inEvt instanceof AbstractCursorInputEvt){
 					final AbstractCursorInputEvt posEvt = (AbstractCursorInputEvt)inEvt;
 					final InputCursor m = posEvt.getCursor();
+					IMTComponent3D comp = m.getTarget();
+					
+					System.out.println(comp.toString());
+					
+					IMTComponent3D secondresult =(IMTComponent3D)getCanvas().getComponentAt((int)m.getPosition().x, (int)m.getPosition().y);
+					System.out.println("SECOND: " + secondresult);
+					//getCanvas().drawAndUpdateCanvas(mtApp.g, 0);
+					getCanvas().drawAndUpdateCanvas(mtApp.g, 0);
+					//getSceneCam().update();
+					if(comp instanceof MTCanvas){
 //					System.out.println("PrevPos: " + prevPos);				
 					if (posEvt.getId() != AbstractCursorInputEvt.INPUT_ENDED){
 						registerPreDrawAction(new IPreDrawAction() {
@@ -232,7 +254,7 @@ public class DrawSurfaceScene extends AbstractScene {
 								Vector3D pos = new Vector3D(posEvt.getX(), posEvt.getY(), 0);
 								//Proyecto
 								//System.out.println("ID: " + m.sessionID);
-								System.out.println("Pos: X:"+posEvt.getX()+"Y:"+ posEvt.getY());
+								//System.out.println("Pos: X:"+posEvt.getX()+"Y:"+ posEvt.getY());
 								
 								add(new Vector3D(posEvt.getX(),posEvt.getY(),0));
 								
@@ -301,7 +323,7 @@ public class DrawSurfaceScene extends AbstractScene {
 									//Vector3D diff=	new Vector3D(currentPos);
 									mtApp.pushMatrix();
 									mtApp.translate(diff.x, diff.y);
-									System.out.println("X:"+diff.x+"Y:"+ diff.y);
+									//System.out.println("X:"+diff.x+"Y:"+ diff.y);
 									//centroideX+=currentPos.x+diff.x;centroideY+=currentPos.y+diff.y; numMuestras++;
 								//	recognizer.anadirPunto(currentPos.x+diff.x, currentPos.y+diff.y);
 									
@@ -361,7 +383,7 @@ public class DrawSurfaceScene extends AbstractScene {
 						
 						
 					//	int resultado=recognizer.recognize();
-						recognizer.reconocerObjeto();
+						final int tipo_objeto=recognizer.reconocerObjeto().getTipo();
 						//if(resultado==UMLCollection.INVALIDO){
 						limpiar();
 					//	}else{
@@ -377,26 +399,126 @@ public class DrawSurfaceScene extends AbstractScene {
 								//centroideX=centroideX/numMuestras-5;
 								//centroideY=centroideY/numMuestras-5;
 								//drawShape2.setFillColor(new MTColor(255,0,0,255));
-								mtApp.pushMatrix();
+							/*	mtApp.pushMatrix();
 								getSceneCam().update(); 
 								mtApp.translate(recognizer.getCentroide().x,recognizer.getCentroide().y);
 								mtApp.scale(brushScale);																						
 								AbstractShape brushToDraw = drawShape2;
 								brushToDraw.drawComponent(mtApp.g);
 								
-								mtApp.popMatrix();
+								mtApp.popMatrix();*/
 							//	MTEllipse ellipse = new MTEllipse(mtApp, new Vector3D((float)centroideX,(float)centroideY,0), 60, 40);
 							//	MTRoundRectangle a=new MTRoundRectangle(recognizer.getPosicion().x,recognizer.getPosicion().y,0, recognizer.getWidth(), recognizer.getHeigth(), 1, 1, mtApp);
 								
-								MTRoundRectangle a=new MTRoundRectangle(recognizer.getPosicion().x,recognizer.getPosicion().y,0, recognizer.getWidth(),  recognizer.getHeigth(), 1, 1, mtApp);
-								//centroideX=0;centroideY=0; numMuestras=0;maxX=0;minX=0;MaxY=0;minY=0;
-								//ellipse.setFillColor(new MTColor(0,0,255));
-								a.setFillColor(new MTColor(255,255,255));
-								a.setStrokeColor(new MTColor(0,0,0));
-								a.setNoStroke(false);
-								//getCanvas().addChild(ellipse);
-								getCanvas().addChild(a);								
+								switch	(tipo_objeto){
+									case ObjetoUML.ENTIDAD:
+										a=new MTRoundRectangle(recognizer.getPosicion().x,recognizer.getPosicion().y,0, recognizer.getWidth(),  recognizer.getHeigth(), 1, 1, mtApp);
+										//centroideX=0;centroideY=0; numMuestras=0;maxX=0;minX=0;MaxY=0;minY=0;
+										//ellipse.setFillColor(new MTColor(0,0,255));
+										a.setFillColor(new MTColor(255,255,255));
+										a.setStrokeColor(new MTColor(0,0,0));
+										a.setNoStroke(false);
+										//getCanvas().addChild(ellipse);
+									//a.removeAllGestureEventListeners();
+										//a.addGestureListener(DragProcessor.class, new InertiaDragAction());
+										
+										/*  a.registerInputProcessor(new TapProcessor(mtApp));
+									        a.addGestureListener(TapProcessor.class, new IGestureEventListener() {
+												public boolean processGestureEvent(MTGestureEvent ge) {
+													getCanvas().updateComponent(0);
+													getCanvas().drawAndUpdateCanvas(mtApp.g,0);
+
+													TapEvent te = (TapEvent)ge;
+													IMTComponent3D target = te.getTargetComponent();
+													//de.getTargetComponent().translateGlobal(de.getTranslationVect());
+													target.drawComponent(mtApp.g);
+													//mtApp.pushMatrix();
+													//getSceneCam().update();
+													if (target instanceof MTRoundRectangle) {
+														MTRoundRectangle rectangle = (MTRoundRectangle) target;
+														switch (te.getTapID()) {
+														case TapEvent.BUTTON_DOWN:
+															System.out.println("Button down state on " + target);
+															rectangle.setFillColor(new MTColor(200,100,100));
+															break;
+														case TapEvent.BUTTON_UP:
+															System.out.println("Button up state on " + target);
+															rectangle.setFillColor(new MTColor(255,255,255));
+															break;
+														case TapEvent.BUTTON_CLICKED:
+															System.out.println("Button clicked state on " + target);
+															rectangle.setFillColor(new MTColor(255,255,255));
+															break;
+														default:
+															break;
+														}
+														getSceneCam().update();
+														//mtApp.popMatrix();
+													}
+													return false;
+												}
+											});*/
+										a.addInputListener(new IMTInputEventListener() {
+			public boolean processInputEvent(final MTInputEvent inEvt){
+				final IMTComponent3D target = inEvt.getTargetComponent();
+				
+				registerPreDrawAction(new IPreDrawAction() {
+					public void processAction() {
+						//getCanvas().updateComponent(0);
+						 AbstractCursorInputEvt posEvt = (AbstractCursorInputEvt)inEvt;
+						
+						//getSceneCam().update(); 
+						//getCanvas().drawAndUpdateCanvas(mtApp.g, 0);
+						//getCanvas().unregisterAllInputProcessors();
+						//getCanvas().drawAndUpdateCanvas(mtApp.g,0);
+						 
+						 //getA().setHeightXYGlobal(recognizer.getHeigth()+5);
+						 //getA().setWidthXYGlobal(recognizer.getWidth()+5);
+						 if(((AbstractCursorInputEvt) inEvt).getId() == AbstractCursorInputEvt.INPUT_STARTED){
+							 getA().setStrokeColor(new MTColor(255,255,255));
+							 getA().scale(1.25f, 1.25f, 1,getA().getCenterPointRelativeToParent() );
+						// component.scale(1, 1, 2, new Vector3D(0,0,0), );
+						 
+							getA().setFillColor(new MTColor(255,255,255));
+							getCanvas().drawAndUpdateCanvas(mtApp.g,0);
+							}
+						
+						
+						if (((AbstractCursorInputEvt) inEvt).getId() != AbstractCursorInputEvt.INPUT_ENDED){
+							System.out.println("Invisible");
+							//getA().setStrokeColor(new MTColor(255,255,255));
+						//	getCanvas().drawAndUpdateCanvas(mtApp.g,0);
+							getA().setVisible(false);
+							//getCanvas().drawAndUpdateCanvas(mtApp.g,0);
+						}else{
+							System.out.println("Visible");
+							a.setVisible(true);
+							getA().setStrokeColor(new MTColor(0,0,0));
+							 getA().scale(0.8f, 0.8f, 1,getA().getCenterPointRelativeToParent() );
 								
+							getCanvas().drawAndUpdateCanvas(mtApp.g,0);
+						}
+						
+					//	target.drawComponent(mtApp.g);
+					}
+
+					@Override
+					public boolean isLoop() {
+						// TODO Auto-generated method stub
+						return false;
+					}});
+				
+				return false;}});
+										 
+										getCanvas().addChild(a);
+										
+										
+										
+										
+									break;
+									default:
+										break;
+								}
 							}
 							
 						public boolean isLoop() {
@@ -406,6 +528,7 @@ public class DrawSurfaceScene extends AbstractScene {
 						
 					}
 					}
+				}
 				}
 				return false;
 			}

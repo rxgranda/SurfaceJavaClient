@@ -20,7 +20,7 @@ public abstract class ObjetoUML {
 	//Esquina superior izquierda
 	private Vector3D posicion;
 	private float width,heigth;
-	
+	private int tipo;
 	
 	private Persona persona;
 	private Timestamp tiempoInicio;
@@ -79,6 +79,16 @@ public abstract class ObjetoUML {
 
 	public void setPosicion(Vector3D posicion) {
 		this.posicion = posicion;
+	}
+
+
+	public int getTipo() {
+		return tipo;
+	}
+
+
+	public void setTipo(int tipo) {
+		this.tipo = tipo;
 	}
 	
 	/*public int getIdPersona() {
