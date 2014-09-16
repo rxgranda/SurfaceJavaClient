@@ -11,6 +11,7 @@ import org.mt4j.components.TransformSpace;
 import org.mt4j.components.interfaces.IMTComponent3D;
 import org.mt4j.components.visibleComponents.shapes.AbstractShape;
 import org.mt4j.components.visibleComponents.shapes.MTEllipse;
+import org.mt4j.components.visibleComponents.shapes.MTLine;
 import org.mt4j.components.visibleComponents.shapes.MTRectangle;
 import org.mt4j.input.IMTInputEventListener;
 import org.mt4j.input.gestureAction.InertiaDragAction;
@@ -33,6 +34,7 @@ import advanced.umleditor.UMLRecognizer;
 import advanced.umleditor.UMLCollection;
 import advanced.umleditor.logic.ObjetoUML;
 import advanced.umleditor.logic.Persona;
+import advanced.umleditor.logic.Relacion;
 import processing.core.PApplet;
 
 import org.mt4j.components.visibleComponents.shapes.MTRoundRectangle;
@@ -40,11 +42,11 @@ import org.mt4j.components.visibleComponents.shapes.MTRoundRectangle;
 ;
 
 public class DrawSurfaceScene extends AbstractScene {
-	MTRoundRectangle a = null;
+	/*MTRoundRectangle a = null;
 
 	public MTRoundRectangle getA() {
 		return a;
-	}
+	}*/
 
 	private MTApplication mtApp;
 
@@ -457,8 +459,9 @@ public class DrawSurfaceScene extends AbstractScene {
 							cursorToLastDrawnPoint.remove(m);
 
 							// int resultado=recognizer.recognize();
-							final int tipo_objeto = recognizer
-									.reconocerObjeto().getTipo();
+							ObjetoUML objeto=recognizer
+									.reconocerObjeto();
+							final int tipo_objeto = objeto.getTipo();
 							// if(resultado==UMLCollection.INVALIDO){
 							limpiar();
 							// }else{
@@ -494,20 +497,26 @@ public class DrawSurfaceScene extends AbstractScene {
 
 								switch (tipo_objeto) {
 								case ObjetoUML.ENTIDAD:
-									a = new MTRoundRectangle(recognizer
-											.getPosicion().x, recognizer
-											.getPosicion().y, 0, recognizer
+									MTRoundRectangle rectangulo = new MTRoundRectangle(objeto
+											.getPosicion().x, objeto
+											.getPosicion().y, 0, objeto
 											.getWidth(),
-											recognizer.getHeigth(), 1, 1, mtApp);
-									// centroideX=0;centroideY=0;
-									// numMuestras=0;maxX=0;minX=0;MaxY=0;minY=0;
-									// ellipse.setFillColor(new
-									// MTColor(0,0,255));
-									a.setFillColor(new MTColor(255, 255, 255));
-									a.setStrokeColor(new MTColor(0, 0, 0));
-									a.setNoStroke(false);
-									anadirObjeto(a);
-
+											objeto.getHeigth(), 1, 1, mtApp);									
+									rectangulo.setFillColor(new MTColor(255, 255, 255));
+									rectangulo.setStrokeColor(new MTColor(0, 0, 0));
+									rectangulo.setNoStroke(false);
+									objeto.setFigura(rectangulo);
+									anadirObjeto(rectangulo);
+									break;
+								case ObjetoUML.RELACION:
+									Vector3D esquina1=((Relacion)objeto).getInicio();
+									Vector3D esquina2=((Relacion)objeto).getFin();
+									MTLine linea = new MTLine(mtApp, esquina1.x,esquina1.y,esquina2.x,esquina2.y);					
+									linea.setFillColor(new MTColor(0, 0, 0));
+									linea.setStrokeColor(new MTColor(0, 0, 0));
+									linea.setNoStroke(false);
+									objeto.setFigura(linea);
+									anadirObjeto(linea);
 									break;
 								default:
 									break;
@@ -536,6 +545,10 @@ public class DrawSurfaceScene extends AbstractScene {
 		this.drawShape.setStrokeColor(this.brushColor);
 	}
 
+	/*
+	 * 
+	 *Descripcion: Utilizada para borrar el trazo una vez dibujado sobre el lienzo.
+	 */
 	public void setBrush2(AbstractShape brush) {
 		this.drawShape2 = brush;
 		drawShape2.setFillColor(new MTColor(255, 255, 255, 255));

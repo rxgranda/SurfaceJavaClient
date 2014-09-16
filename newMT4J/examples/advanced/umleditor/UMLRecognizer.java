@@ -14,7 +14,7 @@ public class UMLRecognizer {
 	
 	public UMLRecognizer(){		
 		PaleoConfig config = new PaleoConfig();
-		config = new PaleoConfig(PaleoConfig.Option.Line, PaleoConfig.Option.Circle,PaleoConfig.Option.Arrow, PaleoConfig.Option.Rectangle);		
+		config = new PaleoConfig(PaleoConfig.Option.Line,PaleoConfig.Option.Polyline, PaleoConfig.Option.Circle,PaleoConfig.Option.Arrow, PaleoConfig.Option.Rectangle);		
 		recognizer = new PaleoSketchRecognizer(config);
 		stroke = new Stroke();	    		
 	}

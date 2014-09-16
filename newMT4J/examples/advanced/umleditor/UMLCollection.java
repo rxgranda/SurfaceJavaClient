@@ -12,7 +12,7 @@ public class UMLCollection {
 
 	
 	
-	private static Collection <ObjetoUML> objetosUML=new LinkedList<ObjetoUML>();;
+	private static Collection <ObjetoUML> objetosUML=new LinkedList<ObjetoUML>();
 	
 	
 	

@@ -58,6 +58,10 @@ extends MTRoundRectangle {
 	/** The close button image. */
 	private static PImage closeButtonImage;
 	
+	/** The maximize button image. */
+	private static PImage guardarButtonImage;
+	
+	
 	//Destroying the sceneTexture -> destroy SceneWindow -> destroy scene
 	//Destroy this -> destroy scene -> child sceneTexture.destroy() 
 	

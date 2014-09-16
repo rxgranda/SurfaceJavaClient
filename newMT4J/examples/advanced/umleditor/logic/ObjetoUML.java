@@ -5,6 +5,7 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Calendar;
 
+import org.mt4j.components.MTComponent;
 import org.mt4j.util.math.Vector3D;
 
 import advanced.umleditor.UMLRecognizer;
@@ -15,6 +16,7 @@ public abstract class ObjetoUML {
 	public static final int  RELACION=2;
 	private static Calendar calendar = Calendar.getInstance();	
 	public  static ObjetoUML OBJETO_INVALIDO=new ObjetoInvalido(new Persona("","",-1)) ;	
+	private MTComponent figura;
 
 	private Vector3D centroide;
 	//Esquina superior izquierda
@@ -90,6 +92,16 @@ public abstract class ObjetoUML {
 	public void setTipo(int tipo) {
 		this.tipo = tipo;
 	}
+
+
+	public MTComponent getFigura() {
+		return figura;
+	}
+
+
+	public void setFigura(MTComponent figura) {
+		this.figura = figura;
+	}
 	
 	/*public int getIdPersona() {
 		return idPersona;
@@ -100,7 +112,7 @@ public abstract class ObjetoUML {
 	*/
 }
 
-class ObjetoInvalido extends ObjetoUML{
+final class ObjetoInvalido extends ObjetoUML{
 
 	//public final ObjetoUML invalido=new ObjetoInvalido(new Persona("","",-1)) ;
 	public ObjetoInvalido(Persona p) {

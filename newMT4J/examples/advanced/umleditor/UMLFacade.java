@@ -3,10 +3,12 @@ package advanced.umleditor;
 import java.awt.Point;
 import java.util.Collection;
 
+import org.mt4j.components.MTComponent;
 import org.mt4j.util.math.Vector3D;
 
 import advanced.umleditor.logic.ObjetoUML;
 import advanced.umleditor.logic.Persona;
+import advanced.umleditor.logic.Relacion;
 
 public class UMLFacade {
 	
@@ -15,9 +17,10 @@ public class UMLFacade {
 	private Persona persona;
 	private UMLRecognizer recognizer;
 	
+	
 	//Util
 	private int numMuestas; 
-	private float minX=100000000,minY=10000000,maxX,maxY,acumCentroideX,acumCentroideY;
+	private float minX=100000000,minY=10000000,maxX,maxY,acumCentroideX,acumCentroideY, primerX,primerY,ultimoX,ultimoY;
 	//Util
 	
 	
@@ -39,6 +42,13 @@ public class UMLFacade {
 			maxX=x;
 		if(maxY<y)
 			maxY=y;
+		
+		ultimoX=x;
+		ultimoY=y;
+		if(numMuestas<=0){
+			primerX=x;
+			primerY=y;
+		}
 		acumCentroideX+=x;
 		acumCentroideY+=y;
 		numMuestas++;
@@ -57,6 +67,11 @@ public class UMLFacade {
 			this.getObjeto().setHeigth((maxY-minY));
 			this.getObjeto().setPosicion(new Vector3D((this.getObjeto().getCentroide().x- (maxX-minX)/2),	(this.getObjeto().getCentroide().y-(maxY-minY)/2)));		
 			
+			
+			//Caso de que sea una linea, se debe conocer posicion inicial y final
+			
+			if (objeto.getTipo()==ObjetoUML.RELACION)
+				((Relacion)objeto).inicializarDimensiones(primerX, primerY, ultimoX, ultimoY);
 			//// Calcular centroide,posicion y dimensiones
 			reiniciar();
 			return objeto;
@@ -74,6 +89,10 @@ public class UMLFacade {
 		this.acumCentroideX=0;
 		this.acumCentroideY=0;
 		this.numMuestas=0;
+		ultimoX=0;
+		ultimoY=0;		
+		primerX=0;
+		primerY=0;
 		this.recognizer.reiniciar();
 	}
 	
@@ -103,5 +122,5 @@ public class UMLFacade {
 	public float getHeigth() {
 		return objeto.getHeigth();
 	}
-
+	
 }

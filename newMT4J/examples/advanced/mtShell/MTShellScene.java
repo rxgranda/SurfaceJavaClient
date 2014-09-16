@@ -200,7 +200,7 @@ public class MTShellScene extends AbstractScene {
 		
 		font = FontManager.getInstance().createFont(app, "SansSerif", 18, MTColor.WHITE);
 		
-		this.addScene(new ICreateScene() {
+		/*this.addScene(new ICreateScene() {
 			public Iscene getNewScene() {
 				return new TouchTailScene(app, "Touch Tails");
 			}
@@ -234,20 +234,20 @@ public class MTShellScene extends AbstractScene {
 			public String getTitle() {
 				return "Puzzle";
 			}
-		}, app.loadImage(this.getPathToIcons() + "puzz.png"));
+		}, app.loadImage(this.getPathToIcons() + "puzz.png"));*/
 		
 		if (this.hasFBO){
 			this.addScene(new ICreateScene() {
 				public Iscene getNewScene() {
-					return new MainDrawingScene(app, "MT Paint");
+					return new MainDrawingScene(app, "Diagramas Entidad-Relación");
 				}
 				public String getTitle() {
-					return "MT Paint";
+					return "ER-Diagram";
 				}
 			}, app.loadImage(this.getPathToIcons() + "drawing_s.png"));
 		}
 		
-		this.addScene(new ICreateScene() {
+		/*this.addScene(new ICreateScene() {
 			public Iscene getNewScene() {
 				return new FlickrScene(app, "Flickr");
 			}
@@ -300,7 +300,7 @@ public class MTShellScene extends AbstractScene {
 				return "Earth 3D";
 			}
 		}, app.loadImage(this.getPathToIcons() + "earth_s.png"));
-				
+				*/
 		
 		getCanvas().addChild(list);
 		list.rotateZ(list.getCenterPointLocal(), -90, TransformSpace.LOCAL);

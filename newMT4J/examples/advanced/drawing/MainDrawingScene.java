@@ -307,7 +307,7 @@ public class MainDrawingScene extends AbstractScene {
         slider.getOuterShape().addChild(p);
         slider.getKnob().sendToFront();
         
-        */
+      
         MTRectangle a=new MTRectangle(0,0,0, 200, 200, pa);
 		//centroideX=0;centroideY=0; numMuestras=0;maxX=0;minX=0;MaxY=0;minY=0;
 		//ellipse.setFillColor(new MTColor(0,0,255));
@@ -379,7 +379,7 @@ public class MainDrawingScene extends AbstractScene {
 			}});
 			
 			return false;}});
-
+  */
 		
         
 	}
