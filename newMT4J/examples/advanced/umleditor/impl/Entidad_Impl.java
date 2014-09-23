@@ -2,11 +2,16 @@ package advanced.umleditor.impl;
 
 import org.mt4j.MTApplication;
 import org.mt4j.components.MTComponent;
+import org.mt4j.components.interfaces.IMTComponent3D;
 import org.mt4j.components.visibleComponents.font.FontManager;
 import org.mt4j.components.visibleComponents.shapes.MTEllipse;
 import org.mt4j.components.visibleComponents.shapes.MTRoundRectangle;
 import org.mt4j.components.visibleComponents.widgets.MTTextArea;
 import org.mt4j.components.visibleComponents.widgets.MTTextField;
+import org.mt4j.input.IMTInputEventListener;
+import org.mt4j.input.inputData.AbstractCursorInputEvt;
+import org.mt4j.input.inputData.InputCursor;
+import org.mt4j.input.inputData.MTInputEvent;
 import org.mt4j.input.inputProcessors.IGestureEventListener;
 import org.mt4j.input.inputProcessors.MTGestureEvent;
 import org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragEvent;
@@ -98,6 +103,37 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 		rectangulo.addChild(e);
 		rectangulo.addChild(header);
 		rectangulo.addChild(body);	
+		
+			
+		rectangulo.addInputListener(new IMTInputEventListener() {
+					public boolean processInputEvent(MTInputEvent inEvt) {
+						if (inEvt instanceof AbstractCursorInputEvt) { //Most input events in MT4j are an instance of AbstractCursorInputEvt (mouse, multi-touch..)
+							AbstractCursorInputEvt cursorInputEvt = (AbstractCursorInputEvt) inEvt;
+							InputCursor cursor = cursorInputEvt.getCursor();
+							IMTComponent3D target = cursorInputEvt.getTargetComponent();
+							switch (cursorInputEvt.getId()) {
+							case AbstractCursorInputEvt.INPUT_STARTED:
+								System.out.println("Input detected on: " + target + " at " + cursor.getCurrentEvtPosX() + "," + cursor.getCurrentEvtPosY());
+								rectangulo.setFillColor(selectedObject);
+								break;
+							case AbstractCursorInputEvt.INPUT_UPDATED:
+								System.out.println("Input updated on: " + target + " at " + cursor.getCurrentEvtPosX() + "," + cursor.getCurrentEvtPosY());			
+								break;
+							case AbstractCursorInputEvt.INPUT_ENDED:
+								rectangulo.setFillColor(nonselectedObject);
+								System.out.println("Input ended on: " + target + " at " + cursor.getCurrentEvtPosX() + "," + cursor.getCurrentEvtPosY());
+								break;
+							default:
+								break;
+							}
+						}else{
+							//handle other input events
+						}
+					return false;
+					}
+				});
+
+
 	}
 	
 	
