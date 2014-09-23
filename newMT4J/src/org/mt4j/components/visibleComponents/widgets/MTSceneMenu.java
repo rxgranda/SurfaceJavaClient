@@ -82,6 +82,9 @@ public class MTSceneMenu extends MTRectangle{
 	/** The restore button image. */
 	private static PImage restoreButtonImage;
 	
+	/** The restore button image. */
+	private static PImage guardarButtonImage;
+	
 	
 	//TODO maybe add minimize mode -> dont show scene but dont destroy it -> maby keep it in a MTList
 	
@@ -160,14 +163,14 @@ public class MTSceneMenu extends MTRectangle{
 		menuShape.removeAllGestureEventListeners(DragProcessor.class);
 		menuShape.registerInputProcessor(new DragProcessor(app));
 		
-		float buttonWidth = 80;
-		float buttonHeight = 80;
+		float buttonWidth = 60;
+		float buttonHeight = 60;
 		final float buttonOpacity = 170;
 		
 		//CLOSE BUTTON
 //		Vector3D a = new Vector3D(-width * 1.2f, height/2f);
 		Vector3D a = new Vector3D(-width * 1.55f, 0);
-		a.rotateZ(PApplet.radians(80));
+		a.rotateZ(PApplet.radians(90));
 		final MTRectangle closeButton = new MTRectangle(app, x + a.x, y + a.y, buttonWidth, buttonHeight);
 		
 		if (closeButtonImage == null){
@@ -206,7 +209,25 @@ public class MTSceneMenu extends MTRectangle{
 			restoreButton.removeAllGestureEventListeners(RotateProcessor.class);
 			restoreButton.removeAllGestureEventListeners(ScaleProcessor.class);			
 			this.addChild(restoreButton);
+			////
+			Vector3D c = new Vector3D(-width * 1.55f, 0);
+			c.rotateZ(PApplet.radians(50));
+			final MTRectangle guardarButton = new MTRectangle(app, x + c.x, y + c.y, buttonWidth, buttonHeight);
 			
+			if (guardarButtonImage== null){
+				guardarButtonImage = app.loadImage(MT4jSettings.getInstance().getDefaultImagesPath() +
+						"floppy2.png");
+			}
+			
+			guardarButton.setTexture(guardarButtonImage);
+			guardarButton.setFillColor(new MTColor(255, 255, 255, buttonOpacity));
+			guardarButton.setNoStroke(true);
+			guardarButton.setVisible(false);
+			guardarButton.removeAllGestureEventListeners(DragProcessor.class);
+			guardarButton.removeAllGestureEventListeners(RotateProcessor.class);
+			guardarButton.removeAllGestureEventListeners(ScaleProcessor.class);			
+			this.addChild(guardarButton);
+			////
 			menuShape.addGestureListener(DragProcessor.class, new IGestureEventListener() {
 				public boolean processGestureEvent(MTGestureEvent ge) {
 					DragEvent de = (DragEvent)ge;
@@ -214,8 +235,10 @@ public class MTSceneMenu extends MTRectangle{
 					case MTGestureEvent.GESTURE_STARTED:
 						restoreButton.setVisible(true);
 						closeButton.setVisible(true);
+						guardarButton.setVisible(true);
 						unhighlightButton(closeButton, buttonOpacity);
 						unhighlightButton(restoreButton, buttonOpacity);
+						unhighlightButton(guardarButton, buttonOpacity);
 						break;
 					case MTGestureEvent.GESTURE_UPDATED:
 						//Mouse over effect
@@ -229,10 +252,16 @@ public class MTSceneMenu extends MTRectangle{
 						}else{
 							unhighlightButton(restoreButton, buttonOpacity);
 						}
+						if (guardarButton.containsPointGlobal(de.getTo())){
+							highlightButton(guardarButton);
+						}else{
+							unhighlightButton(guardarButton, buttonOpacity);
+						}
 						break;
 					case MTGestureEvent.GESTURE_ENDED:
 						unhighlightButton(closeButton, buttonOpacity);
 						unhighlightButton(restoreButton, buttonOpacity);
+						unhighlightButton(guardarButton, buttonOpacity);
 						
 						InputCursor cursor = de.getDragCursor();
 						Vector3D restoreButtonIntersection = restoreButton.getIntersectionGlobal(Tools3D.getCameraPickRay(getRenderer(), restoreButton, cursor.getCurrentEvtPosX(), cursor.getCurrentEvtPosY()));
@@ -258,6 +287,7 @@ public class MTSceneMenu extends MTRectangle{
 						
 						restoreButton.setVisible(false);
 						closeButton.setVisible(false);
+						guardarButton.setVisible(false);
 						break;
 					default:
 						break;
