@@ -74,7 +74,9 @@ public class DrawSurfaceScene extends AbstractScene {
 
 	// test
 	private static Persona persona = new Persona("roger", "granda", 1);
-
+	
+	private final MTColor selectedObject = new MTColor(253,205,161);
+	private final MTColor nonselectedObject = new MTColor(255,255,255);
 	//
 
 	// TODO only works as lightweight scene atm because the framebuffer isnt
@@ -497,7 +499,7 @@ public class DrawSurfaceScene extends AbstractScene {
 
 								switch (tipo_objeto) {
 								case ObjetoUML.ENTIDAD:
-									MTRoundRectangle rectangulo = new MTRoundRectangle(objeto
+									final MTRoundRectangle rectangulo = new MTRoundRectangle(objeto
 											.getPosicion().x, objeto
 											.getPosicion().y, 0, objeto
 											.getWidth(),
@@ -505,6 +507,33 @@ public class DrawSurfaceScene extends AbstractScene {
 									rectangulo.setFillColor(new MTColor(255, 255, 255));
 									rectangulo.setStrokeColor(new MTColor(0, 0, 0));
 									rectangulo.setNoStroke(false);
+									rectangulo.addInputListener(new IMTInputEventListener() {
+										public boolean processInputEvent(MTInputEvent inEvt) {
+											if (inEvt instanceof AbstractCursorInputEvt) { //Most input events in MT4j are an instance of AbstractCursorInputEvt (mouse, multi-touch..)
+												AbstractCursorInputEvt cursorInputEvt = (AbstractCursorInputEvt) inEvt;
+												InputCursor cursor = cursorInputEvt.getCursor();
+												IMTComponent3D target = cursorInputEvt.getTargetComponent();
+												switch (cursorInputEvt.getId()) {
+												case AbstractCursorInputEvt.INPUT_STARTED:
+													System.out.println("Input detected on: " + target + " at " + cursor.getCurrentEvtPosX() + "," + cursor.getCurrentEvtPosY());
+													rectangulo.setFillColor(selectedObject);
+													break;
+												case AbstractCursorInputEvt.INPUT_UPDATED:
+													System.out.println("Input updated on: " + target + " at " + cursor.getCurrentEvtPosX() + "," + cursor.getCurrentEvtPosY());			
+													break;
+												case AbstractCursorInputEvt.INPUT_ENDED:
+													rectangulo.setFillColor(nonselectedObject);
+													System.out.println("Input ended on: " + target + " at " + cursor.getCurrentEvtPosX() + "," + cursor.getCurrentEvtPosY());
+													break;
+												default:
+													break;
+												}
+											}else{
+												//handle other input events
+											}
+										return false;
+										}
+									});
 									objeto.setFigura(rectangulo);
 									anadirObjeto(rectangulo);
 									break;
