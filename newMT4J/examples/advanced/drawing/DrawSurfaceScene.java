@@ -9,6 +9,7 @@ import org.mt4j.components.MTCanvas;
 import org.mt4j.components.MTComponent;
 import org.mt4j.components.TransformSpace;
 import org.mt4j.components.interfaces.IMTComponent3D;
+import org.mt4j.components.visibleComponents.font.FontManager;
 import org.mt4j.components.visibleComponents.shapes.AbstractShape;
 import org.mt4j.components.visibleComponents.shapes.MTEllipse;
 import org.mt4j.components.visibleComponents.shapes.MTLine;
@@ -20,6 +21,7 @@ import org.mt4j.input.inputData.InputCursor;
 import org.mt4j.input.inputData.MTInputEvent;
 import org.mt4j.input.inputProcessors.IGestureEventListener;
 import org.mt4j.input.inputProcessors.MTGestureEvent;
+import org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragEvent;
 import org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragProcessor;
 import org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapEvent;
 import org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapProcessor;
@@ -28,16 +30,22 @@ import org.mt4j.sceneManagement.IPreDrawAction;
 import org.mt4j.util.MTColor;
 import org.mt4j.util.math.ToolsMath;
 import org.mt4j.util.math.Vector3D;
+import org.mt4j.util.math.Vertex;
 
 import advanced.umleditor.UMLFacade;
 import advanced.umleditor.UMLRecognizer;
 import advanced.umleditor.UMLCollection;
+import advanced.umleditor.impl.Entidad_Impl;
+import advanced.umleditor.impl.ObjetoUMLGraph;
+import advanced.umleditor.impl.Relacion_Impl;
 import advanced.umleditor.logic.ObjetoUML;
 import advanced.umleditor.logic.Persona;
 import advanced.umleditor.logic.Relacion;
 import processing.core.PApplet;
 
 import org.mt4j.components.visibleComponents.shapes.MTRoundRectangle;
+import org.mt4j.components.visibleComponents.widgets.MTTextArea;
+import org.mt4j.components.visibleComponents.widgets.MTTextField;
 
 ;
 
@@ -71,6 +79,7 @@ public class DrawSurfaceScene extends AbstractScene {
 	private MTColor brushColor;
 
 	private boolean dynamicBrush;
+	
 
 	// test
 	private static Persona persona = new Persona("roger", "granda", 1);
@@ -459,7 +468,7 @@ public class DrawSurfaceScene extends AbstractScene {
 							cursorToLastDrawnPoint.remove(m);
 
 							// int resultado=recognizer.recognize();
-							ObjetoUML objeto=recognizer
+							final ObjetoUML objeto=recognizer
 									.reconocerObjeto();
 							final int tipo_objeto = objeto.getTipo();
 							// if(resultado==UMLCollection.INVALIDO){
@@ -497,26 +506,14 @@ public class DrawSurfaceScene extends AbstractScene {
 
 								switch (tipo_objeto) {
 								case ObjetoUML.ENTIDAD:
-									MTRoundRectangle rectangulo = new MTRoundRectangle(objeto
-											.getPosicion().x, objeto
-											.getPosicion().y, 0, objeto
-											.getWidth(),
-											objeto.getHeigth(), 1, 1, mtApp);									
-									rectangulo.setFillColor(new MTColor(255, 255, 255));
-									rectangulo.setStrokeColor(new MTColor(0, 0, 0));
-									rectangulo.setNoStroke(false);
-									objeto.setFigura(rectangulo);
-									anadirObjeto(rectangulo);
+									ObjetoUMLGraph diagrama= new Entidad_Impl(mtApp, objeto);
+									objeto.setFigura(diagrama);
+									anadirObjeto(diagrama.getFigura());
 									break;
 								case ObjetoUML.RELACION:
-									Vector3D esquina1=((Relacion)objeto).getInicio();
-									Vector3D esquina2=((Relacion)objeto).getFin();
-									MTLine linea = new MTLine(mtApp, esquina1.x,esquina1.y,esquina2.x,esquina2.y);					
-									linea.setFillColor(new MTColor(0, 0, 0));
-									linea.setStrokeColor(new MTColor(0, 0, 0));
-									linea.setNoStroke(false);
+									ObjetoUMLGraph linea= new Relacion_Impl(mtApp, objeto);
 									objeto.setFigura(linea);
-									anadirObjeto(linea);
+									anadirObjeto(linea.getFigura());
 									break;
 								default:
 									break;

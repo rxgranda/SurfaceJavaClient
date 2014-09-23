@@ -9,6 +9,7 @@ import org.mt4j.components.MTComponent;
 import org.mt4j.util.math.Vector3D;
 
 import advanced.umleditor.UMLRecognizer;
+import advanced.umleditor.impl.ObjetoUMLGraph;
 
 public abstract class ObjetoUML {
 	public static final int  INVALIDO=-1;
@@ -16,7 +17,7 @@ public abstract class ObjetoUML {
 	public static final int  RELACION=2;
 	private static Calendar calendar = Calendar.getInstance();	
 	public  static ObjetoUML OBJETO_INVALIDO=new ObjetoInvalido(new Persona("","",-1)) ;	
-	private MTComponent figura;
+	private ObjetoUMLGraph figura;
 
 	private Vector3D centroide;
 	//Esquina superior izquierda
@@ -94,14 +95,16 @@ public abstract class ObjetoUML {
 	}
 
 
-	public MTComponent getFigura() {
+	public ObjetoUMLGraph getFigura() {
 		return figura;
 	}
 
 
-	public void setFigura(MTComponent figura) {
+	public void setFigura(ObjetoUMLGraph figura) {
 		this.figura = figura;
 	}
+
+
 	
 	/*public int getIdPersona() {
 		return idPersona;
