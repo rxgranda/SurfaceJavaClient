@@ -49,19 +49,16 @@ import org.mt4j.components.visibleComponents.widgets.MTTextField;
 
 ;
 
-public class DrawSurfaceScene extends AbstractScene {
-	/*MTRoundRectangle a = null;
-
-	public MTRoundRectangle getA() {
-		return a;
-	}*/
+public class DrawSurfaceScene extends AbstractScene {	
 
 	private MTApplication mtApp;
 
 	private MTRectangle container;
 
+	//Pintar el trazo que se está dibujando
 	private AbstractShape drawShape;
 
+	// Utilizado para borrar el trazo dibujado
 	private AbstractShape drawShape2;
 
 	private float stepDistance;
@@ -85,8 +82,6 @@ public class DrawSurfaceScene extends AbstractScene {
 	private static Persona persona = new Persona("roger", "granda", 1);
 	
 
-	//
-
 	// TODO only works as lightweight scene atm because the framebuffer isnt
 	// cleared each frame
 	// TODO make it work as a heavywight scene
@@ -95,12 +90,9 @@ public class DrawSurfaceScene extends AbstractScene {
 	// TODO get blobwidth from win7 touch events and adjust the brush scale
 	ArrayList<Vector3D> puntos;
 	Vector3D puntoInicio, puntoFin;
-	float centroideX, centroideY, minX = 100000, maxX, minY = 100000, MaxY,
-			numMuestras;
-
+	
 	public void add(Vector3D vec) {
 		puntos.add(vec);
-
 	}
 
 	public synchronized void eliminarPuntos() {
@@ -124,7 +116,6 @@ public class DrawSurfaceScene extends AbstractScene {
 						lastDrawnPoint = new Vector3D(pos);
 						ultimo = new Vector3D(pos);
 						firstPoint = true;
-
 					} else {
 						if (lastDrawnPoint.equalsVector(pos))
 							return;
@@ -310,9 +301,9 @@ public class DrawSurfaceScene extends AbstractScene {
 										// anterior= new Vector3D(pos);//->
 										// esquinaA= new Vector3D(pos);
 										// esquinaB= new Vector3D(pos);
-										centroideX = 0;
-										centroideY = 0;
-										numMuestras = 0;
+										//centroideX = 0;
+										//centroideY = 0;
+										//numMuestras = 0;
 
 										// test
 										firstPoint = true;

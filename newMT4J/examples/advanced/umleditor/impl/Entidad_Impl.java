@@ -132,11 +132,8 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 					return false;
 					}
 				});
-
-
 	}
-	
-	
+		
 	
 
 	@Override

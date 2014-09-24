@@ -3,12 +3,9 @@
 <fullyQualifiedTypeName name="advanced.physics.scenes.Nuevo"/>
 <fullyQualifiedTypeName name="TUIO.TuioPoint"/>
 <fullyQualifiedTypeName name="org.mt4j.input.inputData.ActiveCursorPool"/>
-<fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.widgets.MTTextArea"/>
-<fullyQualifiedTypeName name="org.mt4j.MTApplication"/>
 <fullyQualifiedTypeName name="advanced.physics.physicsShapes.IPhysicsComponent"/>
 <fullyQualifiedTypeName name="org.jbox2d.dynamics.BodyDef"/>
 <fullyQualifiedTypeName name="advanced.physics.scenes.Nuevo.PersonPolygon"/>
-<fullyQualifiedTypeName name="org.mt4j.util.math.Vertex"/>
 <fullyQualifiedTypeName name="org.mt4j.util.MTColor"/>
 <fullyQualifiedTypeName name="advanced.physics.physicsShapes.PhysicsCircle"/>
 <fullyQualifiedTypeName name="org.jbox2d.collision.shapes.CircleShape"/>
@@ -29,7 +26,6 @@
 <fullyQualifiedTypeName name="advanced.umleditor.logic.Entidad"/>
 <fullyQualifiedTypeName name="srl.recognition.paleo.PaleoConfig"/>
 <fullyQualifiedTypeName name="srl.recognition.paleo.PaleoConfig.Option"/>
-<fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.MTEllipse"/>
 <fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.MTRoundRectangle"/>
 <fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.unistrokeProcessor.UnistrokeUtils.Recognizer"/>
 <fullyQualifiedTypeName name="advanced.umleditor.logic.Persona"/>
@@ -44,10 +40,23 @@
 <fullyQualifiedTypeName name="org.mt4j.input.gestureAction.InertiaDragAction"/>
 <fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragProcessor"/>
 <fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.MTRectangle"/>
-<fullyQualifiedTypeName name="org.mt4j.components.MTComponent"/>
 <fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.MTLine"/>
 <fullyQualifiedTypeName name="org.mt4j.util.math.Vector3D"/>
-<fullyQualifiedTypeName name="advanced.umleditor.logic.ObjetoUML"/>
 <fullyQualifiedTypeName name="advanced.umleditor.UMLFacade"/>
 <fullyQualifiedTypeName name="advanced.umleditor.logic.Relacion"/>
+<fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.MTEllipse"/>
+<fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragEvent"/>
+<fullyQualifiedTypeName name="org.mt4j.components.TransformSpace"/>
+<fullyQualifiedTypeName name="org.mt4j.util.math.Vertex"/>
+<fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.widgets.MTTextField"/>
+<fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.font.FontManager"/>
+<fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.widgets.MTTextArea"/>
+<fullyQualifiedTypeName name="org.mt4j.MTApplication"/>
+<fullyQualifiedTypeName name="advanced.umleditor.impl.Entidad_Impl"/>
+<fullyQualifiedTypeName name="advanced.umleditor.impl.Util_Impl"/>
+<fullyQualifiedTypeName name="advanced.umleditor.impl.Relacion_Impl"/>
+<fullyQualifiedTypeName name="org.mt4j.components.MTComponent"/>
+<fullyQualifiedTypeName name="advanced.umleditor.logic.ObjetoUML"/>
+<fullyQualifiedTypeName name="advanced.umleditor.impl.ObjetoUMLGraph"/>
+<fullyQualifiedTypeName name="org.mt4j.input.IMTInputEventListener"/>
 </qualifiedTypeNameHistroy>
