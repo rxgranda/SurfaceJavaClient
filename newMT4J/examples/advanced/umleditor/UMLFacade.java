@@ -58,7 +58,7 @@ public class UMLFacade {
 	public ObjetoUML reconocerObjeto(){
 	
 		int resultado=recognizer.recognize();
-		if(resultado!=ObjetoUML.INVALIDO&&this.numMuestas>0){			
+		if(resultado!=ObjetoUML.INVALIDO&&this.numMuestas>40){			
 			objeto=UMLCollection.anadirObjeto(resultado,persona );
 			
 			//// Calcular centroide,posicion y dimensiones
