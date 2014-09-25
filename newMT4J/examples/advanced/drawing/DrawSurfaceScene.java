@@ -1,9 +1,23 @@
 package advanced.drawing;
 
 import java.awt.Point;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+
+import org.json.simple.JSONObject;
+import org.json.simple.JSONValue;
 import org.mt4j.MTApplication;
 import org.mt4j.components.MTCanvas;
 import org.mt4j.components.MTComponent;
@@ -77,6 +91,10 @@ public class DrawSurfaceScene extends AbstractScene {
 
 	private boolean dynamicBrush;
 	
+	
+	private int paso=-1;
+	
+	private ArrayList<int[]> listaCoordenadasPlayer1;
 
 	// test
 	private static Persona persona = new Persona("roger", "granda", 1);
@@ -237,7 +255,7 @@ public class DrawSurfaceScene extends AbstractScene {
 		this.container = container;
 
 		this.getCanvas().setDepthBufferDisabled(true);
-
+		listaCoordenadasPlayer1 = new ArrayList<int[]>();
 		/*
 		 * this.drawShape = getDefaultBrush(); this.localBrushCenter =
 		 * drawShape.getCenterPointLocal(); this.brushWidthHalf =
@@ -266,7 +284,7 @@ public class DrawSurfaceScene extends AbstractScene {
 					IMTComponent3D comp = m.getTarget();
 
 					System.out.println(comp.toString());
-
+					
 					IMTComponent3D secondresult = (IMTComponent3D) getCanvas()
 							.getComponentAt((int) m.getPosition().x,
 									(int) m.getPosition().y);
@@ -284,6 +302,14 @@ public class DrawSurfaceScene extends AbstractScene {
 											.get(m);
 									Vector3D pos = new Vector3D(posEvt.getX(),
 											posEvt.getY(), 0);
+									
+									if(posEvt.getId()==0)
+										paso++;
+									
+									System.out.println("posEvt: "+posEvt.getId()+"");
+									
+									listaCoordenadasPlayer1.add(new int[]{Math.round(posEvt.getX()),Math.round(posEvt.getY()),paso});// X,Y,IdCursor
+								
 									// Proyecto
 									// System.out.println("ID: " + m.sessionID);
 									// System.out.println("Pos: X:"+posEvt.getX()+"Y:"+
@@ -572,5 +598,113 @@ public class DrawSurfaceScene extends AbstractScene {
 	public void anadirObjeto(MTComponent o){
 		this.container.addChild(o);
 		
+	}
+	
+	// Cuenta cuantos pasos se dibujaron. Cuantas figuras. Para poder visualizarlo por pasos en la app web.
+		public int contarPasos()
+		{
+			int numpasos=1;
+			double pasoActual =  listaCoordenadasPlayer1.get(0)[2];
+			for(int i=0;i<listaCoordenadasPlayer1.size();i++)
+			{
+				if(pasoActual !=  listaCoordenadasPlayer1.get(i)[2])
+				{
+					numpasos++;
+					pasoActual=listaCoordenadasPlayer1.get(i)[2];
+				}
+			}
+			
+			return numpasos;
+			
+		}
+		
+	
+	public boolean guardar(){
+		System.out.println("Guardado");
+		JFrame parentFrame = new JFrame();
+		JFileChooser fileChooser = new JFileChooser();
+		fileChooser.setDialogTitle("Specify a file to save");
+		
+		int userSelection = fileChooser.showSaveDialog(parentFrame);
+		if (userSelection == JFileChooser.APPROVE_OPTION) {
+			File fileToSave = fileChooser.getSelectedFile();
+			System.out.println("Save as file: " + fileToSave.getAbsolutePath());
+			String dir_archivo=fileToSave.getAbsolutePath()+".json";
+		
+		System.out.println("JSON 1 Guardado");
+		JSONObject jsonPlayer1 = new JSONObject();
+		
+		/*jsonPlayer1.put("name","foo");
+		jsonPlayer1.put("num",new Integer(100));
+		jsonPlayer1.put("balance",new Double(1000.21));
+		jsonPlayer1.put("is_vip",new Boolean(true));*/
+		//jsonPlayer1.put("coordenadas",listaCoordenadasPlayer1.get(i)[0]+"/"+listaCoordenadasPlayer1.get(i)[0]);
+		Map obj=new LinkedHashMap();	
+		obj.put("width",mtApp.getWidth());
+		obj.put("height",mtApp.getHeight());
+		Map valorMap;
+		List  listaTotal = new LinkedList();
+		List  listaPuntos = new LinkedList();
+		// no deberia ser estatico.
+		java.util.Date date= new java.util.Date();
+		
+		int numpasos = contarPasos();
+		System.out.println("NumPasos: "+numpasos+"\n");
+		
+		for(int a=0; a<contarPasos();a++)
+		{
+			// Para una Persona
+			valorMap  = new LinkedHashMap();
+			valorMap.put("id",1);
+			valorMap.put("idpersona",1);
+			valorMap.put("forma", "rectangle");
+			valorMap.put("tiempoini", (new Timestamp(date.getTime())).toString() );
+			valorMap.put("tiempofin", (new Timestamp(date.getTime())).toString() );
+			
+			
+			listaPuntos = new LinkedList();
+			for(int i=0;i<listaCoordenadasPlayer1.size();i++)
+			{
+				if(Math.floor(listaCoordenadasPlayer1.get(i)[2]+0.5)==a)
+				{
+					listaPuntos.add(listaCoordenadasPlayer1.get(i)[0]+"-"+listaCoordenadasPlayer1.get(i)[1]);			
+				}
+			}
+			
+			valorMap.put("puntos", listaPuntos);
+	
+			obj.put("paso"+a,valorMap);
+		}
+		//Fin de contruccion de JSON.
+		
+		String jsonText = JSONValue.toJSONString(obj);
+		System.out.print(jsonText);
+		
+		// Escribo el String en archivo .json
+			BufferedWriter writer = null;
+			try {
+						writer = new BufferedWriter( new FileWriter(dir_archivo));
+						writer.write( jsonText);
+						System.out.println("Guardado archivo .json");
+			} catch (IOException e) {
+						// TODO Auto-generated catch block
+				System.out.println("Error");
+						e.printStackTrace();
+			}finally
+			{
+				System.out.println("Error2");
+						try
+					    {
+					        if ( writer != null)
+					        writer.close( );
+					    }
+					    catch ( IOException e)
+					    {
+					    }
+			}
+		
+		
+		}
+		return true;
 	}
 }

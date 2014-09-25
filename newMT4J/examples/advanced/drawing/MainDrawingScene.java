@@ -4,6 +4,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.io.File;
+import java.util.ArrayList;
+
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.filechooser.FileFilter;
 
 import org.mt4j.MTApplication;
 import org.mt4j.components.TransformSpace;
@@ -34,6 +40,7 @@ import org.mt4j.util.MTColor;
 import org.mt4j.util.math.Vector3D;
 import org.mt4j.util.math.Vertex;
 import org.mt4j.util.opengl.GLFBO;
+
 import com.corundumstudio.socketio.AckRequest;
 import com.corundumstudio.socketio.Configuration;
 import com.corundumstudio.socketio.SocketIOClient;
@@ -49,33 +56,30 @@ public class MainDrawingScene extends AbstractScene {
 	private MTEllipse pencilBrush2; // Borrar trazos
 	private DrawSurfaceScene drawingScene;
 	private MTRectangle container;
-
+	private int numUsuarios;
 	private String imagesPath = "advanced" + MTApplication.separator + "drawing" + MTApplication.separator + "data" + MTApplication.separator + "images" + MTApplication.separator;		
 	public static SocketIOServer server;
-
-	public MainDrawingScene(MTApplication mtApplication, String name) {
-		super(mtApplication, name);
-
-		PImage image = mtApplication.loadImage(imagesPath + "login2.png"); 
-		final MTBackgroundImage backgroundImage = new MTBackgroundImage(mtApplication, image, false); 
-		this.getCanvas().addChild(backgroundImage);
-
-		////////////////////////////
-		Configuration config = new Configuration();
-		config.setHostname("localhost");
-		config.setPort(3322);
-
-
-		server = new SocketIOServer(config);
-		/* server.addEventListener("chatevent", ChatObject.class, new DataListener<ChatObject>() {
-            @Override
-            public void onData(SocketIOClient client, ChatObject data, AckRequest ackRequest) {
-                // broadcast messages to all clients
-                server.getBroadcastOperations().sendEvent("chatevent", data);
-            }
-        });
-
-        server.addEventListener("textlabel", TextoLabel.class, new DataListener<TextoLabel>() {
+	
+	
+	class ServerThread extends Thread {
+		public ServerThread(String str) {
+			super(str);
+		}
+		public void run() {
+			////////////////////////////
+			Configuration config = new Configuration();
+			config.setHostname("localhost");
+			config.setPort(3322);
+			server = new SocketIOServer(config);
+			/* server.addEventListener("chatevent", ChatObject.class, new DataListener<ChatObject>() {
+			@Override
+			public void onData(SocketIOClient client, ChatObject data, AckRequest ackRequest) {
+			  // broadcast messages to all clients
+			  server.getBroadcastOperations().sendEvent("chatevent", data);
+			}
+			});
+			
+			server.addEventListener("textlabel", TextoLabel.class, new DataListener<TextoLabel>() {
 			@Override
 			public void onData(SocketIOClient arg0, TextoLabel arg1,
 					AckRequest arg2) throws Exception {
@@ -85,26 +89,30 @@ public class MainDrawingScene extends AbstractScene {
 					MTTextField texto =  (MTTextField)target.getChildByIndex(0);
 					texto.setText(arg1.getMessage());
 			}
-        });*/
-		server.start();
+			});*/
+			server.start();
 
-		//////////////////////////////												
-
+		}
+	}
+	public MainDrawingScene(MTApplication mtApplication, String name) {
+		super(mtApplication, name);				
 		this.pa = mtApplication;
-
 		if (!(MT4jSettings.getInstance().isOpenGlMode() && GLFBO.isSupported(pa))){
 			System.err.println("Drawing example can only be run in OpenGL mode on a gfx card supporting the GL_EXT_framebuffer_object extension!");
 			return;
 		}
-
 		this.registerGlobalInputProcessor(new CursorTracer(pa, this));
-
+		
+		PImage image = mtApplication.loadImage(imagesPath + "login2.png"); 
+		final MTBackgroundImage backgroundImage = new MTBackgroundImage(pa, image, false); 
+		this.getCanvas().addChild(backgroundImage);
+													
 		final MTRectangle login=new MTRectangle(pa.width/2-100,pa.height/2+100,0, 200, 100, pa);
 		login.setFillColor(new MTColor(76, 96, 245));
 		login.setStrokeColor(new MTColor(0,0,0));
 		login.setNoStroke(false);
 		this.getCanvas().addChild(login);
-		
+
 		final MTTextField texto = new MTTextField(pa.width/2-90,pa.height/2+120,200,200,FontManager.getInstance().createFont(pa, "SansSerif", 40), pa);
 		texto.setText("Start App");
 		texto.setFontColor(new MTColor(255,255,255));
@@ -112,6 +120,16 @@ public class MainDrawingScene extends AbstractScene {
 		texto.setNoFill(true);
 		texto.setNoStroke(true);
 		login.addChild(texto);
+		
+		final MTTextField txtUsuarios = new MTTextField(pa.width/2-90,pa.height/2+50,200,200,FontManager.getInstance().createFont(pa, "SansSerif", 20), pa);
+		txtUsuarios.setText("Usuarios Activos: "+ numUsuarios);
+		txtUsuarios.setFontColor(new MTColor(100,100,100));
+		txtUsuarios.setPickable(false);
+		txtUsuarios.setNoFill(true);
+		txtUsuarios.setNoStroke(true);
+		this.getCanvas().addChild(txtUsuarios);
+		
+		
 
 		login.unregisterAllInputProcessors(); //Remove the default drag, rotate and scale gestures first
 		login.registerInputProcessor(new TapProcessor(pa));
@@ -146,6 +164,8 @@ public class MainDrawingScene extends AbstractScene {
 				return false;
 			}
 		});
+		
+		new ServerThread("").start();
 	}
 
 
@@ -164,7 +184,7 @@ public class MainDrawingScene extends AbstractScene {
 
 		//Create texture brush
 		PImage brushImage = getMTApplication().loadImage(imagesPath + "brush1.png");
-		
+
 		//Create pencil brush
 		pencilBrush = new MTEllipse(pa, new Vector3D(brushImage.width/2f,brushImage.height/2f,0), brushImage.width/2f, brushImage.width/2f, 60);
 		pencilBrush.setPickable(false);
@@ -197,10 +217,11 @@ public class MainDrawingScene extends AbstractScene {
 		//Add the scene texture as a child of the background rectangle so the scene texture is drawn in front
 		container.addChild(sceneTexture);
 		frame.addChild(container);
-	}
-	
-	public void onEnter() {
 		
+	}
+
+	public void onEnter() {
+
 	}
 
 	public void onLeave() {	
@@ -209,11 +230,20 @@ public class MainDrawingScene extends AbstractScene {
 
 	@Override
 	public boolean destroy() {
+		server.stop(); System.out.println("OUTTTT");
 		boolean destroyed = super.destroy();
-		//server.stop(); System.out.println("OUTTTT");
+		
 		if (destroyed){
-			drawingScene.destroy(); //Destroy the scene manually since it isnt destroyed in the MTSceneTexture atm!
+			if(drawingScene!=null)
+				drawingScene.destroy(); //Destroy the scene manually since it isnt destroyed in the MTSceneTexture atm!
 		}
 		return destroyed;
+	}
+	
+	
+	
+	public boolean guardar(){
+		this.drawingScene.guardar();
+		return true;
 	}
 }

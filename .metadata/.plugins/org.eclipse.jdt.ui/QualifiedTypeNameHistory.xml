@@ -1,27 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="advanced.physics.scenes.Nuevo"/>
-<fullyQualifiedTypeName name="TUIO.TuioPoint"/>
-<fullyQualifiedTypeName name="org.mt4j.input.inputData.ActiveCursorPool"/>
-<fullyQualifiedTypeName name="advanced.physics.physicsShapes.IPhysicsComponent"/>
-<fullyQualifiedTypeName name="org.jbox2d.dynamics.BodyDef"/>
-<fullyQualifiedTypeName name="advanced.physics.scenes.Nuevo.PersonPolygon"/>
-<fullyQualifiedTypeName name="org.mt4j.util.MTColor"/>
-<fullyQualifiedTypeName name="advanced.physics.physicsShapes.PhysicsCircle"/>
-<fullyQualifiedTypeName name="org.jbox2d.collision.shapes.CircleShape"/>
-<fullyQualifiedTypeName name="org.jbox2d.collision.shapes.PolygonShape"/>
-<fullyQualifiedTypeName name="advanced.physics.physicsShapes.Poligono"/>
-<fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.MTPolygon"/>
-<fullyQualifiedTypeName name="org.mt4j.input.inputData.InputCursor"/>
 <fullyQualifiedTypeName name="srl.core.sketch.Sketch"/>
 <fullyQualifiedTypeName name="srl.core.sketch.Stroke"/>
 <fullyQualifiedTypeName name="srl.core.sketch.Point"/>
 <fullyQualifiedTypeName name="advanced.umleditor.Recognizer"/>
 <fullyQualifiedTypeName name="java.sql.Date"/>
 <fullyQualifiedTypeName name="java.util.Calendar"/>
-<fullyQualifiedTypeName name="java.sql.Timestamp"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="java.util.LinkedList"/>
 <fullyQualifiedTypeName name="java.util.Collection"/>
 <fullyQualifiedTypeName name="advanced.umleditor.logic.Entidad"/>
 <fullyQualifiedTypeName name="srl.recognition.paleo.PaleoConfig"/>
@@ -59,4 +43,21 @@
 <fullyQualifiedTypeName name="advanced.umleditor.logic.ObjetoUML"/>
 <fullyQualifiedTypeName name="advanced.umleditor.impl.ObjetoUMLGraph"/>
 <fullyQualifiedTypeName name="org.mt4j.input.IMTInputEventListener"/>
+<fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.widgets.MTBackgroundImage"/>
+<fullyQualifiedTypeName name="advanced.drawing.MainDrawingScene"/>
+<fullyQualifiedTypeName name="javax.swing.JFrame"/>
+<fullyQualifiedTypeName name="javax.swing.JFileChooser"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="javax.swing.filechooser.FileFilter"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="org.json.simple.JSONObject"/>
+<fullyQualifiedTypeName name="java.util.LinkedHashMap"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.LinkedList"/>
+<fullyQualifiedTypeName name="java.sql.Timestamp"/>
+<fullyQualifiedTypeName name="org.json.simple.JSONValue"/>
+<fullyQualifiedTypeName name="java.io.BufferedWriter"/>
+<fullyQualifiedTypeName name="java.io.FileWriter"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
 </qualifiedTypeNameHistroy>

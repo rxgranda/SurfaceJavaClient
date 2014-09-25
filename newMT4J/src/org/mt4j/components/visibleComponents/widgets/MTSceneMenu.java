@@ -40,6 +40,7 @@ import org.mt4j.util.opengl.GLTexture;
 import org.mt4j.util.opengl.GLTexture.WRAP_MODE;
 import org.mt4j.util.opengl.GLTextureSettings;
 
+import advanced.drawing.MainDrawingScene;
 import processing.core.PApplet;
 import processing.core.PImage;
 
@@ -64,6 +65,15 @@ public class MTSceneMenu extends MTRectangle{
 	/** The scene. */
 	private Iscene scene;
 	
+	public Iscene getScene() {
+		return scene;
+	}
+
+	public void setScene(Iscene scene) {
+		this.scene = scene;
+	}
+
+
 	/** The overlay group. */
 	private MTComponent overlayGroup;
 	
@@ -264,6 +274,15 @@ public class MTSceneMenu extends MTRectangle{
 						unhighlightButton(guardarButton, buttonOpacity);
 						
 						InputCursor cursor = de.getDragCursor();
+						Vector3D guardarBotonIntersection = guardarButton.getIntersectionGlobal(Tools3D.getCameraPickRay(getRenderer(), restoreButton, cursor.getCurrentEvtPosX(), cursor.getCurrentEvtPosY()));
+						if (guardarBotonIntersection != null){
+							if(getScene() instanceof MainDrawingScene ){
+								MainDrawingScene escena=(MainDrawingScene)getScene();
+								escena.guardar();
+							}
+							System.out.println("Holaaaaaaaaaaaaaaaaaaaaaa");
+						}
+						
 						Vector3D restoreButtonIntersection = restoreButton.getIntersectionGlobal(Tools3D.getCameraPickRay(getRenderer(), restoreButton, cursor.getCurrentEvtPosX(), cursor.getCurrentEvtPosY()));
 						if (restoreButtonIntersection != null){
 							logger.debug("--> RESTORE!");

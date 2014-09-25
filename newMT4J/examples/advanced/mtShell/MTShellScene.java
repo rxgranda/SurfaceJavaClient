@@ -242,9 +242,9 @@ public class MTShellScene extends AbstractScene {
 					return new MainDrawingScene(app, "Diagramas Entidad-Relación");
 				}
 				public String getTitle() {
-					return "ER-Diagram";
+					return "Entidad-Relacion";
 				}
-			}, app.loadImage(this.getPathToIcons() + "drawing_s.png"));
+			}, app.loadImage(this.getPathToIcons() + "er3.png"));
 		}
 		
 		/*this.addScene(new ICreateScene() {
