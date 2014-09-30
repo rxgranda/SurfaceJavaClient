@@ -29,8 +29,10 @@ public class UMLRecognizer {
 		stroke = new Stroke();	
 	}
 	public int  recognize(){
-		IRecognitionResult result = recognizer.recognize(stroke);	
 		if(stroke !=null){
+			if(stroke.getLength()>1){
+		IRecognitionResult result = recognizer.recognize(stroke);	
+		
 	    //if(result.getBestShape().label.equalsLowerCase("line"))
 		if(result.getBestShape() != null&&stroke.getPoints().size()>40){
 			System.out.println(result.getBestShape().getInterpretation().label);
@@ -50,6 +52,7 @@ public class UMLRecognizer {
 				return ObjetoUML.DELETE_GESTURE;
 			}
 		}
+			}
 		}
 		stroke=new Stroke();
 		return ObjetoUML.INVALIDO;
