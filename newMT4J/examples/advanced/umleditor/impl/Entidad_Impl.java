@@ -19,6 +19,8 @@ import org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragProc
 import org.mt4j.util.MTColor;
 import org.mt4j.util.math.Vector3D;
 
+import advanced.drawing.DrawSurfaceScene;
+import advanced.umleditor.UMLFacade;
 import advanced.umleditor.logic.ObjetoUML;
 import processing.core.PApplet;
 
@@ -29,7 +31,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 	private MTTextField headerField;
 	private MTTextArea  bodyField;
 
-	public Entidad_Impl(MTApplication mtApp, final ObjetoUML objeto) {
+	public Entidad_Impl(MTApplication mtApp,final MTComponent container, final UMLFacade recognizer,final ObjetoUML objeto) {
 		
 		super(mtApp);
 		rectangulo = new MTRoundRectangle(objeto
@@ -50,7 +52,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 		header.setStrokeColor(new MTColor(0, 0, 0));
 		header.setNoStroke(false);
 		
-		header.setPickable(false);
+		//header.setPickable(false);
 		header.removeAllGestureEventListeners();
 		
 		headerField = new MTTextField(objeto.getPosicion().x, objeto.getPosicion().y,objeto.getWidth(),(int)(objeto.getHeigth()*0.25),FontManager.getInstance().createFont(mtApp, "SansSerif", 18), mtApp);
@@ -71,7 +73,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 		body.setStrokeColor(new MTColor(0, 0, 0));
 		body.setNoStroke(false);
 		
-		body.setPickable(false);									
+		//body.setPickable(false);									
 		body.removeAllGestureEventListeners();
 		
 		bodyField = new MTTextArea (objeto.getPosicion().x, objeto.getPosicion().y+(int)(objeto.getHeigth()*0.25),objeto.getWidth(),(int)(objeto.getHeigth()*0.75),FontManager.getInstance().createFont(mtApp, "SansSerif", 18), mtApp);
@@ -82,30 +84,55 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 		bodyField.setNoStroke(true);		
 		body.addChild(bodyField);
 		
-		final MTEllipse e=new MTEllipse(mtApp, new Vector3D(objeto
+		
+		
+		//Agregar boton resize
+		final MTEllipse botonResize=new MTEllipse(mtApp, new Vector3D(objeto
 				.getPosicion().x+objeto.getWidth(), objeto
 				.getPosicion().y+objeto.getHeigth()), 5, 5);
-		e.setFillColor(ObjetoUMLGraph.azul);
-		e.removeAllGestureEventListeners();
-		e.unregisterAllInputProcessors();
-		e.registerInputProcessor(new DragProcessor(mtApp));
-		e.addGestureListener(DragProcessor.class, new IGestureEventListener() {
+		botonResize.setFillColor(ObjetoUMLGraph.azul);
+		botonResize.removeAllGestureEventListeners();
+		botonResize.unregisterAllInputProcessors();
+		botonResize.registerInputProcessor(new DragProcessor(mtApp));
+		botonResize.addGestureListener(DragProcessor.class, new IGestureEventListener() {
 			public boolean processGestureEvent(MTGestureEvent ge) {
 				DragEvent de = (DragEvent)ge;
 				objeto.setWidth(objeto.getWidth()+de.getTranslationVect().x);
 				objeto.setHeigth(objeto.getHeigth()+de.getTranslationVect().y);
 				rectangulo.setSizeXYGlobal(objeto.getWidth(),objeto.getHeigth());		
-			e.setSizeXYGlobal(10, 10);									
+			botonResize.setSizeXYGlobal(10, 10);									
+				return false;
+			}
+		});
+		///////////
+		/*final MTEllipse botonBorrar=new MTEllipse(mtApp, new Vector3D(objeto
+				.getPosicion().x, objeto
+				.getPosicion().y+objeto.getHeigth()), 5, 5);
+		botonBorrar.setFillColor(ObjetoUMLGraph.rojo);
+		botonBorrar.removeAllGestureEventListeners();
+		botonBorrar.unregisterAllInputProcessors();
+		botonBorrar.registerInputProcessor(new DragProcessor(mtApp));
+		botonBorrar.addGestureListener(DragProcessor.class, new IGestureEventListener() {
+			public boolean processGestureEvent(MTGestureEvent ge) {
+				DragEvent de = (DragEvent)ge;
+				
+				container.removeChild((MTComponent)rectangulo);
+				System.out.println("Remover: "+rectangulo);
 				return false;
 			}
 		});
 		
-		rectangulo.addChild(e);
+		
+		
+		
+		rectangulo.addChild(botonBorrar);*/
+		rectangulo.addChild(botonResize);							
 		rectangulo.addChild(header);
 		rectangulo.addChild(body);	
 		
-			
-		rectangulo.addInputListener(new IMTInputEventListener() {
+		rectangulo.removeAllGestureEventListeners();
+		rectangulo.unregisterAllInputProcessors();
+		/*rectangulo.addInputListener(new IMTInputEventListener() {
 					public boolean processInputEvent(MTInputEvent inEvt) {
 						if (inEvt instanceof AbstractCursorInputEvt) { //Most input events in MT4j are an instance of AbstractCursorInputEvt (mouse, multi-touch..)
 							AbstractCursorInputEvt cursorInputEvt = (AbstractCursorInputEvt) inEvt;
@@ -131,7 +158,101 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 						}
 					return false;
 					}
-				});
+				});*/
+		
+		/*header.addInputListener(new IMTInputEventListener() {
+			public boolean processInputEvent(MTInputEvent inEvt) {
+				if (inEvt instanceof AbstractCursorInputEvt) { //Most input events in MT4j are an instance of AbstractCursorInputEvt (mouse, multi-touch..)
+					AbstractCursorInputEvt cursorInputEvt = (AbstractCursorInputEvt) inEvt;
+					InputCursor cursor = cursorInputEvt.getCursor();
+					IMTComponent3D target = cursorInputEvt.getTargetComponent();
+					
+					System.out.println(target);
+					//objeto.setPosicion(objeto.getPosicion().addLocal(((AbstractCursorInputEvt) inEvt).getPosition()));
+					//rectangulo.setPositionGlobal(objeto.getPosicion());
+				
+				
+				}else{
+					//handle other input events
+				}
+			return false;
+			}
+		});
+		header.sendToFront();*/
+		
+		header.addGestureListener(DragProcessor.class, new IGestureEventListener() {
+			public boolean processGestureEvent(MTGestureEvent ge) {
+				DragEvent de = (DragEvent)ge;
+				System.out.println("Gesture"+de.getTargetComponent());
+					objeto.setPosicion(objeto.getPosicion().addLocal(de.getTranslationVect()));
+					rectangulo.setPositionGlobal(objeto.getPosicion());
+				return false;
+			}
+		});
+		
+		
+		/*body.addGestureListener(DragProcessor.class, new IGestureEventListener() {
+			public boolean processGestureEvent(MTGestureEvent ge) {
+				DragEvent de = (DragEvent)ge;
+				System.out.println("Gesture"+de.getTargetComponent());
+				IMTComponent3D target = de.getTargetComponent();
+				switch (de.getId()) {
+				case AbstractCursorInputEvt.INPUT_STARTED:
+					objeto.anadirPunto(de.getFrom().x, de.getFrom().x);
+					//objeto.setPosicion(objeto.getPosicion().addLocal(de.getTranslationVect()).addLocal(new Vector3D(objeto.getWidth()/2,objeto.getHeigth()/2)));
+					
+					//rectangulo.setFillColor(selectedObject);
+					break;
+				case AbstractCursorInputEvt.INPUT_UPDATED:
+						//	System.out.println("Input updated on: " + target + " at " + cursor.getCurrentEvtPosX() + "," + cursor.getCurrentEvtPosY());			
+					break;
+				case AbstractCursorInputEvt.INPUT_ENDED:
+						//System.out.println("Input ended on: " + target + " at " + cursor.getCurrentEvtPosX() + "," + cursor.getCurrentEvtPosY());
+					break;
+				default:
+					break;
+				}
+												
+				return false;
+			}
+		});*/
+		
+		
+		body.addInputListener(new IMTInputEventListener() {
+			public boolean processInputEvent(MTInputEvent inEvt) {
+				if (inEvt instanceof AbstractCursorInputEvt) { //Most input events in MT4j are an instance of AbstractCursorInputEvt (mouse, multi-touch..)
+					AbstractCursorInputEvt cursorInputEvt = (AbstractCursorInputEvt) inEvt;
+					InputCursor cursor = cursorInputEvt.getCursor();
+					IMTComponent3D target = cursorInputEvt.getTargetComponent();
+					
+					switch (cursorInputEvt.getId()) {
+					case AbstractCursorInputEvt.INPUT_STARTED:
+						recognizer.anadirPunto(cursor.getCurrentEvtPosX(), cursor.getCurrentEvtPosY());
+						break;
+					case AbstractCursorInputEvt.INPUT_UPDATED:
+						recognizer.anadirPunto(cursor.getCurrentEvtPosX(), cursor.getCurrentEvtPosY());
+						break;
+					case AbstractCursorInputEvt.INPUT_ENDED:
+						
+						System.out.println("Reconocer:");
+						ObjetoUML obj=recognizer.reconocerObjeto();
+						if (obj ==ObjetoUML.DELETE_OBJECT_GESTURE)
+							container.removeChild(rectangulo);
+						break;
+					default:
+						break;
+					}
+				
+				}else{
+					//handle other input events
+				}
+			return false;
+			}
+		});
+		//corregir posicion inicial
+		objeto.setPosicion(rectangulo.getCenterPointGlobal());
+		
+		
 	}
 		
 	

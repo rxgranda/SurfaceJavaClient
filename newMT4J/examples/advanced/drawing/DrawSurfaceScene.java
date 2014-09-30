@@ -248,7 +248,7 @@ public class DrawSurfaceScene extends AbstractScene {
 	}
 
 	public DrawSurfaceScene(MTApplication mtApplication, String name,
-			MTRectangle container) {
+			final MTRectangle container) {
 
 		super(mtApplication, name);
 		this.mtApp = mtApplication;
@@ -496,7 +496,7 @@ public class DrawSurfaceScene extends AbstractScene {
 							// eliminarPuntos();
 							// }
 							System.out.println("Termino Input");
-							if (recognizer.getObjeto() != ObjetoUML.OBJETO_INVALIDO) {
+							if (objeto != ObjetoUML.OBJETO_INVALIDO) {
 
 								// setBrushColor2(new MTColor(255,0,0));
 
@@ -525,7 +525,7 @@ public class DrawSurfaceScene extends AbstractScene {
 								switch (tipo_objeto) {
 								case ObjetoUML.ENTIDAD:
 
-									ObjetoUMLGraph diagrama= new Entidad_Impl(mtApp, objeto);
+									ObjetoUMLGraph diagrama= new Entidad_Impl(mtApp,container, recognizer,objeto);
 									objeto.setFigura(diagrama);
 									anadirObjeto(diagrama.getFigura());
 									break;

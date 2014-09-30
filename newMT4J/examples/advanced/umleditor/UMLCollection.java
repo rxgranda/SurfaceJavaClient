@@ -27,6 +27,8 @@ public class UMLCollection {
 		case ObjetoUML.RELACION:	
 			o= new Relacion(p);
 			break;
+		case ObjetoUML.DELETE_GESTURE:
+			o= ObjetoUML.DELETE_OBJECT_GESTURE;
 		default:			
 			break;
 		}

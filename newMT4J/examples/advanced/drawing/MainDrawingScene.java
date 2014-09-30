@@ -165,7 +165,7 @@ public class MainDrawingScene extends AbstractScene {
 			}
 		});
 		
-		new ServerThread("").start();
+		///new ServerThread("").start();  //Habilitar SoketIOServer
 	}
 
 

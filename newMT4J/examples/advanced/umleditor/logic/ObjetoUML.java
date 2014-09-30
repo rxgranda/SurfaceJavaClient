@@ -13,10 +13,12 @@ import advanced.umleditor.impl.ObjetoUMLGraph;
 
 public abstract class ObjetoUML {
 	public static final int  INVALIDO=-1;
+	public static final int  DELETE_GESTURE=-2;
 	public static final int  ENTIDAD=1;
 	public static final int  RELACION=2;
 	private static Calendar calendar = Calendar.getInstance();	
-	public  static ObjetoUML OBJETO_INVALIDO=new ObjetoInvalido(new Persona("","",-1)) ;	
+	public  static ObjetoUML OBJETO_INVALIDO=new ObjetoInvalido(new Persona("","",-1)) ;
+	public static ObjetoUML DELETE_OBJECT_GESTURE= new DeleteObject(new Persona("","",-1));
 	private ObjetoUMLGraph figura;
 
 	private Vector3D centroide;
@@ -24,6 +26,7 @@ public abstract class ObjetoUML {
 	private Vector3D posicion;
 	private float width,heigth;
 	private int tipo;
+	private boolean borrado=true;
 	
 	private Persona persona;
 	private Timestamp tiempoInicio;
@@ -105,6 +108,19 @@ public abstract class ObjetoUML {
 	}
 
 
+	public boolean isBorrado() {
+		return borrado;
+	}
+
+
+	public void setBorrado(boolean borrado) {
+		this.borrado = borrado;
+	}
+
+
+	
+
+
 	
 	/*public int getIdPersona() {
 		return idPersona;
@@ -123,4 +139,12 @@ final class ObjetoInvalido extends ObjetoUML{
 		// TODO Auto-generated constructor stub
 	}
 	
+}
+
+
+final class DeleteObject extends ObjetoUML{
+	public DeleteObject(Persona p) {
+		super(p);
+		// TODO Auto-generated constructor stub
+	}
 }

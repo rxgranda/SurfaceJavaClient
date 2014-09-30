@@ -72,6 +72,8 @@ public class UMLFacade {
 			
 			if (objeto.getTipo()==ObjetoUML.RELACION)
 				((Relacion)objeto).inicializarDimensiones(primerX, primerY, ultimoX, ultimoY);
+			
+						
 			//// Calcular centroide,posicion y dimensiones
 			reiniciar();
 			return objeto;

@@ -1,5 +1,7 @@
 package advanced.umleditor;
 
+import java.util.Arrays;
+
 import advanced.umleditor.logic.ObjetoUML;
 import srl.core.sketch.Point;
 import srl.core.sketch.Stroke;
@@ -14,7 +16,7 @@ public class UMLRecognizer {
 	
 	public UMLRecognizer(){		
 		PaleoConfig config = new PaleoConfig();
-		config = new PaleoConfig(PaleoConfig.Option.Line,PaleoConfig.Option.Polyline, PaleoConfig.Option.Circle,PaleoConfig.Option.Arrow, PaleoConfig.Option.Rectangle);		
+		config = new PaleoConfig(PaleoConfig.Option.Line,PaleoConfig.Option.Polyline, PaleoConfig.Option.Circle,PaleoConfig.Option.Wave, PaleoConfig.Option.Rectangle);		
 		recognizer = new PaleoSketchRecognizer(config);
 		stroke = new Stroke();	    		
 	}
@@ -28,14 +30,26 @@ public class UMLRecognizer {
 	}
 	public int  recognize(){
 		IRecognitionResult result = recognizer.recognize(stroke);	
+		if(stroke !=null){
 	    //if(result.getBestShape().label.equalsLowerCase("line"))
-		if(result.getBestShape() != null){
+		if(result.getBestShape() != null&&stroke.getPoints().size()>40){
 			System.out.println(result.getBestShape().getInterpretation().label);
 			String shapeLabel=result.getBestShape().getInterpretation().label;						
 			if(shapeLabel.equals("Rectangle"))					
 				return ObjetoUML.ENTIDAD;
 			else if(shapeLabel.equals("Line"))	
 				return ObjetoUML.RELACION;
+			else if(shapeLabel.contains("Polyline")){
+				String str = new String(shapeLabel);      
+				str = str.replaceAll("[^0-9]+", " ");
+				//Arrays.asList(str.trim().split(" "));
+				if (Integer.parseInt(str.trim().split(" ")[0])>4) // Si es un polyline mayor a 4 para evitar el borrado involuntario					 
+					return ObjetoUML.DELETE_GESTURE;
+				return ObjetoUML.INVALIDO;
+			}else if((shapeLabel.contains("Wave"))){
+				return ObjetoUML.DELETE_GESTURE;
+			}
+		}
 		}
 		stroke=new Stroke();
 		return ObjetoUML.INVALIDO;
