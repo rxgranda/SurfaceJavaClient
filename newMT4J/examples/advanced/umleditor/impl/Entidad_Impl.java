@@ -1,6 +1,9 @@
 package advanced.umleditor.impl;
 
+import java.util.LinkedList;
+
 import org.mt4j.MTApplication;
+import org.mt4j.components.MTCanvas;
 import org.mt4j.components.MTComponent;
 import org.mt4j.components.interfaces.IMTComponent3D;
 import org.mt4j.components.visibleComponents.font.FontManager;
@@ -22,16 +25,19 @@ import org.mt4j.util.math.Vector3D;
 import advanced.drawing.DrawSurfaceScene;
 import advanced.umleditor.UMLFacade;
 import advanced.umleditor.logic.ObjetoUML;
+import advanced.umleditor.logic.Relacion;
 import processing.core.PApplet;
 
 public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 	
 	
 	final MTRoundRectangle rectangulo;
+	final MTRoundRectangle halo;
 	private MTTextField headerField;
 	private MTTextArea  bodyField;
+	
 
-	public Entidad_Impl(MTApplication mtApp,final MTComponent container, final UMLFacade recognizer,final ObjetoUML objeto) {
+	public Entidad_Impl(final MTApplication mtApp, final MTCanvas canvas, final UMLFacade recognizer,final ObjetoUML objeto) {
 		
 		super(mtApp);
 		rectangulo = new MTRoundRectangle(objeto
@@ -42,6 +48,61 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 		rectangulo.setFillColor(new MTColor(255,255,255));
 		rectangulo.setStrokeColor(new MTColor(0, 0, 0));
 		rectangulo.setNoStroke(false);
+		
+		
+		halo=new MTRoundRectangle(objeto
+				.getPosicion().x-ObjetoUMLGraph.haloWidth/2, objeto
+				.getPosicion().y-ObjetoUMLGraph.haloWidth/2, -1, objeto
+				.getWidth()+ObjetoUMLGraph.haloWidth,
+				objeto.getHeigth()+ObjetoUMLGraph.haloWidth, 1, 1, mtApp);									
+		//halo.setNoFill(true);
+		halo.setFillColor(new MTColor(255,255,255,0));
+		halo.removeAllGestureEventListeners();
+		halo.setUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD, this);
+		//halo.setPickable(false);
+		//halo.setStrokeColor(new MTColor(0, 0, 0));
+		halo.setNoStroke(true);
+		halo.addInputListener(new IMTInputEventListener() {
+			public boolean processInputEvent(MTInputEvent inEvt) {
+				if (inEvt instanceof AbstractCursorInputEvt) { //Most input events in MT4j are an instance of AbstractCursorInputEvt (mouse, multi-touch..)
+					AbstractCursorInputEvt cursorInputEvt = (AbstractCursorInputEvt) inEvt;
+					InputCursor cursor = cursorInputEvt.getCursor();
+					IMTComponent3D target = cursorInputEvt.getTargetComponent();
+					
+					switch (cursorInputEvt.getId()) {
+					case AbstractCursorInputEvt.INPUT_STARTED:
+						//System.out.println("Input detected on: " + target + " at " + cursor.getCurrentEvtPosX() + "," + cursor.getCurrentEvtPosY());
+						rectangulo.setFillColor(selectedObject);
+						break;
+					case AbstractCursorInputEvt.INPUT_UPDATED:
+						//	System.out.println("Holaaa Input updated on: " + target + " at " + cursor.getCurrentEvtPosX() + "," + cursor.getCurrentEvtPosY());			
+						break;
+					case AbstractCursorInputEvt.INPUT_ENDED:
+						rectangulo.setFillColor(nonselectedObject);
+						
+						final IMTComponent3D destino=canvas.getComponentAt((int)cursor.getCurrentEvtPosX(), (int)cursor.getCurrentEvtPosY());
+						//System.out.println("Inicio Input updated on: " + target + " at " + cursor.getCurrentEvtPosX() + "," + cursor.getCurrentEvtPosY());			
+
+						//System.out.println("Final"+destino);
+						//MTRoundRectangle destino2=(MTRoundRectangle)destino;
+						//halo.setNoFill(false);
+						//halo.setFillColor(new MTColor(255,0,0));
+						//destino2.setNoFill(false);
+						//destino2.setFillColor(new MTColor(255,0,0));
+						break;
+					default:
+						break;
+					}
+				
+				}else{
+					//handle other input events
+				}
+			return false;
+			}
+		});
+		
+		canvas.addChild(halo);
+		
 		
 		final MTRoundRectangle header = new MTRoundRectangle(objeto
 				.getPosicion().x, objeto
@@ -89,7 +150,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 		//Agregar boton resize
 		final MTEllipse botonResize=new MTEllipse(mtApp, new Vector3D(objeto
 				.getPosicion().x+objeto.getWidth(), objeto
-				.getPosicion().y+objeto.getHeigth()), 5, 5);
+				.getPosicion().y+objeto.getHeigth()), 10, 10);
 		botonResize.setFillColor(ObjetoUMLGraph.azul);
 		botonResize.removeAllGestureEventListeners();
 		botonResize.unregisterAllInputProcessors();
@@ -99,8 +160,9 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 				DragEvent de = (DragEvent)ge;
 				objeto.setWidth(objeto.getWidth()+de.getTranslationVect().x);
 				objeto.setHeigth(objeto.getHeigth()+de.getTranslationVect().y);
-				rectangulo.setSizeXYGlobal(objeto.getWidth(),objeto.getHeigth());		
-			botonResize.setSizeXYGlobal(10, 10);									
+				rectangulo.setSizeXYGlobal(objeto.getWidth(),objeto.getHeigth());	
+				halo.setSizeXYGlobal(objeto.getWidth()+ObjetoUMLGraph.haloWidth,objeto.getHeigth()+ObjetoUMLGraph.haloWidth);
+			botonResize.setSizeXYGlobal(18, 18);									
 				return false;
 			}
 		});
@@ -186,6 +248,47 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 				System.out.println("Gesture"+de.getTargetComponent());
 					objeto.setPosicion(objeto.getPosicion().addLocal(de.getTranslationVect()));
 					rectangulo.setPositionGlobal(objeto.getPosicion());
+					halo.setPositionGlobal(new Vector3D(objeto.getPosicion().x,objeto.getPosicion().y));
+					
+					LinkedList listaInicio=obtenerDatos(RELACIONES_INICIO_KEYWORD);
+					if(listaInicio!=null){
+					for(Object o:listaInicio){
+						if(o instanceof ObjetoUMLGraph){
+							//((Relacion)objeto)
+							Relacion objeto_relacion=(Relacion) ((Relacion_Impl)o).getObjetoUML();
+							objeto_relacion.setInicio(objeto_relacion.getInicio().addLocal(de.getTranslationVect()));
+							((Relacion_Impl)o).actualizarRelacion();
+						}
+						
+					}
+					}
+					
+					LinkedList listaFin=obtenerDatos(RELACIONES_FIN_KEYWORD);
+					if(listaFin!=null){
+					for(Object o:listaFin){
+						if(o instanceof ObjetoUMLGraph){
+							//((Relacion)objeto)
+							Relacion objeto_relacion=(Relacion) ((Relacion_Impl)o).getObjetoUML();
+							objeto_relacion.setFin(objeto_relacion.getFin().addLocal(de.getTranslationVect()));
+							((Relacion_Impl)o).actualizarRelacion();
+						}
+						
+					}
+					}
+					
+					
+					/*switch (de.getId()) {
+					case AbstractCursorInputEvt.INPUT_STARTED:
+						canvas.removeChild(halo);
+						break;
+					case AbstractCursorInputEvt.INPUT_UPDATED:
+						break;
+					case AbstractCursorInputEvt.INPUT_ENDED:
+						canvas.addChild(canvas);
+						break;
+					default:
+						break;
+					}*/
 				return false;
 			}
 		});
@@ -237,7 +340,9 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 						System.out.println("Reconocer:");
 						ObjetoUML obj=recognizer.reconocerObjeto();
 						if (obj ==ObjetoUML.DELETE_OBJECT_GESTURE)
-							container.removeChild(rectangulo);
+							//container.removeChild(rectangulo);
+							rectangulo.removeFromParent();
+							halo.removeFromParent();
 						break;
 					default:
 						break;
@@ -251,7 +356,6 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 		});
 		//corregir posicion inicial
 		objeto.setPosicion(rectangulo.getCenterPointGlobal());
-		
 		
 	}
 		
@@ -292,5 +396,52 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 	public String getAtributo(String texto) {
 		// TODO Auto-generated method stub
 		return bodyField.getText();
+	}
+
+
+
+	@Override
+	public MTComponent getHalo() {
+		// TODO Auto-generated method stub
+		return halo;
+	}
+
+
+
+	@Override
+	public void guardarDatos(String keyword, Object datos) {
+		
+		LinkedList listaDatos=(LinkedList<Object>) halo.getUserData(keyword);
+		if(listaDatos==null){
+			listaDatos= new LinkedList<Object>();
+			halo.setUserData(keyword, listaDatos);
+		}
+		listaDatos.add(datos);
+		
+	}
+
+
+
+	@Override
+	public LinkedList obtenerDatos(String keyword) {
+		
+		LinkedList listaDatos=(LinkedList) halo.getUserData(keyword);
+		return listaDatos;
+	}
+
+
+
+	@Override
+	public ObjetoUML getObjetoUML() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+	@Override
+	public void setObjetoUML(ObjetoUML objeto) {
+		// TODO Auto-generated method stub
+		
 	}
 }

@@ -1,5 +1,7 @@
 package advanced.umleditor.impl;
 
+import java.util.LinkedList;
+
 import org.mt4j.MTApplication;
 import org.mt4j.components.MTComponent;
 import org.mt4j.components.visibleComponents.shapes.MTEllipse;
@@ -17,9 +19,13 @@ import advanced.umleditor.logic.Relacion;
 import processing.core.PApplet;
 
 public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
+	
 
 	private final MTLine linea ;
-	public Relacion_Impl(MTApplication mtApp, final ObjetoUML objeto) {
+	private final ObjetoUML objeto;
+	final MTEllipse ini=null;
+	final MTEllipse fin=null;
+	public Relacion_Impl(MTApplication mtApp, final ObjetoUML objeto, ObjetoUMLGraph objeto1,ObjetoUMLGraph objeto2) {
 		super(mtApp);
 		final Vector3D esquina1=((Relacion)objeto).getInicio();
 		final Vector3D esquina2=((Relacion)objeto).getFin();
@@ -27,12 +33,13 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		linea.setFillColor(new MTColor(0, 0, 0));
 		linea.setStrokeColor(new MTColor(0, 0, 0));
 		linea.setNoStroke(false);
+		this.objeto=objeto;
 		
 		// Circulos al inicio y fin de la linea
-		final MTEllipse ini=new MTEllipse(mtApp, esquina1, 5, 5);
+	/*	ini=new MTEllipse(mtApp, esquina1, 5, 5);
 		ini.setFillColor(ObjetoUMLGraph.azul);
 		
-		final MTEllipse fin=new MTEllipse(mtApp, esquina2, 5, 5);
+		fin=new MTEllipse(mtApp, esquina2, 5, 5);
 		fin.setFillColor(ObjetoUMLGraph.azul);
 		
 		//ini.removeAllGestureEventListeners();
@@ -74,7 +81,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		
 		
 		linea.addChild(ini);
-		linea.addChild(fin);
+		linea.addChild(fin);*/
 
 		// TODO Auto-generated constructor stub
 	}
@@ -103,7 +110,43 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	@Override
+	public MTComponent getHalo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public void guardarDatos(String keyword, Object datos) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public LinkedList obtenerDatos(String keyword) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public void actualizarRelacion(){
+		Vertex[] a= new Vertex[2];		
+		a[1]= new Vertex(((Relacion)objeto).getFin());
+		a[0]= new Vertex(((Relacion)objeto).getInicio());
+		linea.setVertices(a);	
+		final Vector3D esquina1=((Relacion)objeto).getInicio();
+		final Vector3D esquina2=((Relacion)objeto).getFin();
+		
+		//ini.setPositionGlobal(esquina1);
+		//fin.setPositionGlobal(esquina2);
+	}
+	@Override
+	public ObjetoUML getObjetoUML() {
+		// TODO Auto-generated method stub
+		return objeto;
+	}
+	@Override
+	public void setObjetoUML(ObjetoUML objeto) {
+		// TODO Auto-generated method stub
+		//this.objeto=
+		
+	}
 	
 
 }

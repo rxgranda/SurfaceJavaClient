@@ -27,6 +27,7 @@ import org.mt4j.components.visibleComponents.font.FontManager;
 import org.mt4j.components.visibleComponents.shapes.AbstractShape;
 import org.mt4j.components.visibleComponents.shapes.MTEllipse;
 import org.mt4j.components.visibleComponents.shapes.MTLine;
+import org.mt4j.components.visibleComponents.shapes.MTPolygon;
 import org.mt4j.components.visibleComponents.shapes.MTRectangle;
 import org.mt4j.input.IMTInputEventListener;
 import org.mt4j.input.gestureAction.InertiaDragAction;
@@ -42,6 +43,7 @@ import org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapProces
 import org.mt4j.sceneManagement.AbstractScene;
 import org.mt4j.sceneManagement.IPreDrawAction;
 import org.mt4j.util.MTColor;
+import org.mt4j.util.math.Tools3D;
 import org.mt4j.util.math.ToolsMath;
 import org.mt4j.util.math.Vector3D;
 import org.mt4j.util.math.Vertex;
@@ -281,18 +283,73 @@ public class DrawSurfaceScene extends AbstractScene {
 				if (inEvt instanceof AbstractCursorInputEvt) {
 					final AbstractCursorInputEvt posEvt = (AbstractCursorInputEvt) inEvt;
 					final InputCursor m = posEvt.getCursor();
-					IMTComponent3D comp = m.getTarget();
+					IMTComponent3D componente = m.getTarget();
 
-					System.out.println(comp.toString());
+					System.out.println(componente.toString());
 					
-					IMTComponent3D secondresult = (IMTComponent3D) getCanvas()
-							.getComponentAt((int) m.getPosition().x,
-									(int) m.getPosition().y);
-					System.out.println("SECOND: " + secondresult);
+					
+					IMTComponent3D currentComponent = (IMTComponent3D) getCanvas().getComponentAt((int) m.getPosition().x,(int) m.getPosition().y);
+					//Object entidad = null,entidad2=null;
+					switch (((AbstractCursorInputEvt) inEvt).getId()) {
+					case AbstractCursorInputEvt.INPUT_STARTED:
+						Object entidad=((MTComponent)componente).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
+						if (entidad instanceof ObjetoUMLGraph){
+							((MTPolygon)((ObjetoUMLGraph)entidad).getHalo()).setFillColor(ObjetoUMLGraph.haloSelected);
+							//System.out.println("Pintandoooooo");
+						}
+						//System.out.println("Input detected on: " + target + " at " + cursor.getCurrentEvtPosX() + "," + cursor.getCurrentEvtPosY());
+						break;
+					case AbstractCursorInputEvt.INPUT_UPDATED:
+						if(componente!=currentComponent){
+							 Object entidad2=((MTComponent)currentComponent).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
+							if (entidad2 instanceof ObjetoUMLGraph){
+								((MTPolygon)((ObjetoUMLGraph)entidad2).getHalo()).setFillColor(ObjetoUMLGraph.haloSelected);
+								//System.out.println("Pintandoooooo");
+								LinkedList listaVisitados=(LinkedList) ((MTComponent)componente).getUserData(ObjetoUMLGraph.COMPONENTES_VISITADOS_KEYWORD);
+								if(listaVisitados==null){
+									listaVisitados=new LinkedList<MTComponent>();
+									((MTComponent)componente).setUserData(ObjetoUMLGraph.COMPONENTES_VISITADOS_KEYWORD,listaVisitados);
+									
+								}
+								listaVisitados.add(entidad2);
+							}
+							
+						}
+							
+						//	System.out.println("Holaaa Input updated on: " + target + " at " + cursor.getCurrentEvtPosX() + "," + cursor.getCurrentEvtPosY());			
+						break;
+					case AbstractCursorInputEvt.INPUT_ENDED:
+						Object oEntidad=((MTComponent)componente).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
+						if (oEntidad instanceof ObjetoUMLGraph){
+							((MTPolygon)((ObjetoUMLGraph)oEntidad).getHalo()).setFillColor(ObjetoUMLGraph.haloDeSelected);
+							//System.out.println("Pintandoooooo");
+						}
+						if(componente!=currentComponent){
+							 Object entidad2=((MTComponent)currentComponent).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
+							if (entidad2 instanceof ObjetoUMLGraph){
+								((MTPolygon)((ObjetoUMLGraph)entidad2).getHalo()).setFillColor(ObjetoUMLGraph.haloDeSelected);
+								//System.out.println("Pintandoooooo");
+							}
+						}
+						
+						
+						LinkedList <MTComponent>listaVisitados=(LinkedList) ((MTComponent)componente).getUserData(ObjetoUMLGraph.COMPONENTES_VISITADOS_KEYWORD);
+						if(listaVisitados!=null){
+							for(MTComponent componenteVisitado:listaVisitados){
+								((MTPolygon)((ObjetoUMLGraph)componenteVisitado).getHalo()).setFillColor(ObjetoUMLGraph.haloDeSelected);
+							}
+						}
+						break;
+					default:
+						break;
+					}
+					
+					
+					//System.out.println("SECOND: " + currentComponent);
 					// getCanvas().drawAndUpdateCanvas(mtApp.g, 0);
-					getCanvas().drawAndUpdateCanvas(mtApp.g, 0);
+					//getCanvas().drawAndUpdateCanvas(mtApp.g, 0);
 					// getSceneCam().update();
-					if (comp instanceof MTCanvas) {
+					//if (comp instanceof MTCanvas) {
 						// System.out.println("PrevPos: " + prevPos);
 						if (posEvt.getId() != AbstractCursorInputEvt.INPUT_ENDED) {
 							registerPreDrawAction(new IPreDrawAction() {
@@ -484,8 +541,18 @@ public class DrawSurfaceScene extends AbstractScene {
 							});
 						} else {
 							cursorToLastDrawnPoint.remove(m);
-
+							 /*MTRoundRectangle a=new
+										 MTRoundRectangle(200,200,0,
+										 500,
+										 500, 1, 1, mtApp);
+							 a.setStrokeColor(new MTColor(0,0,0));
+							 a.setNoFill(true);
+							a.setPickable(false);
+							a.setNoStroke(false);
+							 getCanvas().addChild(a);
+							 getCanvas().sendToFront();*/
 							// int resultado=recognizer.recognize();
+
 							final ObjetoUML objeto=recognizer
 									.reconocerObjeto();
 							final int tipo_objeto = objeto.getTipo();
@@ -525,14 +592,26 @@ public class DrawSurfaceScene extends AbstractScene {
 								switch (tipo_objeto) {
 								case ObjetoUML.ENTIDAD:
 
-									ObjetoUMLGraph diagrama= new Entidad_Impl(mtApp,container, recognizer,objeto);
+									ObjetoUMLGraph diagrama= new Entidad_Impl(mtApp,getCanvas() ,recognizer,objeto);
 									objeto.setFigura(diagrama);
 									anadirObjeto(diagrama.getFigura());
 									break;
 								case ObjetoUML.RELACION:
-									ObjetoUMLGraph linea= new Relacion_Impl(mtApp, objeto);
-									objeto.setFigura(linea);
-									anadirObjeto(linea.getFigura());
+									final IMTComponent3D destino=getCanvas().getComponentAt((int)m.getCurrentEvtPosX(), (int)m.getCurrentEvtPosY());
+									if(componente instanceof MTPolygon && destino instanceof MTPolygon){ //verificar si el componente inicial y final son Instancias de Polygon(Diagrama entidad)
+										Object entidad1=((MTComponent)componente).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
+										Object entidad2=((MTComponent)destino).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
+										if(entidad1!=null&&entidad2!=null&&entidad1 instanceof ObjetoUMLGraph && entidad2 instanceof ObjetoUMLGraph){
+											ObjetoUMLGraph linea= new Relacion_Impl(mtApp, objeto,(ObjetoUMLGraph)entidad1,(ObjetoUMLGraph)entidad2);
+											//((MTPolygon)((ObjetoUMLGraph)entidad1).getHalo()).setFillColor(ObjetoUMLGraph.haloDeSelected);											
+											//((MTPolygon)((ObjetoUMLGraph)entidad2).getHalo()).setFillColor(ObjetoUMLGraph.haloDeSelected);
+											((ObjetoUMLGraph)entidad1).guardarDatos(ObjetoUMLGraph.RELACIONES_INICIO_KEYWORD, linea);
+											((ObjetoUMLGraph)entidad2).guardarDatos(ObjetoUMLGraph.RELACIONES_FIN_KEYWORD, linea);
+
+											objeto.setFigura(linea);		
+											anadirObjeto(linea.getFigura());
+										}
+										}
 									break;
 								default:
 									break;
@@ -542,7 +621,7 @@ public class DrawSurfaceScene extends AbstractScene {
 							// setBrushColor(new MTColor(255,0,0));
 
 						}
-					}
+					//}
 				}
 
 				return false;

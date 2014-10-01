@@ -22,6 +22,8 @@ public class Relacion extends ObjetoUML {
 	public void setFin(Vector3D fin) {
 		this.fin = fin;
 	}
+	
+	
 
 	public Vector3D getInicio() {
 		return inicio;

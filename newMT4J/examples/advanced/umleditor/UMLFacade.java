@@ -125,4 +125,11 @@ public class UMLFacade {
 		return objeto.getHeigth();
 	}
 	
+	
+	public void implementarRelacion(){
+		
+	}
+	
+	
+	
 }

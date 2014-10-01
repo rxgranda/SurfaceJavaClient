@@ -27,7 +27,7 @@ public abstract class ObjetoUML {
 	private float width,heigth;
 	private int tipo;
 	private boolean borrado=true;
-	
+	private boolean tieneRelacion=false;
 	private Persona persona;
 	private Timestamp tiempoInicio;
 	//private Timestamp tiempoFin;
@@ -115,6 +115,16 @@ public abstract class ObjetoUML {
 
 	public void setBorrado(boolean borrado) {
 		this.borrado = borrado;
+	}
+
+
+	public boolean isTieneRelacion() {
+		return tieneRelacion;
+	}
+
+
+	public void setTieneRelacion(boolean tieneRelacion) {
+		this.tieneRelacion = tieneRelacion;
 	}
 
 

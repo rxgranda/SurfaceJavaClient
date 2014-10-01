@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="srl.core.sketch.Stroke"/>
-<fullyQualifiedTypeName name="srl.core.sketch.Point"/>
 <fullyQualifiedTypeName name="advanced.umleditor.Recognizer"/>
 <fullyQualifiedTypeName name="java.sql.Date"/>
 <fullyQualifiedTypeName name="java.util.Calendar"/>
@@ -24,8 +22,6 @@
 <fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragProcessor"/>
 <fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.MTRectangle"/>
 <fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.MTLine"/>
-<fullyQualifiedTypeName name="org.mt4j.util.math.Vector3D"/>
-<fullyQualifiedTypeName name="advanced.umleditor.UMLFacade"/>
 <fullyQualifiedTypeName name="advanced.umleditor.logic.Relacion"/>
 <fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.MTEllipse"/>
 <fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragEvent"/>
@@ -38,7 +34,6 @@
 <fullyQualifiedTypeName name="advanced.umleditor.impl.Entidad_Impl"/>
 <fullyQualifiedTypeName name="advanced.umleditor.impl.Util_Impl"/>
 <fullyQualifiedTypeName name="advanced.umleditor.impl.Relacion_Impl"/>
-<fullyQualifiedTypeName name="advanced.umleditor.logic.ObjetoUML"/>
 <fullyQualifiedTypeName name="advanced.umleditor.impl.ObjetoUMLGraph"/>
 <fullyQualifiedTypeName name="org.mt4j.input.IMTInputEventListener"/>
 <fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.widgets.MTBackgroundImage"/>
@@ -60,4 +55,9 @@
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="advanced.drawing.DrawSurfaceScene"/>
 <fullyQualifiedTypeName name="org.mt4j.components.MTComponent"/>
+<fullyQualifiedTypeName name="org.mt4j.util.math.Vector3D"/>
+<fullyQualifiedTypeName name="advanced.umleditor.UMLFacade"/>
+<fullyQualifiedTypeName name="advanced.umleditor.logic.DeleteObject"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="advanced.umleditor.logic.ObjetoUML"/>
 </qualifiedTypeNameHistroy>
