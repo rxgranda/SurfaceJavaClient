@@ -7,6 +7,7 @@ import org.mt4j.components.MTCanvas;
 import org.mt4j.components.MTComponent;
 import org.mt4j.components.interfaces.IMTComponent3D;
 import org.mt4j.components.visibleComponents.font.FontManager;
+import org.mt4j.components.visibleComponents.font.IFont;
 import org.mt4j.components.visibleComponents.shapes.MTEllipse;
 import org.mt4j.components.visibleComponents.shapes.MTRoundRectangle;
 import org.mt4j.components.visibleComponents.widgets.MTTextArea;
@@ -23,22 +24,24 @@ import org.mt4j.util.MTColor;
 import org.mt4j.util.math.Vector3D;
 
 import advanced.drawing.DrawSurfaceScene;
+import advanced.drawing.MainDrawingScene;
 import advanced.umleditor.UMLFacade;
 import advanced.umleditor.logic.ObjetoUML;
 import advanced.umleditor.logic.Relacion;
 import processing.core.PApplet;
 
 public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
-	
-	
+
+
 	final MTRoundRectangle rectangulo;
 	final MTRoundRectangle halo;
 	private MTTextField headerField;
 	private MTTextArea  bodyField;
-	
+	MTEllipse botonResize=null,botonResize2=null,botonResize3=null,botonResize4=null;
 
-	public Entidad_Impl(final MTApplication mtApp, final MTCanvas canvas, final UMLFacade recognizer,final ObjetoUML objeto) {
-		
+
+	public Entidad_Impl(final MTApplication mtApp,final MTComponent container, final MTCanvas canvas, final UMLFacade recognizer,final ObjetoUML objeto) {
+
 		super(mtApp);
 		rectangulo = new MTRoundRectangle(objeto
 				.getPosicion().x, objeto
@@ -47,16 +50,18 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 				objeto.getHeigth(), 1, 1, mtApp);									
 		rectangulo.setFillColor(new MTColor(255,255,255));
 		rectangulo.setStrokeColor(new MTColor(0, 0, 0));
-		rectangulo.setNoStroke(false);
-		
-		
+		rectangulo.setNoStroke(true);
+
+		//corregir posicion inicial
+				//objeto.setPosicion(rectangulo.getCenterPointGlobal());
+
 		halo=new MTRoundRectangle(objeto
 				.getPosicion().x-ObjetoUMLGraph.haloWidth/2, objeto
-				.getPosicion().y-ObjetoUMLGraph.haloWidth/2, -1, objeto
+				.getPosicion().y-ObjetoUMLGraph.haloWidth/2, 0, objeto
 				.getWidth()+ObjetoUMLGraph.haloWidth,
 				objeto.getHeigth()+ObjetoUMLGraph.haloWidth, 1, 1, mtApp);									
 		//halo.setNoFill(true);
-		halo.setFillColor(new MTColor(255,255,255,0));
+		halo.setFillColor(ObjetoUMLGraph.haloDeSelected);
 		halo.removeAllGestureEventListeners();
 		halo.setUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD, this);
 		//halo.setPickable(false);
@@ -68,7 +73,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 					AbstractCursorInputEvt cursorInputEvt = (AbstractCursorInputEvt) inEvt;
 					InputCursor cursor = cursorInputEvt.getCursor();
 					IMTComponent3D target = cursorInputEvt.getTargetComponent();
-					
+
 					switch (cursorInputEvt.getId()) {
 					case AbstractCursorInputEvt.INPUT_STARTED:
 						//System.out.println("Input detected on: " + target + " at " + cursor.getCurrentEvtPosX() + "," + cursor.getCurrentEvtPosY());
@@ -79,7 +84,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 						break;
 					case AbstractCursorInputEvt.INPUT_ENDED:
 						rectangulo.setFillColor(nonselectedObject);
-						
+
 						final IMTComponent3D destino=canvas.getComponentAt((int)cursor.getCurrentEvtPosX(), (int)cursor.getCurrentEvtPosY());
 						//System.out.println("Inicio Input updated on: " + target + " at " + cursor.getCurrentEvtPosX() + "," + cursor.getCurrentEvtPosY());			
 
@@ -93,79 +98,156 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 					default:
 						break;
 					}
-				
+
 				}else{
 					//handle other input events
 				}
-			return false;
+				return false;
 			}
 		});
-		
+
 		canvas.addChild(halo);
-		
-		
+
+
 		final MTRoundRectangle header = new MTRoundRectangle(objeto
 				.getPosicion().x, objeto
 				.getPosicion().y, 0, objeto
 				.getWidth(),
 				(int)(objeto.getHeigth()*0.25), 1, 1, mtApp);									
 		header.setFillColor(ObjetoUMLGraph.headerColor);
-		header.setStrokeColor(new MTColor(0, 0, 0));
+		header.setStrokeColor(ObjetoUMLGraph.headerColor);
 		header.setNoStroke(false);
-		
+
 		//header.setPickable(false);
 		header.removeAllGestureEventListeners();
-		
-		headerField = new MTTextField(objeto.getPosicion().x, objeto.getPosicion().y,objeto.getWidth(),(int)(objeto.getHeigth()*0.25),FontManager.getInstance().createFont(mtApp, "SansSerif", 18), mtApp);
+		IFont headerFont=FontManager.getInstance().createFont(mtApp, "SourceSansPro-BoldIt.otf", 24, new MTColor(255,255,255),true);
+
+		headerField = new MTTextField(objeto.getPosicion().x, objeto.getPosicion().y,objeto.getWidth(),(int)(objeto.getHeigth()*0.25),headerFont, mtApp);
 		headerField.setText("No-Name");
-		headerField.setFontColor(new MTColor(255,255,255));
+		//headerField.setFontColor(new MTColor(255,255,255));
 		headerField.setPickable(false);
 		headerField.setNoFill(true);
 		headerField.setNoStroke(true);									
 		header.addChild(headerField);
-		
-		
+
+
 		final MTRoundRectangle body = new MTRoundRectangle(objeto
 				.getPosicion().x, objeto
 				.getPosicion().y+(int)(objeto.getHeigth()*0.25), 0, objeto
 				.getWidth(),(int)(
-				objeto.getHeigth()*0.75), 1, 1, mtApp);									
+						objeto.getHeigth()*0.75), 1, 1, mtApp);									
 		body.setFillColor(new MTColor(255, 255, 255));
-		body.setStrokeColor(new MTColor(0, 0, 0));
+		body.setStrokeColor(ObjetoUMLGraph.bodyColor);
 		body.setNoStroke(false);
-		
+
 		//body.setPickable(false);									
 		body.removeAllGestureEventListeners();
-		
-		bodyField = new MTTextArea (objeto.getPosicion().x, objeto.getPosicion().y+(int)(objeto.getHeigth()*0.25),objeto.getWidth(),(int)(objeto.getHeigth()*0.75),FontManager.getInstance().createFont(mtApp, "SansSerif", 18), mtApp);
+
+		IFont bodyFont=FontManager.getInstance().createFont(mtApp, "SourceSansPro-Light.otf", 18, new MTColor(255,255,255),true);
+
+		bodyField = new MTTextArea (objeto.getPosicion().x, objeto.getPosicion().y+(int)(objeto.getHeigth()*0.25),objeto.getWidth(),(int)(objeto.getHeigth()*0.75),bodyFont, mtApp);
 		bodyField.setText("* Atributo 1 \n *Atributo 2");
 		bodyField.setFontColor(new MTColor(0,0,0));
 		bodyField.setPickable(false);
 		bodyField.setNoFill(true);
 		bodyField.setNoStroke(true);		
 		body.addChild(bodyField);
-		
-		
-		
+
+
+
 		//Agregar boton resize
-		final MTEllipse botonResize=new MTEllipse(mtApp, new Vector3D(objeto
-				.getPosicion().x+objeto.getWidth(), objeto
-				.getPosicion().y+objeto.getHeigth()), 10, 10);
-		botonResize.setFillColor(ObjetoUMLGraph.azul);
+		botonResize=new MTEllipse(mtApp, new Vector3D(objeto
+				.getPosicion().x, objeto
+				.getPosicion().y), 10, 10);
+		botonResize.setFillColor(ObjetoUMLGraph.resizeButtonColor);
+		botonResize.setNoStroke(true);
 		botonResize.removeAllGestureEventListeners();
 		botonResize.unregisterAllInputProcessors();
 		botonResize.registerInputProcessor(new DragProcessor(mtApp));
 		botonResize.addGestureListener(DragProcessor.class, new IGestureEventListener() {
 			public boolean processGestureEvent(MTGestureEvent ge) {
 				DragEvent de = (DragEvent)ge;
+				objeto.setWidth(objeto.getWidth()-de.getTranslationVect().x);
+				objeto.setHeigth(objeto.getHeigth()-de.getTranslationVect().y);
+				rectangulo.setSizeXYGlobal(objeto.getWidth(),objeto.getHeigth());	
+				halo.setSizeXYGlobal(objeto.getWidth()+ObjetoUMLGraph.haloWidth,objeto.getHeigth()+ObjetoUMLGraph.haloWidth);
+				botonResize.setSizeXYGlobal(18, 18);
+				botonResize2.setSizeXYGlobal(18, 18);
+				botonResize3.setSizeXYGlobal(18, 18);
+				botonResize4.setSizeXYGlobal(18, 18);
+				return false;
+			}
+		});
+		//Agregar boton resize2
+		botonResize2=new MTEllipse(mtApp, new Vector3D(objeto
+				.getPosicion().x+objeto.getWidth(), objeto
+				.getPosicion().y), 10, 10);
+		botonResize2.setFillColor(ObjetoUMLGraph.resizeButtonColor);
+		botonResize2.setNoStroke(true);
+		botonResize2.removeAllGestureEventListeners();
+		botonResize2.unregisterAllInputProcessors();
+		botonResize2.registerInputProcessor(new DragProcessor(mtApp));
+		botonResize2.addGestureListener(DragProcessor.class, new IGestureEventListener() {
+			public boolean processGestureEvent(MTGestureEvent ge) {
+				DragEvent de = (DragEvent)ge;
+				objeto.setWidth(objeto.getWidth()+de.getTranslationVect().x);
+				objeto.setHeigth(objeto.getHeigth()-de.getTranslationVect().y);
+				rectangulo.setSizeXYGlobal(objeto.getWidth(),objeto.getHeigth());	
+				halo.setSizeXYGlobal(objeto.getWidth()+ObjetoUMLGraph.haloWidth,objeto.getHeigth()+ObjetoUMLGraph.haloWidth);
+				botonResize.setSizeXYGlobal(18, 18);
+				botonResize2.setSizeXYGlobal(18, 18);
+				botonResize3.setSizeXYGlobal(18, 18);
+				botonResize4.setSizeXYGlobal(18, 18);						
+				return false;
+			}
+		});
+		//Agregar boton resize3
+		botonResize3=new MTEllipse(mtApp, new Vector3D(objeto
+				.getPosicion().x, objeto
+				.getPosicion().y+objeto.getHeigth()), 10, 10);
+		botonResize3.setFillColor(ObjetoUMLGraph.resizeButtonColor);
+		botonResize3.setNoStroke(true);
+		botonResize3.removeAllGestureEventListeners();
+		botonResize3.unregisterAllInputProcessors();
+		botonResize3.registerInputProcessor(new DragProcessor(mtApp));
+		botonResize3.addGestureListener(DragProcessor.class, new IGestureEventListener() {
+			public boolean processGestureEvent(MTGestureEvent ge) {
+				DragEvent de = (DragEvent)ge;
+				objeto.setWidth(objeto.getWidth()-de.getTranslationVect().x);
+				objeto.setHeigth(objeto.getHeigth()+de.getTranslationVect().y);
+				rectangulo.setSizeXYGlobal(objeto.getWidth(),objeto.getHeigth());	
+				halo.setSizeXYGlobal(objeto.getWidth()+ObjetoUMLGraph.haloWidth,objeto.getHeigth()+ObjetoUMLGraph.haloWidth);
+				botonResize.setSizeXYGlobal(18, 18);
+				botonResize2.setSizeXYGlobal(18, 18);
+				botonResize3.setSizeXYGlobal(18, 18);
+				botonResize4.setSizeXYGlobal(18, 18);								
+				return false;
+			}
+		});
+		//Agregar boton resize
+		botonResize4=new MTEllipse(mtApp, new Vector3D(objeto
+				.getPosicion().x+objeto.getWidth(), objeto
+				.getPosicion().y+objeto.getHeigth()), 10, 10);
+		botonResize4.setFillColor(ObjetoUMLGraph.resizeButtonColor);
+		botonResize4.setNoStroke(true);
+		botonResize4.removeAllGestureEventListeners();
+		botonResize4.unregisterAllInputProcessors();
+		botonResize4.registerInputProcessor(new DragProcessor(mtApp));
+		botonResize4.addGestureListener(DragProcessor.class, new IGestureEventListener() {
+			public boolean processGestureEvent(MTGestureEvent ge) {
+				DragEvent de = (DragEvent)ge;
 				objeto.setWidth(objeto.getWidth()+de.getTranslationVect().x);
 				objeto.setHeigth(objeto.getHeigth()+de.getTranslationVect().y);
 				rectangulo.setSizeXYGlobal(objeto.getWidth(),objeto.getHeigth());	
 				halo.setSizeXYGlobal(objeto.getWidth()+ObjetoUMLGraph.haloWidth,objeto.getHeigth()+ObjetoUMLGraph.haloWidth);
-			botonResize.setSizeXYGlobal(18, 18);									
+				botonResize.setSizeXYGlobal(18, 18);
+				botonResize2.setSizeXYGlobal(18, 18);
+				botonResize3.setSizeXYGlobal(18, 18);
+				botonResize4.setSizeXYGlobal(18, 18);								
 				return false;
 			}
 		});
+
 		///////////
 		/*final MTEllipse botonBorrar=new MTEllipse(mtApp, new Vector3D(objeto
 				.getPosicion().x, objeto
@@ -177,21 +259,26 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 		botonBorrar.addGestureListener(DragProcessor.class, new IGestureEventListener() {
 			public boolean processGestureEvent(MTGestureEvent ge) {
 				DragEvent de = (DragEvent)ge;
-				
+
 				container.removeChild((MTComponent)rectangulo);
 				System.out.println("Remover: "+rectangulo);
 				return false;
 			}
 		});
-		
-		
-		
-		
+
+
+
+
 		rectangulo.addChild(botonBorrar);*/
-		rectangulo.addChild(botonResize);							
+
 		rectangulo.addChild(header);
 		rectangulo.addChild(body);	
-		
+		rectangulo.addChild(botonResize);	
+		rectangulo.addChild(botonResize2);	
+		rectangulo.addChild(botonResize3);	
+		rectangulo.addChild(botonResize4);	
+		//botonResize.sendToFront();
+
 		rectangulo.removeAllGestureEventListeners();
 		rectangulo.unregisterAllInputProcessors();
 		/*rectangulo.addInputListener(new IMTInputEventListener() {
@@ -221,19 +308,19 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 					return false;
 					}
 				});*/
-		
+
 		/*header.addInputListener(new IMTInputEventListener() {
 			public boolean processInputEvent(MTInputEvent inEvt) {
 				if (inEvt instanceof AbstractCursorInputEvt) { //Most input events in MT4j are an instance of AbstractCursorInputEvt (mouse, multi-touch..)
 					AbstractCursorInputEvt cursorInputEvt = (AbstractCursorInputEvt) inEvt;
 					InputCursor cursor = cursorInputEvt.getCursor();
 					IMTComponent3D target = cursorInputEvt.getTargetComponent();
-					
+
 					System.out.println(target);
 					//objeto.setPosicion(objeto.getPosicion().addLocal(((AbstractCursorInputEvt) inEvt).getPosition()));
 					//rectangulo.setPositionGlobal(objeto.getPosicion());
-				
-				
+
+
 				}else{
 					//handle other input events
 				}
@@ -241,43 +328,49 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 			}
 		});
 		header.sendToFront();*/
-		
+
 		header.addGestureListener(DragProcessor.class, new IGestureEventListener() {
 			public boolean processGestureEvent(MTGestureEvent ge) {
 				DragEvent de = (DragEvent)ge;
 				System.out.println("Gesture"+de.getTargetComponent());
-					objeto.setPosicion(objeto.getPosicion().addLocal(de.getTranslationVect()));
-					rectangulo.setPositionGlobal(objeto.getPosicion());
-					halo.setPositionGlobal(new Vector3D(objeto.getPosicion().x,objeto.getPosicion().y));
-					
-					LinkedList listaInicio=obtenerDatos(RELACIONES_INICIO_KEYWORD);
-					if(listaInicio!=null){
+				//objeto.setPosicion(objeto.getPosicion().getAdded(de.getTranslationVect()));
+				//rectangulo.setPositionGlobal(objeto.getPosicion());
+		//		halo.setPositionGlobal(new Vector3D(objeto.getPosicion().x,objeto.getPosicion().y));
+				
+				rectangulo.setPositionGlobal(rectangulo.getCenterPointGlobal().addLocal(de.getTranslationVect()));
+				objeto.setPosicion(rectangulo.getCenterPointGlobal());
+				halo.setPositionGlobal(rectangulo.getCenterPointGlobal());
+//// TEST
+				MainDrawingScene.clear();
+/// TEST
+				LinkedList listaInicio=obtenerDatos(RELACIONES_INICIO_KEYWORD);
+				if(listaInicio!=null){
 					for(Object o:listaInicio){
 						if(o instanceof ObjetoUMLGraph){
 							//((Relacion)objeto)
 							Relacion objeto_relacion=(Relacion) ((Relacion_Impl)o).getObjetoUML();
-							objeto_relacion.setInicio(objeto_relacion.getInicio().addLocal(de.getTranslationVect()));
+							objeto_relacion.setInicio(objeto_relacion.getInicio().getAdded(de.getTranslationVect()));
 							((Relacion_Impl)o).actualizarRelacion();
 						}
-						
+
 					}
-					}
-					
-					LinkedList listaFin=obtenerDatos(RELACIONES_FIN_KEYWORD);
-					if(listaFin!=null){
+				}
+
+				LinkedList listaFin=obtenerDatos(RELACIONES_FIN_KEYWORD);
+				if(listaFin!=null){
 					for(Object o:listaFin){
 						if(o instanceof ObjetoUMLGraph){
 							//((Relacion)objeto)
 							Relacion objeto_relacion=(Relacion) ((Relacion_Impl)o).getObjetoUML();
-							objeto_relacion.setFin(objeto_relacion.getFin().addLocal(de.getTranslationVect()));
+							objeto_relacion.setFin(objeto_relacion.getFin().getAdded(de.getTranslationVect()));
 							((Relacion_Impl)o).actualizarRelacion();
 						}
-						
+
 					}
-					}
-					
-					
-					/*switch (de.getId()) {
+				}
+
+
+				/*switch (de.getId()) {
 					case AbstractCursorInputEvt.INPUT_STARTED:
 						canvas.removeChild(halo);
 						break;
@@ -292,8 +385,8 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 				return false;
 			}
 		});
-		
-		
+
+
 		/*body.addGestureListener(DragProcessor.class, new IGestureEventListener() {
 			public boolean processGestureEvent(MTGestureEvent ge) {
 				DragEvent de = (DragEvent)ge;
@@ -303,7 +396,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 				case AbstractCursorInputEvt.INPUT_STARTED:
 					objeto.anadirPunto(de.getFrom().x, de.getFrom().x);
 					//objeto.setPosicion(objeto.getPosicion().addLocal(de.getTranslationVect()).addLocal(new Vector3D(objeto.getWidth()/2,objeto.getHeigth()/2)));
-					
+
 					//rectangulo.setFillColor(selectedObject);
 					break;
 				case AbstractCursorInputEvt.INPUT_UPDATED:
@@ -315,19 +408,19 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 				default:
 					break;
 				}
-												
+
 				return false;
 			}
 		});*/
-		
-		
+
+
 		body.addInputListener(new IMTInputEventListener() {
 			public boolean processInputEvent(MTInputEvent inEvt) {
 				if (inEvt instanceof AbstractCursorInputEvt) { //Most input events in MT4j are an instance of AbstractCursorInputEvt (mouse, multi-touch..)
 					AbstractCursorInputEvt cursorInputEvt = (AbstractCursorInputEvt) inEvt;
 					InputCursor cursor = cursorInputEvt.getCursor();
 					IMTComponent3D target = cursorInputEvt.getTargetComponent();
-					
+
 					switch (cursorInputEvt.getId()) {
 					case AbstractCursorInputEvt.INPUT_STARTED:
 						recognizer.anadirPunto(cursor.getCurrentEvtPosX(), cursor.getCurrentEvtPosY());
@@ -336,30 +429,31 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 						recognizer.anadirPunto(cursor.getCurrentEvtPosX(), cursor.getCurrentEvtPosY());
 						break;
 					case AbstractCursorInputEvt.INPUT_ENDED:
-						
+
 						System.out.println("Reconocer:");
 						ObjetoUML obj=recognizer.reconocerObjeto();
-						if (obj ==ObjetoUML.DELETE_OBJECT_GESTURE)
+						if (obj ==ObjetoUML.DELETE_OBJECT_GESTURE){
 							//container.removeChild(rectangulo);
 							rectangulo.removeFromParent();
 							halo.removeFromParent();
+						}
 						break;
 					default:
 						break;
 					}
-				
+
 				}else{
 					//handle other input events
 				}
-			return false;
+				return false;
 			}
 		});
-		//corregir posicion inicial
+		container.addChild(rectangulo);
 		objeto.setPosicion(rectangulo.getCenterPointGlobal());
-		
+		halo.setPositionGlobal(rectangulo.getCenterPointGlobal());
 	}
-		
-	
+
+
 
 	@Override
 	public MTComponent getFigura() {
@@ -372,7 +466,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 	@Override
 	public void setTitulo(String texto) {
 		headerField.setText(texto);
-		
+
 	}
 
 
@@ -388,7 +482,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 	@Override
 	public void setAtributo(String texto) {
 		bodyField.setText(texto);
-		
+
 	}
 
 
@@ -410,21 +504,21 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 
 	@Override
 	public void guardarDatos(String keyword, Object datos) {
-		
+
 		LinkedList listaDatos=(LinkedList<Object>) halo.getUserData(keyword);
 		if(listaDatos==null){
 			listaDatos= new LinkedList<Object>();
 			halo.setUserData(keyword, listaDatos);
 		}
 		listaDatos.add(datos);
-		
+
 	}
 
 
 
 	@Override
 	public LinkedList obtenerDatos(String keyword) {
-		
+
 		LinkedList listaDatos=(LinkedList) halo.getUserData(keyword);
 		return listaDatos;
 	}
@@ -442,6 +536,6 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 	@Override
 	public void setObjetoUML(ObjetoUML objeto) {
 		// TODO Auto-generated method stub
-		
+
 	}
 }

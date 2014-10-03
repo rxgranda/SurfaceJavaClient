@@ -60,7 +60,7 @@ public class MainDrawingScene extends AbstractScene {
 	private String imagesPath = "advanced" + MTApplication.separator + "drawing" + MTApplication.separator + "data" + MTApplication.separator + "images" + MTApplication.separator;		
 	public static SocketIOServer server;
 	
-	
+	 static MTSceneTexture sceneTexture ;
 	class ServerThread extends Thread {
 		public ServerThread(String str) {
 			super(str);
@@ -209,7 +209,7 @@ public class MainDrawingScene extends AbstractScene {
 		//Create the frame/window that displays the drawing scene through a FBO
 		//final MTSceneTexture sceneWindow = new MTSceneTexture(0,0, pa, drawingScene);
 		//We have to create a fullscreen fbo in order to save the image uncompressed
-		final MTSceneTexture sceneTexture = new MTSceneTexture(pa,0, -0, pa.width+0, pa.height+0, drawingScene);
+		sceneTexture = new MTSceneTexture(pa,0, -0, pa.width+0, pa.height+0, drawingScene);
 		sceneTexture.getFbo().clear(true, 255, 255, 255, 0, true);
 
 		sceneTexture.setStrokeColor(new MTColor(155,0,0));
@@ -245,5 +245,9 @@ public class MainDrawingScene extends AbstractScene {
 	public boolean guardar(){
 		this.drawingScene.guardar();
 		return true;
+	}
+	public static void  clear(){
+		sceneTexture.getFbo().clear(true, 255, 255, 255, 0, true);
+
 	}
 }

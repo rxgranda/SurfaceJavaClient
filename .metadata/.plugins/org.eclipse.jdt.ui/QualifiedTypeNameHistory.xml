@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="advanced.umleditor.Recognizer"/>
-<fullyQualifiedTypeName name="java.sql.Date"/>
-<fullyQualifiedTypeName name="java.util.Calendar"/>
-<fullyQualifiedTypeName name="java.util.Collection"/>
-<fullyQualifiedTypeName name="advanced.umleditor.logic.Entidad"/>
-<fullyQualifiedTypeName name="srl.recognition.paleo.PaleoConfig"/>
-<fullyQualifiedTypeName name="srl.recognition.paleo.PaleoConfig.Option"/>
-<fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.MTRoundRectangle"/>
 <fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.unistrokeProcessor.UnistrokeUtils.Recognizer"/>
 <fullyQualifiedTypeName name="advanced.umleditor.logic.Persona"/>
 <fullyQualifiedTypeName name="java.awt.Point"/>
@@ -16,13 +8,10 @@
 <fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.IGestureEventListener"/>
 <fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.MTGestureEvent"/>
 <fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapEvent"/>
-<fullyQualifiedTypeName name="org.mt4j.components.interfaces.IMTComponent3D"/>
-<fullyQualifiedTypeName name="org.mt4j.components.MTCanvas"/>
 <fullyQualifiedTypeName name="org.mt4j.input.gestureAction.InertiaDragAction"/>
 <fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragProcessor"/>
 <fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.MTRectangle"/>
 <fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.MTLine"/>
-<fullyQualifiedTypeName name="advanced.umleditor.logic.Relacion"/>
 <fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.MTEllipse"/>
 <fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragEvent"/>
 <fullyQualifiedTypeName name="org.mt4j.components.TransformSpace"/>
@@ -33,11 +22,7 @@
 <fullyQualifiedTypeName name="org.mt4j.MTApplication"/>
 <fullyQualifiedTypeName name="advanced.umleditor.impl.Entidad_Impl"/>
 <fullyQualifiedTypeName name="advanced.umleditor.impl.Util_Impl"/>
-<fullyQualifiedTypeName name="advanced.umleditor.impl.Relacion_Impl"/>
-<fullyQualifiedTypeName name="advanced.umleditor.impl.ObjetoUMLGraph"/>
-<fullyQualifiedTypeName name="org.mt4j.input.IMTInputEventListener"/>
 <fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.widgets.MTBackgroundImage"/>
-<fullyQualifiedTypeName name="advanced.drawing.MainDrawingScene"/>
 <fullyQualifiedTypeName name="javax.swing.JFrame"/>
 <fullyQualifiedTypeName name="javax.swing.JFileChooser"/>
 <fullyQualifiedTypeName name="java.io.File"/>
@@ -47,17 +32,32 @@
 <fullyQualifiedTypeName name="java.util.LinkedHashMap"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="java.util.LinkedList"/>
 <fullyQualifiedTypeName name="java.sql.Timestamp"/>
 <fullyQualifiedTypeName name="org.json.simple.JSONValue"/>
 <fullyQualifiedTypeName name="java.io.BufferedWriter"/>
 <fullyQualifiedTypeName name="java.io.FileWriter"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
-<fullyQualifiedTypeName name="advanced.drawing.DrawSurfaceScene"/>
-<fullyQualifiedTypeName name="org.mt4j.components.MTComponent"/>
-<fullyQualifiedTypeName name="org.mt4j.util.math.Vector3D"/>
 <fullyQualifiedTypeName name="advanced.umleditor.UMLFacade"/>
 <fullyQualifiedTypeName name="advanced.umleditor.logic.DeleteObject"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="org.mt4j.util.MTColor"/>
+<fullyQualifiedTypeName name="org.mt4j.util.math.Tools3D"/>
+<fullyQualifiedTypeName name="org.mt4j.components.MTCanvas"/>
+<fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.MTRoundRectangle"/>
+<fullyQualifiedTypeName name="advanced.drawing.DrawSurfaceScene"/>
+<fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.MTPolygon"/>
+<fullyQualifiedTypeName name="java.util.LinkedList"/>
+<fullyQualifiedTypeName name="java.lang.Object"/>
+<fullyQualifiedTypeName name="org.mt4j.util.math.Vector3D"/>
 <fullyQualifiedTypeName name="advanced.umleditor.logic.ObjetoUML"/>
+<fullyQualifiedTypeName name="advanced.umleditor.impl.Relacion_Impl"/>
+<fullyQualifiedTypeName name="advanced.umleditor.logic.Relacion"/>
+<fullyQualifiedTypeName name="advanced.umleditor.impl.ObjetoUMLGraph"/>
+<fullyQualifiedTypeName name="advanced.drawing.MainDrawingScene"/>
+<fullyQualifiedTypeName name="org.mt4j.input.inputData.MTInputEvent"/>
+<fullyQualifiedTypeName name="org.mt4j.input.inputData.AbstractCursorInputEvt"/>
+<fullyQualifiedTypeName name="org.mt4j.input.inputData.InputCursor"/>
+<fullyQualifiedTypeName name="org.mt4j.components.interfaces.IMTComponent3D"/>
+<fullyQualifiedTypeName name="org.mt4j.input.IMTInputEventListener"/>
+<fullyQualifiedTypeName name="org.mt4j.components.MTComponent"/>
 </qualifiedTypeNameHistroy>

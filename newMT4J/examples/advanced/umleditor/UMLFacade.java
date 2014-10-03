@@ -62,19 +62,19 @@ public class UMLFacade {
 			objeto=UMLCollection.anadirObjeto(resultado,persona );
 			
 			//// Calcular centroide,posicion y dimensiones
-			this.getObjeto().setCentroide((acumCentroideX/numMuestas) -5.0f,(acumCentroideY/numMuestas) -5.0f);	
-			this.getObjeto().setWidth((maxX-minX));
-			this.getObjeto().setHeigth((maxY-minY));
-			this.getObjeto().setPosicion(new Vector3D((this.getObjeto().getCentroide().x- (maxX-minX)/2),	(this.getObjeto().getCentroide().y-(maxY-minY)/2)));		
+			this.getObjeto().setCentroide((int)((acumCentroideX/numMuestas) -5.0f),(int)((acumCentroideY/numMuestas) -5.0f));	
+			this.getObjeto().setWidth((int)(maxX-minX));
+			this.getObjeto().setHeigth((int)(maxY-minY));
+			this.getObjeto().setPosicion(new Vector3D((int)(this.getObjeto().getCentroide().x- (maxX-minX)/2),(int)	(this.getObjeto().getCentroide().y-(maxY-minY)/2)));		
 			
 			
 			//Caso de que sea una linea, se debe conocer posicion inicial y final
 			
 			if (objeto.getTipo()==ObjetoUML.RELACION)
-				((Relacion)objeto).inicializarDimensiones(primerX, primerY, ultimoX, ultimoY);
+				((Relacion)objeto).inicializarDimensiones((int)primerX,(int) primerY, (int)ultimoX,(int) ultimoY);
 			
 						
-			//// Calcular centroide,posicion y dimensiones
+			//// Para calcular centroide,posicion y dimensiones de una nueva figura
 			reiniciar();
 			return objeto;
 		}

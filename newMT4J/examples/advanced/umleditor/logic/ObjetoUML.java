@@ -65,7 +65,9 @@ public abstract class ObjetoUML {
 	public Vector3D getCentroide() {
 		return centroide;
 	}
-
+	public void setCentroide(Vector3D nVector) {
+		this.centroide = nVector;
+	}
 
 	public void setCentroide(float x,float y) {		
 		this.centroide = new Vector3D(x,y,0);
