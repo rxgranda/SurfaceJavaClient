@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.unistrokeProcessor.UnistrokeUtils.Recognizer"/>
-<fullyQualifiedTypeName name="advanced.umleditor.logic.Persona"/>
-<fullyQualifiedTypeName name="java.awt.Point"/>
-<fullyQualifiedTypeName name="advanced.umleditor.UMLCollection"/>
 <fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapProcessor"/>
 <fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.IGestureEventListener"/>
 <fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.MTGestureEvent"/>
@@ -40,7 +36,6 @@
 <fullyQualifiedTypeName name="advanced.umleditor.UMLFacade"/>
 <fullyQualifiedTypeName name="advanced.umleditor.logic.DeleteObject"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
-<fullyQualifiedTypeName name="org.mt4j.util.MTColor"/>
 <fullyQualifiedTypeName name="org.mt4j.util.math.Tools3D"/>
 <fullyQualifiedTypeName name="org.mt4j.components.MTCanvas"/>
 <fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.MTRoundRectangle"/>
@@ -59,5 +54,10 @@
 <fullyQualifiedTypeName name="org.mt4j.input.inputData.InputCursor"/>
 <fullyQualifiedTypeName name="org.mt4j.components.interfaces.IMTComponent3D"/>
 <fullyQualifiedTypeName name="org.mt4j.input.IMTInputEventListener"/>
+<fullyQualifiedTypeName name="org.mt4j.util.MTColor"/>
+<fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.font.IFont"/>
+<fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.unistrokeProcessor.UnistrokeUtils.Recognizer"/>
 <fullyQualifiedTypeName name="org.mt4j.components.MTComponent"/>
+<fullyQualifiedTypeName name="sun.org.mozilla.javascript.internal.ast.CatchClause"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
 </qualifiedTypeNameHistroy>

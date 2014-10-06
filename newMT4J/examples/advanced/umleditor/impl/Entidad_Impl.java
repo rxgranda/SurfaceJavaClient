@@ -73,7 +73,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 					AbstractCursorInputEvt cursorInputEvt = (AbstractCursorInputEvt) inEvt;
 					InputCursor cursor = cursorInputEvt.getCursor();
 					IMTComponent3D target = cursorInputEvt.getTargetComponent();
-
+					System.out.println("Halo Entidad");
 					switch (cursorInputEvt.getId()) {
 					case AbstractCursorInputEvt.INPUT_STARTED:
 						//System.out.println("Input detected on: " + target + " at " + cursor.getCurrentEvtPosX() + "," + cursor.getCurrentEvtPosY());
@@ -349,6 +349,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 						if(o instanceof ObjetoUMLGraph){
 							//((Relacion)objeto)
 							Relacion objeto_relacion=(Relacion) ((Relacion_Impl)o).getObjetoUML();
+							//objeto_relacion.setPosicion(objeto_relacion.getPosicion().getAdded(de.getFrom().getSubtracted(de.getTo())));
 							objeto_relacion.setInicio(objeto_relacion.getInicio().getAdded(de.getTranslationVect()));
 							((Relacion_Impl)o).actualizarRelacion();
 						}
@@ -362,6 +363,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 						if(o instanceof ObjetoUMLGraph){
 							//((Relacion)objeto)
 							Relacion objeto_relacion=(Relacion) ((Relacion_Impl)o).getObjetoUML();
+							//objeto_relacion.setPosicion(objeto_relacion.getPosicion().getAdded(de.getFrom().getSubtracted(de.getTo())));
 							objeto_relacion.setFin(objeto_relacion.getFin().getAdded(de.getTranslationVect()));
 							((Relacion_Impl)o).actualizarRelacion();
 						}
