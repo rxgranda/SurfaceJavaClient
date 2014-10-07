@@ -21,7 +21,7 @@ public interface ObjetoUMLGraph {
 	public static final MTColor haloSelected =new MTColor(200,200,200);// //new MTColor(148,214,247,10);
 	public static final MTColor haloDeSelected =new MTColor(200,200,200);// //new MTColor(255,255,255); 
 	
-	public static final int haloWidth=20;
+	public static final int haloWidth=27;
 	public static final String RELACIONES_INICIO_KEYWORD = "relaciones-inicio";
 	public static final String RELACIONES_FIN_KEYWORD = "relaciones-fin";
 	public static final String COMPONENTES_VISITADOS_KEYWORD = "visitados";
