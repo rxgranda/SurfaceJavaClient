@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.MTGestureEvent"/>
 <fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapEvent"/>
 <fullyQualifiedTypeName name="org.mt4j.input.gestureAction.InertiaDragAction"/>
 <fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragProcessor"/>
@@ -37,7 +36,6 @@
 <fullyQualifiedTypeName name="org.mt4j.components.MTCanvas"/>
 <fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.MTRoundRectangle"/>
 <fullyQualifiedTypeName name="advanced.drawing.DrawSurfaceScene"/>
-<fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.MTPolygon"/>
 <fullyQualifiedTypeName name="java.util.LinkedList"/>
 <fullyQualifiedTypeName name="java.lang.Object"/>
 <fullyQualifiedTypeName name="advanced.umleditor.logic.ObjetoUML"/>
@@ -60,4 +58,6 @@
 <fullyQualifiedTypeName name="java.lang.AbstractMethodError"/>
 <fullyQualifiedTypeName name="java.lang.Math"/>
 <fullyQualifiedTypeName name="org.mt4j.util.math.Vector3D"/>
+<fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.MTPolygon"/>
+<fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.AbstractShape"/>
 </qualifiedTypeNameHistroy>

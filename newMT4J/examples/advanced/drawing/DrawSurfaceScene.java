@@ -64,8 +64,6 @@ import org.mt4j.components.visibleComponents.shapes.MTRoundRectangle;
 import org.mt4j.components.visibleComponents.widgets.MTTextArea;
 import org.mt4j.components.visibleComponents.widgets.MTTextField;
 
-;
-
 public class DrawSurfaceScene extends AbstractScene {	
 
 	private MTApplication mtApp;
@@ -130,7 +128,7 @@ public class DrawSurfaceScene extends AbstractScene {
 					Vector3D pos = new Vector3D(vec.x, vec.y, 0);
 					// Proyecto
 					// System.out.println("ID: " + m.sessionID);
-					System.out.println("Eliminar: X:" + vec.x + "Y:" + vec.y);
+					//System.out.println("Eliminar: X:" + vec.x + "Y:" + vec.y);
 
 					// Proyecto
 					if (lastDrawnPoint == null) {
@@ -275,7 +273,9 @@ public class DrawSurfaceScene extends AbstractScene {
 		this.cursorToLastDrawnPoint = new HashMap<InputCursor, Vector3D>();
 
 		// Proyecto
-		final UMLFacade recognizer = new UMLFacade(persona);
+		final UMLFacade recognizer = new UMLFacade(persona); //para el canvas
+		final UMLFacade componentRecognizer = new UMLFacade(persona); // para reconocer gestos de los componentes
+
 		puntos = new ArrayList<Vector3D>();
 		// Proyecto
 
@@ -297,6 +297,8 @@ public class DrawSurfaceScene extends AbstractScene {
 						Object entidad=((MTComponent)componente).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
 						if (entidad!=null&&entidad instanceof ObjetoUMLGraph){
 							((MTPolygon)((ObjetoUMLGraph)entidad).getHalo()).setFillColor(ObjetoUMLGraph.haloSelected);
+							((ObjetoUMLGraph)entidad).getHalo().sendToFront();
+
 							//System.out.println("Pintandoooooo");
 						}
 						//System.out.println("Input detected on: " + target + " at " + cursor.getCurrentEvtPosX() + "," + cursor.getCurrentEvtPosY());
@@ -306,6 +308,7 @@ public class DrawSurfaceScene extends AbstractScene {
 							 Object entidad2=((MTComponent)currentComponent).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
 							if (entidad2 instanceof ObjetoUMLGraph){
 								((MTPolygon)((ObjetoUMLGraph)entidad2).getHalo()).setFillColor(ObjetoUMLGraph.haloSelected);
+								((ObjetoUMLGraph)entidad2).getHalo().sendToFront();
 								//System.out.println("Pintandoooooo");
 								LinkedList listaVisitados=(LinkedList) ((MTComponent)componente).getUserData(ObjetoUMLGraph.COMPONENTES_VISITADOS_KEYWORD);
 								if(listaVisitados==null){
@@ -330,6 +333,7 @@ public class DrawSurfaceScene extends AbstractScene {
 							 Object entidad2=((MTComponent)currentComponent).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
 							if (entidad2 instanceof ObjetoUMLGraph){
 								((MTPolygon)((ObjetoUMLGraph)entidad2).getHalo()).setFillColor(ObjetoUMLGraph.haloDeSelected);
+								
 								//System.out.println("Pintandoooooo");
 							}
 						}
@@ -555,12 +559,12 @@ public class DrawSurfaceScene extends AbstractScene {
 							 getCanvas().addChild(a);
 							 getCanvas().sendToFront();*/
 							// int resultado=recognizer.recognize();
-
+							limpiar();
 							final ObjetoUML objeto=recognizer
 									.reconocerObjeto();
 							final int tipo_objeto = objeto.getTipo();
 							// if(resultado==UMLCollection.INVALIDO){
-							limpiar();
+							
 							// }else{
 							// UMLCollection.anadirObjeto(resultado,persona );
 							// eliminarPuntos();
@@ -595,7 +599,7 @@ public class DrawSurfaceScene extends AbstractScene {
 								switch (tipo_objeto) {
 								case ObjetoUML.ENTIDAD:
 
-									ObjetoUMLGraph diagrama= new Entidad_Impl(mtApp,container,getCanvas() ,recognizer,objeto);
+									ObjetoUMLGraph diagrama= new Entidad_Impl(mtApp,container,getCanvas() ,componentRecognizer,objeto);
 									objeto.setFigura(diagrama);
 									//anadirObjeto(diagrama.getFigura());
 									break;
@@ -605,7 +609,7 @@ public class DrawSurfaceScene extends AbstractScene {
 										Object entidad1=((MTComponent)componente).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
 										Object entidad2=((MTComponent)destino).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
 										if(entidad1!=null&&entidad2!=null&&entidad1 instanceof ObjetoUMLGraph && entidad2 instanceof ObjetoUMLGraph){
-											ObjetoUMLGraph linea= new Relacion_Impl(mtApp,container, getCanvas(),objeto,(ObjetoUMLGraph)entidad1,(ObjetoUMLGraph)entidad2,recognizer);
+											ObjetoUMLGraph linea= new Relacion_Impl(mtApp,container, getCanvas(),objeto,(ObjetoUMLGraph)entidad1,(ObjetoUMLGraph)entidad2,componentRecognizer);
 											//((MTPolygon)((ObjetoUMLGraph)entidad1).getHalo()).setFillColor(ObjetoUMLGraph.haloDeSelected);											
 											//((MTPolygon)((ObjetoUMLGraph)entidad2).getHalo()).setFillColor(ObjetoUMLGraph.haloDeSelected);
 											((ObjetoUMLGraph)entidad1).guardarDatos(ObjetoUMLGraph.RELACIONES_INICIO_KEYWORD, linea);

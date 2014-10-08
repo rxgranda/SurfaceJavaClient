@@ -57,7 +57,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 
 		halo=new MTRoundRectangle(objeto
 				.getPosicion().x-ObjetoUMLGraph.haloWidth/2, objeto
-				.getPosicion().y-ObjetoUMLGraph.haloWidth/2, 0, objeto
+				.getPosicion().y-ObjetoUMLGraph.haloWidth/2, 1, objeto
 				.getWidth()+ObjetoUMLGraph.haloWidth,
 				objeto.getHeigth()+ObjetoUMLGraph.haloWidth, 1, 1, mtApp);									
 		//halo.setNoFill(true);
@@ -74,6 +74,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 					InputCursor cursor = cursorInputEvt.getCursor();
 					IMTComponent3D target = cursorInputEvt.getTargetComponent();
 					System.out.println("Halo Entidad");
+					//halo.sendToFront();
 					switch (cursorInputEvt.getId()) {
 					case AbstractCursorInputEvt.INPUT_STARTED:
 						//System.out.println("Input detected on: " + target + " at " + cursor.getCurrentEvtPosX() + "," + cursor.getCurrentEvtPosY());
@@ -341,7 +342,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 				objeto.setPosicion(rectangulo.getCenterPointGlobal());
 				halo.setPositionGlobal(rectangulo.getCenterPointGlobal());
 //// TEST
-				MainDrawingScene.clear();
+				//MainDrawingScene.clear();
 /// TEST
 				LinkedList listaInicio=obtenerDatos(RELACIONES_INICIO_KEYWORD);
 				if(listaInicio!=null){
@@ -499,6 +500,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 	@Override
 	public MTComponent getHalo() {
 		// TODO Auto-generated method stub
+		//halo.sendToFront();
 		return halo;
 	}
 
