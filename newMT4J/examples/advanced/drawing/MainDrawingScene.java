@@ -15,6 +15,7 @@ import org.mt4j.MTApplication;
 import org.mt4j.components.TransformSpace;
 import org.mt4j.components.interfaces.IMTComponent3D;
 import org.mt4j.components.visibleComponents.font.FontManager;
+import org.mt4j.components.visibleComponents.font.IFont;
 import org.mt4j.components.visibleComponents.shapes.MTEllipse;
 import org.mt4j.components.visibleComponents.shapes.MTPolygon;
 import org.mt4j.components.visibleComponents.shapes.MTRectangle;
@@ -59,8 +60,17 @@ public class MainDrawingScene extends AbstractScene {
 	private int numUsuarios;
 	private String imagesPath = "advanced" + MTApplication.separator + "drawing" + MTApplication.separator + "data" + MTApplication.separator + "images" + MTApplication.separator;		
 	public static SocketIOServer server;
+	public static final MTColor loginColorDisabled=new MTColor(200,200,200);//new MTColor(45,137,239);
+	public static final MTColor loginColor=new MTColor(45,137,239);//new MTColor(2,196,238);
+	public static final MTColor backgroundColor=new MTColor(43,87,151);
+	/*public static final MTColor loginColor=new MTColor(2,196,238);//new MTColor(45,137,239);
+	public static final MTColor backgroundColor=new MTColor(0,171,169);
+	 * */
+
+	public static final MTColor blanco=new MTColor(255,255,255);
+	public static final MTColor negro=new MTColor(0,0,0);
+	static MTSceneTexture sceneTexture ;
 	
-	 static MTSceneTexture sceneTexture ;
 	class ServerThread extends Thread {
 		public ServerThread(String str) {
 			super(str);
@@ -78,7 +88,7 @@ public class MainDrawingScene extends AbstractScene {
 			  server.getBroadcastOperations().sendEvent("chatevent", data);
 			}
 			});
-			
+
 			server.addEventListener("textlabel", TextoLabel.class, new DataListener<TextoLabel>() {
 			@Override
 			public void onData(SocketIOClient arg0, TextoLabel arg1,
@@ -102,40 +112,46 @@ public class MainDrawingScene extends AbstractScene {
 			return;
 		}
 		this.registerGlobalInputProcessor(new CursorTracer(pa, this));
-		
-		PImage image = mtApplication.loadImage(imagesPath + "login2.png"); 
-		final MTBackgroundImage backgroundImage = new MTBackgroundImage(pa, image, false); 
-		this.getCanvas().addChild(backgroundImage);
-													
+
+		//PImage image = mtApplication.loadImage(imagesPath + "login2.png"); 
+		//final MTBackgroundImage backgroundImage = new MTBackgroundImage(pa, image, false); 
+		//this.getCanvas().addChild(backgroundImage);
+		final MTRectangle background=new MTRectangle( pa.width, pa.height, pa);
+		background.setFillColor(backgroundColor);
+		background.setPickable(false);
+		this.getCanvas().addChild(background);
+
 		final MTRectangle login=new MTRectangle(pa.width/2-100,pa.height/2+100,0, 200, 100, pa);
-		login.setFillColor(new MTColor(76, 96, 245));
-		login.setStrokeColor(new MTColor(0,0,0));
-		login.setNoStroke(false);
+		//login.setFillColor(loginColorDisabled);
+		login.setFillColor(loginColor);
+		login.setStrokeColor(blanco);
+		//login.setEnabled(false);
+		login.setNoStroke(true);
 		this.getCanvas().addChild(login);
 
-		final MTTextField texto = new MTTextField(pa.width/2-90,pa.height/2+120,200,200,FontManager.getInstance().createFont(pa, "SansSerif", 40), pa);
+		IFont loginFont=FontManager.getInstance().createFont(pa, "SourceSansPro-Semibold.otf", 40, new MTColor(255,255,255),true);
+		IFont txtFont=FontManager.getInstance().createFont(pa, "SourceSansPro-Light.otf", 22, new MTColor(255,255,255),true);
+
+		final MTTextField texto = new MTTextField(pa.width/2-90,pa.height/2+120,200,200,loginFont, pa);
 		texto.setText("Start App");
-		texto.setFontColor(new MTColor(255,255,255));
+		texto.setFontColor(blanco);
 		texto.setPickable(false);
 		texto.setNoFill(true);
 		texto.setNoStroke(true);
 		login.addChild(texto);
-		
-		final MTTextField txtUsuarios = new MTTextField(pa.width/2-90,pa.height/2+50,200,200,FontManager.getInstance().createFont(pa, "SansSerif", 20), pa);
+
+		final MTTextField txtUsuarios = new MTTextField(pa.width/2-93,pa.height/2+50,200,200,txtFont, pa);
 		txtUsuarios.setText("Usuarios Activos: "+ numUsuarios);
-		txtUsuarios.setFontColor(new MTColor(100,100,100));
+		txtUsuarios.setFontColor(blanco);
 		txtUsuarios.setPickable(false);
 		txtUsuarios.setNoFill(true);
 		txtUsuarios.setNoStroke(true);
 		this.getCanvas().addChild(txtUsuarios);
-		
-		
 
 		login.unregisterAllInputProcessors(); //Remove the default drag, rotate and scale gestures first
 		login.registerInputProcessor(new TapProcessor(pa));
 		login.addGestureListener(TapProcessor.class, new IGestureEventListener() {
 			public boolean processGestureEvent(MTGestureEvent ge) {
-				texto.setFontColor(new MTColor(76, 96, 245));
 				TapEvent te = (TapEvent)ge;
 				IMTComponent3D target = te.getTargetComponent();
 				if (target instanceof MTRectangle) {
@@ -143,19 +159,19 @@ public class MainDrawingScene extends AbstractScene {
 					switch (te.getTapID()) {
 					case TapEvent.BUTTON_DOWN:
 						System.out.println("Button down state on " + target);
-						rectangle.setFillColor(new MTColor(255,255,255));
+						rectangle.setFillColor(negro);
 						break;
 					case TapEvent.BUTTON_UP:
 						System.out.println("Button up state on " + target);
-						rectangle.setFillColor(new MTColor(76, 96, 245));
-						texto.setFontColor(new MTColor(255,255,255));
+						rectangle.setFillColor(loginColor);
+						texto.setFontColor(blanco);
 						break;
 					case TapEvent.BUTTON_CLICKED:
 						System.out.println("Button clicked state on " + target);
-						rectangle.setFillColor(new MTColor(255,255,255));
+						rectangle.setFillColor(negro);
 						cargarLienzo();								
 						getCanvas().removeChild(login);
-						getCanvas().removeChild(backgroundImage);
+						getCanvas().removeChild(background);
 						break;
 					default:
 						break;
@@ -164,7 +180,7 @@ public class MainDrawingScene extends AbstractScene {
 				return false;
 			}
 		});
-		
+
 		///new ServerThread("").start();  //Habilitar SoketIOServer
 	}
 
@@ -211,13 +227,11 @@ public class MainDrawingScene extends AbstractScene {
 		//We have to create a fullscreen fbo in order to save the image uncompressed
 		sceneTexture = new MTSceneTexture(pa,0, -0, pa.width+0, pa.height+0, drawingScene);
 		sceneTexture.getFbo().clear(true, 255, 255, 255, 0, true);
-
 		sceneTexture.setStrokeColor(new MTColor(155,0,0));
 
 		//Add the scene texture as a child of the background rectangle so the scene texture is drawn in front
 		container.addChild(sceneTexture);
 		frame.addChild(container);
-		
 	}
 
 	public void onEnter() {
@@ -232,16 +246,16 @@ public class MainDrawingScene extends AbstractScene {
 	public boolean destroy() {
 		server.stop(); System.out.println("OUTTTT");
 		boolean destroyed = super.destroy();
-		
+
 		if (destroyed){
 			if(drawingScene!=null)
 				drawingScene.destroy(); //Destroy the scene manually since it isnt destroyed in the MTSceneTexture atm!
 		}
 		return destroyed;
 	}
-	
-	
-	
+
+
+
 	public boolean guardar(){
 		this.drawingScene.guardar();
 		return true;
