@@ -2,10 +2,14 @@ package advanced.drawing;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
@@ -42,9 +46,13 @@ import org.mt4j.util.math.Vector3D;
 import org.mt4j.util.math.Vertex;
 import org.mt4j.util.opengl.GLFBO;
 
+import advanced.umleditor.chat.TextoLabel;
+import advanced.umleditor.logic.Usuario;
+
 import com.corundumstudio.socketio.AckRequest;
 import com.corundumstudio.socketio.Configuration;
 import com.corundumstudio.socketio.SocketIOClient;
+import com.corundumstudio.socketio.SocketIONamespace;
 import com.corundumstudio.socketio.SocketIOServer;
 import com.corundumstudio.socketio.listener.*;
 import com.corundumstudio.socketio.*;
@@ -59,7 +67,7 @@ public class MainDrawingScene extends AbstractScene {
 	private MTRectangle container;
 	private int numUsuarios;
 	private String imagesPath = "advanced" + MTApplication.separator + "drawing" + MTApplication.separator + "data" + MTApplication.separator + "images" + MTApplication.separator;		
-	public static SocketIOServer server;
+	
 	public static final MTColor loginColorDisabled=new MTColor(200,200,200);//new MTColor(45,137,239);
 	public static final MTColor loginColor=new MTColor(45,137,239);//new MTColor(2,196,238);
 	public static final MTColor backgroundColor=new MTColor(43,87,151);
@@ -69,42 +77,17 @@ public class MainDrawingScene extends AbstractScene {
 
 	public static final MTColor blanco=new MTColor(255,255,255);
 	public static final MTColor negro=new MTColor(0,0,0);
+	
+	
+	public static SocketIOServer server;
+	SocketIONamespace loginListener;
+	private static Map<Integer, Usuario> listaUsuarios = new HashMap<Integer, Usuario>();
+
+	
+	
 	static MTSceneTexture sceneTexture ;
 	
-	class ServerThread extends Thread {
-		public ServerThread(String str) {
-			super(str);
-		}
-		public void run() {
-			////////////////////////////
-			Configuration config = new Configuration();
-			config.setHostname("localhost");
-			config.setPort(3322);
-			server = new SocketIOServer(config);
-			/* server.addEventListener("chatevent", ChatObject.class, new DataListener<ChatObject>() {
-			@Override
-			public void onData(SocketIOClient client, ChatObject data, AckRequest ackRequest) {
-			  // broadcast messages to all clients
-			  server.getBroadcastOperations().sendEvent("chatevent", data);
-			}
-			});
-
-			server.addEventListener("textlabel", TextoLabel.class, new DataListener<TextoLabel>() {
-			@Override
-			public void onData(SocketIOClient arg0, TextoLabel arg1,
-					AckRequest arg2) throws Exception {
-					System.out.println("GOLA");
-					int idobj = arg1.getObjectID();
-					MTEllipse target = (MTEllipse)getCanvas().getChildbyID(idobj);
-					MTTextField texto =  (MTTextField)target.getChildByIndex(0);
-					texto.setText(arg1.getMessage());
-			}
-			});*/
-			server.start();
-
-		}
-	}
-	public MainDrawingScene(MTApplication mtApplication, String name) {
+		public MainDrawingScene(MTApplication mtApplication, String name) {
 		super(mtApplication, name);				
 		this.pa = mtApplication;
 		if (!(MT4jSettings.getInstance().isOpenGlMode() && GLFBO.isSupported(pa))){
@@ -181,7 +164,36 @@ public class MainDrawingScene extends AbstractScene {
 			}
 		});
 
-		///new ServerThread("").start();  //Habilitar SoketIOServer
+		//new ServerThread("").start();  //Habilitar SoketIOServer
+		
+		
+		//Configuarcion para el socket
+		Configuration config = new Configuration();
+        config.setHostname("localhost");
+        
+        config.setPort(3323);	        
+        //inizialimos el servidor de socket        
+        server = new SocketIOServer(config);	
+        
+        loginListener = server.addNamespace("/login");	        	        
+        loginListener.addEventListener("loginevent", Usuario.class, new DataListener<Usuario>() {
+			@Override
+			public void onData(SocketIOClient arg0, Usuario arg1,
+					AckRequest arg2) throws Exception {					
+					System.out.println("recibido:  "+arg1.getIdPluma()+" "+ arg1.getNombres());
+					Usuario user=agregarUsuario(arg1);					
+					loginListener.getClient(arg0.getSessionId()).sendEvent("confirmevent",user);																		
+			}
+        });        	
+		server.start();				
+       
+		mtApplication.frame.addWindowListener(new WindowAdapter(){
+	        public void windowClosing(WindowEvent e){
+	        	server.stop();
+	        	System.out.println("CLOSING!!!");
+	        }
+	    });
+
 	}
 
 
@@ -232,6 +244,7 @@ public class MainDrawingScene extends AbstractScene {
 		//Add the scene texture as a child of the background rectangle so the scene texture is drawn in front
 		container.addChild(sceneTexture);
 		frame.addChild(container);
+		 //
 	}
 
 	public void onEnter() {
@@ -263,5 +276,18 @@ public class MainDrawingScene extends AbstractScene {
 	public static void  clear(){
 		sceneTexture.getFbo().clear(true, 255, 255, 255, 0, true);
 
+	}
+	public static  synchronized Usuario  agregarUsuario(Usuario user){
+		if(listaUsuarios.containsKey(user.getIdPluma())){
+			user=listaUsuarios.get(user.getIdPluma());
+			user.setEstado(0);	
+			return user;
+		}else{
+			listaUsuarios.put(user.getIdPluma(), user);
+			user.setEstado(1);
+			user.setCanal("canal"+user.getIdPluma());
+			return user;
+		}
+		
 	}
 }

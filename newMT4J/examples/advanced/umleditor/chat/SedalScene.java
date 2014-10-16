@@ -1,4 +1,4 @@
-package advanced.sedal;
+package advanced.umleditor.chat;
 import com.corundumstudio.socketio.listener.*;
 import com.corundumstudio.socketio.*;
 
@@ -62,6 +62,7 @@ public class SedalScene extends AbstractScene {
 			Configuration config = new Configuration();
 	        config.setHostname("localhost");
 	        config.setPort(3322);
+
 	        
 	        //inizialimos el servidor de socket
 	        
@@ -73,15 +74,31 @@ public class SedalScene extends AbstractScene {
 	        //1. el nuevo label
 	        //2. el id del objeto al que vamos a cambiar el texto
 	        
+	        final SocketIONamespace chat1namespace = server.addNamespace("/chat1");
+	        final SocketIONamespace chat2namespace = server.addNamespace("/chat2");
+
 	        
-	        
-	        server.addEventListener("settextlabel", TextoLabel.class, new DataListener<TextoLabel>() {
+	        chat1namespace.addEventListener("settextlabel", TextoLabel.class, new DataListener<TextoLabel>() {
 
 				@Override
 				public void onData(SocketIOClient arg0, TextoLabel arg1,
 						AckRequest arg2) throws Exception {
 
+					System.out.println(arg0.getSessionId());
+						int idobj = arg1.getObjectID();
+						MTEllipse target = (MTEllipse)getCanvas().getChildbyID(idobj);
+						MTTextField texto =  (MTTextField)target.getChildByIndex(0);
+						texto.setText(arg1.getMessage());
 					
+				}
+	        });
+	        chat2namespace.addEventListener("settextlabel", TextoLabel.class, new DataListener<TextoLabel>() {
+
+				@Override
+				public void onData(SocketIOClient arg0, TextoLabel arg1,
+						AckRequest arg2) throws Exception {
+
+					System.out.println(arg0.getSessionId());
 						int idobj = arg1.getObjectID();
 						MTEllipse target = (MTEllipse)getCanvas().getChildbyID(idobj);
 						MTTextField texto =  (MTTextField)target.getChildByIndex(0);
@@ -178,7 +195,14 @@ public class SedalScene extends AbstractScene {
 									// 1 si esta listo para editar - hace que se habilite el textinput
 									// 0 si ya no queremos editar - have que se deshabilite el textinput
 									MessageSurface mss = new MessageSurface(ellipseID, 1); 
-									server.getBroadcastOperations().sendEvent("readyfortext",mss);
+									//server.getRoomOperations("").s;
+									if(ellipse_paso1==result){
+										System.out.println("Elipse 1");
+										chat1namespace.getBroadcastOperations().sendEvent("readyfortext",mss);
+									}else {
+										System.out.println("Elipse !=1");
+										chat2namespace.getBroadcastOperations().sendEvent("readyfortext",mss);
+									}
 									
 									
 								}
@@ -186,8 +210,13 @@ public class SedalScene extends AbstractScene {
 						}else{
 								target.setTexture(fg_im1);
 								MessageSurface mss = new MessageSurface(ellipseID, 0);
-								server.getBroadcastOperations().sendEvent("readyfortext",mss);
-							
+								if(ellipse_paso1==result){
+									System.out.println("Elipse 1");
+									chat1namespace.getBroadcastOperations().sendEvent("readyfortext",mss);
+								}else {
+									System.out.println("Elipse !=1");
+									chat2namespace.getBroadcastOperations().sendEvent("readyfortext",mss);
+								}
 							
 						}						
 		

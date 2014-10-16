@@ -1,4 +1,4 @@
-package advanced.sedal;
+package advanced.umleditor.chat;
 
 
 import org.mt4j.MTApplication;

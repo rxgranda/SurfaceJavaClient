@@ -1,4 +1,4 @@
-package advanced.sedal;
+package advanced.umleditor.chat;
 
 public class TextoLabel {
 

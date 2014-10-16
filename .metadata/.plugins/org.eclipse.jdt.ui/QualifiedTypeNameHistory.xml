@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapEvent"/>
-<fullyQualifiedTypeName name="org.mt4j.input.gestureAction.InertiaDragAction"/>
 <fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragProcessor"/>
 <fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.MTRectangle"/>
 <fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.MTLine"/>
@@ -9,7 +7,6 @@
 <fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragEvent"/>
 <fullyQualifiedTypeName name="org.mt4j.util.math.Vertex"/>
 <fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.widgets.MTTextField"/>
-<fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.font.FontManager"/>
 <fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.widgets.MTTextArea"/>
 <fullyQualifiedTypeName name="org.mt4j.MTApplication"/>
 <fullyQualifiedTypeName name="advanced.umleditor.impl.Entidad_Impl"/>
@@ -22,7 +19,6 @@
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="org.json.simple.JSONObject"/>
 <fullyQualifiedTypeName name="java.util.LinkedHashMap"/>
-<fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.sql.Timestamp"/>
 <fullyQualifiedTypeName name="org.json.simple.JSONValue"/>
@@ -48,7 +44,6 @@
 <fullyQualifiedTypeName name="org.mt4j.components.interfaces.IMTComponent3D"/>
 <fullyQualifiedTypeName name="org.mt4j.input.IMTInputEventListener"/>
 <fullyQualifiedTypeName name="org.mt4j.util.MTColor"/>
-<fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.font.IFont"/>
 <fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.unistrokeProcessor.UnistrokeUtils.Recognizer"/>
 <fullyQualifiedTypeName name="org.mt4j.components.MTComponent"/>
 <fullyQualifiedTypeName name="sun.org.mozilla.javascript.internal.ast.CatchClause"/>
@@ -60,4 +55,9 @@
 <fullyQualifiedTypeName name="org.mt4j.util.math.Vector3D"/>
 <fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.MTPolygon"/>
 <fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.AbstractShape"/>
+<fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.font.IFont"/>
+<fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.font.FontManager"/>
+<fullyQualifiedTypeName name="advanced.umleditor.chat.Usuario"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
 </qualifiedTypeNameHistroy>
