@@ -5,7 +5,6 @@ public class Usuario {
 	private int idPluma;
 	private String canal;
 	private int estado;
-	private String uuid;
 
 	
 	public Usuario() {
@@ -13,13 +12,12 @@ public class Usuario {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Usuario(int idPluma,String nombres, String canal, int estado, String uuid ) {
+	public Usuario(int idPluma,String nombres, String canal, int estado ) {
 		super();
 		this.nombres = nombres;
 		this.idPluma = idPluma;
 		this.canal=canal;
 		this.estado=estado;
-		this.uuid=uuid;
 		
 	}
 
@@ -55,12 +53,5 @@ public class Usuario {
 		this.estado = estado;
 	}
 
-	public String getUuid() {
-		return uuid;
-	}
-
-	public void setUuid(String uuid) {
-		this.uuid = uuid;
-	}
 
 }

@@ -17,8 +17,8 @@ public abstract class ObjetoUML {
 	public static final int  ENTIDAD=1;
 	public static final int  RELACION=2;
 	private static Calendar calendar = Calendar.getInstance();	
-	public  static ObjetoUML OBJETO_INVALIDO=new ObjetoInvalido(new Persona("","",-1)) ;
-	public static ObjetoUML DELETE_OBJECT_GESTURE= new DeleteObject(new Persona("","",-1));
+	public  static ObjetoUML OBJETO_INVALIDO=new ObjetoInvalido(new Usuario()) ;
+	public static ObjetoUML DELETE_OBJECT_GESTURE= new DeleteObject(new Usuario());
 	private ObjetoUMLGraph figura;
 
 	private Vector3D centroide;
@@ -28,14 +28,14 @@ public abstract class ObjetoUML {
 	private int tipo;
 	private boolean borrado=true;
 	private boolean tieneRelacion=false;
-	private Persona persona;
+	private Usuario persona;
 	private Timestamp tiempoInicio;
 	//private Timestamp tiempoFin;
 	//private ArrayList<Point> puntos;
 
 
 	
-	public ObjetoUML(Persona p){
+	public ObjetoUML(Usuario p){
 		tiempoInicio= new java.sql.Timestamp(calendar.getTime().getTime());		
 		//puntos=new ArrayList<Point>();	
 		this.persona=p;
@@ -146,7 +146,7 @@ public abstract class ObjetoUML {
 final class ObjetoInvalido extends ObjetoUML{
 
 	//public final ObjetoUML invalido=new ObjetoInvalido(new Persona("","",-1)) ;
-	public ObjetoInvalido(Persona p) {
+	public ObjetoInvalido(Usuario p) {
 		super(p);
 		// TODO Auto-generated constructor stub
 	}
@@ -155,7 +155,7 @@ final class ObjetoInvalido extends ObjetoUML{
 
 
 final class DeleteObject extends ObjetoUML{
-	public DeleteObject(Persona p) {
+	public DeleteObject(Usuario p) {
 		super(p);
 		// TODO Auto-generated constructor stub
 	}

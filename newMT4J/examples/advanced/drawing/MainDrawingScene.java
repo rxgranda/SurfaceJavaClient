@@ -64,8 +64,9 @@ public class MainDrawingScene extends AbstractScene {
 	private MTEllipse pencilBrush;// Dibujar Trazos
 	private MTEllipse pencilBrush2; // Borrar trazos
 	private DrawSurfaceScene drawingScene;
-	private MTRectangle container;
-	private int numUsuarios;
+	private MTRectangle container;	
+	private static MTTextField txtUsuarios;
+	static MTRectangle login;
 	private String imagesPath = "advanced" + MTApplication.separator + "drawing" + MTApplication.separator + "data" + MTApplication.separator + "images" + MTApplication.separator;		
 	
 	public static final MTColor loginColorDisabled=new MTColor(200,200,200);//new MTColor(45,137,239);
@@ -104,11 +105,11 @@ public class MainDrawingScene extends AbstractScene {
 		background.setPickable(false);
 		this.getCanvas().addChild(background);
 
-		final MTRectangle login=new MTRectangle(pa.width/2-100,pa.height/2+100,0, 200, 100, pa);
-		//login.setFillColor(loginColorDisabled);
-		login.setFillColor(loginColor);
+		login=new MTRectangle(pa.width/2-100,pa.height/2+100,0, 200, 100, pa);
+		login.setFillColor(loginColorDisabled);
+		//login.setFillColor(loginColor);
 		login.setStrokeColor(blanco);
-		//login.setEnabled(false);
+		login.setEnabled(false);
 		login.setNoStroke(true);
 		this.getCanvas().addChild(login);
 
@@ -123,8 +124,8 @@ public class MainDrawingScene extends AbstractScene {
 		texto.setNoStroke(true);
 		login.addChild(texto);
 
-		final MTTextField txtUsuarios = new MTTextField(pa.width/2-93,pa.height/2+50,200,200,txtFont, pa);
-		txtUsuarios.setText("Usuarios Activos: "+ numUsuarios);
+		txtUsuarios = new MTTextField(pa.width/2-93,pa.height/2+50,200,200,txtFont, pa);
+		txtUsuarios.setText("Usuarios Activos: "+ listaUsuarios.size());
 		txtUsuarios.setFontColor(blanco);
 		txtUsuarios.setPickable(false);
 		txtUsuarios.setNoFill(true);
@@ -207,7 +208,7 @@ public class MainDrawingScene extends AbstractScene {
 		container.setFillColor(new MTColor(255,255,255,255));
 
 		//Create the scene in which we actually draw
-		drawingScene = new DrawSurfaceScene(pa, "DrawSurface Scene", container);        
+		drawingScene = new DrawSurfaceScene(pa, "DrawSurface Scene", container,server,listaUsuarios);        
 		drawingScene.setClear(false);
 
 		//Create texture brush
@@ -284,8 +285,14 @@ public class MainDrawingScene extends AbstractScene {
 			return user;
 		}else{
 			listaUsuarios.put(user.getIdPluma(), user);
+			txtUsuarios.setText("Usuarios Activos: "+ listaUsuarios.size());
 			user.setEstado(1);
 			user.setCanal("canal"+user.getIdPluma());
+			if(listaUsuarios.size()>0){				
+				login.setFillColor(loginColor);			
+				login.setEnabled(true);
+				
+			}
 			return user;
 		}
 		

@@ -5,7 +5,7 @@ import java.util.LinkedList;
 
 import advanced.umleditor.logic.Entidad;
 import advanced.umleditor.logic.ObjetoUML;
-import advanced.umleditor.logic.Persona;
+import advanced.umleditor.logic.Usuario;
 import advanced.umleditor.logic.Relacion;
 
 public class UMLCollection {
@@ -18,7 +18,7 @@ public class UMLCollection {
 	
 	
 	
-	public static synchronized ObjetoUML anadirObjeto(final int id, Persona p){
+	public static synchronized ObjetoUML anadirObjeto(final int id, Usuario p){
 		ObjetoUML o=null;
 		switch (id) {
 		case ObjetoUML.ENTIDAD:

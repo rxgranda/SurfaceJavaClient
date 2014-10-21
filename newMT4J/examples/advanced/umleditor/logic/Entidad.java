@@ -2,7 +2,7 @@ package advanced.umleditor.logic;
 
 public class Entidad extends ObjetoUML {
 
-	public Entidad(Persona per) {
+	public Entidad(Usuario per) {
 		super(per);
 		this.setTipo(ObjetoUML.ENTIDAD);
 	}

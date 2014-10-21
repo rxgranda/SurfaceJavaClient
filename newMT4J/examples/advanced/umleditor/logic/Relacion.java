@@ -5,7 +5,7 @@ import org.mt4j.util.math.Vector3D;
 public class Relacion extends ObjetoUML {
 
 	private  Vector3D inicio,fin;
-	public Relacion(Persona per) {
+	public Relacion(Usuario per) {
 		super(per);		
 		this.setTipo(ObjetoUML.RELACION);
 	}

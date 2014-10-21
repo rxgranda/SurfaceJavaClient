@@ -7,14 +7,14 @@ import org.mt4j.components.MTComponent;
 import org.mt4j.util.math.Vector3D;
 
 import advanced.umleditor.logic.ObjetoUML;
-import advanced.umleditor.logic.Persona;
+import advanced.umleditor.logic.Usuario;
 import advanced.umleditor.logic.Relacion;
 
 public class UMLFacade {
 	
 	private ObjetoUML objeto;
 	
-	private Persona persona;
+	private Usuario persona;
 	private UMLRecognizer recognizer;
 	
 	
@@ -24,7 +24,7 @@ public class UMLFacade {
 	//Util
 	
 	
-	public UMLFacade(Persona p){		
+	public UMLFacade(Usuario p){		
 		this.recognizer=new UMLRecognizer();		
 		this.persona=p;
 	}
