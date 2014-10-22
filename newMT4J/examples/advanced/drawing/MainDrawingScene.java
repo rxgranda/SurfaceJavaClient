@@ -58,6 +58,7 @@ import com.corundumstudio.socketio.listener.*;
 import com.corundumstudio.socketio.*;
 
 import processing.core.PImage;
+//Aqui encontraeremos la pantalla de login de la app
 
 public class MainDrawingScene extends AbstractScene {
 	private MTApplication pa;	
@@ -82,6 +83,7 @@ public class MainDrawingScene extends AbstractScene {
 	
 	public static SocketIOServer server;
 	SocketIONamespace loginListener;
+
 	private static Map<Integer, Usuario> listaUsuarios = new HashMap<Integer, Usuario>();
 
 	
@@ -174,7 +176,10 @@ public class MainDrawingScene extends AbstractScene {
         
         config.setPort(3323);	        
         //inizialimos el servidor de socket        
-        server = new SocketIOServer(config);	
+        server = new SocketIOServer(config);
+        
+
+        
         
         loginListener = server.addNamespace("/login");	        	        
         loginListener.addEventListener("loginevent", Usuario.class, new DataListener<Usuario>() {
@@ -184,7 +189,12 @@ public class MainDrawingScene extends AbstractScene {
 					System.out.println("recibido:  "+arg1.getIdPluma()+" "+ arg1.getNombres());
 					Usuario user=agregarUsuario(arg1);					
 					loginListener.getClient(arg0.getSessionId()).sendEvent("confirmevent",user);																		
+					
+					//adding to the Room
+					arg0.joinRoom(arg1.getCanal());
+			
 			}
+       
         });        	
 		server.start();				
        

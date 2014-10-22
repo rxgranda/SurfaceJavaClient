@@ -75,7 +75,7 @@ public class DrawSurfaceScene extends AbstractScene {
 
 	private MTRectangle container;
 
-	//Pintar el trazo que se está dibujando
+	//Pintar el trazo que se estï¿½ dibujando
 	private AbstractShape drawShape;
 
 	// Utilizado para borrar el trazo dibujado
@@ -298,9 +298,7 @@ public class DrawSurfaceScene extends AbstractScene {
 			listaPuntos.put(user, puntos);
 			
 		}
-
-		
-		
+        
 		// Proyecto
 
 		this.getCanvas().addInputListener(new IMTInputEventListener() {
