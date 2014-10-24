@@ -30,6 +30,8 @@ public abstract class ObjetoUML {
 	private boolean tieneRelacion=false;
 	private Usuario persona;
 	private Timestamp tiempoInicio;
+	private static int idCounter;
+	private  int id;
 	//private Timestamp tiempoFin;
 	//private ArrayList<Point> puntos;
 
@@ -39,6 +41,7 @@ public abstract class ObjetoUML {
 		tiempoInicio= new java.sql.Timestamp(calendar.getTime().getTime());		
 		//puntos=new ArrayList<Point>();	
 		this.persona=p;
+		this.setId(generateID());
 	}
 
 
@@ -130,7 +133,19 @@ public abstract class ObjetoUML {
 	}
 
 
-	
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+	public static synchronized  int generateID(){
+		return idCounter++;
+	}
 
 
 	

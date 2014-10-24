@@ -44,4 +44,6 @@ public interface ObjetoUMLGraph {
 	
 	public ObjetoUML getObjetoUML();
 	public void setObjetoUML(ObjetoUML objeto);
+	
+	public void actualizarEtiquetas();
 }

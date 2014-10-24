@@ -1,11 +1,14 @@
 package advanced.umleditor;
 
 import java.awt.Point;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 
 import org.mt4j.components.MTComponent;
 import org.mt4j.util.math.Vector3D;
 
+import advanced.umleditor.logic.Entidad;
 import advanced.umleditor.logic.ObjetoUML;
 import advanced.umleditor.logic.Usuario;
 import advanced.umleditor.logic.Relacion;
@@ -70,10 +73,16 @@ public class UMLFacade {
 			
 			//Caso de que sea una linea, se debe conocer posicion inicial y final
 			
-			if (objeto.getTipo()==ObjetoUML.RELACION)
+			if (objeto.getTipo()==ObjetoUML.RELACION){
 				((Relacion)objeto).inicializarDimensiones((int)primerX,(int) primerY, (int)ultimoX,(int) ultimoY);
-			
-						
+				
+			}
+			if (objeto.getTipo()==ObjetoUML.ENTIDAD){
+				((Entidad)objeto).setNombre("Default");
+				ArrayList<String> atributos=new ArrayList<String>();
+				atributos.add("Id");
+				((Entidad)objeto).setAtributos(atributos);
+			}	
 			//// Para calcular centroide,posicion y dimensiones de una nueva figura
 			reiniciar();
 			return objeto;
@@ -110,8 +119,8 @@ public class UMLFacade {
 		return objeto;
 	}
 	
-	public static Collection <ObjetoUML> getListaUML(){
-		return UMLCollection.getListaUML();
+	public static  ObjetoUML getObjetoUML(int id){
+		return UMLCollection.getListaUML().get(id);
 	}
 
 

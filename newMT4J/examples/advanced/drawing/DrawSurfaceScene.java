@@ -56,18 +56,23 @@ import advanced.umleditor.UMLCollection;
 import advanced.umleditor.impl.Entidad_Impl;
 import advanced.umleditor.impl.ObjetoUMLGraph;
 import advanced.umleditor.impl.Relacion_Impl;
+import advanced.umleditor.logic.Entidad;
 import advanced.umleditor.logic.ObjetoUML;
 import advanced.umleditor.logic.Usuario;
 import advanced.umleditor.logic.Relacion;
 import advanced.umleditor.logic.Usuario;
+import advanced.umleditor.socketio.EntidadAdapter;
 import processing.core.PApplet;
 
 import org.mt4j.components.visibleComponents.shapes.MTRoundRectangle;
 import org.mt4j.components.visibleComponents.widgets.MTTextArea;
 import org.mt4j.components.visibleComponents.widgets.MTTextField;
 
+import com.corundumstudio.socketio.AckRequest;
+import com.corundumstudio.socketio.SocketIOClient;
 import com.corundumstudio.socketio.SocketIONamespace;
 import com.corundumstudio.socketio.SocketIOServer;
+import com.corundumstudio.socketio.listener.DataListener;
 
 public class DrawSurfaceScene extends AbstractScene {	
 
@@ -97,10 +102,13 @@ public class DrawSurfaceScene extends AbstractScene {
 
 	private boolean dynamicBrush;
 	
-	Map< Usuario, UMLFacade> listaRecognizer=new HashMap<Usuario, UMLFacade>();
+	Map< Integer, UMLFacade> listaRecognizer=new HashMap<Integer, UMLFacade>();
+	Map< Integer, UMLFacade> listaComponentes=new HashMap<Integer, UMLFacade>();
+
 	Map< Usuario, UMLFacade> listaComponentRecognizer=new HashMap<Usuario, UMLFacade>();
 	Map< Usuario, ArrayList<Vector3D>> listaPuntos=new HashMap<Usuario, ArrayList<Vector3D>>();
-
+	
+	
 	
 	
 	private int paso=-1;
@@ -261,7 +269,7 @@ public class DrawSurfaceScene extends AbstractScene {
 	}
 
 	public DrawSurfaceScene(MTApplication mtApplication, String name,
-			final MTRectangle container,SocketIOServer server, final Map<Integer, Usuario> listaUsuarios) {
+			final MTRectangle container,final SocketIOServer server, final Map<Integer, Usuario> listaUsuarios) {
 
 		super(mtApplication, name);
 		this.mtApp = mtApplication;
@@ -276,7 +284,26 @@ public class DrawSurfaceScene extends AbstractScene {
 		 * drawShape.getHeightXY(TransformSpace.LOCAL)/2f; this.stepDistance =
 		 * brushWidthHalf/2.5f;
 		 */
-
+		
+		SocketIONamespace userListener = MainDrawingScene.getLoginListener();	        	        
+		userListener.addEventListener("endEdition", EntidadAdapter.class, new DataListener<EntidadAdapter>() {
+			@Override
+			public void onData(SocketIOClient arg0, EntidadAdapter arg1,
+					AckRequest arg2) throws Exception {					
+					System.out.println(arg1.getId()+" "+arg1.getNombre());
+					ObjetoUML objeto=listaRecognizer.get(arg1.getIdUsuario()).getObjetoUML(arg1.getId());
+					System.out.println("objeto "+objeto);
+					if(objeto instanceof Entidad){
+						Entidad entidad=(Entidad)objeto;
+						arg1.actualizar(entidad);
+						System.out.println("Nombre objeto:"+entidad.getNombre());
+						objeto.getFigura().actualizarEtiquetas();
+						
+					}
+			}
+        });        	
+		
+		
 		this.brushColor = new MTColor(0, 0, 0);
 		this.brushScale = 0.05f;
 		this.dynamicBrush = true;
@@ -293,13 +320,17 @@ public class DrawSurfaceScene extends AbstractScene {
 			final UMLFacade recognizer = new UMLFacade(user); //para el canvas
 			final UMLFacade componentRecognizer = new UMLFacade(user); // para reconocer gestos de los componentes
 			ArrayList<Vector3D> puntos= new ArrayList<Vector3D>();			
-			listaRecognizer.put(user, recognizer);
+			listaRecognizer.put(user.getIdPluma(), recognizer);
 			listaComponentRecognizer.put(user, componentRecognizer);
-			listaPuntos.put(user, puntos);
-			
+			listaPuntos.put(user, puntos);											
 		}
-
-		
+		final Usuario defaultUser= new Usuario(-1, "default", "canal1", -1);
+		final UMLFacade recognizer = new UMLFacade(defaultUser); //para el canvas
+		final UMLFacade componentRecognizer = new UMLFacade(defaultUser); // para reconocer gestos de los componentes
+		ArrayList<Vector3D> puntos= new ArrayList<Vector3D>();			
+		listaRecognizer.put(defaultUser.getIdPluma(), recognizer);
+		listaComponentRecognizer.put(defaultUser, componentRecognizer);
+		listaPuntos.put(defaultUser, puntos);	
 		
 		// Proyecto
 
@@ -309,7 +340,8 @@ public class DrawSurfaceScene extends AbstractScene {
 					
 					final AbstractCursorInputEvt posEvt = (AbstractCursorInputEvt) inEvt;
 					final InputCursor m = posEvt.getCursor();
-					final Usuario currentUser=listaUsuarios.get((int)m.sessionID);
+					final Usuario currentUser=(listaUsuarios.get((int)m.sessionID)!=null)?listaUsuarios.get((int)m.sessionID):defaultUser;				
+					
 					if(currentUser!=null){
 					IMTComponent3D componente = m.getTarget();
 
@@ -484,7 +516,7 @@ public class DrawSurfaceScene extends AbstractScene {
 										currentPos.addLocal(direction);
 										 System.out.println("Ojooo: ID: " + m.sessionID);
 										//Usuario currentUser=listaUsuarios.get((int)m.sessionID);
-										UMLFacade recognizer=listaRecognizer.get(currentUser);
+										UMLFacade recognizer=listaRecognizer.get(currentUser.getIdPluma());
 										recognizer.anadirPunto(currentPos.x,
 												currentPos.y);
 										// centroideX+=currentPos.x;centroideY+=currentPos.y;
@@ -590,7 +622,7 @@ public class DrawSurfaceScene extends AbstractScene {
 							 getCanvas().sendToFront();*/
 							// int resultado=recognizer.recognize();
 							limpiar(currentUser);
-							UMLFacade recognizer=listaRecognizer.get(currentUser);
+							UMLFacade recognizer=listaRecognizer.get(currentUser.getIdPluma());
 							final ObjetoUML objeto=recognizer
 									.reconocerObjeto();
 							final int tipo_objeto = objeto.getTipo();
@@ -632,7 +664,7 @@ public class DrawSurfaceScene extends AbstractScene {
 
 								case ObjetoUML.ENTIDAD:
 									
-									ObjetoUMLGraph diagrama= new Entidad_Impl(mtApp,container,getCanvas() ,componentRecognizer,objeto);
+									ObjetoUMLGraph diagrama= new Entidad_Impl(mtApp,container,getCanvas() ,componentRecognizer,objeto,server);									
 									objeto.setFigura(diagrama);
 									//anadirObjeto(diagrama.getFigura());
 									break;

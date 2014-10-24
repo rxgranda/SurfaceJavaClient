@@ -46,7 +46,6 @@ import org.mt4j.util.math.Vector3D;
 import org.mt4j.util.math.Vertex;
 import org.mt4j.util.opengl.GLFBO;
 
-import advanced.umleditor.chat.TextoLabel;
 import advanced.umleditor.logic.Usuario;
 
 import com.corundumstudio.socketio.AckRequest;
@@ -81,10 +80,24 @@ public class MainDrawingScene extends AbstractScene {
 	
 	
 	public static SocketIOServer server;
-	SocketIONamespace loginListener;
-	private static Map<Integer, Usuario> listaUsuarios = new HashMap<Integer, Usuario>();
+	private static SocketIONamespace loginListener;
+	public static SocketIONamespace getLoginListener() {
+		return loginListener;
+	}
+
 
 	
+	private static Map<Integer, Usuario> listaUsuarios = new HashMap<Integer, Usuario>();
+	private static Map<String, Usuario> listaUsuariosXCanales= new HashMap<String, Usuario>();
+
+
+	
+	
+	public static Map<Integer, Usuario> getListaUsuarios() {
+		return listaUsuarios;
+	}
+
+
 	
 	static MTSceneTexture sceneTexture ;
 	
@@ -183,7 +196,8 @@ public class MainDrawingScene extends AbstractScene {
 					AckRequest arg2) throws Exception {					
 					System.out.println("recibido:  "+arg1.getIdPluma()+" "+ arg1.getNombres());
 					Usuario user=agregarUsuario(arg1);					
-					loginListener.getClient(arg0.getSessionId()).sendEvent("confirmevent",user);																		
+					arg0.sendEvent("confirmevent",user);	
+					arg0.joinRoom(user.getCanal());
 			}
         });        	
 		server.start();				
@@ -279,15 +293,27 @@ public class MainDrawingScene extends AbstractScene {
 
 	}
 	public static  synchronized Usuario  agregarUsuario(Usuario user){
+		if (user.getEstado()<0 && !listaUsuariosXCanales.containsKey(user.getCanal())){
+			user.setEstado(-1);
+			return user;
+		}
 		if(listaUsuarios.containsKey(user.getIdPluma())){
 			user=listaUsuarios.get(user.getIdPluma());
 			user.setEstado(0);	
+			System.out.println("no login");
 			return user;
+		}else if(listaUsuariosXCanales.containsKey(user.getCanal())){	
+			System.out.println("Second login "+ user.getCanal());
+			return listaUsuariosXCanales.get(user.getCanal());
 		}else{
-			listaUsuarios.put(user.getIdPluma(), user);
-			txtUsuarios.setText("Usuarios Activos: "+ listaUsuarios.size());
+			
 			user.setEstado(1);
-			user.setCanal("canal"+user.getIdPluma());
+			user.setCanal("canal"+user.getIdPluma());			
+			listaUsuarios.put(user.getIdPluma(), user);
+			listaUsuariosXCanales.put(user.getCanal(), user);
+			txtUsuarios.setText("Usuarios Activos: "+ listaUsuarios.size());
+
+			
 			if(listaUsuarios.size()>0){				
 				login.setFillColor(loginColor);			
 				login.setEnabled(true);

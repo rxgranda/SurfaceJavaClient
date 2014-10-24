@@ -342,6 +342,11 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		//this.objeto=
 
 	}
+	@Override
+	public void actualizarEtiquetas() {
+		// TODO Auto-generated method stub
+		
+	}
 
 
 }

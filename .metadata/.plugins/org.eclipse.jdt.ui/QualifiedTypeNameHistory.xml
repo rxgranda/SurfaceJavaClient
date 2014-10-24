@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.MTRectangle"/>
-<fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.MTLine"/>
-<fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.MTEllipse"/>
-<fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragEvent"/>
-<fullyQualifiedTypeName name="org.mt4j.util.math.Vertex"/>
-<fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.widgets.MTTextField"/>
-<fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.widgets.MTTextArea"/>
-<fullyQualifiedTypeName name="org.mt4j.MTApplication"/>
 <fullyQualifiedTypeName name="advanced.umleditor.impl.Entidad_Impl"/>
 <fullyQualifiedTypeName name="advanced.umleditor.impl.Util_Impl"/>
 <fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.widgets.MTBackgroundImage"/>
@@ -15,7 +7,6 @@
 <fullyQualifiedTypeName name="javax.swing.JFileChooser"/>
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="javax.swing.filechooser.FileFilter"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="org.json.simple.JSONObject"/>
 <fullyQualifiedTypeName name="java.util.LinkedHashMap"/>
 <fullyQualifiedTypeName name="java.util.List"/>
@@ -28,14 +19,11 @@
 <fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="org.mt4j.util.math.Tools3D"/>
 <fullyQualifiedTypeName name="org.mt4j.components.MTCanvas"/>
-<fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.MTRoundRectangle"/>
 <fullyQualifiedTypeName name="advanced.drawing.DrawSurfaceScene"/>
 <fullyQualifiedTypeName name="java.util.LinkedList"/>
-<fullyQualifiedTypeName name="java.lang.Object"/>
 <fullyQualifiedTypeName name="advanced.umleditor.logic.ObjetoUML"/>
 <fullyQualifiedTypeName name="advanced.umleditor.impl.Relacion_Impl"/>
 <fullyQualifiedTypeName name="advanced.umleditor.logic.Relacion"/>
-<fullyQualifiedTypeName name="advanced.drawing.MainDrawingScene"/>
 <fullyQualifiedTypeName name="org.mt4j.input.inputData.MTInputEvent"/>
 <fullyQualifiedTypeName name="org.mt4j.input.inputData.AbstractCursorInputEvt"/>
 <fullyQualifiedTypeName name="org.mt4j.input.inputData.InputCursor"/>
@@ -50,7 +38,6 @@
 <fullyQualifiedTypeName name="advanced.umleditor.impl.ObjetoUMLGraph"/>
 <fullyQualifiedTypeName name="java.lang.AbstractMethodError"/>
 <fullyQualifiedTypeName name="java.lang.Math"/>
-<fullyQualifiedTypeName name="org.mt4j.util.math.Vector3D"/>
 <fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.MTPolygon"/>
 <fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.AbstractShape"/>
 <fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.font.IFont"/>
@@ -60,4 +47,17 @@
 <fullyQualifiedTypeName name="java.util.Set"/>
 <fullyQualifiedTypeName name="advanced.umleditor.UMLFacade"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="org.mt4j.util.math.Vector3D"/>
+<fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapEvent"/>
+<fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.MTRectangle"/>
+<fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.MTRoundRectangle"/>
+<fullyQualifiedTypeName name="advanced.umleditor.logic.Usuario"/>
+<fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapProcessor"/>
+<fullyQualifiedTypeName name="advanced.umleditor.impl.Entidad_Impl.DoubleClickProcessor"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.lang.Object"/>
+<fullyQualifiedTypeName name="advanced.umleditor.logic.Entidad"/>
+<fullyQualifiedTypeName name="advanced.drawing.MainDrawingScene"/>
+<fullyQualifiedTypeName name="advanced.umleditor.logic.EntidadTest"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>

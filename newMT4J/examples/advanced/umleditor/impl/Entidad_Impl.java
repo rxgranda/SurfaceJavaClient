@@ -9,6 +9,7 @@ import org.mt4j.components.interfaces.IMTComponent3D;
 import org.mt4j.components.visibleComponents.font.FontManager;
 import org.mt4j.components.visibleComponents.font.IFont;
 import org.mt4j.components.visibleComponents.shapes.MTEllipse;
+import org.mt4j.components.visibleComponents.shapes.MTRectangle;
 import org.mt4j.components.visibleComponents.shapes.MTRoundRectangle;
 import org.mt4j.components.visibleComponents.widgets.MTTextArea;
 import org.mt4j.components.visibleComponents.widgets.MTTextField;
@@ -20,14 +21,21 @@ import org.mt4j.input.inputProcessors.IGestureEventListener;
 import org.mt4j.input.inputProcessors.MTGestureEvent;
 import org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragEvent;
 import org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragProcessor;
+import org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapEvent;
+import org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapProcessor;
 import org.mt4j.util.MTColor;
 import org.mt4j.util.math.Vector3D;
+
+import com.corundumstudio.socketio.SocketIOServer;
 
 import advanced.drawing.DrawSurfaceScene;
 import advanced.drawing.MainDrawingScene;
 import advanced.umleditor.UMLFacade;
+import advanced.umleditor.logic.Entidad;
+import advanced.umleditor.logic.EntidadTest;
 import advanced.umleditor.logic.ObjetoUML;
 import advanced.umleditor.logic.Relacion;
+import advanced.umleditor.socketio.EntidadAdapter;
 import processing.core.PApplet;
 
 public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
@@ -38,9 +46,49 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 	private MTTextField headerField;
 	private MTTextArea  bodyField;
 	MTEllipse botonResize=null,botonResize2=null,botonResize3=null,botonResize4=null;
+	
 
+	SocketIOServer server;
+	ObjetoUML objeto;
+	class DoubleClickProcessor extends TapProcessor  implements IGestureEventListener {
 
-	public Entidad_Impl(final MTApplication mtApp,final MTComponent container, final MTCanvas canvas, final UMLFacade recognizer,final ObjetoUML objeto) {
+		public DoubleClickProcessor(PApplet pa, float maxFingerUpDistance,
+				boolean enableDoubleTap, int doubleTapTime,
+				boolean stopEventPropagation) {
+			super(pa, maxFingerUpDistance, enableDoubleTap, doubleTapTime,
+					stopEventPropagation);
+			// TODO Auto-generated constructor stub
+		}
+
+		@Override
+		public boolean processGestureEvent(MTGestureEvent ge) {			
+				TapEvent te = (TapEvent)ge;
+				IMTComponent3D target = te.getTargetComponent();
+				if (target instanceof MTRoundRectangle) {
+					MTRoundRectangle rectangle = (MTRoundRectangle) target;
+					switch (te.getTapID()) {
+					case TapEvent.BUTTON_DOUBLE_CLICKED:
+						System.out.println("Doble Click " + target);						
+						//final AbstractCursorInputEvt posEvt = (AbstractCursorInputEvt) ge.getSource();
+						final InputCursor m = te.getCursor();
+						String canal=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?MainDrawingScene.getListaUsuarios().get((int)m.sessionID).getCanal():"canal1";
+						int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?(int)m.sessionID:-1;
+
+						server.getRoomOperations(canal).sendEvent("startEdition",new EntidadAdapter(((Entidad)objeto),idUsuario));						
+						System.out.println("Enviado "+canal+""+server.getRoomOperations(canal).getClients().size());
+						break;
+					
+					default:
+						break;
+					}
+				}
+				return false;			
+		}
+	
+	}
+	
+	
+	public Entidad_Impl(final MTApplication mtApp,final MTComponent container, final MTCanvas canvas, final UMLFacade recognizer,final ObjetoUML objeto, final SocketIOServer server) {
 
 		super(mtApp);
 		rectangulo = new MTRoundRectangle(objeto
@@ -51,10 +99,10 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 		rectangulo.setFillColor(new MTColor(255,255,255));
 		rectangulo.setStrokeColor(new MTColor(0, 0, 0));
 		rectangulo.setNoStroke(true);
-
+		this.objeto=objeto;
 		//corregir posicion inicial
 				//objeto.setPosicion(rectangulo.getCenterPointGlobal());
-
+		this.server=server;
 		halo=new MTRoundRectangle(objeto
 				.getPosicion().x-ObjetoUMLGraph.haloWidth/2, objeto
 				.getPosicion().y-ObjetoUMLGraph.haloWidth/2, 1, objeto
@@ -124,7 +172,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 		IFont headerFont=FontManager.getInstance().createFont(mtApp, "SourceSansPro-BoldIt.otf", 24, new MTColor(255,255,255),true);
 
 		headerField = new MTTextField(objeto.getPosicion().x, objeto.getPosicion().y,objeto.getWidth(),(int)(objeto.getHeigth()*0.25),headerFont, mtApp);
-		headerField.setText("No-Name");
+		headerField.setText(((Entidad)objeto).getNombre()+ objeto.getId());
 		//headerField.setFontColor(new MTColor(255,255,255));
 		headerField.setPickable(false);
 		headerField.setNoFill(true);
@@ -147,7 +195,11 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 		IFont bodyFont=FontManager.getInstance().createFont(mtApp, "SourceSansPro-Light.otf", 18, new MTColor(255,255,255),true);
 
 		bodyField = new MTTextArea (objeto.getPosicion().x, objeto.getPosicion().y+(int)(objeto.getHeigth()*0.25),objeto.getWidth(),(int)(objeto.getHeigth()*0.75),bodyFont, mtApp);
-		bodyField.setText("* Atributo 1 \n *Atributo 2");
+		String texto="";
+		for (String argumento:((Entidad)objeto).getAtributos()){
+			texto+=argumento+"\n";
+		}
+		bodyField.setText(texto);
 		bodyField.setFontColor(new MTColor(0,0,0));
 		bodyField.setPickable(false);
 		bodyField.setNoFill(true);
@@ -179,6 +231,20 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 				return false;
 			}
 		});
+		
+		
+		  
+	      
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		//Agregar boton resize2
 		botonResize2=new MTEllipse(mtApp, new Vector3D(objeto
 				.getPosicion().x+objeto.getWidth(), objeto
@@ -388,6 +454,15 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 				return false;
 			}
 		});
+		
+		
+		
+		
+		  DoubleClickProcessor proc=new DoubleClickProcessor(mtApp,(float) 0.1,true, 300,true);
+
+		 header.registerInputProcessor(proc);
+		  header.addGestureListener(DoubleClickProcessor.class,  proc);
+		
 
 
 		/*body.addGestureListener(DragProcessor.class, new IGestureEventListener() {
@@ -541,5 +616,27 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 	public void setObjetoUML(ObjetoUML objeto) {
 		// TODO Auto-generated method stub
 
+	}
+
+
+
+	@Override
+	public boolean processGestureEvent(MTGestureEvent ge) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+
+	@Override
+	public void actualizarEtiquetas() {
+		
+		headerField.setText(((Entidad)objeto).getNombre());
+		String texto="";
+		for (String argumento:((Entidad)objeto).getAtributos()){
+			texto+=argumento+"\n";
+		}
+		bodyField.setText(texto);
+		
 	}
 }
