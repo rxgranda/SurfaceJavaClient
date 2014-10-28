@@ -172,7 +172,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 		IFont headerFont=FontManager.getInstance().createFont(mtApp, "SourceSansPro-BoldIt.otf", 24, new MTColor(255,255,255),true);
 
 		headerField = new MTTextField(objeto.getPosicion().x, objeto.getPosicion().y,objeto.getWidth(),(int)(objeto.getHeigth()*0.25),headerFont, mtApp);
-		headerField.setText(((Entidad)objeto).getNombre()+ objeto.getId());
+		headerField.setText(((Entidad)objeto).getNombre());
 		//headerField.setFontColor(new MTColor(255,255,255));
 		headerField.setPickable(false);
 		headerField.setNoFill(true);

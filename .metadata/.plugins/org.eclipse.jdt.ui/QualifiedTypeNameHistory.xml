@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="advanced.umleditor.impl.Entidad_Impl"/>
 <fullyQualifiedTypeName name="advanced.umleditor.impl.Util_Impl"/>
 <fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.widgets.MTBackgroundImage"/>
 <fullyQualifiedTypeName name="javax.swing.JFrame"/>
@@ -56,8 +55,9 @@
 <fullyQualifiedTypeName name="advanced.umleditor.impl.Entidad_Impl.DoubleClickProcessor"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.lang.Object"/>
-<fullyQualifiedTypeName name="advanced.umleditor.logic.Entidad"/>
-<fullyQualifiedTypeName name="advanced.drawing.MainDrawingScene"/>
 <fullyQualifiedTypeName name="advanced.umleditor.logic.EntidadTest"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="advanced.drawing.MainDrawingScene"/>
+<fullyQualifiedTypeName name="advanced.umleditor.socketio.EntidadAdapter"/>
+<fullyQualifiedTypeName name="advanced.umleditor.logic.Entidad"/>
 </qualifiedTypeNameHistroy>

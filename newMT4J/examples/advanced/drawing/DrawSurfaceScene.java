@@ -1,6 +1,5 @@
 package advanced.drawing;
 
-import java.awt.Point;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -13,14 +12,11 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
-
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 import org.mt4j.MTApplication;
-import org.mt4j.components.MTCanvas;
 import org.mt4j.components.MTComponent;
 import org.mt4j.components.TransformSpace;
 import org.mt4j.components.interfaces.IMTComponent3D;

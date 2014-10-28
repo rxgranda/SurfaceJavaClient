@@ -3,26 +3,26 @@
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="683" key="DIALOG_WIDTH"/>
 		<item value="452" key="DIALOG_Y_ORIGIN"/>
-		<item value="284" key="DIALOG_HEIGHT"/>
 		<item value="592" key="DIALOG_X_ORIGIN"/>
+		<item value="284" key="DIALOG_HEIGHT"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="wrap"/>
-		<item value="false" key="isRegEx"/>
 		<item value="false" key="casesensitive"/>
+		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="rectangulo.add" key="selection"/>
+		<item value="Entidad" key="selection"/>
 		<list key="findhistory">
-			<item value="rectangulo.add"/>
-			<item value="listaUs"/>
+			<item value="entidad"/>
+			<item value="Entidad_Im"/>
+			<item value="EntidadIm"/>
+			<item value="Entidad"/>
 			<item value="currentUser"/>
-			<item value="currenUser"/>
-			<item value="currenU"/>
-			<item value="puntoFin"/>
-			<item value="puntoInicio"/>
-			<item value="settextlabel"/>
+			<item value="endEdition"/>
+			<item value="agregarUsuario"/>
+			<item value="No-Name"/>
 		</list>
 		<list key="replacehistory">
 			<item value="Centroide"/>
