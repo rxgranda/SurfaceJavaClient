@@ -76,7 +76,7 @@ public class DrawSurfaceScene extends AbstractScene {
 
 	private MTRectangle container;
 
-	//Pintar el trazo que se está dibujando
+	//Pintar el trazo que se estï¿½ dibujando
 	private AbstractShape drawShape;
 
 	// Utilizado para borrar el trazo dibujado
@@ -320,6 +320,7 @@ public class DrawSurfaceScene extends AbstractScene {
 			listaComponentRecognizer.put(user, componentRecognizer);
 			listaPuntos.put(user, puntos);											
 		}
+
 		final Usuario defaultUser= new Usuario(-1, "default", "canal1", -1);
 		final UMLFacade recognizer = new UMLFacade(defaultUser); //para el canvas
 		final UMLFacade componentRecognizer = new UMLFacade(defaultUser); // para reconocer gestos de los componentes
@@ -328,6 +329,7 @@ public class DrawSurfaceScene extends AbstractScene {
 		listaComponentRecognizer.put(defaultUser, componentRecognizer);
 		listaPuntos.put(defaultUser, puntos);	
 		
+
 		// Proyecto
 
 		this.getCanvas().addInputListener(new IMTInputEventListener() {

@@ -8,7 +8,7 @@ import srl.core.sketch.Stroke;
 import srl.recognition.IRecognitionResult;
 import srl.recognition.paleo.PaleoConfig;
 import srl.recognition.paleo.PaleoSketchRecognizer;
-import sun.org.mozilla.javascript.internal.ast.CatchClause;
+//import sun.org.mozilla.javascript.internal.ast.CatchClause;
 
 public class UMLRecognizer {
 
