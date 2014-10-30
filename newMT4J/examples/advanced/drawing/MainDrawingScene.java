@@ -124,7 +124,7 @@ public class MainDrawingScene extends AbstractScene {
 		login.setFillColor(loginColorDisabled);
 		//login.setFillColor(loginColor);
 		login.setStrokeColor(blanco);
-		login.setEnabled(false);
+		login.setEnabled(true);
 		login.setNoStroke(true);
 		this.getCanvas().addChild(login);
 
@@ -207,11 +207,11 @@ public class MainDrawingScene extends AbstractScene {
 			}
        
         });        	
-		server.start();				
+		//server.start();				
        
 		mtApplication.frame.addWindowListener(new WindowAdapter(){
 	        public void windowClosing(WindowEvent e){
-	        	server.stop();
+	      //  	server.stop();
 	        	System.out.println("CLOSING!!!");
 	        }
 	    });

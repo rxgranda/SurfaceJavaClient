@@ -391,7 +391,6 @@ public class DrawSurfaceScene extends AbstractScene {
 							if (entidad2 instanceof ObjetoUMLGraph){
 								((MTPolygon)((ObjetoUMLGraph)entidad2).getHalo()).setFillColor(ObjetoUMLGraph.haloDeSelected);
 								
-								//System.out.println("Pintandoooooo");
 							}
 						}
 						

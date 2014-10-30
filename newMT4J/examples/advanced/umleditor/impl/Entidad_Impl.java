@@ -25,14 +25,11 @@ import org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapEvent;
 import org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapProcessor;
 import org.mt4j.util.MTColor;
 import org.mt4j.util.math.Vector3D;
-
 import com.corundumstudio.socketio.SocketIOServer;
-
 import advanced.drawing.DrawSurfaceScene;
 import advanced.drawing.MainDrawingScene;
 import advanced.umleditor.UMLFacade;
 import advanced.umleditor.logic.Entidad;
-import advanced.umleditor.logic.EntidadTest;
 import advanced.umleditor.logic.ObjetoUML;
 import advanced.umleditor.logic.Relacion;
 import advanced.umleditor.socketio.EntidadAdapter;
