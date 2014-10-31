@@ -32,7 +32,6 @@ import advanced.drawing.DrawSurfaceScene;
 import advanced.drawing.MainDrawingScene;
 import advanced.umleditor.UMLFacade;
 import advanced.umleditor.logic.Entidad;
-import advanced.umleditor.logic.EntidadTest;
 import advanced.umleditor.logic.ObjetoUML;
 import advanced.umleditor.logic.Relacion;
 import advanced.umleditor.socketio.EntidadAdapter;
@@ -408,7 +407,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 				objeto.setPosicion(rectangulo.getCenterPointGlobal());
 				halo.setPositionGlobal(rectangulo.getCenterPointGlobal());
 //// TEST
-				//MainDrawingScene.clear();
+				MainDrawingScene.clear();
 /// TEST
 				LinkedList listaInicio=obtenerDatos(RELACIONES_INICIO_KEYWORD);
 				if(listaInicio!=null){
@@ -514,6 +513,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 							//container.removeChild(rectangulo);
 							rectangulo.removeFromParent();
 							halo.removeFromParent();
+							removerRelaciones();
 						}
 						break;
 					default:
@@ -580,7 +580,11 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 	}
 
 
-
+	/*
+	 * Se utiliza para manejar las relaciones graficas entre entidades
+	 * (non-Javadoc)
+	 * @see advanced.umleditor.impl.ObjetoUMLGraph#guardarDatos(java.lang.String, java.lang.Object)
+	 */
 	@Override
 	public void guardarDatos(String keyword, Object datos) {
 
@@ -607,7 +611,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 	@Override
 	public ObjetoUML getObjetoUML() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.objeto;
 	}
 
 
@@ -615,7 +619,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 	@Override
 	public void setObjetoUML(ObjetoUML objeto) {
 		// TODO Auto-generated method stub
-
+		this.objeto=objeto;
 	}
 
 
@@ -637,6 +641,43 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 			texto+=argumento+"\n";
 		}
 		bodyField.setText(texto);
+		
+	}
+
+
+	public void removerRelaciones(){
+		LinkedList listaInicio=obtenerDatos(RELACIONES_INICIO_KEYWORD);
+		if(listaInicio!=null){
+			for(Object o:listaInicio){
+				if(o instanceof ObjetoUMLGraph){
+					//((Relacion)objeto)
+					((Relacion_Impl)o).removerRelacion();
+				}
+
+			}
+		}
+
+		LinkedList listaFin=obtenerDatos(RELACIONES_FIN_KEYWORD);
+		if(listaFin!=null){
+			for(Object o:listaFin){
+				if(o instanceof ObjetoUMLGraph){
+					//((Relacion)objeto)
+					((Relacion_Impl)o).removerRelacion();
+					}
+			}
+		}
+
+	}
+
+	@Override
+	public void eliminarDatos(String keyword, Object datos) {
+		LinkedList listaDatos=(LinkedList<Object>) halo.getUserData(keyword);
+		if(listaDatos!=null){
+			if(listaDatos.contains(datos)){
+				listaDatos.remove(datos);
+			}
+		}
+		
 		
 	}
 }

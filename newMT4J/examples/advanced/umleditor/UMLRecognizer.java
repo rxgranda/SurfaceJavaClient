@@ -47,8 +47,12 @@ public class UMLRecognizer {
 							String str = new String(shapeLabel);      
 							str = str.replaceAll("[^0-9]+", " ");
 							//Arrays.asList(str.trim().split(" "));
-							if (Integer.parseInt(str.trim().split(" ")[0])>4) // Si es un polyline mayor a 4 para evitar el borrado involuntario					 
+							int numPolyLine=Integer.parseInt(str.trim().split(" ")[0]);
+							if (numPolyLine>4) // Si es un polyline mayor a 4 para evitar el borrado involuntario					 
 								return ObjetoUML.DELETE_GESTURE;
+							if(numPolyLine>1)
+								return ObjetoUML.RELACION;
+							
 							return ObjetoUML.INVALIDO;
 						}else if((shapeLabel.contains("Wave"))){
 							return ObjetoUML.DELETE_GESTURE;

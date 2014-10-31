@@ -49,14 +49,17 @@ public class UMLFacade {
 		
 		ultimoX=x;
 		ultimoY=y;
-		if(numMuestas<=0){
+		if(numMuestas<=2){
 			primerX=x;
 			primerY=y;
 		}
 		acumCentroideX+=x;
 		acumCentroideY+=y;
 		numMuestas++;
-
+		if (numMuestas>5000){
+			reiniciar();
+		}
+			
 	}
 	
 	public ObjetoUML aniadirTextoFlotante(Vector3D position){
@@ -73,15 +76,24 @@ public class UMLFacade {
 	}
 	
 	public ObjetoUML reconocerObjeto(){
-	
+		//System.out.println("Numero de muestrassssssss"+numMuestas);
 		int resultado=recognizer.recognize();
-		if(resultado!=ObjetoUML.INVALIDO&&this.numMuestas>40){			
+		if(resultado!=ObjetoUML.INVALIDO&&this.numMuestas>40){	
+			int width=(int)(maxX-minX);
+			int height=(int)(maxY-minY);
+			
+			if(resultado==ObjetoUML.ENTIDAD&&(width!=0&&height!=0)&&java.lang.Math.abs(width/height)>3||java.lang.Math.abs(height/width)>3){
+				reiniciar();
+				objeto=ObjetoUML.OBJETO_INVALIDO;
+				return objeto;
+			}
+				
 			objeto=UMLCollection.anadirObjeto(resultado,persona );
 			
 			//// Calcular centroide,posicion y dimensiones
 			this.getObjeto().setCentroide((int)((acumCentroideX/numMuestas) -5.0f),(int)((acumCentroideY/numMuestas) -5.0f));	
-			this.getObjeto().setWidth((int)(maxX-minX));
-			this.getObjeto().setHeigth((int)(maxY-minY));
+			this.getObjeto().setWidth(width);
+			this.getObjeto().setHeigth(height);
 			this.getObjeto().setPosicion(new Vector3D((int)(this.getObjeto().getCentroide().x- (maxX-minX)/2),(int)	(this.getObjeto().getCentroide().y-(maxY-minY)/2)));		
 			
 			

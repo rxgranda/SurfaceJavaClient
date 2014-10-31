@@ -124,7 +124,9 @@ public class MainDrawingScene extends AbstractScene {
 		login.setFillColor(loginColorDisabled);
 		//login.setFillColor(loginColor);
 		login.setStrokeColor(blanco);
+
 		//CAMBIO
+
 		login.setEnabled(true);
 		login.setNoStroke(true);
 		this.getCanvas().addChild(login);
@@ -214,6 +216,7 @@ public class MainDrawingScene extends AbstractScene {
 	        public void windowClosing(WindowEvent e){
 	        	//CAMBIO
 	        	server.stop();
+
 	        	System.out.println("CLOSING!!!");
 	        }
 	    });
