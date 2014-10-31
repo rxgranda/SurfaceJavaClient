@@ -62,7 +62,7 @@ public class UMLFacade {
 	}
 	
 	public ObjetoUML reconocerObjeto(){
-		System.out.println("Numero de muestrassssssss"+numMuestas);
+		//System.out.println("Numero de muestrassssssss"+numMuestas);
 		int resultado=recognizer.recognize();
 		if(resultado!=ObjetoUML.INVALIDO&&this.numMuestas>40){	
 			int width=(int)(maxX-minX);
