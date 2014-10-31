@@ -25,6 +25,7 @@ import org.mt4j.util.math.Vector3D;
 import org.mt4j.util.math.Vertex;
 
 import advanced.umleditor.UMLFacade;
+import advanced.umleditor.logic.Entidad;
 import advanced.umleditor.logic.ObjetoUML;
 import advanced.umleditor.logic.Relacion;
 import processing.core.PApplet;
@@ -38,7 +39,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 	
 	MTEllipse ini=null;
 	MTEllipse fin=null;
-	public Relacion_Impl(MTApplication mtApp, final MTComponent container, final MTCanvas canvas, final ObjetoUML objeto, ObjetoUMLGraph objeto1,ObjetoUMLGraph objeto2,final UMLFacade recognizer) {
+	public Relacion_Impl(MTApplication mtApp, final MTComponent container, final MTCanvas canvas, final ObjetoUML objeto,final UMLFacade recognizer) {
 		super(mtApp);
 		////
 		Vertex a= new Vertex(),b= new Vertex();
@@ -224,10 +225,8 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 						ObjetoUML obj=recognizer.reconocerObjeto();
 						if (obj ==ObjetoUML.DELETE_OBJECT_GESTURE){
 							
-							linea.removeFromParent();
-							//container.removeChild(halo);		
-							halo.setVisible(false);
-							halo.setPickable(false);
+							
+							removerRelacion();
 							//halo.removeFromParent();
 						}
 						break;
@@ -357,7 +356,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 	@Override
 	public void setObjetoUML(ObjetoUML objeto) {
 		// TODO Auto-generated method stub
-		//this.objeto=
+		//this.objeto=objeto;
 
 	}
 	@Override
@@ -365,6 +364,26 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		// TODO Auto-generated method stub
 		
 	}
-
+	
+	public void removerRelacion(){
+		
+		
+		linea.removeFromParent();
+		//container.removeChild(halo);		
+		halo.setVisible(false);
+		halo.setPickable(false);
+		
+		Entidad inicio=((Entidad)((Relacion)this.objeto).getObjetoInicio());
+		System.out.println("Objetoo inicio"+inicio);
+		inicio.getFigura().eliminarDatos(RELACIONES_INICIO_KEYWORD, this);
+		
+		Entidad fin=((Entidad)((Relacion)this.objeto).getObjetoFin());
+		fin.getFigura().eliminarDatos(RELACIONES_FIN_KEYWORD, this);
+	}
+	@Override
+	public void eliminarDatos(String keyword, Object datos) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }

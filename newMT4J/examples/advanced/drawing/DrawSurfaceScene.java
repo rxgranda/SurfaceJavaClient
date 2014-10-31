@@ -711,8 +711,10 @@ public class DrawSurfaceScene extends AbstractScene {
 														.println("resize done!!!!!!!!!!!");
 											  }
 											//
-											
-											ObjetoUMLGraph linea= new Relacion_Impl(mtApp,container, getCanvas(),objeto,(ObjetoUMLGraph)entidad1,(ObjetoUMLGraph)entidad2,componentRecognizer);
+											((Relacion)objeto).setObjetoInicio(((ObjetoUMLGraph)entidad1).getObjetoUML());
+											((Relacion)objeto).setObjetoFin(((ObjetoUMLGraph)entidad2).getObjetoUML());
+
+											ObjetoUMLGraph linea= new Relacion_Impl(mtApp,container, getCanvas(),objeto,componentRecognizer);
 											//((MTPolygon)((ObjetoUMLGraph)entidad1).getHalo()).setFillColor(ObjetoUMLGraph.haloDeSelected);											
 											//((MTPolygon)((ObjetoUMLGraph)entidad2).getHalo()).setFillColor(ObjetoUMLGraph.haloDeSelected);
 											((ObjetoUMLGraph)entidad1).guardarDatos(ObjetoUMLGraph.RELACIONES_INICIO_KEYWORD, linea);

@@ -35,6 +35,7 @@ public interface ObjetoUMLGraph {
 	
 
 	public void guardarDatos(String keyword,Object datos );
+	public void eliminarDatos(String keyword,Object datos );
 	public LinkedList obtenerDatos(String keyword);
 
 

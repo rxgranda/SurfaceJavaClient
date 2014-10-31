@@ -25,7 +25,9 @@ import org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapEvent;
 import org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapProcessor;
 import org.mt4j.util.MTColor;
 import org.mt4j.util.math.Vector3D;
+
 import com.corundumstudio.socketio.SocketIOServer;
+
 import advanced.drawing.DrawSurfaceScene;
 import advanced.drawing.MainDrawingScene;
 import advanced.umleditor.UMLFacade;
@@ -511,6 +513,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 							//container.removeChild(rectangulo);
 							rectangulo.removeFromParent();
 							halo.removeFromParent();
+							removerRelaciones();
 						}
 						break;
 					default:
@@ -577,7 +580,11 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 	}
 
 
-
+	/*
+	 * Se utiliza para manejar las relaciones graficas entre entidades
+	 * (non-Javadoc)
+	 * @see advanced.umleditor.impl.ObjetoUMLGraph#guardarDatos(java.lang.String, java.lang.Object)
+	 */
 	@Override
 	public void guardarDatos(String keyword, Object datos) {
 
@@ -604,7 +611,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 	@Override
 	public ObjetoUML getObjetoUML() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.objeto;
 	}
 
 
@@ -612,7 +619,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 	@Override
 	public void setObjetoUML(ObjetoUML objeto) {
 		// TODO Auto-generated method stub
-
+		this.objeto=objeto;
 	}
 
 
@@ -634,6 +641,43 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 			texto+=argumento+"\n";
 		}
 		bodyField.setText(texto);
+		
+	}
+
+
+	public void removerRelaciones(){
+		LinkedList listaInicio=obtenerDatos(RELACIONES_INICIO_KEYWORD);
+		if(listaInicio!=null){
+			for(Object o:listaInicio){
+				if(o instanceof ObjetoUMLGraph){
+					//((Relacion)objeto)
+					((Relacion_Impl)o).removerRelacion();
+				}
+
+			}
+		}
+
+		LinkedList listaFin=obtenerDatos(RELACIONES_FIN_KEYWORD);
+		if(listaFin!=null){
+			for(Object o:listaFin){
+				if(o instanceof ObjetoUMLGraph){
+					//((Relacion)objeto)
+					((Relacion_Impl)o).removerRelacion();
+					}
+			}
+		}
+
+	}
+
+	@Override
+	public void eliminarDatos(String keyword, Object datos) {
+		LinkedList listaDatos=(LinkedList<Object>) halo.getUserData(keyword);
+		if(listaDatos!=null){
+			if(listaDatos.contains(datos)){
+				listaDatos.remove(datos);
+			}
+		}
+		
 		
 	}
 }
