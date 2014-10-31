@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="advanced.umleditor.impl.Util_Impl"/>
 <fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.widgets.MTBackgroundImage"/>
 <fullyQualifiedTypeName name="javax.swing.JFrame"/>
 <fullyQualifiedTypeName name="javax.swing.JFileChooser"/>
@@ -46,7 +45,6 @@
 <fullyQualifiedTypeName name="java.util.Set"/>
 <fullyQualifiedTypeName name="advanced.umleditor.UMLFacade"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
-<fullyQualifiedTypeName name="org.mt4j.util.math.Vector3D"/>
 <fullyQualifiedTypeName name="org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapEvent"/>
 <fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.MTRectangle"/>
 <fullyQualifiedTypeName name="org.mt4j.components.visibleComponents.shapes.MTRoundRectangle"/>
@@ -60,4 +58,6 @@
 <fullyQualifiedTypeName name="advanced.drawing.MainDrawingScene"/>
 <fullyQualifiedTypeName name="advanced.umleditor.socketio.EntidadAdapter"/>
 <fullyQualifiedTypeName name="advanced.umleditor.logic.Entidad"/>
+<fullyQualifiedTypeName name="org.mt4j.util.math.Vector3D"/>
+<fullyQualifiedTypeName name="advanced.umleditor.impl.HaloHelper"/>
 </qualifiedTypeNameHistroy>
