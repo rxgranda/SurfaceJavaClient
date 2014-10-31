@@ -198,9 +198,9 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		
 		
 		
-		halo.setNoFill(true);
+		//halo.setNoFill(true);
 		
-		//halo.setFillColor(ObjetoUMLGraph.haloSelected);
+		halo.setFillColor(ObjetoUMLGraph.haloSelected);
 		
 		halo.removeAllGestureEventListeners();		
 		halo.setNoStroke(false);

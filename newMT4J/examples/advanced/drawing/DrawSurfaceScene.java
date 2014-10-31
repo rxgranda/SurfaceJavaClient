@@ -368,6 +368,9 @@ public class DrawSurfaceScene extends AbstractScene {
 							//System.out.println("Pintandoooooo");
 						}
 						//System.out.println("Input detected on: " + target + " at " + cursor.getCurrentEvtPosX() + "," + cursor.getCurrentEvtPosY());
+						listaHaloHelper.remove(currentUser);
+						HaloHelper helper= new HaloHelper();
+						listaHaloHelper.put(currentUser,helper);
 						break;
 					case AbstractCursorInputEvt.INPUT_UPDATED:
 						if(componente!=currentComponent){
@@ -687,7 +690,7 @@ public class DrawSurfaceScene extends AbstractScene {
 											
 											//Reubicar objeto relacion
 											  HaloHelper helper=listaHaloHelper.get(currentUser);
-											  System.out.println("asda");
+											  System.out.println("try resize");
 											  if(!helper.getHoverInicio().equalsVector(new Vector3D())&&!helper.getHoverFin().equalsVector(new Vector3D()))
 											  {
 												 ((Relacion)objeto).setInicio(helper.getHoverInicio());
@@ -695,6 +698,8 @@ public class DrawSurfaceScene extends AbstractScene {
 												 listaHaloHelper.remove(currentUser);
 												 helper=new HaloHelper();
 												 listaHaloHelper.put(currentUser, helper);
+												 System.out
+														.println("resize done!!!!!!!!!!!");
 											  }
 											//
 											

@@ -55,17 +55,20 @@ public class UMLFacade {
 		acumCentroideX+=x;
 		acumCentroideY+=y;
 		numMuestas++;
-
+		if (numMuestas>5000){
+			reiniciar();
+		}
+			
 	}
 	
 	public ObjetoUML reconocerObjeto(){
-	
+		System.out.println("Numero de muestrassssssss"+numMuestas);
 		int resultado=recognizer.recognize();
 		if(resultado!=ObjetoUML.INVALIDO&&this.numMuestas>40){	
 			int width=(int)(maxX-minX);
 			int height=(int)(maxY-minY);
 			
-			if((width!=0&&height!=0)&&java.lang.Math.abs(width/height)>3||java.lang.Math.abs(height/width)>3){
+			if(resultado==ObjetoUML.ENTIDAD&&(width!=0&&height!=0)&&java.lang.Math.abs(width/height)>3||java.lang.Math.abs(height/width)>3){
 				reiniciar();
 				objeto=ObjetoUML.OBJETO_INVALIDO;
 				return objeto;
