@@ -13,7 +13,7 @@ hs_err_pid*
 
 .svn*
 .metadata/*
-.metadata/
+.metadata/**
 */.metadata/*
 newMT4J/Settings.txt
 .metadata

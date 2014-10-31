@@ -450,8 +450,9 @@ public class DrawSurfaceScene extends AbstractScene {
 									// System.out.println("ID: " + m.sessionID);
 									// System.out.println("Pos: X:"+posEvt.getX()+"Y:"+
 									// posEvt.getY());
-									//Puntos para borrar el canvas
-									listaPuntos.get(currentUser).add(new Vector3D(posEvt.getX(), posEvt.getY()));
+									
+									//Puntos para borrar el canvas									
+									listaPuntos.get(currentUser).add(new Vector3D(posEvt.getX(), posEvt.getY()));									
 									if(listaPuntos.get(currentUser).size()>1000000){
 										listaPuntos.remove(currentUser);
 										ArrayList<Vector3D> puntos=new ArrayList<Vector3D>();
