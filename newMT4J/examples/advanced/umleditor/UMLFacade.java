@@ -10,6 +10,7 @@ import org.mt4j.util.math.Vector3D;
 
 import advanced.umleditor.logic.Entidad;
 import advanced.umleditor.logic.ObjetoUML;
+import advanced.umleditor.logic.TextoFlotante;
 import advanced.umleditor.logic.Usuario;
 import advanced.umleditor.logic.Relacion;
 
@@ -56,6 +57,19 @@ public class UMLFacade {
 		acumCentroideY+=y;
 		numMuestas++;
 
+	}
+	
+	public ObjetoUML aniadirTextoFlotante(Vector3D position){
+		
+		ObjetoUML objeto = UMLCollection.anadirObjeto(ObjetoUML.TEXTOFLOTANTE, persona);
+		//FALTAN PONER RESTO DE ATTRIBUTOS
+		((TextoFlotante)objeto).setWidth((int)(150));
+		((TextoFlotante)objeto).setHeigth((int)(50));
+		((TextoFlotante)objeto).setPosicion(position);
+		((TextoFlotante)objeto).setNombre("Default");
+		
+		
+		return  objeto;
 	}
 	
 	public ObjetoUML reconocerObjeto(){

@@ -21,6 +21,7 @@ public class Entidad extends ObjetoUML {
 		this.nombre = nombre;
 	}
 
+
 	public ArrayList<String> getAtributos() {
 		return atributos;
 	}

@@ -4,24 +4,25 @@ import java.util.ArrayList;
 
 import advanced.umleditor.logic.Entidad;
 import advanced.umleditor.logic.ObjetoUML;
+import advanced.umleditor.logic.TextoFlotante;
 
-public class EntidadAdapter {
+public class TextoFlotanteAdapter {
 	private String nombre;
-	private ArrayList<String> atributos;
 	private int id;
 	private int idUsuario;
 	private int tipo;
-	
-	public EntidadAdapter(){
+	public TextoFlotanteAdapter(){
 		
 	}
 	
-	public EntidadAdapter(Entidad entidad, int idUsuario) {		
-		atributos= entidad.getAtributos();
-		this.nombre=entidad.getNombre();
-		setId(entidad.getId());
+	
+	public TextoFlotanteAdapter(TextoFlotante textflo, int idUsuario) {		
+		
+		this.nombre=textflo.getNombre();
+		setId(textflo.getId());
 		this.idUsuario=idUsuario;
-		this.tipo = ObjetoUML.ENTIDAD;
+		this.tipo = ObjetoUML.TEXTOFLOTANTE;
+		
 	}
 	public String getNombre() {
 		return nombre;
@@ -34,17 +35,12 @@ public class EntidadAdapter {
 	}
 	public void setTipo(int tipo) {
 		this.tipo = tipo;
-	}
-	public ArrayList<String> getAtributos() {
-		return atributos;
-	}
-	public void setAtributos(ArrayList<String> atributos) {
-		this.atributos = atributos;
-	}
+	}	
 	
-	public void actualizar(Entidad entidad){
-		entidad.setAtributos(atributos);
-		entidad.setNombre(nombre);
+	
+	public void actualizar(TextoFlotante textflo){
+	
+		textflo.setNombre(nombre);
 	}
 	public int getId() {
 		return id;

@@ -124,7 +124,8 @@ public class MainDrawingScene extends AbstractScene {
 		login.setFillColor(loginColorDisabled);
 		//login.setFillColor(loginColor);
 		login.setStrokeColor(blanco);
-		login.setEnabled(false);
+		//CAMBIO
+		login.setEnabled(true);
 		login.setNoStroke(true);
 		this.getCanvas().addChild(login);
 
@@ -185,7 +186,7 @@ public class MainDrawingScene extends AbstractScene {
 		
 		//Configuarcion para el socket
 		Configuration config = new Configuration();
-        config.setHostname("192.168.65.223");
+        config.setHostname("192.168.65.34");
         
         config.setPort(3323);	        
         //inizialimos el servidor de socket        
@@ -211,6 +212,7 @@ public class MainDrawingScene extends AbstractScene {
        
 		mtApplication.frame.addWindowListener(new WindowAdapter(){
 	        public void windowClosing(WindowEvent e){
+	        	//CAMBIO
 	        	server.stop();
 	        	System.out.println("CLOSING!!!");
 	        }

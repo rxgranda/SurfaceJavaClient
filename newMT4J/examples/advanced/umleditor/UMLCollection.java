@@ -7,6 +7,7 @@ import java.util.Map;
 
 import advanced.umleditor.logic.Entidad;
 import advanced.umleditor.logic.ObjetoUML;
+import advanced.umleditor.logic.TextoFlotante;
 import advanced.umleditor.logic.Usuario;
 import advanced.umleditor.logic.Relacion;
 
@@ -29,6 +30,9 @@ public class UMLCollection {
 		case ObjetoUML.RELACION:	
 			o= new Relacion(p);
 			break;
+		case ObjetoUML.TEXTOFLOTANTE:	
+			o= new TextoFlotante(p);
+			break;			
 		case ObjetoUML.DELETE_GESTURE:
 			o= ObjetoUML.DELETE_OBJECT_GESTURE;
 		default:			

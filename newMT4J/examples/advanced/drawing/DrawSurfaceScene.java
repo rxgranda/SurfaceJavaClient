@@ -12,8 +12,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 import org.mt4j.MTApplication;
@@ -52,12 +54,15 @@ import advanced.umleditor.UMLCollection;
 import advanced.umleditor.impl.Entidad_Impl;
 import advanced.umleditor.impl.ObjetoUMLGraph;
 import advanced.umleditor.impl.Relacion_Impl;
+import advanced.umleditor.impl.TextoFlotanteImpl;
 import advanced.umleditor.logic.Entidad;
 import advanced.umleditor.logic.ObjetoUML;
+import advanced.umleditor.logic.TextoFlotante;
 import advanced.umleditor.logic.Usuario;
 import advanced.umleditor.logic.Relacion;
 import advanced.umleditor.logic.Usuario;
 import advanced.umleditor.socketio.EntidadAdapter;
+import advanced.umleditor.socketio.TextoFlotanteAdapter;
 import processing.core.PApplet;
 
 import org.mt4j.components.visibleComponents.shapes.MTRoundRectangle;
@@ -97,6 +102,9 @@ public class DrawSurfaceScene extends AbstractScene {
 	private MTColor brushColor;
 
 	private boolean dynamicBrush;
+	
+	public static final int nroPtsConfirmaClick = 6;
+	
 	
 	Map< Integer, UMLFacade> listaRecognizer=new HashMap<Integer, UMLFacade>();
 	Map< Integer, UMLFacade> listaComponentes=new HashMap<Integer, UMLFacade>();
@@ -300,6 +308,32 @@ public class DrawSurfaceScene extends AbstractScene {
         });        	
 		
 		
+		userListener.addEventListener("endEditionTexto", TextoFlotanteAdapter.class, new DataListener<TextoFlotanteAdapter>() {
+			@Override
+			public void onData(SocketIOClient arg0, TextoFlotanteAdapter arg1,
+					AckRequest arg2) throws Exception {					
+					System.out.println(arg1.getId()+" "+arg1.getNombre());
+					ObjetoUML objeto=listaRecognizer.get(arg1.getIdUsuario()).getObjetoUML(arg1.getId());
+					System.out.println("objeto "+objeto);
+					if(objeto instanceof TextoFlotante){
+						TextoFlotante textflot=(TextoFlotante)objeto;
+						arg1.actualizar(textflot);
+						System.out.println("Nombre objeto:"+textflot.getNombre());
+						objeto.getFigura().actualizarEtiquetas();
+						
+					}
+			}
+        });        	
+		
+
+		
+		
+		
+		
+		
+		
+		
+		
 		this.brushColor = new MTColor(0, 0, 0);
 		this.brushScale = 0.05f;
 		this.dynamicBrush = true;
@@ -331,7 +365,42 @@ public class DrawSurfaceScene extends AbstractScene {
 		
 
 		// Proyecto
-
+		this.getCanvas().registerInputProcessor(new TapProcessor(mtApplication));
+		this.getCanvas().addGestureListener(TapProcessor.class, new IGestureEventListener() {
+			public boolean processGestureEvent(MTGestureEvent ge) {
+				TapEvent de = (TapEvent)ge;
+				final InputCursor m = de.getCursor();
+				final Usuario currentUser=(listaUsuarios.get((int)m.sessionID)!=null)?listaUsuarios.get((int)m.sessionID):defaultUser;
+				
+				
+				//Moves the component
+				switch (de.getId()) {
+				case MTGestureEvent.GESTURE_STARTED:
+					//listaConfirmarPunto.add(m.getPosition());
+					System.out.println("ONE CLCIK START!!");
+					break;
+				case MTGestureEvent.GESTURE_UPDATED:
+					//listaConfirmarPunto.add(m.getPosition());          
+					System.out.println("ONE CLCIK UPDATE!!");
+					break;
+				case MTGestureEvent.GESTURE_ENDED:
+					System.out.println("ONE CLCIK END!!");
+					
+					//if(listaConfirmarPunto.size() < nroPtsConfirmaClick){
+						/*System.out.println("CLICCCCKKKKKKKKK!!!!!");
+						UMLFacade recognizer=listaRecognizer.get(currentUser.getIdPluma());
+						ObjetoUML objeto = recognizer.aniadirTextoFlotante(m.getPosition());
+						TextoFlotanteImpl teximpl = new TextoFlotanteImpl(mtApp, container, getCanvas(), recognizer, objeto, server);
+						objeto.setFigura(teximpl);*/
+					//}
+					break;
+				default:
+					break;
+				}		
+				return false;
+			}
+		});
+		
 		this.getCanvas().addInputListener(new IMTInputEventListener() {
 			public boolean processInputEvent(MTInputEvent inEvt) {
 				if (inEvt instanceof AbstractCursorInputEvt) {
@@ -631,7 +700,19 @@ public class DrawSurfaceScene extends AbstractScene {
 							// eliminarPuntos();
 							// }
 							System.out.println("Termino Input");
+							System.out.println("tamano lista!!: " + listaPuntos.get(currentUser).size());
+							if( listaPuntos.get(currentUser).size() < 6 ){
+								
+								
+								System.out.println("CLICCCCKKKKKKKKK!!!!!");
+								ObjetoUML objetotexto = recognizer.aniadirTextoFlotante(m.getPosition());
+								TextoFlotanteImpl teximpl = new TextoFlotanteImpl(mtApp, container, getCanvas(), recognizer, objetotexto, server);
+								objetotexto.setFigura(teximpl);
+								
+							}
 							if (objeto != ObjetoUML.OBJETO_INVALIDO) {
+							
+
 
 								// setBrushColor2(new MTColor(255,0,0));
 
