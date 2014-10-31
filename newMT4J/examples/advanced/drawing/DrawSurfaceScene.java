@@ -12,8 +12,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 import org.mt4j.MTApplication;
@@ -50,6 +52,7 @@ import advanced.umleditor.UMLFacade;
 import advanced.umleditor.UMLRecognizer;
 import advanced.umleditor.UMLCollection;
 import advanced.umleditor.impl.Entidad_Impl;
+import advanced.umleditor.impl.HaloHelper;
 import advanced.umleditor.impl.ObjetoUMLGraph;
 import advanced.umleditor.impl.Relacion_Impl;
 import advanced.umleditor.logic.Entidad;
@@ -102,8 +105,9 @@ public class DrawSurfaceScene extends AbstractScene {
 	Map< Integer, UMLFacade> listaComponentes=new HashMap<Integer, UMLFacade>();
 
 	Map< Usuario, UMLFacade> listaComponentRecognizer=new HashMap<Usuario, UMLFacade>();
+	Map< Usuario, HaloHelper> listaHaloHelper=new HashMap<Usuario, HaloHelper>();
+
 	Map< Usuario, ArrayList<Vector3D>> listaPuntos=new HashMap<Usuario, ArrayList<Vector3D>>();
-	
 	
 	
 	
@@ -316,18 +320,22 @@ public class DrawSurfaceScene extends AbstractScene {
 			final UMLFacade recognizer = new UMLFacade(user); //para el canvas
 			final UMLFacade componentRecognizer = new UMLFacade(user); // para reconocer gestos de los componentes
 			ArrayList<Vector3D> puntos= new ArrayList<Vector3D>();			
+			HaloHelper helper=new HaloHelper();
 			listaRecognizer.put(user.getIdPluma(), recognizer);
 			listaComponentRecognizer.put(user, componentRecognizer);
-			listaPuntos.put(user, puntos);											
+			listaPuntos.put(user, puntos);		
+			listaHaloHelper.put(user, helper);
 		}
 
 		final Usuario defaultUser= new Usuario(-1, "default", "canal1", -1);
 		final UMLFacade recognizer = new UMLFacade(defaultUser); //para el canvas
 		final UMLFacade componentRecognizer = new UMLFacade(defaultUser); // para reconocer gestos de los componentes
-		ArrayList<Vector3D> puntos= new ArrayList<Vector3D>();			
+		ArrayList<Vector3D> puntos= new ArrayList<Vector3D>();
+		HaloHelper helper=new HaloHelper();
 		listaRecognizer.put(defaultUser.getIdPluma(), recognizer);
 		listaComponentRecognizer.put(defaultUser, componentRecognizer);
-		listaPuntos.put(defaultUser, puntos);	
+		listaPuntos.put(defaultUser, puntos);
+		listaHaloHelper.put(defaultUser, helper);
 		
 
 		// Proyecto
@@ -348,6 +356,7 @@ public class DrawSurfaceScene extends AbstractScene {
 					
 					IMTComponent3D currentComponent = (IMTComponent3D) getCanvas().getComponentAt((int) m.getPosition().x,(int) m.getPosition().y);
 					//Object entidad = null,entidad2=null;
+					
 					//switch para establecer relaciones entre entidades
 					switch (((AbstractCursorInputEvt) inEvt).getId()) {
 					case AbstractCursorInputEvt.INPUT_STARTED:
@@ -374,8 +383,12 @@ public class DrawSurfaceScene extends AbstractScene {
 									
 								}
 								listaVisitados.add(entidad2);
+								if (listaHaloHelper.get(currentUser).getHoverFin().equalsVector(new Vector3D()))
+									listaHaloHelper.get(currentUser).setHoverFin(m.getPosition());
 							}
 							
+						}else{
+							listaHaloHelper.get(currentUser).setHoverInicio(m.getPosition());
 						}
 							
 						//	System.out.println("Holaaa Input updated on: " + target + " at " + cursor.getCurrentEvtPosX() + "," + cursor.getCurrentEvtPosY());			
@@ -670,7 +683,21 @@ public class DrawSurfaceScene extends AbstractScene {
 									if(componente instanceof MTPolygon && destino instanceof MTPolygon){ //verificar si el componente inicial y final son Instancias de Polygon(Diagrama entidad)
 										Object entidad1=((MTComponent)componente).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
 										Object entidad2=((MTComponent)destino).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
-										if(entidad1!=null&&entidad2!=null&&entidad1 instanceof ObjetoUMLGraph && entidad2 instanceof ObjetoUMLGraph){
+										if(entidad1!=null&&entidad2!=null&&entidad1 instanceof ObjetoUMLGraph && entidad2 instanceof ObjetoUMLGraph && entidad1!=entidad2){
+											
+											//Reubicar objeto relacion
+											  HaloHelper helper=listaHaloHelper.get(currentUser);
+											  System.out.println("asda");
+											  if(!helper.getHoverInicio().equalsVector(new Vector3D())&&!helper.getHoverFin().equalsVector(new Vector3D()))
+											  {
+												 ((Relacion)objeto).setInicio(helper.getHoverInicio());
+												 ((Relacion)objeto).setFin(helper.getHoverFin());
+												 listaHaloHelper.remove(currentUser);
+												 helper=new HaloHelper();
+												 listaHaloHelper.put(currentUser, helper);
+											  }
+											//
+											
 											ObjetoUMLGraph linea= new Relacion_Impl(mtApp,container, getCanvas(),objeto,(ObjetoUMLGraph)entidad1,(ObjetoUMLGraph)entidad2,componentRecognizer);
 											//((MTPolygon)((ObjetoUMLGraph)entidad1).getHalo()).setFillColor(ObjetoUMLGraph.haloDeSelected);											
 											//((MTPolygon)((ObjetoUMLGraph)entidad2).getHalo()).setFillColor(ObjetoUMLGraph.haloDeSelected);

@@ -35,6 +35,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 	private final MTLine linea ;
 	private final ObjetoUML objeto;
 	final MTRoundRectangle halo;
+	
 	MTEllipse ini=null;
 	MTEllipse fin=null;
 	public Relacion_Impl(MTApplication mtApp, final MTComponent container, final MTCanvas canvas, final ObjetoUML objeto, ObjetoUMLGraph objeto1,ObjetoUMLGraph objeto2,final UMLFacade recognizer) {
@@ -122,19 +123,21 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 				Vector3D distancia=vFin.getSubtracted(vInicio);
 
 				Vertex[] haloVertex= new Vertex[4];		
+				//float pendiente=java.lang.Math.abs(distancia.y/distancia.x);
 				if(java.lang.Math.abs(distancia.y/distancia.x)<1){
-					haloVertex[0]= new Vertex(new Vector3D(((Relacion)objeto).getFin()).getAdded(new Vector3D(0,40)));
-					haloVertex[1]= new Vertex(new Vector3D(((Relacion)objeto).getFin()).getAdded(new Vector3D(0,-40)));
-					haloVertex[2]= new Vertex(new Vector3D(((Relacion)objeto).getInicio()).getAdded(new Vector3D(0,-40)));
-					haloVertex[3]= new Vertex(new Vector3D(((Relacion)objeto).getInicio().getAdded(new Vector3D(0,40))));
-					}else {
-						haloVertex[0]= new Vertex(new Vector3D(((Relacion)objeto).getFin()).getAdded(new Vector3D(50,0)));
-						haloVertex[1]= new Vertex(new Vector3D(((Relacion)objeto).getFin()).getAdded(new Vector3D(-35,0)));
-						haloVertex[2]= new Vertex(new Vector3D(((Relacion)objeto).getInicio()).getAdded(new Vector3D(-35,0)));
-						haloVertex[3]= new Vertex(new Vector3D(((Relacion)objeto).getInicio().getAdded(new Vector3D(50,0))));
-						}
+					haloVertex[0]= new Vertex(new Vector3D(((Relacion)objeto).getFin()).getAdded(new Vector3D(0,120)));
+					haloVertex[1]= new Vertex(new Vector3D(((Relacion)objeto).getFin()).getAdded(new Vector3D(0,-0)));
+					haloVertex[2]= new Vertex(new Vector3D(((Relacion)objeto).getInicio()).getAdded(new Vector3D(0,-0)));
+					haloVertex[3]= new Vertex(new Vector3D(((Relacion)objeto).getInicio().getAdded(new Vector3D(0,120))));
+				}else{
+					haloVertex[0]= new Vertex(new Vector3D(((Relacion)objeto).getFin()).getAdded(new Vector3D(50,0)));
+					haloVertex[1]= new Vertex(new Vector3D(((Relacion)objeto).getFin()).getAdded(new Vector3D(-35,0)));
+					haloVertex[2]= new Vertex(new Vector3D(((Relacion)objeto).getInicio()).getAdded(new Vector3D(-35,0)));
+					haloVertex[3]= new Vertex(new Vector3D(((Relacion)objeto).getInicio().getAdded(new Vector3D(50,0))));
+				}
 				halo.setVertices(haloVertex);
 				halo.setFillColor(ObjetoUMLGraph.haloSelected);
+				halo.setPositionGlobal(linea.getCenterPointGlobal());
 				return false;
 			}
 		});
@@ -147,6 +150,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 			public boolean processGestureEvent(MTGestureEvent ge) {
 				DragEvent de = (DragEvent)ge;
 				((Relacion)objeto).setFin(new Vector3D(((Relacion)objeto).getFin()).getAdded(de.getTranslationVect()));
+				
 				//linea.setPositionGlobal(objeto.getPosicion());
 				Vertex[] a= new Vertex[2];
 				a[1]= new Vertex(((Relacion)objeto).getFin());
@@ -160,11 +164,11 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 				Vertex[] haloVertex= new Vertex[4];		
 				//float pendiente=java.lang.Math.abs(distancia.y/distancia.x);
 				if(java.lang.Math.abs(distancia.y/distancia.x)<1){
-					haloVertex[0]= new Vertex(new Vector3D(((Relacion)objeto).getFin()).getAdded(new Vector3D(0,40)));
-					haloVertex[1]= new Vertex(new Vector3D(((Relacion)objeto).getFin()).getAdded(new Vector3D(0,-40)));
-					haloVertex[2]= new Vertex(new Vector3D(((Relacion)objeto).getInicio()).getAdded(new Vector3D(0,-40)));
-					haloVertex[3]= new Vertex(new Vector3D(((Relacion)objeto).getInicio().getAdded(new Vector3D(0,40))));
-				}else {
+					haloVertex[0]= new Vertex(new Vector3D(((Relacion)objeto).getFin()).getAdded(new Vector3D(0,120)));
+					haloVertex[1]= new Vertex(new Vector3D(((Relacion)objeto).getFin()).getAdded(new Vector3D(0,-0)));
+					haloVertex[2]= new Vertex(new Vector3D(((Relacion)objeto).getInicio()).getAdded(new Vector3D(0,-0)));
+					haloVertex[3]= new Vertex(new Vector3D(((Relacion)objeto).getInicio().getAdded(new Vector3D(0,120))));
+				}else{
 					haloVertex[0]= new Vertex(new Vector3D(((Relacion)objeto).getFin()).getAdded(new Vector3D(50,0)));
 					haloVertex[1]= new Vertex(new Vector3D(((Relacion)objeto).getFin()).getAdded(new Vector3D(-35,0)));
 					haloVertex[2]= new Vertex(new Vector3D(((Relacion)objeto).getInicio()).getAdded(new Vector3D(-35,0)));
@@ -172,6 +176,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 				}
 				halo.setVertices(haloVertex);
 				halo.setFillColor(ObjetoUMLGraph.haloSelected);
+				halo.setPositionGlobal(linea.getCenterPointGlobal());
 				return false;
 			}
 		});
@@ -193,9 +198,9 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		
 		
 		
-		halo.setNoFill(true);
+		//halo.setNoFill(true);
 		
-		//halo.setFillColor(ObjetoUMLGraph.haloSelected);
+		halo.setFillColor(ObjetoUMLGraph.haloSelected);
 		
 		halo.removeAllGestureEventListeners();		
 		halo.setNoStroke(false);
@@ -243,26 +248,27 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		Vertex[] haloVertex= new Vertex[4];		
 		((Relacion)objeto).setInicio(ini.getCenterPointGlobal());
 		((Relacion)objeto).setFin(fin.getCenterPointGlobal());
+		objeto.setPosicion(linea.getCenterPointGlobal());	
+
 
 		//float pendiente=java.lang.Math.abs(distancia.y/distancia.x);
 		if(java.lang.Math.abs(distancia.y/distancia.x)<1){
-			haloVertex[0]= new Vertex(new Vector3D(((Relacion)objeto).getFin()).getAdded(new Vector3D(0,25)));
-			haloVertex[1]= new Vertex(new Vector3D(((Relacion)objeto).getFin()).getAdded(new Vector3D(0,-25)));
-			haloVertex[2]= new Vertex(new Vector3D(((Relacion)objeto).getInicio()).getAdded(new Vector3D(0,-25)));
-			haloVertex[3]= new Vertex(new Vector3D(((Relacion)objeto).getInicio().getAdded(new Vector3D(0,25))));
+			haloVertex[0]= new Vertex(new Vector3D(((Relacion)objeto).getFin()).getAdded(new Vector3D(0,60)));
+			haloVertex[1]= new Vertex(new Vector3D(((Relacion)objeto).getFin()).getAdded(new Vector3D(0,-60)));
+			haloVertex[2]= new Vertex(new Vector3D(((Relacion)objeto).getInicio()).getAdded(new Vector3D(0,-60)));
+			haloVertex[3]= new Vertex(new Vector3D(((Relacion)objeto).getInicio().getAdded(new Vector3D(0,60))));
 		}else {
-			haloVertex[0]= new Vertex(new Vector3D(((Relacion)objeto).getFin()).getAdded(new Vector3D(25,0)));
-			haloVertex[1]= new Vertex(new Vector3D(((Relacion)objeto).getFin()).getAdded(new Vector3D(-25,0)));
-			haloVertex[2]= new Vertex(new Vector3D(((Relacion)objeto).getInicio()).getAdded(new Vector3D(-25,0)));
-			haloVertex[3]= new Vertex(new Vector3D(((Relacion)objeto).getInicio().getAdded(new Vector3D(25,0))));
+			haloVertex[0]= new Vertex(new Vector3D(((Relacion)objeto).getFin()).getAdded(new Vector3D(60,0)));
+			haloVertex[1]= new Vertex(new Vector3D(((Relacion)objeto).getFin()).getAdded(new Vector3D(-60,0)));
+			haloVertex[2]= new Vertex(new Vector3D(((Relacion)objeto).getInicio()).getAdded(new Vector3D(-60,0)));
+			haloVertex[3]= new Vertex(new Vector3D(((Relacion)objeto).getInicio().getAdded(new Vector3D(60,0))));
 			//	System.out.println("Pendiente mayor a 3."+pendiente+" Distancia x:"+distancia.x+"Y:"+distancia.y);
 			
 		}
 		halo.setVertices(haloVertex);	 	
 		((MTPolygon)halo).setBoundsBehaviour(AbstractShape.BOUNDS_CHECK_THEN_GEOMETRY_CHECK);
-		objeto.setPosicion(linea.getCenterPointGlobal());	
-		
 		halo.setFillColor(ObjetoUMLGraph.haloSelected);
+		//this.actualizarRelacion();
 	}
 	@Override
 	public MTComponent getFigura() {
@@ -330,15 +336,15 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 
 		Vertex[] haloVertex= new Vertex[4];		
 		if(java.lang.Math.abs(distancia.y/distancia.x)<1){
-			haloVertex[0]= new Vertex(new Vector3D(((Relacion)objeto).getFin()).getAdded(new Vector3D(0,60)));
+			haloVertex[0]= new Vertex(new Vector3D(((Relacion)objeto).getFin()).getAdded(new Vector3D(0,120)));
 			haloVertex[1]= new Vertex(new Vector3D(((Relacion)objeto).getFin()));
 			haloVertex[2]= new Vertex(new Vector3D(((Relacion)objeto).getInicio()));
-			haloVertex[3]= new Vertex(new Vector3D(((Relacion)objeto).getInicio().getAdded(new Vector3D(0,60))));
+			haloVertex[3]= new Vertex(new Vector3D(((Relacion)objeto).getInicio().getAdded(new Vector3D(0,120))));
 		}else {
-			haloVertex[0]= new Vertex(new Vector3D(new Vector3D(((Relacion)objeto).getFin())).getAdded(new Vector3D(60,0)));
+			haloVertex[0]= new Vertex(new Vector3D(new Vector3D(((Relacion)objeto).getFin())).getAdded(new Vector3D(90,0)));
 			haloVertex[1]= new Vertex(new Vector3D(new Vector3D(((Relacion)objeto).getFin())));
 			haloVertex[2]= new Vertex(new Vector3D(new Vector3D(((Relacion)objeto).getInicio())));
-			haloVertex[3]= new Vertex(new Vector3D(new Vector3D(((Relacion)objeto).getInicio()).getAdded(new Vector3D(60,0))));
+			haloVertex[3]= new Vertex(new Vector3D(new Vector3D(((Relacion)objeto).getInicio()).getAdded(new Vector3D(90,0))));
 		}		
 		halo.setVertices(haloVertex);
 		halo.setFillColor(ObjetoUMLGraph.haloSelected);

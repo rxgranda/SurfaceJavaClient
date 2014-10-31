@@ -48,7 +48,7 @@ public class UMLFacade {
 		
 		ultimoX=x;
 		ultimoY=y;
-		if(numMuestas<=0){
+		if(numMuestas<=2){
 			primerX=x;
 			primerY=y;
 		}

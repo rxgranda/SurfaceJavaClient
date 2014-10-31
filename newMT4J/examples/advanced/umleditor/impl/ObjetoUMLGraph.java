@@ -22,11 +22,15 @@ public interface ObjetoUMLGraph {
 	public static final MTColor haloDeSelected =new MTColor(255,255,255); // new MTColor(200,200,200);//	
 	public static final MTColor transparent = new MTColor(100,100,100);//
 	
-	public static final int haloWidth=27;
+	public static final int haloWidth=75;
 	public static final String RELACIONES_INICIO_KEYWORD = "relaciones-inicio";
 	public static final String RELACIONES_FIN_KEYWORD = "relaciones-fin";
 	public static final String COMPONENTES_VISITADOS_KEYWORD = "visitados";
 	public static final String ENTIDADES_KEYWORD = "entidad";
+	public static final String HALO_HOVER_INICIO_KEYWORD = "hoverInicio";
+	public static final String HALO_HOVER_FIN_KEYWORD = "hoverFin";
+
+
 
 	
 
