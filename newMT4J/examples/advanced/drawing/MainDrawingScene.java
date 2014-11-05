@@ -188,7 +188,7 @@ public class MainDrawingScene extends AbstractScene {
 		
 		//Configuarcion para el socket
 		Configuration config = new Configuration();
-        config.setHostname("192.168.65.34");
+        config.setHostname("localhost");
         
         config.setPort(3323);	        
         //inizialimos el servidor de socket        

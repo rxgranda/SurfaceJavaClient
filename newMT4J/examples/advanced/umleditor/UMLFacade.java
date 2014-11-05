@@ -82,10 +82,13 @@ public class UMLFacade {
 			int width=(int)(maxX-minX);
 			int height=(int)(maxY-minY);
 			
-			if(resultado==ObjetoUML.ENTIDAD&&(width!=0&&height!=0)&&java.lang.Math.abs(width/height)>3||java.lang.Math.abs(height/width)>3){
-				reiniciar();
-				objeto=ObjetoUML.OBJETO_INVALIDO;
-				return objeto;
+			if(width!=0&&height!=0){
+				if(resultado==ObjetoUML.ENTIDAD&&(java.lang.Math.abs(width/height)>3||java.lang.Math.abs(height/width)>3)){
+					System.out.println("Entidad mal reconocida");
+					reiniciar();
+					objeto=ObjetoUML.OBJETO_INVALIDO;
+					return objeto;
+				}
 			}
 				
 			objeto=UMLCollection.anadirObjeto(resultado,persona );

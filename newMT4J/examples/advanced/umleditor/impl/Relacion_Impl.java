@@ -12,6 +12,7 @@ import org.mt4j.components.visibleComponents.shapes.MTEllipse;
 import org.mt4j.components.visibleComponents.shapes.MTLine;
 import org.mt4j.components.visibleComponents.shapes.MTPolygon;
 import org.mt4j.components.visibleComponents.shapes.MTRoundRectangle;
+import org.mt4j.components.visibleComponents.widgets.MTBackgroundImage;
 import org.mt4j.input.IMTInputEventListener;
 import org.mt4j.input.inputData.AbstractCursorInputEvt;
 import org.mt4j.input.inputData.InputCursor;
@@ -29,6 +30,7 @@ import advanced.umleditor.logic.Entidad;
 import advanced.umleditor.logic.ObjetoUML;
 import advanced.umleditor.logic.Relacion;
 import processing.core.PApplet;
+import processing.core.PImage;
 
 public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 
@@ -36,6 +38,8 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 	private final MTLine linea ;
 	private final ObjetoUML objeto;
 	final MTRoundRectangle halo;
+	private static String imagesPath = "data" + MTApplication.separator ;		
+
 	
 	MTEllipse ini=null;
 	MTEllipse fin=null;
@@ -95,16 +99,58 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 			}
 		});
 */
-
+		//final MTBackgroundImage backgroundImage = new MTBackgroundImage(mtApp, image, false); 
+		PImage imagenCardinalidad = mtApp.loadImage(imagesPath + "uno.png");
+		//backgroundImage.setSizeXYGlobal(10, 10);
+		//this.getCanvas().addChild(backgroundImage);
 
 		// Circulos al inicio y fin de la linea
-		ini=new MTEllipse(mtApp, new Vector3D(((Relacion)objeto).getInicio()), 15, 15);
+		
+		if(((Relacion)objeto).getObjetoInicio().getPosicion().y-((Relacion)objeto).getObjetoInicio().getHeigth()/2>((Relacion)objeto).getInicio().y)
+			ini=new MTEllipse(mtApp, new Vector3D(((Relacion)objeto).getInicio()).addLocal(new Vector3D(0, 15)), 15, 15);
+		else if(((Relacion)objeto).getObjetoInicio().getPosicion().y+((Relacion)objeto).getObjetoInicio().getHeigth()/2<((Relacion)objeto).getInicio().y)
+			ini=new MTEllipse(mtApp, new Vector3D(((Relacion)objeto).getInicio()).addLocal(new Vector3D(0, -15)), 15, 15);		
+		else if(((Relacion)objeto).getObjetoInicio().getPosicion().x>((Relacion)objeto).getInicio().x)
+			ini=new MTEllipse(mtApp, new Vector3D(((Relacion)objeto).getInicio()).addLocal(new Vector3D(15, 0)), 15, 15);
+		else
+			ini=new MTEllipse(mtApp, new Vector3D(((Relacion)objeto).getInicio()).addLocal(new Vector3D(-15, 0)), 15, 15);
+
+		/*if(((Relacion)objeto).getObjetoInicio().getPosicion().x>((Relacion)objeto).getInicio().x)
+			ini=new MTEllipse(mtApp, new Vector3D(((Relacion)objeto).getInicio()).addLocal(new Vector3D(15, 0)), 15, 15);
+		else if(((Relacion)objeto).getObjetoInicio().getPosicion().x<((Relacion)objeto).getInicio().x)
+			ini=new MTEllipse(mtApp, new Vector3D(((Relacion)objeto).getInicio()).addLocal(new Vector3D(-15, 0)), 15, 15);
+		else if(((Relacion)objeto).getObjetoInicio().getPosicion().y-((Relacion)objeto).getObjetoInicio().getHeigth()/2>((Relacion)objeto).getInicio().y)
+			ini=new MTEllipse(mtApp, new Vector3D(((Relacion)objeto).getInicio()).addLocal(new Vector3D(0, 15)), 15, 15);
+		else 
+			ini=new MTEllipse(mtApp, new Vector3D(((Relacion)objeto).getInicio()).addLocal(new Vector3D(0, -15)), 15, 15);
+		*/
+		
 		//ini.setFillColor(ObjetoUMLGraph.azul);
-		ini.setNoFill(true); // Hacerlo Invisible
+		//ini.setNoFill(true); // Hacerlo Invisible
+		//ini.addChild(backgroundImage);
+		ini.setTexture(imagenCardinalidad);
 		ini.setNoStroke(true);
-		fin=new MTEllipse(mtApp,new Vector3D(((Relacion)objeto).getFin()), 15, 15);
+		
+		/*if(((Relacion)objeto).getObjetoFin().getPosicion().x>((Relacion)objeto).getFin().x)
+			fin=new MTEllipse(mtApp, new Vector3D(((Relacion)objeto).getFin()).addLocal(new Vector3D(15, 0)), 15, 15);
+		else
+			fin=new MTEllipse(mtApp, new Vector3D(((Relacion)objeto).getFin()).addLocal(new Vector3D(-15, 0)), 15, 15);
+	*/
+		
+		
+		if(((Relacion)objeto).getObjetoFin().getPosicion().y-((Relacion)objeto).getObjetoFin().getHeigth()/2>((Relacion)objeto).getFin().y)
+			fin=new MTEllipse(mtApp, new Vector3D(((Relacion)objeto).getFin()).addLocal(new Vector3D(0, 15)), 15, 15);
+		else if(((Relacion)objeto).getObjetoFin().getPosicion().y+((Relacion)objeto).getObjetoFin().getHeigth()/2<((Relacion)objeto).getFin().y)
+			fin=new MTEllipse(mtApp, new Vector3D(((Relacion)objeto).getFin()).addLocal(new Vector3D(0, -15)), 15, 15);		
+		else if(((Relacion)objeto).getObjetoFin().getPosicion().x>((Relacion)objeto).getFin().x)
+			fin=new MTEllipse(mtApp, new Vector3D(((Relacion)objeto).getFin()).addLocal(new Vector3D(15, 0)), 15, 15);
+		else
+			fin=new MTEllipse(mtApp, new Vector3D(((Relacion)objeto).getFin()).addLocal(new Vector3D(-15, 0)), 15, 15);
+
+		fin.setTexture(imagenCardinalidad);
+		//fin=new MTEllipse(mtApp,new Vector3D(((Relacion)objeto).getFin()), 15, 15);
 		//fin.setFillColor(ObjetoUMLGraph.azul);
-		fin.setNoFill(true); // Hacerlo Invisible
+		//fin.setNoFill(true); // Hacerlo Invisible
 		fin.setNoStroke(true);
 
 		//ini.removeAllGestureEventListeners();
@@ -139,6 +185,26 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 				halo.setVertices(haloVertex);
 				halo.setFillColor(ObjetoUMLGraph.haloSelected);
 				halo.setPositionGlobal(linea.getCenterPointGlobal());
+				
+				
+				////
+				/*if(((Relacion)objeto).getObjetoInicio().getPosicion().x>((Relacion)objeto).getInicio().x)
+					ini.setPositionGlobal(new Vector3D(((Relacion)objeto).getInicio()).addLocal(new Vector3D(14,0)));
+				else
+					ini.setPositionGlobal(new Vector3D(((Relacion)objeto).getInicio()).addLocal(new Vector3D(-14,0)));
+			*/
+				if(((Relacion)objeto).getObjetoInicio().getPosicion().y-((Relacion)objeto).getObjetoInicio().getHeigth()/2>((Relacion)objeto).getInicio().y)
+					ini.setPositionGlobal( new Vector3D(((Relacion)objeto).getInicio()).addLocal(new Vector3D(0, 15)));
+				else if(((Relacion)objeto).getObjetoInicio().getPosicion().y+((Relacion)objeto).getObjetoInicio().getHeigth()/2<((Relacion)objeto).getInicio().y)
+					ini.setPositionGlobal( new Vector3D(((Relacion)objeto).getInicio()).addLocal(new Vector3D(0, -15)));		
+				else if(((Relacion)objeto).getObjetoInicio().getPosicion().x>((Relacion)objeto).getInicio().x)
+					ini.setPositionGlobal(new Vector3D(((Relacion)objeto).getInicio()).addLocal(new Vector3D(15, 0)));
+				else
+					ini.setPositionGlobal(new Vector3D(((Relacion)objeto).getInicio()).addLocal(new Vector3D(-15, 0)));
+
+				
+				
+				////								
 				return false;
 			}
 		});
@@ -178,6 +244,22 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 				halo.setVertices(haloVertex);
 				halo.setFillColor(ObjetoUMLGraph.haloSelected);
 				halo.setPositionGlobal(linea.getCenterPointGlobal());
+				///
+				/*if(((Relacion)objeto).getObjetoFin().getPosicion().x>((Relacion)objeto).getFin().x)
+					fin.setPositionGlobal(new Vector3D(((Relacion)objeto).getFin()).addLocal(new Vector3D(14,0)));
+				else
+					fin.setPositionGlobal(new Vector3D(((Relacion)objeto).getFin()).addLocal(new Vector3D(-14,0)));
+				*/
+				if(((Relacion)objeto).getObjetoFin().getPosicion().y-((Relacion)objeto).getObjetoFin().getHeigth()/2>((Relacion)objeto).getFin().y)
+					fin.setPositionGlobal(new Vector3D(((Relacion)objeto).getFin()).addLocal(new Vector3D(0, 15)));
+				else if(((Relacion)objeto).getObjetoFin().getPosicion().y+((Relacion)objeto).getObjetoFin().getHeigth()/2<((Relacion)objeto).getFin().y)
+					fin.setPositionGlobal(new Vector3D(((Relacion)objeto).getFin()).addLocal(new Vector3D(0, -15)));		
+				else if(((Relacion)objeto).getObjetoFin().getPosicion().x>((Relacion)objeto).getFin().x)
+					fin.setPositionGlobal(new Vector3D(((Relacion)objeto).getFin()).addLocal(new Vector3D(15, 0)));
+				else
+					fin.setPositionGlobal(new Vector3D(((Relacion)objeto).getFin()).addLocal(new Vector3D(-15, 0)));
+
+				///
 				return false;
 			}
 		});
@@ -245,8 +327,8 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		Vector3D vInicio=new Vector3D(((Relacion)objeto).getInicio());
 		Vector3D distancia=vFin.getSubtracted(vInicio);
 		Vertex[] haloVertex= new Vertex[4];		
-		((Relacion)objeto).setInicio(ini.getCenterPointGlobal());
-		((Relacion)objeto).setFin(fin.getCenterPointGlobal());
+		//((Relacion)objeto).setInicio(ini.getCenterPointGlobal());
+		//((Relacion)objeto).setFin(fin.getCenterPointGlobal());
 		objeto.setPosicion(linea.getCenterPointGlobal());	
 
 
@@ -324,8 +406,42 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		a[0]= new Vertex(new Vector3D(((Relacion)objeto).getInicio()));
 		linea.setVertices(a);		
 
-		ini.setPositionGlobal(new Vector3D(((Relacion)objeto).getInicio()));
-		fin.setPositionGlobal(new Vector3D(((Relacion)objeto).getFin()));
+		/*if(((Relacion)objeto).getObjetoInicio().getPosicion().x>((Relacion)objeto).getInicio().x)
+			ini.setPositionGlobal(new Vector3D(((Relacion)objeto).getInicio()).addLocal(new Vector3D(14,0)));
+		else
+			ini.setPositionGlobal(new Vector3D(((Relacion)objeto).getInicio()).addLocal(new Vector3D(-14,0)));
+	*/
+		/*	if(((Relacion)objeto).getObjetoFin().getPosicion().x>((Relacion)objeto).getFin().x)
+		fin.setPositionGlobal(new Vector3D(((Relacion)objeto).getFin()).addLocal(new Vector3D(14,0)));
+	else
+		fin.setPositionGlobal(new Vector3D(((Relacion)objeto).getFin()).addLocal(new Vector3D(-14,0)));
+*/
+		
+		/////
+		if(((Relacion)objeto).getObjetoInicio().getPosicion().y-((Relacion)objeto).getObjetoInicio().getHeigth()/2>((Relacion)objeto).getInicio().y)
+			ini.setPositionGlobal( new Vector3D(((Relacion)objeto).getInicio()).addLocal(new Vector3D(0, 15)));
+		else if(((Relacion)objeto).getObjetoInicio().getPosicion().y+((Relacion)objeto).getObjetoInicio().getHeigth()/2<((Relacion)objeto).getInicio().y)
+			ini.setPositionGlobal( new Vector3D(((Relacion)objeto).getInicio()).addLocal(new Vector3D(0, -15)));		
+		else if(((Relacion)objeto).getObjetoInicio().getPosicion().x>((Relacion)objeto).getInicio().x)
+			ini.setPositionGlobal(new Vector3D(((Relacion)objeto).getInicio()).addLocal(new Vector3D(15, 0)));
+		else
+			ini.setPositionGlobal(new Vector3D(((Relacion)objeto).getInicio()).addLocal(new Vector3D(-15, 0)));
+		
+		if(((Relacion)objeto).getObjetoFin().getPosicion().y-((Relacion)objeto).getObjetoFin().getHeigth()/2>((Relacion)objeto).getFin().y)
+			fin.setPositionGlobal(new Vector3D(((Relacion)objeto).getFin()).addLocal(new Vector3D(0, 15)));
+		else if(((Relacion)objeto).getObjetoFin().getPosicion().y+((Relacion)objeto).getObjetoFin().getHeigth()/2<((Relacion)objeto).getFin().y)
+			fin.setPositionGlobal(new Vector3D(((Relacion)objeto).getFin()).addLocal(new Vector3D(0, -15)));		
+		else if(((Relacion)objeto).getObjetoFin().getPosicion().x>((Relacion)objeto).getFin().x)
+			fin.setPositionGlobal(new Vector3D(((Relacion)objeto).getFin()).addLocal(new Vector3D(15, 0)));
+		else
+			fin.setPositionGlobal(new Vector3D(((Relacion)objeto).getFin()).addLocal(new Vector3D(-15, 0)));
+
+		//////
+		
+		
+	
+		
+		//fin.setPositionGlobal(new Vector3D(((Relacion)objeto).getFin()));
 		halo.setPositionGlobal(linea.getCenterPointGlobal());
 		objeto.setPosicion(linea.getCenterPointGlobal());
 
