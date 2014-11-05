@@ -62,6 +62,7 @@ import advanced.umleditor.logic.TextoFlotante;
 import advanced.umleditor.logic.Usuario;
 import advanced.umleditor.logic.Relacion;
 import advanced.umleditor.logic.Usuario;
+import advanced.umleditor.socketio.CardinalidadAdapter;
 import advanced.umleditor.socketio.EntidadAdapter;
 import advanced.umleditor.socketio.TextoFlotanteAdapter;
 import processing.core.PApplet;
@@ -327,7 +328,23 @@ public class DrawSurfaceScene extends AbstractScene {
 			}
         });        	
 		
-
+		
+		
+		userListener.addEventListener("cardinalidadEdition", CardinalidadAdapter.class, new DataListener<CardinalidadAdapter>() {
+			
+			@Override
+			public void onData(SocketIOClient arg0,  CardinalidadAdapter cardinalidadAdpter,
+					AckRequest arg2) throws Exception {					
+					System.out.println(cardinalidadAdpter.getId()+" "+cardinalidadAdpter.getCardinalidad());
+					ObjetoUML objeto=listaRecognizer.get(cardinalidadAdpter.getIdUsuario()).getObjetoUML(cardinalidadAdpter.getId());
+					System.out.println("objeto "+objeto);
+					if(objeto instanceof Relacion){
+						Relacion relacion=(Relacion)objeto;
+						((Relacion_Impl)relacion.getFigura()).actualizarCardinalidad(cardinalidadAdpter.getCardinalidad(), cardinalidadAdpter.isCardinalidadSwitch());																
+					}
+			}
+        });        	
+		
 		
 		
 		

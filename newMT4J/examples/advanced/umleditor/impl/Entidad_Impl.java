@@ -54,7 +54,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 
 	SocketIOServer server;
 	ObjetoUML objeto;
-	class DoubleClickProcessor extends TapProcessor  implements IGestureEventListener {
+	/*class DoubleClickProcessor extends TapProcessor  implements IGestureEventListener {
 
 		public DoubleClickProcessor(PApplet pa, float maxFingerUpDistance,
 				boolean enableDoubleTap, int doubleTapTime,
@@ -89,7 +89,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 				return false;			
 		}
 	
-	}
+	}*/
 	
 	
 	public Entidad_Impl(final MTApplication mtApp,final MTComponent container, final MTCanvas canvas, final UMLFacade recognizer,final ObjetoUML objeto, final SocketIOServer server) {
@@ -462,12 +462,12 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 		
 		
 		
-		  DoubleClickProcessor proc=new DoubleClickProcessor(mtApp,(float) 0.1,true, 300,true);
+		 /* DoubleClickProcessor proc=new DoubleClickProcessor(mtApp,(float) 0.1,true, 300,true);
 
 		 header.registerInputProcessor(proc);
-		  header.addGestureListener(DoubleClickProcessor.class,  proc);
+		  header.addGestureListener(DoubleClickProcessor.class,  proc);*/
 		
-			 header.registerInputProcessor(new TapAndHoldProcessor(mtApp, 2000));
+			 header.registerInputProcessor(new TapAndHoldProcessor(mtApp, TAP_AND_HOLD_TIME));
 			 header.addGestureListener(TapAndHoldProcessor.class, new TapAndHoldVisualizer(mtApp, rectangulo));
 			 header.addGestureListener(TapAndHoldProcessor.class, new IGestureEventListener() {
 					public boolean processGestureEvent(MTGestureEvent ge) {

@@ -84,7 +84,7 @@ public class UMLFacade {
 			
 			if(width!=0&&height!=0){
 				if(resultado==ObjetoUML.ENTIDAD&&(java.lang.Math.abs(width/height)>3||java.lang.Math.abs(height/width)>3)){
-					System.out.println("Entidad mal reconocida");
+					//System.out.println("Entidad mal reconocida");
 					reiniciar();
 					objeto=ObjetoUML.OBJETO_INVALIDO;
 					return objeto;

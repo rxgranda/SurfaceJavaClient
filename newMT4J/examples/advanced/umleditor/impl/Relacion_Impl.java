@@ -18,6 +18,7 @@ import org.mt4j.components.visibleComponents.shapes.MTRoundRectangle;
 import org.mt4j.components.visibleComponents.widgets.MTTextField;
 import org.mt4j.components.visibleComponents.widgets.MTBackgroundImage;
 import org.mt4j.input.IMTInputEventListener;
+import org.mt4j.input.gestureAction.TapAndHoldVisualizer;
 import org.mt4j.input.inputData.AbstractCursorInputEvt;
 import org.mt4j.input.inputData.InputCursor;
 import org.mt4j.input.inputData.MTInputEvent;
@@ -25,24 +26,29 @@ import org.mt4j.input.inputProcessors.IGestureEventListener;
 import org.mt4j.input.inputProcessors.MTGestureEvent;
 import org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragEvent;
 import org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragProcessor;
+import org.mt4j.input.inputProcessors.componentProcessors.tapAndHoldProcessor.TapAndHoldEvent;
+import org.mt4j.input.inputProcessors.componentProcessors.tapAndHoldProcessor.TapAndHoldProcessor;
 import org.mt4j.util.MTColor;
 import org.mt4j.util.math.Vector3D;
 import org.mt4j.util.math.Vertex;
 
 import com.corundumstudio.socketio.SocketIOServer;
 
+import advanced.drawing.MainDrawingScene;
 import advanced.umleditor.UMLCollection;
 import advanced.umleditor.UMLFacade;
 import advanced.umleditor.logic.Entidad;
 import advanced.umleditor.logic.ObjetoUML;
 import advanced.umleditor.logic.Relacion;
+import advanced.umleditor.socketio.CardinalidadAdapter;
+import advanced.umleditor.socketio.EntidadAdapter;
 import processing.core.PApplet;
 import processing.core.PGraphics;
-
 import processing.core.PImage;
 
 public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 
+	
 	private SocketIOServer server;
 	private final MTLine linea ;
 	private final ObjetoUML objeto;
@@ -54,15 +60,26 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 	private final ObjetoUML textoflotFin;
 
 	private static String imagesPath = "data" + MTApplication.separator ;		
-
+	private MTApplication mtApp;
 
 	
 	private ArrayList<Vector3D> listapuntos;
 	private final MTApplication app ;
 	MTEllipse ini=null;
 	MTEllipse fin=null;
+	
+	private static final int CARDINALIDAD_LOCATION_DEFAULT=0;
+	private static final int CARDINALIDAD_LOCATION_IZQUIERDA=1;
+	private static final int CARDINALIDAD_LOCATION_DERECHA=2;
+	private static final int CARDINALIDAD_LOCATION_ARRIBA=3;
+	private static final int CARDINALIDAD_LOCATION_ABAJO=4;
+
+	
+	
+	
 	public Relacion_Impl(MTApplication mtApp, final MTComponent container, final MTCanvas canvas, final ObjetoUML objeto, final ObjetoUML texttoflotini, final ObjetoUML texttoflotfin, final UMLFacade recognizer,final SocketIOServer server) {
 		super(mtApp);
+		this.mtApp=mtApp;
 		////
 		Vertex a= new Vertex(),b= new Vertex();
 		Vertex []c=new Vertex[2];
@@ -284,9 +301,18 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 				return false;
 			}
 		});
+		
+		 CardinalidadProcessor iniProc=new CardinalidadProcessor(mtApp ,TAP_AND_HOLD_TIME,true); // para cardinalidad inicio, tercer atributo=true
+		 ini.addGestureListener(CardinalidadProcessor.class, new TapAndHoldVisualizer(mtApp, linea));
+		 ini.registerInputProcessor(iniProc);
+		 ini.addGestureListener(CardinalidadProcessor.class,  iniProc);
+		 
+		 CardinalidadProcessor finProc=new CardinalidadProcessor(mtApp ,TAP_AND_HOLD_TIME,false); // para cardinalidad fin, tercer atributo=false
+		 fin.addGestureListener(CardinalidadProcessor.class, new TapAndHoldVisualizer(mtApp, linea));
+		 fin.registerInputProcessor(finProc);
+		 fin.addGestureListener(CardinalidadProcessor.class,  finProc);
 
-
-
+		
 		linea.addChild(ini);
 		linea.addChild(fin);
 		
@@ -583,6 +609,181 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		// TODO Auto-generated method stub
 		
 	}
+	
+	
+	
+	private int ubicacionCardinalidad(MTPolygon componente){
+		int ubicacion=CARDINALIDAD_LOCATION_DEFAULT;
+		if(componente==ini){
+			if(((Relacion)objeto).getObjetoInicio().getPosicion().y-((Relacion)objeto).getObjetoInicio().getHeigth()/2>((Relacion)objeto).getInicio().y)
+				ubicacion=CARDINALIDAD_LOCATION_ARRIBA;
+			else if(((Relacion)objeto).getObjetoInicio().getPosicion().y+((Relacion)objeto).getObjetoInicio().getHeigth()/2<((Relacion)objeto).getInicio().y)
+				ubicacion=CARDINALIDAD_LOCATION_ABAJO;
+			else if(((Relacion)objeto).getObjetoInicio().getPosicion().x>((Relacion)objeto).getInicio().x)
+				ubicacion=CARDINALIDAD_LOCATION_IZQUIERDA;
+			else
+				ubicacion=CARDINALIDAD_LOCATION_DERECHA;
+			
+		}else if(componente==fin){
+			
+			if(((Relacion)objeto).getObjetoFin().getPosicion().y-((Relacion)objeto).getObjetoFin().getHeigth()/2>((Relacion)objeto).getFin().y)
+				ubicacion=CARDINALIDAD_LOCATION_ARRIBA;
+			else if(((Relacion)objeto).getObjetoFin().getPosicion().y+((Relacion)objeto).getObjetoFin().getHeigth()/2<((Relacion)objeto).getFin().y)
+				ubicacion=CARDINALIDAD_LOCATION_ABAJO;
+			else if(((Relacion)objeto).getObjetoFin().getPosicion().x>((Relacion)objeto).getFin().x)
+				ubicacion=CARDINALIDAD_LOCATION_IZQUIERDA;
+			else
+				ubicacion=CARDINALIDAD_LOCATION_DERECHA;
+		}
+		return ubicacion;
+	}
+	public void actualizarCardinalidad(int cardinalidad,boolean cardinalidadSwitch){
+		MTPolygon componente;
+		int ubicacion=0; // 1=izquierda, 2 Derecha, 3 arriba, 4 abajo del componente
+		if(cardinalidadSwitch){
+			componente=ini;						
+		}else{
+			componente=fin;			
+		}
+		int ubicacionCardinalidad=ubicacionCardinalidad(componente);
+		PImage imagenCardinalidad =null;
+		String nombre="uno.png";	
+		switch (cardinalidad) {
+			case Relacion.CARDINALIDAD_UNO:						
+				imagenCardinalidad = mtApp.loadImage(imagesPath + nombre);				
+				break;
+			case Relacion.CARDINALIDAD_CERO_UNO:
+				switch (ubicacionCardinalidad) {
+				case CARDINALIDAD_LOCATION_ARRIBA:
+					nombre="ceroUnoA.png";
+					break;
+				case CARDINALIDAD_LOCATION_ABAJO:
+					nombre="ceroUnoB.png";
+					break;
+				case CARDINALIDAD_LOCATION_IZQUIERDA:
+					nombre="ceroUnoI.png";
+					break;
+				case CARDINALIDAD_LOCATION_DERECHA:
+					nombre="ceroUnoD.png";
+					break;
+
+				default:
+					break;
+				}
+				imagenCardinalidad = mtApp.loadImage(imagesPath + nombre);				
+				break;
+			case Relacion.CARDINALIDAD_CERO_MUCHOS:
+				switch (ubicacionCardinalidad) {
+				case CARDINALIDAD_LOCATION_ARRIBA:
+					nombre="ceroMuchosA.png";
+					break;
+				case CARDINALIDAD_LOCATION_ABAJO:
+					nombre="ceroMuchosB.png";
+					break;
+				case CARDINALIDAD_LOCATION_IZQUIERDA:
+					nombre="ceroMuchosI.png";
+					break;
+				case CARDINALIDAD_LOCATION_DERECHA:
+					nombre="ceroMuchosD.png";
+					break;
+
+				default:
+					break;
+				}
+				imagenCardinalidad = mtApp.loadImage(imagesPath + nombre);
+				break;
+			 
+			case Relacion.CARDINALIDAD_UNO_MUCHOS:
+				switch (ubicacionCardinalidad) {
+				case CARDINALIDAD_LOCATION_ARRIBA:
+					nombre="unoMuchosA.png";
+					break;
+				case CARDINALIDAD_LOCATION_ABAJO:
+					nombre="unoMuchosB.png";
+					break;
+				case CARDINALIDAD_LOCATION_IZQUIERDA:
+					nombre="unoMuchosI.png";
+					break;
+				case CARDINALIDAD_LOCATION_DERECHA:
+					nombre="unoMuchosD.png";
+					break;
+
+				default:
+					break;
+				}
+				imagenCardinalidad = mtApp.loadImage(imagesPath + nombre);
+				break;
+			
+			case Relacion.CARDINALIDAD_MUCHOS:
+				switch (ubicacionCardinalidad) {
+				case CARDINALIDAD_LOCATION_ARRIBA:
+					nombre="muchosA.png";
+					break;
+				case CARDINALIDAD_LOCATION_ABAJO:
+					nombre="muchosB.png";
+					break;
+				case CARDINALIDAD_LOCATION_IZQUIERDA:
+					nombre="muchosI.png";
+					break;
+				case CARDINALIDAD_LOCATION_DERECHA:
+					nombre="muchosD.png";
+					break;
+
+				default:
+					break;
+				}
+				imagenCardinalidad = mtApp.loadImage(imagesPath + nombre);
+				break;
+			default:
+				break;		
+		}
+		
+		
+		if(imagenCardinalidad!=null)
+			componente.setTexture(imagenCardinalidad);
+	}
+	
+	
+	class CardinalidadProcessor extends TapAndHoldProcessor  implements IGestureEventListener {
+		boolean cardinalidadSwitch;//true=inicio, false= fin
+
+		public CardinalidadProcessor(MTApplication pa, int tiempo, boolean cardinalidadSwitch) {
+			super(pa,tiempo);
+			this.cardinalidadSwitch=cardinalidadSwitch;
+			// TODO Auto-generated constructor stub
+		}
+
+		@Override
+		public boolean processGestureEvent(MTGestureEvent ge) {			
+			TapAndHoldEvent th = (TapAndHoldEvent)ge;
+																				
+				switch (th.getId()) {
+				case TapAndHoldEvent.GESTURE_STARTED:
+					break;
+				case TapAndHoldEvent.GESTURE_UPDATED:
+					break;
+				case TapAndHoldEvent.GESTURE_ENDED:
+					if (th.isHoldComplete()){															
+						final InputCursor m = th.getCursor();
+						String canal=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?MainDrawingScene.getListaUsuarios().get((int)m.sessionID).getCanal():"canal1";
+						int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?(int)m.sessionID:-1;
+						
+						server.getRoomOperations(canal).sendEvent("cardinalidadEdition",new CardinalidadAdapter(((Relacion)objeto),this.cardinalidadSwitch,idUsuario));						
+						System.out.println("Enviado "+canal+""+server.getRoomOperations(canal).getClients().size());
+						break;
+					}
+					break;
+				default:
+					break;
+				}
+																							
+			return false;
+		}
+	}
 
 
 }
+
+
+
+

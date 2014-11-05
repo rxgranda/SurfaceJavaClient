@@ -4,10 +4,12 @@ import org.mt4j.util.math.Vector3D;
 
 public class Relacion extends ObjetoUML {
 
-	public static int CARDINALIDAD_UNO=1;
-	public static int CARDINALIDAD_CERO_UNO=2;
-	public static int CARDINALIDAD_CERO_MUCHOS=3;
-	public static int CARDINALIDAD_UNO_MUCHOS=4;
+	public final static int CARDINALIDAD_UNO=1;
+	public final static int CARDINALIDAD_CERO_UNO=2;
+	public final static int CARDINALIDAD_CERO_MUCHOS=3;
+	public final static int CARDINALIDAD_UNO_MUCHOS=4;
+	public final static int CARDINALIDAD_MUCHOS=5;
+
 	
 	private  Vector3D inicio,fin;
 	private String nombre;
