@@ -1,5 +1,7 @@
 package advanced.umleditor.impl;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedList;
 
 import org.mt4j.MTApplication;
@@ -11,7 +13,9 @@ import org.mt4j.components.visibleComponents.shapes.AbstractShape;
 import org.mt4j.components.visibleComponents.shapes.MTEllipse;
 import org.mt4j.components.visibleComponents.shapes.MTLine;
 import org.mt4j.components.visibleComponents.shapes.MTPolygon;
+import org.mt4j.components.visibleComponents.shapes.MTRectangle;
 import org.mt4j.components.visibleComponents.shapes.MTRoundRectangle;
+import org.mt4j.components.visibleComponents.widgets.MTTextField;
 import org.mt4j.input.IMTInputEventListener;
 import org.mt4j.input.inputData.AbstractCursorInputEvt;
 import org.mt4j.input.inputData.InputCursor;
@@ -24,22 +28,32 @@ import org.mt4j.util.MTColor;
 import org.mt4j.util.math.Vector3D;
 import org.mt4j.util.math.Vertex;
 
+import com.corundumstudio.socketio.SocketIOServer;
+
+import advanced.umleditor.UMLCollection;
 import advanced.umleditor.UMLFacade;
 import advanced.umleditor.logic.Entidad;
 import advanced.umleditor.logic.ObjetoUML;
 import advanced.umleditor.logic.Relacion;
 import processing.core.PApplet;
+import processing.core.PGraphics;
 
 public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 
-
+	private SocketIOServer server;
 	private final MTLine linea ;
 	private final ObjetoUML objeto;
 	final MTRoundRectangle halo;
+	//private final ObjetoUML textoflotante;
 	
+	private final ObjetoUML textoflotInicio;
+	private final ObjetoUML textoflotFin;
+	
+	private ArrayList<Vector3D> listapuntos;
+	private final MTApplication app ;
 	MTEllipse ini=null;
 	MTEllipse fin=null;
-	public Relacion_Impl(MTApplication mtApp, final MTComponent container, final MTCanvas canvas, final ObjetoUML objeto,final UMLFacade recognizer) {
+	public Relacion_Impl(MTApplication mtApp, final MTComponent container, final MTCanvas canvas, final ObjetoUML objeto, final ObjetoUML texttoflotini, final ObjetoUML texttoflotfin, final UMLFacade recognizer,final SocketIOServer server) {
 		super(mtApp);
 		////
 		Vertex a= new Vertex(),b= new Vertex();
@@ -56,7 +70,10 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		linea.setStrokeColor(new MTColor(0, 0, 0));
 		linea.setNoStroke(false);
 		this.objeto=objeto;
-
+		this.textoflotInicio =texttoflotini;
+		this.textoflotFin = texttoflotfin;
+		this.server = server;
+		this.app  = mtApp;
 		linea.removeAllGestureEventListeners();
 		linea.unregisterAllInputProcessors();
 		/*linea.addInputListener(new IMTInputEventListener() {
@@ -212,15 +229,59 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 					InputCursor cursor = cursorInputEvt.getCursor();
 					IMTComponent3D target = cursorInputEvt.getTargetComponent();
 					System.out.println("Listener..............");
+					
+					//
+					
+					
+					
 					switch (cursorInputEvt.getId()) {
 					case AbstractCursorInputEvt.INPUT_STARTED:
+						
+						listapuntos = new ArrayList<Vector3D>();
+						
 						recognizer.anadirPunto(cursor.getCurrentEvtPosX(), cursor.getCurrentEvtPosY());
 						break;
 					case AbstractCursorInputEvt.INPUT_UPDATED:
 						recognizer.anadirPunto(cursor.getCurrentEvtPosX(), cursor.getCurrentEvtPosY());
+						listapuntos.add(cursor.getPosition());
 						break;
 					case AbstractCursorInputEvt.INPUT_ENDED:
+						
+						
+						if(listapuntos.size() < 6){
+							System.out.println("hijos: " +halo.getChildCount());
+							
+	
+							
+							
+							if (textoflotInicio.getFigura() == null && textoflotFin.getFigura() == null ){
+								//System.out.println("FIGURA ES :" + textoflotante.getFigura().toString());
+								/*
+								MTComponent bus = linea.getChildByName("TextoFlotanteImpl");
+								System.out.println("FOUNDCOMP"  + bus);
+								linea.removeChild(bus);
+								bus.destroy();
 
+								textoflotante.setFigura(null);*/
+								
+								
+								TextoFlotanteImpl teximplinicio = new TextoFlotanteImpl(app, linea, canvas, recognizer, textoflotInicio, server);								
+								textoflotInicio.setFigura(teximplinicio);
+								
+								TextoFlotanteImpl teximplfin =  new TextoFlotanteImpl(app, linea, canvas, recognizer, textoflotFin, server);
+								textoflotFin.setFigura(teximplfin);
+						
+								MTRoundRectangle textInicio = (MTRoundRectangle)(teximplinicio.rectangulo);
+								textInicio.setPositionRelativeToParent(new Vector3D(ini.getCenterPointGlobal().x +10, ini.getCenterPointGlobal().y, ini.getCenterPointGlobal().z));
+								
+								MTRoundRectangle textFin = (MTRoundRectangle)(teximplfin.rectangulo);
+	
+								textFin.setPositionRelativeToParent(new Vector3D(fin.getCenterPointGlobal().x -10, fin.getCenterPointGlobal().y, fin.getCenterPointGlobal().z));
+							}
+
+						}
+						
+				
 						System.out.println("Reconocer:");
 						ObjetoUML obj=recognizer.reconocerObjeto();
 						if (obj ==ObjetoUML.DELETE_OBJECT_GESTURE){
@@ -327,8 +388,25 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		ini.setPositionGlobal(new Vector3D(((Relacion)objeto).getInicio()));
 		fin.setPositionGlobal(new Vector3D(((Relacion)objeto).getFin()));
 		halo.setPositionGlobal(linea.getCenterPointGlobal());
+		
+		TextoFlotanteImpl impInicio = (TextoFlotanteImpl)textoflotInicio.getFigura();
+		if(impInicio != null){
+			
+			
+			impInicio.rectangulo.setPositionGlobal(new Vector3D(ini.getCenterPointGlobal().x +10, ini.getCenterPointGlobal().y, ini.getCenterPointGlobal().z));
+			impInicio.halo.setPositionGlobal(new Vector3D(ini.getCenterPointGlobal().x +10, ini.getCenterPointGlobal().y, ini.getCenterPointGlobal().z));
+		}
+		
+		TextoFlotanteImpl impFin = (TextoFlotanteImpl)textoflotFin.getFigura();
+		if(impFin != null){
+			impFin.rectangulo.setPositionGlobal(new Vector3D(fin.getCenterPointGlobal().x -10, fin.getCenterPointGlobal().y, fin.getCenterPointGlobal().z));
+			impFin.halo.setPositionGlobal(new Vector3D(fin.getCenterPointGlobal().x -10, fin.getCenterPointGlobal().y, fin.getCenterPointGlobal().z));
+		}
+		
 		objeto.setPosicion(linea.getCenterPointGlobal());
-
+		textoflotInicio.setPosicion(ini.getCenterPointGlobal());
+		textoflotFin.setPosicion(fin.getCenterPointGlobal());
+		
 		Vector3D vFin=new Vector3D(((Relacion)objeto).getFin());
 		Vector3D vInicio=new Vector3D(((Relacion)objeto).getInicio());
 		Vector3D distancia=vFin.getSubtracted(vInicio);
@@ -385,5 +463,6 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		// TODO Auto-generated method stub
 		
 	}
+
 
 }

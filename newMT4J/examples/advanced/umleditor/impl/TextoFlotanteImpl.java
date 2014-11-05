@@ -14,6 +14,7 @@ import org.mt4j.components.visibleComponents.shapes.MTRoundRectangle;
 import org.mt4j.components.visibleComponents.widgets.MTTextArea;
 import org.mt4j.components.visibleComponents.widgets.MTTextField;
 import org.mt4j.input.IMTInputEventListener;
+import org.mt4j.input.gestureAction.TapAndHoldVisualizer;
 import org.mt4j.input.inputData.AbstractCursorInputEvt;
 import org.mt4j.input.inputData.InputCursor;
 import org.mt4j.input.inputData.MTInputEvent;
@@ -21,6 +22,8 @@ import org.mt4j.input.inputProcessors.IGestureEventListener;
 import org.mt4j.input.inputProcessors.MTGestureEvent;
 import org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragEvent;
 import org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragProcessor;
+import org.mt4j.input.inputProcessors.componentProcessors.tapAndHoldProcessor.TapAndHoldEvent;
+import org.mt4j.input.inputProcessors.componentProcessors.tapAndHoldProcessor.TapAndHoldProcessor;
 import org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapEvent;
 import org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapProcessor;
 import org.mt4j.util.MTColor;
@@ -90,8 +93,9 @@ public class TextoFlotanteImpl extends MTComponent implements ObjetoUMLGraph {
 	
 	
 	public TextoFlotanteImpl(final MTApplication mtApp,final MTComponent container, final MTCanvas canvas, final UMLFacade recognizer,final ObjetoUML objeto, final SocketIOServer server) {
-
+		
 		super(mtApp);
+
 		rectangulo = new MTRoundRectangle(objeto
 				.getPosicion().x, objeto
 				.getPosicion().y, 0, objeto
@@ -117,6 +121,7 @@ public class TextoFlotanteImpl extends MTComponent implements ObjetoUMLGraph {
 		//halo.setPickable(false);
 		//halo.setStrokeColor(new MTColor(0, 0, 0));
 		halo.setNoStroke(true);
+		/*
 		halo.addInputListener(new IMTInputEventListener() {
 			public boolean processInputEvent(MTInputEvent inEvt) {
 				if (inEvt instanceof AbstractCursorInputEvt) { //Most input events in MT4j are an instance of AbstractCursorInputEvt (mouse, multi-touch..)
@@ -155,7 +160,7 @@ public class TextoFlotanteImpl extends MTComponent implements ObjetoUMLGraph {
 				}
 				return false;
 			}
-		});
+		});*/
 
 		canvas.addChild(halo);
 
@@ -167,21 +172,17 @@ public class TextoFlotanteImpl extends MTComponent implements ObjetoUMLGraph {
 		header.setFillColor(new MTColor(255,255,255));
 		header.setStrokeColor(new MTColor(30,30,30));
 		header.setNoStroke(false);
-
 		//header.setPickable(false);
 		header.removeAllGestureEventListeners();
-		IFont headerFont=FontManager.getInstance().createFont(mtApp, "SourceSansPro-BoldIt.otf", 24, new MTColor(30,30,30),true);
+		IFont headerFont=FontManager.getInstance().createFont(mtApp, "SourceSansPro-BoldIt.otf", 12, new MTColor(30,30,30),true);
 
-		headerField = new MTTextField(objeto.getPosicion().x, objeto.getPosicion().y ,(int)(objeto.getWidth()*0.75),(int)(objeto.getHeigth()*0.5),headerFont, mtApp);
+		headerField = new MTTextField(objeto.getPosicion().x, objeto.getPosicion().y ,(int)(objeto.getWidth()),(int)(objeto.getHeigth()),headerFont, mtApp);
 		headerField.setText(((TextoFlotante)objeto).getNombre());
-		
 		//headerField.setFontColor(new MTColor(255,255,255));
 		headerField.setPickable(false);
 		headerField.setNoFill(true);
 		headerField.setNoStroke(true);									
 		header.addChild(headerField);
-
-
 
 		//Agregar boton resize
 		botonResize=new MTEllipse(mtApp, new Vector3D(objeto
@@ -206,19 +207,6 @@ public class TextoFlotanteImpl extends MTComponent implements ObjetoUMLGraph {
 				return false;
 			}
 		});
-		
-		
-		  
-	      
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		//Agregar boton resize2
 		botonResize2=new MTEllipse(mtApp, new Vector3D(objeto
@@ -322,7 +310,7 @@ public class TextoFlotanteImpl extends MTComponent implements ObjetoUMLGraph {
 
 		rectangulo.removeAllGestureEventListeners();
 		rectangulo.unregisterAllInputProcessors();
-		
+		/*
 		header.addGestureListener(DragProcessor.class, new IGestureEventListener() {
 			public boolean processGestureEvent(MTGestureEvent ge) {
 				DragEvent de = (DragEvent)ge;
@@ -367,30 +355,74 @@ public class TextoFlotanteImpl extends MTComponent implements ObjetoUMLGraph {
 				}
 
 
-				/*switch (de.getId()) {
-					case AbstractCursorInputEvt.INPUT_STARTED:
-						canvas.removeChild(halo);
-						break;
-					case AbstractCursorInputEvt.INPUT_UPDATED:
-						break;
-					case AbstractCursorInputEvt.INPUT_ENDED:
-						canvas.addChild(canvas);
-						break;
-					default:
-						break;
-					}*/
+				//switch (de.getId()) {
+					//case AbstractCursorInputEvt.INPUT_STARTED:
+					//	canvas.removeChild(halo);
+					//	break;
+					//case AbstractCursorInputEvt.INPUT_UPDATED:
+					//	break;
+					//case AbstractCursorInputEvt.INPUT_ENDED:
+					//	canvas.addChild(canvas);
+					//	break;
+				//	default:
+				//		break;
+				//	}
 				return false;
 			}
 		});
 		
 		
-		
+		*/
 		
 		  DoubleClickProcessor proc=new DoubleClickProcessor(mtApp,(float) 0.1,true, 300,true);
-
+		 
 		 header.registerInputProcessor(proc);
 		 header.addGestureListener(DoubleClickProcessor.class,  proc);
-		
+
+		 header.registerInputProcessor(new TapAndHoldProcessor(mtApp, 2000));
+		 header.addGestureListener(TapAndHoldProcessor.class, new TapAndHoldVisualizer(mtApp, rectangulo));
+		 header.addGestureListener(TapAndHoldProcessor.class, new IGestureEventListener() {
+				public boolean processGestureEvent(MTGestureEvent ge) {
+					TapAndHoldEvent th = (TapAndHoldEvent)ge;
+					IMTComponent3D target = th.getTargetComponent();
+					if (target instanceof MTRoundRectangle) {
+						MTRoundRectangle rectangle = (MTRoundRectangle) target;
+						
+						
+						
+						switch (th.getId()) {
+						case TapAndHoldEvent.GESTURE_STARTED:
+							break;
+						case TapAndHoldEvent.GESTURE_UPDATED:
+							break;
+						case TapAndHoldEvent.GESTURE_ENDED:
+							if (th.isHoldComplete()){
+								
+								System.out.println("Tap complete!! " + target);						
+								//final AbstractCursorInputEvt posEvt = (AbstractCursorInputEvt) ge.getSource();
+								final InputCursor m = th.getCursor();
+								String canal=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?MainDrawingScene.getListaUsuarios().get((int)m.sessionID).getCanal():"canal1";
+								int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?(int)m.sessionID:-1;
+
+								server.getRoomOperations(canal).sendEvent("startEdition",new TextoFlotanteAdapter(((TextoFlotante)objeto),idUsuario));						
+								System.out.println("Enviado "+canal+""+server.getRoomOperations(canal).getClients().size());
+								break;
+
+							}
+							break;
+						default:
+							break;
+						}
+
+					}
+					
+					
+					
+					
+
+					return false;
+				}
+			});
 
 
 		/*body.addGestureListener(DragProcessor.class, new IGestureEventListener() {
@@ -420,9 +452,8 @@ public class TextoFlotanteImpl extends MTComponent implements ObjetoUMLGraph {
 		});*/
 
 
-
+		rectangulo.setName("TextoFlotanteImpl");
 		container.addChild(rectangulo);
-		objeto.setPosicion(rectangulo.getCenterPointGlobal());
 		halo.setPositionGlobal(rectangulo.getCenterPointGlobal());
 		
 	}
@@ -465,11 +496,6 @@ public class TextoFlotanteImpl extends MTComponent implements ObjetoUMLGraph {
 		// TODO Auto-generated method stub
 		return bodyField.getText();
 	}
-
-
-
-
-
 
 	@Override
 	public MTComponent getHalo() {

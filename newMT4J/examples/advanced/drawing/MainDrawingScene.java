@@ -193,9 +193,7 @@ public class MainDrawingScene extends AbstractScene {
         config.setPort(3323);	        
         //inizialimos el servidor de socket        
         server = new SocketIOServer(config);
-        
 
-        
         
         loginListener = server.addNamespace("/login");	        	        
         loginListener.addEventListener("loginevent", Usuario.class, new DataListener<Usuario>() {

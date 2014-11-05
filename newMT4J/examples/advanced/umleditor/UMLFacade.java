@@ -66,8 +66,8 @@ public class UMLFacade {
 		
 		ObjetoUML objeto = UMLCollection.anadirObjeto(ObjetoUML.TEXTOFLOTANTE, persona);
 		//FALTAN PONER RESTO DE ATTRIBUTOS
-		((TextoFlotante)objeto).setWidth((int)(150));
-		((TextoFlotante)objeto).setHeigth((int)(50));
+		((TextoFlotante)objeto).setWidth((int)(75));
+		((TextoFlotante)objeto).setHeigth((int)(20));
 		((TextoFlotante)objeto).setPosicion(position);
 		((TextoFlotante)objeto).setNombre("Default");
 		

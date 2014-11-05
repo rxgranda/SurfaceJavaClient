@@ -727,9 +727,7 @@ public class DrawSurfaceScene extends AbstractScene {
 								
 								
 								System.out.println("CLICCCCKKKKKKKKK!!!!!");
-								ObjetoUML objetotexto = recognizer.aniadirTextoFlotante(m.getPosition());
-								TextoFlotanteImpl teximpl = new TextoFlotanteImpl(mtApp, container, getCanvas(), recognizer, objetotexto, server);
-								objetotexto.setFigura(teximpl);
+								
 								
 							}
 							if (objeto != ObjetoUML.OBJETO_INVALIDO) {
@@ -792,8 +790,12 @@ public class DrawSurfaceScene extends AbstractScene {
 											//
 											((Relacion)objeto).setObjetoInicio(((ObjetoUMLGraph)entidad1).getObjetoUML());
 											((Relacion)objeto).setObjetoFin(((ObjetoUMLGraph)entidad2).getObjetoUML());
-
-											ObjetoUMLGraph linea= new Relacion_Impl(mtApp,container, getCanvas(),objeto,componentRecognizer);
+											
+											ObjetoUML objetotextoInicio = recognizer.aniadirTextoFlotante(new Vector3D(helper.getHoverInicio().x + 10,helper.getHoverInicio().y,helper.getHoverInicio().z));
+											ObjetoUML objetotextoFin = recognizer.aniadirTextoFlotante(new Vector3D(helper.getHoverFin().x + 10,helper.getHoverFin().y,helper.getHoverFin().z));
+											
+											
+											ObjetoUMLGraph linea= new Relacion_Impl(mtApp,container, getCanvas(),objeto, objetotextoInicio,objetotextoFin,componentRecognizer,server);
 											//((MTPolygon)((ObjetoUMLGraph)entidad1).getHalo()).setFillColor(ObjetoUMLGraph.haloDeSelected);											
 											//((MTPolygon)((ObjetoUMLGraph)entidad2).getHalo()).setFillColor(ObjetoUMLGraph.haloDeSelected);
 											((ObjetoUMLGraph)entidad1).guardarDatos(ObjetoUMLGraph.RELACIONES_INICIO_KEYWORD, linea);

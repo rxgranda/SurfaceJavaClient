@@ -5,6 +5,7 @@ import org.mt4j.util.math.Vector3D;
 public class Relacion extends ObjetoUML {
 
 	private  Vector3D inicio,fin;
+	private String nombre;
 	private ObjetoUML objetoInicio;
 	private ObjetoUML objetoFin;
 	public Relacion(Usuario per) {
@@ -25,6 +26,14 @@ public class Relacion extends ObjetoUML {
 		this.fin = fin;
 	}
 	
+	
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
 	
 
 	public Vector3D getInicio() {

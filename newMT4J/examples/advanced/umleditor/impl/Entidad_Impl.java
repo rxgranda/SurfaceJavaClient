@@ -14,6 +14,7 @@ import org.mt4j.components.visibleComponents.shapes.MTRoundRectangle;
 import org.mt4j.components.visibleComponents.widgets.MTTextArea;
 import org.mt4j.components.visibleComponents.widgets.MTTextField;
 import org.mt4j.input.IMTInputEventListener;
+import org.mt4j.input.gestureAction.TapAndHoldVisualizer;
 import org.mt4j.input.inputData.AbstractCursorInputEvt;
 import org.mt4j.input.inputData.InputCursor;
 import org.mt4j.input.inputData.MTInputEvent;
@@ -21,6 +22,8 @@ import org.mt4j.input.inputProcessors.IGestureEventListener;
 import org.mt4j.input.inputProcessors.MTGestureEvent;
 import org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragEvent;
 import org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragProcessor;
+import org.mt4j.input.inputProcessors.componentProcessors.tapAndHoldProcessor.TapAndHoldEvent;
+import org.mt4j.input.inputProcessors.componentProcessors.tapAndHoldProcessor.TapAndHoldProcessor;
 import org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapEvent;
 import org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapProcessor;
 import org.mt4j.util.MTColor;
@@ -34,7 +37,9 @@ import advanced.umleditor.UMLFacade;
 import advanced.umleditor.logic.Entidad;
 import advanced.umleditor.logic.ObjetoUML;
 import advanced.umleditor.logic.Relacion;
+import advanced.umleditor.logic.TextoFlotante;
 import advanced.umleditor.socketio.EntidadAdapter;
+import advanced.umleditor.socketio.TextoFlotanteAdapter;
 import processing.core.PApplet;
 
 public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
@@ -462,7 +467,50 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 		 header.registerInputProcessor(proc);
 		  header.addGestureListener(DoubleClickProcessor.class,  proc);
 		
+			 header.registerInputProcessor(new TapAndHoldProcessor(mtApp, 2000));
+			 header.addGestureListener(TapAndHoldProcessor.class, new TapAndHoldVisualizer(mtApp, rectangulo));
+			 header.addGestureListener(TapAndHoldProcessor.class, new IGestureEventListener() {
+					public boolean processGestureEvent(MTGestureEvent ge) {
+						TapAndHoldEvent th = (TapAndHoldEvent)ge;
+						IMTComponent3D target = th.getTargetComponent();
+						if (target instanceof MTRoundRectangle) {
+							MTRoundRectangle rectangle = (MTRoundRectangle) target;
+							
+							
+							
+							switch (th.getId()) {
+							case TapAndHoldEvent.GESTURE_STARTED:
+								break;
+							case TapAndHoldEvent.GESTURE_UPDATED:
+								break;
+							case TapAndHoldEvent.GESTURE_ENDED:
+								if (th.isHoldComplete()){
+									
+									System.out.println("Tap complete!! " + target);						
+									//final AbstractCursorInputEvt posEvt = (AbstractCursorInputEvt) ge.getSource();
+									final InputCursor m = th.getCursor();
+									String canal=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?MainDrawingScene.getListaUsuarios().get((int)m.sessionID).getCanal():"canal1";
+									int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?(int)m.sessionID:-1;
 
+									server.getRoomOperations(canal).sendEvent("startEdition",new EntidadAdapter(((Entidad)objeto),idUsuario));						
+									System.out.println("Enviado "+canal+""+server.getRoomOperations(canal).getClients().size());
+									break;
+
+								}
+								break;
+							default:
+								break;
+							}
+
+						}
+						
+						
+						
+						
+
+						return false;
+					}
+				});
 
 		/*body.addGestureListener(DragProcessor.class, new IGestureEventListener() {
 			public boolean processGestureEvent(MTGestureEvent ge) {
