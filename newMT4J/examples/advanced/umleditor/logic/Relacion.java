@@ -4,10 +4,19 @@ import org.mt4j.util.math.Vector3D;
 
 public class Relacion extends ObjetoUML {
 
+	public static int CARDINALIDAD_UNO=1;
+	public static int CARDINALIDAD_CERO_UNO=2;
+	public static int CARDINALIDAD_CERO_MUCHOS=3;
+	public static int CARDINALIDAD_UNO_MUCHOS=4;
+	
 	private  Vector3D inicio,fin;
 	private String nombre;
 	private ObjetoUML objetoInicio;
-	private ObjetoUML objetoFin;
+	private ObjetoUML objetoFin;	
+	private int cardinalidadInicio=CARDINALIDAD_UNO;
+	private int cardinalidadFin=CARDINALIDAD_UNO;
+	
+	
 	public Relacion(Usuario per) {
 		super(per);		
 		this.setTipo(ObjetoUML.RELACION);
@@ -58,6 +67,22 @@ public class Relacion extends ObjetoUML {
 
 	public void setObjetoFin(ObjetoUML objetoFin) {
 		this.objetoFin = objetoFin;
+	}
+
+	public int getCardinalidadInicio() {
+		return cardinalidadInicio;
+	}
+
+	public void setCardinalidadInicio(int cardinalidadInicio) {
+		this.cardinalidadInicio = cardinalidadInicio;
+	}
+
+	public int getCardinalidadFin() {
+		return cardinalidadFin;
+	}
+
+	public void setCardinalidadFin(int cardinalidadFin) {
+		this.cardinalidadFin = cardinalidadFin;
 	}
 	
 }
