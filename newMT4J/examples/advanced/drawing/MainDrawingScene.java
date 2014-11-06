@@ -67,8 +67,8 @@ public class MainDrawingScene extends AbstractScene {
 	private MTRectangle container;	
 	private static MTTextField txtUsuarios;
 	static MTRectangle login;
-	private String imagesPath = "advanced" + MTApplication.separator + "drawing" + MTApplication.separator + "data" + MTApplication.separator + "images" + MTApplication.separator;		
-	
+	//private String imagesPath = "advanced" + MTApplication.separator + "drawing" + MTApplication.separator + "data" + MTApplication.separator + "images" + MTApplication.separator;		
+	private String imagesPath ="data" + MTApplication.separator ;	
 	public static final MTColor loginColorDisabled=new MTColor(200,200,200);//new MTColor(45,137,239);
 	public static final MTColor loginColor=new MTColor(45,137,239);//new MTColor(2,196,238);
 	public static final MTColor backgroundColor=new MTColor(43,87,151);
