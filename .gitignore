@@ -19,6 +19,5 @@ newMT4J/Settings.txt
 .metadata
 */.plugins/*
 Sr Legacy/bin/.gitignore
-newMT4J/.classpath
 newMT4J/bin/.gitignore
 newMT4J/bin/*

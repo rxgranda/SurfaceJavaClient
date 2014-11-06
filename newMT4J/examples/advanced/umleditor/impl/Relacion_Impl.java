@@ -672,8 +672,10 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		MTPolygon componente;
 		int ubicacion=0; // 1=izquierda, 2 Derecha, 3 arriba, 4 abajo del componente
 		if(cardinalidadSwitch){
-			componente=ini;						
+			componente=ini;
+			System.out.println("ES INICIO!");
 		}else{
+			System.out.println("ES FIN");
 			componente=fin;			
 		}
 		int ubicacionCardinalidad=ubicacionCardinalidad(componente);
@@ -773,6 +775,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		
 		
 		if(imagenCardinalidad!=null)
+			System.out.println("Imagen cardinalidad : " + imagesPath + nombre );
 			componente.setTexture(imagenCardinalidad);
 	}
 	
