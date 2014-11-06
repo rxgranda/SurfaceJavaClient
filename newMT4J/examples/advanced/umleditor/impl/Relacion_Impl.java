@@ -679,7 +679,9 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		int ubicacionCardinalidad=ubicacionCardinalidad(componente);
 		PImage imagenCardinalidad =null;
 		String nombre="uno.png";	
+		System.out.println("cardinalidad es: " + cardinalidad +"Componente es : " +componente);
 		switch (cardinalidad) {
+			
 			case Relacion.CARDINALIDAD_UNO:						
 				imagenCardinalidad = mtApp.loadImage(imagesPath + nombre);				
 				break;
