@@ -347,22 +347,22 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 								System.out.println("FOUNDCOMP"  + bus);
 								linea.removeChild(bus);
 								bus.destroy();
-
 								textoflotante.setFigura(null);*/
 								
 								
-								TextoFlotanteImpl teximplinicio = new TextoFlotanteImpl(app, linea, canvas, recognizer, textoflotInicio, server);								
+								TextoFlotanteImpl teximplinicio = new TextoFlotanteImpl(app, linea, canvas, recognizer, textoflotInicio, server);	
+								teximplinicio.rectangulo.setName("TextoFlotanteImplINICIO");
 								textoflotInicio.setFigura(teximplinicio);
 								
 								TextoFlotanteImpl teximplfin =  new TextoFlotanteImpl(app, linea, canvas, recognizer, textoflotFin, server);
+								teximplinicio.rectangulo.setName("TextoFlotanteImplFIN");
 								textoflotFin.setFigura(teximplfin);
 						
 								MTRoundRectangle textInicio = (MTRoundRectangle)(teximplinicio.rectangulo);
-								textInicio.setPositionRelativeToParent(new Vector3D(ini.getCenterPointGlobal().x +10, ini.getCenterPointGlobal().y, ini.getCenterPointGlobal().z));
+								textInicio.setPositionRelativeToParent(new Vector3D(ini.getCenterPointGlobal().x +20, ini.getCenterPointGlobal().y+20, ini.getCenterPointGlobal().z));
 								
 								MTRoundRectangle textFin = (MTRoundRectangle)(teximplfin.rectangulo);
-	
-								textFin.setPositionRelativeToParent(new Vector3D(fin.getCenterPointGlobal().x -10, fin.getCenterPointGlobal().y, fin.getCenterPointGlobal().z));
+								textFin.setPositionRelativeToParent(new Vector3D(fin.getCenterPointGlobal().x -20, fin.getCenterPointGlobal().y + 20, fin.getCenterPointGlobal().z));
 							}
 
 						}
@@ -414,6 +414,9 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		halo.setVertices(haloVertex);	 	
 		((MTPolygon)halo).setBoundsBehaviour(AbstractShape.BOUNDS_CHECK_THEN_GEOMETRY_CHECK);
 		halo.setFillColor(ObjetoUMLGraph.haloSelected);
+		
+		LinkedList<TextoFlotanteImpl> textosflotantes = new LinkedList<TextoFlotanteImpl>();
+		linea.setUserData(ObjetoUMLGraph.TEXTO_FLOTANTE_KEYWORD, textosflotantes);
 		//this.actualizarRelacion();
 	}
 	@Override
@@ -513,14 +516,14 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		if(impInicio != null){
 			
 			
-			impInicio.rectangulo.setPositionGlobal(new Vector3D(ini.getCenterPointGlobal().x +10, ini.getCenterPointGlobal().y, ini.getCenterPointGlobal().z));
-			impInicio.halo.setPositionGlobal(new Vector3D(ini.getCenterPointGlobal().x +10, ini.getCenterPointGlobal().y, ini.getCenterPointGlobal().z));
+			impInicio.rectangulo.setPositionGlobal(new Vector3D(ini.getCenterPointGlobal().x +20, ini.getCenterPointGlobal().y +20, ini.getCenterPointGlobal().z));
+			impInicio.halo.setPositionGlobal(new Vector3D(ini.getCenterPointGlobal().x +20, ini.getCenterPointGlobal().y +20, ini.getCenterPointGlobal().z));
 		}
 		
 		TextoFlotanteImpl impFin = (TextoFlotanteImpl)textoflotFin.getFigura();
 		if(impFin != null){
-			impFin.rectangulo.setPositionGlobal(new Vector3D(fin.getCenterPointGlobal().x -10, fin.getCenterPointGlobal().y, fin.getCenterPointGlobal().z));
-			impFin.halo.setPositionGlobal(new Vector3D(fin.getCenterPointGlobal().x -10, fin.getCenterPointGlobal().y, fin.getCenterPointGlobal().z));
+			impFin.rectangulo.setPositionGlobal(new Vector3D(fin.getCenterPointGlobal().x -20, fin.getCenterPointGlobal().y + 20, fin.getCenterPointGlobal().z));
+			impFin.halo.setPositionGlobal(new Vector3D(fin.getCenterPointGlobal().x -20, fin.getCenterPointGlobal().y +20, fin.getCenterPointGlobal().z));
 		}
 		
 		objeto.setPosicion(linea.getCenterPointGlobal());
@@ -545,6 +548,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		}		
 		halo.setVertices(haloVertex);
 		halo.setFillColor(ObjetoUMLGraph.haloSelected);
+		
 	}
 	@Override
 	public ObjetoUML getObjetoUML() {
@@ -565,6 +569,26 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 	
 	public void removerRelacion(){
 		
+		LinkedList<TextoFlotanteImpl> textosflotantes = (LinkedList<TextoFlotanteImpl>)linea.getUserData(ObjetoUMLGraph.TEXTO_FLOTANTE_KEYWORD);
+		for (TextoFlotanteImpl textoflot : textosflotantes ){
+			
+			textoflot.removeGrafico();
+			
+		}
+		/*
+		MTComponent bus = linea.getChildByName("TextoFlotanteImplINICIO");
+		System.out.println("FOUNDCOMP"  + bus);
+		TextoFlotanteImpl t1 = (TextoFlotanteImpl)bus.getParent();
+		t1.getHalo().removeFromParent();
+		//linea.removeChild(bus);
+		//textoflotInicio.setFigura(null);
+		
+		MTComponent bus2 = linea.getChildByName("TextoFlotanteImplFIN");
+		System.out.println("FOUNDCOMP"  + bus2);
+		TextoFlotanteImpl t2 = (TextoFlotanteImpl)bus2.getParent();
+		t2.getHalo().removeFromParent();
+		//linea.removeChild(bus2);
+		//textoflotInicio.setFigura(null);*/
 		
 		linea.removeFromParent();
 		//container.removeChild(halo);		
@@ -577,6 +601,13 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		
 		Entidad fin=((Entidad)((Relacion)this.objeto).getObjetoFin());
 		fin.getFigura().eliminarDatos(RELACIONES_FIN_KEYWORD, this);
+		
+	
+
+		
+		
+		
+		
 	}
 	@Override
 	public void eliminarDatos(String keyword, Object datos) {

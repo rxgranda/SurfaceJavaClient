@@ -44,7 +44,7 @@ import processing.core.PApplet;
 
 public class TextoFlotanteImpl extends MTComponent implements ObjetoUMLGraph {
 
-
+	final MTComponent container;
 	final MTRoundRectangle rectangulo;
 	final MTRoundRectangle halo;
 	private MTTextField headerField;
@@ -108,7 +108,7 @@ public class TextoFlotanteImpl extends MTComponent implements ObjetoUMLGraph {
 		//corregir posicion inicial
 				//objeto.setPosicion(rectangulo.getCenterPointGlobal());
 		this.server=server;
-		
+		this.container = container;
 		halo=new MTRoundRectangle(objeto
 				.getPosicion().x-ObjetoUMLGraph.haloWidth/2, objeto
 				.getPosicion().y-ObjetoUMLGraph.haloWidth/2, 1, objeto
@@ -452,8 +452,10 @@ public class TextoFlotanteImpl extends MTComponent implements ObjetoUMLGraph {
 		});*/
 
 
-		rectangulo.setName("TextoFlotanteImpl");
+		
 		container.addChild(rectangulo);
+		LinkedList<TextoFlotanteImpl> textosflotantes = (LinkedList<TextoFlotanteImpl>)container.getUserData(ObjetoUMLGraph.TEXTO_FLOTANTE_KEYWORD);
+		textosflotantes.add(this);
 		halo.setPositionGlobal(rectangulo.getCenterPointGlobal());
 		
 	}
@@ -567,6 +569,12 @@ public class TextoFlotanteImpl extends MTComponent implements ObjetoUMLGraph {
 	public void eliminarDatos(String keyword, Object datos) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public void removeGrafico(){
+		
+		rectangulo.removeFromParent();
+		halo.removeFromParent();
 	}
 
 

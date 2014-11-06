@@ -791,8 +791,8 @@ public class DrawSurfaceScene extends AbstractScene {
 											((Relacion)objeto).setObjetoInicio(((ObjetoUMLGraph)entidad1).getObjetoUML());
 											((Relacion)objeto).setObjetoFin(((ObjetoUMLGraph)entidad2).getObjetoUML());
 											
-											ObjetoUML objetotextoInicio = recognizer.aniadirTextoFlotante(new Vector3D(helper.getHoverInicio().x + 10,helper.getHoverInicio().y,helper.getHoverInicio().z));
-											ObjetoUML objetotextoFin = recognizer.aniadirTextoFlotante(new Vector3D(helper.getHoverFin().x + 10,helper.getHoverFin().y,helper.getHoverFin().z));
+											ObjetoUML objetotextoInicio = recognizer.aniadirTextoFlotante(new Vector3D(helper.getHoverInicio().x + 20,helper.getHoverInicio().y +20,helper.getHoverInicio().z));
+											ObjetoUML objetotextoFin = recognizer.aniadirTextoFlotante(new Vector3D(helper.getHoverFin().x + 20,helper.getHoverFin().y +20,helper.getHoverFin().z));
 											
 											
 											ObjetoUMLGraph linea= new Relacion_Impl(mtApp,container, getCanvas(),objeto, objetotextoInicio,objetotextoFin,componentRecognizer,server);
