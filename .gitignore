@@ -21,3 +21,4 @@ newMT4J/Settings.txt
 Sr Legacy/bin/.gitignore
 newMT4J/.classpath
 newMT4J/bin/.gitignore
+newMT4J/bin/*

@@ -110,10 +110,8 @@ public class DrawSurfaceScene extends AbstractScene {
 	
 	Map< Integer, UMLFacade> listaRecognizer=new HashMap<Integer, UMLFacade>();
 	Map< Integer, UMLFacade> listaComponentes=new HashMap<Integer, UMLFacade>();
-
 	Map< Usuario, UMLFacade> listaComponentRecognizer=new HashMap<Usuario, UMLFacade>();
 	Map< Usuario, HaloHelper> listaHaloHelper=new HashMap<Usuario, HaloHelper>();
-
 	Map< Usuario, ArrayList<Vector3D>> listaPuntos=new HashMap<Usuario, ArrayList<Vector3D>>();
 	
 	
@@ -919,7 +917,11 @@ public class DrawSurfaceScene extends AbstractScene {
 			File fileToSave = fileChooser.getSelectedFile();
 			System.out.println("Save as file: " + fileToSave.getAbsolutePath());
 			String dir_archivo=fileToSave.getAbsolutePath()+".json";
-		
+		//
+		parentFrame.toFront();
+		parentFrame.setAlwaysOnTop(true);
+		//
+			
 		System.out.println("JSON 1 Guardado");
 		JSONObject jsonPlayer1 = new JSONObject();
 		

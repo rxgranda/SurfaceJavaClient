@@ -225,8 +225,9 @@ public class MTSceneMenu extends MTRectangle{
 			final MTRectangle guardarButton = new MTRectangle(app, x + c.x, y + c.y, buttonWidth, buttonHeight);
 			
 			if (guardarButtonImage== null){
-				guardarButtonImage = app.loadImage(MT4jSettings.getInstance().getDefaultImagesPath() +
-						"floppy2.png");
+				String altImagesPath = "data" + MTApplication.separator ;	
+				guardarButtonImage = app.loadImage( altImagesPath+
+						"guardar.png");
 			}
 			
 			guardarButton.setTexture(guardarButtonImage);

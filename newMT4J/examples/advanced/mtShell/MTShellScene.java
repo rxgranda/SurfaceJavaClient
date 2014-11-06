@@ -114,12 +114,16 @@ public class MTShellScene extends AbstractScene {
 	//TODO (dont allow throwing stuff out of the screen) or destroy it then
 	//TODO loading screen
 	
+	private static String imagesPath = "data" + MTApplication.separator ;		
+	
+	
 	/**
 	 * Instantiates a new mT shell scene.
 	 * 
 	 * @param mtApplication the mt application
 	 * @param name the name
 	 */
+	
 	public MTShellScene(MTApplication mtApplication, String name) {
 		super(mtApplication, name);
 		this.app = mtApplication;
@@ -178,6 +182,8 @@ public class MTShellScene extends AbstractScene {
 		list.setFillColor(new MTColor(150,150,150,200));
 		list.setNoFill(true);
 		list.setNoStroke(true);
+		
+
 		
 		/*
 		//List ends fade images //Background gradient has to be set to false!
@@ -239,12 +245,12 @@ public class MTShellScene extends AbstractScene {
 		if (this.hasFBO){
 			this.addScene(new ICreateScene() {
 				public Iscene getNewScene() {
-					return new MainDrawingScene(app, "Diagramas Entidad-Relación");
+					return new MainDrawingScene(app, "ER- Modelo Lógico");
 				}
 				public String getTitle() {
-					return "Entidad-Relacion";
+					return "ER- Modelo Lógico";
 				}
-			}, app.loadImage(this.getPathToIcons() + "er3.png"));
+			}, app.loadImage(imagesPath+ "er3.png"));
 		}
 		
 		/*this.addScene(new ICreateScene() {
