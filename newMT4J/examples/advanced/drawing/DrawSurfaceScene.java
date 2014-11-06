@@ -62,6 +62,7 @@ import advanced.umleditor.logic.TextoFlotante;
 import advanced.umleditor.logic.Usuario;
 import advanced.umleditor.logic.Relacion;
 import advanced.umleditor.logic.Usuario;
+import advanced.umleditor.socketio.CardinalidadAdapter;
 import advanced.umleditor.socketio.EntidadAdapter;
 import advanced.umleditor.socketio.TextoFlotanteAdapter;
 import processing.core.PApplet;
@@ -109,10 +110,8 @@ public class DrawSurfaceScene extends AbstractScene {
 	
 	Map< Integer, UMLFacade> listaRecognizer=new HashMap<Integer, UMLFacade>();
 	Map< Integer, UMLFacade> listaComponentes=new HashMap<Integer, UMLFacade>();
-
 	Map< Usuario, UMLFacade> listaComponentRecognizer=new HashMap<Usuario, UMLFacade>();
 	Map< Usuario, HaloHelper> listaHaloHelper=new HashMap<Usuario, HaloHelper>();
-
 	Map< Usuario, ArrayList<Vector3D>> listaPuntos=new HashMap<Usuario, ArrayList<Vector3D>>();
 	
 	
@@ -327,7 +326,23 @@ public class DrawSurfaceScene extends AbstractScene {
 			}
         });        	
 		
-
+		
+		
+		userListener.addEventListener("cardinalidadEdition", CardinalidadAdapter.class, new DataListener<CardinalidadAdapter>() {
+			
+			@Override
+			public void onData(SocketIOClient arg0,  CardinalidadAdapter cardinalidadAdpter,
+					AckRequest arg2) throws Exception {					
+					System.out.println(cardinalidadAdpter.getId()+" "+cardinalidadAdpter.getCardinalidad());
+					ObjetoUML objeto=listaRecognizer.get(cardinalidadAdpter.getIdUsuario()).getObjetoUML(cardinalidadAdpter.getId());
+					System.out.println("objeto "+objeto);
+					if(objeto instanceof Relacion){
+						Relacion relacion=(Relacion)objeto;
+						((Relacion_Impl)relacion.getFigura()).actualizarCardinalidad(cardinalidadAdpter.getCardinalidad(), cardinalidadAdpter.isCardinalidadSwitch());																
+					}
+			}
+        });        	
+		
 		
 		
 		
@@ -902,7 +917,11 @@ public class DrawSurfaceScene extends AbstractScene {
 			File fileToSave = fileChooser.getSelectedFile();
 			System.out.println("Save as file: " + fileToSave.getAbsolutePath());
 			String dir_archivo=fileToSave.getAbsolutePath()+".json";
-		
+		//
+		parentFrame.toFront();
+		parentFrame.setAlwaysOnTop(true);
+		//
+			
 		System.out.println("JSON 1 Guardado");
 		JSONObject jsonPlayer1 = new JSONObject();
 		

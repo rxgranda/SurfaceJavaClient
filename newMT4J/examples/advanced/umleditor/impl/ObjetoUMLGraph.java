@@ -30,7 +30,7 @@ public interface ObjetoUMLGraph {
 	public static final String HALO_HOVER_INICIO_KEYWORD = "hoverInicio";
 	public static final String HALO_HOVER_FIN_KEYWORD = "hoverFin";
 	public static final String TEXTO_FLOTANTE_KEYWORD = "textoFlotante";
-	
+	public static int TAP_AND_HOLD_TIME=1500;
 
 
 	

@@ -111,6 +111,9 @@ public class MainDrawingScene extends AbstractScene {
 			return;
 		}
 		this.registerGlobalInputProcessor(new CursorTracer(pa, this));
+		
+		
+		
 
 		//PImage image = mtApplication.loadImage(imagesPath + "login2.png"); 
 		//final MTBackgroundImage backgroundImage = new MTBackgroundImage(pa, image, false); 
@@ -218,7 +221,8 @@ public class MainDrawingScene extends AbstractScene {
 	        	System.out.println("CLOSING!!!");
 	        }
 	    });
-
+		
+		
 	}
 
 
@@ -295,8 +299,12 @@ public class MainDrawingScene extends AbstractScene {
 
 
 	public boolean guardar(){
-		this.drawingScene.guardar();
-		return true;
+		if(drawingScene!=null){
+			this.drawingScene.guardar();
+			return true;
+		}else{
+			return false;
+		}
 	}
 	public static void  clear(){
 		sceneTexture.getFbo().clear(true, 255, 255, 255, 0, true);
