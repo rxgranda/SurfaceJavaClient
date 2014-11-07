@@ -410,33 +410,16 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 				else
 					fin.setPositionGlobal(new Vector3D(((Relacion)objeto).getFin()).addLocal(new Vector3D(-15, 0)));
 				
-				
-				Vector3D lineaCenter = new Vector3D(linea.getCenterPointGlobal());
-				
-				Vector3D R1 = lineaCenter.getSubtracted(vInicio);
-				Vector3D R1nuevo =R1.getScaled(DISTANCIA_FROM_NODE);
-				Vector3D R1pos = vInicio.getAdded(R1nuevo);
-				
+				Vector3D lineaCenter = new Vector3D(linea.getCenterPointGlobal());				
 				Vector3D R2 = lineaCenter.getSubtracted(vFin);
 				Vector3D R2nuevo =R2.getScaled(DISTANCIA_FROM_NODE);
 				Vector3D R2pos = vFin.getAdded(R2nuevo);
-
 				
-				TextoFlotanteImpl impInicio = (TextoFlotanteImpl)textoflotInicio.getFigura();
-				if(impInicio != null){
-					
-					
-					impInicio.rectangulo.setPositionGlobal(R1pos);
-					impInicio.halo.setPositionGlobal(R1pos);
-				}
-				
-	
 				TextoFlotanteImpl impFin = (TextoFlotanteImpl)textoflotFin.getFigura();
 				if(impFin != null){
 					impFin.rectangulo.setPositionGlobal(R2pos);
 					impFin.halo.setPositionGlobal(R2pos);
 				}
-				textoflotInicio.setPosicion(R1pos);
 				
 				textoflotFin.setPosicion(R2pos);
 				
