@@ -1,6 +1,10 @@
 package advanced.umleditor.logic;
 
 public class Usuario {
+	public static final int ID_DEFAULT_USER=-1;
+	public static final String NOMBRE_DEFAULT_USER="default";
+	public static final String CANAL_DEFAULT_USER="canal1";
+
 	private String nombres;
 	private int idPluma;
 	private String canal;

@@ -2,6 +2,7 @@ package advanced.umleditor.logic;
 
 import java.awt.Point;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -30,7 +31,7 @@ public abstract class ObjetoUML {
 	private boolean borrado=true;
 	private boolean tieneRelacion=false;
 	private Usuario persona;
-	private Timestamp tiempoInicio;
+	private String tiempoCreacion;
 	private static int idCounter;
 	private  int id;
 	//private Timestamp tiempoFin;
@@ -39,7 +40,11 @@ public abstract class ObjetoUML {
 
 	
 	public ObjetoUML(Usuario p){
-		tiempoInicio= new java.sql.Timestamp(calendar.getTime().getTime());		
+		Calendar cal = Calendar.getInstance();    	
+    	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    	setTiempoCreacion(sdf.format(cal.getTime()));
+    	
+		//setTiempoCreacion(new java.sql.Timestamp(calendar.getTime().getTime()));		
 		//puntos=new ArrayList<Point>();	
 		this.persona=p;
 		this.setId(generateID());
@@ -56,12 +61,12 @@ public abstract class ObjetoUML {
 	}
 
 
-	public float getHeigth() {
+	public float getHeight() {
 		return heigth;
 	}
 
 
-	public void setHeigth(float heigth) {
+	public void setHeight(float heigth) {
 		this.heigth = heigth;
 	}
 
@@ -146,6 +151,16 @@ public abstract class ObjetoUML {
 
 	public static synchronized  int generateID(){
 		return idCounter++;
+	}
+
+
+	public String getTiempoCreacion() {
+		return tiempoCreacion;
+	}
+
+
+	public void setTiempoCreacion(String tiempoInicio) {
+		this.tiempoCreacion = tiempoInicio;
 	}
 
 

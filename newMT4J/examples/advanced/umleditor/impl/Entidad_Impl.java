@@ -38,6 +38,7 @@ import advanced.umleditor.logic.Entidad;
 import advanced.umleditor.logic.ObjetoUML;
 import advanced.umleditor.logic.Relacion;
 import advanced.umleditor.logic.TextoFlotante;
+import advanced.umleditor.logic.Usuario;
 import advanced.umleditor.socketio.EntidadAdapter;
 import advanced.umleditor.socketio.TextoFlotanteAdapter;
 import processing.core.PApplet;
@@ -99,7 +100,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 				.getPosicion().x, objeto
 				.getPosicion().y, 0, objeto
 				.getWidth(),
-				objeto.getHeigth(), 1, 1, mtApp);									
+				objeto.getHeight(), 1, 1, mtApp);									
 		rectangulo.setFillColor(new MTColor(255,255,255));
 		rectangulo.setStrokeColor(new MTColor(0, 0, 0));
 		rectangulo.setNoStroke(true);
@@ -111,7 +112,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 				.getPosicion().x-ObjetoUMLGraph.haloWidth/2, objeto
 				.getPosicion().y-ObjetoUMLGraph.haloWidth/2, 1, objeto
 				.getWidth()+ObjetoUMLGraph.haloWidth,
-				objeto.getHeigth()+ObjetoUMLGraph.haloWidth, 1, 1, mtApp);									
+				objeto.getHeight()+ObjetoUMLGraph.haloWidth, 1, 1, mtApp);									
 		//halo.setNoFill(true);
 		halo.setFillColor(ObjetoUMLGraph.haloDeSelected);
 		halo.removeAllGestureEventListeners();
@@ -166,7 +167,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 				.getPosicion().x, objeto
 				.getPosicion().y, 0, objeto
 				.getWidth(),
-				(int)(objeto.getHeigth()*0.25), 1, 1, mtApp);									
+				(int)(objeto.getHeight()*0.25), 1, 1, mtApp);									
 		header.setFillColor(ObjetoUMLGraph.headerColor);
 		header.setStrokeColor(ObjetoUMLGraph.headerColor);
 		header.setNoStroke(false);
@@ -175,7 +176,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 		header.removeAllGestureEventListeners();
 		IFont headerFont=FontManager.getInstance().createFont(mtApp, "SourceSansPro-BoldIt.otf", 24, new MTColor(255,255,255),true);
 
-		headerField = new MTTextField(objeto.getPosicion().x, objeto.getPosicion().y,objeto.getWidth(),(int)(objeto.getHeigth()*0.25),headerFont, mtApp);
+		headerField = new MTTextField(objeto.getPosicion().x, objeto.getPosicion().y,objeto.getWidth(),(int)(objeto.getHeight()*0.25),headerFont, mtApp);
 		headerField.setText(((Entidad)objeto).getNombre());
 		//headerField.setFontColor(new MTColor(255,255,255));
 		headerField.setPickable(false);
@@ -186,9 +187,9 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 
 		final MTRoundRectangle body = new MTRoundRectangle(objeto
 				.getPosicion().x, objeto
-				.getPosicion().y+(int)(objeto.getHeigth()*0.25), 0, objeto
+				.getPosicion().y+(int)(objeto.getHeight()*0.25), 0, objeto
 				.getWidth(),(int)(
-						objeto.getHeigth()*0.75), 1, 1, mtApp);									
+						objeto.getHeight()*0.75), 1, 1, mtApp);									
 		body.setFillColor(new MTColor(255, 255, 255));
 		body.setStrokeColor(ObjetoUMLGraph.bodyColor);
 		body.setNoStroke(false);
@@ -198,7 +199,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 
 		IFont bodyFont=FontManager.getInstance().createFont(mtApp, "SourceSansPro-Light.otf", 18, new MTColor(255,255,255),true);
 
-		bodyField = new MTTextArea (objeto.getPosicion().x, objeto.getPosicion().y+(int)(objeto.getHeigth()*0.25),objeto.getWidth(),(int)(objeto.getHeigth()*0.75),bodyFont, mtApp);
+		bodyField = new MTTextArea (objeto.getPosicion().x, objeto.getPosicion().y+(int)(objeto.getHeight()*0.25),objeto.getWidth(),(int)(objeto.getHeight()*0.75),bodyFont, mtApp);
 		String texto="";
 		for (String argumento:((Entidad)objeto).getAtributos()){
 			texto+=argumento+"\n";
@@ -225,9 +226,9 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 			public boolean processGestureEvent(MTGestureEvent ge) {
 				DragEvent de = (DragEvent)ge;
 				objeto.setWidth(objeto.getWidth()-de.getTranslationVect().x);
-				objeto.setHeigth(objeto.getHeigth()-de.getTranslationVect().y);
-				rectangulo.setSizeXYGlobal(objeto.getWidth(),objeto.getHeigth());	
-				halo.setSizeXYGlobal(objeto.getWidth()+ObjetoUMLGraph.haloWidth,objeto.getHeigth()+ObjetoUMLGraph.haloWidth);
+				objeto.setHeight(objeto.getHeight()-de.getTranslationVect().y);
+				rectangulo.setSizeXYGlobal(objeto.getWidth(),objeto.getHeight());	
+				halo.setSizeXYGlobal(objeto.getWidth()+ObjetoUMLGraph.haloWidth,objeto.getHeight()+ObjetoUMLGraph.haloWidth);
 				botonResize.setSizeXYGlobal(18, 18);
 				botonResize2.setSizeXYGlobal(18, 18);
 				botonResize3.setSizeXYGlobal(18, 18);
@@ -262,9 +263,9 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 			public boolean processGestureEvent(MTGestureEvent ge) {
 				DragEvent de = (DragEvent)ge;
 				objeto.setWidth(objeto.getWidth()+de.getTranslationVect().x);
-				objeto.setHeigth(objeto.getHeigth()-de.getTranslationVect().y);
-				rectangulo.setSizeXYGlobal(objeto.getWidth(),objeto.getHeigth());	
-				halo.setSizeXYGlobal(objeto.getWidth()+ObjetoUMLGraph.haloWidth,objeto.getHeigth()+ObjetoUMLGraph.haloWidth);
+				objeto.setHeight(objeto.getHeight()-de.getTranslationVect().y);
+				rectangulo.setSizeXYGlobal(objeto.getWidth(),objeto.getHeight());	
+				halo.setSizeXYGlobal(objeto.getWidth()+ObjetoUMLGraph.haloWidth,objeto.getHeight()+ObjetoUMLGraph.haloWidth);
 				botonResize.setSizeXYGlobal(18, 18);
 				botonResize2.setSizeXYGlobal(18, 18);
 				botonResize3.setSizeXYGlobal(18, 18);
@@ -275,7 +276,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 		//Agregar boton resize3
 		botonResize3=new MTEllipse(mtApp, new Vector3D(objeto
 				.getPosicion().x, objeto
-				.getPosicion().y+objeto.getHeigth()), 10, 10);
+				.getPosicion().y+objeto.getHeight()), 10, 10);
 		botonResize3.setFillColor(ObjetoUMLGraph.resizeButtonColor);
 		botonResize3.setNoStroke(true);
 		botonResize3.removeAllGestureEventListeners();
@@ -285,9 +286,9 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 			public boolean processGestureEvent(MTGestureEvent ge) {
 				DragEvent de = (DragEvent)ge;
 				objeto.setWidth(objeto.getWidth()-de.getTranslationVect().x);
-				objeto.setHeigth(objeto.getHeigth()+de.getTranslationVect().y);
-				rectangulo.setSizeXYGlobal(objeto.getWidth(),objeto.getHeigth());	
-				halo.setSizeXYGlobal(objeto.getWidth()+ObjetoUMLGraph.haloWidth,objeto.getHeigth()+ObjetoUMLGraph.haloWidth);
+				objeto.setHeight(objeto.getHeight()+de.getTranslationVect().y);
+				rectangulo.setSizeXYGlobal(objeto.getWidth(),objeto.getHeight());	
+				halo.setSizeXYGlobal(objeto.getWidth()+ObjetoUMLGraph.haloWidth,objeto.getHeight()+ObjetoUMLGraph.haloWidth);
 				botonResize.setSizeXYGlobal(18, 18);
 				botonResize2.setSizeXYGlobal(18, 18);
 				botonResize3.setSizeXYGlobal(18, 18);
@@ -298,7 +299,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 		//Agregar boton resize
 		botonResize4=new MTEllipse(mtApp, new Vector3D(objeto
 				.getPosicion().x+objeto.getWidth(), objeto
-				.getPosicion().y+objeto.getHeigth()), 10, 10);
+				.getPosicion().y+objeto.getHeight()), 10, 10);
 		botonResize4.setFillColor(ObjetoUMLGraph.resizeButtonColor);
 		botonResize4.setNoStroke(true);
 		botonResize4.removeAllGestureEventListeners();
@@ -308,9 +309,9 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 			public boolean processGestureEvent(MTGestureEvent ge) {
 				DragEvent de = (DragEvent)ge;
 				objeto.setWidth(objeto.getWidth()+de.getTranslationVect().x);
-				objeto.setHeigth(objeto.getHeigth()+de.getTranslationVect().y);
-				rectangulo.setSizeXYGlobal(objeto.getWidth(),objeto.getHeigth());	
-				halo.setSizeXYGlobal(objeto.getWidth()+ObjetoUMLGraph.haloWidth,objeto.getHeigth()+ObjetoUMLGraph.haloWidth);
+				objeto.setHeight(objeto.getHeight()+de.getTranslationVect().y);
+				rectangulo.setSizeXYGlobal(objeto.getWidth(),objeto.getHeight());	
+				halo.setSizeXYGlobal(objeto.getWidth()+ObjetoUMLGraph.haloWidth,objeto.getHeight()+ObjetoUMLGraph.haloWidth);
 				botonResize.setSizeXYGlobal(18, 18);
 				botonResize2.setSizeXYGlobal(18, 18);
 				botonResize3.setSizeXYGlobal(18, 18);
@@ -489,8 +490,8 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 									System.out.println("Tap complete!! " + target);						
 									//final AbstractCursorInputEvt posEvt = (AbstractCursorInputEvt) ge.getSource();
 									final InputCursor m = th.getCursor();
-									String canal=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?MainDrawingScene.getListaUsuarios().get((int)m.sessionID).getCanal():"canal1";
-									int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?(int)m.sessionID:-1;
+									String canal=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?MainDrawingScene.getListaUsuarios().get((int)m.sessionID).getCanal():Usuario.CANAL_DEFAULT_USER;
+									int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?(int)m.sessionID:Usuario.ID_DEFAULT_USER;
 
 									server.getRoomOperations(canal).sendEvent("startEdition",new EntidadAdapter(((Entidad)objeto),idUsuario));						
 									System.out.println("Enviado "+canal+""+server.getRoomOperations(canal).getClients().size());
