@@ -413,7 +413,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 					case AbstractCursorInputEvt.INPUT_ENDED:
 						
 						
-						if(listapuntos.size() < 6){
+						if(listapuntos.size() < 10){
 							System.out.println("hijos: " +halo.getChildCount());
 							
 	
