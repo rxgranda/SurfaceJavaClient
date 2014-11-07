@@ -1,6 +1,8 @@
 package advanced.umleditor;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
@@ -72,11 +74,15 @@ public class UMLDataSaver implements Runnable {
 	}
 	
 	
-	public static synchronized void agregarAccion(final int tipoAccion, ObjetoUML objeto){
+	public static synchronized void agregarAccion(final int tipoAccion, ObjetoUML objeto, Usuario user){
+		Calendar cal = Calendar.getInstance();    	
+    	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    	String time=sdf.format(cal.getTime());
+    	LinkedHashMap objetoContainer=new LinkedHashMap();
+		LinkedHashMap objetoMap=new LinkedHashMap();
 		switch (tipoAccion) {
-		case AGREGAR_OBJETO_ACTION:
-			LinkedHashMap objetoContainer=new LinkedHashMap();
-			LinkedHashMap objetoMap=new LinkedHashMap();
+		case AGREGAR_OBJETO_ACTION:	
+			objetoMap.put("id", objeto.getId());
 			switch (objeto.getTipo()) {
 			case ObjetoUML.ENTIDAD:
 				objetoMap.put("tipo", "Entidad");
@@ -151,24 +157,48 @@ public class UMLDataSaver implements Runnable {
 			}
 			
 				
-			objetoMap.put("id", objeto.getId());
-			objetoMap.put("timestamp", objeto.getTiempoCreacion());
+			
+			//objetoMap.put("creacion", objeto.getTiempoCreacion());
 			objetoMap.put("width", objeto.getWidth());
 			objetoMap.put("height", objeto.getHeight());
 			objetoMap.put("posicion", objeto.getPosicion());
-			objetoContainer.put("objeto", objetoMap);		
-			datos.add(objetoContainer);
+			objetoContainer.put("CREAR_OBJETO", objetoMap);
+			
+			
 			
 			break;
 		case EDITAR_OBJETO_ACTION:
+			objetoMap.put("id", objeto.getId());
+			switch (objeto.getTipo()) {
+			case ObjetoUML.ENTIDAD:
+				if(objeto instanceof Entidad){
+					LinkedHashMap mapaAtributos=new LinkedHashMap();
+					objetoMap.put("nombre", ((Entidad)objeto).getNombre());
+					int index=0;
+					for(String atributo:((Entidad)objeto).getAtributos()){
+						mapaAtributos.put(index, atributo);
+						index++;
+					}					
+					objetoMap.put("atributos",mapaAtributos );					
+				}
+				objetoContainer.put("EDITAR_OBJETO", objetoMap);
+				break;
+			case ObjetoUML.RELACION:
+				
 			
-			break;
+				break;
+			default:
+				break;
+			}
 
 		default:
 			break;
 		}
 		
-		
+			
+			objetoContainer.put("tiempo", time);
+			objetoContainer.put("usuario", user.getIdPluma());			
+			datos.add(objetoContainer);
 		String jsonText = JSONValue.toJSONString(jsonMap);
 		System.out.print(jsonText);
 		int a=0;

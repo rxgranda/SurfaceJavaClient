@@ -304,6 +304,7 @@ public class DrawSurfaceScene extends AbstractScene {
 						arg1.actualizar(entidad);
 						System.out.println("Nombre objeto:"+entidad.getNombre());
 						objeto.getFigura().actualizarEtiquetas();
+						UMLDataSaver.agregarAccion(UMLDataSaver.EDITAR_OBJETO_ACTION, objeto,listaUsuarios.get(arg1.getIdUsuario()) );
 						
 					}
 			}
@@ -775,7 +776,7 @@ public class DrawSurfaceScene extends AbstractScene {
 									
 									ObjetoUMLGraph diagrama= new Entidad_Impl(mtApp,container,getCanvas() ,componentRecognizer,objeto,server);									
 									objeto.setFigura(diagrama);
-									UMLDataSaver.agregarAccion(UMLDataSaver.AGREGAR_OBJETO_ACTION,objeto);
+									UMLDataSaver.agregarAccion(UMLDataSaver.AGREGAR_OBJETO_ACTION,objeto,currentUser);
 									//anadirObjeto(diagrama.getFigura());
 									break;
 								case ObjetoUML.RELACION:
@@ -813,7 +814,7 @@ public class DrawSurfaceScene extends AbstractScene {
 											((ObjetoUMLGraph)entidad2).guardarDatos(ObjetoUMLGraph.RELACIONES_FIN_KEYWORD, linea);
 
 											objeto.setFigura(linea);	
-											UMLDataSaver.agregarAccion(UMLDataSaver.AGREGAR_OBJETO_ACTION,objeto);
+											UMLDataSaver.agregarAccion(UMLDataSaver.AGREGAR_OBJETO_ACTION,objeto, currentUser);
 
 											//anadirObjeto(linea.getFigura());
 										}
