@@ -163,6 +163,8 @@ public class TextoFlotanteImpl extends MTComponent implements ObjetoUMLGraph {
 		});*/
 
 		canvas.addChild(halo);
+		halo.setVisible(false);
+		halo.setPickable(false);
 
 		final MTRoundRectangle header = new MTRoundRectangle(objeto
 				.getPosicion().x, objeto
@@ -171,7 +173,7 @@ public class TextoFlotanteImpl extends MTComponent implements ObjetoUMLGraph {
 				(int)(objeto.getHeigth()), 1, 1, mtApp);									
 		header.setFillColor(new MTColor(255,255,255));
 		header.setStrokeColor(new MTColor(30,30,30));
-		header.setNoStroke(false);
+		header.setNoStroke(true);
 		//header.setPickable(false);
 		header.removeAllGestureEventListeners();
 		IFont headerFont=FontManager.getInstance().createFont(mtApp, "SourceSansPro-BoldIt.otf", 12, new MTColor(30,30,30),true);

@@ -53,13 +53,13 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 	private final MTLine linea ;
 	private final ObjetoUML objeto;
 	final MTRoundRectangle halo;
-
+	static float DISTANCIA_FROM_NODE = 0.5f;
 	//private final ObjetoUML textoflotante;
 	
 	private final ObjetoUML textoflotInicio;
 	private final ObjetoUML textoflotFin;
 
-	private static String imagesPath = "data" + MTApplication.separator ;		
+	private static String imagesPath = "advanced"+MTApplication.separator+"drawing"+MTApplication.separator+"data"+MTApplication.separator+"images"+ MTApplication.separator;		
 	private MTApplication mtApp;
 
 	
@@ -239,7 +239,42 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 					ini.setPositionGlobal(new Vector3D(((Relacion)objeto).getInicio()).addLocal(new Vector3D(15, 0)));
 				else
 					ini.setPositionGlobal(new Vector3D(((Relacion)objeto).getInicio()).addLocal(new Vector3D(-15, 0)));
+				
 
+		
+				Vector3D lineaCenter = new Vector3D(linea.getCenterPointGlobal());
+				
+				Vector3D R1 = lineaCenter.getSubtracted(vInicio);
+				Vector3D R1nuevo =R1.getScaled(DISTANCIA_FROM_NODE);
+				Vector3D R1pos = vInicio.getAdded(R1nuevo);
+				
+				Vector3D R2 = lineaCenter.getSubtracted(vFin);
+				Vector3D R2nuevo =R2.getScaled(DISTANCIA_FROM_NODE);
+				Vector3D R2pos = vFin.getAdded(R2nuevo);
+
+				
+				TextoFlotanteImpl impInicio = (TextoFlotanteImpl)textoflotInicio.getFigura();
+				if(impInicio != null){
+					
+					
+					impInicio.rectangulo.setPositionGlobal(R1pos);
+					impInicio.halo.setPositionGlobal(R1pos);
+				}
+				
+	
+				TextoFlotanteImpl impFin = (TextoFlotanteImpl)textoflotFin.getFigura();
+				if(impFin != null){
+					impFin.rectangulo.setPositionGlobal(R2pos);
+					impFin.halo.setPositionGlobal(R2pos);
+				}
+				textoflotInicio.setPosicion(R1pos);
+				
+				textoflotFin.setPosicion(R2pos);
+				
+			
+
+
+				
 				
 				
 				////								
@@ -282,6 +317,9 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 				halo.setVertices(haloVertex);
 				halo.setFillColor(ObjetoUMLGraph.haloSelected);
 				halo.setPositionGlobal(linea.getCenterPointGlobal());
+				
+				
+				
 				///
 				/*if(((Relacion)objeto).getObjetoFin().getPosicion().x>((Relacion)objeto).getFin().x)
 					fin.setPositionGlobal(new Vector3D(((Relacion)objeto).getFin()).addLocal(new Vector3D(14,0)));
@@ -296,7 +334,39 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 					fin.setPositionGlobal(new Vector3D(((Relacion)objeto).getFin()).addLocal(new Vector3D(15, 0)));
 				else
 					fin.setPositionGlobal(new Vector3D(((Relacion)objeto).getFin()).addLocal(new Vector3D(-15, 0)));
+				
+				
+				Vector3D lineaCenter = new Vector3D(linea.getCenterPointGlobal());
+				
+				Vector3D R1 = lineaCenter.getSubtracted(vInicio);
+				Vector3D R1nuevo =R1.getScaled(DISTANCIA_FROM_NODE);
+				Vector3D R1pos = vInicio.getAdded(R1nuevo);
+				
+				Vector3D R2 = lineaCenter.getSubtracted(vFin);
+				Vector3D R2nuevo =R2.getScaled(DISTANCIA_FROM_NODE);
+				Vector3D R2pos = vFin.getAdded(R2nuevo);
 
+				
+				TextoFlotanteImpl impInicio = (TextoFlotanteImpl)textoflotInicio.getFigura();
+				if(impInicio != null){
+					
+					
+					impInicio.rectangulo.setPositionGlobal(R1pos);
+					impInicio.halo.setPositionGlobal(R1pos);
+				}
+				
+	
+				TextoFlotanteImpl impFin = (TextoFlotanteImpl)textoflotFin.getFigura();
+				if(impFin != null){
+					impFin.rectangulo.setPositionGlobal(R2pos);
+					impFin.halo.setPositionGlobal(R2pos);
+				}
+				textoflotInicio.setPosicion(R1pos);
+				
+				textoflotFin.setPosicion(R2pos);
+				
+				
+				
 				///
 				return false;
 			}
@@ -367,15 +437,22 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 							
 							
 							if (textoflotInicio.getFigura() == null && textoflotFin.getFigura() == null ){
-								//System.out.println("FIGURA ES :" + textoflotante.getFigura().toString());
-								/*
-								MTComponent bus = linea.getChildByName("TextoFlotanteImpl");
-								System.out.println("FOUNDCOMP"  + bus);
-								linea.removeChild(bus);
-								bus.destroy();
-								textoflotante.setFigura(null);*/
+							
+							 	Vector3D vFin=new Vector3D(((Relacion)objeto).getFin());	 
+								Vector3D vInicio=new Vector3D(((Relacion)objeto).getInicio());
+								Vector3D distancia=vFin.getSubtracted(vInicio);
+						
+								Vector3D lineaCenter = new Vector3D(linea.getCenterPointGlobal());
+								//MTLine ll  = new MTLine(mtApp, new Vertex(0,0), new Vertex(lineaCenter.x,lineaCenter.y));
+								//POsicion inicio label
+								Vector3D R1 = lineaCenter.getSubtracted(vInicio);
+								Vector3D R1nuevo =R1.getScaled(DISTANCIA_FROM_NODE);
+								Vector3D R1pos = vInicio.getAdded(R1nuevo);
 								
-								
+								Vector3D R2 = lineaCenter.getSubtracted(vFin);
+								Vector3D R2nuevo =R2.getScaled(DISTANCIA_FROM_NODE);
+								Vector3D R2pos = vFin.getAdded(R2nuevo);
+							
 								TextoFlotanteImpl teximplinicio = new TextoFlotanteImpl(app, linea, canvas, recognizer, textoflotInicio, server);	
 								teximplinicio.rectangulo.setName("TextoFlotanteImplINICIO");
 								textoflotInicio.setFigura(teximplinicio);
@@ -385,10 +462,12 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 								textoflotFin.setFigura(teximplfin);
 						
 								MTRoundRectangle textInicio = (MTRoundRectangle)(teximplinicio.rectangulo);
-								textInicio.setPositionRelativeToParent(new Vector3D(ini.getCenterPointGlobal().x +20, ini.getCenterPointGlobal().y+20, ini.getCenterPointGlobal().z));
+								//textInicio.setPositionRelativeToParent(new Vector3D(ini.getCenterPointGlobal().x +DISTANCIA_FROM_NODE*distancia.length(), ini.getCenterPointGlobal().y+20, ini.getCenterPointGlobal().z));
+								textInicio.setPositionGlobal(R1pos);
 								
 								MTRoundRectangle textFin = (MTRoundRectangle)(teximplfin.rectangulo);
-								textFin.setPositionRelativeToParent(new Vector3D(fin.getCenterPointGlobal().x -20, fin.getCenterPointGlobal().y + 20, fin.getCenterPointGlobal().z));
+								//textFin.setPositionRelativeToParent(new Vector3D(fin.getCenterPointGlobal().x -DISTANCIA_FROM_NODE*distancia.length(), fin.getCenterPointGlobal().y + 20, fin.getCenterPointGlobal().z));
+								textFin.setPositionGlobal(R2pos);
 							}
 
 						}
@@ -538,27 +617,40 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		//fin.setPositionGlobal(new Vector3D(((Relacion)objeto).getFin()));
 		halo.setPositionGlobal(linea.getCenterPointGlobal());
 		
+		Vector3D vFin=new Vector3D(((Relacion)objeto).getFin());
+		Vector3D vInicio=new Vector3D(((Relacion)objeto).getInicio());
+		Vector3D distancia=vFin.getSubtracted(vInicio);
+		
+		
+		Vector3D lineaCenter = new Vector3D(linea.getCenterPointGlobal());
+		//POsicion inicio label
+		Vector3D R1 = lineaCenter.getSubtracted(vInicio);
+		Vector3D R1nuevo =R1.getScaled(DISTANCIA_FROM_NODE);
+		Vector3D R1pos = vInicio.getAdded(R1nuevo);
+		
+		Vector3D R2 = lineaCenter.getSubtracted(vFin);
+		Vector3D R2nuevo =R2.getScaled(DISTANCIA_FROM_NODE);
+		Vector3D R2pos = vFin.getAdded(R2nuevo);
+		
 		TextoFlotanteImpl impInicio = (TextoFlotanteImpl)textoflotInicio.getFigura();
 		if(impInicio != null){
 			
 			
-			impInicio.rectangulo.setPositionGlobal(new Vector3D(ini.getCenterPointGlobal().x +20, ini.getCenterPointGlobal().y +20, ini.getCenterPointGlobal().z));
-			impInicio.halo.setPositionGlobal(new Vector3D(ini.getCenterPointGlobal().x +20, ini.getCenterPointGlobal().y +20, ini.getCenterPointGlobal().z));
+			impInicio.rectangulo.setPositionGlobal(R1pos);
+			impInicio.halo.setPositionGlobal(R1pos);
 		}
 		
 		TextoFlotanteImpl impFin = (TextoFlotanteImpl)textoflotFin.getFigura();
 		if(impFin != null){
-			impFin.rectangulo.setPositionGlobal(new Vector3D(fin.getCenterPointGlobal().x -20, fin.getCenterPointGlobal().y + 20, fin.getCenterPointGlobal().z));
-			impFin.halo.setPositionGlobal(new Vector3D(fin.getCenterPointGlobal().x -20, fin.getCenterPointGlobal().y +20, fin.getCenterPointGlobal().z));
+			impFin.rectangulo.setPositionGlobal(R2pos);
+			impFin.halo.setPositionGlobal(R2pos);
 		}
 		
 		objeto.setPosicion(linea.getCenterPointGlobal());
-		textoflotInicio.setPosicion(ini.getCenterPointGlobal());
-		textoflotFin.setPosicion(fin.getCenterPointGlobal());
+		textoflotInicio.setPosicion(R1pos);
+		textoflotFin.setPosicion(R2pos);
 		
-		Vector3D vFin=new Vector3D(((Relacion)objeto).getFin());
-		Vector3D vInicio=new Vector3D(((Relacion)objeto).getInicio());
-		Vector3D distancia=vFin.getSubtracted(vInicio);
+
 
 		Vertex[] haloVertex= new Vertex[4];		
 		if(java.lang.Math.abs(distancia.y/distancia.x)<1){
@@ -774,9 +866,10 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		}
 		
 		
-		if(imagenCardinalidad!=null)
+		if(imagenCardinalidad!=null){
 			System.out.println("Imagen cardinalidad : " + imagesPath + nombre );
-			componente.setTexture(imagenCardinalidad);
+			PImage p = mtApp.loadImage(imagesPath + nombre);
+			componente.setTexture(p);}
 	}
 	
 	
