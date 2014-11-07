@@ -48,6 +48,7 @@ import org.mt4j.util.math.ToolsMath;
 import org.mt4j.util.math.Vector3D;
 import org.mt4j.util.math.Vertex;
 
+import advanced.umleditor.UMLDataSaver;
 import advanced.umleditor.UMLFacade;
 import advanced.umleditor.UMLRecognizer;
 import advanced.umleditor.UMLCollection;
@@ -140,7 +141,7 @@ public class DrawSurfaceScene extends AbstractScene {
 		puntos = new ArrayList<Vector3D>();
 	}
 */
-	public void limpiar( final Usuario user) {
+	public void limpiarPuntosCanvas( final Usuario user) {
 		registerPreDrawAction(new IPreDrawAction() {			
 			public void processAction() {
 				Vector3D ultimo = null;
@@ -303,6 +304,7 @@ public class DrawSurfaceScene extends AbstractScene {
 						arg1.actualizar(entidad);
 						System.out.println("Nombre objeto:"+entidad.getNombre());
 						objeto.getFigura().actualizarEtiquetas();
+						UMLDataSaver.agregarAccion(UMLDataSaver.EDITAR_OBJETO_ACTION, objeto,listaUsuarios.get(arg1.getIdUsuario()) );
 						
 					}
 			}
@@ -345,12 +347,6 @@ public class DrawSurfaceScene extends AbstractScene {
 		
 		
 		
-		
-		
-		
-		
-		
-		
 		this.brushColor = new MTColor(0, 0, 0);
 		this.brushScale = 0.05f;
 		this.dynamicBrush = true;
@@ -374,7 +370,7 @@ public class DrawSurfaceScene extends AbstractScene {
 			listaHaloHelper.put(user, helper);
 		}
 
-		final Usuario defaultUser= new Usuario(-1, "default", "canal1", -1);
+		final Usuario defaultUser= new Usuario(Usuario.ID_DEFAULT_USER, Usuario.NOMBRE_DEFAULT_USER, Usuario.CANAL_DEFAULT_USER, -1);
 		final UMLFacade recognizer = new UMLFacade(defaultUser); //para el canvas
 		final UMLFacade componentRecognizer = new UMLFacade(defaultUser); // para reconocer gestos de los componentes
 		ArrayList<Vector3D> puntos= new ArrayList<Vector3D>();
@@ -725,7 +721,7 @@ public class DrawSurfaceScene extends AbstractScene {
 							 getCanvas().addChild(a);
 							 getCanvas().sendToFront();*/
 							// int resultado=recognizer.recognize();
-							limpiar(currentUser);
+							limpiarPuntosCanvas(currentUser);
 							UMLFacade recognizer=listaRecognizer.get(currentUser.getIdPluma());
 							final ObjetoUML objeto=recognizer
 									.reconocerObjeto();
@@ -780,6 +776,7 @@ public class DrawSurfaceScene extends AbstractScene {
 									
 									ObjetoUMLGraph diagrama= new Entidad_Impl(mtApp,container,getCanvas() ,componentRecognizer,objeto,server);									
 									objeto.setFigura(diagrama);
+									UMLDataSaver.agregarAccion(UMLDataSaver.AGREGAR_OBJETO_ACTION,objeto,currentUser);
 									//anadirObjeto(diagrama.getFigura());
 									break;
 								case ObjetoUML.RELACION:
@@ -816,7 +813,9 @@ public class DrawSurfaceScene extends AbstractScene {
 											((ObjetoUMLGraph)entidad1).guardarDatos(ObjetoUMLGraph.RELACIONES_INICIO_KEYWORD, linea);
 											((ObjetoUMLGraph)entidad2).guardarDatos(ObjetoUMLGraph.RELACIONES_FIN_KEYWORD, linea);
 
-											objeto.setFigura(linea);		
+											objeto.setFigura(linea);	
+											UMLDataSaver.agregarAccion(UMLDataSaver.AGREGAR_OBJETO_ACTION,objeto, currentUser);
+
 											//anadirObjeto(linea.getFigura());
 										}
 										}

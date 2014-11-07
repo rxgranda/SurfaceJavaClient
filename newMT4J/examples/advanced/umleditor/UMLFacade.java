@@ -66,8 +66,9 @@ public class UMLFacade {
 		
 		ObjetoUML objeto = UMLCollection.anadirObjeto(ObjetoUML.TEXTOFLOTANTE, persona);
 		//FALTAN PONER RESTO DE ATTRIBUTOS
+
 		((TextoFlotante)objeto).setWidth((int)(100));
-		((TextoFlotante)objeto).setHeigth((int)(40));
+		((TextoFlotante)objeto).setHeight((int)(40));
 		((TextoFlotante)objeto).setPosicion(position);
 		((TextoFlotante)objeto).setNombre("Default");
 		
@@ -96,7 +97,7 @@ public class UMLFacade {
 			//// Calcular centroide,posicion y dimensiones
 			this.getObjeto().setCentroide((int)((acumCentroideX/numMuestas) -5.0f),(int)((acumCentroideY/numMuestas) -5.0f));	
 			this.getObjeto().setWidth(width);
-			this.getObjeto().setHeigth(height);
+			this.getObjeto().setHeight(height);
 			this.getObjeto().setPosicion(new Vector3D((int)(this.getObjeto().getCentroide().x- (maxX-minX)/2),(int)	(this.getObjeto().getCentroide().y-(maxY-minY)/2)));		
 			
 			
@@ -160,7 +161,7 @@ public class UMLFacade {
 
 
 	public float getHeigth() {
-		return objeto.getHeigth();
+		return objeto.getHeight();
 	}
 	
 	

@@ -1,8 +1,11 @@
 package advanced.umleditor.impl;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.Map;
+import java.util.Set;
 
 import org.mt4j.MTApplication;
 import org.mt4j.components.MTCanvas;
@@ -40,6 +43,7 @@ import advanced.umleditor.UMLFacade;
 import advanced.umleditor.logic.Entidad;
 import advanced.umleditor.logic.ObjetoUML;
 import advanced.umleditor.logic.Relacion;
+import advanced.umleditor.logic.Usuario;
 import advanced.umleditor.socketio.CardinalidadAdapter;
 import advanced.umleditor.socketio.EntidadAdapter;
 import processing.core.PApplet;
@@ -59,14 +63,18 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 	private final ObjetoUML textoflotInicio;
 	private final ObjetoUML textoflotFin;
 
-	private static String imagesPath = "advanced"+MTApplication.separator+"drawing"+MTApplication.separator+"data"+MTApplication.separator+"images"+ MTApplication.separator;		
-	private MTApplication mtApp;
-
+	private static String imagesPath = "data"+MTApplication.separator;
+			private MTApplication mtApp;
+	
 	
 	private ArrayList<Vector3D> listapuntos;
 	private final MTApplication app ;
 	MTEllipse ini=null;
 	MTEllipse fin=null;
+	Map <Integer, MTComponent>listaCardinalidadInicio= new HashMap<Integer, MTComponent>();
+	Map <Integer, MTComponent>listaCardinalidadFin= new HashMap<Integer, MTComponent>();
+
+
 	
 	private static final int CARDINALIDAD_LOCATION_DEFAULT=0;
 	private static final int CARDINALIDAD_LOCATION_IZQUIERDA=1;
@@ -80,6 +88,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 	public Relacion_Impl(MTApplication mtApp, final MTComponent container, final MTCanvas canvas, final ObjetoUML objeto, final ObjetoUML texttoflotini, final ObjetoUML texttoflotfin, final UMLFacade recognizer,final SocketIOServer server) {
 		super(mtApp);
 		this.mtApp=mtApp;
+		
 		////
 		Vertex a= new Vertex(),b= new Vertex();
 		Vertex []c=new Vertex[2];
@@ -138,15 +147,60 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		});
 */
 		//final MTBackgroundImage backgroundImage = new MTBackgroundImage(mtApp, image, false); 
-		PImage imagenCardinalidad = mtApp.loadImage(imagesPath + "uno.png");
+		PImage imagenCardUno = mtApp.loadImage(imagesPath + "uno.png");
+		PImage imagenCardCeroUno = mtApp.loadImage(imagesPath + "ceroUnoI.png");
+		PImage imagenCardCeroMuchos= mtApp.loadImage(imagesPath + "ceroMuchosI.png");
+		PImage imagenCardUnoMuchos= mtApp.loadImage(imagesPath + "unoMuchosI.png");
+		PImage imagenCardMuchos= mtApp.loadImage(imagesPath + "muchosI.png");
 		//backgroundImage.setSizeXYGlobal(10, 10);
 		//this.getCanvas().addChild(backgroundImage);
 
+		new MTRectangle(15, 15, mtApp);
 		// Circulos al inicio y fin de la linea
+		/*listaCardinalidadInicio.put(Relacion.CARDINALIDAD_UNO, new MTEllipse(mtApp,new Vector3D(0,0,0), 15,15f));
+		listaCardinalidadInicio.put(Relacion.CARDINALIDAD_CERO_UNO, new MTEllipse(mtApp,new Vector3D(0,0,0), 15,15f));
+		listaCardinalidadInicio.put(Relacion.CARDINALIDAD_CERO_MUCHOS, new MTEllipse(mtApp,new Vector3D(0,0,0), 15,15f));
+		listaCardinalidadInicio.put(Relacion.CARDINALIDAD_UNO_MUCHOS, new MTEllipse(mtApp,new Vector3D(0,0,0), 15,15f));
+		listaCardinalidadInicio.put(Relacion.CARDINALIDAD_MUCHOS, new MTEllipse(mtApp,new Vector3D(0,0,0), 15,15f));
+
+		listaCardinalidadFin.put(Relacion.CARDINALIDAD_UNO, new MTEllipse(mtApp,new Vector3D(0,0,0), 15,15f));
+		listaCardinalidadFin.put(Relacion.CARDINALIDAD_CERO_UNO, new MTEllipse(mtApp,new Vector3D(0,0,0), 15,15f));
+		listaCardinalidadFin.put(Relacion.CARDINALIDAD_CERO_MUCHOS, new MTEllipse(mtApp,new Vector3D(0,0,0), 15,15f));
+		listaCardinalidadFin.put(Relacion.CARDINALIDAD_UNO_MUCHOS, new MTEllipse(mtApp,new Vector3D(0,0,0), 15,15f));
+		listaCardinalidadFin.put(Relacion.CARDINALIDAD_MUCHOS, new MTEllipse(mtApp,new Vector3D(0,0,0), 15,15f));
+
+		*/
+		listaCardinalidadInicio.put(Relacion.CARDINALIDAD_UNO, new MTRectangle(30, 30, mtApp));
+		listaCardinalidadInicio.put(Relacion.CARDINALIDAD_CERO_UNO, new MTRectangle(30, 30, mtApp));
+		listaCardinalidadInicio.put(Relacion.CARDINALIDAD_CERO_MUCHOS, new MTRectangle(30, 30, mtApp));
+		listaCardinalidadInicio.put(Relacion.CARDINALIDAD_UNO_MUCHOS,new MTRectangle(30, 30, mtApp));
+		listaCardinalidadInicio.put(Relacion.CARDINALIDAD_MUCHOS, new MTRectangle(30, 30, mtApp));
+
+		listaCardinalidadFin.put(Relacion.CARDINALIDAD_UNO,  new MTRectangle(30, 30, mtApp));
+		listaCardinalidadFin.put(Relacion.CARDINALIDAD_CERO_UNO, new MTRectangle(30, 30, mtApp));
+		listaCardinalidadFin.put(Relacion.CARDINALIDAD_CERO_MUCHOS,new MTRectangle(30, 30, mtApp));
+		listaCardinalidadFin.put(Relacion.CARDINALIDAD_UNO_MUCHOS, new MTRectangle(30, 30, mtApp));
+		listaCardinalidadFin.put(Relacion.CARDINALIDAD_MUCHOS, new MTRectangle(30, 30, mtApp));
+
 		
-		if(((Relacion)objeto).getObjetoInicio().getPosicion().y-((Relacion)objeto).getObjetoInicio().getHeigth()/2>((Relacion)objeto).getInicio().y)
+		
+				
+		((MTPolygon)listaCardinalidadInicio.get(Relacion.CARDINALIDAD_UNO)).setTexture(imagenCardUno);
+		((MTPolygon)listaCardinalidadInicio.get(Relacion.CARDINALIDAD_CERO_UNO)).setTexture(imagenCardCeroUno);
+		((MTPolygon)listaCardinalidadInicio.get(Relacion.CARDINALIDAD_CERO_MUCHOS)).setTexture(imagenCardCeroMuchos);
+		((MTPolygon)listaCardinalidadInicio.get(Relacion.CARDINALIDAD_UNO_MUCHOS)).setTexture(imagenCardUnoMuchos);
+		((MTPolygon)listaCardinalidadInicio.get(Relacion.CARDINALIDAD_MUCHOS)).setTexture(imagenCardMuchos);
+		
+		((MTPolygon)listaCardinalidadFin.get(Relacion.CARDINALIDAD_UNO)).setTexture(imagenCardUno);
+		((MTPolygon)listaCardinalidadFin.get(Relacion.CARDINALIDAD_CERO_UNO)).setTexture(imagenCardCeroUno);
+		((MTPolygon)listaCardinalidadFin.get(Relacion.CARDINALIDAD_CERO_MUCHOS)).setTexture(imagenCardCeroMuchos);
+		((MTPolygon)listaCardinalidadFin.get(Relacion.CARDINALIDAD_UNO_MUCHOS)).setTexture(imagenCardUnoMuchos);
+		((MTPolygon)listaCardinalidadFin.get(Relacion.CARDINALIDAD_MUCHOS)).setTexture(imagenCardMuchos);
+		
+		
+		if(((Relacion)objeto).getObjetoInicio().getPosicion().y-((Relacion)objeto).getObjetoInicio().getHeight()/2>((Relacion)objeto).getInicio().y)
 			ini=new MTEllipse(mtApp, new Vector3D(((Relacion)objeto).getInicio()).addLocal(new Vector3D(0, 15)), 15, 15);
-		else if(((Relacion)objeto).getObjetoInicio().getPosicion().y+((Relacion)objeto).getObjetoInicio().getHeigth()/2<((Relacion)objeto).getInicio().y)
+		else if(((Relacion)objeto).getObjetoInicio().getPosicion().y+((Relacion)objeto).getObjetoInicio().getHeight()/2<((Relacion)objeto).getInicio().y)
 			ini=new MTEllipse(mtApp, new Vector3D(((Relacion)objeto).getInicio()).addLocal(new Vector3D(0, -15)), 15, 15);		
 		else if(((Relacion)objeto).getObjetoInicio().getPosicion().x>((Relacion)objeto).getInicio().x)
 			ini=new MTEllipse(mtApp, new Vector3D(((Relacion)objeto).getInicio()).addLocal(new Vector3D(15, 0)), 15, 15);
@@ -163,12 +217,25 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 			ini=new MTEllipse(mtApp, new Vector3D(((Relacion)objeto).getInicio()).addLocal(new Vector3D(0, -15)), 15, 15);
 		*/
 		
-		//ini.setFillColor(ObjetoUMLGraph.azul);
+		//ini.setFillColor(new MTColor);
 		//ini.setNoFill(true); // Hacerlo Invisible
 		//ini.addChild(backgroundImage);
-		ini.setTexture(imagenCardinalidad);
+		//ini.setTexture(imagenCardinalidad);
 		ini.setNoStroke(true);
 		
+		
+		
+		
+		ini.addChild(listaCardinalidadInicio.get(Relacion.CARDINALIDAD_UNO));
+		Set<Integer> keys=listaCardinalidadInicio.keySet();
+		for(Integer key:keys){
+			listaCardinalidadInicio.get(key).setPickable(false);
+			((MTPolygon)listaCardinalidadInicio.get(key)).setPositionRelativeToOther(ini, ini.getCenterPointGlobal());
+			((MTPolygon)listaCardinalidadInicio.get(key)).setNoStroke(true);
+		}
+		
+					
+			
 		/*if(((Relacion)objeto).getObjetoFin().getPosicion().x>((Relacion)objeto).getFin().x)
 			fin=new MTEllipse(mtApp, new Vector3D(((Relacion)objeto).getFin()).addLocal(new Vector3D(15, 0)), 15, 15);
 		else
@@ -176,21 +243,29 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 	*/
 		
 		
-		if(((Relacion)objeto).getObjetoFin().getPosicion().y-((Relacion)objeto).getObjetoFin().getHeigth()/2>((Relacion)objeto).getFin().y)
+		if(((Relacion)objeto).getObjetoFin().getPosicion().y-((Relacion)objeto).getObjetoFin().getHeight()/2>((Relacion)objeto).getFin().y)
 			fin=new MTEllipse(mtApp, new Vector3D(((Relacion)objeto).getFin()).addLocal(new Vector3D(0, 15)), 15, 15);
-		else if(((Relacion)objeto).getObjetoFin().getPosicion().y+((Relacion)objeto).getObjetoFin().getHeigth()/2<((Relacion)objeto).getFin().y)
+		else if(((Relacion)objeto).getObjetoFin().getPosicion().y+((Relacion)objeto).getObjetoFin().getHeight()/2<((Relacion)objeto).getFin().y)
 			fin=new MTEllipse(mtApp, new Vector3D(((Relacion)objeto).getFin()).addLocal(new Vector3D(0, -15)), 15, 15);		
 		else if(((Relacion)objeto).getObjetoFin().getPosicion().x>((Relacion)objeto).getFin().x)
 			fin=new MTEllipse(mtApp, new Vector3D(((Relacion)objeto).getFin()).addLocal(new Vector3D(15, 0)), 15, 15);
 		else
 			fin=new MTEllipse(mtApp, new Vector3D(((Relacion)objeto).getFin()).addLocal(new Vector3D(-15, 0)), 15, 15);
 
-		fin.setTexture(imagenCardinalidad);
+		//fin.setTexture(imagenCardinalidad);
 		//fin=new MTEllipse(mtApp,new Vector3D(((Relacion)objeto).getFin()), 15, 15);
 		//fin.setFillColor(ObjetoUMLGraph.azul);
 		//fin.setNoFill(true); // Hacerlo Invisible
 		fin.setNoStroke(true);
+		fin.addChild(listaCardinalidadFin.get(Relacion.CARDINALIDAD_UNO));
 
+		Set<Integer> keys2=listaCardinalidadFin.keySet();
+		for(Integer key:keys2){
+			listaCardinalidadFin.get(key).setPickable(false);
+			((MTPolygon)listaCardinalidadFin.get(key)).setPositionRelativeToOther(fin, fin.getCenterPointGlobal());
+			((MTPolygon)listaCardinalidadFin.get(key)).setNoStroke(true);
+
+		}	
 		//ini.removeAllGestureEventListeners();
 		ini.unregisterAllInputProcessors();
 		ini.registerInputProcessor(new DragProcessor(mtApp));
@@ -231,9 +306,9 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 				else
 					ini.setPositionGlobal(new Vector3D(((Relacion)objeto).getInicio()).addLocal(new Vector3D(-14,0)));
 			*/
-				if(((Relacion)objeto).getObjetoInicio().getPosicion().y-((Relacion)objeto).getObjetoInicio().getHeigth()/2>((Relacion)objeto).getInicio().y)
+				if(((Relacion)objeto).getObjetoInicio().getPosicion().y-((Relacion)objeto).getObjetoInicio().getHeight()/2>((Relacion)objeto).getInicio().y)
 					ini.setPositionGlobal( new Vector3D(((Relacion)objeto).getInicio()).addLocal(new Vector3D(0, 15)));
-				else if(((Relacion)objeto).getObjetoInicio().getPosicion().y+((Relacion)objeto).getObjetoInicio().getHeigth()/2<((Relacion)objeto).getInicio().y)
+				else if(((Relacion)objeto).getObjetoInicio().getPosicion().y+((Relacion)objeto).getObjetoInicio().getHeight()/2<((Relacion)objeto).getInicio().y)
 					ini.setPositionGlobal( new Vector3D(((Relacion)objeto).getInicio()).addLocal(new Vector3D(0, -15)));		
 				else if(((Relacion)objeto).getObjetoInicio().getPosicion().x>((Relacion)objeto).getInicio().x)
 					ini.setPositionGlobal(new Vector3D(((Relacion)objeto).getInicio()).addLocal(new Vector3D(15, 0)));
@@ -326,9 +401,9 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 				else
 					fin.setPositionGlobal(new Vector3D(((Relacion)objeto).getFin()).addLocal(new Vector3D(-14,0)));
 				*/
-				if(((Relacion)objeto).getObjetoFin().getPosicion().y-((Relacion)objeto).getObjetoFin().getHeigth()/2>((Relacion)objeto).getFin().y)
+				if(((Relacion)objeto).getObjetoFin().getPosicion().y-((Relacion)objeto).getObjetoFin().getHeight()/2>((Relacion)objeto).getFin().y)
 					fin.setPositionGlobal(new Vector3D(((Relacion)objeto).getFin()).addLocal(new Vector3D(0, 15)));
-				else if(((Relacion)objeto).getObjetoFin().getPosicion().y+((Relacion)objeto).getObjetoFin().getHeigth()/2<((Relacion)objeto).getFin().y)
+				else if(((Relacion)objeto).getObjetoFin().getPosicion().y+((Relacion)objeto).getObjetoFin().getHeight()/2<((Relacion)objeto).getFin().y)
 					fin.setPositionGlobal(new Vector3D(((Relacion)objeto).getFin()).addLocal(new Vector3D(0, -15)));		
 				else if(((Relacion)objeto).getObjetoFin().getPosicion().x>((Relacion)objeto).getFin().x)
 					fin.setPositionGlobal(new Vector3D(((Relacion)objeto).getFin()).addLocal(new Vector3D(15, 0)));
@@ -373,7 +448,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 				.getPosicion().x-ObjetoUMLGraph.haloWidth/2, objeto
 				.getPosicion().y-ObjetoUMLGraph.haloWidth/2, 0, objeto
 				.getWidth()+ObjetoUMLGraph.haloWidth,
-				objeto.getHeigth()+ObjetoUMLGraph.haloWidth, 1, 1, mtApp);		
+				objeto.getHeight()+ObjetoUMLGraph.haloWidth, 1, 1, mtApp);		
 
 		
 		
@@ -381,9 +456,9 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		
 		
 		
-		//halo.setNoFill(true);
+		halo.setNoFill(true);
 		
-		halo.setFillColor(ObjetoUMLGraph.haloSelected);
+	//	halo.setFillColor(ObjetoUMLGraph.haloSelected);
 		
 		halo.removeAllGestureEventListeners();		
 		halo.setNoStroke(false);
@@ -574,18 +649,18 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 */
 		
 		/////
-		if(((Relacion)objeto).getObjetoInicio().getPosicion().y-((Relacion)objeto).getObjetoInicio().getHeigth()/2>((Relacion)objeto).getInicio().y)
+		if(((Relacion)objeto).getObjetoInicio().getPosicion().y-((Relacion)objeto).getObjetoInicio().getHeight()/2>((Relacion)objeto).getInicio().y)
 			ini.setPositionGlobal( new Vector3D(((Relacion)objeto).getInicio()).addLocal(new Vector3D(0, 15)));
-		else if(((Relacion)objeto).getObjetoInicio().getPosicion().y+((Relacion)objeto).getObjetoInicio().getHeigth()/2<((Relacion)objeto).getInicio().y)
+		else if(((Relacion)objeto).getObjetoInicio().getPosicion().y+((Relacion)objeto).getObjetoInicio().getHeight()/2<((Relacion)objeto).getInicio().y)
 			ini.setPositionGlobal( new Vector3D(((Relacion)objeto).getInicio()).addLocal(new Vector3D(0, -15)));		
 		else if(((Relacion)objeto).getObjetoInicio().getPosicion().x>((Relacion)objeto).getInicio().x)
 			ini.setPositionGlobal(new Vector3D(((Relacion)objeto).getInicio()).addLocal(new Vector3D(15, 0)));
 		else
 			ini.setPositionGlobal(new Vector3D(((Relacion)objeto).getInicio()).addLocal(new Vector3D(-15, 0)));
 		
-		if(((Relacion)objeto).getObjetoFin().getPosicion().y-((Relacion)objeto).getObjetoFin().getHeigth()/2>((Relacion)objeto).getFin().y)
+		if(((Relacion)objeto).getObjetoFin().getPosicion().y-((Relacion)objeto).getObjetoFin().getHeight()/2>((Relacion)objeto).getFin().y)
 			fin.setPositionGlobal(new Vector3D(((Relacion)objeto).getFin()).addLocal(new Vector3D(0, 15)));
-		else if(((Relacion)objeto).getObjetoFin().getPosicion().y+((Relacion)objeto).getObjetoFin().getHeigth()/2<((Relacion)objeto).getFin().y)
+		else if(((Relacion)objeto).getObjetoFin().getPosicion().y+((Relacion)objeto).getObjetoFin().getHeight()/2<((Relacion)objeto).getFin().y)
 			fin.setPositionGlobal(new Vector3D(((Relacion)objeto).getFin()).addLocal(new Vector3D(0, -15)));		
 		else if(((Relacion)objeto).getObjetoFin().getPosicion().x>((Relacion)objeto).getFin().x)
 			fin.setPositionGlobal(new Vector3D(((Relacion)objeto).getFin()).addLocal(new Vector3D(15, 0)));
@@ -594,7 +669,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 
 		//////
 		
-		
+	//	ini.setUseDirectGL(true);
 	
 		
 		//fin.setPositionGlobal(new Vector3D(((Relacion)objeto).getFin()));
@@ -721,9 +796,9 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 	private int ubicacionCardinalidad(MTPolygon componente){
 		int ubicacion=CARDINALIDAD_LOCATION_DEFAULT;
 		if(componente==ini){
-			if(((Relacion)objeto).getObjetoInicio().getPosicion().y-((Relacion)objeto).getObjetoInicio().getHeigth()/2>((Relacion)objeto).getInicio().y)
+			if(((Relacion)objeto).getObjetoInicio().getPosicion().y-((Relacion)objeto).getObjetoInicio().getHeight()/2>((Relacion)objeto).getInicio().y)
 				ubicacion=CARDINALIDAD_LOCATION_ARRIBA;
-			else if(((Relacion)objeto).getObjetoInicio().getPosicion().y+((Relacion)objeto).getObjetoInicio().getHeigth()/2<((Relacion)objeto).getInicio().y)
+			else if(((Relacion)objeto).getObjetoInicio().getPosicion().y+((Relacion)objeto).getObjetoInicio().getHeight()/2<((Relacion)objeto).getInicio().y)
 				ubicacion=CARDINALIDAD_LOCATION_ABAJO;
 			else if(((Relacion)objeto).getObjetoInicio().getPosicion().x>((Relacion)objeto).getInicio().x)
 				ubicacion=CARDINALIDAD_LOCATION_IZQUIERDA;
@@ -732,9 +807,9 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 			
 		}else if(componente==fin){
 			
-			if(((Relacion)objeto).getObjetoFin().getPosicion().y-((Relacion)objeto).getObjetoFin().getHeigth()/2>((Relacion)objeto).getFin().y)
+			if(((Relacion)objeto).getObjetoFin().getPosicion().y-((Relacion)objeto).getObjetoFin().getHeight()/2>((Relacion)objeto).getFin().y)
 				ubicacion=CARDINALIDAD_LOCATION_ARRIBA;
-			else if(((Relacion)objeto).getObjetoFin().getPosicion().y+((Relacion)objeto).getObjetoFin().getHeigth()/2<((Relacion)objeto).getFin().y)
+			else if(((Relacion)objeto).getObjetoFin().getPosicion().y+((Relacion)objeto).getObjetoFin().getHeight()/2<((Relacion)objeto).getFin().y)
 				ubicacion=CARDINALIDAD_LOCATION_ABAJO;
 			else if(((Relacion)objeto).getObjetoFin().getPosicion().x>((Relacion)objeto).getFin().x)
 				ubicacion=CARDINALIDAD_LOCATION_IZQUIERDA;
@@ -743,27 +818,41 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		}
 		return ubicacion;
 	}
-	public void actualizarCardinalidad(int cardinalidad,boolean cardinalidadSwitch){
+	public void actualizarCardinalidad(final int cardinalidad,boolean cardinalidadSwitch){
 		MTPolygon componente;
 		int ubicacion=0; // 1=izquierda, 2 Derecha, 3 arriba, 4 abajo del componente
+		Map lista;
 		if(cardinalidadSwitch){
 			componente=ini;
-			System.out.println("ES INICIO!");
+			((Relacion)objeto).setCardinalidadInicio(cardinalidad);
+			Set<Integer> keys=listaCardinalidadInicio.keySet();
+			for(Integer key:keys){
+				((MTPolygon)listaCardinalidadInicio.get(key)).removeFromParent();
+			}
+			lista=listaCardinalidadInicio;
+			System.out.println("Es Inicio");
 		}else{
-			System.out.println("ES FIN");
-			componente=fin;			
+			componente=fin;	
+			
+			Set<Integer> keys=listaCardinalidadFin.keySet();
+			for(Integer key:keys){
+				((MTPolygon)listaCardinalidadFin.get(key)).removeFromParent();
+			}	
+			lista=listaCardinalidadFin;
 		}
 		int ubicacionCardinalidad=ubicacionCardinalidad(componente);
 		PImage imagenCardinalidad =null;
 		String nombre="uno.png";	
 		System.out.println("cardinalidad es: " + cardinalidad +"Componente es : " +componente);
+		MTPolygon cardinalidadComponent=null;
 		switch (cardinalidad) {
 			
 			case Relacion.CARDINALIDAD_UNO:						
-				imagenCardinalidad = mtApp.loadImage(imagesPath + nombre);				
+				//imagenCardinalidad = mtApp.loadImage(imagesPath + nombre);
+				cardinalidadComponent=(MTPolygon)lista.get(Relacion.CARDINALIDAD_UNO);
 				break;
 			case Relacion.CARDINALIDAD_CERO_UNO:
-				switch (ubicacionCardinalidad) {
+				/*switch (ubicacionCardinalidad) {
 				case CARDINALIDAD_LOCATION_ARRIBA:
 					nombre="ceroUnoA.png";
 					break;
@@ -780,10 +869,12 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 				default:
 					break;
 				}
-				imagenCardinalidad = mtApp.loadImage(imagesPath + nombre);				
+				imagenCardinalidad = mtApp.loadImage(imagesPath + nombre);	*/
+				cardinalidadComponent=(MTPolygon)lista.get(Relacion.CARDINALIDAD_CERO_UNO);
+				
 				break;
 			case Relacion.CARDINALIDAD_CERO_MUCHOS:
-				switch (ubicacionCardinalidad) {
+				/*switch (ubicacionCardinalidad) {
 				case CARDINALIDAD_LOCATION_ARRIBA:
 					nombre="ceroMuchosA.png";
 					break;
@@ -800,11 +891,13 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 				default:
 					break;
 				}
-				imagenCardinalidad = mtApp.loadImage(imagesPath + nombre);
+				imagenCardinalidad = mtApp.loadImage(imagesPath + nombre);*/
+				cardinalidadComponent=(MTPolygon)lista.get(Relacion.CARDINALIDAD_CERO_MUCHOS);
+
 				break;
 			 
 			case Relacion.CARDINALIDAD_UNO_MUCHOS:
-				switch (ubicacionCardinalidad) {
+				/*switch (ubicacionCardinalidad) {
 				case CARDINALIDAD_LOCATION_ARRIBA:
 					nombre="unoMuchosA.png";
 					break;
@@ -821,11 +914,14 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 				default:
 					break;
 				}
-				imagenCardinalidad = mtApp.loadImage(imagesPath + nombre);
+				imagenCardinalidad = mtApp.loadImage(imagesPath + nombre);*/
+				
+				cardinalidadComponent=(MTPolygon)lista.get(Relacion.CARDINALIDAD_UNO_MUCHOS);
+
 				break;
 			
 			case Relacion.CARDINALIDAD_MUCHOS:
-				switch (ubicacionCardinalidad) {
+				/*switch (ubicacionCardinalidad) {
 				case CARDINALIDAD_LOCATION_ARRIBA:
 					nombre="muchosA.png";
 					break;
@@ -842,17 +938,37 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 				default:
 					break;
 				}
-				imagenCardinalidad = mtApp.loadImage(imagesPath + nombre);
+				imagenCardinalidad = mtApp.loadImage(imagesPath + nombre);*/
+				cardinalidadComponent=(MTPolygon)lista.get(Relacion.CARDINALIDAD_MUCHOS);
+
 				break;
+				
 			default:
 				break;		
 		}
 		
 		
-		if(imagenCardinalidad!=null){
+		/*if(imagenCardinalidad!=null){
 			System.out.println("Imagen cardinalidad : " + imagesPath + nombre );
-			PImage p = mtApp.loadImage(imagesPath + nombre);
-			componente.setTexture(p);}
+			//PImage p = mtApp.loadImage(imagesPath + nombre);
+			//componente.remove
+			//componente.removeFromParent();
+		///	componente.
+			System.out.println(MainDrawingScene.imagenCardinalidadAlt);
+			//ini.removeFromParent();
+			//ini=new MTEllipse(mtApp, new Vector3D(((Relacion)objeto).getInicio()).addLocal(new Vector3D(0, 15)), 15, 15);
+
+			//((ini.setTexture(MainDrawingScene.imagenCardinalidadAlt);
+			alitIni2.removeFromParent();
+			ini.addChild(alitIni);
+			///alitIni.sendToFront();
+			
+			//alitIni.setsetPositionRelativeToOther(ini, new Vector3D(0,0,0));
+			
+			//linea.addChild(componente);
+			//componente.updateComponent(0);
+			}*/
+		componente.addChild(cardinalidadComponent);
 	}
 	
 	
@@ -877,8 +993,8 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 				case TapAndHoldEvent.GESTURE_ENDED:
 					if (th.isHoldComplete()){															
 						final InputCursor m = th.getCursor();
-						String canal=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?MainDrawingScene.getListaUsuarios().get((int)m.sessionID).getCanal():"canal1";
-						int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?(int)m.sessionID:-1;
+						String canal=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?MainDrawingScene.getListaUsuarios().get((int)m.sessionID).getCanal():Usuario.CANAL_DEFAULT_USER;
+						int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?(int)m.sessionID:Usuario.ID_DEFAULT_USER;
 						
 						server.getRoomOperations(canal).sendEvent("cardinalidadEdition",new CardinalidadAdapter(((Relacion)objeto),this.cardinalidadSwitch,idUsuario));						
 						System.out.println("Enviado "+canal+""+server.getRoomOperations(canal).getClients().size());

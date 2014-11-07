@@ -342,7 +342,12 @@ public abstract class MTApplication extends PApplet {
 					 throw new FileNotFoundException("Couldnt load Settings.txt as a resource");
 				 }
 			}
-
+			 
+			 //// CTI
+			 MT4jSettings.tiempoBackup=Integer.parseInt(properties.getProperty("TiempoBackup", String.valueOf("5000")).trim());
+			 MT4jSettings.directorioBackup=properties.getProperty("DirectorioBackup", System.getProperty( "user.home" )).trim();
+			 /// CTI
+			 
 			 MT4jSettings.fullscreen = Boolean.parseBoolean(properties.getProperty("Fullscreen", Boolean.valueOf(MT4jSettings.getInstance().isFullscreen()).toString()).trim());
 			 //Use java's fullscreen exclusive mode (real fullscreen) or just use an undecorated window at fullscreen size 
 			 MT4jSettings.getInstance().fullscreenExclusive = Boolean.parseBoolean(properties.getProperty("FullscreenExclusive", Boolean.valueOf(MT4jSettings.getInstance().isFullscreenExclusive()).toString()).trim());

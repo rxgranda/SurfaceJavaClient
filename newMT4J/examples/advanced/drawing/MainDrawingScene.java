@@ -46,6 +46,7 @@ import org.mt4j.util.math.Vector3D;
 import org.mt4j.util.math.Vertex;
 import org.mt4j.util.opengl.GLFBO;
 
+import advanced.umleditor.UMLDataSaver;
 import advanced.umleditor.logic.Usuario;
 
 import com.corundumstudio.socketio.AckRequest;
@@ -61,6 +62,7 @@ import processing.core.PImage;
 
 public class MainDrawingScene extends AbstractScene {
 	private MTApplication pa;	
+	private static Thread backupHelper;
 	private MTEllipse pencilBrush;// Dibujar Trazos
 	private MTEllipse pencilBrush2; // Borrar trazos
 	private DrawSurfaceScene drawingScene;
@@ -76,6 +78,7 @@ public class MainDrawingScene extends AbstractScene {
 	public static final MTColor backgroundColor=new MTColor(0,171,169);
 	 * */
 
+	
 	public static final MTColor blanco=new MTColor(255,255,255);
 	public static final MTColor negro=new MTColor(0,0,0);
 	
@@ -102,6 +105,7 @@ public class MainDrawingScene extends AbstractScene {
 
 	
 	static MTSceneTexture sceneTexture ;
+	public static PImage imagenCardinalidadAlt ;
 	
 		public MainDrawingScene(MTApplication mtApplication, String name) {
 		super(mtApplication, name);				
@@ -112,9 +116,11 @@ public class MainDrawingScene extends AbstractScene {
 		}
 		this.registerGlobalInputProcessor(new CursorTracer(pa, this));
 		
-		
+		System.out.println("Directorio: "+MT4jSettings.directorioBackup);
+		System.out.println(MT4jSettings.tiempoBackup);
 		
 
+		imagenCardinalidadAlt = pa.loadImage( "data"+MTApplication.separator+"uno.png");
 		//PImage image = mtApplication.loadImage(imagesPath + "login2.png"); 
 		//final MTBackgroundImage backgroundImage = new MTBackgroundImage(pa, image, false); 
 		//this.getCanvas().addChild(backgroundImage);
@@ -174,6 +180,11 @@ public class MainDrawingScene extends AbstractScene {
 					case TapEvent.BUTTON_CLICKED:
 						System.out.println("Button clicked state on " + target);
 						rectangle.setFillColor(negro);
+						
+						UMLDataSaver helper= new UMLDataSaver(listaUsuarios, pa.width, pa.height);
+						backupHelper= new Thread(helper);
+						backupHelper.start();
+						
 						cargarLienzo();								
 						getCanvas().removeChild(login);
 						getCanvas().removeChild(background);
@@ -191,7 +202,7 @@ public class MainDrawingScene extends AbstractScene {
 		
 		//Configuarcion para el socket
 		Configuration config = new Configuration();
-        config.setHostname("192.168.65.34");
+        config.setHostname("localhost");
         
         config.setPort(3323);	        
         //inizialimos el servidor de socket        
@@ -221,6 +232,8 @@ public class MainDrawingScene extends AbstractScene {
 	        	System.out.println("CLOSING!!!");
 	        }
 	    });
+		
+		
 		
 		
 	}
@@ -274,6 +287,7 @@ public class MainDrawingScene extends AbstractScene {
 		container.addChild(sceneTexture);
 		frame.addChild(container);
 		 //
+		
 	}
 
 	public void onEnter() {

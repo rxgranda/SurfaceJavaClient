@@ -12,6 +12,7 @@ public class CardinalidadAdapter {
 	public CardinalidadAdapter(Relacion r, boolean cardinalidadSwitch, int idUsuario) {
 		this.id=r.getId();
 		this.idUsuario=idUsuario;
+		this.cardinalidadSwitch=cardinalidadSwitch;
 		if(cardinalidadSwitch)
 			this.setCardinalidad(r.getCardinalidadInicio());
 		else

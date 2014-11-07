@@ -27,6 +27,14 @@ import org.mt4j.util.math.Vector3D;
  */
 public class MT4jSettings {
 	
+	
+	//////// CTI /////////
+	
+	public static long tiempoBackup;
+	public static String directorioBackup="";
+	
+	////////CTI /////////
+	
 	/** The const and settings. */
 	private static MT4jSettings constAndSettings = null;
 	
@@ -374,6 +382,26 @@ public class MT4jSettings {
 	 */
 	public boolean isFullscreenExclusive() {
 		return this.fullscreenExclusive;
+	}
+
+
+	public static long getTiempoBackup() {
+		return tiempoBackup;
+	}
+
+
+	public static void setTiempoBackup(long tiempoBackup) {
+		MT4jSettings.tiempoBackup = tiempoBackup;
+	}
+
+
+	public static String getDirectorioBackup() {
+		return directorioBackup;
+	}
+
+
+	public static void setDirectorioBackup(String directorioBackup) {
+		MT4jSettings.directorioBackup = directorioBackup;
 	}
 	
 
