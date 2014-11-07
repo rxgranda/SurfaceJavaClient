@@ -413,7 +413,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 				objeto.setPosicion(rectangulo.getCenterPointGlobal());
 				halo.setPositionGlobal(rectangulo.getCenterPointGlobal());
 //// TEST
-				MainDrawingScene.clear();
+				//MainDrawingScene.clear();
 /// TEST
 				LinkedList listaInicio=obtenerDatos(RELACIONES_INICIO_KEYWORD);
 				if(listaInicio!=null){

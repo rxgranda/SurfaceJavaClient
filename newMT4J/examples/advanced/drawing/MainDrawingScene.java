@@ -105,6 +105,7 @@ public class MainDrawingScene extends AbstractScene {
 
 	
 	static MTSceneTexture sceneTexture ;
+	public static PImage imagenCardinalidadAlt ;
 	
 		public MainDrawingScene(MTApplication mtApplication, String name) {
 		super(mtApplication, name);				
@@ -119,6 +120,7 @@ public class MainDrawingScene extends AbstractScene {
 		System.out.println(MT4jSettings.tiempoBackup);
 		
 
+		imagenCardinalidadAlt = pa.loadImage( "data"+MTApplication.separator+"uno.png");
 		//PImage image = mtApplication.loadImage(imagesPath + "login2.png"); 
 		//final MTBackgroundImage backgroundImage = new MTBackgroundImage(pa, image, false); 
 		//this.getCanvas().addChild(backgroundImage);

@@ -20,5 +20,8 @@ newMT4J/Settings.txt
 */.plugins/*
 Sr Legacy/bin/.gitignore
 
+
+
+
 newMT4J/bin/.gitignore
 newMT4J/bin/*
