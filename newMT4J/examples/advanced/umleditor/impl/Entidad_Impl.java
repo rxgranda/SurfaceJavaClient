@@ -498,7 +498,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 									String canal=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?MainDrawingScene.getListaUsuarios().get((int)m.sessionID).getCanal():Usuario.CANAL_DEFAULT_USER;
 									int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?(int)m.sessionID:Usuario.ID_DEFAULT_USER;
 
-									server.getRoomOperations(canal).sendEvent("startEdition",new EntidadAdapter(((Entidad)objeto),idUsuario));						
+									server.getRoomOperations(canal).sendEvent("startEdition",new EntidadAdapter(((Entidad)objeto),idUsuario,objeto.EDIT_HEADER));						
 									System.out.println("Enviado "+canal+""+server.getRoomOperations(canal).getClients().size());
 									break;
 
@@ -517,6 +517,52 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 						return false;
 					}
 				});
+			 
+			 
+			 body.registerInputProcessor(new TapAndHoldProcessor(mtApp, TAP_AND_HOLD_TIME));
+			 body.addGestureListener(TapAndHoldProcessor.class, new TapAndHoldVisualizer(mtApp, rectangulo));
+			 body.addGestureListener(TapAndHoldProcessor.class, new IGestureEventListener() {
+					public boolean processGestureEvent(MTGestureEvent ge) {
+						TapAndHoldEvent th = (TapAndHoldEvent)ge;
+						IMTComponent3D target = th.getTargetComponent();
+						if (target instanceof MTRoundRectangle) {
+							MTRoundRectangle rectangle = (MTRoundRectangle) target;
+							
+							
+							
+							switch (th.getId()) {
+							case TapAndHoldEvent.GESTURE_STARTED:
+								break;
+							case TapAndHoldEvent.GESTURE_UPDATED:
+								break;
+							case TapAndHoldEvent.GESTURE_ENDED:
+								if (th.isHoldComplete()){
+									
+									System.out.println("Tap complete!! " + target);						
+									//final AbstractCursorInputEvt posEvt = (AbstractCursorInputEvt) ge.getSource();
+									final InputCursor m = th.getCursor();
+									String canal=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?MainDrawingScene.getListaUsuarios().get((int)m.sessionID).getCanal():Usuario.CANAL_DEFAULT_USER;
+									int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?(int)m.sessionID:Usuario.ID_DEFAULT_USER;
+
+									server.getRoomOperations(canal).sendEvent("startEdition",new EntidadAdapter(((Entidad)objeto),idUsuario,objeto.EDIT_ATTS));						
+									System.out.println("Enviado "+canal+""+server.getRoomOperations(canal).getClients().size());
+									break;
+
+								}
+								break;
+							default:
+								break;
+							}
+
+						}
+						
+						
+						
+						
+
+						return false;
+					}
+				});	 
 
 		/*body.addGestureListener(DragProcessor.class, new IGestureEventListener() {
 			public boolean processGestureEvent(MTGestureEvent ge) {
@@ -568,7 +614,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 							
 							String canal=(MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID)!=null)?MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID).getCanal():Usuario.CANAL_DEFAULT_USER;
 							int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID)!=null)?(int)cursor.sessionID:Usuario.ID_DEFAULT_USER;
-							server.getNamespace("/login").getBroadcastOperations().sendEvent("eraseElement",new EntidadAdapter(((Entidad)objeto),idUsuario));
+							server.getNamespace("/login").getBroadcastOperations().sendEvent("eraseElement",new EntidadAdapter(((Entidad)objeto),idUsuario,ObjetoUML.EDIT_HEADER));
 							Iterator iterRelacion = UMLCollection.getListaUML().entrySet().iterator();
 						    while (iterRelacion.hasNext()) {
 						        Map.Entry pairs = (Map.Entry)iterRelacion.next();

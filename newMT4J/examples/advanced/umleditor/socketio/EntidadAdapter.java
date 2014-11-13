@@ -11,18 +11,28 @@ public class EntidadAdapter {
 	private int id;
 	private int idUsuario;
 	private int tipo;
+	private int target;
 	
 	public EntidadAdapter(){
 		
 	}
 	
-	public EntidadAdapter(Entidad entidad, int idUsuario) {		
+	public EntidadAdapter(Entidad entidad, int idUsuario, int target) {		
 		atributos= entidad.getAtributos();
 		this.nombre=entidad.getNombre();
 		setId(entidad.getId());
 		this.idUsuario=idUsuario;
 		this.tipo = ObjetoUML.ENTIDAD;
+		this.target = target;
 	}
+	public int getTarget() {
+		return target;
+	}
+
+	public void setTarget(int target) {
+		this.target = target;
+	}
+
 	public String getNombre() {
 		return nombre;
 	}
