@@ -734,7 +734,7 @@ public class DrawSurfaceScene extends AbstractScene {
 							// }
 							System.out.println("Termino Input");
 							System.out.println("tamano lista!!: " + listaPuntos.get(currentUser).size());
-							if( listaPuntos.get(currentUser).size() < 6 ){
+							if( listaPuntos.get(currentUser).size() < 20 ){
 								
 								
 								System.out.println("CLICCCCKKKKKKKKK!!!!!");

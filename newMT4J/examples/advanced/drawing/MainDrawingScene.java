@@ -136,7 +136,7 @@ public class MainDrawingScene extends AbstractScene {
 
 		//CAMBIO
 
-		login.setEnabled(true);
+		login.setEnabled(false);
 		login.setNoStroke(true);
 		this.getCanvas().addChild(login);
 
@@ -202,7 +202,7 @@ public class MainDrawingScene extends AbstractScene {
 		
 		//Configuarcion para el socket
 		Configuration config = new Configuration();
-        config.setHostname("localhost");
+        config.setHostname("0.0.0.0");
         
         config.setPort(3323);	        
         //inizialimos el servidor de socket        
