@@ -102,7 +102,7 @@ public class TextoFlotanteImpl extends MTComponent implements ObjetoUMLGraph {
 				.getPosicion().y, 0, objeto
 				.getWidth(),
 				objeto.getHeight(), 1, 1, mtApp);									
-		rectangulo.setFillColor(new MTColor(255,255,255));
+		rectangulo.setFillColor(new MTColor(255,255,255,0));
 		rectangulo.setStrokeColor(new MTColor(0, 0, 0));
 		rectangulo.setNoStroke(true);
 		this.objeto=objeto;
@@ -172,12 +172,12 @@ public class TextoFlotanteImpl extends MTComponent implements ObjetoUMLGraph {
 				.getPosicion().y, 0, objeto
 				.getWidth(),
 				(int)(objeto.getHeight()), 1, 1, mtApp);									
-		header.setFillColor(new MTColor(255,255,255));
+		header.setFillColor(new MTColor(255,0,255,0));
 		header.setStrokeColor(new MTColor(30,30,30));
 		header.setNoStroke(true);
 		//header.setPickable(false);
 		header.removeAllGestureEventListeners();
-		IFont headerFont=FontManager.getInstance().createFont(mtApp, "SourceSansPro-BoldIt.otf", 12, new MTColor(30,30,30),true);
+		IFont headerFont=FontManager.getInstance().createFont(mtApp, "SourceSansPro-BoldIt.otf", 20, new MTColor(30,30,30),true);
 
 		headerField = new MTTextField(objeto.getPosicion().x, objeto.getPosicion().y ,(int)(objeto.getWidth()),(int)(objeto.getHeight()),headerFont, mtApp);
 		headerField.setText(((TextoFlotante)objeto).getNombre());
@@ -305,10 +305,10 @@ public class TextoFlotanteImpl extends MTComponent implements ObjetoUMLGraph {
 		rectangulo.addChild(botonBorrar);*/
 
 		rectangulo.addChild(header);
-		rectangulo.addChild(botonResize);	
-		rectangulo.addChild(botonResize2);	
-		rectangulo.addChild(botonResize3);	
-		rectangulo.addChild(botonResize4);	
+		//rectangulo.addChild(botonResize);	
+		//rectangulo.addChild(botonResize2);	
+		//rectangulo.addChild(botonResize3);	
+		//rectangulo.addChild(botonResize4);	
 		//botonResize.sendToFront();
 
 		rectangulo.removeAllGestureEventListeners();
@@ -382,7 +382,7 @@ public class TextoFlotanteImpl extends MTComponent implements ObjetoUMLGraph {
 		 header.registerInputProcessor(proc);
 		 header.addGestureListener(DoubleClickProcessor.class,  proc);
 
-		 header.registerInputProcessor(new TapAndHoldProcessor(mtApp, 2000));
+		 header.registerInputProcessor(new TapAndHoldProcessor(mtApp, TAP_AND_HOLD_TIME));
 		 header.addGestureListener(TapAndHoldProcessor.class, new TapAndHoldVisualizer(mtApp, rectangulo));
 		 header.addGestureListener(TapAndHoldProcessor.class, new IGestureEventListener() {
 				public boolean processGestureEvent(MTGestureEvent ge) {

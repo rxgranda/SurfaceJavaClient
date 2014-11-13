@@ -71,6 +71,7 @@ public class UMLFacade {
 		((TextoFlotante)objeto).setHeight((int)(40));
 		((TextoFlotante)objeto).setPosicion(position);
 		((TextoFlotante)objeto).setNombre("Default");
+
 		
 		
 		return  objeto;

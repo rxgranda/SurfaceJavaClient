@@ -106,6 +106,8 @@ public class DrawSurfaceScene extends AbstractScene {
 
 	private boolean dynamicBrush;
 	
+	public static float DEG_TO_RAD ;
+	
 	public static final int nroPtsConfirmaClick = 6;
 	
 	
@@ -283,6 +285,7 @@ public class DrawSurfaceScene extends AbstractScene {
 
 		this.getCanvas().setDepthBufferDisabled(true);
 		listaCoordenadasPlayer1 = new ArrayList<int[]>();
+		DEG_TO_RAD = (float) (180.0/Math.PI);
 		/*
 		 * this.drawShape = getDefaultBrush(); this.localBrushCenter =
 		 * drawShape.getCenterPointLocal(); this.brushWidthHalf =
@@ -379,6 +382,7 @@ public class DrawSurfaceScene extends AbstractScene {
 		listaComponentRecognizer.put(defaultUser, componentRecognizer);
 		listaPuntos.put(defaultUser, puntos);
 		listaHaloHelper.put(defaultUser, helper);
+		listaUsuarios.put(Usuario.ID_DEFAULT_USER, defaultUser);
 		
 
 		// Proyecto
@@ -734,7 +738,7 @@ public class DrawSurfaceScene extends AbstractScene {
 							// }
 							System.out.println("Termino Input");
 							System.out.println("tamano lista!!: " + listaPuntos.get(currentUser).size());
-							if( listaPuntos.get(currentUser).size() < 6 ){
+							if( listaPuntos.get(currentUser).size() < 15 ){
 								
 								
 								System.out.println("CLICCCCKKKKKKKKK!!!!!");
@@ -803,9 +807,11 @@ public class DrawSurfaceScene extends AbstractScene {
 											((Relacion)objeto).setObjetoInicio(((ObjetoUMLGraph)entidad1).getObjetoUML());
 											((Relacion)objeto).setObjetoFin(((ObjetoUMLGraph)entidad2).getObjetoUML());
 											
-											ObjetoUML objetotextoInicio = recognizer.aniadirTextoFlotante(new Vector3D(helper.getHoverInicio().x + 20,helper.getHoverInicio().y +20,helper.getHoverInicio().z));
-											ObjetoUML objetotextoFin = recognizer.aniadirTextoFlotante(new Vector3D(helper.getHoverFin().x + 20,helper.getHoverFin().y +20,helper.getHoverFin().z));
+											TextoFlotante objetotextoInicio = (TextoFlotante)recognizer.aniadirTextoFlotante(new Vector3D(helper.getHoverInicio().x + 20,helper.getHoverInicio().y +20,helper.getHoverInicio().z));
+											TextoFlotante objetotextoFin = (TextoFlotante)recognizer.aniadirTextoFlotante(new Vector3D(helper.getHoverFin().x + 20,helper.getHoverFin().y +20,helper.getHoverFin().z));
 											
+											objetotextoInicio.setOwner(((Relacion)objeto)); 
+											objetotextoFin.setOwner(((Relacion)objeto)); 
 											
 											ObjetoUMLGraph linea= new Relacion_Impl(mtApp,container, getCanvas(),objeto, objetotextoInicio,objetotextoFin,componentRecognizer,server);
 											//((MTPolygon)((ObjetoUMLGraph)entidad1).getHalo()).setFillColor(ObjetoUMLGraph.haloDeSelected);											

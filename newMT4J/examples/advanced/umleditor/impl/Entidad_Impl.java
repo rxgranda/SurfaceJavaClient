@@ -1,6 +1,9 @@
 package advanced.umleditor.impl;
 
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.Map;
 
 import org.mt4j.MTApplication;
 import org.mt4j.components.MTCanvas;
@@ -33,6 +36,7 @@ import com.corundumstudio.socketio.SocketIOServer;
 
 import advanced.drawing.DrawSurfaceScene;
 import advanced.drawing.MainDrawingScene;
+import advanced.umleditor.UMLCollection;
 import advanced.umleditor.UMLFacade;
 import advanced.umleditor.logic.Entidad;
 import advanced.umleditor.logic.ObjetoUML;
@@ -40,6 +44,7 @@ import advanced.umleditor.logic.Relacion;
 import advanced.umleditor.logic.TextoFlotante;
 import advanced.umleditor.logic.Usuario;
 import advanced.umleditor.socketio.EntidadAdapter;
+import advanced.umleditor.socketio.RelacionAdapter;
 import advanced.umleditor.socketio.TextoFlotanteAdapter;
 import processing.core.PApplet;
 
@@ -345,10 +350,10 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 
 		rectangulo.addChild(header);
 		rectangulo.addChild(body);	
-		rectangulo.addChild(botonResize);	
-		rectangulo.addChild(botonResize2);	
-		rectangulo.addChild(botonResize3);	
-		rectangulo.addChild(botonResize4);	
+		//rectangulo.addChild(botonResize);	
+		//rectangulo.addChild(botonResize2);	
+		//rectangulo.addChild(botonResize3);	
+		//rectangulo.addChild(botonResize4);	
 		//botonResize.sendToFront();
 
 		rectangulo.removeAllGestureEventListeners();
@@ -559,9 +564,35 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 						System.out.println("Reconocer:");
 						ObjetoUML obj=recognizer.reconocerObjeto();
 						if (obj ==ObjetoUML.DELETE_OBJECT_GESTURE){
+							
+							
+							String canal=(MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID)!=null)?MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID).getCanal():Usuario.CANAL_DEFAULT_USER;
+							int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID)!=null)?(int)cursor.sessionID:Usuario.ID_DEFAULT_USER;
+							server.getNamespace("/login").getBroadcastOperations().sendEvent("eraseElement",new EntidadAdapter(((Entidad)objeto),idUsuario));
+							Iterator iterRelacion = UMLCollection.getListaUML().entrySet().iterator();
+						    while (iterRelacion.hasNext()) {
+						        Map.Entry pairs = (Map.Entry)iterRelacion.next();
+						        ObjetoUML objuml= (ObjetoUML)pairs.getValue();
+						        if(objuml instanceof Relacion){
+						        	Relacion reluml = (Relacion)objuml;
+						        	System.out.println(reluml);
+						        	if(reluml.getObjetoInicio()!=null && reluml.getObjetoFin()!=null){
+						        		
+						        		System.out.println(reluml.getObjetoInicio().getId());
+							        	if (reluml.getObjetoInicio().getId() == objeto.getId() || reluml.getObjetoFin().getId() == objeto.getId()){
+							        		server.getNamespace("/login").getBroadcastOperations().sendEvent("eraseElement",new RelacionAdapter(((Relacion)reluml),idUsuario));
+							        		
+							        	}
+						        	}
+
+						        	
+						        }
+						         // avoids a ConcurrentModificationException
+						    }
 							//container.removeChild(rectangulo);
 							rectangulo.removeFromParent();
 							halo.removeFromParent();
+									
 							removerRelaciones();
 						}
 						break;

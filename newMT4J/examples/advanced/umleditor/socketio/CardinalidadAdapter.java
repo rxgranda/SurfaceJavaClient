@@ -1,5 +1,6 @@
 package advanced.umleditor.socketio;
 
+import advanced.umleditor.logic.ObjetoUML;
 import advanced.umleditor.logic.Relacion;
 
 
@@ -8,11 +9,31 @@ public class CardinalidadAdapter {
 	private int idUsuario;
 	private int cardinalidad;
 	private boolean cardinalidadSwitch; //true= Cardinalidad Inicio de relacion, false= cardinalidad Fin deFin
+	private int tipo;
+	private int ownerId;
 	
+	public int getOwnerId() {
+		return ownerId;
+	}
+
+	public void setOwnerId(int ownerId) {
+		this.ownerId = ownerId;
+	}
+
+	public int getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(int tipo) {
+		this.tipo = tipo;
+	}
+
 	public CardinalidadAdapter(Relacion r, boolean cardinalidadSwitch, int idUsuario) {
 		this.id=r.getId();
 		this.idUsuario=idUsuario;
 		this.cardinalidadSwitch=cardinalidadSwitch;
+		this.tipo = ObjetoUML.CARDINALIDAD;
+		this.ownerId = r.getId();
 		if(cardinalidadSwitch)
 			this.setCardinalidad(r.getCardinalidadInicio());
 		else
@@ -36,6 +57,7 @@ public class CardinalidadAdapter {
 	public void setIdUsuario(int idUsuario) {
 		this.idUsuario = idUsuario;
 	}
+	
 	
 
 	public int getCardinalidad() {
