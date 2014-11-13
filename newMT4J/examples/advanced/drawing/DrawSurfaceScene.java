@@ -107,6 +107,7 @@ public class DrawSurfaceScene extends AbstractScene {
 	private boolean dynamicBrush;
 	
 	public static float DEG_TO_RAD ;
+
 	
 	public static final int nroPtsConfirmaClick = 6;
 	
@@ -307,6 +308,9 @@ public class DrawSurfaceScene extends AbstractScene {
 						arg1.actualizar(entidad);
 						System.out.println("Nombre objeto:"+entidad.getNombre());
 						objeto.getFigura().actualizarEtiquetas();
+						
+						
+						server.getNamespace("/login").getBroadcastOperations().sendEvent("syncEdition",new EntidadAdapter(((Entidad)objeto),arg1.getIdUsuario(),-1));
 						UMLDataSaver.agregarAccion(UMLDataSaver.EDITAR_OBJETO_ACTION, objeto,listaUsuarios.get(arg1.getIdUsuario()) );
 						
 					}

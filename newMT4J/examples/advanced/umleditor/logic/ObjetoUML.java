@@ -19,6 +19,8 @@ public abstract class ObjetoUML {
 	public static final int  RELACION=2;
 	public static final int	 TEXTOFLOTANTE =3;
 	public static final int CARDINALIDAD = 4;
+	public static  final int EDIT_HEADER = 1;
+	public static final int EDIT_ATTS  = 2;
 	private static Calendar calendar = Calendar.getInstance();	
 	public  static ObjetoUML OBJETO_INVALIDO=new ObjetoInvalido(new Usuario()) ;
 	public static ObjetoUML DELETE_OBJECT_GESTURE= new DeleteObject(new Usuario());
