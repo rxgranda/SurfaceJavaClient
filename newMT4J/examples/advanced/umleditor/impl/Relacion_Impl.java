@@ -39,6 +39,7 @@ import com.corundumstudio.socketio.SocketIOServer;
 
 import advanced.drawing.MainDrawingScene;
 import advanced.umleditor.UMLCollection;
+import advanced.umleditor.UMLDataSaver;
 import advanced.umleditor.UMLFacade;
 import advanced.umleditor.logic.Entidad;
 import advanced.umleditor.logic.ObjetoUML;
@@ -63,8 +64,8 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 	static float DISTANCIA_FROM_NODE = 0.5f;
 	//private final ObjetoUML textoflotante;
 	
-	private final ObjetoUML textoflotInicio;
-	private final ObjetoUML textoflotFin;
+	private  ObjetoUML textoflotInicio;
+	private  ObjetoUML textoflotFin;
 
 	private static String imagesPath = "data"+MTApplication.separator;
 			private MTApplication mtApp;
@@ -88,7 +89,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 	
 	
 	
-	public Relacion_Impl(final MTApplication mtApp, final MTComponent container, final MTCanvas canvas, final ObjetoUML objeto, final ObjetoUML texttoflotini, final ObjetoUML texttoflotfin, final UMLFacade recognizer,final SocketIOServer server) {
+	public Relacion_Impl(final MTApplication mtApp, final MTComponent container, final MTCanvas canvas, final ObjetoUML objeto, final UMLFacade recognizer,final SocketIOServer server) {
 		super(mtApp);
 		this.mtApp=mtApp;
 		
@@ -107,8 +108,8 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		linea.setStrokeColor(new MTColor(0, 0, 0));
 		linea.setNoStroke(false);
 		this.objeto=objeto;
-		this.textoflotInicio =texttoflotini;
-		this.textoflotFin = texttoflotfin;
+		this.textoflotInicio =((Relacion)objeto).getTextoInicio();
+		this.textoflotFin =((Relacion)objeto).getTextoFin();
 		this.server = server;
 		this.app  = mtApp;
 		linea.removeAllGestureEventListeners();
@@ -548,7 +549,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 								textoflotInicio.setFigura(teximplinicio);
 								
 								TextoFlotanteImpl teximplfin =  new TextoFlotanteImpl(app, linea, canvas, recognizer, textoflotFin, server);
-								teximplinicio.rectangulo.setName("TextoFlotanteImplFIN");
+								teximplfin.rectangulo.setName("TextoFlotanteImplFIN");
 								textoflotFin.setFigura(teximplfin);
 						
 								MTRoundRectangle textInicio = (MTRoundRectangle)(teximplinicio.rectangulo);
@@ -558,6 +559,8 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 								MTRoundRectangle textFin = (MTRoundRectangle)(teximplfin.rectangulo);
 								//textFin.setPositionRelativeToParent(new Vector3D(fin.getCenterPointGlobal().x -DISTANCIA_FROM_NODE*distancia.length(), fin.getCenterPointGlobal().y + 20, fin.getCenterPointGlobal().z));
 								textFin.setPositionGlobal(R2pos);
+								
+								UMLDataSaver.agregarAccion(UMLDataSaver.EDITAR_OBJETO_ACTION, objeto, objeto.getPersona());
 							}
 
 						}
@@ -873,7 +876,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 			System.out.println("Es Inicio");
 		}else{
 			componente=fin;	
-			
+			((Relacion)objeto).setCardinalidadFin(cardinalidad);
 			Set<Integer> keys=listaCardinalidadFin.keySet();
 			for(Integer key:keys){
 				((MTPolygon)listaCardinalidadFin.get(key)).removeFromParent();

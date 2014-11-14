@@ -1,6 +1,10 @@
 package advanced.umleditor.logic;
 
+import org.hamcrest.core.IsInstanceOf;
 import org.mt4j.util.math.Vector3D;
+
+import advanced.umleditor.impl.ObjetoUMLGraph;
+import advanced.umleditor.impl.TextoFlotanteImpl;
 
 public class Relacion extends ObjetoUML {
 
@@ -14,7 +18,11 @@ public class Relacion extends ObjetoUML {
 	private  Vector3D inicio,fin;
 	private String nombre;
 	private ObjetoUML objetoInicio;
-	private ObjetoUML objetoFin;	
+	private ObjetoUML objetoFin;
+	private ObjetoUML textoInicio;
+	private ObjetoUML textoFin;
+	
+
 	private int cardinalidadInicio=CARDINALIDAD_UNO;
 	private int cardinalidadFin=CARDINALIDAD_UNO;
 	
@@ -86,6 +94,49 @@ public class Relacion extends ObjetoUML {
 	public void setCardinalidadFin(int cardinalidadFin) {
 		this.cardinalidadFin = cardinalidadFin;
 	}
+	public ObjetoUML getTextoFin() {
+		return textoFin;
+	}
+
+	public void setTextoFin(ObjetoUML textoFin) {
+		this.textoFin = textoFin;
+	}
+	public ObjetoUML getTextoInicio() {
+		return textoInicio;
+	}
+
+	public void setTextoInicio(ObjetoUML textoInicio) {
+		this.textoInicio = textoInicio;
+	}
+	
+	public boolean tieneTextoInicio(){
+		if (textoInicio.getFigura()==null){
+			return false;
+		}
+		return true;
+	}
+	
+	public boolean tieneTextoFin(){
+		if (textoFin.getFigura()==null){
+			return false;
+		}
+		return true;
+	}
+	public String getLabelTextoInicio(){
+		if (tieneTextoInicio()){			
+			return ((TextoFlotante)textoInicio).getNombre();			
+		}
+		return "";
+		
+	}
+	public String getLabelTextoFin(){
+		if (tieneTextoFin()){			
+			return ((TextoFlotante)textoFin).getNombre();			
+		}
+		return "";
+		
+	}
+
 
 	
 }
