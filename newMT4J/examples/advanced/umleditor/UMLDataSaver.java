@@ -249,7 +249,10 @@ public class UMLDataSaver implements Runnable {
 			default:
 				break;
 			}
-
+		case BORRAR_OBJETO_ACTION:
+			
+			
+			break;
 		default:
 			break;
 		}
