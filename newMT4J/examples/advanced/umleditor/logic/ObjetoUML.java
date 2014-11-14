@@ -34,6 +34,8 @@ public abstract class ObjetoUML {
 	private boolean borrado=true;
 	private boolean tieneRelacion=false;
 	private Usuario persona;
+
+
 	private String tiempoCreacion;
 	private static int idCounter;
 	private  int id;
@@ -167,6 +169,14 @@ public abstract class ObjetoUML {
 	}
 	
 	
+	public Usuario getPersona() {
+		return persona;
+	}
+
+
+	public void setPersona(Usuario persona) {
+		this.persona = persona;
+	}
 
 
 	

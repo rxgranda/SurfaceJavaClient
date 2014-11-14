@@ -119,7 +119,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 				.getPosicion().y-ObjetoUMLGraph.haloWidth/2, 1, objeto
 				.getWidth()+ObjetoUMLGraph.haloWidth,
 				objeto.getHeight()+ObjetoUMLGraph.haloWidth, 1, 1, mtApp);									
-		//halo.setNoFill(true);
+		halo.setNoFill(true); // Hacerlo invisible
 		halo.setFillColor(ObjetoUMLGraph.haloDeSelected);
 		halo.removeAllGestureEventListeners();
 		
@@ -625,7 +625,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 						///canvas.removeChild(body);
 						//rectangulo.addChild(body);
 						ObjetoUML obj=recognizer.reconocerObjeto();
-						if (obj ==ObjetoUML.DELETE_OBJECT_GESTURE){
+						if (obj ==ObjetoUML.DELETE_OBJECT_GESTURE&&obj.getWidth()>50&&obj.getHeight()>50){
 							
 							
 							String canal=(MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID)!=null)?MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID).getCanal():Usuario.CANAL_DEFAULT_USER;
@@ -652,6 +652,8 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 						         // avoids a ConcurrentModificationException
 						    }
 							//container.removeChild(rectangulo);
+						  //  halo.setFillColor(new MTColor(255,255,255));
+						    
 							rectangulo.removeFromParent();
 							halo.removeFromParent();
 									
@@ -762,7 +764,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 	 * @see advanced.umleditor.impl.ObjetoUMLGraph#guardarDatos(java.lang.String, java.lang.Object)
 	 */
 	@Override
-	public void guardarDatos(String keyword, Object datos) {
+	public synchronized void  guardarDatos(String keyword, Object datos) {
 
 		LinkedList listaDatos=(LinkedList<Object>) halo.getUserData(keyword);
 		if(listaDatos==null){
@@ -809,7 +811,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 
 
 	@Override
-	public void actualizarEtiquetas() {
+	public synchronized void actualizarEtiquetas() {
 		
 		headerField.setText(((Entidad)objeto).getNombre());
 		String texto="";
@@ -821,7 +823,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 	}
 
 
-	public void removerRelaciones(){
+	public synchronized void removerRelaciones(){
 		LinkedList listaInicio=obtenerDatos(RELACIONES_INICIO_KEYWORD);
 		if(listaInicio!=null){
 			for(Object o:listaInicio){
@@ -846,7 +848,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 	}
 
 	@Override
-	public void eliminarDatos(String keyword, Object datos) {
+	public synchronized void eliminarDatos(String keyword, Object datos) {
 		LinkedList listaDatos=(LinkedList<Object>) halo.getUserData(keyword);
 		if(listaDatos!=null){
 			if(listaDatos.contains(datos)){
