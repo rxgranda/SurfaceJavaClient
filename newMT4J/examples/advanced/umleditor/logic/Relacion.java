@@ -86,5 +86,6 @@ public class Relacion extends ObjetoUML {
 	public void setCardinalidadFin(int cardinalidadFin) {
 		this.cardinalidadFin = cardinalidadFin;
 	}
+
 	
 }

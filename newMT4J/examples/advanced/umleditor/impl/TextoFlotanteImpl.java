@@ -102,7 +102,7 @@ public class TextoFlotanteImpl extends MTComponent implements ObjetoUMLGraph {
 				.getPosicion().y, 0, objeto
 				.getWidth(),
 				objeto.getHeight(), 1, 1, mtApp);									
-		rectangulo.setFillColor(new MTColor(255,255,255));
+		rectangulo.setFillColor(new MTColor(255,255,255,0));
 		rectangulo.setStrokeColor(new MTColor(0, 0, 0));
 		rectangulo.setNoStroke(true);
 		this.objeto=objeto;
@@ -172,7 +172,7 @@ public class TextoFlotanteImpl extends MTComponent implements ObjetoUMLGraph {
 				.getPosicion().y, 0, objeto
 				.getWidth(),
 				(int)(objeto.getHeight()), 1, 1, mtApp);									
-		header.setFillColor(new MTColor(255,255,255));
+		header.setFillColor(new MTColor(255,0,255,0));
 		header.setStrokeColor(new MTColor(30,30,30));
 		header.setNoStroke(true);
 		//header.setPickable(false);
@@ -305,10 +305,10 @@ public class TextoFlotanteImpl extends MTComponent implements ObjetoUMLGraph {
 		rectangulo.addChild(botonBorrar);*/
 
 		rectangulo.addChild(header);
-		rectangulo.addChild(botonResize);	
-		rectangulo.addChild(botonResize2);	
-		rectangulo.addChild(botonResize3);	
-		rectangulo.addChild(botonResize4);	
+		//rectangulo.addChild(botonResize);	
+		//rectangulo.addChild(botonResize2);	
+		//rectangulo.addChild(botonResize3);	
+		//rectangulo.addChild(botonResize4);	
 		//botonResize.sendToFront();
 
 		rectangulo.removeAllGestureEventListeners();

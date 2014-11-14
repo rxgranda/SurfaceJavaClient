@@ -43,9 +43,12 @@ import advanced.umleditor.UMLFacade;
 import advanced.umleditor.logic.Entidad;
 import advanced.umleditor.logic.ObjetoUML;
 import advanced.umleditor.logic.Relacion;
+import advanced.umleditor.logic.TextoFlotante;
 import advanced.umleditor.logic.Usuario;
 import advanced.umleditor.socketio.CardinalidadAdapter;
 import advanced.umleditor.socketio.EntidadAdapter;
+import advanced.umleditor.socketio.RelacionAdapter;
+import advanced.umleditor.socketio.TextoFlotanteAdapter;
 import processing.core.PApplet;
 import processing.core.PGraphics;
 import processing.core.PImage;
@@ -85,7 +88,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 	
 	
 	
-	public Relacion_Impl(MTApplication mtApp, final MTComponent container, final MTCanvas canvas, final ObjetoUML objeto, final ObjetoUML texttoflotini, final ObjetoUML texttoflotfin, final UMLFacade recognizer,final SocketIOServer server) {
+	public Relacion_Impl(final MTApplication mtApp, final MTComponent container, final MTCanvas canvas, final ObjetoUML objeto, final ObjetoUML texttoflotini, final ObjetoUML texttoflotfin, final UMLFacade recognizer,final SocketIOServer server) {
 		super(mtApp);
 		this.mtApp=mtApp;
 		
@@ -318,15 +321,21 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 
 		
 				Vector3D lineaCenter = new Vector3D(linea.getCenterPointGlobal());
-				
+				Vector3D referenciaHorizontal = new Vector3D(mtApp.getWidth(),mtApp.getHeight());
 				Vector3D R1 = lineaCenter.getSubtracted(vInicio);
 				Vector3D R1nuevo =R1.getScaled(DISTANCIA_FROM_NODE);
 				Vector3D R1pos = vInicio.getAdded(R1nuevo);
+				float angleRadians = R1.angleBetween(referenciaHorizontal);
+				//float deg = angleRadians*DEG_TO_RAD;
+				
+				
+				R1pos.y += 10;
+				
 				
 				Vector3D R2 = lineaCenter.getSubtracted(vFin);
 				Vector3D R2nuevo =R2.getScaled(DISTANCIA_FROM_NODE);
 				Vector3D R2pos = vFin.getAdded(R2nuevo);
-
+				R2pos.y += 10;
 				
 				TextoFlotanteImpl impInicio = (TextoFlotanteImpl)textoflotInicio.getFigura();
 				if(impInicio != null){
@@ -334,6 +343,8 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 					
 					impInicio.rectangulo.setPositionGlobal(R1pos);
 					impInicio.halo.setPositionGlobal(R1pos);
+					//impInicio.rectangulo.rotateZ(R1pos, degree);
+					
 				}
 				
 	
@@ -410,16 +421,34 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 				else
 					fin.setPositionGlobal(new Vector3D(((Relacion)objeto).getFin()).addLocal(new Vector3D(-15, 0)));
 				
-				Vector3D lineaCenter = new Vector3D(linea.getCenterPointGlobal());				
+				Vector3D lineaCenter = new Vector3D(linea.getCenterPointGlobal());
+				
+				Vector3D R1 = lineaCenter.getSubtracted(vInicio);
+				Vector3D R1nuevo =R1.getScaled(DISTANCIA_FROM_NODE);
+				Vector3D R1pos = vInicio.getAdded(R1nuevo);
+				R1pos.y += 10;
+				
+				
 				Vector3D R2 = lineaCenter.getSubtracted(vFin);
 				Vector3D R2nuevo =R2.getScaled(DISTANCIA_FROM_NODE);
 				Vector3D R2pos = vFin.getAdded(R2nuevo);
+				R2pos.y += 10;
+				
+				TextoFlotanteImpl impInicio = (TextoFlotanteImpl)textoflotInicio.getFigura();
+				if(impInicio != null){
+					
+					
+					impInicio.rectangulo.setPositionGlobal(R1pos);
+					impInicio.halo.setPositionGlobal(R1pos);
+				}
 				
 				TextoFlotanteImpl impFin = (TextoFlotanteImpl)textoflotFin.getFigura();
 				if(impFin != null){
 					impFin.rectangulo.setPositionGlobal(R2pos);
 					impFin.halo.setPositionGlobal(R2pos);
 				}
+				
+				textoflotInicio.setPosicion(R1pos);
 				
 				textoflotFin.setPosicion(R2pos);
 				
@@ -506,10 +535,13 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 								Vector3D R1 = lineaCenter.getSubtracted(vInicio);
 								Vector3D R1nuevo =R1.getScaled(DISTANCIA_FROM_NODE);
 								Vector3D R1pos = vInicio.getAdded(R1nuevo);
+								R1pos.y += 10;
+								
 								
 								Vector3D R2 = lineaCenter.getSubtracted(vFin);
 								Vector3D R2nuevo =R2.getScaled(DISTANCIA_FROM_NODE);
 								Vector3D R2pos = vFin.getAdded(R2nuevo);
+								R2pos.y += 10;
 							
 								TextoFlotanteImpl teximplinicio = new TextoFlotanteImpl(app, linea, canvas, recognizer, textoflotInicio, server);	
 								teximplinicio.rectangulo.setName("TextoFlotanteImplINICIO");
@@ -536,6 +568,12 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 						if (obj ==ObjetoUML.DELETE_OBJECT_GESTURE){
 							
 							
+							String canal=(MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID)!=null)?MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID).getCanal():Usuario.CANAL_DEFAULT_USER;
+							int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID)!=null)?(int)cursor.sessionID:Usuario.ID_DEFAULT_USER;
+							
+							
+							server.getNamespace("/login").getBroadcastOperations().sendEvent("eraseElement",new RelacionAdapter(((Relacion)objeto),idUsuario));
+							 //server.getNamespace("/login").getBroadcastOperations().sendEvent("broad",new RelacionAdapter(((Relacion)objeto),idUsuario));
 							removerRelacion();
 							//halo.removeFromParent();
 						}
@@ -685,10 +723,12 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		Vector3D R1 = lineaCenter.getSubtracted(vInicio);
 		Vector3D R1nuevo =R1.getScaled(DISTANCIA_FROM_NODE);
 		Vector3D R1pos = vInicio.getAdded(R1nuevo);
+		R1pos.y += 10;
 		
 		Vector3D R2 = lineaCenter.getSubtracted(vFin);
 		Vector3D R2nuevo =R2.getScaled(DISTANCIA_FROM_NODE);
 		Vector3D R2pos = vFin.getAdded(R2nuevo);
+		R2pos.y += 10;
 		
 		TextoFlotanteImpl impInicio = (TextoFlotanteImpl)textoflotInicio.getFigura();
 		if(impInicio != null){
@@ -996,7 +1036,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 						String canal=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?MainDrawingScene.getListaUsuarios().get((int)m.sessionID).getCanal():Usuario.CANAL_DEFAULT_USER;
 						int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?(int)m.sessionID:Usuario.ID_DEFAULT_USER;
 						
-						server.getRoomOperations(canal).sendEvent("cardinalidadEdition",new CardinalidadAdapter(((Relacion)objeto),this.cardinalidadSwitch,idUsuario));						
+						server.getRoomOperations(canal).sendEvent("startEdition",new CardinalidadAdapter(((Relacion)objeto),this.cardinalidadSwitch,idUsuario));						
 						System.out.println("Enviado "+canal+""+server.getRoomOperations(canal).getClients().size());
 						break;
 					}
