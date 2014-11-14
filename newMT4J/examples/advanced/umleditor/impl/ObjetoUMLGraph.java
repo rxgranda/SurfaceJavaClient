@@ -18,7 +18,7 @@ public interface ObjetoUMLGraph {
 	public static final MTColor resizeButtonColor=new MTColor(255,255,255,0);
 	public static final MTColor selectedObject = new MTColor(253,205,161);
 	public static final MTColor nonselectedObject =new MTColor(255,255,255);
-	public static final MTColor haloSelected =new MTColor(148,214,247,10);// new MTColor(200,200,200);//
+	public static final MTColor haloSelected =new MTColor(255,255,255,255);//new MTColor(148,214,247,10);// new MTColor(200,200,200);//
 	public static final MTColor haloDeSelected =new MTColor(255,255,255); // new MTColor(200,200,200);//	
 	public static final MTColor transparent = new MTColor(100,100,100);//
 	
@@ -31,6 +31,7 @@ public interface ObjetoUMLGraph {
 	public static final String HALO_HOVER_FIN_KEYWORD = "hoverFin";
 	public static final String TEXTO_FLOTANTE_KEYWORD = "textoFlotante";
 	public static int TAP_AND_HOLD_TIME=1000;
+	public static final int TAMANO_CARDINALIDAD=35;
 
 
 	
