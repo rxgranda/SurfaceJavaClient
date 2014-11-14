@@ -625,7 +625,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 						///canvas.removeChild(body);
 						//rectangulo.addChild(body);
 						ObjetoUML obj=recognizer.reconocerObjeto();
-						if (obj ==ObjetoUML.DELETE_OBJECT_GESTURE&&obj.getWidth()>50&&obj.getHeight()>50){
+						if (obj ==ObjetoUML.DELETE_OBJECT_GESTURE&&obj.getWidth()>40&&obj.getHeight()>40){
 							
 							
 							String canal=(MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID)!=null)?MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID).getCanal():Usuario.CANAL_DEFAULT_USER;
