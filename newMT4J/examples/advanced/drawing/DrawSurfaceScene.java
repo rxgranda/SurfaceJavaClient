@@ -309,7 +309,6 @@ public class DrawSurfaceScene extends AbstractScene {
 						System.out.println("Nombre objeto:"+entidad.getNombre());
 						objeto.getFigura().actualizarEtiquetas();
 						
-						
 						server.getNamespace("/login").getBroadcastOperations().sendEvent("syncEdition",new EntidadAdapter(((Entidad)objeto),arg1.getIdUsuario(),-1));
 						UMLDataSaver.agregarAccion(UMLDataSaver.EDITAR_OBJETO_ACTION, objeto,listaUsuarios.get(arg1.getIdUsuario()) );
 						
@@ -327,9 +326,16 @@ public class DrawSurfaceScene extends AbstractScene {
 					System.out.println("objeto "+objeto);
 					if(objeto instanceof TextoFlotante){
 						TextoFlotante textflot=(TextoFlotante)objeto;
-						arg1.actualizar(textflot);
-						System.out.println("Nombre objeto:"+textflot.getNombre());
-						objeto.getFigura().actualizarEtiquetas();
+						if (textflot.getOwner() != null){
+							ObjetoUML tem = textflot.getOwner();
+							if (tem instanceof Relacion){
+								arg1.actualizar(textflot);
+								
+								objeto.getFigura().actualizarEtiquetas();
+								UMLDataSaver.agregarAccion(UMLDataSaver.EDITAR_OBJETO_ACTION, tem,listaUsuarios.get(arg1.getIdUsuario()));
+							}
+						}
+
 						
 					}
 			}
@@ -347,7 +353,9 @@ public class DrawSurfaceScene extends AbstractScene {
 					System.out.println("objeto "+objeto);
 					if(objeto instanceof Relacion){
 						Relacion relacion=(Relacion)objeto;
+						System.out.println("CARD :" + cardinalidadAdpter.getCardinalidad() + "CARD SWITCH:" + cardinalidadAdpter.isCardinalidadSwitch());
 						((Relacion_Impl)relacion.getFigura()).actualizarCardinalidad(cardinalidadAdpter.getCardinalidad(), cardinalidadAdpter.isCardinalidadSwitch());																
+						UMLDataSaver.agregarAccion(UMLDataSaver.EDITAR_OBJETO_ACTION, objeto,listaUsuarios.get(cardinalidadAdpter.getIdUsuario()) );
 					}
 			}
         });        	
@@ -821,11 +829,17 @@ public class DrawSurfaceScene extends AbstractScene {
 											
 											TextoFlotante objetotextoInicio = (TextoFlotante)recognizer.aniadirTextoFlotante(new Vector3D(helper.getHoverInicio().x + 20,helper.getHoverInicio().y +20,helper.getHoverInicio().z));
 											TextoFlotante objetotextoFin = (TextoFlotante)recognizer.aniadirTextoFlotante(new Vector3D(helper.getHoverFin().x + 20,helper.getHoverFin().y +20,helper.getHoverFin().z));
-											
 											objetotextoInicio.setOwner(((Relacion)objeto)); 
 											objetotextoFin.setOwner(((Relacion)objeto)); 
 											
-											ObjetoUMLGraph linea= new Relacion_Impl(mtApp,container, getCanvas(),objeto, objetotextoInicio,objetotextoFin,componentRecognizer,server);
+											((Relacion)objeto).setTextoInicio(objetotextoInicio);
+											((Relacion)objeto).setTextoFin(objetotextoFin);
+											
+											
+											
+
+											
+											ObjetoUMLGraph linea= new Relacion_Impl(mtApp,container, getCanvas(),objeto,componentRecognizer,server);
 											//((MTPolygon)((ObjetoUMLGraph)entidad1).getHalo()).setFillColor(ObjetoUMLGraph.haloDeSelected);											
 											//((MTPolygon)((ObjetoUMLGraph)entidad2).getHalo()).setFillColor(ObjetoUMLGraph.haloDeSelected);
 											((ObjetoUMLGraph)entidad1).guardarDatos(ObjetoUMLGraph.RELACIONES_INICIO_KEYWORD, linea);

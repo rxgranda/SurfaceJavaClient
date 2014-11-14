@@ -149,7 +149,9 @@ public class UMLDataSaver implements Runnable {
 					objetoMap.put("posicionInicio", relacion.getInicio());
 					objetoMap.put("posicionFin", relacion.getFin());
 					objetoMap.put("objetoInicio", relacion.getObjetoInicio().getId());
-					objetoMap.put("objetoFin", relacion.getObjetoFin().getId());								
+					objetoMap.put("objetoFin", relacion.getObjetoFin().getId());
+					objetoMap.put("textoInicio", relacion.getLabelTextoInicio());
+					objetoMap.put("textoFin",  relacion.getLabelTextoFin());
 				}																
 				break;
 			default:
@@ -184,7 +186,64 @@ public class UMLDataSaver implements Runnable {
 				objetoContainer.put("EDITAR_OBJETO", objetoMap);
 				break;
 			case ObjetoUML.RELACION:
+				if(objeto instanceof Relacion){
+					Relacion relacion=((Relacion)objeto);
+					String cardinalidadInicio="",cardinalidadFin="";
+					System.out.println("Cardinalidad Inicio"+ relacion.getCardinalidadInicio() + " Cardinalidadad Fin:" + relacion.getCardinalidadInicio());
+					switch (relacion.getCardinalidadInicio()) {
+					case Relacion.CARDINALIDAD_CERO_MUCHOS:
+						cardinalidadInicio="CARDINALIDAD_CERO_MUCHOS";
+						break;
+					case Relacion.CARDINALIDAD_CERO_UNO:
+						cardinalidadInicio="CARDINALIDAD_CERO_UNO";
+						break;
+					case Relacion.CARDINALIDAD_MUCHOS:
+						cardinalidadInicio="CARDINALIDAD_MUCHOS";					
+						break;
+					case Relacion.CARDINALIDAD_UNO:
+						cardinalidadInicio="CARDINALIDAD_UNO";
+						break;
+					case Relacion.CARDINALIDAD_UNO_MUCHOS:
+						cardinalidadInicio="CARDINALIDAD_UNO_MUCHOS";
+						break;					
+					default:
+						break;
+					}
+					switch (relacion.getCardinalidadFin()) {
+					case Relacion.CARDINALIDAD_CERO_MUCHOS:
+						cardinalidadFin="CARDINALIDAD_CERO_MUCHOS";
+						break;
+					case Relacion.CARDINALIDAD_CERO_UNO:
+						cardinalidadFin="CARDINALIDAD_CERO_UNO";
+						break;
+					case Relacion.CARDINALIDAD_MUCHOS:
+						cardinalidadFin="CARDINALIDAD_MUCHOS";					
+						break;
+					case Relacion.CARDINALIDAD_UNO:
+						cardinalidadFin="CARDINALIDAD_UNO";
+						break;
+					case Relacion.CARDINALIDAD_UNO_MUCHOS:
+						cardinalidadFin="CARDINALIDAD_UNO_MUCHOS";
+						break;					
+					default:
+						break;
+					}
+					objetoMap.put("cardinalidadInicio", cardinalidadInicio);
+					objetoMap.put("cardinalidadFIN", cardinalidadFin);
+					objetoMap.put("posicionInicio", relacion.getInicio());
+					objetoMap.put("posicionFin", relacion.getFin());
+					objetoMap.put("objetoInicio", relacion.getObjetoInicio().getId());
+					objetoMap.put("objetoFin", relacion.getObjetoFin().getId());
+					objetoMap.put("textoInicio", relacion.getLabelTextoInicio());
+					objetoMap.put("textoFin",  relacion.getLabelTextoFin());
+						
+					
+					
+					
+				}
 				
+				objetoMap.put("posicion", objeto.getPosicion());
+				objetoContainer.put("EDITAR_OBJETO", objetoMap);
 			
 				break;
 			default:
