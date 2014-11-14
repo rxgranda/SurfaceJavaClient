@@ -487,6 +487,14 @@ public class DrawSurfaceScene extends AbstractScene {
 						}else{
 							listaHaloHelper.get(currentUser).setHoverInicio(m.getPosition());
 						}
+						/*Entidad_Impl alt_ent=(Entidad_Impl) ((MTComponent)currentComponent).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
+						if(componente==currentComponent){
+							listaHaloHelper.get(currentUser).setHoverInicio(m.getPosition());
+						}else if( alt_ent!=null){
+							if(alt_ent.getHalo()!=null)
+								if(alt_ent.getHalo()==currentComponent)
+									listaHaloHelper.get(currentUser).setHoverInicio(m.getPosition());
+						}*/
 							
 						//	System.out.println("Holaaa Input updated on: " + target + " at " + cursor.getCurrentEvtPosX() + "," + cursor.getCurrentEvtPosY());			
 						break;
