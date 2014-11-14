@@ -153,8 +153,8 @@ public class DrawSurfaceScene extends AbstractScene {
 					Vector3D lastDrawnPoint = ultimo;
 					Vector3D pos = new Vector3D(vec.x, vec.y, 0);
 					// Proyecto
-					// System.out.println("ID: " + m.sessionID);
-					//System.out.println("Eliminar: X:" + vec.x + "Y:" + vec.y);
+					// //System.out.println("ID: " + m.sessionID);
+					////System.out.println("Eliminar: X:" + vec.x + "Y:" + vec.y);
 
 					// Proyecto
 					if (lastDrawnPoint == null) {
@@ -180,7 +180,7 @@ public class DrawSurfaceScene extends AbstractScene {
 					if (firstPoint && stepsToTake == 0) {
 						stepsToTake = 1;
 					}
-					// System.out.println("Steps: " + stepsToTake);
+					// //System.out.println("Steps: " + stepsToTake);
 
 					// GL gl = Tools3D.getGL(mtApp);
 					// gl.glBlendFuncSeparate(GL.GL_SRC_ALPHA,
@@ -203,7 +203,7 @@ public class DrawSurfaceScene extends AbstractScene {
 						// Vector3D diff= new Vector3D(currentPos);
 						mtApp.pushMatrix();
 						mtApp.translate(diff.x, diff.y);
-						// System.out.println("X:"+diff.x+"Y:"+ diff.y);
+						// //System.out.println("X:"+diff.x+"Y:"+ diff.y);
 
 						// NOTE: works only if brush upper left at 0,0
 						mtApp.translate(brushWidthHalf, brushHeightHalf);
@@ -249,7 +249,7 @@ public class DrawSurfaceScene extends AbstractScene {
 													 * mtApp.pushMatrix();
 													 * AbstractShape brushToDraw
 													 * = drawShape2;
-													 * System.out.println
+													 * //System.out.println
 													 * ("Eliminar: X:"
 													 * +vec.x+"Y:"+ vec.y);
 													 * mtApp.translate(vec.x,
@@ -261,7 +261,7 @@ public class DrawSurfaceScene extends AbstractScene {
 													 */
 
 				}
-				// System.out.println("Eliminado");
+				// //System.out.println("Eliminado");
 				listaPuntos.remove(user);
 				ArrayList<Vector3D> puntos=new ArrayList<Vector3D>();
 				listaPuntos.put(user, puntos);
@@ -300,13 +300,13 @@ public class DrawSurfaceScene extends AbstractScene {
 			@Override
 			public void onData(SocketIOClient arg0, EntidadAdapter arg1,
 					AckRequest arg2) throws Exception {					
-					System.out.println(arg1.getId()+" "+arg1.getNombre());
+					//System.out.println(arg1.getId()+" "+arg1.getNombre());
 					ObjetoUML objeto=listaRecognizer.get(arg1.getIdUsuario()).getObjetoUML(arg1.getId());
-					System.out.println("objeto "+objeto);
+					//System.out.println("objeto "+objeto);
 					if(objeto instanceof Entidad){
 						Entidad entidad=(Entidad)objeto;
 						arg1.actualizar(entidad);
-						System.out.println("Nombre objeto:"+entidad.getNombre());
+						//System.out.println("Nombre objeto:"+entidad.getNombre());
 						objeto.getFigura().actualizarEtiquetas();
 						
 						server.getNamespace("/login").getBroadcastOperations().sendEvent("syncEdition",new EntidadAdapter(((Entidad)objeto),arg1.getIdUsuario(),-1));
@@ -321,9 +321,9 @@ public class DrawSurfaceScene extends AbstractScene {
 			@Override
 			public void onData(SocketIOClient arg0, TextoFlotanteAdapter arg1,
 					AckRequest arg2) throws Exception {					
-					System.out.println(arg1.getId()+" "+arg1.getNombre());
+					//System.out.println(arg1.getId()+" "+arg1.getNombre());
 					ObjetoUML objeto=listaRecognizer.get(arg1.getIdUsuario()).getObjetoUML(arg1.getId());
-					System.out.println("objeto "+objeto);
+					//System.out.println("objeto "+objeto);
 					if(objeto instanceof TextoFlotante){
 						TextoFlotante textflot=(TextoFlotante)objeto;
 						if (textflot.getOwner() != null){
@@ -348,12 +348,12 @@ public class DrawSurfaceScene extends AbstractScene {
 			@Override
 			public void onData(SocketIOClient arg0,  CardinalidadAdapter cardinalidadAdpter,
 					AckRequest arg2) throws Exception {					
-					System.out.println(cardinalidadAdpter.getId()+" "+cardinalidadAdpter.getCardinalidad());
+					//System.out.println(cardinalidadAdpter.getId()+" "+cardinalidadAdpter.getCardinalidad());
 					ObjetoUML objeto=listaRecognizer.get(cardinalidadAdpter.getIdUsuario()).getObjetoUML(cardinalidadAdpter.getId());
-					System.out.println("objeto "+objeto);
+					//System.out.println("objeto "+objeto);
 					if(objeto instanceof Relacion){
 						Relacion relacion=(Relacion)objeto;
-						System.out.println("CARD :" + cardinalidadAdpter.getCardinalidad() + "CARD SWITCH:" + cardinalidadAdpter.isCardinalidadSwitch());
+						//System.out.println("CARD :" + cardinalidadAdpter.getCardinalidad() + "CARD SWITCH:" + cardinalidadAdpter.isCardinalidadSwitch());
 						((Relacion_Impl)relacion.getFigura()).actualizarCardinalidad(cardinalidadAdpter.getCardinalidad(), cardinalidadAdpter.isCardinalidadSwitch());																
 						UMLDataSaver.agregarAccion(UMLDataSaver.EDITAR_OBJETO_ACTION, objeto,listaUsuarios.get(cardinalidadAdpter.getIdUsuario()) );
 					}
@@ -371,10 +371,10 @@ public class DrawSurfaceScene extends AbstractScene {
 		
 		Set<Integer> keys=listaUsuarios.keySet();
 		for (Integer key:keys){
-			System.out.println("Usuariossss:   "+key);
+			//System.out.println("Usuariossss:   "+key);
 			// Proyecto
 			Usuario user=listaUsuarios.get(key);
-			System.out.println("User::::"+user);
+			//System.out.println("User::::"+user);
 			final UMLFacade recognizer = new UMLFacade(user); //para el canvas
 			final UMLFacade componentRecognizer = new UMLFacade(user); // para reconocer gestos de los componentes
 			ArrayList<Vector3D> puntos= new ArrayList<Vector3D>();			
@@ -410,17 +410,17 @@ public class DrawSurfaceScene extends AbstractScene {
 				switch (de.getId()) {
 				case MTGestureEvent.GESTURE_STARTED:
 					//listaConfirmarPunto.add(m.getPosition());
-					System.out.println("ONE CLCIK START!!");
+					//System.out.println("ONE CLCIK START!!");
 					break;
 				case MTGestureEvent.GESTURE_UPDATED:
 					//listaConfirmarPunto.add(m.getPosition());          
-					System.out.println("ONE CLCIK UPDATE!!");
+					//System.out.println("ONE CLCIK UPDATE!!");
 					break;
 				case MTGestureEvent.GESTURE_ENDED:
-					System.out.println("ONE CLCIK END!!");
+					//System.out.println("ONE CLCIK END!!");
 					
 					//if(listaConfirmarPunto.size() < nroPtsConfirmaClick){
-						/*System.out.println("CLICCCCKKKKKKKKK!!!!!");
+						/*//System.out.println("CLICCCCKKKKKKKKK!!!!!");
 						UMLFacade recognizer=listaRecognizer.get(currentUser.getIdPluma());
 						ObjetoUML objeto = recognizer.aniadirTextoFlotante(m.getPosition());
 						TextoFlotanteImpl teximpl = new TextoFlotanteImpl(mtApp, container, getCanvas(), recognizer, objeto, server);
@@ -445,7 +445,7 @@ public class DrawSurfaceScene extends AbstractScene {
 					if(currentUser!=null){
 					IMTComponent3D componente = m.getTarget();
 
-					System.out.println(componente.toString());
+					//System.out.println(componente.toString());
 				
 					
 					IMTComponent3D currentComponent = (IMTComponent3D) getCanvas().getComponentAt((int) m.getPosition().x,(int) m.getPosition().y);
@@ -459,9 +459,9 @@ public class DrawSurfaceScene extends AbstractScene {
 							((MTPolygon)((ObjetoUMLGraph)entidad).getHalo()).setFillColor(ObjetoUMLGraph.haloSelected);
 							((ObjetoUMLGraph)entidad).getHalo().sendToFront();
 
-							//System.out.println("Pintandoooooo");
+							////System.out.println("Pintandoooooo");
 						}
-						//System.out.println("Input detected on: " + target + " at " + cursor.getCurrentEvtPosX() + "," + cursor.getCurrentEvtPosY());
+						////System.out.println("Input detected on: " + target + " at " + cursor.getCurrentEvtPosX() + "," + cursor.getCurrentEvtPosY());
 						listaHaloHelper.remove(currentUser);
 						HaloHelper helper= new HaloHelper();
 						listaHaloHelper.put(currentUser,helper);
@@ -472,7 +472,7 @@ public class DrawSurfaceScene extends AbstractScene {
 							if (entidad2 instanceof ObjetoUMLGraph){
 								((MTPolygon)((ObjetoUMLGraph)entidad2).getHalo()).setFillColor(ObjetoUMLGraph.haloSelected);
 								((ObjetoUMLGraph)entidad2).getHalo().sendToFront();
-								//System.out.println("Pintandoooooo");
+								////System.out.println("Pintandoooooo");
 								LinkedList listaVisitados=(LinkedList) ((MTComponent)componente).getUserData(ObjetoUMLGraph.COMPONENTES_VISITADOS_KEYWORD);
 								if(listaVisitados==null){
 									listaVisitados=new LinkedList<MTComponent>();
@@ -496,13 +496,13 @@ public class DrawSurfaceScene extends AbstractScene {
 									listaHaloHelper.get(currentUser).setHoverInicio(m.getPosition());
 						}*/
 							
-						//	System.out.println("Holaaa Input updated on: " + target + " at " + cursor.getCurrentEvtPosX() + "," + cursor.getCurrentEvtPosY());			
+						//	//System.out.println("Holaaa Input updated on: " + target + " at " + cursor.getCurrentEvtPosX() + "," + cursor.getCurrentEvtPosY());			
 						break;
 					case AbstractCursorInputEvt.INPUT_ENDED:
 						Object oEntidad=((MTComponent)componente).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
 						if (oEntidad instanceof ObjetoUMLGraph){
 							((MTPolygon)((ObjetoUMLGraph)oEntidad).getHalo()).setFillColor(ObjetoUMLGraph.haloDeSelected);
-							//System.out.println("Pintandoooooo");
+							////System.out.println("Pintandoooooo");
 						}
 						if(componente!=currentComponent){
 							 Object entidad2=((MTComponent)currentComponent).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
@@ -526,12 +526,12 @@ public class DrawSurfaceScene extends AbstractScene {
 				
 					
 					
-					//System.out.println("SECOND: " + currentComponent);
+					////System.out.println("SECOND: " + currentComponent);
 					// getCanvas().drawAndUpdateCanvas(mtApp.g, 0);
 					//getCanvas().drawAndUpdateCanvas(mtApp.g, 0);
 					// getSceneCam().update();
 					//if (comp instanceof MTCanvas) {
-						// System.out.println("PrevPos: " + prevPos);
+						// //System.out.println("PrevPos: " + prevPos);
 						if (posEvt.getId() != AbstractCursorInputEvt.INPUT_ENDED) {
 							registerPreDrawAction(new IPreDrawAction() {
 								public void processAction() {
@@ -544,13 +544,13 @@ public class DrawSurfaceScene extends AbstractScene {
 									if(posEvt.getId()==0)
 										paso++;
 									
-									System.out.println("posEvt: "+posEvt.getId()+"");
+									//System.out.println("posEvt: "+posEvt.getId()+"");
 									
 									listaCoordenadasPlayer1.add(new int[]{Math.round(posEvt.getX()),Math.round(posEvt.getY()),paso});// X,Y,IdCursor
 								
 									// Proyecto
-									// System.out.println("ID: " + m.sessionID);
-									// System.out.println("Pos: X:"+posEvt.getX()+"Y:"+
+									// //System.out.println("ID: " + m.sessionID);
+									// //System.out.println("Pos: X:"+posEvt.getX()+"Y:"+
 									// posEvt.getY());
 									
 									//Puntos para borrar el canvas									
@@ -610,7 +610,7 @@ public class DrawSurfaceScene extends AbstractScene {
 									if (firstPoint && stepsToTake == 0) {
 										stepsToTake = 1;
 									}
-									// System.out.println("Steps: " +
+									// //System.out.println("Steps: " +
 									// stepsToTake);
 
 									// GL gl = Tools3D.getGL(mtApp);
@@ -638,7 +638,7 @@ public class DrawSurfaceScene extends AbstractScene {
 																			// 0
 																			// already
 										currentPos.addLocal(direction);
-										 System.out.println("Ojooo: ID: " + m.sessionID);
+										 //System.out.println("Ojooo: ID: " + m.sessionID);
 										//Usuario currentUser=listaUsuarios.get((int)m.sessionID);
 										UMLFacade recognizer=listaRecognizer.get(currentUser.getIdPluma());
 										recognizer.anadirPunto(currentPos.x,
@@ -654,7 +654,7 @@ public class DrawSurfaceScene extends AbstractScene {
 										// Vector3D(currentPos);
 										mtApp.pushMatrix();
 										mtApp.translate(diff.x, diff.y);
-										// System.out.println("X:"+diff.x+"Y:"+
+										// //System.out.println("X:"+diff.x+"Y:"+
 										// diff.y);
 										// centroideX+=currentPos.x+diff.x;centroideY+=currentPos.y+diff.y;
 										// numMuestras++;
@@ -756,14 +756,14 @@ public class DrawSurfaceScene extends AbstractScene {
 							// UMLCollection.anadirObjeto(resultado,persona );
 							// eliminarPuntos();
 							// }
-							System.out.println("Termino Input");
-							System.out.println("tamano lista!!: " + listaPuntos.get(currentUser).size());
+							////System.out.println("Termino Input");
+							//System.out.println("tamano lista!!: " + listaPuntos.get(currentUser).size());
 
 							if( listaPuntos.get(currentUser).size() < 15 ){
 
 								
 								
-								System.out.println("CLICCCCKKKKKKKKK!!!!!");
+								//System.out.println("CLICCCCKKKKKKKKK!!!!!");
 								
 								
 							}
@@ -814,7 +814,7 @@ public class DrawSurfaceScene extends AbstractScene {
 											
 											//Reubicar objeto relacion
 											  HaloHelper helper=listaHaloHelper.get(currentUser);
-											  System.out.println("try resize");
+											  //System.out.println("try resize");
 											  if(!helper.getHoverInicio().equalsVector(new Vector3D())&&!helper.getHoverFin().equalsVector(new Vector3D()))
 											  {
 												 ((Relacion)objeto).setInicio(helper.getHoverInicio());
@@ -940,7 +940,7 @@ public class DrawSurfaceScene extends AbstractScene {
 		
 	
 	public boolean guardar(){
-		System.out.println("Guardado");
+		//System.out.println("Guardado");
 		JFrame parentFrame = new JFrame();
 		JFileChooser fileChooser = new JFileChooser();
 		fileChooser.setDialogTitle("Specify a file to save");
@@ -948,14 +948,14 @@ public class DrawSurfaceScene extends AbstractScene {
 		int userSelection = fileChooser.showSaveDialog(parentFrame);
 		if (userSelection == JFileChooser.APPROVE_OPTION) {
 			File fileToSave = fileChooser.getSelectedFile();
-			System.out.println("Save as file: " + fileToSave.getAbsolutePath());
+			//System.out.println("Save as file: " + fileToSave.getAbsolutePath());
 			String dir_archivo=fileToSave.getAbsolutePath()+".json";
 		//
 		parentFrame.toFront();
 		parentFrame.setAlwaysOnTop(true);
 		//
 			
-		System.out.println("JSON 1 Guardado");
+		//System.out.println("JSON 1 Guardado");
 		JSONObject jsonPlayer1 = new JSONObject();
 		
 		/*jsonPlayer1.put("name","foo");
@@ -973,7 +973,7 @@ public class DrawSurfaceScene extends AbstractScene {
 		java.util.Date date= new java.util.Date();
 		
 		int numpasos = contarPasos();
-		System.out.println("NumPasos: "+numpasos+"\n");
+		//System.out.println("NumPasos: "+numpasos+"\n");
 		
 		for(int a=0; a<contarPasos();a++)
 		{
@@ -1009,14 +1009,14 @@ public class DrawSurfaceScene extends AbstractScene {
 			try {
 						writer = new BufferedWriter( new FileWriter(dir_archivo));
 						writer.write( jsonText);
-						System.out.println("Guardado archivo .json");
+						//System.out.println("Guardado archivo .json");
 			} catch (IOException e) {
 						// TODO Auto-generated catch block
-				System.out.println("Error");
+				//System.out.println("Error");
 						e.printStackTrace();
 			}finally
 			{
-				System.out.println("Error2");
+				//System.out.println("Error2");
 						try
 					    {
 					        if ( writer != null)

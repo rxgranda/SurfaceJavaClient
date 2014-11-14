@@ -78,7 +78,7 @@ public class UMLFacade {
 	}
 	
 	public ObjetoUML reconocerObjeto(){
-		//System.out.println("Numero de muestrassssssss"+numMuestas);
+		////System.out.println("Numero de muestrassssssss"+numMuestas);
 		int resultado=recognizer.recognize();
 		if(resultado!=ObjetoUML.INVALIDO&&this.numMuestas>40){	
 			int width=(int)(maxX-minX);
@@ -86,7 +86,7 @@ public class UMLFacade {
 			
 			if(width!=0&&height!=0){
 				if(resultado==ObjetoUML.ENTIDAD&&(java.lang.Math.abs(width/height)>3||java.lang.Math.abs(height/width)>3)){
-					//System.out.println("Entidad mal reconocida");
+					////System.out.println("Entidad mal reconocida");
 					reiniciar();
 					objeto=ObjetoUML.OBJETO_INVALIDO;
 					return objeto;

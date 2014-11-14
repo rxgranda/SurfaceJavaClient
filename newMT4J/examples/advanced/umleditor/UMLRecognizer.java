@@ -37,7 +37,7 @@ public class UMLRecognizer {
 
 					//if(result.getBestShape().label.equalsLowerCase("line"))
 					if(result.getBestShape() != null&&stroke.getPoints().size()>40){
-						System.out.println(result.getBestShape().getInterpretation().label);
+						////System.out.println(result.getBestShape().getInterpretation().label);
 						String shapeLabel=result.getBestShape().getInterpretation().label;						
 						if(shapeLabel.equals("Rectangle"))					
 							return ObjetoUML.ENTIDAD;
