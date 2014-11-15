@@ -756,10 +756,11 @@ public class DrawSurfaceScene extends AbstractScene {
 							// UMLCollection.anadirObjeto(resultado,persona );
 							// eliminarPuntos();
 							// }
-							////System.out.println("Termino Input");
-							//System.out.println("tamano lista!!: " + listaPuntos.get(currentUser).size());
 
-							if( listaPuntos.get(currentUser).size() < 15 ){
+						//	System.out.println("Termino Input");
+						//	System.out.println("tamano lista!!: " + listaPuntos.get(currentUser).size());
+						System.out.println("Puntoooooooooooo"+listaPuntos.get(currentUser).size());
+							if( listaPuntos.get(currentUser).size() < 200 ){
 
 								
 								

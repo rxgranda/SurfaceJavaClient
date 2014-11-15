@@ -48,7 +48,7 @@ public class UMLRecognizer {
 							str = str.replaceAll("[^0-9]+", " ");
 							//Arrays.asList(str.trim().split(" "));
 							int numPolyLine=Integer.parseInt(str.trim().split(" ")[0]);
-							if (numPolyLine>4) // Si es un polyline mayor a 4 para evitar el borrado involuntario					 
+							if (numPolyLine>3) // Si es un polyline mayor a 4 para evitar el borrado involuntario					 
 								return ObjetoUML.DELETE_GESTURE;
 							if(numPolyLine>1)
 								return ObjetoUML.RELACION;

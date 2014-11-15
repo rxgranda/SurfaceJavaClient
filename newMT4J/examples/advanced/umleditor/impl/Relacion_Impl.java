@@ -521,7 +521,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 					case AbstractCursorInputEvt.INPUT_ENDED:
 						
 						
-						if(listapuntos.size() < 10){
+						if(listapuntos.size() < 50){
 							System.out.println("hijos: " +halo.getChildCount());
 							
 	
@@ -571,7 +571,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 				
 						System.out.println("Reconocer:");
 						ObjetoUML obj=recognizer.reconocerObjeto();
-						if (obj ==ObjetoUML.DELETE_OBJECT_GESTURE){
+						if (obj ==ObjetoUML.DELETE_OBJECT_GESTURE&&obj.getWidth()>40&&obj.getHeight()>40){
 							
 							
 							String canal=(MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID)!=null)?MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID).getCanal():Usuario.CANAL_DEFAULT_USER;
@@ -580,7 +580,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 							
 							server.getNamespace("/login").getBroadcastOperations().sendEvent("eraseElement",new RelacionAdapter(((Relacion)objeto),idUsuario));
 							 //server.getNamespace("/login").getBroadcastOperations().sendEvent("broad",new RelacionAdapter(((Relacion)objeto),idUsuario));
-							removerRelacion();
+							removerRelacion(false);
 							//halo.removeFromParent();
 						}
 						break;
@@ -789,7 +789,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		
 	}
 	
-	public synchronized void removerRelacion(){
+	public synchronized void removerRelacion(boolean propagacion){
 		
 		LinkedList<TextoFlotanteImpl> textosflotantes = (LinkedList<TextoFlotanteImpl>)linea.getUserData(ObjetoUMLGraph.TEXTO_FLOTANTE_KEYWORD);
 		for (TextoFlotanteImpl textoflot : textosflotantes ){
@@ -816,7 +816,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		//container.removeChild(halo);		
 		halo.setVisible(false);
 		halo.setPickable(false);
-		
+		if(!propagacion){
 		Entidad inicio=((Entidad)((Relacion)this.objeto).getObjetoInicio());
 		System.out.println("Objetoo inicio"+inicio);
 		inicio.getFigura().eliminarDatos(RELACIONES_INICIO_KEYWORD, this);
@@ -824,7 +824,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		Entidad fin=((Entidad)((Relacion)this.objeto).getObjetoFin());
 		fin.getFigura().eliminarDatos(RELACIONES_FIN_KEYWORD, this);
 		
-	
+		}
 
 		
 		

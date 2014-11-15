@@ -625,7 +625,8 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 						///canvas.removeChild(body);
 						//rectangulo.addChild(body);
 						ObjetoUML obj=recognizer.reconocerObjeto();
-						if (obj ==ObjetoUML.DELETE_OBJECT_GESTURE&&obj.getWidth()>50&&obj.getHeight()>50){
+						System.out.println("BORRARAAA "+obj.getWidth()+"H"+obj.getHeight()+"C"+obj.getClass());
+						if (obj ==ObjetoUML.DELETE_OBJECT_GESTURE&&obj.getWidth()>10){
 							
 							
 							String canal=(MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID)!=null)?MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID).getCanal():Usuario.CANAL_DEFAULT_USER;
@@ -653,11 +654,11 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 						    }
 							//container.removeChild(rectangulo);
 						  //  halo.setFillColor(new MTColor(255,255,255));
-						    
+							removerRelaciones();
 							rectangulo.removeFromParent();
 							halo.removeFromParent();
 									
-							removerRelaciones();
+						
 						}
 						break;
 					default:
@@ -829,26 +830,31 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 			for(Object o:listaInicio){
 				if(o instanceof ObjetoUMLGraph){
 					//((Relacion)objeto)
-					((Relacion_Impl)o).removerRelacion();
+					((Relacion_Impl)o).removerRelacion(true);
+					System.out.println("ELIMINAR INICIO.........................................");
 				}
 
 			}
+			listaInicio.clear();
 		}
-
+		
 		LinkedList listaFin=obtenerDatos(RELACIONES_FIN_KEYWORD);
 		if(listaFin!=null){
 			for(Object o:listaFin){
 				if(o instanceof ObjetoUMLGraph){
 					//((Relacion)objeto)
-					((Relacion_Impl)o).removerRelacion();
+					((Relacion_Impl)o).removerRelacion(true);
+					System.out.println("ELIMINAR FIN.........................................");
 					}
 			}
+			listaFin.clear();
 		}
 
 	}
 
 	@Override
 	public synchronized void eliminarDatos(String keyword, Object datos) {
+		System.out.println("ENTIDAD........ENTIDA... ENTIDAD....."+ objeto.getId());
 		LinkedList listaDatos=(LinkedList<Object>) halo.getUserData(keyword);
 		if(listaDatos!=null){
 			if(listaDatos.contains(datos)){
