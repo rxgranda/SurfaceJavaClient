@@ -73,14 +73,14 @@ public class TextoFlotanteImpl extends MTComponent implements ObjetoUMLGraph {
 					MTRoundRectangle rectangle = (MTRoundRectangle) target;
 					switch (te.getTapID()) {
 					case TapEvent.BUTTON_DOUBLE_CLICKED:
-						System.out.println("Doble Click " + target);						
+						//System.out.println("Doble Click " + target);						
 						//final AbstractCursorInputEvt posEvt = (AbstractCursorInputEvt) ge.getSource();
 						final InputCursor m = te.getCursor();
 						String canal=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?MainDrawingScene.getListaUsuarios().get((int)m.sessionID).getCanal():Usuario.CANAL_DEFAULT_USER;
 						int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?(int)m.sessionID:Usuario.ID_DEFAULT_USER;
 
 						server.getRoomOperations(canal).sendEvent("startEdition",new TextoFlotanteAdapter(((TextoFlotante)objeto),idUsuario));						
-						System.out.println("Enviado "+canal+""+server.getRoomOperations(canal).getClients().size());
+						//System.out.println("Enviado "+canal+""+server.getRoomOperations(canal).getClients().size());
 						break;
 					
 					default:
@@ -129,23 +129,23 @@ public class TextoFlotanteImpl extends MTComponent implements ObjetoUMLGraph {
 					AbstractCursorInputEvt cursorInputEvt = (AbstractCursorInputEvt) inEvt;
 					InputCursor cursor = cursorInputEvt.getCursor();
 					IMTComponent3D target = cursorInputEvt.getTargetComponent();
-					System.out.println("Halo Entidad");
+					//System.out.println("Halo Entidad");
 					//halo.sendToFront();
 					switch (cursorInputEvt.getId()) {
 					case AbstractCursorInputEvt.INPUT_STARTED:
-						//System.out.println("Input detected on: " + target + " at " + cursor.getCurrentEvtPosX() + "," + cursor.getCurrentEvtPosY());
+						////System.out.println("Input detected on: " + target + " at " + cursor.getCurrentEvtPosX() + "," + cursor.getCurrentEvtPosY());
 						rectangulo.setFillColor(selectedObject);
 						break;
 					case AbstractCursorInputEvt.INPUT_UPDATED:
-						//	System.out.println("Holaaa Input updated on: " + target + " at " + cursor.getCurrentEvtPosX() + "," + cursor.getCurrentEvtPosY());			
+						//	//System.out.println("Holaaa Input updated on: " + target + " at " + cursor.getCurrentEvtPosX() + "," + cursor.getCurrentEvtPosY());			
 						break;
 					case AbstractCursorInputEvt.INPUT_ENDED:
 						rectangulo.setFillColor(nonselectedObject);
 
 						final IMTComponent3D destino=canvas.getComponentAt((int)cursor.getCurrentEvtPosX(), (int)cursor.getCurrentEvtPosY());
-						//System.out.println("Inicio Input updated on: " + target + " at " + cursor.getCurrentEvtPosX() + "," + cursor.getCurrentEvtPosY());			
+						////System.out.println("Inicio Input updated on: " + target + " at " + cursor.getCurrentEvtPosX() + "," + cursor.getCurrentEvtPosY());			
 
-						//System.out.println("Final"+destino);
+						////System.out.println("Final"+destino);
 						//MTRoundRectangle destino2=(MTRoundRectangle)destino;
 						//halo.setNoFill(false);
 						//halo.setFillColor(new MTColor(255,0,0));
@@ -294,7 +294,7 @@ public class TextoFlotanteImpl extends MTComponent implements ObjetoUMLGraph {
 				DragEvent de = (DragEvent)ge;
 
 				container.removeChild((MTComponent)rectangulo);
-				System.out.println("Remover: "+rectangulo);
+				//System.out.println("Remover: "+rectangulo);
 				return false;
 			}
 		});
@@ -317,7 +317,7 @@ public class TextoFlotanteImpl extends MTComponent implements ObjetoUMLGraph {
 		header.addGestureListener(DragProcessor.class, new IGestureEventListener() {
 			public boolean processGestureEvent(MTGestureEvent ge) {
 				DragEvent de = (DragEvent)ge;
-				System.out.println("Gesture"+de.getTargetComponent());
+				//System.out.println("Gesture"+de.getTargetComponent());
 				//objeto.setPosicion(objeto.getPosicion().getAdded(de.getTranslationVect()));
 				//rectangulo.setPositionGlobal(objeto.getPosicion());
 		//		halo.setPositionGlobal(new Vector3D(objeto.getPosicion().x,objeto.getPosicion().y));
@@ -401,14 +401,14 @@ public class TextoFlotanteImpl extends MTComponent implements ObjetoUMLGraph {
 						case TapAndHoldEvent.GESTURE_ENDED:
 							if (th.isHoldComplete()){
 								
-								System.out.println("Tap complete!! " + target);						
+								//System.out.println("Tap complete!! " + target);						
 								//final AbstractCursorInputEvt posEvt = (AbstractCursorInputEvt) ge.getSource();
 								final InputCursor m = th.getCursor();
 								String canal=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?MainDrawingScene.getListaUsuarios().get((int)m.sessionID).getCanal():"canal1";
 								int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?(int)m.sessionID:-1;
 
 								server.getRoomOperations(canal).sendEvent("startEdition",new TextoFlotanteAdapter(((TextoFlotante)objeto),idUsuario));						
-								System.out.println("Enviado "+canal+""+server.getRoomOperations(canal).getClients().size());
+								//System.out.println("Enviado "+canal+""+server.getRoomOperations(canal).getClients().size());
 								break;
 
 							}
@@ -431,7 +431,7 @@ public class TextoFlotanteImpl extends MTComponent implements ObjetoUMLGraph {
 		/*body.addGestureListener(DragProcessor.class, new IGestureEventListener() {
 			public boolean processGestureEvent(MTGestureEvent ge) {
 				DragEvent de = (DragEvent)ge;
-				System.out.println("Gesture"+de.getTargetComponent());
+				//System.out.println("Gesture"+de.getTargetComponent());
 				IMTComponent3D target = de.getTargetComponent();
 				switch (de.getId()) {
 				case AbstractCursorInputEvt.INPUT_STARTED:
@@ -441,10 +441,10 @@ public class TextoFlotanteImpl extends MTComponent implements ObjetoUMLGraph {
 					//rectangulo.setFillColor(selectedObject);
 					break;
 				case AbstractCursorInputEvt.INPUT_UPDATED:
-						//	System.out.println("Input updated on: " + target + " at " + cursor.getCurrentEvtPosX() + "," + cursor.getCurrentEvtPosY());			
+						//	//System.out.println("Input updated on: " + target + " at " + cursor.getCurrentEvtPosX() + "," + cursor.getCurrentEvtPosY());			
 					break;
 				case AbstractCursorInputEvt.INPUT_ENDED:
-						//System.out.println("Input ended on: " + target + " at " + cursor.getCurrentEvtPosX() + "," + cursor.getCurrentEvtPosY());
+						////System.out.println("Input ended on: " + target + " at " + cursor.getCurrentEvtPosX() + "," + cursor.getCurrentEvtPosY());
 					break;
 				default:
 					break;
