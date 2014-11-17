@@ -935,9 +935,16 @@ public class DrawSurfaceScene extends AbstractScene {
 			return numpasos;
 			
 		}
+
 		
 	
+	public void keyPressed() {
+			System.out.println("PRESSED");
+			//guardarEnArchivo(UMLDataSaver.getJsonMap());
+	}
+		
 	public boolean guardar(){
+		/*
 		System.out.println("Guardado");
 		JFrame parentFrame = new JFrame();
 		JFileChooser fileChooser = new JFileChooser();
@@ -959,7 +966,7 @@ public class DrawSurfaceScene extends AbstractScene {
 		/*jsonPlayer1.put("name","foo");
 		jsonPlayer1.put("num",new Integer(100));
 		jsonPlayer1.put("balance",new Double(1000.21));
-		jsonPlayer1.put("is_vip",new Boolean(true));*/
+		jsonPlayer1.put("is_vip",new Boolean(true));* /
 		//jsonPlayer1.put("coordenadas",listaCoordenadasPlayer1.get(i)[0]+"/"+listaCoordenadasPlayer1.get(i)[0]);
 		Map obj=new LinkedHashMap();	
 		obj.put("width",mtApp.getWidth());
@@ -1026,7 +1033,10 @@ public class DrawSurfaceScene extends AbstractScene {
 			}
 		
 		
-		}
+		}*/
+		
+		
+		UMLDataSaver.guardarEnArchivo();
 		return true;
 	}
 }

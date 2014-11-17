@@ -1,5 +1,9 @@
 package advanced.umleditor;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -7,6 +11,10 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+
+import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 import org.mt4j.util.MT4jSettings;
 
@@ -32,6 +40,7 @@ public class UMLDataSaver implements Runnable {
 	public static final int GRAPHICAL_ACTION=2;
 	
 	private static Map jsonMap;	
+
 	private static Map metadata;	
 	private static ArrayList datos;
 
@@ -183,6 +192,7 @@ public class UMLDataSaver implements Runnable {
 					}					
 					objetoMap.put("atributos",mapaAtributos );					
 				}
+				objetoMap.put("posicion", objeto.getPosicion());
 				objetoContainer.put("EDITAR_OBJETO", objetoMap);
 				break;
 			case ObjetoUML.RELACION:
@@ -249,8 +259,94 @@ public class UMLDataSaver implements Runnable {
 			default:
 				break;
 			}
+		break;
 		case BORRAR_OBJETO_ACTION:
 			
+			System.out.println("GUARDANDO BORRADO");
+			objetoMap.put("id", objeto.getId());
+			switch (objeto.getTipo()) {
+			
+			case ObjetoUML.ENTIDAD:
+				if(objeto instanceof Entidad){
+					LinkedHashMap mapaAtributos=new LinkedHashMap();
+					objetoMap.put("nombre", ((Entidad)objeto).getNombre());
+					int index=0;
+					for(String atributo:((Entidad)objeto).getAtributos()){
+						mapaAtributos.put(index, atributo);
+						index++;
+					}					
+					objetoMap.put("atributos",mapaAtributos );					
+				}
+				objetoMap.put("posicion", objeto.getPosicion());
+				objetoContainer.put("BORRAR_OBJETO", objetoMap);
+				
+				
+				
+				break;
+			case ObjetoUML.RELACION:
+				if(objeto instanceof Relacion){
+					Relacion relacion=((Relacion)objeto);
+					String cardinalidadInicio="",cardinalidadFin="";
+					System.out.println("Cardinalidad Inicio"+ relacion.getCardinalidadInicio() + " Cardinalidadad Fin:" + relacion.getCardinalidadInicio());
+					switch (relacion.getCardinalidadInicio()) {
+					case Relacion.CARDINALIDAD_CERO_MUCHOS:
+						cardinalidadInicio="CARDINALIDAD_CERO_MUCHOS";
+						break;
+					case Relacion.CARDINALIDAD_CERO_UNO:
+						cardinalidadInicio="CARDINALIDAD_CERO_UNO";
+						break;
+					case Relacion.CARDINALIDAD_MUCHOS:
+						cardinalidadInicio="CARDINALIDAD_MUCHOS";					
+						break;
+					case Relacion.CARDINALIDAD_UNO:
+						cardinalidadInicio="CARDINALIDAD_UNO";
+						break;
+					case Relacion.CARDINALIDAD_UNO_MUCHOS:
+						cardinalidadInicio="CARDINALIDAD_UNO_MUCHOS";
+						break;					
+					default:
+						break;
+					}
+					switch (relacion.getCardinalidadFin()) {
+					case Relacion.CARDINALIDAD_CERO_MUCHOS:
+						cardinalidadFin="CARDINALIDAD_CERO_MUCHOS";
+						break;
+					case Relacion.CARDINALIDAD_CERO_UNO:
+						cardinalidadFin="CARDINALIDAD_CERO_UNO";
+						break;
+					case Relacion.CARDINALIDAD_MUCHOS:
+						cardinalidadFin="CARDINALIDAD_MUCHOS";					
+						break;
+					case Relacion.CARDINALIDAD_UNO:
+						cardinalidadFin="CARDINALIDAD_UNO";
+						break;
+					case Relacion.CARDINALIDAD_UNO_MUCHOS:
+						cardinalidadFin="CARDINALIDAD_UNO_MUCHOS";
+						break;					
+					default:
+						break;
+					}
+					objetoMap.put("cardinalidadInicio", cardinalidadInicio);
+					objetoMap.put("cardinalidadFIN", cardinalidadFin);
+					objetoMap.put("posicionInicio", relacion.getInicio());
+					objetoMap.put("posicionFin", relacion.getFin());
+					objetoMap.put("objetoInicio", relacion.getObjetoInicio().getId());
+					objetoMap.put("objetoFin", relacion.getObjetoFin().getId());
+					objetoMap.put("textoInicio", relacion.getLabelTextoInicio());
+					objetoMap.put("textoFin",  relacion.getLabelTextoFin());
+						
+					
+					
+					
+				}
+				objetoMap.put("posicion", objeto.getPosicion());
+				objetoContainer.put("BORRAR_OBJETO", objetoMap);				
+							
+				break;
+			default:
+				break;
+				
+			}
 			
 			break;
 		default:
@@ -267,6 +363,66 @@ public class UMLDataSaver implements Runnable {
 	}
 	
 	public static synchronized void guardar(String directorio){
+		
+	}
+	
+	public static Map getJsonMap() {
+		return jsonMap;
+	}
+
+
+	public static void setJsonMap(Map jsonMap) {
+		UMLDataSaver.jsonMap = jsonMap;
+	}
+	
+	public static boolean guardarEnArchivo(){
+		System.out.println("Guardado");
+		JFrame parentFrame = new JFrame();
+		JFileChooser fileChooser = new JFileChooser();
+		fileChooser.setDialogTitle("Specify a file to save");
+		
+		int userSelection = fileChooser.showSaveDialog(parentFrame);
+		if (userSelection == JFileChooser.APPROVE_OPTION) {
+			File fileToSave = fileChooser.getSelectedFile();
+			System.out.println("Save as file: " + fileToSave.getAbsolutePath());
+			String dir_archivo=fileToSave.getAbsolutePath()+".json";
+		//
+		//parentFrame.toFront();
+		//parentFrame.setAlwaysOnTop(true);
+		//
+			
+		System.out.println("JSON 1 Guardado");
+		
+		
+
+		String jsonText = JSONValue.toJSONString(jsonMap);
+
+		// Escribo el String en archivo .json
+			BufferedWriter writer = null;
+			try {
+						writer = new BufferedWriter( new FileWriter(dir_archivo));
+						writer.write( jsonText);
+						System.out.println("Guardado archivo .json");
+			} catch (IOException e) {
+						// TODO Auto-generated catch block
+				System.out.println("Error");
+						e.printStackTrace();
+			}finally
+			{
+				System.out.println("Error2");
+						try
+					    {
+					        if ( writer != null)
+					        writer.close( );
+					    }
+					    catch ( IOException e)
+					    {
+					    }
+			}
+		
+		
+		}
+		return true;
 		
 	}
 

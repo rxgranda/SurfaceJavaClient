@@ -230,6 +230,7 @@ public class MainDrawingScene extends AbstractScene {
 	        	server.stop();
 
 	        	System.out.println("CLOSING!!!");
+	        	
 	        }
 	    });
 		
@@ -301,6 +302,7 @@ public class MainDrawingScene extends AbstractScene {
 	@Override
 	public boolean destroy() {
 		server.stop(); System.out.println("OUTTTT");
+		
 		boolean destroyed = super.destroy();
 
 		if (destroyed){

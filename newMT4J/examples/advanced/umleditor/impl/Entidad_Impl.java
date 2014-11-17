@@ -38,6 +38,7 @@ import com.corundumstudio.socketio.SocketIOServer;
 import advanced.drawing.DrawSurfaceScene;
 import advanced.drawing.MainDrawingScene;
 import advanced.umleditor.UMLCollection;
+import advanced.umleditor.UMLDataSaver;
 import advanced.umleditor.UMLFacade;
 import advanced.umleditor.logic.Entidad;
 import advanced.umleditor.logic.ObjetoUML;
@@ -646,18 +647,17 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 							        		
 							        	}
 						        	}
-
-						        	
 						        }
 						         // avoids a ConcurrentModificationException
 						    }
+						    UMLDataSaver.agregarAccion(UMLDataSaver.BORRAR_OBJETO_ACTION, objeto,MainDrawingScene.getListaUsuarios().get(idUsuario) );
 							//container.removeChild(rectangulo);
 						  //  halo.setFillColor(new MTColor(255,255,255));
 						    
 							rectangulo.removeFromParent();
 							halo.removeFromParent();
 									
-							removerRelaciones();
+							removerRelaciones(idUsuario);
 						}
 						break;
 					default:
@@ -823,13 +823,13 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 	}
 
 
-	public synchronized void removerRelaciones(){
+	public synchronized void removerRelaciones(int idUsuario){
 		LinkedList listaInicio=obtenerDatos(RELACIONES_INICIO_KEYWORD);
 		if(listaInicio!=null){
 			for(Object o:listaInicio){
 				if(o instanceof ObjetoUMLGraph){
 					//((Relacion)objeto)
-					((Relacion_Impl)o).removerRelacion();
+					((Relacion_Impl)o).removerRelacion(idUsuario);
 				}
 
 			}
@@ -840,7 +840,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 			for(Object o:listaFin){
 				if(o instanceof ObjetoUMLGraph){
 					//((Relacion)objeto)
-					((Relacion_Impl)o).removerRelacion();
+					((Relacion_Impl)o).removerRelacion(idUsuario);
 					}
 			}
 		}
