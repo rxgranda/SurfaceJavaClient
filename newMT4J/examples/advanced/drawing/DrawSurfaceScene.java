@@ -299,7 +299,8 @@ public class DrawSurfaceScene extends AbstractScene {
 		userListener.addEventListener("endEdition", EntidadAdapter.class, new DataListener<EntidadAdapter>() {
 			@Override
 			public void onData(SocketIOClient arg0, EntidadAdapter arg1,
-					AckRequest arg2) throws Exception {					
+					AckRequest arg2){
+					try{
 					//System.out.println(arg1.getId()+" "+arg1.getNombre());
 					ObjetoUML objeto=listaRecognizer.get(arg1.getIdUsuario()).getObjetoUML(arg1.getId());
 					//System.out.println("objeto "+objeto);
@@ -311,16 +312,19 @@ public class DrawSurfaceScene extends AbstractScene {
 						
 						server.getNamespace("/login").getBroadcastOperations().sendEvent("syncEdition",new EntidadAdapter(((Entidad)objeto),arg1.getIdUsuario(),-1));
 						UMLDataSaver.agregarAccion(UMLDataSaver.EDITAR_OBJETO_ACTION, objeto,listaUsuarios.get(arg1.getIdUsuario()) );
-						
 					}
-			}
+					}catch (Exception e){
+						System.out.println("ERROR endEdition Listener");	
+					}
+				}
         });        	
 		
 		
 		userListener.addEventListener("endEditionTexto", TextoFlotanteAdapter.class, new DataListener<TextoFlotanteAdapter>() {
 			@Override
 			public void onData(SocketIOClient arg0, TextoFlotanteAdapter arg1,
-					AckRequest arg2) throws Exception {					
+					AckRequest arg2){
+					try{
 					//System.out.println(arg1.getId()+" "+arg1.getNombre());
 					ObjetoUML objeto=listaRecognizer.get(arg1.getIdUsuario()).getObjetoUML(arg1.getId());
 					//System.out.println("objeto "+objeto);
@@ -338,6 +342,9 @@ public class DrawSurfaceScene extends AbstractScene {
 
 						
 					}
+					}catch (Exception e){
+						System.out.println("ERROR endEditionTextoListener listener");
+					}
 			}
         });        	
 		
@@ -347,7 +354,8 @@ public class DrawSurfaceScene extends AbstractScene {
 			
 			@Override
 			public void onData(SocketIOClient arg0,  CardinalidadAdapter cardinalidadAdpter,
-					AckRequest arg2) throws Exception {					
+					AckRequest arg2){
+					try{
 					//System.out.println(cardinalidadAdpter.getId()+" "+cardinalidadAdpter.getCardinalidad());
 					ObjetoUML objeto=listaRecognizer.get(cardinalidadAdpter.getIdUsuario()).getObjetoUML(cardinalidadAdpter.getId());
 					//System.out.println("objeto "+objeto);
@@ -356,6 +364,9 @@ public class DrawSurfaceScene extends AbstractScene {
 						//System.out.println("CARD :" + cardinalidadAdpter.getCardinalidad() + "CARD SWITCH:" + cardinalidadAdpter.isCardinalidadSwitch());
 						((Relacion_Impl)relacion.getFigura()).actualizarCardinalidad(cardinalidadAdpter.getCardinalidad(), cardinalidadAdpter.isCardinalidadSwitch());																
 						UMLDataSaver.agregarAccion(UMLDataSaver.EDITAR_OBJETO_ACTION, objeto,listaUsuarios.get(cardinalidadAdpter.getIdUsuario()) );
+					}
+					}catch (Exception e){
+						System.out.println("ERROR cardinalidadEdition listener");
 					}
 			}
         });        	
