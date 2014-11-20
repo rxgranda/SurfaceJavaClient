@@ -1,0 +1,22 @@
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "800 X 600"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+493 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+1306 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+Button down state on "unnamed rectangle" [org.mt4j.components.visibleComponents.shapes.MTRectangle@3d989dea]
+Button clicked state on "unnamed rectangle" [org.mt4j.components.visibleComponents.shapes.MTRectangle@3d989dea]
