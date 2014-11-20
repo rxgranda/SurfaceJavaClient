@@ -682,7 +682,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 					AbstractCursorInputEvt cursorInputEvt = (AbstractCursorInputEvt) inEvt;
 					InputCursor cursor = cursorInputEvt.getCursor();
 					IMTComponent3D target = cursorInputEvt.getTargetComponent();
-					System.out.println("RECTANGULOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");										
+					//System.out.println("RECTANGULOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");										
 					inEvt.setTarget(halo);						
 					if(cursorInputEvt.getId()== AbstractCursorInputEvt.INPUT_STARTED){
 						for(IMTInputEventListener a:canvas.getInputListeners()){																	
