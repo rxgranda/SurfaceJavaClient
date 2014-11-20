@@ -302,6 +302,8 @@ public class DrawSurfaceScene extends AbstractScene {
 					AckRequest arg2){
 					try{
 					//System.out.println(arg1.getId()+" "+arg1.getNombre());
+					System.out.println("**Iniciar Edicion Entidad"+ arg1.getNombre());
+
 					ObjetoUML objeto=listaRecognizer.get(arg1.getIdUsuario()).getObjetoUML(arg1.getId());
 					//System.out.println("objeto "+objeto);
 					if(objeto instanceof Entidad){
@@ -316,6 +318,7 @@ public class DrawSurfaceScene extends AbstractScene {
 					}catch (Exception e){
 						System.out.println("ERROR endEdition Listener");	
 					}
+					System.out.println("**Terminar Edicion Entidad"+ arg1.getNombre());
 				}
         });        	
 		
@@ -324,6 +327,7 @@ public class DrawSurfaceScene extends AbstractScene {
 			@Override
 			public void onData(SocketIOClient arg0, TextoFlotanteAdapter arg1,
 					AckRequest arg2){
+				System.out.println("**Iniciar Edicion Texto"+ arg1.getNombre());
 					try{
 					//System.out.println(arg1.getId()+" "+arg1.getNombre());
 					ObjetoUML objeto=listaRecognizer.get(arg1.getIdUsuario()).getObjetoUML(arg1.getId());
@@ -345,6 +349,8 @@ public class DrawSurfaceScene extends AbstractScene {
 					}catch (Exception e){
 						System.out.println("ERROR endEditionTextoListener listener");
 					}
+					System.out.println("**Finalizar Edicion Texto"+ arg1.getNombre());
+
 			}
         });        	
 		
@@ -355,6 +361,8 @@ public class DrawSurfaceScene extends AbstractScene {
 			@Override
 			public void onData(SocketIOClient arg0,  CardinalidadAdapter cardinalidadAdpter,
 					AckRequest arg2){
+				System.out.println("**Iniciar Edicion cardinalidad");
+
 					try{
 					//System.out.println(cardinalidadAdpter.getId()+" "+cardinalidadAdpter.getCardinalidad());
 					ObjetoUML objeto=listaRecognizer.get(cardinalidadAdpter.getIdUsuario()).getObjetoUML(cardinalidadAdpter.getId());
@@ -368,6 +376,7 @@ public class DrawSurfaceScene extends AbstractScene {
 					}catch (Exception e){
 						System.out.println("ERROR cardinalidadEdition listener");
 					}
+					System.out.println("**Finalizar Edicion cardinalidad");
 			}
         });        	
 		
@@ -770,7 +779,7 @@ public class DrawSurfaceScene extends AbstractScene {
 
 						//	System.out.println("Termino Input");
 						//	System.out.println("tamano lista!!: " + listaPuntos.get(currentUser).size());
-						System.out.println("Puntoooooooooooo"+listaPuntos.get(currentUser).size());
+						//System.out.println("Puntoooooooooooo"+listaPuntos.get(currentUser).size());
 							if( listaPuntos.get(currentUser).size() < 200 ){
 
 								
@@ -834,8 +843,7 @@ public class DrawSurfaceScene extends AbstractScene {
 												 listaHaloHelper.remove(currentUser);
 												 helper=new HaloHelper();
 												 listaHaloHelper.put(currentUser, helper);
-												 System.out
-														.println("resize done!!!!!!!!!!!");
+												// System.out.println("resize done!!!!!!!!!!!");
 											  }
 											//
 											((Relacion)objeto).setObjetoInicio(((ObjetoUMLGraph)entidad1).getObjetoUML());

@@ -626,7 +626,15 @@ public class MTTextArea extends MTRectangle implements IdragClusterable, ITextIn
 		gl.glColor4f(fillColor.getR()/255f, fillColor.getG()/255f, fillColor.getB()/255f, fillColor.getAlpha()/255f); 
 		
 		for (int i = 0; i < charListSize; i++) {
-			IFontCharacter character = characterList.get(i);
+			IFontCharacter character;
+			try{
+				character = characterList.get(i);
+			}catch(Exception e){
+				e.printStackTrace();
+				// CTI DEFAULT
+				character = characterList.get(0);
+				
+			}
 			//Step to the right by the amount of the last characters x advancement
 			gl.glTranslatef(lastXAdvancement, 0, 0);
 			//Save total amount gone to the right in this line 
