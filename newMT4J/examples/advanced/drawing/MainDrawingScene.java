@@ -170,16 +170,16 @@ public class MainDrawingScene extends AbstractScene {
 					MTRectangle rectangle = (MTRectangle) target;
 					switch (te.getTapID()) {
 					case TapEvent.BUTTON_DOWN:
-						System.out.println("Button down state on " + target);
+						//System.out.println("Button down state on " + target);
 						rectangle.setFillColor(negro);
 						break;
 					case TapEvent.BUTTON_UP:
-						System.out.println("Button up state on " + target);
+						//System.out.println("Button up state on " + target);
 						rectangle.setFillColor(loginColor);
 						texto.setFontColor(blanco);
 						break;
 					case TapEvent.BUTTON_CLICKED:
-						System.out.println("Button clicked state on " + target);
+						//System.out.println("Button clicked state on " + target);
 						rectangle.setFillColor(negro);
 						
 						UMLDataSaver helper= new UMLDataSaver(listaUsuarios, pa.width, pa.height);
@@ -215,7 +215,9 @@ public class MainDrawingScene extends AbstractScene {
         loginListener.addEventListener("loginevent", Usuario.class, new DataListener<Usuario>() {
 			@Override
 			public void onData(SocketIOClient arg0, Usuario arg1,
-					AckRequest arg2){
+					AckRequest arg2){				 
+				System.out.println("Inicio evento de: Evento de Login ");
+				
 					try{
 					System.out.println("recibido:  "+arg1.getIdPluma()+" "+ arg1.getNombres());
 					Usuario user=agregarUsuario(arg1);					
@@ -225,6 +227,8 @@ public class MainDrawingScene extends AbstractScene {
 					}catch (Exception e){
 						System.out.println("ERROR listener Login");
 					}
+				System.out.println("Fin evento de: Evento de Login ");
+
 					
 
 			}

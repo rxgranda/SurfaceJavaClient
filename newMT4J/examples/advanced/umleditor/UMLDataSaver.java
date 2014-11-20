@@ -199,7 +199,7 @@ public class UMLDataSaver implements Runnable {
 				if(objeto instanceof Relacion){
 					Relacion relacion=((Relacion)objeto);
 					String cardinalidadInicio="",cardinalidadFin="";
-					System.out.println("Cardinalidad Inicio"+ relacion.getCardinalidadInicio() + " Cardinalidadad Fin:" + relacion.getCardinalidadInicio());
+				//	System.out.println("Cardinalidad Inicio"+ relacion.getCardinalidadInicio() + " Cardinalidadad Fin:" + relacion.getCardinalidadInicio());
 					switch (relacion.getCardinalidadInicio()) {
 					case Relacion.CARDINALIDAD_CERO_MUCHOS:
 						cardinalidadInicio="CARDINALIDAD_CERO_MUCHOS";
@@ -262,7 +262,7 @@ public class UMLDataSaver implements Runnable {
 		break;
 		case BORRAR_OBJETO_ACTION:
 			
-			System.out.println("GUARDANDO BORRADO");
+		//	System.out.println("GUARDANDO BORRADO");
 			objetoMap.put("id", objeto.getId());
 			switch (objeto.getTipo()) {
 			
@@ -287,7 +287,7 @@ public class UMLDataSaver implements Runnable {
 				if(objeto instanceof Relacion){
 					Relacion relacion=((Relacion)objeto);
 					String cardinalidadInicio="",cardinalidadFin="";
-					System.out.println("Cardinalidad Inicio"+ relacion.getCardinalidadInicio() + " Cardinalidadad Fin:" + relacion.getCardinalidadInicio());
+				//	System.out.println("Cardinalidad Inicio"+ relacion.getCardinalidadInicio() + " Cardinalidadad Fin:" + relacion.getCardinalidadInicio());
 					switch (relacion.getCardinalidadInicio()) {
 					case Relacion.CARDINALIDAD_CERO_MUCHOS:
 						cardinalidadInicio="CARDINALIDAD_CERO_MUCHOS";
@@ -358,7 +358,7 @@ public class UMLDataSaver implements Runnable {
 			objetoContainer.put("usuario", user.getIdPluma());			
 			datos.add(objetoContainer);
 		String jsonText = JSONValue.toJSONString(jsonMap);
-		System.out.print(jsonText);
+		System.out.println(jsonText);
 		int a=0;
 	}
 	
@@ -376,7 +376,7 @@ public class UMLDataSaver implements Runnable {
 	}
 	
 	public static boolean guardarEnArchivo(){
-		System.out.println("Guardado");
+		System.out.println("Iniciar Guardado....");
 		JFrame parentFrame = new JFrame();
 		JFileChooser fileChooser = new JFileChooser();
 		fileChooser.setDialogTitle("Specify a file to save");
