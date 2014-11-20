@@ -627,7 +627,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 						//rectangulo.addChild(body);
 						ObjetoUML obj=recognizer.reconocerObjeto();
 						System.out.println("BORRARAAA "+obj.getWidth()+"H"+obj.getHeight()+"C"+obj.getClass());
-						if (obj ==ObjetoUML.DELETE_OBJECT_GESTURE&&obj.getWidth()>10){
+						if (obj ==ObjetoUML.DELETE_OBJECT_GESTURE&&obj.getWidth()>20&&obj.getHeight()>10){
 							
 							
 							String canal=(MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID)!=null)?MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID).getCanal():Usuario.CANAL_DEFAULT_USER;
@@ -682,7 +682,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 					AbstractCursorInputEvt cursorInputEvt = (AbstractCursorInputEvt) inEvt;
 					InputCursor cursor = cursorInputEvt.getCursor();
 					IMTComponent3D target = cursorInputEvt.getTargetComponent();
-					System.out.println("RECTANGULOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");										
+					//System.out.println("RECTANGULOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");										
 					inEvt.setTarget(halo);						
 					if(cursorInputEvt.getId()== AbstractCursorInputEvt.INPUT_STARTED){
 						for(IMTInputEventListener a:canvas.getInputListeners()){																	
