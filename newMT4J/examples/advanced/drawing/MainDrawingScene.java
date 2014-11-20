@@ -213,11 +213,16 @@ public class MainDrawingScene extends AbstractScene {
         loginListener.addEventListener("loginevent", Usuario.class, new DataListener<Usuario>() {
 			@Override
 			public void onData(SocketIOClient arg0, Usuario arg1,
-					AckRequest arg2) throws Exception {					
+					AckRequest arg2){
+					try{
 					System.out.println("recibido:  "+arg1.getIdPluma()+" "+ arg1.getNombres());
 					Usuario user=agregarUsuario(arg1);					
 					arg0.sendEvent("confirmevent",user);	
 					arg0.joinRoom(user.getCanal());
+					}catch (Exception e){
+						System.out.println("ERROR listener Login");
+					}
+					
 
 			}
        
