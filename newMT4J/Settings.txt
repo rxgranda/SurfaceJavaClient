@@ -29,6 +29,4 @@ OpenGLAntialiasing=0
 #Comentar valores para guardar por default
 #Intervalo de tiempo para guardar una copia del modelo logico (ms)
 TiempoBackup=5000
-MinimumWidthRatio=5
-MinimumHeightRatio=10
 #DirectorioBackup='C:\Users\Roger\Desktop\eclipse'
