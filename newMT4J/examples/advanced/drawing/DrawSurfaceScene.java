@@ -42,6 +42,7 @@ import org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapProces
 import org.mt4j.input.inputProcessors.componentProcessors.unistrokeProcessor.UnistrokeUtils.Recognizer;
 import org.mt4j.sceneManagement.AbstractScene;
 import org.mt4j.sceneManagement.IPreDrawAction;
+import org.mt4j.util.MT4jSettings;
 import org.mt4j.util.MTColor;
 import org.mt4j.util.math.Tools3D;
 import org.mt4j.util.math.ToolsMath;
@@ -110,7 +111,7 @@ public class DrawSurfaceScene extends AbstractScene {
 
 	
 	public static final int nroPtsConfirmaClick = 6;
-	
+	public static float MIN_HEIGHT, MIN_WIDTH,MAX_WIDTH,MAX_HEIGHT ;
 	
 	Map< Integer, UMLFacade> listaRecognizer=new HashMap<Integer, UMLFacade>();
 	Map< Integer, UMLFacade> listaComponentes=new HashMap<Integer, UMLFacade>();
@@ -287,6 +288,11 @@ public class DrawSurfaceScene extends AbstractScene {
 		this.getCanvas().setDepthBufferDisabled(true);
 		listaCoordenadasPlayer1 = new ArrayList<int[]>();
 		DEG_TO_RAD = (float) (180.0/Math.PI);
+		MIN_HEIGHT = (float) mtApplication.height * MT4jSettings.getMinimumHeightRatio();
+		MIN_WIDTH = (float) mtApplication.width * MT4jSettings.getMinimumWidthRatio();
+		MAX_HEIGHT = (float) mtApplication.height * MT4jSettings.getMaximumHeightRatio();
+		MAX_WIDTH = (float) mtApplication.width * MT4jSettings.getMaximumWidthRatio();		
+		
 		/*
 		 * this.drawShape = getDefaultBrush(); this.localBrushCenter =
 		 * drawShape.getCenterPointLocal(); this.brushWidthHalf =
