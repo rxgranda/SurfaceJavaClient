@@ -17,7 +17,7 @@ public class Entidad extends ObjetoUML {
 		return nombre;
 	}
 
-	public void setNombre(String nombre) {
+	public synchronized void  setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
@@ -26,7 +26,7 @@ public class Entidad extends ObjetoUML {
 		return atributos;
 	}
 
-	public void setAtributos(ArrayList<String> atributos) {
+	public synchronized void setAtributos(ArrayList<String> atributos) {
 		this.atributos = atributos;
 	}
 	

@@ -61,7 +61,7 @@ public abstract class ObjetoUML {
 	}
 
 
-	public void setWidth(float width) {
+	public synchronized void setWidth(float width) {
 		this.width = width;
 	}
 
@@ -71,7 +71,7 @@ public abstract class ObjetoUML {
 	}
 
 
-	public void setHeight(float heigth) {
+	public synchronized void setHeight(float heigth) {
 		this.heigth = heigth;
 	}
 
@@ -83,7 +83,7 @@ public abstract class ObjetoUML {
 		this.centroide = nVector;
 	}
 
-	public void setCentroide(float x,float y) {		
+	public synchronized void setCentroide(float x,float y) {		
 		this.centroide = new Vector3D(x,y,0);
 		
 	}
@@ -99,7 +99,7 @@ public abstract class ObjetoUML {
 	}
 
 
-	public void setPosicion(Vector3D posicion) {
+	public synchronized void setPosicion(Vector3D posicion) {
 		this.posicion = posicion;
 	}
 
@@ -129,7 +129,7 @@ public abstract class ObjetoUML {
 	}
 
 
-	public void setBorrado(boolean borrado) {
+	public synchronized void setBorrado(boolean borrado) {
 		this.borrado = borrado;
 	}
 

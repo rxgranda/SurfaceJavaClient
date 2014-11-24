@@ -789,10 +789,12 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		System.out.println("-Eliminar relacion "+ ((Relacion)objeto).getId());
 
 		LinkedList<TextoFlotanteImpl> textosflotantes = (LinkedList<TextoFlotanteImpl>)linea.getUserData(ObjetoUMLGraph.TEXTO_FLOTANTE_KEYWORD);
-		for (TextoFlotanteImpl textoflot : textosflotantes ){
-			
-			textoflot.removeGrafico();
-			
+		synchronized (textosflotantes) {					
+			for (TextoFlotanteImpl textoflot : textosflotantes ){
+				
+				textoflot.removeGrafico();
+				
+			}
 		}
 		/*
 		MTComponent bus = linea.getChildByName("TextoFlotanteImplINICIO");
@@ -814,19 +816,15 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		halo.setVisible(false);
 		halo.setPickable(false);
 		if(!propagacion){
-		Entidad inicio=((Entidad)((Relacion)this.objeto).getObjetoInicio());
-		//System.out.println("Objetoo inicio"+inicio);
-		inicio.getFigura().eliminarDatos(RELACIONES_INICIO_KEYWORD, this);
-		
-		Entidad fin=((Entidad)((Relacion)this.objeto).getObjetoFin());
-		fin.getFigura().eliminarDatos(RELACIONES_FIN_KEYWORD, this);
-		UMLDataSaver.agregarAccion(UMLDataSaver.BORRAR_OBJETO_ACTION, objeto,MainDrawingScene.getListaUsuarios().get(idUsuario) );
-
+			Entidad inicio=((Entidad)((Relacion)this.objeto).getObjetoInicio());
+			//System.out.println("Objetoo inicio"+inicio);
+			inicio.getFigura().eliminarDatos(RELACIONES_INICIO_KEYWORD, this);			
+			Entidad fin=((Entidad)((Relacion)this.objeto).getObjetoFin());
+			fin.getFigura().eliminarDatos(RELACIONES_FIN_KEYWORD, this);
+			UMLDataSaver.agregarAccion(UMLDataSaver.BORRAR_OBJETO_ACTION, objeto,MainDrawingScene.getListaUsuarios().get(idUsuario) );
 		}
-	
-		
-		
 	}
+	
 	@Override
 	public void eliminarDatos(String keyword, Object datos) {
 		// TODO Auto-generated method stub

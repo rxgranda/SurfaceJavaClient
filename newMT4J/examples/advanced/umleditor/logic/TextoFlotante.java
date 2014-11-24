@@ -18,7 +18,7 @@ public class TextoFlotante extends ObjetoUML {
 		return nombre;
 	}
 
-	public void setNombre(String nombre) {
+	public synchronized void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 	

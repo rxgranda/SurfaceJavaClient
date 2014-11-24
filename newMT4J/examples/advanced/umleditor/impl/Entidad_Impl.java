@@ -477,7 +477,9 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 									String canal=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?MainDrawingScene.getListaUsuarios().get((int)m.sessionID).getCanal():Usuario.CANAL_DEFAULT_USER;
 									int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?(int)m.sessionID:Usuario.ID_DEFAULT_USER;
 
-									server.getRoomOperations(canal).sendEvent("startEdition",new EntidadAdapter(((Entidad)objeto),idUsuario,objeto.EDIT_HEADER));						
+									//server.getRoomOperations(canal).sendEvent("startEdition",new EntidadAdapter(((Entidad)objeto),idUsuario,objeto.EDIT_HEADER));						
+									server.getNamespace("/login").getBroadcastOperations().sendEvent("startEdition",new EntidadAdapter(((Entidad)objeto),idUsuario,objeto.EDIT_HEADER));						
+
 									System.out.println("--Enviar edicion nombre Entidad "+ ((Entidad)objeto).getNombre());
 									System.out.println("Enviado "+canal+" "+server.getRoomOperations(canal).getClients().size());
 									break;

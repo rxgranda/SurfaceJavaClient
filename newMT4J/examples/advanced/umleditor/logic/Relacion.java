@@ -41,7 +41,7 @@ public class Relacion extends ObjetoUML {
 		return fin;
 	}
 
-	public void setFin(Vector3D fin) {
+	public synchronized void setFin(Vector3D fin) {
 		this.fin = fin;
 	}
 	
@@ -50,7 +50,7 @@ public class Relacion extends ObjetoUML {
 		return nombre;
 	}
 
-	public void setNombre(String nombre) {
+	public synchronized void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 	
@@ -59,7 +59,7 @@ public class Relacion extends ObjetoUML {
 		return inicio;
 	}
 
-	public void setInicio(Vector3D inicio) {
+	public synchronized void setInicio(Vector3D inicio) {
 		this.inicio = inicio;
 	}
 
@@ -67,7 +67,7 @@ public class Relacion extends ObjetoUML {
 		return objetoInicio;
 	}
 
-	public void setObjetoInicio(ObjetoUML objetoInicio) {
+	public synchronized void setObjetoInicio(ObjetoUML objetoInicio) {
 		this.objetoInicio = objetoInicio;
 	}
 
@@ -75,7 +75,7 @@ public class Relacion extends ObjetoUML {
 		return objetoFin;
 	}
 
-	public void setObjetoFin(ObjetoUML objetoFin) {
+	public synchronized void setObjetoFin(ObjetoUML objetoFin) {
 		this.objetoFin = objetoFin;
 	}
 
@@ -83,7 +83,7 @@ public class Relacion extends ObjetoUML {
 		return cardinalidadInicio;
 	}
 
-	public void setCardinalidadInicio(int cardinalidadInicio) {
+	public synchronized void setCardinalidadInicio(int cardinalidadInicio) {
 		this.cardinalidadInicio = cardinalidadInicio;
 	}
 
@@ -91,21 +91,21 @@ public class Relacion extends ObjetoUML {
 		return cardinalidadFin;
 	}
 
-	public void setCardinalidadFin(int cardinalidadFin) {
+	public synchronized void setCardinalidadFin(int cardinalidadFin) {
 		this.cardinalidadFin = cardinalidadFin;
 	}
 	public ObjetoUML getTextoFin() {
 		return textoFin;
 	}
 
-	public void setTextoFin(ObjetoUML textoFin) {
+	public synchronized void setTextoFin(ObjetoUML textoFin) {
 		this.textoFin = textoFin;
 	}
 	public ObjetoUML getTextoInicio() {
 		return textoInicio;
 	}
 
-	public void setTextoInicio(ObjetoUML textoInicio) {
+	public synchronized void setTextoInicio(ObjetoUML textoInicio) {
 		this.textoInicio = textoInicio;
 	}
 	
