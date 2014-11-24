@@ -593,7 +593,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 						///canvas.removeChild(body);
 						//rectangulo.addChild(body);
 						ObjetoUML obj=recognizer.reconocerObjeto();
-						System.out.println("BORRAR W: "+obj.getWidth()+" H: "+obj.getHeight()+" Entidad "+((Entidad)obj).getNombre());
+						System.out.println("BORRAR W: "+obj.getWidth()+" H: "+obj.getHeight()+" Entidad "+((Entidad)objeto).getNombre());
 						if (obj ==ObjetoUML.DELETE_OBJECT_GESTURE&&obj.getWidth()>50&&obj.getHeight()>30){
 							
 							System.out.println("-Iniciar borrado Entidad "+ ((Entidad)objeto).getNombre());
@@ -744,7 +744,10 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 			listaDatos= new LinkedList<Object>();
 			halo.setUserData(keyword, listaDatos);
 		}
-		listaDatos.add(datos);
+		synchronized (listaDatos) {
+			listaDatos.add(datos);
+		}
+		
 
 	}
 
@@ -799,31 +802,35 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 	public synchronized void removerRelaciones(int idUsuario){
 		LinkedList listaInicio=obtenerDatos(RELACIONES_INICIO_KEYWORD);
 		if(listaInicio!=null){
-			for(Object o:listaInicio){
-				if(o instanceof ObjetoUMLGraph){
-					//((Relacion)objeto)
-
-					((Relacion_Impl)o).removerRelacion(idUsuario,true);
-					//System.out.println("ELIMINAR INICIO.........................................");
-
+			synchronized (listaInicio) {							
+				for(Object o:listaInicio){
+					if(o instanceof ObjetoUMLGraph){
+						//((Relacion)objeto)
+	
+						((Relacion_Impl)o).removerRelacion(idUsuario,true);
+						//System.out.println("ELIMINAR INICIO.........................................");
+	
+					}
+	
 				}
-
+				listaInicio.clear();
 			}
-			listaInicio.clear();
 		}
 		
 		LinkedList listaFin=obtenerDatos(RELACIONES_FIN_KEYWORD);
 		if(listaFin!=null){
-			for(Object o:listaFin){
-				if(o instanceof ObjetoUMLGraph){
-					//((Relacion)objeto)
-
-					((Relacion_Impl)o).removerRelacion(idUsuario,true);
-				//	System.out.println("ELIMINAR FIN.........................................");
-
-					}
+			synchronized (listaFin) {						
+				for(Object o:listaFin){
+					if(o instanceof ObjetoUMLGraph){
+						//((Relacion)objeto)
+	
+						((Relacion_Impl)o).removerRelacion(idUsuario,true);
+					//	System.out.println("ELIMINAR FIN.........................................");
+	
+						}
+				}
+				listaFin.clear();
 			}
-			listaFin.clear();
 		}
 
 	}
@@ -833,8 +840,10 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 		//System.out.println("ENTIDAD........ENTIDA... ENTIDAD....."+ objeto.getId());
 		LinkedList listaDatos=(LinkedList<Object>) halo.getUserData(keyword);
 		if(listaDatos!=null){
-			if(listaDatos.contains(datos)){
-				listaDatos.remove(datos);
+			synchronized (listaDatos) {						
+				if(listaDatos.contains(datos)){
+					listaDatos.remove(datos);
+				}
 			}
 		}
 		
