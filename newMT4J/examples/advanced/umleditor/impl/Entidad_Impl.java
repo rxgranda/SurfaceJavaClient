@@ -61,7 +61,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 	
 
 	SocketIOServer server;
-	ObjetoUML objeto;
+	public ObjetoUML objeto;
 	/*class DoubleClickProcessor extends TapProcessor  implements IGestureEventListener {
 
 		public DoubleClickProcessor(PApplet pa, float maxFingerUpDistance,
@@ -255,13 +255,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 			}
 		});
 		
-		
-		  
-	      
-		
-		
-		
-		
+
 		
 		//ComponentHelper.getCenterPointGlobal()
 		

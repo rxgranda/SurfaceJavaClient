@@ -10,6 +10,7 @@ import org.mt4j.util.math.Vector3D;
 
 import advanced.umleditor.logic.Entidad;
 import advanced.umleditor.logic.ObjetoUML;
+import advanced.umleditor.logic.RelacionMultiple;
 import advanced.umleditor.logic.TextoFlotante;
 import advanced.umleditor.logic.Usuario;
 import advanced.umleditor.logic.Relacion;
@@ -80,6 +81,7 @@ public class UMLFacade {
 	public ObjetoUML reconocerObjeto(){
 		////System.out.println("Numero de muestrassssssss"+numMuestas);
 		int resultado=recognizer.recognize();
+		
 		if(resultado!=ObjetoUML.INVALIDO&&this.numMuestas>40){	
 			int width=(int)(maxX-minX);
 			int height=(int)(maxY-minY);
@@ -89,11 +91,12 @@ public class UMLFacade {
 					////System.out.println("Entidad mal reconocida");
 					reiniciar();
 					objeto=ObjetoUML.OBJETO_INVALIDO;
+					
 					return objeto;
 				}
 			}
 				
-			objeto=UMLCollection.anadirObjeto(resultado,persona );
+			objeto=UMLCollection.anadirObjeto(resultado,persona);
 			
 			//// Calcular centroide,posicion y dimensiones
 			this.getObjeto().setCentroide((int)((acumCentroideX/numMuestas) -5.0f),(int)((acumCentroideY/numMuestas) -5.0f));	
@@ -114,6 +117,11 @@ public class UMLFacade {
 				atributos.add("Id");
 				((Entidad)objeto).setAtributos(atributos);
 			}	
+			if (objeto.getTipo()==ObjetoUML.RELACION_MULTIPLE){
+				System.out.println("retorna objeto RELACION MULTIPLE");
+				//((RelacionMultiple)objeto).inicializarDimensiones((int)primerX, (int) primerY, (int)ultimoX, (int) ultimoY);
+				
+			}
 			//// Para calcular centroide,posicion y dimensiones de una nueva figura
 			reiniciar();
 			return objeto;

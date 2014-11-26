@@ -19,6 +19,7 @@ import javax.swing.JFrame;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 import org.mt4j.MTApplication;
+import org.mt4j.components.MTCanvas;
 import org.mt4j.components.MTComponent;
 import org.mt4j.components.TransformSpace;
 import org.mt4j.components.interfaces.IMTComponent3D;
@@ -55,10 +56,12 @@ import advanced.umleditor.UMLCollection;
 import advanced.umleditor.impl.Entidad_Impl;
 import advanced.umleditor.impl.HaloHelper;
 import advanced.umleditor.impl.ObjetoUMLGraph;
+import advanced.umleditor.impl.RelacionMultiple_Impl;
 import advanced.umleditor.impl.Relacion_Impl;
 import advanced.umleditor.impl.TextoFlotanteImpl;
 import advanced.umleditor.logic.Entidad;
 import advanced.umleditor.logic.ObjetoUML;
+import advanced.umleditor.logic.RelacionMultiple;
 import advanced.umleditor.logic.TextoFlotante;
 import advanced.umleditor.logic.Usuario;
 import advanced.umleditor.logic.Relacion;
@@ -123,6 +126,8 @@ public class DrawSurfaceScene extends AbstractScene {
 	private int paso=-1;
 	
 	private ArrayList<int[]> listaCoordenadasPlayer1;
+
+	
 
 	
 	
@@ -287,6 +292,10 @@ public class DrawSurfaceScene extends AbstractScene {
 		this.getCanvas().setDepthBufferDisabled(true);
 		listaCoordenadasPlayer1 = new ArrayList<int[]>();
 		DEG_TO_RAD = (float) (180.0/Math.PI);
+		
+		//seteo un boton al container
+				//setBotonRelacionMultiple(container, mtApplication, this.getCanvas());
+				
 		/*
 		 * this.drawShape = getDefaultBrush(); this.localBrushCenter =
 		 * drawShape.getCenterPointLocal(); this.brushWidthHalf =
@@ -396,7 +405,9 @@ public class DrawSurfaceScene extends AbstractScene {
 		listaHaloHelper.put(defaultUser, helper);
 		listaUsuarios.put(Usuario.ID_DEFAULT_USER, defaultUser);
 		
-
+		
+		
+		
 		// Proyecto
 		this.getCanvas().registerInputProcessor(new TapProcessor(mtApplication));
 		this.getCanvas().addGestureListener(TapProcessor.class, new IGestureEventListener() {
@@ -436,6 +447,7 @@ public class DrawSurfaceScene extends AbstractScene {
 		
 		this.getCanvas().addInputListener(new IMTInputEventListener() {
 			public boolean processInputEvent(MTInputEvent inEvt) {
+				
 				if (inEvt instanceof AbstractCursorInputEvt) {
 					
 					final AbstractCursorInputEvt posEvt = (AbstractCursorInputEvt) inEvt;
@@ -445,10 +457,11 @@ public class DrawSurfaceScene extends AbstractScene {
 					if(currentUser!=null){
 					IMTComponent3D componente = m.getTarget();
 
-					//System.out.println(componente.toString());
+					System.out.println(componente.toString());
 				
 					
 					IMTComponent3D currentComponent = (IMTComponent3D) getCanvas().getComponentAt((int) m.getPosition().x,(int) m.getPosition().y);
+					System.out.println(currentComponent.toString());
 					//Object entidad = null,entidad2=null;
 					
 					//switch para establecer relaciones entre entidades
@@ -641,8 +654,7 @@ public class DrawSurfaceScene extends AbstractScene {
 										 //System.out.println("Ojooo: ID: " + m.sessionID);
 										//Usuario currentUser=listaUsuarios.get((int)m.sessionID);
 										UMLFacade recognizer=listaRecognizer.get(currentUser.getIdPluma());
-										recognizer.anadirPunto(currentPos.x,
-												currentPos.y);
+										recognizer.anadirPunto(currentPos.x,currentPos.y);
 										// centroideX+=currentPos.x;centroideY+=currentPos.y;
 										// numMuestras++;
 
@@ -747,9 +759,9 @@ public class DrawSurfaceScene extends AbstractScene {
 							// int resultado=recognizer.recognize();
 							limpiarPuntosCanvas(currentUser);
 							UMLFacade recognizer=listaRecognizer.get(currentUser.getIdPluma());
-							final ObjetoUML objeto=recognizer
-									.reconocerObjeto();
+							final ObjetoUML objeto=recognizer.reconocerObjeto();
 							final int tipo_objeto = objeto.getTipo();
+							//System.out.println("tipo objeto: "+tipo_objeto);
 							// if(resultado==UMLCollection.INVALIDO){
 							
 							// }else{
@@ -795,7 +807,7 @@ public class DrawSurfaceScene extends AbstractScene {
 								// MTRoundRectangle(recognizer.getPosicion().x,recognizer.getPosicion().y,0,
 								// recognizer.getWidth(),
 								// recognizer.getHeigth(), 1, 1, mtApp);
-								UMLFacade componentRecognizer=listaComponentRecognizer.get(currentUser);
+								UMLFacade componentRecognizer = listaComponentRecognizer.get(currentUser);
 
 								switch (tipo_objeto) {
 
@@ -804,15 +816,17 @@ public class DrawSurfaceScene extends AbstractScene {
 									ObjetoUMLGraph diagrama= new Entidad_Impl(mtApp,container,getCanvas() ,componentRecognizer,objeto,server);									
 									objeto.setFigura(diagrama);
 									UMLDataSaver.agregarAccion(UMLDataSaver.AGREGAR_OBJETO_ACTION,objeto,currentUser);
+									
 									//anadirObjeto(diagrama.getFigura());
 									break;
 								case ObjetoUML.RELACION:
 									final IMTComponent3D destino=getCanvas().getComponentAt((int)m.getCurrentEvtPosX(), (int)m.getCurrentEvtPosY());
 									if(componente instanceof MTPolygon && destino instanceof MTPolygon){ //verificar si el componente inicial y final son Instancias de Polygon(Diagrama entidad)
+										
 										Object entidad1=((MTComponent)componente).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
 										Object entidad2=((MTComponent)destino).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
 										if(entidad1!=null&&entidad2!=null&&entidad1 instanceof ObjetoUMLGraph && entidad2 instanceof ObjetoUMLGraph && entidad1!=entidad2){
-											
+											System.out.println("SE IDENTIFICARON OBJETOS  - ENTIDAD Y ENTIDAD");
 											//Reubicar objeto relacion
 											  HaloHelper helper=listaHaloHelper.get(currentUser);
 											  //System.out.println("try resize");
@@ -823,8 +837,7 @@ public class DrawSurfaceScene extends AbstractScene {
 												 listaHaloHelper.remove(currentUser);
 												 helper=new HaloHelper();
 												 listaHaloHelper.put(currentUser, helper);
-												 System.out
-														.println("resize done!!!!!!!!!!!");
+												 System.out.println("resize done!!!!!!!!!!!");
 											  }
 											//
 											((Relacion)objeto).setObjetoInicio(((ObjetoUMLGraph)entidad1).getObjetoUML());
@@ -837,13 +850,9 @@ public class DrawSurfaceScene extends AbstractScene {
 											
 											((Relacion)objeto).setTextoInicio(objetotextoInicio);
 											((Relacion)objeto).setTextoFin(objetotextoFin);
-											
-											
-											
-
-											
-											ObjetoUMLGraph linea= new Relacion_Impl(mtApp,container, getCanvas(),objeto,componentRecognizer,server);
-											//((MTPolygon)((ObjetoUMLGraph)entidad1).getHalo()).setFillColor(ObjetoUMLGraph.haloDeSelected);											
+	
+											ObjetoUMLGraph linea= new Relacion_Impl(mtApp, container, getCanvas(), objeto, componentRecognizer, server);
+											//((MTPolygon)((ObjetoUMLGraph)entidad1).getHalo()).setFillColor(ObjetoUMLGraph.haloDeSelected);	 										
 											//((MTPolygon)((ObjetoUMLGraph)entidad2).getHalo()).setFillColor(ObjetoUMLGraph.haloDeSelected);
 											((ObjetoUMLGraph)entidad1).guardarDatos(ObjetoUMLGraph.RELACIONES_INICIO_KEYWORD, linea);
 											((ObjetoUMLGraph)entidad2).guardarDatos(ObjetoUMLGraph.RELACIONES_FIN_KEYWORD, linea);
@@ -852,9 +861,47 @@ public class DrawSurfaceScene extends AbstractScene {
 											UMLDataSaver.agregarAccion(UMLDataSaver.AGREGAR_OBJETO_ACTION,objeto, currentUser);
 
 											//anadirObjeto(linea.getFigura());
+											
 										}
+										
+										Object entidad1_aux=((MTComponent)componente).getUserData(ObjetoUMLGraph.RELACION_MULTIPLE_KEYWORD);
+										System.out.println("imprimiendo entidad1_aux: "+entidad1_aux);
+										if(entidad1_aux!=null){ //verificar si el componente inicial y final son Instancias de Polygon(Diagrama entidad)
+											System.out.println("SE IDENTIFICARON OBJETOS  - DIAMANTE Y ENTIDAD");
+											
+											Object entidad2_aux=((MTComponent)destino).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
+											
+											((Relacion)objeto).setInicio(((MTRoundRectangle)componente).getCenterPointGlobal());
+											((Relacion)objeto).setFin(((AbstractShape)destino).getCenterPointGlobal());
+											
+											/**Colocacion de Texto flotante a la relacion*/
+											TextoFlotante objetotextoInicio = (TextoFlotante)recognizer.aniadirTextoFlotante(((MTRoundRectangle)componente).getCenterPointGlobal());
+											TextoFlotante objetotextoFin = (TextoFlotante)recognizer.aniadirTextoFlotante(((AbstractShape)destino).getCenterPointGlobal());
+											objetotextoInicio.setOwner(((Relacion)objeto)); 
+											objetotextoFin.setOwner(((Relacion)objeto)); 
+											
+											((Relacion)objeto).setTextoInicio(objetotextoInicio);
+											((Relacion)objeto).setTextoFin(objetotextoFin);
+											
+											((Relacion)objeto).setObjetoInicio(((ObjetoUMLGraph)entidad1_aux).getObjetoUML());
+											((Relacion)objeto).setObjetoFin(((ObjetoUMLGraph)entidad2_aux).getObjetoUML());
+											ObjetoUMLGraph linea= new Relacion_Impl(mtApp, container, getCanvas(), objeto, componentRecognizer, server);
+											((ObjetoUMLGraph)entidad1_aux).guardarDatos(ObjetoUMLGraph.RELACIONES_INICIO_KEYWORD, linea);
+											((ObjetoUMLGraph)entidad2_aux).guardarDatos(ObjetoUMLGraph.RELACIONES_FIN_KEYWORD, linea);
+											objeto.setFigura(linea);
+											
+											
+										}
+										
 										}
 									break;
+									
+								case ObjetoUML.RELACION_MULTIPLE:
+									ObjetoUMLGraph relacion_multiple = new RelacionMultiple_Impl(mtApp, getCanvas(), container, objeto);
+									System.out.println("DIAMANTEEEEEEE!!");
+									break;
+									
+									
 								default:
 									break;
 								}
@@ -870,6 +917,8 @@ public class DrawSurfaceScene extends AbstractScene {
 			}
 		});
 
+		//agregamos boton para relacion multiple
+		//setBotonRelacionMultiple(container, mtApp, getCanvas());
 	}
 
 	public void setBrush(AbstractShape brush) {
@@ -1046,4 +1095,56 @@ public class DrawSurfaceScene extends AbstractScene {
 		UMLDataSaver.guardarEnArchivo();
 		return true;
 	}
+	
+	
+	
+	
+	public void setBotonRelacionMultiple(MTRectangle container, MTApplication pApplet, MTCanvas canvas){
+		Vector3D vector = container.getCenterPointGlobal();
+		MTEllipse boton = new MTEllipse(pApplet, vector, 10, 10);
+		//por lo pronto le seteamos null el valor de alguna relacion
+		ObjetoUML objeto = new RelacionMultiple(null);
+		//configuracion de prueba
+		objeto.setPosicion(new Vector3D(200,200));
+		objeto.setHeight(30);
+		objeto.setWidth(30);
+		
+		RelacionMultiple_Impl re_multiple = new RelacionMultiple_Impl(pApplet, canvas, container, objeto);
+		
+		
+		boton.setPickable(false);
+		boton.setFillColor(new MTColor(0,255,0));
+		boton.setNoStroke(false);
+		boton.setEnabled(true);
+		boton.registerInputProcessor(new TapProcessor(pApplet));
+		boton.removeAllGestureEventListeners();
+		boton.addGestureListener(TapProcessor.class, new IGestureEventListener() {
+			public boolean processGestureEvent(MTGestureEvent ge) {
+				TapEvent de = (TapEvent)ge;
+		
+				//Moves the component
+				switch (de.getId()) {
+				case MTGestureEvent.GESTURE_STARTED:
+					
+					break;
+				case MTGestureEvent.GESTURE_UPDATED:
+					      
+					break;
+				case MTGestureEvent.GESTURE_ENDED:
+					System.out.println("boton relacion multiple clikeado");
+					break;
+				default:
+					break;
+				}		
+				return false;
+			}
+		});
+		
+		
+		
+		//lo agregamos al canvas para que funcione el boton
+		anadirObjeto(boton);
+		
+	}
+	
 }

@@ -17,7 +17,7 @@ public class UMLRecognizer {
 
 	public UMLRecognizer(){		
 		PaleoConfig config = new PaleoConfig();
-		config = new PaleoConfig(PaleoConfig.Option.Line,PaleoConfig.Option.Polyline, PaleoConfig.Option.Circle,PaleoConfig.Option.Wave, PaleoConfig.Option.Rectangle);		
+		config = new PaleoConfig(PaleoConfig.Option.Line,PaleoConfig.Option.Polyline, PaleoConfig.Option.Circle,PaleoConfig.Option.Wave, PaleoConfig.Option.Rectangle, PaleoConfig.Option.Diamond);		
 		recognizer = new PaleoSketchRecognizer(config);
 		stroke = new Stroke();	    		
 	}
@@ -43,6 +43,11 @@ public class UMLRecognizer {
 							return ObjetoUML.ENTIDAD;
 						else if(shapeLabel.equals("Line"))	
 							return ObjetoUML.RELACION;
+						else if(shapeLabel.equals("Diamond")){
+							System.out.println("RETORNA RELACION MULTIPLE");
+							return ObjetoUML.RELACION_MULTIPLE;
+						}
+							
 						else if(shapeLabel.contains("Polyline")){
 							String str = new String(shapeLabel);      
 							str = str.replaceAll("[^0-9]+", " ");

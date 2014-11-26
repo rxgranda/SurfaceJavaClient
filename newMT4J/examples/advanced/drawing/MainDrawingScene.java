@@ -280,7 +280,7 @@ public class MainDrawingScene extends AbstractScene {
 		//Create the frame/window that displays the drawing scene through a FBO
 		//final MTSceneTexture sceneWindow = new MTSceneTexture(0,0, pa, drawingScene);
 		//We have to create a fullscreen fbo in order to save the image uncompressed
-		sceneTexture = new MTSceneTexture(pa,0, -0, pa.width+0, pa.height+0, drawingScene);
+		sceneTexture = new MTSceneTexture(pa, 0, -0, pa.width+0, pa.height+0, drawingScene);
 		sceneTexture.getFbo().clear(true, 255, 255, 255, 0, true);
 		sceneTexture.setStrokeColor(new MTColor(155,0,0));
 
