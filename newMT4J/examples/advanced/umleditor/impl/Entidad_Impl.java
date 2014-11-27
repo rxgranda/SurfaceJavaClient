@@ -8,6 +8,7 @@ import java.util.Map;
 import org.mt4j.MTApplication;
 import org.mt4j.components.MTCanvas;
 import org.mt4j.components.MTComponent;
+import org.mt4j.components.TransformSpace;
 import org.mt4j.components.interfaces.IMTComponent3D;
 import org.mt4j.components.visibleComponents.font.FontManager;
 import org.mt4j.components.visibleComponents.font.IFont;
@@ -395,7 +396,17 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 				System.out.println(" Mover entidad "+ ((Entidad)objeto).getNombre());
 			//	System.out.println("Fin evento de: Mover entidad Usuario:"+cursor.sessionID );
 				
-				rectangulo.setPositionGlobal(rectangulo.getCenterPointGlobal().addLocal(de.getTranslationVect()));
+				InputCursor cursor = de.getDragCursor();
+				Vector3D pos = cursor.getPosition();
+				Vector3D posFinal = de.getTranslationVect();
+				
+				if((pos.y<0)||pos.y>=(container.getBounds().getHeightXY(TransformSpace.RELATIVE_TO_PARENT))){
+					posFinal.y=0;
+				}
+				if((pos.x<0)||pos.x>=(container.getBounds().getWidthXY(TransformSpace.RELATIVE_TO_PARENT))){
+					posFinal.x=0;
+				}
+				rectangulo.setPositionGlobal(rectangulo.getCenterPointGlobal().addLocal(posFinal));
 				objeto.setPosicion(rectangulo.getCenterPointGlobal());
 				halo.setPositionGlobal(rectangulo.getCenterPointGlobal());
 //// TEST
