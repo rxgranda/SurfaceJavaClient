@@ -494,6 +494,7 @@ public class DrawSurfaceScene extends AbstractScene {
 								}
 								listaVisitados.add(entidad2);
 								if (listaHaloHelper.get(currentUser).getHoverFin().equalsVector(new Vector3D()))
+									
 									listaHaloHelper.get(currentUser).setHoverFin(m.getPosition());
 							}
 							
@@ -865,14 +866,28 @@ public class DrawSurfaceScene extends AbstractScene {
 										}
 										
 										Object entidad1_aux=((MTComponent)componente).getUserData(ObjetoUMLGraph.RELACION_MULTIPLE_KEYWORD);
+										Object entidad2_aux=((MTComponent)destino).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
 										System.out.println("imprimiendo entidad1_aux: "+entidad1_aux);
-										if(entidad1_aux!=null){ //verificar si el componente inicial y final son Instancias de Polygon(Diagrama entidad)
+										if(entidad1_aux!=null&&entidad2_aux!=null){ //verificar si el componente inicial y final son Instancias de Polygon(Diagrama entidad)
 											System.out.println("SE IDENTIFICARON OBJETOS  - DIAMANTE Y ENTIDAD");
 											
-											Object entidad2_aux=((MTComponent)destino).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
 											
-											((Relacion)objeto).setInicio(((MTRoundRectangle)componente).getCenterPointGlobal());
-											((Relacion)objeto).setFin(((AbstractShape)destino).getCenterPointGlobal());
+											
+											//((Relacion)objeto).setInicio(((MTRoundRectangle)componente).getCenterPointGlobal());
+											//((Relacion)objeto).setFin(((AbstractShape)destino).getCenterPointGlobal());
+											
+											HaloHelper helper=listaHaloHelper.get(currentUser);
+											  //System.out.println("try resize");
+											  if(!helper.getHoverInicio().equalsVector(new Vector3D())&&!helper.getHoverFin().equalsVector(new Vector3D()))
+											  {
+												 ((Relacion)objeto).setInicio(helper.getHoverInicio());
+												 ((Relacion)objeto).setFin(helper.getHoverFin());
+												 listaHaloHelper.remove(currentUser);
+												 helper=new HaloHelper();
+												 listaHaloHelper.put(currentUser, helper);
+												 System.out.println("resize done!!!!!!!!!!!");
+											  }
+											
 											
 											/**Colocacion de Texto flotante a la relacion*/
 											TextoFlotante objetotextoInicio = (TextoFlotante)recognizer.aniadirTextoFlotante(((MTRoundRectangle)componente).getCenterPointGlobal());
@@ -888,6 +903,7 @@ public class DrawSurfaceScene extends AbstractScene {
 											ObjetoUMLGraph linea= new Relacion_Impl(mtApp, container, getCanvas(), objeto, componentRecognizer, server);
 											((ObjetoUMLGraph)entidad1_aux).guardarDatos(ObjetoUMLGraph.RELACIONES_INICIO_KEYWORD, linea);
 											((ObjetoUMLGraph)entidad2_aux).guardarDatos(ObjetoUMLGraph.RELACIONES_FIN_KEYWORD, linea);
+											
 											objeto.setFigura(linea);
 											
 											

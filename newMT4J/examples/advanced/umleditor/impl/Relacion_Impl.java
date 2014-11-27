@@ -44,6 +44,7 @@ import advanced.umleditor.UMLFacade;
 import advanced.umleditor.logic.Entidad;
 import advanced.umleditor.logic.ObjetoUML;
 import advanced.umleditor.logic.Relacion;
+import advanced.umleditor.logic.RelacionMultiple;
 import advanced.umleditor.logic.TextoFlotante;
 import advanced.umleditor.logic.Usuario;
 import advanced.umleditor.socketio.CardinalidadAdapter;
@@ -793,7 +794,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 	}
 	
 
-	public synchronized void removerRelacion(int idUsuario,boolean propagacion){
+	public synchronized void removerRelacion(int idUsuario, boolean propagacion){
 
 		
 		LinkedList<TextoFlotanteImpl> textosflotantes = (LinkedList<TextoFlotanteImpl>)linea.getUserData(ObjetoUMLGraph.TEXTO_FLOTANTE_KEYWORD);
@@ -822,13 +823,24 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		halo.setVisible(false);
 		halo.setPickable(false);
 		if(!propagacion){
-		Entidad inicio=((Entidad)((Relacion)this.objeto).getObjetoInicio());
-		System.out.println("Objetoo inicio"+inicio);
-		inicio.getFigura().eliminarDatos(RELACIONES_INICIO_KEYWORD, this);
+		Object inicio=((Relacion)this.objeto).getObjetoInicio();
+		if(inicio instanceof Entidad){
+			((Entidad)inicio).getFigura().eliminarDatos(RELACIONES_INICIO_KEYWORD, this);
+		}else{
+			System.out.println(inicio);
+			//creo que debo eliminar los datos de las figuras
+			//((RelacionMultiple)inicio).getFigura().eliminarDatos(RELACIONES_INICIO_KEYWORD, this);
+		}
+		
+		
+			
+			
+		
+		
 		
 		Entidad fin=((Entidad)((Relacion)this.objeto).getObjetoFin());
 		fin.getFigura().eliminarDatos(RELACIONES_FIN_KEYWORD, this);
-		UMLDataSaver.agregarAccion(UMLDataSaver.BORRAR_OBJETO_ACTION, objeto,MainDrawingScene.getListaUsuarios().get(idUsuario) );
+		UMLDataSaver.agregarAccion(UMLDataSaver.BORRAR_OBJETO_ACTION, objeto, MainDrawingScene.getListaUsuarios().get(idUsuario) );
 
 		}
 	
