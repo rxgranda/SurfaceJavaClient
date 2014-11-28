@@ -55,43 +55,7 @@ public class TextoFlotanteImpl extends MTComponent implements ObjetoUMLGraph {
 
 	SocketIOServer server;
 	ObjetoUML objeto;
-	class DoubleClickProcessor extends TapProcessor  implements IGestureEventListener {
 
-		public DoubleClickProcessor(PApplet pa, float maxFingerUpDistance,
-				boolean enableDoubleTap, int doubleTapTime,
-				boolean stopEventPropagation) {
-			super(pa, maxFingerUpDistance, enableDoubleTap, doubleTapTime,
-					stopEventPropagation);
-			// TODO Auto-generated constructor stub
-		}
-
-		@Override
-		public boolean processGestureEvent(MTGestureEvent ge) {			
-				TapEvent te = (TapEvent)ge;
-				IMTComponent3D target = te.getTargetComponent();
-				if (target instanceof MTRoundRectangle) {
-					MTRoundRectangle rectangle = (MTRoundRectangle) target;
-					switch (te.getTapID()) {
-					case TapEvent.BUTTON_DOUBLE_CLICKED:
-						//System.out.println("Doble Click " + target);						
-						//final AbstractCursorInputEvt posEvt = (AbstractCursorInputEvt) ge.getSource();
-						final InputCursor m = te.getCursor();
-						String canal=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?MainDrawingScene.getListaUsuarios().get((int)m.sessionID).getCanal():Usuario.CANAL_DEFAULT_USER;
-						int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?(int)m.sessionID:Usuario.ID_DEFAULT_USER;
-
-						server.getRoomOperations(canal).sendEvent("startEdition",new TextoFlotanteAdapter(((TextoFlotante)objeto),idUsuario));						
-						//System.out.println("Enviado "+canal+""+server.getRoomOperations(canal).getClients().size());
-						break;
-					
-					default:
-						break;
-					}
-				}
-				return false;			
-		}
-	
-	}
-	
 	
 	public TextoFlotanteImpl(final MTApplication mtApp,final MTComponent container, final MTCanvas canvas, final UMLFacade recognizer,final ObjetoUML objeto, final SocketIOServer server) {
 		
@@ -377,10 +341,10 @@ public class TextoFlotanteImpl extends MTComponent implements ObjetoUMLGraph {
 		
 		*/
 		
-		  DoubleClickProcessor proc=new DoubleClickProcessor(mtApp,(float) 0.1,true, 300,true);
+		 // DoubleClickProcessor proc=new DoubleClickProcessor(mtApp,(float) 0.1,true, 300,true);
 		 
-		 header.registerInputProcessor(proc);
-		 header.addGestureListener(DoubleClickProcessor.class,  proc);
+		// header.registerInputProcessor(proc);
+		 //header.addGestureListener(DoubleClickProcessor.class,  proc);
 
 		 header.registerInputProcessor(new TapAndHoldProcessor(mtApp, TAP_AND_HOLD_TIME));
 		 header.addGestureListener(TapAndHoldProcessor.class, new TapAndHoldVisualizer(mtApp, rectangulo));
@@ -406,6 +370,7 @@ public class TextoFlotanteImpl extends MTComponent implements ObjetoUMLGraph {
 								final InputCursor m = th.getCursor();
 								String canal=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?MainDrawingScene.getListaUsuarios().get((int)m.sessionID).getCanal():"canal1";
 								int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?(int)m.sessionID:-1;
+								System.out.println("--Enviar Edicion Texto Flotante"+ ((Relacion)objeto).getId());
 
 								server.getRoomOperations(canal).sendEvent("startEdition",new TextoFlotanteAdapter(((TextoFlotante)objeto),idUsuario));						
 								//System.out.println("Enviado "+canal+""+server.getRoomOperations(canal).getClients().size());
@@ -514,12 +479,12 @@ public class TextoFlotanteImpl extends MTComponent implements ObjetoUMLGraph {
 	@Override
 	public void guardarDatos(String keyword, Object datos) {
 
-		LinkedList listaDatos=(LinkedList<Object>) halo.getUserData(keyword);
+	/*	LinkedList listaDatos=(LinkedList<Object>) halo.getUserData(keyword);
 		if(listaDatos==null){
 			listaDatos= new LinkedList<Object>();
 			halo.setUserData(keyword, listaDatos);
 		}
-		listaDatos.add(datos);
+		listaDatos.add(datos);*/
 
 	}
 
@@ -528,8 +493,9 @@ public class TextoFlotanteImpl extends MTComponent implements ObjetoUMLGraph {
 	@Override
 	public LinkedList obtenerDatos(String keyword) {
 
-		LinkedList listaDatos=(LinkedList) halo.getUserData(keyword);
-		return listaDatos;
+		/*LinkedList listaDatos=(LinkedList) halo.getUserData(keyword);
+		return listaDatos;*/
+		return null;
 	}
 
 

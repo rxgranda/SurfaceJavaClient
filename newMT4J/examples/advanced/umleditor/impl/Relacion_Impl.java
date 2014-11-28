@@ -63,7 +63,6 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 	private final ObjetoUML objeto;
 	final MTRoundRectangle halo;
 	static float DISTANCIA_FROM_NODE = 0.5f;
-	//private final ObjetoUML textoflotante;
 	
 	private  ObjetoUML textoflotInicio;
 	private  ObjetoUML textoflotFin;
@@ -162,19 +161,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 
 		new MTRectangle(15, 15, mtApp);
 		// Circulos al inicio y fin de la linea
-		/*listaCardinalidadInicio.put(Relacion.CARDINALIDAD_UNO, new MTEllipse(mtApp,new Vector3D(0,0,0), 15,15f));
-		listaCardinalidadInicio.put(Relacion.CARDINALIDAD_CERO_UNO, new MTEllipse(mtApp,new Vector3D(0,0,0), 15,15f));
-		listaCardinalidadInicio.put(Relacion.CARDINALIDAD_CERO_MUCHOS, new MTEllipse(mtApp,new Vector3D(0,0,0), 15,15f));
-		listaCardinalidadInicio.put(Relacion.CARDINALIDAD_UNO_MUCHOS, new MTEllipse(mtApp,new Vector3D(0,0,0), 15,15f));
-		listaCardinalidadInicio.put(Relacion.CARDINALIDAD_MUCHOS, new MTEllipse(mtApp,new Vector3D(0,0,0), 15,15f));
-
-		listaCardinalidadFin.put(Relacion.CARDINALIDAD_UNO, new MTEllipse(mtApp,new Vector3D(0,0,0), 15,15f));
-		listaCardinalidadFin.put(Relacion.CARDINALIDAD_CERO_UNO, new MTEllipse(mtApp,new Vector3D(0,0,0), 15,15f));
-		listaCardinalidadFin.put(Relacion.CARDINALIDAD_CERO_MUCHOS, new MTEllipse(mtApp,new Vector3D(0,0,0), 15,15f));
-		listaCardinalidadFin.put(Relacion.CARDINALIDAD_UNO_MUCHOS, new MTEllipse(mtApp,new Vector3D(0,0,0), 15,15f));
-		listaCardinalidadFin.put(Relacion.CARDINALIDAD_MUCHOS, new MTEllipse(mtApp,new Vector3D(0,0,0), 15,15f));
-
-		*/
+		
 		listaCardinalidadInicio.put(Relacion.CARDINALIDAD_UNO, new MTRectangle(30, 30, mtApp));
 		listaCardinalidadInicio.put(Relacion.CARDINALIDAD_CERO_UNO, new MTRectangle(30, 30, mtApp));
 		listaCardinalidadInicio.put(Relacion.CARDINALIDAD_CERO_MUCHOS, new MTRectangle(30, 30, mtApp));
@@ -502,7 +489,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 					AbstractCursorInputEvt cursorInputEvt = (AbstractCursorInputEvt) inEvt;
 					InputCursor cursor = cursorInputEvt.getCursor();
 					IMTComponent3D target = cursorInputEvt.getTargetComponent();
-					System.out.println("Listener..............");
+					//System.out.println("Listener..............");
 					
 					//
 					
@@ -510,6 +497,8 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 					
 					switch (cursorInputEvt.getId()) {
 					case AbstractCursorInputEvt.INPUT_STARTED:
+						System.out.println("-Mover relacion "+ ((Relacion)objeto).getId());
+
 						
 						listapuntos = new ArrayList<Vector3D>();
 						
@@ -523,7 +512,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 						
 						
 						if(listapuntos.size() < 50){
-							System.out.println("hijos: " +halo.getChildCount());
+							//System.out.println("hijos: " +halo.getChildCount());
 							
 	
 							
@@ -570,7 +559,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 						}
 						
 				
-						System.out.println("Reconocer:");
+					//	System.out.println("Reconocer:");
 						ObjetoUML obj=recognizer.reconocerObjeto();
 						if (obj ==ObjetoUML.DELETE_OBJECT_GESTURE&&obj.getWidth()>40&&obj.getHeight()>40){
 							
@@ -671,6 +660,8 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		return null;
 	}
 	public synchronized void actualizarRelacion(){
+		System.out.println("-Actualizar relacion "+ ((Relacion)objeto).getId());
+
 		float width=java.lang.Math.abs(((Relacion)objeto).getInicio().x-((Relacion)objeto).getFin().x);
 		objeto.setWidth(width);
 		//float height=java.lang.Math.abs(((Relacion)objeto).getInicio().y-((Relacion)objeto).getFin().y);
@@ -796,7 +787,8 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 
 	public synchronized void removerRelacion(int idUsuario, boolean propagacion){
 
-		
+		System.out.println("-Eliminar relacion "+ ((Relacion)objeto).getId());
+
 		LinkedList<TextoFlotanteImpl> textosflotantes = (LinkedList<TextoFlotanteImpl>)linea.getUserData(ObjetoUMLGraph.TEXTO_FLOTANTE_KEYWORD);
 		for (TextoFlotanteImpl textoflot : textosflotantes ){
 			
@@ -823,6 +815,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		halo.setVisible(false);
 		halo.setPickable(false);
 		if(!propagacion){
+
 		Object inicio=((Relacion)this.objeto).getObjetoInicio();
 		if(inicio instanceof Entidad){
 			((Entidad)inicio).getFigura().eliminarDatos(RELACIONES_INICIO_KEYWORD, this);
@@ -831,12 +824,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 			//creo que debo eliminar los datos de las figuras
 			//((RelacionMultiple)inicio).getFigura().eliminarDatos(RELACIONES_INICIO_KEYWORD, this);
 		}
-		
-		
-			
-			
-		
-		
+
 		
 		Entidad fin=((Entidad)((Relacion)this.objeto).getObjetoFin());
 		fin.getFigura().eliminarDatos(RELACIONES_FIN_KEYWORD, this);
@@ -881,6 +869,8 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		return ubicacion;
 	}
 	public synchronized void actualizarCardinalidad(final int cardinalidad,boolean cardinalidadSwitch){
+		System.out.println("-Actualizar cardinalidad relacion "+ ((Relacion)objeto).getId());
+
 		MTPolygon componente;
 		int ubicacion=0; // 1=izquierda, 2 Derecha, 3 arriba, 4 abajo del componente
 		Map lista;
@@ -892,7 +882,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 				((MTPolygon)listaCardinalidadInicio.get(key)).removeFromParent();
 			}
 			lista=listaCardinalidadInicio;
-			System.out.println("Es Inicio");
+			//System.out.println("Es Inicio");
 		}else{
 			componente=fin;	
 			((Relacion)objeto).setCardinalidadFin(cardinalidad);
@@ -905,7 +895,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		int ubicacionCardinalidad=ubicacionCardinalidad(componente);
 		PImage imagenCardinalidad =null;
 		String nombre="uno.png";	
-		System.out.println("cardinalidad es: " + cardinalidad +"Componente es : " +componente);
+		//System.out.println("cardinalidad es: " + cardinalidad +"Componente es : " +componente);
 		MTPolygon cardinalidadComponent=null;
 		switch (cardinalidad) {
 			

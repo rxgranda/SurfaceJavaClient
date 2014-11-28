@@ -62,6 +62,7 @@ import processing.core.PImage;
 
 public class MainDrawingScene extends AbstractScene {
 	private MTApplication pa;	
+	private static boolean application_stated=false;
 	private static Thread backupHelper;
 	private MTEllipse pencilBrush;// Dibujar Trazos
 	private MTEllipse pencilBrush2; // Borrar trazos
@@ -169,16 +170,16 @@ public class MainDrawingScene extends AbstractScene {
 					MTRectangle rectangle = (MTRectangle) target;
 					switch (te.getTapID()) {
 					case TapEvent.BUTTON_DOWN:
-						System.out.println("Button down state on " + target);
+						//System.out.println("Button down state on " + target);
 						rectangle.setFillColor(negro);
 						break;
 					case TapEvent.BUTTON_UP:
-						System.out.println("Button up state on " + target);
+						//System.out.println("Button up state on " + target);
 						rectangle.setFillColor(loginColor);
 						texto.setFontColor(blanco);
 						break;
 					case TapEvent.BUTTON_CLICKED:
-						System.out.println("Button clicked state on " + target);
+						//System.out.println("Button clicked state on " + target);
 						rectangle.setFillColor(negro);
 						
 						UMLDataSaver helper= new UMLDataSaver(listaUsuarios, pa.width, pa.height);
@@ -188,6 +189,7 @@ public class MainDrawingScene extends AbstractScene {
 						cargarLienzo();								
 						getCanvas().removeChild(login);
 						getCanvas().removeChild(background);
+						application_stated=true;
 						break;
 					default:
 						break;
@@ -213,11 +215,21 @@ public class MainDrawingScene extends AbstractScene {
         loginListener.addEventListener("loginevent", Usuario.class, new DataListener<Usuario>() {
 			@Override
 			public void onData(SocketIOClient arg0, Usuario arg1,
-					AckRequest arg2) throws Exception {					
+					AckRequest arg2){				 
+				System.out.println("Inicio evento de: Evento de Login ");
+				
+					try{
 					System.out.println("recibido:  "+arg1.getIdPluma()+" "+ arg1.getNombres());
 					Usuario user=agregarUsuario(arg1);					
-					arg0.sendEvent("confirmevent",user);	
-					arg0.joinRoom(user.getCanal());
+					arg0.sendEvent("confirmevent",user);
+					if(user.getEstado()!=-1)
+						arg0.joinRoom(user.getCanal());
+					}catch (Exception e){
+						System.out.println("ERROR listener Login");
+					}
+				System.out.println("Fin evento de: Evento de Login ");
+
+					
 
 			}
        
@@ -328,30 +340,34 @@ public class MainDrawingScene extends AbstractScene {
 	}
 	public static  synchronized Usuario  agregarUsuario(Usuario user){
 		if (user.getEstado()<0 && !listaUsuariosXCanales.containsKey(user.getCanal())){
+			System.out.println("No hay sesion activa");
 			user.setEstado(-1);
 			return user;
 		}
 		if(listaUsuarios.containsKey(user.getIdPluma())){
 			user=listaUsuarios.get(user.getIdPluma());
 			user.setEstado(0);	
-			System.out.println("no login");
+			System.out.println("ya hizo login");
 			return user;
 		}else if(listaUsuariosXCanales.containsKey(user.getCanal())){	
-			System.out.println("Second login "+ user.getCanal());
+			System.out.println("Ya hizo login. Usuario por IDCanal."+ user.getCanal());
 			return listaUsuariosXCanales.get(user.getCanal());
 		}else{
-			
-			user.setEstado(1);
-			user.setCanal("canal"+user.getIdPluma());			
-			listaUsuarios.put(user.getIdPluma(), user);
-			listaUsuariosXCanales.put(user.getCanal(), user);
-			txtUsuarios.setText("Usuarios Activos: "+ listaUsuarios.size());
-
-			
-			if(listaUsuarios.size()>0){				
-				login.setFillColor(loginColor);			
-				login.setEnabled(true);
+			if(!application_stated){			
+				user.setEstado(1);
+				user.setCanal("canal"+user.getIdPluma());			
+				listaUsuarios.put(user.getIdPluma(), user);
+				listaUsuariosXCanales.put(user.getCanal(), user);
+				txtUsuarios.setText("Usuarios Activos: "+ listaUsuarios.size());
+	
 				
+				if(listaUsuarios.size()>0){				
+					login.setFillColor(loginColor);			
+					login.setEnabled(true);
+					
+				}
+			}else{
+				user.setEstado(-1);
 			}
 			return user;
 		}

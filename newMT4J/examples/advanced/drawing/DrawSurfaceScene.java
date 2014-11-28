@@ -43,6 +43,7 @@ import org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapProces
 import org.mt4j.input.inputProcessors.componentProcessors.unistrokeProcessor.UnistrokeUtils.Recognizer;
 import org.mt4j.sceneManagement.AbstractScene;
 import org.mt4j.sceneManagement.IPreDrawAction;
+import org.mt4j.util.MT4jSettings;
 import org.mt4j.util.MTColor;
 import org.mt4j.util.math.Tools3D;
 import org.mt4j.util.math.ToolsMath;
@@ -113,7 +114,7 @@ public class DrawSurfaceScene extends AbstractScene {
 
 	
 	public static final int nroPtsConfirmaClick = 6;
-	
+	public static float MIN_HEIGHT, MIN_WIDTH,MAX_WIDTH,MAX_HEIGHT ;
 	
 	Map< Integer, UMLFacade> listaRecognizer=new HashMap<Integer, UMLFacade>();
 	Map< Integer, UMLFacade> listaComponentes=new HashMap<Integer, UMLFacade>();
@@ -292,10 +293,13 @@ public class DrawSurfaceScene extends AbstractScene {
 		this.getCanvas().setDepthBufferDisabled(true);
 		listaCoordenadasPlayer1 = new ArrayList<int[]>();
 		DEG_TO_RAD = (float) (180.0/Math.PI);
+
+		MIN_HEIGHT = (float) mtApplication.height * MT4jSettings.getMinimumHeightRatio();
+		MIN_WIDTH = (float) mtApplication.width * MT4jSettings.getMinimumWidthRatio();
+		MAX_HEIGHT = (float) mtApplication.height * MT4jSettings.getMaximumHeightRatio();
+		MAX_WIDTH = (float) mtApplication.width * MT4jSettings.getMaximumWidthRatio();		
 		
-		//seteo un boton al container
-				//setBotonRelacionMultiple(container, mtApplication, this.getCanvas());
-				
+
 		/*
 		 * this.drawShape = getDefaultBrush(); this.localBrushCenter =
 		 * drawShape.getCenterPointLocal(); this.brushWidthHalf =
@@ -308,8 +312,11 @@ public class DrawSurfaceScene extends AbstractScene {
 		userListener.addEventListener("endEdition", EntidadAdapter.class, new DataListener<EntidadAdapter>() {
 			@Override
 			public void onData(SocketIOClient arg0, EntidadAdapter arg1,
-					AckRequest arg2) throws Exception {					
+					AckRequest arg2){
+					try{
 					//System.out.println(arg1.getId()+" "+arg1.getNombre());
+					System.out.println("**Iniciar Edicion Entidad"+ arg1.getNombre());
+
 					ObjetoUML objeto=listaRecognizer.get(arg1.getIdUsuario()).getObjetoUML(arg1.getId());
 					//System.out.println("objeto "+objeto);
 					if(objeto instanceof Entidad){
@@ -320,16 +327,21 @@ public class DrawSurfaceScene extends AbstractScene {
 						
 						server.getNamespace("/login").getBroadcastOperations().sendEvent("syncEdition",new EntidadAdapter(((Entidad)objeto),arg1.getIdUsuario(),-1));
 						UMLDataSaver.agregarAccion(UMLDataSaver.EDITAR_OBJETO_ACTION, objeto,listaUsuarios.get(arg1.getIdUsuario()) );
-						
 					}
-			}
+					}catch (Exception e){
+						System.out.println("ERROR endEdition Listener");	
+					}
+					System.out.println("**Terminar Edicion Entidad"+ arg1.getNombre());
+				}
         });        	
 		
 		
 		userListener.addEventListener("endEditionTexto", TextoFlotanteAdapter.class, new DataListener<TextoFlotanteAdapter>() {
 			@Override
 			public void onData(SocketIOClient arg0, TextoFlotanteAdapter arg1,
-					AckRequest arg2) throws Exception {					
+					AckRequest arg2){
+				System.out.println("**Iniciar Edicion Texto"+ arg1.getNombre());
+					try{
 					//System.out.println(arg1.getId()+" "+arg1.getNombre());
 					ObjetoUML objeto=listaRecognizer.get(arg1.getIdUsuario()).getObjetoUML(arg1.getId());
 					//System.out.println("objeto "+objeto);
@@ -347,6 +359,11 @@ public class DrawSurfaceScene extends AbstractScene {
 
 						
 					}
+					}catch (Exception e){
+						System.out.println("ERROR endEditionTextoListener listener");
+					}
+					System.out.println("**Finalizar Edicion Texto"+ arg1.getNombre());
+
 			}
         });        	
 		
@@ -356,7 +373,10 @@ public class DrawSurfaceScene extends AbstractScene {
 			
 			@Override
 			public void onData(SocketIOClient arg0,  CardinalidadAdapter cardinalidadAdpter,
-					AckRequest arg2) throws Exception {					
+					AckRequest arg2){
+				System.out.println("**Iniciar Edicion cardinalidad");
+
+					try{
 					//System.out.println(cardinalidadAdpter.getId()+" "+cardinalidadAdpter.getCardinalidad());
 					ObjetoUML objeto=listaRecognizer.get(cardinalidadAdpter.getIdUsuario()).getObjetoUML(cardinalidadAdpter.getId());
 					//System.out.println("objeto "+objeto);
@@ -366,6 +386,10 @@ public class DrawSurfaceScene extends AbstractScene {
 						((Relacion_Impl)relacion.getFigura()).actualizarCardinalidad(cardinalidadAdpter.getCardinalidad(), cardinalidadAdpter.isCardinalidadSwitch());																
 						UMLDataSaver.agregarAccion(UMLDataSaver.EDITAR_OBJETO_ACTION, objeto,listaUsuarios.get(cardinalidadAdpter.getIdUsuario()) );
 					}
+					}catch (Exception e){
+						System.out.println("ERROR cardinalidadEdition listener");
+					}
+					System.out.println("**Finalizar Edicion cardinalidad");
 			}
         });        	
 		
@@ -772,7 +796,7 @@ public class DrawSurfaceScene extends AbstractScene {
 
 						//	System.out.println("Termino Input");
 						//	System.out.println("tamano lista!!: " + listaPuntos.get(currentUser).size());
-						System.out.println("Puntoooooooooooo"+listaPuntos.get(currentUser).size());
+						//System.out.println("Puntoooooooooooo"+listaPuntos.get(currentUser).size());
 							if( listaPuntos.get(currentUser).size() < 200 ){
 
 								
@@ -839,6 +863,7 @@ public class DrawSurfaceScene extends AbstractScene {
 												 helper=new HaloHelper();
 												 listaHaloHelper.put(currentUser, helper);
 												 System.out.println("resize done!!!!!!!!!!!");
+
 											  }
 											//
 											((Relacion)objeto).setObjetoInicio(((ObjetoUMLGraph)entidad1).getObjetoUML());

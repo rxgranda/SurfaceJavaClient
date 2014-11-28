@@ -8,6 +8,7 @@ import java.util.Map;
 import org.mt4j.MTApplication;
 import org.mt4j.components.MTCanvas;
 import org.mt4j.components.MTComponent;
+import org.mt4j.components.TransformSpace;
 import org.mt4j.components.interfaces.IMTComponent3D;
 import org.mt4j.components.visibleComponents.font.FontManager;
 import org.mt4j.components.visibleComponents.font.IFont;
@@ -61,44 +62,10 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 	
 
 	SocketIOServer server;
+
 	public ObjetoUML objeto;
-	/*class DoubleClickProcessor extends TapProcessor  implements IGestureEventListener {
 
-		public DoubleClickProcessor(PApplet pa, float maxFingerUpDistance,
-				boolean enableDoubleTap, int doubleTapTime,
-				boolean stopEventPropagation) {
-			super(pa, maxFingerUpDistance, enableDoubleTap, doubleTapTime,
-					stopEventPropagation);
-			// TODO Auto-generated constructor stub
-		}
 
-		@Override
-		public boolean processGestureEvent(MTGestureEvent ge) {			
-				TapEvent te = (TapEvent)ge;
-				IMTComponent3D target = te.getTargetComponent();
-				if (target instanceof MTRoundRectangle) {
-					MTRoundRectangle rectangle = (MTRoundRectangle) target;
-					switch (te.getTapID()) {
-					case TapEvent.BUTTON_DOUBLE_CLICKED:
-						System.out.println("Doble Click " + target);						
-						//final AbstractCursorInputEvt posEvt = (AbstractCursorInputEvt) ge.getSource();
-						final InputCursor m = te.getCursor();
-						String canal=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?MainDrawingScene.getListaUsuarios().get((int)m.sessionID).getCanal():"canal1";
-						int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?(int)m.sessionID:-1;
-
-						server.getRoomOperations(canal).sendEvent("startEdition",new EntidadAdapter(((Entidad)objeto),idUsuario));						
-						System.out.println("Enviado "+canal+""+server.getRoomOperations(canal).getClients().size());
-						break;
-					
-					default:
-						break;
-					}
-				}
-				return false;			
-		}
-	
-	}*/
-	
 	
 	public Entidad_Impl(final MTApplication mtApp,final MTComponent container, final MTCanvas canvas, final UMLFacade recognizer,final ObjetoUML objeto, final SocketIOServer server) {
 
@@ -112,8 +79,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 		rectangulo.setStrokeColor(new MTColor(0, 0, 0));
 		rectangulo.setNoStroke(true);
 		this.objeto=objeto;
-		//corregir posicion inicial
-				//objeto.setPosicion(rectangulo.getCenterPointGlobal());
+		
 		this.server=server;
 		halo=new MTRoundRectangle(objeto
 				.getPosicion().x-ObjetoUMLGraph.haloWidth/2, objeto
@@ -127,18 +93,20 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 		//halo.setPickable(false);
 		//halo.setStrokeColor(new MTColor(0, 0, 0));
 		halo.setNoStroke(true);
-		halo.addInputListener(new IMTInputEventListener() {
+	/*	halo.addInputListener(new IMTInputEventListener() {
 			public boolean processInputEvent(MTInputEvent inEvt) {
 				if (inEvt instanceof AbstractCursorInputEvt) { //Most input events in MT4j are an instance of AbstractCursorInputEvt (mouse, multi-touch..)
 					AbstractCursorInputEvt cursorInputEvt = (AbstractCursorInputEvt) inEvt;
 					InputCursor cursor = cursorInputEvt.getCursor();
 					IMTComponent3D target = cursorInputEvt.getTargetComponent();
-					System.out.println("Halo Entidad");
+					//System.out.println("Halo Entidad");
 					//halo.sendToFront();
 					switch (cursorInputEvt.getId()) {
 					case AbstractCursorInputEvt.INPUT_STARTED:
 						//System.out.println("Input detected on: " + target + " at " + cursor.getCurrentEvtPosX() + "," + cursor.getCurrentEvtPosY());
 						rectangulo.setFillColor(selectedObject);
+						
+						
 						break;
 					case AbstractCursorInputEvt.INPUT_UPDATED:
 						//	System.out.println("Holaaa Input updated on: " + target + " at " + cursor.getCurrentEvtPosX() + "," + cursor.getCurrentEvtPosY());			
@@ -166,7 +134,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 				return false;
 			}
 		});
-
+*/
 		canvas.addChild(halo);
 
 
@@ -416,12 +384,24 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 		header.addGestureListener(DragProcessor.class, new IGestureEventListener() {
 			public boolean processGestureEvent(MTGestureEvent ge) {
 				DragEvent de = (DragEvent)ge;
-				System.out.println("Gesture"+de.getTargetComponent());
+				//System.out.println("Gesture"+de.getTargetComponent());
 				//objeto.setPosicion(objeto.getPosicion().getAdded(de.getTranslationVect()));
 				//rectangulo.setPositionGlobal(objeto.getPosicion());
 		//		halo.setPositionGlobal(new Vector3D(objeto.getPosicion().x,objeto.getPosicion().y));
+				System.out.println(" Mover entidad "+ ((Entidad)objeto).getNombre());
+			//	System.out.println("Fin evento de: Mover entidad Usuario:"+cursor.sessionID );
 				
-				rectangulo.setPositionGlobal(rectangulo.getCenterPointGlobal().addLocal(de.getTranslationVect()));
+				InputCursor cursor = de.getDragCursor();
+				Vector3D pos = cursor.getPosition();
+				Vector3D posFinal = de.getTranslationVect();
+				
+				if((pos.y<0)||pos.y>=(container.getBounds().getHeightXY(TransformSpace.RELATIVE_TO_PARENT))){
+					posFinal.y=0;
+				}
+				if((pos.x<0)||pos.x>=(container.getBounds().getWidthXY(TransformSpace.RELATIVE_TO_PARENT))){
+					posFinal.x=0;
+				}
+				rectangulo.setPositionGlobal(rectangulo.getCenterPointGlobal().addLocal(posFinal));
 				objeto.setPosicion(rectangulo.getCenterPointGlobal());
 				halo.setPositionGlobal(rectangulo.getCenterPointGlobal());
 //// TEST
@@ -487,9 +467,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 						TapAndHoldEvent th = (TapAndHoldEvent)ge;
 						IMTComponent3D target = th.getTargetComponent();
 						if (target instanceof MTRoundRectangle) {
-							MTRoundRectangle rectangle = (MTRoundRectangle) target;
-							
-							
+							MTRoundRectangle rectangle = (MTRoundRectangle) target;												
 							
 							switch (th.getId()) {
 							case TapAndHoldEvent.GESTURE_STARTED:
@@ -499,14 +477,15 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 							case TapAndHoldEvent.GESTURE_ENDED:
 								if (th.isHoldComplete()){
 									
-									System.out.println("Tap complete!! " + target);						
+									//System.out.println("Tap complete!! " + target);						
 									//final AbstractCursorInputEvt posEvt = (AbstractCursorInputEvt) ge.getSource();
 									final InputCursor m = th.getCursor();
 									String canal=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?MainDrawingScene.getListaUsuarios().get((int)m.sessionID).getCanal():Usuario.CANAL_DEFAULT_USER;
 									int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?(int)m.sessionID:Usuario.ID_DEFAULT_USER;
 
 									server.getRoomOperations(canal).sendEvent("startEdition",new EntidadAdapter(((Entidad)objeto),idUsuario,objeto.EDIT_HEADER));						
-									System.out.println("Enviado "+canal+""+server.getRoomOperations(canal).getClients().size());
+									System.out.println("--Enviar edicion nombre Entidad "+ ((Entidad)objeto).getNombre());
+									System.out.println("Enviado "+canal+" "+server.getRoomOperations(canal).getClients().size());
 									break;
 
 								}
@@ -545,12 +524,12 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 							case TapAndHoldEvent.GESTURE_ENDED:
 								if (th.isHoldComplete()){
 									
-									System.out.println("Tap complete!! " + target);						
+								//	System.out.println("Tap complete!! " + target);						
 									//final AbstractCursorInputEvt posEvt = (AbstractCursorInputEvt) ge.getSource();
 									final InputCursor m = th.getCursor();
 									String canal=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?MainDrawingScene.getListaUsuarios().get((int)m.sessionID).getCanal():Usuario.CANAL_DEFAULT_USER;
 									int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?(int)m.sessionID:Usuario.ID_DEFAULT_USER;
-
+									System.out.println("--Enviar edicion  cuerpo Entidad "+ ((Entidad)objeto).getNombre());
 									server.getRoomOperations(canal).sendEvent("startEdition",new EntidadAdapter(((Entidad)objeto),idUsuario,objeto.EDIT_ATTS));						
 									System.out.println("Enviado "+canal+""+server.getRoomOperations(canal).getClients().size());
 									break;
@@ -616,14 +595,15 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 						break;
 					case AbstractCursorInputEvt.INPUT_ENDED:
 
-						System.out.println("Reconocer:");
+						//ystem.out.println("Reconocer:");
 						///canvas.removeChild(body);
 						//rectangulo.addChild(body);
 						ObjetoUML obj=recognizer.reconocerObjeto();
-						System.out.println("BORRARAAA "+obj.getWidth()+"H"+obj.getHeight()+"C"+obj.getClass());
-						if (obj ==ObjetoUML.DELETE_OBJECT_GESTURE&&obj.getWidth()>10){
+						System.out.println("BORRAR W: "+obj.getWidth()+" H: "+obj.getHeight()+" Entidad "+((Entidad)obj).getNombre());
+						if (obj ==ObjetoUML.DELETE_OBJECT_GESTURE&&obj.getWidth()>50&&obj.getHeight()>30){
 							
-							
+							System.out.println("-Iniciar borrado Entidad "+ ((Entidad)objeto).getNombre());
+
 							String canal=(MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID)!=null)?MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID).getCanal():Usuario.CANAL_DEFAULT_USER;
 							int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID)!=null)?(int)cursor.sessionID:Usuario.ID_DEFAULT_USER;
 							server.getNamespace("/login").getBroadcastOperations().sendEvent("eraseElement",new EntidadAdapter(((Entidad)objeto),idUsuario,ObjetoUML.EDIT_HEADER));
@@ -633,10 +613,10 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 						        ObjetoUML objuml= (ObjetoUML)pairs.getValue();
 						        if(objuml instanceof Relacion){
 						        	Relacion reluml = (Relacion)objuml;
-						        	System.out.println(reluml);
+						        	//System.out.println(reluml);
 						        	if(reluml.getObjetoInicio()!=null && reluml.getObjetoFin()!=null){
 						        		
-						        		System.out.println(reluml.getObjetoInicio().getId());
+						        		//System.out.println(reluml.getObjetoInicio().getId());
 							        	if (reluml.getObjetoInicio().getId() == objeto.getId() || reluml.getObjetoFin().getId() == objeto.getId()){
 							        		server.getNamespace("/login").getBroadcastOperations().sendEvent("eraseElement",new RelacionAdapter(((Relacion)reluml),idUsuario));
 							        		
@@ -676,9 +656,11 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 					AbstractCursorInputEvt cursorInputEvt = (AbstractCursorInputEvt) inEvt;
 					InputCursor cursor = cursorInputEvt.getCursor();
 					IMTComponent3D target = cursorInputEvt.getTargetComponent();
-					System.out.println("RECTANGULOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");										
+					//System.out.println("RECTANGULOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");										
 					inEvt.setTarget(halo);						
 					if(cursorInputEvt.getId()== AbstractCursorInputEvt.INPUT_STARTED){
+						System.out.println("-Escuchando en body por relacion en entidad "+ ((Entidad)objeto).getNombre());
+
 						for(IMTInputEventListener a:canvas.getInputListeners()){																	
 							a.processInputEvent(inEvt);							 
 						}
@@ -828,7 +810,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 					//((Relacion)objeto)
 
 					((Relacion_Impl)o).removerRelacion(idUsuario,true);
-					System.out.println("ELIMINAR INICIO.........................................");
+					//System.out.println("ELIMINAR INICIO.........................................");
 
 				}
 
@@ -843,7 +825,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 					//((Relacion)objeto)
 
 					((Relacion_Impl)o).removerRelacion(idUsuario,true);
-					System.out.println("ELIMINAR FIN.........................................");
+				//	System.out.println("ELIMINAR FIN.........................................");
 
 					}
 			}
@@ -854,7 +836,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 
 	@Override
 	public synchronized void eliminarDatos(String keyword, Object datos) {
-		System.out.println("ENTIDAD........ENTIDA... ENTIDAD....."+ objeto.getId());
+		//System.out.println("ENTIDAD........ENTIDA... ENTIDAD....."+ objeto.getId());
 		LinkedList listaDatos=(LinkedList<Object>) halo.getUserData(keyword);
 		if(listaDatos!=null){
 			if(listaDatos.contains(datos)){

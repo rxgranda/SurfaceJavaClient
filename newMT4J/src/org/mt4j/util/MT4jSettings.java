@@ -32,9 +32,21 @@ public class MT4jSettings {
 	
 	public static long tiempoBackup;
 	public static String directorioBackup="";
+	public static float MinimumHeightRatio = 0.14f;
+	public static float MinimumWidthRatio =0.08f;
+	public static float MaximumHeightRatio = 0.4f;
+
+
+	public static float MaximumWidthRatio =0.3f;
+
+	
+	
 	
 	////////CTI /////////
 	
+
+
+
 	/** The const and settings. */
 	private static MT4jSettings constAndSettings = null;
 	
@@ -403,6 +415,41 @@ public class MT4jSettings {
 	public static void setDirectorioBackup(String directorioBackup) {
 		MT4jSettings.directorioBackup = directorioBackup;
 	}
+	public static float getMinimumWidthRatio() {
+		return MinimumWidthRatio;
+	}
+
+
+	public static void setMinimumWidthRatio(float minimumWidthRatio) {
+		MinimumWidthRatio = minimumWidthRatio;
+	}
+
+	public static float getMinimumHeightRatio() {
+		return MinimumHeightRatio;
+	}
+
+
+	public static void setMinimumHeightRatio(float minimumHeightRatio) {
+		MinimumHeightRatio = minimumHeightRatio;
+	}
+	public static float getMaximumHeightRatio() {
+		return MaximumHeightRatio;
+	}
+
+
+	public static void setMaximumHeightRatio(float maximumHeightRatio) {
+		MaximumHeightRatio = maximumHeightRatio;
+	}
+
+	public static float getMaximumWidthRatio() {
+		return MaximumWidthRatio;
+	}
+
+
+	public static void setMaximumWidthRatio(float maximumWidthRatio) {
+		MaximumWidthRatio = maximumWidthRatio;
+	}
+
 	
 
 }
