@@ -913,7 +913,7 @@ public class DrawSurfaceScene extends AbstractScene {
 									break;
 									
 								case ObjetoUML.RELACION_MULTIPLE:
-									ObjetoUMLGraph relacion_multiple = new RelacionMultiple_Impl(mtApp, getCanvas(), container, objeto);
+									ObjetoUMLGraph relacion_multiple = new RelacionMultiple_Impl(mtApp, getCanvas(), container, objeto, componentRecognizer);
 									System.out.println("DIAMANTEEEEEEE!!");
 									break;
 									
@@ -1115,52 +1115,6 @@ public class DrawSurfaceScene extends AbstractScene {
 	
 	
 	
-	public void setBotonRelacionMultiple(MTRectangle container, MTApplication pApplet, MTCanvas canvas){
-		Vector3D vector = container.getCenterPointGlobal();
-		MTEllipse boton = new MTEllipse(pApplet, vector, 10, 10);
-		//por lo pronto le seteamos null el valor de alguna relacion
-		ObjetoUML objeto = new RelacionMultiple(null);
-		//configuracion de prueba
-		objeto.setPosicion(new Vector3D(200,200));
-		objeto.setHeight(30);
-		objeto.setWidth(30);
-		
-		RelacionMultiple_Impl re_multiple = new RelacionMultiple_Impl(pApplet, canvas, container, objeto);
-		
-		
-		boton.setPickable(false);
-		boton.setFillColor(new MTColor(0,255,0));
-		boton.setNoStroke(false);
-		boton.setEnabled(true);
-		boton.registerInputProcessor(new TapProcessor(pApplet));
-		boton.removeAllGestureEventListeners();
-		boton.addGestureListener(TapProcessor.class, new IGestureEventListener() {
-			public boolean processGestureEvent(MTGestureEvent ge) {
-				TapEvent de = (TapEvent)ge;
-		
-				//Moves the component
-				switch (de.getId()) {
-				case MTGestureEvent.GESTURE_STARTED:
-					
-					break;
-				case MTGestureEvent.GESTURE_UPDATED:
-					      
-					break;
-				case MTGestureEvent.GESTURE_ENDED:
-					System.out.println("boton relacion multiple clikeado");
-					break;
-				default:
-					break;
-				}		
-				return false;
-			}
-		});
-		
-		
-		
-		//lo agregamos al canvas para que funcione el boton
-		anadirObjeto(boton);
-		
-	}
+	
 	
 }
