@@ -93,44 +93,10 @@ public class RelacionMultiple_Impl extends MTComponent implements ObjetoUMLGraph
 		halo_rombo.removeAllGestureEventListeners();
 		
 		
-		
-		/**
-		halo_rombo.addInputListener(new IMTInputEventListener() {
-			public boolean processInputEvent(MTInputEvent inEvt) {
-				if (inEvt instanceof AbstractCursorInputEvt) { //Most input events in MT4j are an instance of AbstractCursorInputEvt (mouse, multi-touch..)
-					AbstractCursorInputEvt cursorInputEvt = (AbstractCursorInputEvt) inEvt;
-					System.out.println("Halo Entidad");
-					//halo.sendToFront();
-					switch (cursorInputEvt.getId()) {
-					case AbstractCursorInputEvt.INPUT_STARTED:
-						System.out.println("INICIO DE EVENTO!!!");
-						break;
-					case AbstractCursorInputEvt.INPUT_UPDATED:
-						System.out.println("updated");
-						break;
-					case AbstractCursorInputEvt.INPUT_ENDED:
-						System.out.println("FIN DE EVENTO!!!");
-
-						break;
-					default:
-						break;
-					}
-
-				}else{
-					//handle other input events
-				}
-				return false;
-			}
-		});
-		*/
-		
 		zona_rombo.addGestureListener(DragProcessor.class, new IGestureEventListener() {
 			public boolean processGestureEvent(MTGestureEvent ge) {
 				DragEvent de = (DragEvent)ge;
 				System.out.println("Gesture"+de.getTargetComponent());
-				//objeto.setPosicion(objeto.getPosicion().getAdded(de.getTranslationVect()));
-				//rectangulo.setPositionGlobal(objeto.getPosicion());
-		//		halo.setPositionGlobal(new Vector3D(objeto.getPosicion().x,objeto.getPosicion().y));
 				
 				rombo.setPositionGlobal(rombo.getCenterPointGlobal().addLocal(de.getTranslationVect()));
 				halo_rombo.setPositionGlobal(rombo.getCenterPointGlobal());

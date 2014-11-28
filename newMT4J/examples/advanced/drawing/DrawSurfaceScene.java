@@ -896,11 +896,6 @@ public class DrawSurfaceScene extends AbstractScene {
 										if(entidad1_aux!=null&&entidad2_aux!=null){ //verificar si el componente inicial y final son Instancias de Polygon(Diagrama entidad)
 											System.out.println("SE IDENTIFICARON OBJETOS  - DIAMANTE Y ENTIDAD");
 											
-											
-											
-											//((Relacion)objeto).setInicio(((MTRoundRectangle)componente).getCenterPointGlobal());
-											//((Relacion)objeto).setFin(((AbstractShape)destino).getCenterPointGlobal());
-											
 											HaloHelper helper=listaHaloHelper.get(currentUser);
 											  //System.out.println("try resize");
 											  if(!helper.getHoverInicio().equalsVector(new Vector3D())&&!helper.getHoverFin().equalsVector(new Vector3D()))
