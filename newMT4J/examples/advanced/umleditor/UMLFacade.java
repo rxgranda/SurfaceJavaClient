@@ -11,7 +11,7 @@ import org.mt4j.util.math.Vector3D;
 import advanced.drawing.DrawSurfaceScene;
 import advanced.umleditor.logic.Entidad;
 import advanced.umleditor.logic.ObjetoUML;
-import advanced.umleditor.logic.RelacionMultiple;
+import advanced.umleditor.logic.RelacionTernaria;
 import advanced.umleditor.logic.TextoFlotante;
 import advanced.umleditor.logic.Usuario;
 import advanced.umleditor.logic.Relacion;

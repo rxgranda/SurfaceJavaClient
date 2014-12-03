@@ -44,7 +44,7 @@ import advanced.umleditor.UMLFacade;
 import advanced.umleditor.logic.Entidad;
 import advanced.umleditor.logic.ObjetoUML;
 import advanced.umleditor.logic.Relacion;
-import advanced.umleditor.logic.RelacionMultiple;
+import advanced.umleditor.logic.RelacionTernaria;
 import advanced.umleditor.logic.TextoFlotante;
 import advanced.umleditor.logic.Usuario;
 import advanced.umleditor.socketio.CardinalidadAdapter;
@@ -572,7 +572,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 							
 							 //server.getNamespace("/login").getBroadcastOperations().sendEvent("broad",new RelacionAdapter(((Relacion)objeto),idUsuario));
 
-							removerRelacion(idUsuario,false);
+							removerRelacion(idUsuario, false);
 
 							//halo.removeFromParent();
 						}
@@ -814,20 +814,39 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		//container.removeChild(halo);		
 		halo.setVisible(false);
 		halo.setPickable(false);
+		
+		Object inicio_aux=((Relacion)this.objeto).getObjetoInicio();
+		if(inicio_aux instanceof RelacionTernaria){
+			//obtengo de la relacion multiple, la figura que a su vez es el objeto grafico, y procedemos
+			//a ejecutar el metodo de aumentar contador
+			((RelacionTernaria_Impl)(((RelacionTernaria)inicio_aux).getFigura())).aumentarContador();
+			System.out.println("ESTAMOS BORRANDO DE UNA RELACION MULTIPLE INIIIIIIIIIIIIIICIO");
+		}
+		
 		if(!propagacion){
-
+	
+		System.out.println("ingresa al if de propagacion");
 		Object inicio=((Relacion)this.objeto).getObjetoInicio();
 		if(inicio instanceof Entidad){
 			((Entidad)inicio).getFigura().eliminarDatos(RELACIONES_INICIO_KEYWORD, this);
+			
 		}else{
-			System.out.println(inicio);
-			//creo que debo eliminar los datos de las figuras
-			//((RelacionMultiple)inicio).getFigura().eliminarDatos(RELACIONES_INICIO_KEYWORD, this);
+			System.out.println("no hace nada aqui");
+
+			
 		}
 
+		Object fin=((Relacion)this.objeto).getObjetoFin();
+		System.out.println("imprimiendo objeto fin: "+fin);
+		if(fin instanceof Entidad){
+			((Entidad)fin).getFigura().eliminarDatos(RELACIONES_FIN_KEYWORD, this);
+			System.out.println("ESTAMOS BORRANDO DE UNA ENTIDAD FIIIIIIIIIN");
+		}else{
+			System.out.println("ESTAMOS BORRANDO DE UNA RELACION MULTIPLE FIIIIIIIIIN");
+		}
 		
-		Entidad fin=((Entidad)((Relacion)this.objeto).getObjetoFin());
-		fin.getFigura().eliminarDatos(RELACIONES_FIN_KEYWORD, this);
+		//Entidad fin=((Entidad)((Relacion)this.objeto).getObjetoFin());
+		//fin.getFigura().eliminarDatos(RELACIONES_FIN_KEYWORD, this);
 		UMLDataSaver.agregarAccion(UMLDataSaver.BORRAR_OBJETO_ACTION, objeto, MainDrawingScene.getListaUsuarios().get(idUsuario) );
 
 		}
@@ -840,6 +859,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		// TODO Auto-generated method stub
 		
 	}
+	
 	
 	
 	

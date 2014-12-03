@@ -37,7 +37,7 @@ import advanced.umleditor.logic.Usuario;
 import advanced.umleditor.socketio.EntidadAdapter;
 import advanced.umleditor.socketio.RelacionAdapter;
 
-public class RelacionMultiple_Impl extends MTComponent implements ObjetoUMLGraph {
+public class RelacionTernaria_Impl extends MTComponent implements ObjetoUMLGraph {
 	
 	Map <Integer, MTComponent>listaEntidades= new HashMap<Integer, MTComponent>();
 	final MTRoundRectangle rombo;
@@ -47,13 +47,15 @@ public class RelacionMultiple_Impl extends MTComponent implements ObjetoUMLGraph
 	static float alto = 100;
 	final public Vector3D centro;
 	ObjetoUML objeto;
+	public boolean relacion_activa = true;
+	public int cont = 3;
 	private boolean punto1=false, punto2=false, punto3=false;
 	Vector3D v_punto1,v_punto2,v_punto3;
 	
 	
 	
 
-	public RelacionMultiple_Impl(MTApplication pApplet, final MTCanvas canvas, MTComponent container, ObjetoUML objeto, final UMLFacade recognizer ) {
+	public RelacionTernaria_Impl(MTApplication pApplet, final MTCanvas canvas, MTComponent container, ObjetoUML objeto, final UMLFacade recognizer ) {
 		super(pApplet);
 		//iniciamos el rectangulo en el punto x e y..
 		System.out.println();
@@ -85,8 +87,6 @@ public class RelacionMultiple_Impl extends MTComponent implements ObjetoUMLGraph
 		
 		halo_rombo.setNoFill(true); // Hacerlo invisible
 		//halo_rombo.setFillColor(ObjetoUMLGraph.headerColor);
-		
-		
 		halo_rombo.setPickable(true);
 		//halo.setStrokeColor(new MTColor(0, 0, 0));
 		halo_rombo.setNoStroke(true);
@@ -133,6 +133,9 @@ public class RelacionMultiple_Impl extends MTComponent implements ObjetoUMLGraph
 		});
 		
 		
+		
+			
+		
 		rombo.addInputListener(new IMTInputEventListener() {
 			public boolean processInputEvent(MTInputEvent inEvt) {
 				if (inEvt instanceof AbstractCursorInputEvt) { //Most input events in MT4j are an instance of AbstractCursorInputEvt (mouse, multi-touch..)
@@ -152,7 +155,7 @@ public class RelacionMultiple_Impl extends MTComponent implements ObjetoUMLGraph
 					case AbstractCursorInputEvt.INPUT_ENDED:
 
 						System.out.println("Reconocer:");
-						///canvas.removeChild(body);
+						//canvas.removeChild(body);
 						//rectangulo.addChild(body);
 						ObjetoUML obj=recognizer.reconocerObjeto();
 						System.out.println("BORRARAAA "+obj.getWidth()+"H"+obj.getHeight()+"C"+obj.getClass());
@@ -166,6 +169,7 @@ public class RelacionMultiple_Impl extends MTComponent implements ObjetoUMLGraph
 									
 
 							removerRelaciones(idUsuario);
+							cont = cont -1;
 
 						}
 						break;
@@ -179,6 +183,8 @@ public class RelacionMultiple_Impl extends MTComponent implements ObjetoUMLGraph
 				return false;
 			}
 		});
+		
+		
 		
 		//canvas.addChild(halo);
 		
@@ -247,7 +253,7 @@ public class RelacionMultiple_Impl extends MTComponent implements ObjetoUMLGraph
 			for(Object o:listaInicio){
 				if(o instanceof ObjetoUMLGraph){
 					//((Relacion)objeto)
-
+				
 					((Relacion_Impl)o).removerRelacion(idUsuario,true);
 					System.out.println("ELIMINAR INICIO.........................................");
 
@@ -262,7 +268,7 @@ public class RelacionMultiple_Impl extends MTComponent implements ObjetoUMLGraph
 			for(Object o:listaFin){
 				if(o instanceof ObjetoUMLGraph){
 					//((Relacion)objeto)
-
+					
 					((Relacion_Impl)o).removerRelacion(idUsuario,true);
 					System.out.println("ELIMINAR FIN.........................................");
 
@@ -272,7 +278,15 @@ public class RelacionMultiple_Impl extends MTComponent implements ObjetoUMLGraph
 		}
 
 	}
+	
 
+	public void disminuirContador(){
+		this.cont = this.cont - 1;
+	}
+	public void aumentarContador(){
+		this.cont = this.cont + 1;
+	}
+	
 	@Override
 	public MTComponent getFigura() {
 		// TODO Auto-generated method stub

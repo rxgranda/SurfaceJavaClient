@@ -2,7 +2,7 @@ package advanced.umleditor.logic;
 
 import org.mt4j.util.math.Vector3D;
 
-public class RelacionMultiple extends ObjetoUML {
+public class RelacionTernaria extends ObjetoUML {
 	
 	private ObjetoUML objetoInicio1;
 	private ObjetoUML objetoFin1;
@@ -14,7 +14,7 @@ public class RelacionMultiple extends ObjetoUML {
 	private Vector3D inicio1, inicio2, inicio3, fin, posicion;
 	
 
-	public RelacionMultiple(Usuario p) {
+	public RelacionTernaria(Usuario p) {
 		super(p);
 		this.setTipo(ObjetoUML.RELACION_MULTIPLE);
 		
