@@ -192,6 +192,12 @@ public class CursorTracer extends AbstractGlobalInputProcessor{
 			case AbstractCursorInputEvt.INPUT_UPDATED:
 				displayShape = cursorIDToDisplayShape.get(c);
 				if (displayShape != null){
+					if((position.y<0)||position.y>=(app.getBounds().height)){
+						position.y=0;
+					}
+					if((position.x<0)||position.x>=(app.getBounds().width)){
+						position.x=0;
+					}
 					displayShape.setPositionGlobal(position);
 				}
 				break;
