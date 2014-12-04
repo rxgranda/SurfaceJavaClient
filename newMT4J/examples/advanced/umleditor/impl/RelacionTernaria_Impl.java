@@ -9,6 +9,7 @@ import org.apache.batik.util.MimeTypeConstants;
 import org.mt4j.MTApplication;
 import org.mt4j.components.MTCanvas;
 import org.mt4j.components.MTComponent;
+import org.mt4j.components.TransformSpace;
 import org.mt4j.components.interfaces.IMTComponent3D;
 import org.mt4j.components.visibleComponents.shapes.MTPolygon;
 import org.mt4j.components.visibleComponents.shapes.MTRectangle;
@@ -59,7 +60,7 @@ public class RelacionTernaria_Impl extends MTComponent implements ObjetoUMLGraph
 	
 	
 
-	public RelacionTernaria_Impl(MTApplication pApplet, final MTCanvas canvas, MTComponent container, ObjetoUML objeto, final UMLFacade recognizer ) {
+	public RelacionTernaria_Impl(final MTApplication pApplet, final MTCanvas canvas, final MTComponent container, final ObjetoUML objeto, final UMLFacade recognizer ) {
 		super(pApplet);
 		//iniciamos el rectangulo en el punto x e y..
 		System.out.println();
@@ -111,12 +112,25 @@ public class RelacionTernaria_Impl extends MTComponent implements ObjetoUMLGraph
 				DragEvent de = (DragEvent)ge;
 				System.out.println("Gesture"+de.getTargetComponent());
 				
-				rombo.setPositionGlobal(rombo.getCenterPointGlobal().addLocal(de.getTranslationVect()));
+				InputCursor cursor = de.getDragCursor();
+				Vector3D pos = cursor.getPosition();
+				Vector3D posFinal = de.getTranslationVect();
+				
+				if((pos.y<0)||pos.y>=(container.getBounds().getHeightXY(TransformSpace.RELATIVE_TO_PARENT))){
+					posFinal.y=0;
+				}
+				if((pos.x<0)||pos.x>=(container.getBounds().getWidthXY(TransformSpace.RELATIVE_TO_PARENT))){
+					posFinal.x=0;
+				}
+				rombo.setPositionGlobal(rombo.getCenterPointGlobal().addLocal(posFinal));
+				objeto.setPosicion(rombo.getCenterPointGlobal());
 				halo_rombo.setPositionGlobal(rombo.getCenterPointGlobal());
+
 				v_punto1.addLocal(de.getTranslationVect());
 				v_punto2.addLocal(de.getTranslationVect());
 				v_punto3.addLocal(de.getTranslationVect());
 				v_punto4.addLocal(de.getTranslationVect());
+
 
 				LinkedList listaInicio=obtenerDatos(RELACIONES_INICIO_KEYWORD);
 				if(listaInicio!=null){
