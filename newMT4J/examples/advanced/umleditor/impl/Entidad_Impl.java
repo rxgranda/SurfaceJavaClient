@@ -44,6 +44,7 @@ import advanced.umleditor.UMLFacade;
 import advanced.umleditor.logic.Entidad;
 import advanced.umleditor.logic.ObjetoUML;
 import advanced.umleditor.logic.Relacion;
+import advanced.umleditor.logic.RelacionTernaria;
 import advanced.umleditor.logic.TextoFlotante;
 import advanced.umleditor.logic.Usuario;
 import advanced.umleditor.socketio.EntidadAdapter;
@@ -608,13 +609,22 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 							int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID)!=null)?(int)cursor.sessionID:Usuario.ID_DEFAULT_USER;
 							server.getNamespace("/login").getBroadcastOperations().sendEvent("eraseElement",new EntidadAdapter(((Entidad)objeto),idUsuario,ObjetoUML.EDIT_HEADER));
 							Iterator iterRelacion = UMLCollection.getListaUML().entrySet().iterator();
+							System.out.println("tamanio de LISTA COLLECTION: "+UMLCollection.getListaUML().size());
 						    while (iterRelacion.hasNext()) {
 						        Map.Entry pairs = (Map.Entry)iterRelacion.next();
 						        ObjetoUML objuml= (ObjetoUML)pairs.getValue();
 						        if(objuml instanceof Relacion){
 						        	Relacion reluml = (Relacion)objuml;
+						        	
 						        	//System.out.println(reluml);
 						        	if(reluml.getObjetoInicio()!=null && reluml.getObjetoFin()!=null){
+						        		
+						        		//Object objeto_aux = reluml.getObjetoInicio();
+						        		
+						        		//if(objeto_aux instanceof RelacionMultiple)
+						        			//System.out.println("ESTE ES UN OBJETO RELACION MULTIPLE");
+						        		
+						        		
 						        		
 						        		//System.out.println(reluml.getObjetoInicio().getId());
 							        	if (reluml.getObjetoInicio().getId() == objeto.getId() || reluml.getObjetoFin().getId() == objeto.getId()){
@@ -804,12 +814,14 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 
 	public synchronized void removerRelaciones(int idUsuario){
 		LinkedList listaInicio=obtenerDatos(RELACIONES_INICIO_KEYWORD);
+		//
 		if(listaInicio!=null){
+			System.out.println("tamanio de la lista de inicio: "+listaInicio.size());
 			for(Object o:listaInicio){
 				if(o instanceof ObjetoUMLGraph){
 					//((Relacion)objeto)
 
-					((Relacion_Impl)o).removerRelacion(idUsuario,true);
+					((Relacion_Impl)o).removerRelacion(idUsuario, true);
 					//System.out.println("ELIMINAR INICIO.........................................");
 
 				}
@@ -820,13 +832,15 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 		
 		LinkedList listaFin=obtenerDatos(RELACIONES_FIN_KEYWORD);
 		if(listaFin!=null){
+			System.out.println("tamanio de la lista de fin: "+listaFin.size());
 			for(Object o:listaFin){
 				if(o instanceof ObjetoUMLGraph){
 					//((Relacion)objeto)
-
-					((Relacion_Impl)o).removerRelacion(idUsuario,true);
-				//	System.out.println("ELIMINAR FIN.........................................");
-
+					
+					//envio el parametro false, para que en caso de que sea una relacion multiple del otro lado,
+					//la pueda manejar 
+					((Relacion_Impl)o).removerRelacion(idUsuario, true);
+				
 					}
 			}
 			listaFin.clear();

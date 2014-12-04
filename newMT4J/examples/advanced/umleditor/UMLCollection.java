@@ -7,7 +7,7 @@ import java.util.Map;
 
 import advanced.umleditor.logic.Entidad;
 import advanced.umleditor.logic.ObjetoUML;
-import advanced.umleditor.logic.RelacionMultiple;
+import advanced.umleditor.logic.RelacionTernaria;
 import advanced.umleditor.logic.TextoFlotante;
 import advanced.umleditor.logic.Usuario;
 import advanced.umleditor.logic.Relacion;
@@ -32,7 +32,7 @@ public class UMLCollection {
 			o= new Relacion(p);
 			break;
 		case ObjetoUML.RELACION_MULTIPLE:	
-			o= new RelacionMultiple(p);
+			o= new RelacionTernaria(p);
 			break;
 		case ObjetoUML.TEXTOFLOTANTE:	
 			o= new TextoFlotante(p);

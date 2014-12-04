@@ -57,12 +57,12 @@ import advanced.umleditor.UMLCollection;
 import advanced.umleditor.impl.Entidad_Impl;
 import advanced.umleditor.impl.HaloHelper;
 import advanced.umleditor.impl.ObjetoUMLGraph;
-import advanced.umleditor.impl.RelacionMultiple_Impl;
+import advanced.umleditor.impl.RelacionTernaria_Impl;
 import advanced.umleditor.impl.Relacion_Impl;
 import advanced.umleditor.impl.TextoFlotanteImpl;
 import advanced.umleditor.logic.Entidad;
 import advanced.umleditor.logic.ObjetoUML;
-import advanced.umleditor.logic.RelacionMultiple;
+import advanced.umleditor.logic.RelacionTernaria;
 import advanced.umleditor.logic.TextoFlotante;
 import advanced.umleditor.logic.Usuario;
 import advanced.umleditor.logic.Relacion;
@@ -524,6 +524,7 @@ public class DrawSurfaceScene extends AbstractScene {
 							
 						}else{
 							listaHaloHelper.get(currentUser).setHoverInicio(m.getPosition());
+							
 						}
 						/*Entidad_Impl alt_ent=(Entidad_Impl) ((MTComponent)currentComponent).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
 						if(componente==currentComponent){
@@ -794,9 +795,6 @@ public class DrawSurfaceScene extends AbstractScene {
 							// eliminarPuntos();
 							// }
 
-						//	System.out.println("Termino Input");
-						//	System.out.println("tamano lista!!: " + listaPuntos.get(currentUser).size());
-						//System.out.println("Puntoooooooooooo"+listaPuntos.get(currentUser).size());
 							if( listaPuntos.get(currentUser).size() < 200 ){
 
 								
@@ -890,50 +888,117 @@ public class DrawSurfaceScene extends AbstractScene {
 											
 										}
 										
+										
+
+										/**Este el codigo que permite unir relacion_multiples con las entidades, pero yendo desde una  relacion multiple
+										 * hasta una entidad */
 										Object entidad1_aux=((MTComponent)componente).getUserData(ObjetoUMLGraph.RELACION_MULTIPLE_KEYWORD);
 										Object entidad2_aux=((MTComponent)destino).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
 										System.out.println("imprimiendo entidad1_aux: "+entidad1_aux);
 										if(entidad1_aux!=null&&entidad2_aux!=null){ //verificar si el componente inicial y final son Instancias de Polygon(Diagrama entidad)
-											System.out.println("SE IDENTIFICARON OBJETOS  - DIAMANTE Y ENTIDAD");
-											
-											HaloHelper helper=listaHaloHelper.get(currentUser);
-											  //System.out.println("try resize");
-											  if(!helper.getHoverInicio().equalsVector(new Vector3D())&&!helper.getHoverFin().equalsVector(new Vector3D()))
-											  {
-												 ((Relacion)objeto).setInicio(helper.getHoverInicio());
-												 ((Relacion)objeto).setFin(helper.getHoverFin());
-												 listaHaloHelper.remove(currentUser);
-												 helper=new HaloHelper();
-												 listaHaloHelper.put(currentUser, helper);
-												 System.out.println("resize done!!!!!!!!!!!");
-											  }
-											
-											
-											/**Colocacion de Texto flotante a la relacion*/
-											TextoFlotante objetotextoInicio = (TextoFlotante)recognizer.aniadirTextoFlotante(((MTRoundRectangle)componente).getCenterPointGlobal());
-											TextoFlotante objetotextoFin = (TextoFlotante)recognizer.aniadirTextoFlotante(((AbstractShape)destino).getCenterPointGlobal());
-											objetotextoInicio.setOwner(((Relacion)objeto)); 
-											objetotextoFin.setOwner(((Relacion)objeto)); 
-											
-											((Relacion)objeto).setTextoInicio(objetotextoInicio);
-											((Relacion)objeto).setTextoFin(objetotextoFin);
-											
-											((Relacion)objeto).setObjetoInicio(((ObjetoUMLGraph)entidad1_aux).getObjetoUML());
-											((Relacion)objeto).setObjetoFin(((ObjetoUMLGraph)entidad2_aux).getObjetoUML());
-											ObjetoUMLGraph linea= new Relacion_Impl(mtApp, container, getCanvas(), objeto, componentRecognizer, server);
-											((ObjetoUMLGraph)entidad1_aux).guardarDatos(ObjetoUMLGraph.RELACIONES_INICIO_KEYWORD, linea);
-											((ObjetoUMLGraph)entidad2_aux).guardarDatos(ObjetoUMLGraph.RELACIONES_FIN_KEYWORD, linea);
-											
-											objeto.setFigura(linea);
-											
+											//System.out.println("SE IDENTIFICARON OBJETOS  - DIAMANTE Y ENTIDAD");
+											if(((RelacionTernaria_Impl)entidad1_aux).cont<=0)//termina de ejecutar este caso cuando 
+											{
+												break;
+											}else
+											{
+												((RelacionTernaria_Impl)entidad1_aux).disminuirContador();
+												
+												HaloHelper helper=listaHaloHelper.get(currentUser);
+												  //System.out.println("try resize");
+												  if(!helper.getHoverInicio().equalsVector(new Vector3D())&&!helper.getHoverFin().equalsVector(new Vector3D()))
+												  {
+													 ((Relacion)objeto).setInicio(helper.getHoverInicio());
+													 ((Relacion)objeto).setFin(helper.getHoverFin());
+													 listaHaloHelper.remove(currentUser);
+													 helper=new HaloHelper();
+													 listaHaloHelper.put(currentUser, helper);
+													 System.out.println("resize done!!!!!!!!!!!");
+												  }
+												
+												
+												/**Colocacion de Texto flotante a la relacion*/
+												TextoFlotante objetotextoInicio = (TextoFlotante)recognizer.aniadirTextoFlotante(((MTRoundRectangle)componente).getCenterPointGlobal());
+												TextoFlotante objetotextoFin = (TextoFlotante)recognizer.aniadirTextoFlotante(((AbstractShape)destino).getCenterPointGlobal());
+												objetotextoInicio.setOwner(((Relacion)objeto)); 
+												objetotextoFin.setOwner(((Relacion)objeto)); 
+												
+												((Relacion)objeto).setTextoInicio(objetotextoInicio);
+												((Relacion)objeto).setTextoFin(objetotextoFin);
+												
+												((Relacion)objeto).setObjetoInicio(((ObjetoUMLGraph)entidad1_aux).getObjetoUML());
+												((Relacion)objeto).setObjetoFin(((ObjetoUMLGraph)entidad2_aux).getObjetoUML());
+												ObjetoUMLGraph linea= new Relacion_Impl(mtApp, container, getCanvas(), objeto, componentRecognizer, server);
+												((ObjetoUMLGraph)entidad1_aux).guardarDatos(ObjetoUMLGraph.RELACIONES_INICIO_KEYWORD, linea);
+												((ObjetoUMLGraph)entidad2_aux).guardarDatos(ObjetoUMLGraph.RELACIONES_FIN_KEYWORD, linea);
+												
+												objeto.setFigura(linea);
+												
+												
+												
+											}
 											
 										}
+										
+										/**Este el codigo que permite unir relacion_multiples con las entidades, pero yendo desde una entidad
+										 * hasta un relacion multiple*/
+										Object entidad1_aux1=((MTComponent)componente).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
+										Object entidad2_aux1=((MTComponent)destino).getUserData(ObjetoUMLGraph.RELACION_MULTIPLE_KEYWORD);
+										if(entidad1_aux1!=null&&entidad2_aux1!=null){ //verificar si el componente inicial y final son Instancias de Polygon(Diagrama entidad)
+											//System.out.println("SE IDENTIFICARON OBJETOS  - DIAMANTE Y ENTIDAD");
+											if(((RelacionTernaria_Impl)entidad2_aux1).cont<=0)//termina de ejecutar este caso cuando 
+											{
+												break;
+											}else
+											{
+												((RelacionTernaria_Impl)entidad2_aux1).disminuirContador();
+												
+												HaloHelper helper=listaHaloHelper.get(currentUser);
+												  //System.out.println("try resize");
+												  if(!helper.getHoverInicio().equalsVector(new Vector3D())&&!helper.getHoverFin().equalsVector(new Vector3D()))
+												  {
+													 ((Relacion)objeto).setInicio(helper.getHoverInicio());
+													 ((Relacion)objeto).setFin(helper.getHoverFin());
+													 listaHaloHelper.remove(currentUser);
+													 helper=new HaloHelper();
+													 listaHaloHelper.put(currentUser, helper);
+													 System.out.println("resize done!!!!!!!!!!!");
+												  }
+												
+												
+												/**Colocacion de Texto flotante a la relacion*/
+												TextoFlotante objetotextoInicio = (TextoFlotante)recognizer.aniadirTextoFlotante(((MTRoundRectangle)componente).getCenterPointGlobal());
+												TextoFlotante objetotextoFin = (TextoFlotante)recognizer.aniadirTextoFlotante(((AbstractShape)destino).getCenterPointGlobal());
+												objetotextoInicio.setOwner(((Relacion)objeto)); 
+												objetotextoFin.setOwner(((Relacion)objeto)); 
+												
+												((Relacion)objeto).setTextoInicio(objetotextoInicio);
+												((Relacion)objeto).setTextoFin(objetotextoFin);
+												
+												((Relacion)objeto).setObjetoInicio(((ObjetoUMLGraph)entidad1_aux1).getObjetoUML());
+												((Relacion)objeto).setObjetoFin(((ObjetoUMLGraph)entidad2_aux1).getObjetoUML());
+												ObjetoUMLGraph linea= new Relacion_Impl(mtApp, container, getCanvas(), objeto, componentRecognizer, server);
+												((ObjetoUMLGraph)entidad1_aux1).guardarDatos(ObjetoUMLGraph.RELACIONES_INICIO_KEYWORD, linea);
+												((ObjetoUMLGraph)entidad2_aux1).guardarDatos(ObjetoUMLGraph.RELACIONES_FIN_KEYWORD, linea);
+												
+												objeto.setFigura(linea);
+												
+												
+												
+											}
+											
+										}
+										
+										
+										
+										
 										
 										}
 									break;
 									
 								case ObjetoUML.RELACION_MULTIPLE:
-									ObjetoUMLGraph relacion_multiple = new RelacionMultiple_Impl(mtApp, getCanvas(), container, objeto, componentRecognizer);
+									ObjetoUMLGraph relacion_multiple = new RelacionTernaria_Impl(mtApp, getCanvas(), container, objeto, componentRecognizer);
+									objeto.setFigura(relacion_multiple);
 									System.out.println("DIAMANTEEEEEEE!!");
 									break;
 									
