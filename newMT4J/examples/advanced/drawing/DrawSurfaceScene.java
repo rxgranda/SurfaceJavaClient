@@ -908,7 +908,7 @@ public class DrawSurfaceScene extends AbstractScene {
 												  //System.out.println("try resize");
 												  if(!helper.getHoverInicio().equalsVector(new Vector3D())&&!helper.getHoverFin().equalsVector(new Vector3D()))
 												  {
-													 ((Relacion)objeto).setInicio(helper.getHoverInicio());
+													 ((Relacion)objeto).setInicio(((RelacionTernaria_Impl)entidad1_aux).v_punto1);
 													 ((Relacion)objeto).setFin(helper.getHoverFin());
 													 listaHaloHelper.remove(currentUser);
 													 helper=new HaloHelper();

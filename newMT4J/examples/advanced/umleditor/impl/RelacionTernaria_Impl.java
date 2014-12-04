@@ -50,7 +50,11 @@ public class RelacionTernaria_Impl extends MTComponent implements ObjetoUMLGraph
 	public boolean relacion_activa = true;
 	public int cont = 3;
 	private boolean punto1=false, punto2=false, punto3=false;
-	Vector3D v_punto1,v_punto2,v_punto3;
+	public Vector3D v_punto1;
+	public Vector3D v_punto2;
+	public Vector3D v_punto3;
+	public Vector3D v_punto4;
+	static float constante_rombo;
 	
 	
 	
@@ -64,7 +68,7 @@ public class RelacionTernaria_Impl extends MTComponent implements ObjetoUMLGraph
 		halo_rombo = new MTRoundRectangle(objeto.getPosicion().x, objeto.getPosicion().y, 1, objeto.getWidth(),	objeto.getHeight(), 1, 1, pApplet);
 		
 		
-		zona_rombo = new MTRoundRectangle(objeto.getPosicion().x, objeto.getPosicion().y, 1, objeto.getWidth()/2,	objeto.getHeight()/2, 1, 1, pApplet);
+		zona_rombo = new MTRoundRectangle(objeto.getPosicion().x+(objeto.getWidth()/2)/2, objeto.getPosicion().y+(objeto.getHeight()/2)/2, 1, objeto.getWidth()/2,	objeto.getHeight()/2, 1, 1, pApplet);
 		zona_rombo.setPickable(true);
 		zona_rombo.setFillColor(ObjetoUMLGraph.headerColor);
 		zona_rombo.setNoStroke(false);
@@ -92,6 +96,15 @@ public class RelacionTernaria_Impl extends MTComponent implements ObjetoUMLGraph
 		halo_rombo.setNoStroke(true);
 		halo_rombo.removeAllGestureEventListeners();
 		
+		constante_rombo = (float) (Math.sqrt(2*(objeto.getWidth()*objeto.getWidth())))/2;
+		v_punto1 = rombo.getCenterPointGlobal();
+		v_punto1.setY(rombo.getCenterPointGlobal().y+(constante_rombo+15));
+		v_punto2 = rombo.getCenterPointGlobal();
+		v_punto2.setX(rombo.getCenterPointGlobal().x+(constante_rombo+15));
+		v_punto3 = rombo.getCenterPointGlobal();
+		v_punto3.setX(rombo.getCenterPointGlobal().x-(constante_rombo));
+		v_punto4 = rombo.getCenterPointGlobal();
+		v_punto4.setY(rombo.getCenterPointGlobal().y-(constante_rombo));
 		
 		zona_rombo.addGestureListener(DragProcessor.class, new IGestureEventListener() {
 			public boolean processGestureEvent(MTGestureEvent ge) {
@@ -100,6 +113,10 @@ public class RelacionTernaria_Impl extends MTComponent implements ObjetoUMLGraph
 				
 				rombo.setPositionGlobal(rombo.getCenterPointGlobal().addLocal(de.getTranslationVect()));
 				halo_rombo.setPositionGlobal(rombo.getCenterPointGlobal());
+				v_punto1.addLocal(de.getTranslationVect());
+				v_punto2.addLocal(de.getTranslationVect());
+				v_punto3.addLocal(de.getTranslationVect());
+				v_punto4.addLocal(de.getTranslationVect());
 
 				LinkedList listaInicio=obtenerDatos(RELACIONES_INICIO_KEYWORD);
 				if(listaInicio!=null){
@@ -340,6 +357,8 @@ public class RelacionTernaria_Impl extends MTComponent implements ObjetoUMLGraph
 		// TODO Auto-generated method stub
 
 	}
+	
+	
 	
 	
 
