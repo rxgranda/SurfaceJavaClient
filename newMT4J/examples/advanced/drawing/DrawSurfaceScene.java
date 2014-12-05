@@ -468,24 +468,25 @@ public class DrawSurfaceScene extends AbstractScene {
 				return false;
 			}
 		});
-		
+
 		this.getCanvas().addInputListener(new IMTInputEventListener() {
 			public boolean processInputEvent(MTInputEvent inEvt) {
-				
 				if (inEvt instanceof AbstractCursorInputEvt) {
 					
 					final AbstractCursorInputEvt posEvt = (AbstractCursorInputEvt) inEvt;
 					final InputCursor m = posEvt.getCursor();
 					final Usuario currentUser=(listaUsuarios.get((int)m.sessionID)!=null)?listaUsuarios.get((int)m.sessionID):defaultUser;				
 					
+					
 					if(currentUser!=null){
 					IMTComponent3D componente = m.getTarget();
-
-					System.out.println(componente.toString());
+					
+					
+					System.out.println("COMPONENTE: "+componente.toString());
 				
 					
 					IMTComponent3D currentComponent = (IMTComponent3D) getCanvas().getComponentAt((int) m.getPosition().x,(int) m.getPosition().y);
-					System.out.println(currentComponent.toString());
+					System.out.println("CURRENT: "+currentComponent.toString());
 					//Object entidad = null,entidad2=null;
 					
 					//switch para establecer relaciones entre entidades
@@ -504,28 +505,59 @@ public class DrawSurfaceScene extends AbstractScene {
 						listaHaloHelper.put(currentUser,helper);
 						break;
 					case AbstractCursorInputEvt.INPUT_UPDATED:
+						 	
 						if(componente!=currentComponent){
 							 Object entidad2=((MTComponent)currentComponent).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
 							if (entidad2 instanceof ObjetoUMLGraph){
 								((MTPolygon)((ObjetoUMLGraph)entidad2).getHalo()).setFillColor(ObjetoUMLGraph.haloSelected);
 								((ObjetoUMLGraph)entidad2).getHalo().sendToFront();
 								////System.out.println("Pintandoooooo");
-								LinkedList listaVisitados=(LinkedList) ((MTComponent)componente).getUserData(ObjetoUMLGraph.COMPONENTES_VISITADOS_KEYWORD);
+								//@SuppressWarnings("rawtypes")
+								LinkedList listaVisitados=(LinkedList<MTComponent>) ((MTComponent)componente).getUserData(ObjetoUMLGraph.COMPONENTES_VISITADOS_KEYWORD);
+								
+								//Obtiene ultimo componente
+								Object ultimo=null;
 								if(listaVisitados==null){
 									listaVisitados=new LinkedList<MTComponent>();
 									((MTComponent)componente).setUserData(ObjetoUMLGraph.COMPONENTES_VISITADOS_KEYWORD,listaVisitados);
 									
 								}
+								
+								if(listaVisitados.size()>0)
+								ultimo=listaVisitados.getLast();
+								
+								if(ultimo!=null && !ultimo.equals(entidad2))
+								listaHaloHelper.get(currentUser).setHoverFin(m.getPosition());
+							
 								listaVisitados.add(entidad2);
+								
+								 
+								if(ultimo!=null)
+								System.out.println("ULTIMO: "+ultimo.toString());
+								
 								if (listaHaloHelper.get(currentUser).getHoverFin().equalsVector(new Vector3D()))
-									
+									//System.out.println("hover fin IGUAL A NEW VECTOR");
 									listaHaloHelper.get(currentUser).setHoverFin(m.getPosition());
+								
+								ultimo=(IMTComponent3D) currentComponent;
+								if(ultimo!=null)
+									System.out.println("ULTIMO2: "+ultimo.toString());
+								
+							}else{
+								//Aqui reinicio el punto final de la linea relacion 
+								//Esto corrige bug relacion entidad intermedia
+								listaHaloHelper.get(currentUser).setHoverFin(new Vector3D());
 							}
+
 							
 						}else{
 							listaHaloHelper.get(currentUser).setHoverInicio(m.getPosition());
 							
 						}
+						System.out.println("hover inicio "+listaHaloHelper.get(currentUser).getHoverInicio());
+						System.out.println("hover fin "+listaHaloHelper.get(currentUser).getHoverFin());
+						
+						
 						/*Entidad_Impl alt_ent=(Entidad_Impl) ((MTComponent)currentComponent).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
 						if(componente==currentComponent){
 							listaHaloHelper.get(currentUser).setHoverInicio(m.getPosition());
@@ -544,13 +576,22 @@ public class DrawSurfaceScene extends AbstractScene {
 							////System.out.println("Pintandoooooo");
 						}
 						if(componente!=currentComponent){
-							 Object entidad2=((MTComponent)currentComponent).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
+					//		if (listaHaloHelper.get(currentUser).getHoverFin().equalsVector(new Vector3D()))
+						//		listaHaloHelper.get(currentUser).setHoverFin(m.getPosition());	
+						
+							Object entidad2=((MTComponent)currentComponent).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
 							if (entidad2 instanceof ObjetoUMLGraph){
 								((MTPolygon)((ObjetoUMLGraph)entidad2).getHalo()).setFillColor(ObjetoUMLGraph.haloDeSelected);
 								
 							}
+							
+							
 						}
+						//AQUI YO
+						System.out.println("hover inicio "+listaHaloHelper.get(currentUser).getHoverInicio());
+						System.out.println("hover fin "+listaHaloHelper.get(currentUser).getHoverFin());
 						
+						//HASTA AQUI
 						
 						LinkedList <MTComponent>listaVisitados=(LinkedList) ((MTComponent)componente).getUserData(ObjetoUMLGraph.COMPONENTES_VISITADOS_KEYWORD);
 						if(listaVisitados!=null){
