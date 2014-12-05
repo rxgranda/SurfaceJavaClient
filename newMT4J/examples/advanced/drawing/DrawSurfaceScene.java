@@ -908,7 +908,8 @@ public class DrawSurfaceScene extends AbstractScene {
 												  //System.out.println("try resize");
 												  if(!helper.getHoverInicio().equalsVector(new Vector3D())&&!helper.getHoverFin().equalsVector(new Vector3D()))
 												  {
-													 ((Relacion)objeto).setInicio(((RelacionTernaria_Impl)entidad1_aux).v_punto1);
+													  System.out.println("imprimiendo get hover inicio: " + helper.getHoverInicio());
+													 ((Relacion)objeto).setInicio(((RelacionTernaria_Impl)entidad1_aux).devolverPuntoMasCercanoYDisponible(helper.getHoverInicio()));
 													 ((Relacion)objeto).setFin(helper.getHoverFin());
 													 listaHaloHelper.remove(currentUser);
 													 helper=new HaloHelper();
@@ -958,7 +959,7 @@ public class DrawSurfaceScene extends AbstractScene {
 												  if(!helper.getHoverInicio().equalsVector(new Vector3D())&&!helper.getHoverFin().equalsVector(new Vector3D()))
 												  {
 													 ((Relacion)objeto).setInicio(helper.getHoverInicio());
-													 ((Relacion)objeto).setFin(helper.getHoverFin());
+													 ((Relacion)objeto).setFin(((RelacionTernaria_Impl)entidad1_aux).devolverPuntoMasCercanoYDisponible(helper.getHoverFin()));
 													 listaHaloHelper.remove(currentUser);
 													 helper=new HaloHelper();
 													 listaHaloHelper.put(currentUser, helper);

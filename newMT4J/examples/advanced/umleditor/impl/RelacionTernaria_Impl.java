@@ -1,5 +1,6 @@
 package advanced.umleditor.impl;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -49,12 +50,14 @@ public class RelacionTernaria_Impl extends MTComponent implements ObjetoUMLGraph
 	final public Vector3D centro;
 	ObjetoUML objeto;
 	public boolean relacion_activa = true;
-	public int cont = 3;
-	private boolean punto1=false, punto2=false, punto3=false;
+	public int cont = 4;
+	//este arreglo nos sirve para identificar que puntos están libres del rombo
+	//private boolean[] puntos= new boolean[] {true, true, true, true};//false, punto2=false, punto3=false, punto4=false;
 	public Vector3D v_punto1;
 	public Vector3D v_punto2;
 	public Vector3D v_punto3;
 	public Vector3D v_punto4;
+	private Map<Vector3D, Boolean> esquinas = new HashMap<Vector3D, Boolean>();
 	static float constante_rombo;
 	
 	
@@ -63,7 +66,8 @@ public class RelacionTernaria_Impl extends MTComponent implements ObjetoUMLGraph
 	public RelacionTernaria_Impl(final MTApplication pApplet, final MTCanvas canvas, final MTComponent container, final ObjetoUML objeto, final UMLFacade recognizer ) {
 		super(pApplet);
 		//iniciamos el rectangulo en el punto x e y..
-		System.out.println();
+		
+		
 		centro = new Vector3D(objeto.getPosicion().x, objeto.getPosicion().y, 0);
 		rombo = new MTRoundRectangle(objeto.getPosicion().x, objeto.getPosicion().y, 0, objeto.getWidth(),	objeto.getHeight(), 1, 1, pApplet);									
 		halo_rombo = new MTRoundRectangle(objeto.getPosicion().x, objeto.getPosicion().y, 1, objeto.getWidth(),	objeto.getHeight(), 1, 1, pApplet);
@@ -105,7 +109,12 @@ public class RelacionTernaria_Impl extends MTComponent implements ObjetoUMLGraph
 		v_punto3 = rombo.getCenterPointGlobal();
 		v_punto3.setX(rombo.getCenterPointGlobal().x-(constante_rombo));
 		v_punto4 = rombo.getCenterPointGlobal();
-		v_punto4.setY(rombo.getCenterPointGlobal().y-(constante_rombo));
+		v_punto4.setY(rombo.getCenterPointGlobal().y-(constante_rombo+5));
+		
+		esquinas.put(v_punto1, true);
+		esquinas.put(v_punto2, true);
+		esquinas.put(v_punto3, true);
+		esquinas.put(v_punto4, true);
 		
 		zona_rombo.addGestureListener(DragProcessor.class, new IGestureEventListener() {
 			public boolean processGestureEvent(MTGestureEvent ge) {
@@ -234,13 +243,7 @@ public class RelacionTernaria_Impl extends MTComponent implements ObjetoUMLGraph
 		halo_rombo.setUserData(ObjetoUMLGraph.RELACION_MULTIPLE_KEYWORD, this);
 	}
 	
-	public Vector3D obtenerPuntoUnion(){
-		//si los tres puntos están disponibles, calcular la distancia entre los tres
-		if(punto1&&punto2&&punto3){
-			
-		}
-		return centro;
-	}
+	
 	
 	
 	@Override
@@ -317,6 +320,50 @@ public class RelacionTernaria_Impl extends MTComponent implements ObjetoUMLGraph
 	public void aumentarContador(){
 		this.cont = this.cont + 1;
 	}
+	
+	public void reestablecerPuntoDeRelacion(Vector3D v){
+		System.out.println("VECTOR QUE ESTOY DISPUESTO A BORRAR: " + v);
+		for (Map.Entry<Vector3D, Boolean> esquina : esquinas.entrySet())
+		{
+			System.out.println("VECTOR QUE ESTOY COMPARANDO: " + esquina.getKey());
+			//compara usando l aparte entera de las coordenadas y no igualdad de vectores, porque al parecer se introduce un error
+			//al mover las relaciones y las esquinas de la relacion multiple
+			if((int)(v.x)==(int)(esquina.getKey().x) && (int)(v.y)==(int)(esquina.getKey().y)){
+				System.out.println("Ingreso he hizo TRUE el valor de una esquina");
+				esquinas.replace(esquina.getKey(), true);
+				break;
+			}
+		    
+		}
+
+	}
+	
+	public Vector3D devolverPuntoMasCercanoYDisponible(Vector3D v){
+		float dis1, dis2, dis3, dis4;
+		int i = 0;
+		Map<Float, Vector3D> dArr = new HashMap<Float, Vector3D>();
+		dis1 = v.distance(v_punto1);
+		dArr.put(dis1, v_punto1);
+		dis2 = v.distance(v_punto2);
+		dArr.put(dis2, v_punto2);
+		dis3 = v.distance(v_punto3);
+		dArr.put(dis3, v_punto3);
+		dis4 = v.distance(v_punto4);
+		dArr.put(dis4, v_punto4);
+		float dArr_aux[] = new float[] {dis1, dis2, dis3, dis4};
+		//Vector3D vectores[] = new Vector3D[] {v_punto1, v_punto2, v_punto3, v_punto4};
+		Arrays.sort(dArr_aux);
+		for (i = 0; i < 4; i++) {
+			System.out.println(esquinas.get(dArr.get(dArr_aux[i])));
+			if(esquinas.get(dArr.get(dArr_aux[i]))){
+				break;
+			}
+		}
+		//hacemos falsa esa posicion y evitar que otro la tome
+		esquinas.replace(dArr.get(dArr_aux[i]), false);
+		return dArr.get(dArr_aux[i]);
+	}
+	
 	
 	@Override
 	public MTComponent getFigura() {

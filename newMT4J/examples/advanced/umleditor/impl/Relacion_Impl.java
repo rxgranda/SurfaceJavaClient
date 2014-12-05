@@ -820,6 +820,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 			//obtengo de la relacion multiple, la figura que a su vez es el objeto grafico, y procedemos
 			//a ejecutar el metodo de aumentar contador
 			((RelacionTernaria_Impl)(((RelacionTernaria)inicio_aux).getFigura())).aumentarContador();
+			((RelacionTernaria_Impl)(((RelacionTernaria)inicio_aux).getFigura())).reestablecerPuntoDeRelacion(((Relacion)this.objeto).getInicio());
 			System.out.println("ESTAMOS BORRANDO DE UNA RELACION MULTIPLE INIIIIIIIIIIIIIICIO");
 		}
 		
@@ -842,6 +843,16 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 			((Entidad)fin).getFigura().eliminarDatos(RELACIONES_FIN_KEYWORD, this);
 			System.out.println("ESTAMOS BORRANDO DE UNA ENTIDAD FIIIIIIIIIN");
 		}else{
+			
+			Object fin_aux=((Relacion)this.objeto).getObjetoFin();
+			if(fin_aux instanceof RelacionTernaria){
+				//obtengo de la relacion multiple, la figura que a su vez es el objeto grafico, y procedemos
+				//a ejecutar el metodo de aumentar contador
+				((RelacionTernaria_Impl)(((RelacionTernaria)fin_aux).getFigura())).aumentarContador();
+				//((RelacionTernaria_Impl)(((RelacionTernaria)fin_aux).getFigura())).reestablecerPuntoDeRelacion(((Relacion)this.objeto).getInicio());
+				System.out.println("ESTAMOS BORRANDO DE UNA RELACION MULTIPLE INIIIIIIIIIIIIIICIO");
+			}
+			
 			System.out.println("ESTAMOS BORRANDO DE UNA RELACION MULTIPLE FIIIIIIIIIN");
 		}
 		
