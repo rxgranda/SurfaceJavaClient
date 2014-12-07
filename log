@@ -772,3 +772,1336 @@ SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLi
 SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
 344 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
 755 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+484 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+1336 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+Inicio evento de: Evento de Login 
+recibido:  1 Roger
+Fin evento de: Evento de Login 
+Inicio evento de: Evento de Login 
+recibido:  1 null
+ya hizo login
+Fin evento de: Evento de Login 
+height: 240 width:202
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":202.0,"height":240.0,"posicion": X:327.8164 Y:255.4722 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:18","usuario":-1}]}
+ Mover entidad Default
+--Enviar edicion nombre Entidad Default
+Enviado canal1 1
+ Mover entidad Default
+**Iniciar Edicion EntidadDefault
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":202.0,"height":240.0,"posicion": X:327.8164 Y:255.4722 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:18","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Id","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:32","usuario":-1}]}
+**Terminar Edicion EntidadDefault
+**Iniciar Edicion EntidadDefault
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":202.0,"height":240.0,"posicion": X:327.8164 Y:255.4722 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:18","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Id","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:32","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Descripcioj","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:38","usuario":-1}]}
+**Terminar Edicion EntidadDefault
+**Iniciar Edicion EntidadDefault
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":202.0,"height":240.0,"posicion": X:327.8164 Y:255.4722 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:18","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Id","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:32","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Descripcioj","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:38","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Descripcioj","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:39","usuario":-1}]}
+**Terminar Edicion EntidadDefault
+**Iniciar Edicion EntidadDefault
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":202.0,"height":240.0,"posicion": X:327.8164 Y:255.4722 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:18","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Id","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:32","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Descripcioj","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:38","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Descripcioj","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:39","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Descripcion","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:44","usuario":-1}]}
+**Terminar Edicion EntidadDefault
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+height: 208 width:169
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":202.0,"height":240.0,"posicion": X:327.8164 Y:255.4722 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:18","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Id","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:32","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Descripcioj","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:38","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Descripcioj","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:39","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Descripcion","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:44","usuario":-1},{"CREAR_OBJETO":{"id":3,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":169.0,"height":208.0,"posicion": X:767.9756 Y:242.65276 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:50","usuario":-1}]}
+-Escuchando en body por relacion en entidad Default
+height: 30 width:411
+BORRAR W: 307.0 H: 100.0 Entidad Default
+height: 27 width:407
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":202.0,"height":240.0,"posicion": X:327.8164 Y:255.4722 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:18","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Id","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:32","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Descripcioj","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:38","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Descripcioj","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:39","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Descripcion","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:44","usuario":-1},{"CREAR_OBJETO":{"id":3,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":169.0,"height":208.0,"posicion": X:767.9756 Y:242.65276 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:50","usuario":-1},{"CREAR_OBJETO":{"id":5,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:364.0 Y:261.0 Z:0.0 W:1.0,"posicionFin": X:649.0 Y:276.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":3,"textoInicio":"","textoFin":"","width":307.0,"height":100.0,"posicion": X:506.5537 Y:269.7708 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:52","usuario":-1}]}
+ Mover entidad Default
+-Actualizar relacion 5
+--Enviar edicion nombre Entidad Default
+Enviado canal1 1
+ Mover entidad Default
+-Actualizar relacion 5
+**Iniciar Edicion EntidadDefault
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":202.0,"height":240.0,"posicion": X:327.8164 Y:255.4722 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:18","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Id","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:32","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Descripcioj","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:38","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Descripcioj","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:39","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Descripcion","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:44","usuario":-1},{"CREAR_OBJETO":{"id":3,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":169.0,"height":208.0,"posicion": X:767.9756 Y:242.65276 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:50","usuario":-1},{"CREAR_OBJETO":{"id":5,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:364.0 Y:261.0 Z:0.0 W:1.0,"posicionFin": X:649.0 Y:276.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":3,"textoInicio":"","textoFin":"","width":307.0,"height":100.0,"posicion": X:506.5537 Y:269.7708 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:52","usuario":-1},{"EDITAR_OBJETO":{"id":3,"nombre":"Default","atributos":{"0":"Procariotas"},"posicion": X:767.97577 Y:242.65263 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:51:12","usuario":-1}]}
+**Terminar Edicion EntidadDefault
+**Iniciar Edicion EntidadDefault
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":202.0,"height":240.0,"posicion": X:327.8164 Y:255.4722 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:18","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Id","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:32","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Descripcioj","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:38","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Descripcioj","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:39","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Descripcion","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:44","usuario":-1},{"CREAR_OBJETO":{"id":3,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":169.0,"height":208.0,"posicion": X:767.9756 Y:242.65276 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:50","usuario":-1},{"CREAR_OBJETO":{"id":5,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:364.0 Y:261.0 Z:0.0 W:1.0,"posicionFin": X:649.0 Y:276.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":3,"textoInicio":"","textoFin":"","width":307.0,"height":100.0,"posicion": X:506.5537 Y:269.7708 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:52","usuario":-1},{"EDITAR_OBJETO":{"id":3,"nombre":"Default","atributos":{"0":"Procariotas"},"posicion": X:767.97577 Y:242.65263 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:51:12","usuario":-1},{"EDITAR_OBJETO":{"id":3,"nombre":"Default","atributos":{"0":"Procariotas","1":"atributo"},"posicion": X:767.97577 Y:242.65263 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:51:13","usuario":-1}]}
+**Terminar Edicion EntidadDefault
+**Iniciar Edicion EntidadDefault
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":202.0,"height":240.0,"posicion": X:327.8164 Y:255.4722 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:18","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Id","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:32","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Descripcioj","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:38","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Descripcioj","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:39","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Descripcion","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:44","usuario":-1},{"CREAR_OBJETO":{"id":3,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":169.0,"height":208.0,"posicion": X:767.9756 Y:242.65276 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:50","usuario":-1},{"CREAR_OBJETO":{"id":5,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:364.0 Y:261.0 Z:0.0 W:1.0,"posicionFin": X:649.0 Y:276.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":3,"textoInicio":"","textoFin":"","width":307.0,"height":100.0,"posicion": X:506.5537 Y:269.7708 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:52","usuario":-1},{"EDITAR_OBJETO":{"id":3,"nombre":"Default","atributos":{"0":"Procariotas"},"posicion": X:767.97577 Y:242.65263 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:51:12","usuario":-1},{"EDITAR_OBJETO":{"id":3,"nombre":"Default","atributos":{"0":"Procariotas","1":"atributo"},"posicion": X:767.97577 Y:242.65263 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:51:13","usuario":-1},{"EDITAR_OBJETO":{"id":3,"nombre":"Default","atributos":{"0":"Procariotas","1":"Eurocariotas"},"posicion": X:767.97577 Y:242.65263 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:51:21","usuario":-1}]}
+**Terminar Edicion EntidadDefault
+**Iniciar Edicion EntidadCelulas
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":202.0,"height":240.0,"posicion": X:327.8164 Y:255.4722 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:18","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Id","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:32","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Descripcioj","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:38","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Descripcioj","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:39","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Descripcion","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:44","usuario":-1},{"CREAR_OBJETO":{"id":3,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":169.0,"height":208.0,"posicion": X:767.9756 Y:242.65276 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:50","usuario":-1},{"CREAR_OBJETO":{"id":5,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:364.0 Y:261.0 Z:0.0 W:1.0,"posicionFin": X:649.0 Y:276.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":3,"textoInicio":"","textoFin":"","width":307.0,"height":100.0,"posicion": X:506.5537 Y:269.7708 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:52","usuario":-1},{"EDITAR_OBJETO":{"id":3,"nombre":"Default","atributos":{"0":"Procariotas"},"posicion": X:767.97577 Y:242.65263 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:51:12","usuario":-1},{"EDITAR_OBJETO":{"id":3,"nombre":"Default","atributos":{"0":"Procariotas","1":"atributo"},"posicion": X:767.97577 Y:242.65263 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:51:13","usuario":-1},{"EDITAR_OBJETO":{"id":3,"nombre":"Default","atributos":{"0":"Procariotas","1":"Eurocariotas"},"posicion": X:767.97577 Y:242.65263 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:51:21","usuario":-1},{"EDITAR_OBJETO":{"id":3,"nombre":"Celulas","atributos":{"0":"Procariotas","1":"Eurocariotas"},"posicion": X:767.97577 Y:242.65263 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:51:25","usuario":-1}]}
+**Terminar Edicion EntidadCelulas
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+--Enviar edicion nombre Entidad Default
+Enviado canal1 1
+ Mover entidad Default
+-Actualizar relacion 5
+**Iniciar Edicion EntidadDefault
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":202.0,"height":240.0,"posicion": X:327.8164 Y:255.4722 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:18","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Id","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:32","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Descripcioj","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:38","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Descripcioj","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:39","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Descripcion","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:44","usuario":-1},{"CREAR_OBJETO":{"id":3,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":169.0,"height":208.0,"posicion": X:767.9756 Y:242.65276 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:50","usuario":-1},{"CREAR_OBJETO":{"id":5,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:364.0 Y:261.0 Z:0.0 W:1.0,"posicionFin": X:649.0 Y:276.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":3,"textoInicio":"","textoFin":"","width":307.0,"height":100.0,"posicion": X:506.5537 Y:269.7708 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:52","usuario":-1},{"EDITAR_OBJETO":{"id":3,"nombre":"Default","atributos":{"0":"Procariotas"},"posicion": X:767.97577 Y:242.65263 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:51:12","usuario":-1},{"EDITAR_OBJETO":{"id":3,"nombre":"Default","atributos":{"0":"Procariotas","1":"atributo"},"posicion": X:767.97577 Y:242.65263 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:51:13","usuario":-1},{"EDITAR_OBJETO":{"id":3,"nombre":"Default","atributos":{"0":"Procariotas","1":"Eurocariotas"},"posicion": X:767.97577 Y:242.65263 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:51:21","usuario":-1},{"EDITAR_OBJETO":{"id":3,"nombre":"Celulas","atributos":{"0":"Procariotas","1":"Eurocariotas"},"posicion": X:767.97577 Y:242.65263 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:51:25","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Reino","1":"atributo"},"posicion": X:268.8168 Y:238.4718 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:52:59","usuario":-1}]}
+**Terminar Edicion EntidadDefault
+**Iniciar Edicion EntidadSeres Vivos
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":202.0,"height":240.0,"posicion": X:327.8164 Y:255.4722 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:18","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Id","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:32","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Descripcioj","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:38","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Descripcioj","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:39","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Descripcion","1":"atributo"},"posicion": X:327.81656 Y:255.47218 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:44","usuario":-1},{"CREAR_OBJETO":{"id":3,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":169.0,"height":208.0,"posicion": X:767.9756 Y:242.65276 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:50","usuario":-1},{"CREAR_OBJETO":{"id":5,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:364.0 Y:261.0 Z:0.0 W:1.0,"posicionFin": X:649.0 Y:276.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":3,"textoInicio":"","textoFin":"","width":307.0,"height":100.0,"posicion": X:506.5537 Y:269.7708 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:50:52","usuario":-1},{"EDITAR_OBJETO":{"id":3,"nombre":"Default","atributos":{"0":"Procariotas"},"posicion": X:767.97577 Y:242.65263 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:51:12","usuario":-1},{"EDITAR_OBJETO":{"id":3,"nombre":"Default","atributos":{"0":"Procariotas","1":"atributo"},"posicion": X:767.97577 Y:242.65263 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:51:13","usuario":-1},{"EDITAR_OBJETO":{"id":3,"nombre":"Default","atributos":{"0":"Procariotas","1":"Eurocariotas"},"posicion": X:767.97577 Y:242.65263 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:51:21","usuario":-1},{"EDITAR_OBJETO":{"id":3,"nombre":"Celulas","atributos":{"0":"Procariotas","1":"Eurocariotas"},"posicion": X:767.97577 Y:242.65263 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:51:25","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Reino","1":"atributo"},"posicion": X:268.8168 Y:238.4718 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:52:59","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Seres Vivos","atributos":{"0":"Reino","1":"atributo"},"posicion": X:268.8168 Y:238.4718 Z:0.0 W:1.0},"tiempo":"2014-12-04 16:53:05","usuario":-1}]}
+**Terminar Edicion EntidadSeres Vivos
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+308 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+725 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+Inicio evento de: Evento de Login 
+recibido:  1 Roger
+Fin evento de: Evento de Login 
+Inicio evento de: Evento de Login 
+recibido:  1 null
+ya hizo login
+Fin evento de: Evento de Login 
+height: 221 width:223
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":223.0,"height":221.0,"posicion": X:477.8369 Y:308.22916 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:13:32","usuario":-1}]}
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+--Enviar edicion nombre Entidad Default
+Enviado canal1 1
+ Mover entidad Default
+**Iniciar Edicion EntidadSeres vivos
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":223.0,"height":221.0,"posicion": X:477.8369 Y:308.22916 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:13:32","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Seres vivos","atributos":{"0":"Id"},"posicion": X:477.8368 Y:308.22888 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:13:48","usuario":-1}]}
+**Terminar Edicion EntidadSeres vivos
+height: 228 width:193
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":223.0,"height":221.0,"posicion": X:477.8369 Y:308.22916 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:13:32","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Seres vivos","atributos":{"0":"Id"},"posicion": X:477.8368 Y:308.22888 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:13:48","usuario":-1},{"CREAR_OBJETO":{"id":3,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":193.0,"height":228.0,"posicion": X:848.1846 Y:275.19443 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:13:55","usuario":-1}]}
+-Escuchando en body por relacion en entidad Seres vivos
+BORRAR W: 0.0 H: 0.0 Entidad Seres vivos
+height: 7 width:229
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":223.0,"height":221.0,"posicion": X:477.8369 Y:308.22916 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:13:32","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Seres vivos","atributos":{"0":"Id"},"posicion": X:477.8368 Y:308.22888 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:13:48","usuario":-1},{"CREAR_OBJETO":{"id":3,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":193.0,"height":228.0,"posicion": X:848.1846 Y:275.19443 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:13:55","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:604.0 Y:323.0 Z:0.0 W:1.0,"posicionFin": X:718.0 Y:326.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":3,"textoInicio":"","textoFin":"","width":229.0,"height":100.0,"posicion": X:659.5449 Y:324.99304 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:13:56","usuario":-1}]}
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Seres vivos
+-Actualizar relacion 4
+ Mover entidad Default
+-Actualizar relacion 4
+ Mover entidad Default
+-Actualizar relacion 4
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+312 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+750 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+Inicio evento de: Evento de Login 
+recibido:  1 Roger
+Fin evento de: Evento de Login 
+Inicio evento de: Evento de Login 
+recibido:  1 null
+ya hizo login
+Fin evento de: Evento de Login 
+height: 184 width:207
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":207.0,"height":184.0,"posicion": X:308.50684 Y:201.23608 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:18:28","usuario":-1}]}
+Iniciar Guardado....
+Save as file: C:\Users\Roger\Documents\nuevo
+JSON 1 Guardado
+Guardado archivo .json
+Error2
+Holaaaaaaaaaaaaaaaaaaaaaa
+height: 169 width:194
+height: 138 width:184
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":207.0,"height":184.0,"posicion": X:308.50684 Y:201.23608 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:18:28","usuario":-1},{"CREAR_OBJETO":{"id":3,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":184.0,"height":138.0,"posicion": X:579.33594 Y:319.56943 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:19:14","usuario":-1}]}
+-Escuchando en body por relacion en entidad Default
+BORRAR W: 0.0 H: 0.0 Entidad Default
+-Escuchando en body por relacion en entidad Default
+BORRAR W: 0.0 H: 0.0 Entidad Default
+ Mover entidad Default
+--Enviar edicion nombre Entidad Default
+Enviado canal1 1
+ Mover entidad Default
+**Iniciar Edicion EntidadSeres vivos
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":207.0,"height":184.0,"posicion": X:308.50684 Y:201.23608 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:18:28","usuario":-1},{"CREAR_OBJETO":{"id":3,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":184.0,"height":138.0,"posicion": X:579.33594 Y:319.56943 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:19:14","usuario":-1},{"EDITAR_OBJETO":{"id":3,"nombre":"Seres vivos","atributos":{"0":"Id"},"posicion": X:579.3359 Y:319.5695 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:19:34","usuario":-1}]}
+**Terminar Edicion EntidadSeres vivos
+ Mover entidad Default
+--Enviar edicion nombre Entidad Default
+Enviado canal1 1
+ Mover entidad Default
+ Mover entidad Seres vivos
+ Mover entidad Seres vivos
+ Mover entidad Seres vivos
+ Mover entidad Seres vivos
+ Mover entidad Seres vivos
+ Mover entidad Seres vivos
+ Mover entidad Seres vivos
+ Mover entidad Seres vivos
+ Mover entidad Seres vivos
+ Mover entidad Seres vivos
+ Mover entidad Seres vivos
+ Mover entidad Seres vivos
+ Mover entidad Seres vivos
+ Mover entidad Seres vivos
+ Mover entidad Seres vivos
+ Mover entidad Seres vivos
+ Mover entidad Seres vivos
+ Mover entidad Seres vivos
+ Mover entidad Seres vivos
+ Mover entidad Seres vivos
+ Mover entidad Seres vivos
+ Mover entidad Seres vivos
+ Mover entidad Seres vivos
+ Mover entidad Seres vivos
+ Mover entidad Seres vivos
+ Mover entidad Seres vivos
+ Mover entidad Seres vivos
+ Mover entidad Seres vivos
+ Mover entidad Seres vivos
+ Mover entidad Seres vivos
+ Mover entidad Seres vivos
+ Mover entidad Seres vivos
+ Mover entidad Seres vivos
+-Escuchando en body por relacion en entidad Default
+height: 38 width:332
+BORRAR W: 307.0 H: 100.0 Entidad Default
+height: 38 width:331
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":207.0,"height":184.0,"posicion": X:308.50684 Y:201.23608 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:18:28","usuario":-1},{"CREAR_OBJETO":{"id":3,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":184.0,"height":138.0,"posicion": X:579.33594 Y:319.56943 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:19:14","usuario":-1},{"EDITAR_OBJETO":{"id":3,"nombre":"Seres vivos","atributos":{"0":"Id"},"posicion": X:579.3359 Y:319.5695 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:19:34","usuario":-1},{"CREAR_OBJETO":{"id":5,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:440.0 Y:202.0 Z:0.0 W:1.0,"posicionFin": X:607.0 Y:217.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":3,"textoInicio":"","textoFin":"","width":307.0,"height":100.0,"posicion": X:523.3877 Y:211.59026 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:21:28","usuario":-1}]}
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+ Mover entidad Default
+-Actualizar relacion 5
+height: 132 width:99
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":207.0,"height":184.0,"posicion": X:308.50684 Y:201.23608 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:18:28","usuario":-1},{"CREAR_OBJETO":{"id":3,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":184.0,"height":138.0,"posicion": X:579.33594 Y:319.56943 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:19:14","usuario":-1},{"EDITAR_OBJETO":{"id":3,"nombre":"Seres vivos","atributos":{"0":"Id"},"posicion": X:579.3359 Y:319.5695 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:19:34","usuario":-1},{"CREAR_OBJETO":{"id":5,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:440.0 Y:202.0 Z:0.0 W:1.0,"posicionFin": X:607.0 Y:217.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":3,"textoInicio":"","textoFin":"","width":307.0,"height":100.0,"posicion": X:523.3877 Y:211.59026 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:21:28","usuario":-1},{"CREAR_OBJETO":{"id":8,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":99.0,"height":132.0,"posicion": X:372.87207 Y:418.18054 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:21:34","usuario":-1}]}
+-Escuchando en body por relacion en entidad Default
+BORRAR W: 0.0 H: 0.0 Entidad Default
+height: 119 width:13
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":207.0,"height":184.0,"posicion": X:308.50684 Y:201.23608 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:18:28","usuario":-1},{"CREAR_OBJETO":{"id":3,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":184.0,"height":138.0,"posicion": X:579.33594 Y:319.56943 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:19:14","usuario":-1},{"EDITAR_OBJETO":{"id":3,"nombre":"Seres vivos","atributos":{"0":"Id"},"posicion": X:579.3359 Y:319.5695 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:19:34","usuario":-1},{"CREAR_OBJETO":{"id":5,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:440.0 Y:202.0 Z:0.0 W:1.0,"posicionFin": X:607.0 Y:217.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":3,"textoInicio":"","textoFin":"","width":307.0,"height":100.0,"posicion": X:523.3877 Y:211.59026 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:21:28","usuario":-1},{"CREAR_OBJETO":{"id":8,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":99.0,"height":132.0,"posicion": X:372.87207 Y:418.18054 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:21:34","usuario":-1},{"CREAR_OBJETO":{"id":9,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:364.0 Y:317.0 Z:0.0 W:1.0,"posicionFin": X:363.0 Y:329.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":8,"textoInicio":"","textoFin":"","width":81.0,"height":119.0,"posicion": X:364.9502 Y:323.5139 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:21:36","usuario":-1}]}
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+-Mover relacion 5
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":207.0,"height":184.0,"posicion": X:308.50684 Y:201.23608 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:18:28","usuario":-1},{"CREAR_OBJETO":{"id":3,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":184.0,"height":138.0,"posicion": X:579.33594 Y:319.56943 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:19:14","usuario":-1},{"EDITAR_OBJETO":{"id":3,"nombre":"Seres vivos","atributos":{"0":"Id"},"posicion": X:579.3359 Y:319.5695 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:19:34","usuario":-1},{"CREAR_OBJETO":{"id":5,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:440.0 Y:202.0 Z:0.0 W:1.0,"posicionFin": X:607.0 Y:217.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":3,"textoInicio":"","textoFin":"","width":307.0,"height":100.0,"posicion": X:523.3877 Y:211.59026 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:21:28","usuario":-1},{"CREAR_OBJETO":{"id":8,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":99.0,"height":132.0,"posicion": X:372.87207 Y:418.18054 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:21:34","usuario":-1},{"CREAR_OBJETO":{"id":9,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:364.0 Y:317.0 Z:0.0 W:1.0,"posicionFin": X:363.0 Y:329.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":8,"textoInicio":"","textoFin":"","width":81.0,"height":119.0,"posicion": X:364.9502 Y:323.5139 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:21:36","usuario":-1},{"EDITAR_OBJETO":{"id":5,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:459.0 Y:194.99992 Z:0.0 W:1.0,"posicionFin": X:675.0001 Y:266.00015 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":3,"textoInicio":"Default","textoFin":"Default","posicion": X:566.46295 Y:232.29863 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:21:41","usuario":-1}]}
+Enviado canal11
+Enviado canal11
+**Iniciar Edicion cardinalidad
+-Actualizar cardinalidad relacion 9
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":207.0,"height":184.0,"posicion": X:308.50684 Y:201.23608 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:18:28","usuario":-1},{"CREAR_OBJETO":{"id":3,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":184.0,"height":138.0,"posicion": X:579.33594 Y:319.56943 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:19:14","usuario":-1},{"EDITAR_OBJETO":{"id":3,"nombre":"Seres vivos","atributos":{"0":"Id"},"posicion": X:579.3359 Y:319.5695 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:19:34","usuario":-1},{"CREAR_OBJETO":{"id":5,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:440.0 Y:202.0 Z:0.0 W:1.0,"posicionFin": X:607.0 Y:217.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":3,"textoInicio":"","textoFin":"","width":307.0,"height":100.0,"posicion": X:523.3877 Y:211.59026 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:21:28","usuario":-1},{"CREAR_OBJETO":{"id":8,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":99.0,"height":132.0,"posicion": X:372.87207 Y:418.18054 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:21:34","usuario":-1},{"CREAR_OBJETO":{"id":9,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:364.0 Y:317.0 Z:0.0 W:1.0,"posicionFin": X:363.0 Y:329.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":8,"textoInicio":"","textoFin":"","width":81.0,"height":119.0,"posicion": X:364.9502 Y:323.5139 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:21:36","usuario":-1},{"EDITAR_OBJETO":{"id":5,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:459.0 Y:194.99992 Z:0.0 W:1.0,"posicionFin": X:675.0001 Y:266.00015 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":3,"textoInicio":"Default","textoFin":"Default","posicion": X:566.46295 Y:232.29863 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:21:41","usuario":-1},{"EDITAR_OBJETO":{"id":9,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:364.0 Y:317.0 Z:0.0 W:1.0,"posicionFin": X:363.0 Y:329.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":8,"textoInicio":"","textoFin":"","posicion": X:364.9502 Y:323.5139 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:23:49","usuario":-1}]}
+**Finalizar Edicion cardinalidad
+-Escuchando en body por relacion en entidad Default
+--Enviar edicion  cuerpo Entidad Default
+Enviado canal11
+BORRAR W: 0.0 H: 0.0 Entidad Default
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+height: 75 width:112
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":207.0,"height":184.0,"posicion": X:308.50684 Y:201.23608 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:18:28","usuario":-1},{"CREAR_OBJETO":{"id":3,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":184.0,"height":138.0,"posicion": X:579.33594 Y:319.56943 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:19:14","usuario":-1},{"EDITAR_OBJETO":{"id":3,"nombre":"Seres vivos","atributos":{"0":"Id"},"posicion": X:579.3359 Y:319.5695 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:19:34","usuario":-1},{"CREAR_OBJETO":{"id":5,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:440.0 Y:202.0 Z:0.0 W:1.0,"posicionFin": X:607.0 Y:217.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":3,"textoInicio":"","textoFin":"","width":307.0,"height":100.0,"posicion": X:523.3877 Y:211.59026 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:21:28","usuario":-1},{"CREAR_OBJETO":{"id":8,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":99.0,"height":132.0,"posicion": X:372.87207 Y:418.18054 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:21:34","usuario":-1},{"CREAR_OBJETO":{"id":9,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:364.0 Y:317.0 Z:0.0 W:1.0,"posicionFin": X:363.0 Y:329.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":8,"textoInicio":"","textoFin":"","width":81.0,"height":119.0,"posicion": X:364.9502 Y:323.5139 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:21:36","usuario":-1},{"EDITAR_OBJETO":{"id":5,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:459.0 Y:194.99992 Z:0.0 W:1.0,"posicionFin": X:675.0001 Y:266.00015 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":3,"textoInicio":"Default","textoFin":"Default","posicion": X:566.46295 Y:232.29863 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:21:41","usuario":-1},{"EDITAR_OBJETO":{"id":9,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:364.0 Y:317.0 Z:0.0 W:1.0,"posicionFin": X:363.0 Y:329.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":8,"textoInicio":"","textoFin":"","posicion": X:364.9502 Y:323.5139 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:23:49","usuario":-1},{"CREAR_OBJETO":{"id":12,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":112.0,"height":100.0,"posicion": X:563.4922 Y:333.375 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:24:46","usuario":-1}]}
+height: 252 width:397
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+--Enviar edicion nombre Entidad Seres vivos
+Enviado canal1 1
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+--Enviar edicion nombre Entidad Seres vivos
+Enviado canal1 1
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+--Enviar edicion nombre Entidad Seres vivos
+Enviado canal1 1
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+ Mover entidad Seres vivos
+-Actualizar relacion 5
+height: 33 width:111
+height: 148 width:127
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":207.0,"height":184.0,"posicion": X:308.50684 Y:201.23608 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:18:28","usuario":-1},{"CREAR_OBJETO":{"id":3,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":184.0,"height":138.0,"posicion": X:579.33594 Y:319.56943 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:19:14","usuario":-1},{"EDITAR_OBJETO":{"id":3,"nombre":"Seres vivos","atributos":{"0":"Id"},"posicion": X:579.3359 Y:319.5695 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:19:34","usuario":-1},{"CREAR_OBJETO":{"id":5,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:440.0 Y:202.0 Z:0.0 W:1.0,"posicionFin": X:607.0 Y:217.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":3,"textoInicio":"","textoFin":"","width":307.0,"height":100.0,"posicion": X:523.3877 Y:211.59026 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:21:28","usuario":-1},{"CREAR_OBJETO":{"id":8,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":99.0,"height":132.0,"posicion": X:372.87207 Y:418.18054 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:21:34","usuario":-1},{"CREAR_OBJETO":{"id":9,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:364.0 Y:317.0 Z:0.0 W:1.0,"posicionFin": X:363.0 Y:329.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":8,"textoInicio":"","textoFin":"","width":81.0,"height":119.0,"posicion": X:364.9502 Y:323.5139 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:21:36","usuario":-1},{"EDITAR_OBJETO":{"id":5,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:459.0 Y:194.99992 Z:0.0 W:1.0,"posicionFin": X:675.0001 Y:266.00015 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":3,"textoInicio":"Default","textoFin":"Default","posicion": X:566.46295 Y:232.29863 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:21:41","usuario":-1},{"EDITAR_OBJETO":{"id":9,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:364.0 Y:317.0 Z:0.0 W:1.0,"posicionFin": X:363.0 Y:329.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":8,"textoInicio":"","textoFin":"","posicion": X:364.9502 Y:323.5139 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:23:49","usuario":-1},{"CREAR_OBJETO":{"id":12,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":112.0,"height":100.0,"posicion": X:563.4922 Y:333.375 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:24:46","usuario":-1},{"CREAR_OBJETO":{"id":15,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":127.0,"height":148.0,"posicion": X:588.74316 Y:532.56946 Z:0.0 W:1.0},"tiempo":"2014-12-04 17:36:06","usuario":-1}]}
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+508 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+1352 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+height: 187 width:11
+height: 31 width:234
+height: 151 width:159
+height: 272 width:242
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":5,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":242.0,"height":272.0,"posicion": X:296.1289 Y:305.7639 Z:0.0 W:1.0},"tiempo":"2014-12-06 14:15:18","usuario":-1}]}
+-Escuchando en body por relacion en entidad Default
+height: 220 width:194
+BORRAR W: 194.0 H: 220.0 Entidad Default
+-Iniciar borrado Entidad Default
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":5,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":242.0,"height":272.0,"posicion": X:296.1289 Y:305.7639 Z:0.0 W:1.0},"tiempo":"2014-12-06 14:15:18","usuario":-1},{"BORRAR_OBJETO":{"id":5,"nombre":"Default","atributos":{"0":"Id"},"posicion": X:296.1289 Y:305.7639 Z:0.0 W:1.0},"tiempo":"2014-12-06 14:15:24","usuario":-1}]}
+height: 220 width:194
+height: 306 width:246
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":5,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":242.0,"height":272.0,"posicion": X:296.1289 Y:305.7639 Z:0.0 W:1.0},"tiempo":"2014-12-06 14:15:18","usuario":-1},{"BORRAR_OBJETO":{"id":5,"nombre":"Default","atributos":{"0":"Id"},"posicion": X:296.1289 Y:305.7639 Z:0.0 W:1.0},"tiempo":"2014-12-06 14:15:24","usuario":-1},{"CREAR_OBJETO":{"id":6,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":246.0,"height":288.0,"posicion": X:274.34375 Y:278.15277 Z:0.0 W:1.0},"tiempo":"2014-12-06 14:15:28","usuario":-1}]}
+-Escuchando en body por relacion en entidad Default
+height: 80 width:232
+BORRAR W: 232.0 H: 100.0 Entidad Default
+height: 79 width:232
+-Escuchando en body por relacion en entidad Default
+height: 73 width:99
+BORRAR W: 99.0 H: 100.0 Entidad Default
+height: 73 width:99
+-Escuchando en body por relacion en entidad Default
+height: 77 width:87
+BORRAR W: 87.0 H: 100.0 Entidad Default
+height: 77 width:87
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+303 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+710 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+height: 324 width:254
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":254.0,"height":288.0,"posicion": X:309.00195 Y:353.0972 Z:0.0 W:1.0},"tiempo":"2014-12-06 14:19:09","usuario":-1}]}
+-Escuchando en body por relacion en entidad Default
+height: 249 width:186
+BORRAR W: 186.0 H: 249.0 Entidad Defaultresultado:0
+-Iniciar borrado Entidad Default
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":254.0,"height":288.0,"posicion": X:309.00195 Y:353.0972 Z:0.0 W:1.0},"tiempo":"2014-12-06 14:19:09","usuario":-1},{"BORRAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Id"},"posicion": X:309.00195 Y:353.0972 Z:0.0 W:1.0},"tiempo":"2014-12-06 14:19:16","usuario":-1}]}
+height: 293 width:268
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":254.0,"height":288.0,"posicion": X:309.00195 Y:353.0972 Z:0.0 W:1.0},"tiempo":"2014-12-06 14:19:09","usuario":-1},{"BORRAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Id"},"posicion": X:309.00195 Y:353.0972 Z:0.0 W:1.0},"tiempo":"2014-12-06 14:19:16","usuario":-1},{"CREAR_OBJETO":{"id":3,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":268.0,"height":288.0,"posicion": X:563.4922 Y:324.5 Z:0.0 W:1.0},"tiempo":"2014-12-06 14:19:22","usuario":-1}]}
+-Escuchando en body por relacion en entidad Default
+height: 109 width:233
+BORRAR W: 233.0 H: 109.0 Entidad Defaultresultado:2
+height: 196 width:308
+-Escuchando en body por relacion en entidad Default
+height: 363 width:215
+BORRAR W: 215.0 H: 288.0 Entidad Defaultresultado:0
+-Iniciar borrado Entidad Default
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":254.0,"height":288.0,"posicion": X:309.00195 Y:353.0972 Z:0.0 W:1.0},"tiempo":"2014-12-06 14:19:09","usuario":-1},{"BORRAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Id"},"posicion": X:309.00195 Y:353.0972 Z:0.0 W:1.0},"tiempo":"2014-12-06 14:19:16","usuario":-1},{"CREAR_OBJETO":{"id":3,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":268.0,"height":288.0,"posicion": X:563.4922 Y:324.5 Z:0.0 W:1.0},"tiempo":"2014-12-06 14:19:22","usuario":-1},{"BORRAR_OBJETO":{"id":3,"nombre":"Default","atributos":{"0":"Id"},"posicion": X:563.4922 Y:324.5 Z:0.0 W:1.0},"tiempo":"2014-12-06 14:20:22","usuario":-1}]}
+height: 363 width:215
+height: 317 width:302
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":254.0,"height":288.0,"posicion": X:309.00195 Y:353.0972 Z:0.0 W:1.0},"tiempo":"2014-12-06 14:19:09","usuario":-1},{"BORRAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Id"},"posicion": X:309.00195 Y:353.0972 Z:0.0 W:1.0},"tiempo":"2014-12-06 14:19:16","usuario":-1},{"CREAR_OBJETO":{"id":3,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":268.0,"height":288.0,"posicion": X:563.4922 Y:324.5 Z:0.0 W:1.0},"tiempo":"2014-12-06 14:19:22","usuario":-1},{"BORRAR_OBJETO":{"id":3,"nombre":"Default","atributos":{"0":"Id"},"posicion": X:563.4922 Y:324.5 Z:0.0 W:1.0},"tiempo":"2014-12-06 14:20:22","usuario":-1},{"CREAR_OBJETO":{"id":6,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":302.0,"height":288.0,"posicion": X:640.73047 Y:310.69443 Z:0.0 W:1.0},"tiempo":"2014-12-06 14:20:25","usuario":-1}]}
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+294 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+717 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+Rectangle
+height: 257 width:177
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":177.0,"height":257.0,"posicion": X:271.86816 Y:356.5486 Z:0.0 W:1.0},"tiempo":"2014-12-06 14:20:56","usuario":-1}]}
+-Escuchando en body por relacion en entidad Default
+Polyline (4)
+height: 263 width:170
+BORRAR W: 170.0 H: 263.0 Entidad Defaultresultado:0
+-Iniciar borrado Entidad Default
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":177.0,"height":257.0,"posicion": X:271.86816 Y:356.5486 Z:0.0 W:1.0},"tiempo":"2014-12-06 14:20:56","usuario":-1},{"BORRAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Id"},"posicion": X:271.86816 Y:356.5486 Z:0.0 W:1.0},"tiempo":"2014-12-06 14:21:02","usuario":-1}]}
+Polyline (4)
+height: 263 width:170
+Rectangle
+height: 312 width:254
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":177.0,"height":257.0,"posicion": X:271.86816 Y:356.5486 Z:0.0 W:1.0},"tiempo":"2014-12-06 14:20:56","usuario":-1},{"BORRAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Id"},"posicion": X:271.86816 Y:356.5486 Z:0.0 W:1.0},"tiempo":"2014-12-06 14:21:02","usuario":-1},{"CREAR_OBJETO":{"id":3,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":254.0,"height":288.0,"posicion": X:502.09766 Y:304.77777 Z:0.0 W:1.0},"tiempo":"2014-12-06 14:21:15","usuario":-1}]}
+-Escuchando en body por relacion en entidad Default
+Polyline (3)
+height: 97 width:257
+BORRAR W: 257.0 H: 100.0 Entidad Defaultresultado:2
+Circle
+-Escuchando en body por relacion en entidad Default
+Polyline (3)
+height: 91 width:127
+BORRAR W: 127.0 H: 100.0 Entidad Defaultresultado:2
+Polyline (3)
+height: 91 width:127
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+328 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+734 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+Rectangle
+height: 260 width:184
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":184.0,"height":260.0,"posicion": X:243.64648 Y:276.18054 Z:0.0 W:1.0},"tiempo":"2014-12-06 14:32:24","usuario":-1}]}
+-Escuchando en body por relacion en entidad Default
+Polyline (4)
+height: 225 width:216
+BORRAR W: 216.0 H: 225.0 Entidad Defaultresultado:2
+Circle
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+313 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+719 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+Rectangle
+height: 315 width:265
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":265.0,"height":288.0,"posicion": X:330.292 Y:357.04166 Z:0.0 W:1.0},"tiempo":"2014-12-06 14:33:36","usuario":-1}]}
+-Escuchando en body por relacion en entidad Default
+Polyline (4)
+height: 283 width:218
+BORRAR W: 218.0 H: 283.0 Entidad Default Resultado(2 Relacion,-2 Borado):2
+Polyline (4)
+height: 283 width:218
+-Escuchando en body por relacion en entidad Default
+Polyline (4)
+height: 171 width:198
+BORRAR W: 198.0 H: 171.0 Entidad Default Resultado(2 Relacion,-2 Borado):2
+Circle
+-Escuchando en body por relacion en entidad Default
+Polyline (4)
+height: 286 width:237
+BORRAR W: 237.0 H: 286.0 Entidad Default Resultado(2 Relacion,-2 Borado):2
+Circle
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+297 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+719 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+Rectangle
+height: 294 width:252
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":252.0,"height":288.0,"posicion": X:283.25586 Y:244.62498 Z:0.0 W:1.0},"tiempo":"2014-12-06 14:58:22","usuario":-1}]}
+Polyline (2)
+height: 140 width:87
+-Escuchando en body por relacion en entidad Default
+Polyline (4)
+height: 259 width:153
+BORRAR W: 153.0 H: 259.0 Entidad Default Resultado(2 Relacion,-2 Borado):2
+Polyline (4)
+height: 258 width:152
+-Escuchando en body por relacion en entidad Default
+Polyline (3)
+height: 50 width:215
+BORRAR W: 215.0 H: 100.0 Entidad Default Resultado(2 Relacion,-2 Borado):2
+Polyline (3)
+height: 50 width:215

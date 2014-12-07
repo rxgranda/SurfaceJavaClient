@@ -837,19 +837,42 @@ public class DrawSurfaceScene extends AbstractScene {
 									if(componente instanceof MTPolygon && destino instanceof MTPolygon){ //verificar si el componente inicial y final son Instancias de Polygon(Diagrama entidad)
 										Object entidad1=((MTComponent)componente).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
 										Object entidad2=((MTComponent)destino).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
-										if(entidad1!=null&&entidad2!=null&&entidad1 instanceof ObjetoUMLGraph && entidad2 instanceof ObjetoUMLGraph && entidad1!=entidad2){
+										if(entidad1!=null&&entidad2!=null&&entidad1 instanceof ObjetoUMLGraph && entidad2 instanceof ObjetoUMLGraph ){
 											
 											//Reubicar objeto relacion
 											  HaloHelper helper=listaHaloHelper.get(currentUser);
 											  //System.out.println("try resize");
-											  if(!helper.getHoverInicio().equalsVector(new Vector3D())&&!helper.getHoverFin().equalsVector(new Vector3D()))
-											  {
-												 ((Relacion)objeto).setInicio(helper.getHoverInicio());
-												 ((Relacion)objeto).setFin(helper.getHoverFin());
-												 listaHaloHelper.remove(currentUser);
-												 helper=new HaloHelper();
-												 listaHaloHelper.put(currentUser, helper);
-												// System.out.println("resize done!!!!!!!!!!!");
+											  
+											  if(entidad1!=entidad2){
+												  if(!helper.getHoverInicio().equalsVector(new Vector3D())&&!helper.getHoverFin().equalsVector(new Vector3D()))
+												  {
+													 ((Relacion)objeto).setInicio(helper.getHoverInicio());
+													 ((Relacion)objeto).setFin(helper.getHoverFin());
+													 listaHaloHelper.remove(currentUser);
+													 helper=new HaloHelper();
+													 listaHaloHelper.put(currentUser, helper);
+													// System.out.println("resize done!!!!!!!!!!!");
+												  }
+											  }else{
+												 
+												  if(entidad1 instanceof Entidad_Impl){	
+													 Entidad oEntidad= (Entidad)((Entidad_Impl)entidad1).getObjetoUML();
+													  if(!oEntidad.isTieneRelacionRecursiva()){// Si aun no tiene relacion recursiva
+														  
+														  Vector3D puntoInicio=new Vector3D(oEntidad.getCentroide()).getAdded(new Vector3D(oEntidad.getWidth()/2+ObjetoUMLGraph.TAMANO_CARDINALIDAD,0));
+														  Vector3D puntoFin=new Vector3D(oEntidad.getCentroide()).getAdded(new Vector3D(0,-oEntidad.getHeight()/2-ObjetoUMLGraph.TAMANO_CARDINALIDAD));
+														  ((Relacion)objeto).setInicio(puntoInicio);
+														  ((Relacion)objeto).setFin(puntoFin);
+
+														  ((Entidad)((Entidad_Impl)entidad1).getObjetoUML()).setTieneRelacionRecursiva(true);
+														 
+													  	} else{// si ya tiene relacion recursiva
+													  		 break;
+													  	}
+														  
+												  }
+													  
+												  
 											  }
 											//
 											((Relacion)objeto).setObjetoInicio(((ObjetoUMLGraph)entidad1).getObjetoUML());

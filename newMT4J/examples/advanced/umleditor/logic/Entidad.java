@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Entidad extends ObjetoUML {
 
 	private String nombre;
+	private boolean tieneRelacionRecursiva=false;
 	private ArrayList<String> atributos;
 	
 	public Entidad(Usuario per) {
@@ -28,6 +29,14 @@ public class Entidad extends ObjetoUML {
 
 	public synchronized void setAtributos(ArrayList<String> atributos) {
 		this.atributos = atributos;
+	}
+
+	public boolean isTieneRelacionRecursiva() {
+		return tieneRelacionRecursiva;
+	}
+
+	public void setTieneRelacionRecursiva(boolean tieneRelacionRecursiva) {
+		this.tieneRelacionRecursiva = tieneRelacionRecursiva;
 	}
 	
 	

@@ -14,6 +14,7 @@ public class UMLRecognizer {
 
 	private Stroke stroke;
 	private PaleoSketchRecognizer recognizer;
+	private boolean modo_edicion=true;
 
 	public UMLRecognizer(){		
 		PaleoConfig config = new PaleoConfig();
@@ -37,7 +38,7 @@ public class UMLRecognizer {
 
 					//if(result.getBestShape().label.equalsLowerCase("line"))
 					if(result.getBestShape() != null&&stroke.getPoints().size()>40){
-						////System.out.println(result.getBestShape().getInterpretation().label);
+						System.out.println(result.getBestShape().getInterpretation().label);
 						String shapeLabel=result.getBestShape().getInterpretation().label;						
 						if(shapeLabel.equals("Rectangle"))					
 							return ObjetoUML.ENTIDAD;
@@ -48,14 +49,19 @@ public class UMLRecognizer {
 							str = str.replaceAll("[^0-9]+", " ");
 							//Arrays.asList(str.trim().split(" "));
 							int numPolyLine=Integer.parseInt(str.trim().split(" ")[0]);
-							if (numPolyLine>3) // Si es un polyline mayor a 4 para evitar el borrado involuntario					 
-								return ObjetoUML.DELETE_GESTURE;
+							if (numPolyLine>3){ // Si es un polyline mayor a 4 para evitar el borrado involuntario					 
+								if(modo_edicion)
+									return ObjetoUML.RELACION;
+								else
+									return ObjetoUML.DELETE_GESTURE;								
+							}
 							if(numPolyLine>1)
 								return ObjetoUML.RELACION;
 							
 							return ObjetoUML.INVALIDO;
 						}else if((shapeLabel.contains("Wave"))){
-							return ObjetoUML.DELETE_GESTURE;
+							if(!modo_edicion)
+								return ObjetoUML.DELETE_GESTURE;														
 						}
 					}
 				}
@@ -67,4 +73,16 @@ public class UMLRecognizer {
 		}
 		return ObjetoUML.INVALIDO;	
 	}
+	
+	public void delete_mode(){
+		modo_edicion=false;
+	}
+	public void edit_mode(){
+		modo_edicion=true;
+	}
+	
+	public boolean isEditMode(){
+		return modo_edicion;
+	}
+	
 }
