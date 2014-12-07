@@ -495,9 +495,11 @@ public class DrawSurfaceScene extends AbstractScene {
 					case AbstractCursorInputEvt.INPUT_UPDATED:
 						if(componente!=currentComponent){
 							 Object entidad2=((MTComponent)currentComponent).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
-							if (entidad2 instanceof ObjetoUMLGraph){
+							 listaHaloHelper.get(currentUser).setHoverFueraHalo(true);
+							 if (entidad2 instanceof ObjetoUMLGraph){
 								((MTPolygon)((ObjetoUMLGraph)entidad2).getHalo()).setFillColor(ObjetoUMLGraph.haloSelected);
 								((ObjetoUMLGraph)entidad2).getHalo().sendToFront();
+								
 								////System.out.println("Pintandoooooo");
 								LinkedList listaVisitados=(LinkedList) ((MTComponent)componente).getUserData(ObjetoUMLGraph.COMPONENTES_VISITADOS_KEYWORD);
 								if(listaVisitados==null){
@@ -857,10 +859,10 @@ public class DrawSurfaceScene extends AbstractScene {
 												 
 												  if(entidad1 instanceof Entidad_Impl){	
 													 Entidad oEntidad= (Entidad)((Entidad_Impl)entidad1).getObjetoUML();
-													  if(!oEntidad.isTieneRelacionRecursiva()){// Si aun no tiene relacion recursiva
+													  if(!oEntidad.isTieneRelacionRecursiva()&&listaHaloHelper.get(currentUser).isHoverFueraHalo()){// Si aun no tiene relacion recursiva
 														  
-														  Vector3D puntoInicio=new Vector3D(oEntidad.getCentroide()).getAdded(new Vector3D(oEntidad.getWidth()/2+ObjetoUMLGraph.TAMANO_CARDINALIDAD,0));
-														  Vector3D puntoFin=new Vector3D(oEntidad.getCentroide()).getAdded(new Vector3D(0,-oEntidad.getHeight()/2-ObjetoUMLGraph.TAMANO_CARDINALIDAD));
+														  Vector3D puntoInicio=new Vector3D(oEntidad.getCentroide()).getAdded(new Vector3D(-oEntidad.getWidth()/2,-oEntidad.getHeight()/2-ObjetoUMLGraph.TAMANO_CARDINALIDAD));
+														  Vector3D puntoFin=new Vector3D(oEntidad.getCentroide()).getAdded(new Vector3D(oEntidad.getWidth()/2,-oEntidad.getHeight()/2-ObjetoUMLGraph.TAMANO_CARDINALIDAD));
 														  ((Relacion)objeto).setInicio(puntoInicio);
 														  ((Relacion)objeto).setFin(puntoFin);
 

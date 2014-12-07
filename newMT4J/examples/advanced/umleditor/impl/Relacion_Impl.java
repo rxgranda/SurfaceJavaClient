@@ -466,7 +466,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		
 		halo=new MTRoundRectangle(objeto
 				.getPosicion().x-ObjetoUMLGraph.haloWidth/2, objeto
-				.getPosicion().y-ObjetoUMLGraph.haloWidth/2, 0, objeto
+				.getPosicion().y-ObjetoUMLGraph.haloWidth/2, 1, objeto
 				.getWidth()+ObjetoUMLGraph.haloWidth,
 				objeto.getHeight()+ObjetoUMLGraph.haloWidth, 1, 1, mtApp);		
 
@@ -476,9 +476,9 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		
 		
 		
-		halo.setNoFill(true);
+		//halo.setNoFill(true);
 		
-	//	halo.setFillColor(ObjetoUMLGraph.haloSelected);
+		halo.setFillColor(ObjetoUMLGraph.haloSelected);
 		
 		halo.removeAllGestureEventListeners();		
 		halo.setNoStroke(false);
@@ -616,6 +616,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		
 		LinkedList<TextoFlotanteImpl> textosflotantes = new LinkedList<TextoFlotanteImpl>();
 		linea.setUserData(ObjetoUMLGraph.TEXTO_FLOTANTE_KEYWORD, textosflotantes);
+		halo.sendToFront();
 		//this.actualizarRelacion();
 	}
 	@Override

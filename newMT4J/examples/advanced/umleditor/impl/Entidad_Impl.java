@@ -81,10 +81,10 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 		this.server=server;
 		halo=new MTRoundRectangle(objeto
 				.getPosicion().x-ObjetoUMLGraph.haloWidth/2, objeto
-				.getPosicion().y-ObjetoUMLGraph.haloWidth/2, 1, objeto
+				.getPosicion().y-ObjetoUMLGraph.haloWidth/2, 0, objeto
 				.getWidth()+ObjetoUMLGraph.haloWidth,
 				objeto.getHeight()+ObjetoUMLGraph.haloWidth, 1, 1, mtApp);									
-		halo.setNoFill(true); // Hacerlo invisible
+	//	halo.setNoFill(true); // Hacerlo invisible
 		halo.setFillColor(ObjetoUMLGraph.haloDeSelected);
 		halo.removeAllGestureEventListeners();
 		
