@@ -118,6 +118,8 @@ public class DrawSurfaceScene extends AbstractScene {
 	Map< Usuario, UMLFacade> listaComponentRecognizer=new HashMap<Usuario, UMLFacade>();
 	Map< Usuario, HaloHelper> listaHaloHelper=new HashMap<Usuario, HaloHelper>();
 	Map< Usuario, ArrayList<Vector3D>> listaPuntos=new HashMap<Usuario, ArrayList<Vector3D>>();
+	private AbstractShape [] listaPencil; 
+
 	
 	
 	
@@ -735,7 +737,29 @@ public class DrawSurfaceScene extends AbstractScene {
 										 * brushes.length-1)); AbstractShape
 										 * brushToDraw = brushes[brushIndex];
 										 */
-										AbstractShape brushToDraw = drawShape;
+										AbstractShape brushToDraw ;
+										switch (currentUser.getIdPluma()) { // escoger  el color de la pluma de acuerdo al idUsuario
+										case 1:
+											brushToDraw=listaPencil[1];
+											break;
+										case 2:
+											brushToDraw=listaPencil[2];
+											break;
+										case 3:
+											brushToDraw=listaPencil[3];
+											break;
+										case 4:
+											brushToDraw=listaPencil[4];
+											break;
+										case 5:
+											brushToDraw=listaPencil[5];
+											break;
+										default:
+											brushToDraw = drawShape;
+											//brushToDraw=listaPencil[5];
+											break;
+										}
+										
 
 										// Draw brush
 										brushToDraw.drawComponent(mtApp.g);
@@ -1095,5 +1119,9 @@ public class DrawSurfaceScene extends AbstractScene {
 		
 		UMLDataSaver.guardarEnArchivo();
 		return true;
+	}
+	
+	public void setListaPencil(MTEllipse[] lista){
+		listaPencil=lista;		
 	}
 }
