@@ -12,7 +12,7 @@ import org.mt4j.util.math.Vector3D;
 import advanced.umleditor.UMLRecognizer;
 import advanced.umleditor.impl.ObjetoUMLGraph;
 
-public abstract class ObjetoUML {
+public abstract class ObjetoUML  implements UndoInterface{
 	public static final int  INVALIDO=-1;
 	public static final int  DELETE_GESTURE=-2;
 	public static final int  ENTIDAD=1;
@@ -21,7 +21,6 @@ public abstract class ObjetoUML {
 	public static final int CARDINALIDAD = 4;
 	public static  final int EDIT_HEADER = 1;
 	public static final int EDIT_ATTS  = 2;
-	private static Calendar calendar = Calendar.getInstance();	
 	public  static ObjetoUML OBJETO_INVALIDO=new ObjetoInvalido(new Usuario()) ;
 	public static ObjetoUML DELETE_OBJECT_GESTURE= new DeleteObject(new Usuario());
 	private ObjetoUMLGraph figura;
@@ -178,6 +177,13 @@ public abstract class ObjetoUML {
 		this.persona = persona;
 	}
 
+	@Override
+	public ObjetoUML clonar(){
+		return null;
+	}
+	@Override
+	public void restaurar(ObjetoUML objeto){		
+	}
 
 	
 	/*public int getIdPersona() {

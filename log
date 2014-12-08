@@ -2105,3 +2105,1262 @@ height: 50 width:215
 BORRAR W: 215.0 H: 100.0 Entidad Default Resultado(2 Relacion,-2 Borado):2
 Polyline (3)
 height: 50 width:215
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+297 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+735 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+297 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+719 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+Rectangle
+height: 143 width:218
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":218.0,"height":143.0,"posicion": X:417.92773 Y:274.7014 Z:0.0 W:1.0},"tiempo":"2014-12-07 18:30:05","usuario":-1}]}
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+313 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+719 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+312 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+718 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+Rectangle
+height: 228 width:219
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":219.0,"height":228.0,"posicion": X:369.90137 Y:364.93054 Z:0.0 W:1.0},"tiempo":"2014-12-07 18:34:59","usuario":-1}]}
+Accion=1 ObjetoUML=3Tipo=class advanced.umleditor.logic.Entidad
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+313 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+735 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+Rectangle
+height: 211 width:229
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":229.0,"height":211.0,"posicion": X:389.70605 Y:316.11804 Z:0.0 W:1.0},"tiempo":"2014-12-07 18:39:02","usuario":-1}]}
+-Escuchando en body por relacion en entidad Default
+BORRAR W: 0.0 H: 0.0 Entidad Default Resultado(2 Relacion,-2 Borado):0
+Accion=1 ObjetoUML=3Tipo=class advanced.umleditor.logic.Entidad
+Accion=3 ObjetoUML=4Tipo=class advanced.umleditor.logic.Entidad
+-Iniciar borrado Entidad Default
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":229.0,"height":211.0,"posicion": X:389.70605 Y:316.11804 Z:0.0 W:1.0},"tiempo":"2014-12-07 18:39:02","usuario":-1},{"BORRAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Id"},"posicion": X:389.70605 Y:316.11804 Z:0.0 W:1.0},"tiempo":"2014-12-07 18:39:11","usuario":-1}]}
+java.lang.NullPointerException
+	at advanced.drawing.UndoHelper.deshacerAccion(UndoHelper.java:40)
+	at advanced.drawing.MainDrawingScene.deshacer(MainDrawingScene.java:430)
+	at org.mt4j.components.visibleComponents.widgets.MTSceneMenu$1.processGestureEvent(MTSceneMenu.java:293)
+	at org.mt4j.input.GestureEventSupport.fire(GestureEventSupport.java:184)
+	at org.mt4j.input.GestureEventSupport.fireGestureEvt(GestureEventSupport.java:169)
+	at org.mt4j.components.MTComponent.processGestureEvent(MTComponent.java:3010)
+	at org.mt4j.input.inputProcessors.componentProcessors.AbstractComponentProcessor.fireGestureEvent(AbstractComponentProcessor.java:238)
+	at org.mt4j.input.inputProcessors.componentProcessors.AbstractCursorProcessor.fireGestureEvent(AbstractCursorProcessor.java:172)
+	at org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragProcessor.cursorEnded(DragProcessor.java:117)
+	at org.mt4j.input.inputProcessors.componentProcessors.AbstractCursorProcessor.processInputEvtImpl(AbstractCursorProcessor.java:146)
+	at org.mt4j.input.inputProcessors.componentProcessors.AbstractComponentProcessor.processInputEvent(AbstractComponentProcessor.java:101)
+	at org.mt4j.input.ComponentInputProcessorSupport.processInputEvent(ComponentInputProcessorSupport.java:78)
+	at org.mt4j.components.MTComponent.dispatchInputEvent(MTComponent.java:2823)
+	at org.mt4j.components.MTComponent.processInputEvent(MTComponent.java:2954)
+	at org.mt4j.components.MTCanvas.processInputEvent(MTCanvas.java:434)
+	at org.mt4j.input.inputProcessors.globalProcessors.AbstractGlobalInputProcessor.fireInputEvent(AbstractGlobalInputProcessor.java:139)
+	at org.mt4j.input.inputProcessors.globalProcessors.InputRetargeter.processInputEvtImpl(InputRetargeter.java:94)
+	at org.mt4j.input.inputProcessors.globalProcessors.AbstractGlobalInputProcessor.processInputEvent(AbstractGlobalInputProcessor.java:68)
+	at org.mt4j.input.inputSources.AbstractInputSource.fireInputEvent(AbstractInputSource.java:209)
+	at org.mt4j.input.inputSources.AbstractInputSource.flushEvents(AbstractInputSource.java:185)
+	at org.mt4j.input.inputSources.AbstractInputSource.pre(AbstractInputSource.java:128)
+	at org.mt4j.input.inputSources.AbstractInputSource.processAction(AbstractInputSource.java:88)
+	at org.mt4j.MTApplication.runApplication(MTApplication.java:731)
+	at org.mt4j.MTApplication.draw(MTApplication.java:671)
+	at processing.core.PApplet.handleDraw(Unknown Source)
+	at processing.core.PApplet.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+308 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+730 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+Rectangle
+height: 238 width:224
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":224.0,"height":238.0,"posicion": X:337.71875 Y:336.3333 Z:0.0 W:1.0},"tiempo":"2014-12-07 18:41:25","usuario":-1}]}
+-Escuchando en body por relacion en entidad Default
+BORRAR W: 0.0 H: 0.0 Entidad Default Resultado(2 Relacion,-2 Borado):0
+Accion=1 ObjetoUML=3Tipo=class advanced.umleditor.logic.Entidad
+Accion=3 ObjetoUML=4Tipo=class advanced.umleditor.logic.Entidad
+-Iniciar borrado Entidad Default
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":224.0,"height":238.0,"posicion": X:337.71875 Y:336.3333 Z:0.0 W:1.0},"tiempo":"2014-12-07 18:41:25","usuario":-1},{"BORRAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Id"},"posicion": X:337.71875 Y:336.3333 Z:0.0 W:1.0},"tiempo":"2014-12-07 18:41:26","usuario":-1}]}
+java.lang.NullPointerException
+	at advanced.drawing.UndoHelper.deshacerAccion(UndoHelper.java:40)
+	at advanced.drawing.MainDrawingScene.deshacer(MainDrawingScene.java:430)
+	at org.mt4j.components.visibleComponents.widgets.MTSceneMenu$1.processGestureEvent(MTSceneMenu.java:293)
+	at org.mt4j.input.GestureEventSupport.fire(GestureEventSupport.java:184)
+	at org.mt4j.input.GestureEventSupport.fireGestureEvt(GestureEventSupport.java:169)
+	at org.mt4j.components.MTComponent.processGestureEvent(MTComponent.java:3010)
+	at org.mt4j.input.inputProcessors.componentProcessors.AbstractComponentProcessor.fireGestureEvent(AbstractComponentProcessor.java:238)
+	at org.mt4j.input.inputProcessors.componentProcessors.AbstractCursorProcessor.fireGestureEvent(AbstractCursorProcessor.java:172)
+	at org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragProcessor.cursorEnded(DragProcessor.java:117)
+	at org.mt4j.input.inputProcessors.componentProcessors.AbstractCursorProcessor.processInputEvtImpl(AbstractCursorProcessor.java:146)
+	at org.mt4j.input.inputProcessors.componentProcessors.AbstractComponentProcessor.processInputEvent(AbstractComponentProcessor.java:101)
+	at org.mt4j.input.ComponentInputProcessorSupport.processInputEvent(ComponentInputProcessorSupport.java:78)
+	at org.mt4j.components.MTComponent.dispatchInputEvent(MTComponent.java:2823)
+	at org.mt4j.components.MTComponent.processInputEvent(MTComponent.java:2954)
+	at org.mt4j.components.MTCanvas.processInputEvent(MTCanvas.java:434)
+	at org.mt4j.input.inputProcessors.globalProcessors.AbstractGlobalInputProcessor.fireInputEvent(AbstractGlobalInputProcessor.java:139)
+	at org.mt4j.input.inputProcessors.globalProcessors.InputRetargeter.processInputEvtImpl(InputRetargeter.java:94)
+	at org.mt4j.input.inputProcessors.globalProcessors.AbstractGlobalInputProcessor.processInputEvent(AbstractGlobalInputProcessor.java:68)
+	at org.mt4j.input.inputSources.AbstractInputSource.fireInputEvent(AbstractInputSource.java:209)
+	at org.mt4j.input.inputSources.AbstractInputSource.flushEvents(AbstractInputSource.java:185)
+	at org.mt4j.input.inputSources.AbstractInputSource.pre(AbstractInputSource.java:128)
+	at org.mt4j.input.inputSources.AbstractInputSource.processAction(AbstractInputSource.java:88)
+	at org.mt4j.MTApplication.runApplication(MTApplication.java:731)
+	at org.mt4j.MTApplication.draw(MTApplication.java:671)
+	at processing.core.PApplet.handleDraw(Unknown Source)
+	at processing.core.PApplet.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+313 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+725 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+Rectangle
+height: 264 width:207
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":207.0,"height":264.0,"posicion": X:475.85645 Y:435.93054 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:02:54","usuario":-1}]}
+-Escuchando en body por relacion en entidad Default
+BORRAR W: 0.0 H: 0.0 Entidad Default Resultado(2 Relacion,-2 Borado):0
+Accion=1 ObjetoUML=2Tipo=class advanced.umleditor.logic.Entidad
+Accion=3 ObjetoUML=2Tipo=class advanced.umleditor.logic.Entidad
+-Iniciar borrado Entidad Default
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":207.0,"height":264.0,"posicion": X:475.85645 Y:435.93054 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:02:54","usuario":-1},{"BORRAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Id"},"posicion": X:475.85645 Y:435.93054 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:02:55","usuario":-1}]}
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+312 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+767 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+Rectangle
+height: 242 width:242
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":242.0,"height":242.0,"posicion": X:296.1289 Y:395.5 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:11:33","usuario":-1}]}
+-Escuchando en body por relacion en entidad Default
+BORRAR W: 0.0 H: 0.0 Entidad Default Resultado(2 Relacion,-2 Borado):0
+Accion=1 ObjetoUML=2Tipo=class advanced.umleditor.logic.Entidad
+Accion=3 ObjetoUML=2Tipo=class advanced.umleditor.logic.Entidad
+-Iniciar borrado Entidad Default
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":242.0,"height":242.0,"posicion": X:296.1289 Y:395.5 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:11:33","usuario":-1},{"BORRAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Id"},"posicion": X:296.1289 Y:395.5 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:11:33","usuario":-1}]}
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+321 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+742 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+Rectangle
+height: 275 width:199
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":199.0,"height":275.0,"posicion": X:299.59473 Y:301.3264 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:12:20","usuario":-1}]}
+-Escuchando en body por relacion en entidad Default
+BORRAR W: 0.0 H: 0.0 Entidad Default Resultado(2 Relacion,-2 Borado):0
+Accion=1 ObjetoUML=2Tipo=class advanced.umleditor.logic.Entidad
+Accion=3 ObjetoUML=2Tipo=class advanced.umleditor.logic.Entidad
+-Iniciar borrado Entidad Default
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":199.0,"height":275.0,"posicion": X:299.59473 Y:301.3264 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:12:20","usuario":-1},{"BORRAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Id"},"posicion": X:299.59473 Y:301.3264 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:12:20","usuario":-1}]}
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+304 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+729 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+Rectangle
+height: 247 width:248
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":248.0,"height":247.0,"posicion": X:211.95898 Y:317.10416 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:50:43","usuario":-1}]}
+Rectangle
+height: 229 width:208
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":248.0,"height":247.0,"posicion": X:211.95898 Y:317.10416 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:50:43","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":208.0,"height":229.0,"posicion": X:726.88086 Y:279.63193 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:50:45","usuario":-1}]}
+-Escuchando en body por relacion en entidad Default
+BORRAR W: 0.0 H: 0.0 Entidad Default Resultado(2 Relacion,-2 Borado):0
+Accion=1 ObjetoUML=2Tipo=class advanced.umleditor.logic.Entidad
+Accion=1 ObjetoUML=4Tipo=class advanced.umleditor.logic.Entidad
+Accion=3 ObjetoUML=2Tipo=class advanced.umleditor.logic.Entidad
+Line
+height: 15 width:379
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":248.0,"height":247.0,"posicion": X:211.95898 Y:317.10416 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:50:43","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":208.0,"height":229.0,"posicion": X:726.88086 Y:279.63193 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:50:45","usuario":-1},{"CREAR_OBJETO":{"id":7,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:348.0 Y:339.0 Z:0.0 W:1.0,"posicionFin": X:593.0 Y:346.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":307.0,"height":100.0,"posicion": X:470.90527 Y:342.74304 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:50:48","usuario":-1}]}
+-Mover relacion 7
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":248.0,"height":247.0,"posicion": X:211.95898 Y:317.10416 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:50:43","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":208.0,"height":229.0,"posicion": X:726.88086 Y:279.63193 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:50:45","usuario":-1},{"CREAR_OBJETO":{"id":7,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:348.0 Y:339.0 Z:0.0 W:1.0,"posicionFin": X:593.0 Y:346.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":307.0,"height":100.0,"posicion": X:470.90527 Y:342.74304 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:50:48","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:348.0 Y:339.0 Z:0.0 W:1.0,"posicionFin": X:593.0 Y:346.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:470.90527 Y:342.74304 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:50:51","usuario":-1}]}
+-Eliminar relacion 7
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":248.0,"height":247.0,"posicion": X:211.95898 Y:317.10416 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:50:43","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":208.0,"height":229.0,"posicion": X:726.88086 Y:279.63193 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:50:45","usuario":-1},{"CREAR_OBJETO":{"id":7,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:348.0 Y:339.0 Z:0.0 W:1.0,"posicionFin": X:593.0 Y:346.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":307.0,"height":100.0,"posicion": X:470.90527 Y:342.74304 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:50:48","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:348.0 Y:339.0 Z:0.0 W:1.0,"posicionFin": X:593.0 Y:346.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:470.90527 Y:342.74304 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:50:51","usuario":-1},{"BORRAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:348.0 Y:339.0 Z:0.0 W:1.0,"posicionFin": X:593.0 Y:346.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:470.90527 Y:342.74304 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:50:51","usuario":-1}]}
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+297 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+720 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+Rectangle
+height: 284 width:291
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":291.0,"height":284.0,"posicion": X:349.10645 Y:354.0833 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:51:39","usuario":-1}]}
+Rectangle
+height: 234 width:239
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":291.0,"height":284.0,"posicion": X:349.10645 Y:354.0833 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:51:39","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":239.0,"height":234.0,"posicion": X:770.9463 Y:321.54166 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:51:41","usuario":-1}]}
+-Escuchando en body por relacion en entidad Default
+BORRAR W: 0.0 H: 0.0 Entidad Default Resultado(2 Relacion,-2 Borado):0
+Accion=1 ObjetoUML=2Tipo=class advanced.umleditor.logic.Entidad
+Accion=1 ObjetoUML=4Tipo=class advanced.umleditor.logic.Entidad
+Accion=3 ObjetoUML=2Tipo=class advanced.umleditor.logic.Entidad
+Line
+height: 60 width:371
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":291.0,"height":284.0,"posicion": X:349.10645 Y:354.0833 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:51:39","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":239.0,"height":234.0,"posicion": X:770.9463 Y:321.54166 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:51:41","usuario":-1},{"CREAR_OBJETO":{"id":7,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:530.0 Y:382.0 Z:0.0 W:1.0,"posicionFin": X:617.0 Y:368.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":307.0,"height":100.0,"posicion": X:572.8994 Y:374.79166 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:51:43","usuario":-1}]}
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+-Mover relacion 7
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":291.0,"height":284.0,"posicion": X:349.10645 Y:354.0833 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:51:39","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":239.0,"height":234.0,"posicion": X:770.9463 Y:321.54166 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:51:41","usuario":-1},{"CREAR_OBJETO":{"id":7,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:530.0 Y:382.0 Z:0.0 W:1.0,"posicionFin": X:617.0 Y:368.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":307.0,"height":100.0,"posicion": X:572.8994 Y:374.79166 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:51:43","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:404.00003 Y:379.00003 Z:0.0 W:1.0,"posicionFin": X:617.0 Y:368.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:510.51465 Y:373.3125 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:51:46","usuario":-1}]}
+-Eliminar relacion 7
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":291.0,"height":284.0,"posicion": X:349.10645 Y:354.0833 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:51:39","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":239.0,"height":234.0,"posicion": X:770.9463 Y:321.54166 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:51:41","usuario":-1},{"CREAR_OBJETO":{"id":7,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:530.0 Y:382.0 Z:0.0 W:1.0,"posicionFin": X:617.0 Y:368.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":307.0,"height":100.0,"posicion": X:572.8994 Y:374.79166 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:51:43","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:404.00003 Y:379.00003 Z:0.0 W:1.0,"posicionFin": X:617.0 Y:368.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:510.51465 Y:373.3125 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:51:46","usuario":-1},{"BORRAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:404.00003 Y:379.00003 Z:0.0 W:1.0,"posicionFin": X:617.0 Y:368.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:510.51465 Y:373.3125 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:51:46","usuario":-1}]}
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+298 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+705 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+Rectangle
+height: 249 width:246
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":246.0,"height":249.0,"posicion": X:479.32227 Y:405.85416 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:54:48","usuario":-1}]}
+Rectangle
+height: 232 width:239
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":246.0,"height":249.0,"posicion": X:479.32227 Y:405.85416 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:54:48","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":239.0,"height":232.0,"posicion": X:902.64746 Y:366.90277 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:54:50","usuario":-1}]}
+-Escuchando en body por relacion en entidad Default
+BORRAR W: 0.0 H: 0.0 Entidad Default Resultado(2 Relacion,-2 Borado):0
+Accion=1 ObjetoUML=2Tipo=class advanced.umleditor.logic.Entidad
+Accion=1 ObjetoUML=4Tipo=class advanced.umleditor.logic.Entidad
+Accion=3 ObjetoUML=2Tipo=class advanced.umleditor.logic.Entidad
+Line
+height: 31 width:294
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":246.0,"height":249.0,"posicion": X:479.32227 Y:405.85416 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:54:48","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":239.0,"height":232.0,"posicion": X:902.64746 Y:366.90277 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:54:50","usuario":-1},{"CREAR_OBJETO":{"id":7,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:635.0 Y:433.0 Z:0.0 W:1.0,"posicionFin": X:754.0 Y:412.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":294.0,"height":100.0,"posicion": X:692.7178 Y:421.63193 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:54:52","usuario":-1}]}
+-Mover relacion 7
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":246.0,"height":249.0,"posicion": X:479.32227 Y:405.85416 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:54:48","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":239.0,"height":232.0,"posicion": X:902.64746 Y:366.90277 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:54:50","usuario":-1},{"CREAR_OBJETO":{"id":7,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:635.0 Y:433.0 Z:0.0 W:1.0,"posicionFin": X:754.0 Y:412.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":294.0,"height":100.0,"posicion": X:692.7178 Y:421.63193 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:54:52","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:635.0 Y:433.0 Z:0.0 W:1.0,"posicionFin": X:754.0 Y:412.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:692.7178 Y:421.63193 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:54:53","usuario":-1}]}
+-Eliminar relacion 7
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":246.0,"height":249.0,"posicion": X:479.32227 Y:405.85416 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:54:48","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":239.0,"height":232.0,"posicion": X:902.64746 Y:366.90277 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:54:50","usuario":-1},{"CREAR_OBJETO":{"id":7,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:635.0 Y:433.0 Z:0.0 W:1.0,"posicionFin": X:754.0 Y:412.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":294.0,"height":100.0,"posicion": X:692.7178 Y:421.63193 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:54:52","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:635.0 Y:433.0 Z:0.0 W:1.0,"posicionFin": X:754.0 Y:412.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:692.7178 Y:421.63193 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:54:53","usuario":-1},{"BORRAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:635.0 Y:433.0 Z:0.0 W:1.0,"posicionFin": X:754.0 Y:412.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:692.7178 Y:421.63193 Z:0.0 W:1.0},"tiempo":"2014-12-07 19:54:53","usuario":-1}]}
+Tratando de hacer undo
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+297 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+719 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+Rectangle
+height: 284 width:262
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":262.0,"height":284.0,"posicion": X:396.14258 Y:323.5139 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:14:59","usuario":-1}]}
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+Rectangle
+height: 331 width:230
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":262.0,"height":284.0,"posicion": X:396.14258 Y:323.5139 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:14:59","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":230.0,"height":288.0,"posicion": X:813.03125 Y:283.0833 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:15:04","usuario":-1}]}
+-Escuchando en body por relacion en entidad Default
+BORRAR W: 0.0 H: 0.0 Entidad Default Resultado(2 Relacion,-2 Borado):0
+Accion=1 ObjetoUML=2Tipo=class advanced.umleditor.logic.Entidad
+Accion=1 ObjetoUML=4Tipo=class advanced.umleditor.logic.Entidad
+Accion=3 ObjetoUML=2Tipo=class advanced.umleditor.logic.Entidad
+Line
+height: 34 width:390
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":262.0,"height":284.0,"posicion": X:396.14258 Y:323.5139 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:14:59","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":230.0,"height":288.0,"posicion": X:813.03125 Y:283.0833 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:15:04","usuario":-1},{"CREAR_OBJETO":{"id":7,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:366.0 Y:338.0 Z:0.0 W:1.0,"posicionFin": X:666.0 Y:366.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":307.0,"height":100.0,"posicion": X:515.96094 Y:352.1111 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:15:06","usuario":-1}]}
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+297 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+705 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+Rectangle
+height: 302 width:242
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":242.0,"height":288.0,"posicion": X:358.51367 Y:326.4722 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:15:56","usuario":-1}]}
+Rectangle
+height: 303 width:210
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":242.0,"height":288.0,"posicion": X:358.51367 Y:326.4722 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:15:56","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":210.0,"height":288.0,"posicion": X:848.6797 Y:316.61108 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:15:58","usuario":-1}]}
+-Escuchando en body por relacion en entidad Default
+BORRAR W: 0.0 H: 0.0 Entidad Default Resultado(2 Relacion,-2 Borado):0
+Accion=1 ObjetoUML=2Tipo=class advanced.umleditor.logic.Entidad
+Accion=1 ObjetoUML=4Tipo=class advanced.umleditor.logic.Entidad
+Accion=3 ObjetoUML=2Tipo=class advanced.umleditor.logic.Entidad
+Line
+height: 10 width:329
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":242.0,"height":288.0,"posicion": X:358.51367 Y:326.4722 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:15:56","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":210.0,"height":288.0,"posicion": X:848.6797 Y:316.61108 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:15:58","usuario":-1},{"CREAR_OBJETO":{"id":7,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:507.0 Y:373.0 Z:0.0 W:1.0,"posicionFin": X:710.0 Y:366.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":307.0,"height":100.0,"posicion": X:607.5576 Y:369.36804 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:16:00","usuario":-1}]}
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+-Mover relacion 7
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":242.0,"height":288.0,"posicion": X:358.51367 Y:326.4722 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:15:56","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":210.0,"height":288.0,"posicion": X:848.6797 Y:316.61108 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:15:58","usuario":-1},{"CREAR_OBJETO":{"id":7,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:507.0 Y:373.0 Z:0.0 W:1.0,"posicionFin": X:710.0 Y:366.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":307.0,"height":100.0,"posicion": X:607.5576 Y:369.36804 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:16:00","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:415.99994 Y:384.00018 Z:0.0 W:1.0,"posicionFin": X:689.0005 Y:408.00015 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:552.10474 Y:395.50018 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:16:04","usuario":-1}]}
+-Eliminar relacion 7
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":242.0,"height":288.0,"posicion": X:358.51367 Y:326.4722 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:15:56","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":210.0,"height":288.0,"posicion": X:848.6797 Y:316.61108 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:15:58","usuario":-1},{"CREAR_OBJETO":{"id":7,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:507.0 Y:373.0 Z:0.0 W:1.0,"posicionFin": X:710.0 Y:366.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":307.0,"height":100.0,"posicion": X:607.5576 Y:369.36804 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:16:00","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:415.99994 Y:384.00018 Z:0.0 W:1.0,"posicionFin": X:689.0005 Y:408.00015 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:552.10474 Y:395.50018 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:16:04","usuario":-1},{"BORRAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:415.99994 Y:384.00018 Z:0.0 W:1.0,"posicionFin": X:689.0005 Y:408.00015 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:552.10474 Y:395.50018 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:16:04","usuario":-1}]}
+Tratando de hacer undo
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+Line
+height: 28 width:339
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":242.0,"height":288.0,"posicion": X:358.51367 Y:326.4722 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:15:56","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":210.0,"height":288.0,"posicion": X:848.6797 Y:316.61108 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:15:58","usuario":-1},{"CREAR_OBJETO":{"id":7,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:507.0 Y:373.0 Z:0.0 W:1.0,"posicionFin": X:710.0 Y:366.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":307.0,"height":100.0,"posicion": X:607.5576 Y:369.36804 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:16:00","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:415.99994 Y:384.00018 Z:0.0 W:1.0,"posicionFin": X:689.0005 Y:408.00015 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:552.10474 Y:395.50018 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:16:04","usuario":-1},{"BORRAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:415.99994 Y:384.00018 Z:0.0 W:1.0,"posicionFin": X:689.0005 Y:408.00015 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:552.10474 Y:395.50018 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:16:04","usuario":-1},{"CREAR_OBJETO":{"id":16,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:410.0038 Y:261.6336 Z:0.0 W:1.0,"posicionFin": X:694.78503 Y:286.98578 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":307.0,"height":100.0,"posicion": X:551.99994 Y:275.49982 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:16:19","usuario":-1}]}
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":242.0,"height":288.0,"posicion": X:358.51367 Y:326.4722 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:15:56","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":210.0,"height":288.0,"posicion": X:848.6797 Y:316.61108 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:15:58","usuario":-1},{"CREAR_OBJETO":{"id":7,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:507.0 Y:373.0 Z:0.0 W:1.0,"posicionFin": X:710.0 Y:366.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":307.0,"height":100.0,"posicion": X:607.5576 Y:369.36804 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:16:00","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:415.99994 Y:384.00018 Z:0.0 W:1.0,"posicionFin": X:689.0005 Y:408.00015 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:552.10474 Y:395.50018 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:16:04","usuario":-1},{"BORRAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:415.99994 Y:384.00018 Z:0.0 W:1.0,"posicionFin": X:689.0005 Y:408.00015 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:552.10474 Y:395.50018 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:16:04","usuario":-1},{"CREAR_OBJETO":{"id":16,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:410.0038 Y:261.6336 Z:0.0 W:1.0,"posicionFin": X:694.78503 Y:286.98578 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":307.0,"height":100.0,"posicion": X:551.99994 Y:275.49982 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:16:19","usuario":-1},{"BORRAR_OBJETO":{"id":16,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:410.0038 Y:261.6336 Z:0.0 W:1.0,"posicionFin": X:694.78503 Y:286.98578 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","posicion": X:551.99994 Y:275.49982 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:16:23","usuario":-1}]}
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+ Mover entidad Default
+-Actualizar relacion 16
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+290 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+712 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+Rectangle
+height: 262 width:177
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":177.0,"height":262.0,"posicion": X:215.4248 Y:313.65277 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:17:42","usuario":-1}]}
+Rectangle
+height: 299 width:247
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":177.0,"height":262.0,"posicion": X:215.4248 Y:313.65277 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:17:42","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":247.0,"height":288.0,"posicion": X:805.6045 Y:305.7639 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:17:44","usuario":-1}]}
+-Escuchando en body por relacion en entidad Default
+BORRAR W: 0.0 H: 0.0 Entidad Default Resultado(2 Relacion,-2 Borado):0
+Accion=1 ObjetoUML=2Tipo=class advanced.umleditor.logic.Entidad
+Accion=1 ObjetoUML=4Tipo=class advanced.umleditor.logic.Entidad
+Accion=3 ObjetoUML=2Tipo=class advanced.umleditor.logic.Entidad
+Line
+height: 20 width:412
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":177.0,"height":262.0,"posicion": X:215.4248 Y:313.65277 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:17:42","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":247.0,"height":288.0,"posicion": X:805.6045 Y:305.7639 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:17:44","usuario":-1},{"CREAR_OBJETO":{"id":7,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:341.0 Y:345.0 Z:0.0 W:1.0,"posicionFin": X:652.0 Y:361.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":307.0,"height":100.0,"posicion": X:496.65137 Y:353.0972 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:17:46","usuario":-1}]}
+Rectangle
+height: 116 width:127
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":177.0,"height":262.0,"posicion": X:215.4248 Y:313.65277 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:17:42","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":247.0,"height":288.0,"posicion": X:805.6045 Y:305.7639 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:17:44","usuario":-1},{"CREAR_OBJETO":{"id":7,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:341.0 Y:345.0 Z:0.0 W:1.0,"posicionFin": X:652.0 Y:361.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":307.0,"height":100.0,"posicion": X:496.65137 Y:353.0972 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:17:46","usuario":-1},{"CREAR_OBJETO":{"id":13,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":127.0,"height":116.0,"posicion": X:487.73926 Y:550.31946 Z:0.0 W:1.0},"tiempo":"2014-12-07 20:17:49","usuario":-1}]}
+Polyline (2)
+height: 104 width:106
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+Line
+height: 330 width:344

@@ -38,6 +38,7 @@ import org.mt4j.util.math.Vertex;
 import com.corundumstudio.socketio.SocketIOServer;
 
 import advanced.drawing.MainDrawingScene;
+import advanced.drawing.UndoHelper;
 import advanced.umleditor.UMLCollection;
 import advanced.umleditor.UMLDataSaver;
 import advanced.umleditor.UMLFacade;
@@ -61,6 +62,8 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 	private final MTLine linea ;
 	private final ObjetoUML objeto;
 	final MTRoundRectangle halo;
+	final MTComponent container;
+	final MTCanvas canvas;
 	static float DISTANCIA_FROM_NODE = 0.5f;
 	
 	private  ObjetoUML textoflotInicio;
@@ -91,7 +94,8 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 	public Relacion_Impl(final MTApplication mtApp, final MTComponent container, final MTCanvas canvas, final ObjetoUML objeto, final UMLFacade recognizer,final SocketIOServer server) {
 		super(mtApp);
 		this.mtApp=mtApp;
-		
+		this.canvas=canvas;
+		this.container=container;
 		////
 		Vertex a= new Vertex(),b= new Vertex();
 		Vertex []c=new Vertex[2];
@@ -560,7 +564,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 				
 					//	System.out.println("Reconocer:");
 						ObjetoUML obj=recognizer.reconocerObjeto();
-						if (obj ==ObjetoUML.DELETE_OBJECT_GESTURE&&obj.getWidth()>40&&obj.getHeight()>40){
+						if (true){//obj ==ObjetoUML.DELETE_OBJECT_GESTURE&&obj.getWidth()>40&&obj.getHeight()>40){
 							
 							
 							String canal=(MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID)!=null)?MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID).getCanal():Usuario.CANAL_DEFAULT_USER;
@@ -570,6 +574,8 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 							server.getNamespace("/login").getBroadcastOperations().sendEvent("eraseElement",new RelacionAdapter(((Relacion)objeto),idUsuario));
 							
 							 //server.getNamespace("/login").getBroadcastOperations().sendEvent("broad",new RelacionAdapter(((Relacion)objeto),idUsuario));
+							
+							UndoHelper.agregarAccion(UndoHelper.BORRAR_OBJETO_ACTION, objeto);
 
 							removerRelacion(idUsuario,false);
 
@@ -1050,6 +1056,27 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 																							
 			return false;
 		}
+	}
+
+
+	@Override
+	public void undoDeleteActions() {
+		halo.setVisible(true);
+		halo.setPickable(true);
+		container.addChild(linea);
+		System.out.println("Tratando de hacer undo");
+		//container.removeChild(halo);		
+		
+		
+	}
+	@Override
+	public void undoAddActions() {
+		linea.removeFromParent();		
+		halo.setVisible(false);
+		halo.setPickable(false);
+		UMLDataSaver.agregarAccion(UMLDataSaver.BORRAR_OBJETO_ACTION, objeto,MainDrawingScene.getListaUsuarios().get(Usuario.ID_DEFAULT_USER) );
+		server.getNamespace("/login").getBroadcastOperations().sendEvent("eraseElement",new RelacionAdapter(((Relacion)objeto),Usuario.ID_DEFAULT_USER));
+		
 	}
 
 

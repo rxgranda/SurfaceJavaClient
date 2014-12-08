@@ -9,7 +9,7 @@ import org.mt4j.util.MTColor;
 
 import advanced.umleditor.logic.ObjetoUML;
 
-public interface ObjetoUMLGraph {
+public interface ObjetoUMLGraph extends UndoActions{
 	public static final MTColor azul=new MTColor(76, 96, 245);
 	public static final MTColor rojo=new MTColor(240, 0, 0);
 	public static final MTColor headerColor=new MTColor(2,196,238);//new MTColor(45,137,239);

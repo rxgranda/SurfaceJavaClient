@@ -2,7 +2,7 @@ package advanced.umleditor.logic;
 
 import java.util.ArrayList;
 
-public class TextoFlotante extends ObjetoUML {
+public class TextoFlotante extends ObjetoUML{
 
 	private String nombre;
 	private ObjetoUML owner;
@@ -31,7 +31,18 @@ public class TextoFlotante extends ObjetoUML {
 		return this.owner; 
 	}
 	
-	
+	@Override
+	public ObjetoUML clonar(){
+		TextoFlotante clon=new TextoFlotante(this.getPersona());	
+		clon.setNombre(new String(nombre));		
+		return clon;		
+	}
+	@Override
+	public void restaurar(ObjetoUML objeto){
+		if(objeto instanceof TextoFlotante){			
+			this.setNombre(new String(((TextoFlotante) objeto).getNombre()));			
+		}				
+	}
 	
 
 }

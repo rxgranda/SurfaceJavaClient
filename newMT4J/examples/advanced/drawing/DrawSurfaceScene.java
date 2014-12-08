@@ -739,22 +739,22 @@ public class DrawSurfaceScene extends AbstractScene {
 										 */
 										AbstractShape brushToDraw ;
 										switch (currentUser.getIdPluma()) { // escoger  el color de la pluma de acuerdo al idUsuario
-										case 1:
+										case 1: // Rojo
 											brushToDraw=listaPencil[1];
 											break;
-										case 2:
+										case 2: // Azul
 											brushToDraw=listaPencil[2];
 											break;
-										case 3:
+										case 3: // Verde
 											brushToDraw=listaPencil[3];
 											break;
-										case 4:
+										case 4: // Naranja
 											brushToDraw=listaPencil[4];
 											break;
-										case 5:
+										case 5: // Amarillo
 											brushToDraw=listaPencil[5];
 											break;
-										default:
+										default: // Negro
 											brushToDraw = drawShape;
 											//brushToDraw=listaPencil[5];
 											break;
@@ -856,6 +856,8 @@ public class DrawSurfaceScene extends AbstractScene {
 									ObjetoUMLGraph diagrama= new Entidad_Impl(mtApp,container,getCanvas() ,componentRecognizer,objeto,server);									
 									objeto.setFigura(diagrama);
 									UMLDataSaver.agregarAccion(UMLDataSaver.AGREGAR_OBJETO_ACTION,objeto,currentUser);
+									UndoHelper.agregarAccion(UndoHelper.AGREGAR_OBJETO_ACTION, objeto);
+								//	UndoHelper.imprimirStack();
 									//anadirObjeto(diagrama.getFigura());
 									break;
 								case ObjetoUML.RELACION:
@@ -924,6 +926,7 @@ public class DrawSurfaceScene extends AbstractScene {
 
 											objeto.setFigura(linea);	
 											UMLDataSaver.agregarAccion(UMLDataSaver.AGREGAR_OBJETO_ACTION,objeto, currentUser);
+											UndoHelper.agregarAccion(UndoHelper.AGREGAR_OBJETO_ACTION, objeto);
 
 											//anadirObjeto(linea.getFigura());
 										}

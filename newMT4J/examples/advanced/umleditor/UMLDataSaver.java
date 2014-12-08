@@ -29,7 +29,6 @@ public class UMLDataSaver implements Runnable {
 	public static final int EDITAR_OBJETO_ACTION=2;
 	public static final int BORRAR_OBJETO_ACTION=3;
 	public static final int MOVER_OBJETO_ACTION=4;
-	public static final int RESIZE_OBJETO_ACTION=5;
 	
 	public static final String USER_KEYWORD="usuario";
 	public static final String AGREGAR_OBJETO_KEYWORD="objeto";

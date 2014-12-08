@@ -1,12 +1,14 @@
 package advanced.umleditor.logic;
 
+import java.util.ArrayList;
+
 import org.hamcrest.core.IsInstanceOf;
 import org.mt4j.util.math.Vector3D;
 
 import advanced.umleditor.impl.ObjetoUMLGraph;
 import advanced.umleditor.impl.TextoFlotanteImpl;
 
-public class Relacion extends ObjetoUML {
+public class Relacion extends ObjetoUML  {
 
 	public final static int CARDINALIDAD_UNO=1;
 	public final static int CARDINALIDAD_CERO_UNO=2;
@@ -138,5 +140,20 @@ public class Relacion extends ObjetoUML {
 	}
 
 
+	@Override
+	public ObjetoUML clonar(){
+		Relacion clon=new Relacion(this.getPersona());	
+		clon.setTextoInicio(((UndoInterface)this.getTextoInicio()).clonar());
+		clon.setTextoFin(((UndoInterface)this.getTextoFin()).clonar());
+		return clon;		
+	}
+	@Override
+	public void restaurar(ObjetoUML objeto){
+		if(objeto instanceof Relacion){			
+			((UndoInterface) this.getTextoInicio()).restaurar(((Relacion) objeto).getTextoInicio());
+			((UndoInterface) this.getTextoFin()).restaurar(((Relacion) objeto).getTextoFin());
+
+		}				
+	}
 	
 }

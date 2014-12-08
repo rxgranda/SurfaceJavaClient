@@ -425,4 +425,12 @@ public class MainDrawingScene extends AbstractScene {
 		}
 		
 	}
+	
+	public static  synchronized void deshacer(){
+		UndoHelper.deshacerAccion();
+	}
+	
+	public static  synchronized void modo_borrar(){
+		//UndoHelper.deshacerAccion();
+	}
 }

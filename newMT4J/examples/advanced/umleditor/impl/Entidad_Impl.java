@@ -37,6 +37,7 @@ import com.corundumstudio.socketio.SocketIOServer;
 
 import advanced.drawing.DrawSurfaceScene;
 import advanced.drawing.MainDrawingScene;
+import advanced.drawing.UndoHelper;
 import advanced.umleditor.UMLCollection;
 import advanced.umleditor.UMLDataSaver;
 import advanced.umleditor.UMLFacade;
@@ -58,7 +59,8 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 	private MTTextField headerField;
 	private MTTextArea  bodyField;
 	MTEllipse botonResize=null,botonResize2=null,botonResize3=null,botonResize4=null;
-	
+	private final MTCanvas canvas;
+	private final MTComponent container;
 
 	SocketIOServer server;
 	ObjetoUML objeto;
@@ -76,9 +78,12 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 		rectangulo.setFillColor(new MTColor(255,255,255));
 		rectangulo.setStrokeColor(new MTColor(0, 0, 0));
 		rectangulo.setNoStroke(true);
-		this.objeto=objeto;
 		
+		this.objeto=objeto;		
 		this.server=server;
+		this.canvas=canvas;
+		this.container=container;
+		
 		halo=new MTRoundRectangle(objeto
 				.getPosicion().x-ObjetoUMLGraph.haloWidth/2, objeto
 				.getPosicion().y-ObjetoUMLGraph.haloWidth/2, 0, objeto
@@ -596,6 +601,10 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 						//rectangulo.addChild(body);
 						ObjetoUML obj=recognizer.reconocerObjeto();
 						System.out.println("BORRAR W: "+obj.getWidth()+" H: "+obj.getHeight()+" Entidad "+((Entidad)objeto).getNombre()+" Resultado(2 Relacion,-2 Borado):"+obj.getTipo());
+						
+						
+						UndoHelper.agregarAccion(UndoHelper.BORRAR_OBJETO_ACTION,objeto);
+						UndoHelper.imprimirStack();
 						if (obj ==ObjetoUML.DELETE_OBJECT_GESTURE&&obj.getWidth()>50&&obj.getHeight()>30){
 							
 							System.out.println("-Iniciar borrado Entidad "+ ((Entidad)objeto).getNombre());
@@ -624,7 +633,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 						    UMLDataSaver.agregarAccion(UMLDataSaver.BORRAR_OBJETO_ACTION, objeto,MainDrawingScene.getListaUsuarios().get(idUsuario) );
 							//container.removeChild(rectangulo);
 						  //  halo.setFillColor(new MTColor(255,255,255));
-							
+							objeto.setBorrado(true);
 							rectangulo.removeFromParent();
 							halo.removeFromParent();
 									
@@ -849,6 +858,27 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 			}
 		}
 		
+		
+	}
+
+
+
+	@Override
+	public void undoDeleteActions() {
+		objeto.setBorrado(false);
+		container.addChild(rectangulo);
+		canvas.addChild(halo);		
+		
+	}
+
+
+
+	@Override
+	public void undoAddActions() {
+		objeto.setBorrado(true);
+		rectangulo.removeFromParent();
+		halo.removeFromParent();
+				
 		
 	}
 }

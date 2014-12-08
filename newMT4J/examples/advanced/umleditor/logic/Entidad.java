@@ -2,7 +2,7 @@ package advanced.umleditor.logic;
 
 import java.util.ArrayList;
 
-public class Entidad extends ObjetoUML {
+public class Entidad extends ObjetoUML  {
 
 	private String nombre;
 	private boolean tieneRelacionRecursiva=false;
@@ -40,7 +40,21 @@ public class Entidad extends ObjetoUML {
 	}
 	
 	
-	
-	
+	@Override
+	public ObjetoUML clonar(){
+		Entidad clon=new Entidad(this.getPersona());
+		clon.setNombre(new String(this.getNombre()));
+		clon.setAtributos(new ArrayList<String>(this.getAtributos()));
+		clon.setTieneRelacionRecursiva(this.isTieneRelacionRecursiva());
+		return clon;		
+	}
+	@Override
+	public void restaurar(ObjetoUML objeto){
+		if(objeto instanceof Entidad){			
+			this.setNombre(new String(((Entidad) objeto).getNombre()));
+			this.setAtributos(new ArrayList<String>(((Entidad) objeto).getAtributos()));
+			this.setTieneRelacionRecursiva(((Entidad) objeto).isTieneRelacionRecursiva());		
+		}				
+	}
 
 }

@@ -287,7 +287,12 @@ public class MTSceneMenu extends MTRectangle{
 						Vector3D restoreButtonIntersection = restoreButton.getIntersectionGlobal(Tools3D.getCameraPickRay(getRenderer(), restoreButton, cursor.getCurrentEvtPosX(), cursor.getCurrentEvtPosY()));
 						if (restoreButtonIntersection != null){
 							logger.debug("--> RESTORE!");
-							MTSceneMenu.this.sceneTexture.restore();
+							//MTSceneMenu.this.sceneTexture.restore();
+							// Para deshacer
+							if(getScene() instanceof MainDrawingScene ){								
+								MainDrawingScene.deshacer();
+							}
+							
 						}
 						Vector3D closeButtonIntersection = closeButton.getIntersectionGlobal(Tools3D.getCameraPickRay(getRenderer(), closeButton, cursor.getCurrentEvtPosX(), cursor.getCurrentEvtPosY()));
 						if (closeButtonIntersection != null){
