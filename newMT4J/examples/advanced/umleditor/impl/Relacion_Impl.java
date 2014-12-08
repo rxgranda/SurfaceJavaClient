@@ -567,11 +567,9 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 						if (true){//obj ==ObjetoUML.DELETE_OBJECT_GESTURE&&obj.getWidth()>40&&obj.getHeight()>40){
 							
 							
-							String canal=(MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID)!=null)?MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID).getCanal():Usuario.CANAL_DEFAULT_USER;
 							int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID)!=null)?(int)cursor.sessionID:Usuario.ID_DEFAULT_USER;
 							
 							
-							server.getNamespace("/login").getBroadcastOperations().sendEvent("eraseElement",new RelacionAdapter(((Relacion)objeto),idUsuario));
 							
 							 //server.getNamespace("/login").getBroadcastOperations().sendEvent("broad",new RelacionAdapter(((Relacion)objeto),idUsuario));
 							
@@ -794,8 +792,14 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 	public synchronized void removerRelacion(int idUsuario,boolean propagacion){
 
 		System.out.println("-Eliminar relacion "+ ((Relacion)objeto).getId());
+		
+		/////////////////////////////////////////////////////////////////////////
+		server.getNamespace("/login").getBroadcastOperations().sendEvent("eraseElement",new RelacionAdapter(((Relacion)objeto),idUsuario));
+		UMLDataSaver.agregarAccion(UMLDataSaver.BORRAR_OBJETO_ACTION, objeto,MainDrawingScene.getListaUsuarios().get(idUsuario) );
 
-		LinkedList<TextoFlotanteImpl> textosflotantes = (LinkedList<TextoFlotanteImpl>)linea.getUserData(ObjetoUMLGraph.TEXTO_FLOTANTE_KEYWORD);
+		/////////////////////////////////////////////////////////////////////////
+
+		/*LinkedList<TextoFlotanteImpl> textosflotantes = (LinkedList<TextoFlotanteImpl>)linea.getUserData(ObjetoUMLGraph.TEXTO_FLOTANTE_KEYWORD);
 		synchronized (textosflotantes) {					
 			for (TextoFlotanteImpl textoflot : textosflotantes ){
 				
@@ -828,7 +832,6 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 			inicio.getFigura().eliminarDatos(RELACIONES_INICIO_KEYWORD, this);			
 			Entidad fin=((Entidad)((Relacion)this.objeto).getObjetoFin());
 			fin.getFigura().eliminarDatos(RELACIONES_FIN_KEYWORD, this);
-			UMLDataSaver.agregarAccion(UMLDataSaver.BORRAR_OBJETO_ACTION, objeto,MainDrawingScene.getListaUsuarios().get(idUsuario) );
 		}
 	}
 	
@@ -1064,6 +1067,9 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		halo.setVisible(true);
 		halo.setPickable(true);
 		container.addChild(linea);
+		((Relacion)objeto).getObjetoInicio().getFigura().guardarDatos(ObjetoUMLGraph.RELACIONES_INICIO_KEYWORD, this);
+		((Relacion)objeto).getObjetoFin().getFigura().guardarDatos(ObjetoUMLGraph.RELACIONES_FIN_KEYWORD, this);
+
 		System.out.println("Tratando de hacer undo");
 		//container.removeChild(halo);		
 		
@@ -1071,12 +1077,8 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 	}
 	@Override
 	public void undoAddActions() {
-		linea.removeFromParent();		
-		halo.setVisible(false);
-		halo.setPickable(false);
-		UMLDataSaver.agregarAccion(UMLDataSaver.BORRAR_OBJETO_ACTION, objeto,MainDrawingScene.getListaUsuarios().get(Usuario.ID_DEFAULT_USER) );
-		server.getNamespace("/login").getBroadcastOperations().sendEvent("eraseElement",new RelacionAdapter(((Relacion)objeto),Usuario.ID_DEFAULT_USER));
-		
+		//server.getNamespace("/login").getBroadcastOperations().sendEvent("eraseElement",new RelacionAdapter(((Relacion)objeto),Usuario.ID_DEFAULT_USER));		
+		removerRelacion(Usuario.ID_DEFAULT_USER,false);		
 	}
 
 

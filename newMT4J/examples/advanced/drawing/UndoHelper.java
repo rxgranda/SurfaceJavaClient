@@ -62,7 +62,8 @@ public class UndoHelper {
 			
 			
 		}catch (Exception e){
-			e.printStackTrace();
+			//e.printStackTrace();
+			System.out.println("Ya no hay mas acciones que deshacer");
 		}
 	}
 	public static synchronized void agregarAccion(final int tipoAccion, ObjetoUML objeto){
