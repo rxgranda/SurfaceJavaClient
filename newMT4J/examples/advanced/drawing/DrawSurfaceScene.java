@@ -887,8 +887,8 @@ public class DrawSurfaceScene extends AbstractScene {
 													 Entidad oEntidad= (Entidad)((Entidad_Impl)entidad1).getObjetoUML();
 													  if(!oEntidad.isTieneRelacionRecursiva()&&listaHaloHelper.get(currentUser).isHoverFueraHalo()){// Si aun no tiene relacion recursiva
 														  
-														  Vector3D puntoInicio=new Vector3D(oEntidad.getCentroide()).getAdded(new Vector3D(-oEntidad.getWidth()/2,-oEntidad.getHeight()/2-ObjetoUMLGraph.TAMANO_CARDINALIDAD));
-														  Vector3D puntoFin=new Vector3D(oEntidad.getCentroide()).getAdded(new Vector3D(oEntidad.getWidth()/2,-oEntidad.getHeight()/2-ObjetoUMLGraph.TAMANO_CARDINALIDAD));
+														  Vector3D puntoInicio=new Vector3D(oEntidad.getPosicion()).getAdded(new Vector3D(-oEntidad.getWidth()/2,-oEntidad.getHeight()/2-ObjetoUMLGraph.TAMANO_CARDINALIDAD));
+														  Vector3D puntoFin=new Vector3D(oEntidad.getPosicion()).getAdded(new Vector3D(oEntidad.getWidth()/2,-oEntidad.getHeight()/2-ObjetoUMLGraph.TAMANO_CARDINALIDAD));
 														  ((Relacion)objeto).setInicio(puntoInicio);
 														  ((Relacion)objeto).setFin(puntoFin);
 

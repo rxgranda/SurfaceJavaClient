@@ -403,6 +403,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 				rectangulo.setPositionGlobal(rectangulo.getCenterPointGlobal().addLocal(de.getTranslationVect()));
 				objeto.setPosicion(rectangulo.getCenterPointGlobal());
 				halo.setPositionGlobal(rectangulo.getCenterPointGlobal());
+				
 //// TEST
 				//MainDrawingScene.clear();
 /// TEST

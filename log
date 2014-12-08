@@ -3364,3 +3364,573 @@ height: 104 width:106
 -Actualizar relacion 7
 Line
 height: 330 width:344
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+297 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+734 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+Rectangle
+height: 257 width:185
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":185.0,"height":257.0,"posicion": X:395.64746 Y:365.4236 Z:0.0 W:1.0},"tiempo":"2014-12-07 21:07:36","usuario":-1}]}
+-Escuchando en body por relacion en entidad Default
+Polyline (3)
+height: 300 width:99
+BORRAR W: 99.0 H: 288.0 Entidad Default Resultado(2 Relacion,-2 Borado):2
+Accion=1 ObjetoUML=2Tipo=class advanced.umleditor.logic.Entidad
+Accion=3 ObjetoUML=2Tipo=class advanced.umleditor.logic.Entidad
+Polyline (3)
+height: 300 width:99
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":185.0,"height":257.0,"posicion": X:395.64746 Y:365.4236 Z:0.0 W:1.0},"tiempo":"2014-12-07 21:07:36","usuario":-1},{"CREAR_OBJETO":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:303.14746 Y:201.92361 Z:0.0 W:1.0,"posicionFin": X:488.14746 Y:201.92361 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":2,"textoInicio":"","textoFin":"","width":99.0,"height":288.0,"posicion": X:396.78372 Y:204.1191 Z:0.0 W:1.0},"tiempo":"2014-12-07 21:07:39","usuario":-1}]}
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+-Actualizar relacion 6
+Line
+height: 195 width:77
