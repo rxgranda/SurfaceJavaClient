@@ -5338,3 +5338,1278 @@ Tratando de hacer undo
 {"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":234.0,"height":253.0,"posicion": X:244.63672 Y:271.74304 Z:0.0 W:1.0},"tiempo":"2014-12-08 13:24:37","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":222.0,"height":259.0,"posicion": X:775.40234 Y:261.88193 Z:0.0 W:1.0},"tiempo":"2014-12-08 13:24:39","usuario":-1},{"CREAR_OBJETO":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:391.82632 Y:292.05627 Z:0.0 W:1.0,"posicionFin": X:627.1245 Y:275.831 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":276.0,"height":100.0,"posicion": X:509.50006 Y:284.99997 Z:0.0 W:1.0},"tiempo":"2014-12-08 13:24:42","usuario":-1},{"EDITAR_OBJETO":{"id":6,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:391.82632 Y:292.05627 Z:0.0 W:1.0,"posicionFin": X:627.1245 Y:275.831 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:509.50006 Y:284.99997 Z:0.0 W:1.0},"tiempo":"2014-12-08 13:24:46","usuario":-1},{"BORRAR_OBJETO":{"id":6,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:391.82632 Y:292.05627 Z:0.0 W:1.0,"posicionFin": X:627.1245 Y:275.831 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:509.50006 Y:284.99997 Z:0.0 W:1.0},"tiempo":"2014-12-08 13:24:46","usuario":-1},{"BORRAR_OBJETO":{"id":6,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:391.82632 Y:292.05627 Z:0.0 W:1.0,"posicionFin": X:627.1245 Y:275.831 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:509.50006 Y:284.99997 Z:0.0 W:1.0},"tiempo":"2014-12-08 13:25:02","usuario":-1},{"BORRAR_OBJETO":{"id":4,"nombre":"Default","atributos":{"0":"Id"},"posicion": X:775.40234 Y:261.88193 Z:0.0 W:1.0},"tiempo":"2014-12-08 13:25:03","usuario":-1}]}
 -Iniciar borrado Entidad Default
 {"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":234.0,"height":253.0,"posicion": X:244.63672 Y:271.74304 Z:0.0 W:1.0},"tiempo":"2014-12-08 13:24:37","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":222.0,"height":259.0,"posicion": X:775.40234 Y:261.88193 Z:0.0 W:1.0},"tiempo":"2014-12-08 13:24:39","usuario":-1},{"CREAR_OBJETO":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:391.82632 Y:292.05627 Z:0.0 W:1.0,"posicionFin": X:627.1245 Y:275.831 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":276.0,"height":100.0,"posicion": X:509.50006 Y:284.99997 Z:0.0 W:1.0},"tiempo":"2014-12-08 13:24:42","usuario":-1},{"EDITAR_OBJETO":{"id":6,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:391.82632 Y:292.05627 Z:0.0 W:1.0,"posicionFin": X:627.1245 Y:275.831 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:509.50006 Y:284.99997 Z:0.0 W:1.0},"tiempo":"2014-12-08 13:24:46","usuario":-1},{"BORRAR_OBJETO":{"id":6,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:391.82632 Y:292.05627 Z:0.0 W:1.0,"posicionFin": X:627.1245 Y:275.831 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:509.50006 Y:284.99997 Z:0.0 W:1.0},"tiempo":"2014-12-08 13:24:46","usuario":-1},{"BORRAR_OBJETO":{"id":6,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:391.82632 Y:292.05627 Z:0.0 W:1.0,"posicionFin": X:627.1245 Y:275.831 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:509.50006 Y:284.99997 Z:0.0 W:1.0},"tiempo":"2014-12-08 13:25:02","usuario":-1},{"BORRAR_OBJETO":{"id":4,"nombre":"Default","atributos":{"0":"Id"},"posicion": X:775.40234 Y:261.88193 Z:0.0 W:1.0},"tiempo":"2014-12-08 13:25:03","usuario":-1},{"BORRAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Id"},"posicion": X:244.63672 Y:271.74304 Z:0.0 W:1.0},"tiempo":"2014-12-08 13:25:05","usuario":-1}]}
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+594 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+1345 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+Inicio evento de: Evento de Login 
+recibido:  1 Roger
+Fin evento de: Evento de Login 
+Inicio evento de: Evento de Login 
+recibido:  1 null
+ya hizo login
+Fin evento de: Evento de Login 
+Rectangle
+height: 243 width:176
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":176.0,"height":243.0,"posicion": X:375.34766 Y:311.1875 Z:0.0 W:1.0},"tiempo":"2014-12-08 15:53:18","usuario":-1}]}
+ Mover entidad Default
+--Enviar edicion nombre Entidad Default
+Enviado canal1 1
+ Mover entidad Default
+**Iniciar Edicion EntidadPRueba
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":176.0,"height":243.0,"posicion": X:375.34766 Y:311.1875 Z:0.0 W:1.0},"tiempo":"2014-12-08 15:53:18","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"PRueba","atributos":{"0":"Id"},"posicion": X:375.34775 Y:311.1876 Z:0.0 W:1.0},"tiempo":"2014-12-08 15:53:33","usuario":-1}]}
+**Terminar Edicion EntidadPRueba
+-Iniciar borrado Entidad PRueba
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":176.0,"height":243.0,"posicion": X:375.34766 Y:311.1875 Z:0.0 W:1.0},"tiempo":"2014-12-08 15:53:18","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"PRueba","atributos":{"0":"Id"},"posicion": X:375.34775 Y:311.1876 Z:0.0 W:1.0},"tiempo":"2014-12-08 15:53:33","usuario":-1},{"BORRAR_OBJETO":{"id":2,"nombre":"PRueba","atributos":{"0":"Id"},"posicion": X:375.34775 Y:311.1876 Z:0.0 W:1.0},"tiempo":"2014-12-08 15:54:12","usuario":-1}]}
+Rectangle
+height: 231 width:216
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":176.0,"height":243.0,"posicion": X:375.34766 Y:311.1875 Z:0.0 W:1.0},"tiempo":"2014-12-08 15:53:18","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"PRueba","atributos":{"0":"Id"},"posicion": X:375.34775 Y:311.1876 Z:0.0 W:1.0},"tiempo":"2014-12-08 15:53:33","usuario":-1},{"BORRAR_OBJETO":{"id":2,"nombre":"PRueba","atributos":{"0":"Id"},"posicion": X:375.34775 Y:311.1876 Z:0.0 W:1.0},"tiempo":"2014-12-08 15:54:12","usuario":-1},{"CREAR_OBJETO":{"id":5,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":216.0,"height":231.0,"posicion": X:673.4082 Y:321.04858 Z:0.0 W:1.0},"tiempo":"2014-12-08 15:54:20","usuario":-1}]}
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+--Enviar edicion nombre Entidad Default
+Enviado canal1 1
+ Mover entidad Default
+**Iniciar Edicion Entidadasdasd
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":176.0,"height":243.0,"posicion": X:375.34766 Y:311.1875 Z:0.0 W:1.0},"tiempo":"2014-12-08 15:53:18","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"PRueba","atributos":{"0":"Id"},"posicion": X:375.34775 Y:311.1876 Z:0.0 W:1.0},"tiempo":"2014-12-08 15:53:33","usuario":-1},{"BORRAR_OBJETO":{"id":2,"nombre":"PRueba","atributos":{"0":"Id"},"posicion": X:375.34775 Y:311.1876 Z:0.0 W:1.0},"tiempo":"2014-12-08 15:54:12","usuario":-1},{"CREAR_OBJETO":{"id":5,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":216.0,"height":231.0,"posicion": X:673.4082 Y:321.04858 Z:0.0 W:1.0},"tiempo":"2014-12-08 15:54:20","usuario":-1},{"EDITAR_OBJETO":{"id":5,"nombre":"asdasd","atributos":{"0":"Id"},"posicion": X:673.4082 Y:321.04858 Z:0.0 W:1.0},"tiempo":"2014-12-08 15:54:30","usuario":-1}]}
+**Terminar Edicion Entidadasdasd
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+313 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+688 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+Inicio evento de: Evento de Login 
+recibido:  1 null
+No hay sesion activa
+Fin evento de: Evento de Login 
+Inicio evento de: Evento de Login 
+recibido:  1 Roger
+Fin evento de: Evento de Login 
+Inicio evento de: Evento de Login 
+recibido:  1 null
+ya hizo login
+Fin evento de: Evento de Login 
+Rectangle
+height: 284 width:221
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":221.0,"height":284.0,"posicion": X:361.9795 Y:340.27777 Z:0.0 W:1.0},"tiempo":"2014-12-08 15:57:32","usuario":-1}]}
+ Mover entidad Default
+--Enviar edicion nombre Entidad Default
+Enviado canal1 1
+ Mover entidad Default
+**Iniciar Edicion EntidadPrueba
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":221.0,"height":284.0,"posicion": X:361.9795 Y:340.27777 Z:0.0 W:1.0},"tiempo":"2014-12-08 15:57:32","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Id"},"posicion": X:361.9794 Y:340.2777 Z:0.0 W:1.0},"tiempo":"2014-12-08 15:57:39","usuario":-1}]}
+**Terminar Edicion EntidadPrueba
+ Mover entidad Prueba
+--Enviar edicion nombre Entidad Prueba
+Enviado canal1 1
+ Mover entidad Prueba
+**Iniciar Edicion EntidadPrueba2
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":221.0,"height":284.0,"posicion": X:361.9795 Y:340.27777 Z:0.0 W:1.0},"tiempo":"2014-12-08 15:57:32","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Id"},"posicion": X:361.9794 Y:340.2777 Z:0.0 W:1.0},"tiempo":"2014-12-08 15:57:39","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Prueba","atributos":{"0":"Id"},"posicion": X:361.9796 Y:340.27777 Z:0.0 W:1.0},"tiempo":"2014-12-08 15:58:16","usuario":-1}]}
+**Terminar Edicion EntidadPrueba2
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+344 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+750 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+Inicio evento de: Evento de Login 
+recibido:  1 null
+No hay sesion activa
+Fin evento de: Evento de Login 
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+313 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+766 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+Inicio evento de: Evento de Login 
+recibido:  1 Rofer
+Fin evento de: Evento de Login 
+Inicio evento de: Evento de Login 
+recibido:  1 null
+ya hizo login
+Fin evento de: Evento de Login 
+Line
+height: 296 width:24
+Polyline (5)
+height: 382 width:293
+Rectangle
+height: 196 width:231
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Rofer","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":231.0,"height":196.0,"posicion": X:419.4131 Y:238.70831 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:04:04","usuario":-1}]}
+ Mover entidad Default
+--Enviar edicion nombre Entidad Default
+Enviado canal1 1
+ Mover entidad Default
+**Iniciar Edicion EntidadDefaul2
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Rofer","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":231.0,"height":196.0,"posicion": X:419.4131 Y:238.70831 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:04:04","usuario":-1},{"EDITAR_OBJETO":{"id":4,"nombre":"Default","atributos":{"0":"Id"},"posicion": X:419.41315 Y:238.7083 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:04:10","usuario":-1}]}
+**Terminar Edicion EntidadDefaul2
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+297 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+703 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+Inicio evento de: Evento de Login 
+recibido:  1 null
+No hay sesion activa
+Fin evento de: Evento de Login 
+Inicio evento de: Evento de Login 
+recibido:  1 Roger
+Fin evento de: Evento de Login 
+Inicio evento de: Evento de Login 
+recibido:  1 null
+ya hizo login
+Fin evento de: Evento de Login 
+Rectangle
+height: 323 width:205
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":205.0,"height":288.0,"posicion": X:430.30566 Y:322.52777 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:06:18","usuario":-1}]}
+ Mover entidad Default
+--Enviar edicion nombre Entidad Default
+Enviado canal1 1
+ Mover entidad Default
+**Iniciar Edicion EntidadPruebas
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":205.0,"height":288.0,"posicion": X:430.30566 Y:322.52777 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:06:18","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Pruebas","atributos":{"0":"Id"},"posicion": X:430.30576 Y:322.5279 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:06:25","usuario":-1}]}
+**Terminar Edicion EntidadPruebas
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+328 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+829 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+Inicio evento de: Evento de Login 
+recibido:  1 null
+No hay sesion activa
+Fin evento de: Evento de Login 
+Inicio evento de: Evento de Login 
+recibido:  1 asdasd
+Fin evento de: Evento de Login 
+Inicio evento de: Evento de Login 
+recibido:  1 null
+ya hizo login
+Fin evento de: Evento de Login 
+Rectangle
+height: 250 width:215
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"asdasd","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":215.0,"height":250.0,"posicion": X:323.36035 Y:359.0139 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:18:21","usuario":-1}]}
+ Mover entidad Default
+--Enviar edicion nombre Entidad Default
+Enviado canal1 1
+ Mover entidad Default
+**Iniciar Edicion EntidadDefault
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"asdasd","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":215.0,"height":250.0,"posicion": X:323.36035 Y:359.0139 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:18:21","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Id","1":"atributo"},"posicion": X:323.36026 Y:359.0138 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:18:36","usuario":-1}]}
+**Terminar Edicion EntidadDefault
+**Iniciar Edicion EntidadpRUEBA2
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"asdasd","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":215.0,"height":250.0,"posicion": X:323.36035 Y:359.0139 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:18:21","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Id","1":"atributo"},"posicion": X:323.36026 Y:359.0138 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:18:36","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"pRUEBA2","atributos":{"0":"Id","1":"atributo"},"posicion": X:323.36026 Y:359.0138 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:18:47","usuario":-1}]}
+**Terminar Edicion EntidadpRUEBA2
+**Iniciar Edicion EntidadpRUEBA2
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"asdasd","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":215.0,"height":250.0,"posicion": X:323.36035 Y:359.0139 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:18:21","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Id","1":"atributo"},"posicion": X:323.36026 Y:359.0138 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:18:36","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"pRUEBA2","atributos":{"0":"Id","1":"atributo"},"posicion": X:323.36026 Y:359.0138 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:18:47","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"pRUEBA2","atributos":{"0":"Id","1":"atributo","2":"atributo"},"posicion": X:323.36026 Y:359.0138 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:18:49","usuario":-1}]}
+**Terminar Edicion EntidadpRUEBA2
+-Iniciar borrado Entidad Default
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"asdasd","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":215.0,"height":250.0,"posicion": X:323.36035 Y:359.0139 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:18:21","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Id","1":"atributo"},"posicion": X:323.36026 Y:359.0138 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:18:36","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"pRUEBA2","atributos":{"0":"Id","1":"atributo"},"posicion": X:323.36026 Y:359.0138 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:18:47","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"pRUEBA2","atributos":{"0":"Id","1":"atributo","2":"atributo"},"posicion": X:323.36026 Y:359.0138 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:18:49","usuario":-1},{"BORRAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Id"},"posicion": X:323.36026 Y:359.0138 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:19:04","usuario":-1}]}
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+302 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+739 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+Inicio evento de: Evento de Login 
+recibido:  1 null
+No hay sesion activa
+Fin evento de: Evento de Login 
+Rectangle
+height: 186 width:203
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":203.0,"height":186.0,"posicion": X:330.292 Y:348.16666 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:28:24","usuario":-1}]}
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+297 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+703 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+297 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+719 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+Inicio evento de: Evento de Login 
+recibido:  1 roGER
+Fin evento de: Evento de Login 
+Inicio evento de: Evento de Login 
+recibido:  1 null
+ya hizo login
+Fin evento de: Evento de Login 
+Rectangle
+height: 230 width:251
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"roGER","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":251.0,"height":230.0,"posicion": X:273.84863 Y:357.04166 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:29:00","usuario":-1}]}
+ Mover entidad Default
+--Enviar edicion nombre Entidad Default
+Enviado canal1 1
+ Mover entidad Default
+**Iniciar Edicion EntidadpRUEBA
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"roGER","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":251.0,"height":230.0,"posicion": X:273.84863 Y:357.04166 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:29:00","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"pRUEBA","atributos":{"0":"Id"},"posicion": X:273.8485 Y:357.0417 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:29:08","usuario":-1}]}
+**Terminar Edicion EntidadpRUEBA
+**Iniciar Edicion EntidadpRUEBA
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"roGER","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":251.0,"height":230.0,"posicion": X:273.84863 Y:357.04166 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:29:00","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"pRUEBA","atributos":{"0":"Id"},"posicion": X:273.8485 Y:357.0417 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:29:08","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"pRUEBA","atributos":{"0":"Id","1":"atributo"},"posicion": X:273.8485 Y:357.0417 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:29:10","usuario":-1}]}
+**Terminar Edicion EntidadpRUEBA
+**Iniciar Edicion EntidadDefault3
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"roGER","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":251.0,"height":230.0,"posicion": X:273.84863 Y:357.04166 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:29:00","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"pRUEBA","atributos":{"0":"Id"},"posicion": X:273.8485 Y:357.0417 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:29:08","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"pRUEBA","atributos":{"0":"Id","1":"atributo"},"posicion": X:273.8485 Y:357.0417 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:29:10","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default3","atributos":{"0":"Id"},"posicion": X:273.8485 Y:357.0417 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:29:37","usuario":-1}]}
+**Terminar Edicion EntidadDefault3
+**Iniciar Edicion EntidadDefault
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"roGER","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":251.0,"height":230.0,"posicion": X:273.84863 Y:357.04166 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:29:00","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"pRUEBA","atributos":{"0":"Id"},"posicion": X:273.8485 Y:357.0417 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:29:08","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"pRUEBA","atributos":{"0":"Id","1":"atributo"},"posicion": X:273.8485 Y:357.0417 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:29:10","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default3","atributos":{"0":"Id"},"posicion": X:273.8485 Y:357.0417 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:29:37","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Id","1":"atributo"},"posicion": X:273.8485 Y:357.0417 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:29:44","usuario":-1}]}
+**Terminar Edicion EntidadDefault
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+313 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+735 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+Inicio evento de: Evento de Login 
+recibido:  1 null
+No hay sesion activa
+Fin evento de: Evento de Login 
+Inicio evento de: Evento de Login 
+recibido:  1 Rsdfs
+Fin evento de: Evento de Login 
+Inicio evento de: Evento de Login 
+recibido:  1 null
+ya hizo login
+Fin evento de: Evento de Login 
+Rectangle
+height: 251 width:227
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Rsdfs","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":227.0,"height":251.0,"posicion": X:270.87793 Y:329.92358 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:32:47","usuario":-1}]}
+Rectangle
+height: 313 width:260
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Rsdfs","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":227.0,"height":251.0,"posicion": X:270.87793 Y:329.92358 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:32:47","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":260.0,"height":288.0,"posicion": X:751.6367 Y:348.16666 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:32:49","usuario":-1}]}
+-Escuchando en body por relacion en entidad Default
+BORRAR W: 0.0 H: 0.0 Entidad Default Resultado(2 Relacion,-2 Borado):0
+-Iniciar borrado Entidad Default
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Rsdfs","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":227.0,"height":251.0,"posicion": X:270.87793 Y:329.92358 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:32:47","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":260.0,"height":288.0,"posicion": X:751.6367 Y:348.16666 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:32:49","usuario":-1},{"BORRAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Id"},"posicion": X:270.87793 Y:329.92358 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:32:52","usuario":-1}]}
+Line
+height: 24 width:354
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Rsdfs","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":227.0,"height":251.0,"posicion": X:270.87793 Y:329.92358 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:32:47","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":260.0,"height":288.0,"posicion": X:751.6367 Y:348.16666 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:32:49","usuario":-1},{"BORRAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Id"},"posicion": X:270.87793 Y:329.92358 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:32:52","usuario":-1},{"CREAR_OBJETO":{"id":7,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:415.0 Y:333.0 Z:0.0 W:1.0,"posicionFin": X:585.0 Y:352.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":307.0,"height":100.0,"posicion": X:500.1172 Y:342.74304 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:32:52","usuario":-1}]}
+-Mover relacion 7
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Rsdfs","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":227.0,"height":251.0,"posicion": X:270.87793 Y:329.92358 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:32:47","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":260.0,"height":288.0,"posicion": X:751.6367 Y:348.16666 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:32:49","usuario":-1},{"BORRAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Id"},"posicion": X:270.87793 Y:329.92358 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:32:52","usuario":-1},{"CREAR_OBJETO":{"id":7,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:415.0 Y:333.0 Z:0.0 W:1.0,"posicionFin": X:585.0 Y:352.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":307.0,"height":100.0,"posicion": X:500.1172 Y:342.74304 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:32:52","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:415.0 Y:333.0 Z:0.0 W:1.0,"posicionFin": X:585.0 Y:352.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:500.1172 Y:342.74304 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:32:58","usuario":-1}]}
+-Eliminar relacion 7
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Rsdfs","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":227.0,"height":251.0,"posicion": X:270.87793 Y:329.92358 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:32:47","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":260.0,"height":288.0,"posicion": X:751.6367 Y:348.16666 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:32:49","usuario":-1},{"BORRAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Id"},"posicion": X:270.87793 Y:329.92358 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:32:52","usuario":-1},{"CREAR_OBJETO":{"id":7,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:415.0 Y:333.0 Z:0.0 W:1.0,"posicionFin": X:585.0 Y:352.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":307.0,"height":100.0,"posicion": X:500.1172 Y:342.74304 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:32:52","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:415.0 Y:333.0 Z:0.0 W:1.0,"posicionFin": X:585.0 Y:352.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:500.1172 Y:342.74304 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:32:58","usuario":-1},{"BORRAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:415.0 Y:333.0 Z:0.0 W:1.0,"posicionFin": X:585.0 Y:352.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:500.1172 Y:342.74304 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:32:58","usuario":-1}]}
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+328 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+719 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+Inicio evento de: Evento de Login 
+recibido:  1 null
+No hay sesion activa
+Fin evento de: Evento de Login 
+Inicio evento de: Evento de Login 
+recibido:  1 ROger
+Fin evento de: Evento de Login 
+Inicio evento de: Evento de Login 
+recibido:  1 null
+ya hizo login
+Fin evento de: Evento de Login 
+Rectangle
+height: 210 width:176
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"ROger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":176.0,"height":210.0,"posicion": X:406.04492 Y:288.99997 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:33:51","usuario":-1}]}
+Rectangle
+height: 258 width:255
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"ROger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":176.0,"height":210.0,"posicion": X:406.04492 Y:288.99997 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:33:51","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":255.0,"height":258.0,"posicion": X:793.7217 Y:288.0139 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:33:53","usuario":-1}]}
+-Escuchando en body por relacion en entidad Default
+Line
+height: 13 width:261
+BORRAR W: 261.0 H: 100.0 Entidad Default Resultado(2 Relacion,-2 Borado):2
+Line
+height: 13 width:261
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"ROger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":176.0,"height":210.0,"posicion": X:406.04492 Y:288.99997 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:33:51","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":255.0,"height":258.0,"posicion": X:793.7217 Y:288.0139 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:33:53","usuario":-1},{"CREAR_OBJETO":{"id":7,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:526.0 Y:314.0 Z:0.0 W:1.0,"posicionFin": X:629.0 Y:312.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":261.0,"height":100.0,"posicion": X:576.86035 Y:313.65277 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:33:55","usuario":-1}]}
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+ Mover entidad Default
+-Actualizar relacion 7
+-Mover relacion 7
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"ROger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":176.0,"height":210.0,"posicion": X:406.04492 Y:288.99997 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:33:51","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":255.0,"height":258.0,"posicion": X:793.7217 Y:288.0139 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:33:53","usuario":-1},{"CREAR_OBJETO":{"id":7,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:526.0 Y:314.0 Z:0.0 W:1.0,"posicionFin": X:629.0 Y:312.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":261.0,"height":100.0,"posicion": X:576.86035 Y:313.65277 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:33:55","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:400.9999 Y:316.99982 Z:0.0 W:1.0,"posicionFin": X:623.0005 Y:353.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:512.0002 Y:335.3471 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:34:01","usuario":-1}]}
+--Enviar Edicion Texto Flotante8
+ID OWNER ::7
+**Iniciar Edicion TextoPrueba
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"ROger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":176.0,"height":210.0,"posicion": X:406.04492 Y:288.99997 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:33:51","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":255.0,"height":258.0,"posicion": X:793.7217 Y:288.0139 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:33:53","usuario":-1},{"CREAR_OBJETO":{"id":7,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:526.0 Y:314.0 Z:0.0 W:1.0,"posicionFin": X:629.0 Y:312.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":261.0,"height":100.0,"posicion": X:576.86035 Y:313.65277 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:33:55","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:400.9999 Y:316.99982 Z:0.0 W:1.0,"posicionFin": X:623.0005 Y:353.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:512.0002 Y:335.3471 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:34:01","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:400.9999 Y:316.99982 Z:0.0 W:1.0,"posicionFin": X:623.0005 Y:353.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Prueba","textoFin":"Default","posicion": X:512.0002 Y:335.3471 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:34:10","usuario":-1}]}
+**Finalizar Edicion TextoPrueba
+-Actualizar cardinalidad relacion 7
+-Actualizar cardinalidad relacion 7
+Enviado canal11
+**Iniciar Edicion cardinalidad
+-Actualizar cardinalidad relacion 7
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"ROger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":176.0,"height":210.0,"posicion": X:406.04492 Y:288.99997 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:33:51","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":255.0,"height":258.0,"posicion": X:793.7217 Y:288.0139 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:33:53","usuario":-1},{"CREAR_OBJETO":{"id":7,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:526.0 Y:314.0 Z:0.0 W:1.0,"posicionFin": X:629.0 Y:312.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":261.0,"height":100.0,"posicion": X:576.86035 Y:313.65277 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:33:55","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:400.9999 Y:316.99982 Z:0.0 W:1.0,"posicionFin": X:623.0005 Y:353.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:512.0002 Y:335.3471 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:34:01","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:400.9999 Y:316.99982 Z:0.0 W:1.0,"posicionFin": X:623.0005 Y:353.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Prueba","textoFin":"Default","posicion": X:512.0002 Y:335.3471 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:34:10","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:400.9999 Y:316.99982 Z:0.0 W:1.0,"posicionFin": X:623.0005 Y:353.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:512.0002 Y:335.3471 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:34:27","usuario":-1}]}
+**Finalizar Edicion cardinalidad
+-Actualizar cardinalidad relacion 7
+-Actualizar cardinalidad relacion 7
+--Enviar Edicion Texto Flotante9
+ID OWNER ::7
+**Iniciar Edicion TextoPrueba3
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"ROger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":176.0,"height":210.0,"posicion": X:406.04492 Y:288.99997 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:33:51","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":255.0,"height":258.0,"posicion": X:793.7217 Y:288.0139 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:33:53","usuario":-1},{"CREAR_OBJETO":{"id":7,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:526.0 Y:314.0 Z:0.0 W:1.0,"posicionFin": X:629.0 Y:312.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":261.0,"height":100.0,"posicion": X:576.86035 Y:313.65277 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:33:55","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:400.9999 Y:316.99982 Z:0.0 W:1.0,"posicionFin": X:623.0005 Y:353.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:512.0002 Y:335.3471 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:34:01","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:400.9999 Y:316.99982 Z:0.0 W:1.0,"posicionFin": X:623.0005 Y:353.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Prueba","textoFin":"Default","posicion": X:512.0002 Y:335.3471 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:34:10","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:400.9999 Y:316.99982 Z:0.0 W:1.0,"posicionFin": X:623.0005 Y:353.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:512.0002 Y:335.3471 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:34:27","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:400.9999 Y:316.99982 Z:0.0 W:1.0,"posicionFin": X:623.0005 Y:353.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Prueba3","posicion": X:512.0002 Y:335.3471 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:34:55","usuario":-1}]}
+**Finalizar Edicion TextoPrueba3
+-Actualizar cardinalidad relacion 7
+-Actualizar cardinalidad relacion 7
+**Iniciar Edicion TextoPrueba3
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"ROger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":176.0,"height":210.0,"posicion": X:406.04492 Y:288.99997 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:33:51","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":255.0,"height":258.0,"posicion": X:793.7217 Y:288.0139 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:33:53","usuario":-1},{"CREAR_OBJETO":{"id":7,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:526.0 Y:314.0 Z:0.0 W:1.0,"posicionFin": X:629.0 Y:312.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":261.0,"height":100.0,"posicion": X:576.86035 Y:313.65277 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:33:55","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:400.9999 Y:316.99982 Z:0.0 W:1.0,"posicionFin": X:623.0005 Y:353.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:512.0002 Y:335.3471 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:34:01","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:400.9999 Y:316.99982 Z:0.0 W:1.0,"posicionFin": X:623.0005 Y:353.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Prueba","textoFin":"Default","posicion": X:512.0002 Y:335.3471 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:34:10","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:400.9999 Y:316.99982 Z:0.0 W:1.0,"posicionFin": X:623.0005 Y:353.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:512.0002 Y:335.3471 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:34:27","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:400.9999 Y:316.99982 Z:0.0 W:1.0,"posicionFin": X:623.0005 Y:353.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Prueba3","posicion": X:512.0002 Y:335.3471 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:34:55","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:400.9999 Y:316.99982 Z:0.0 W:1.0,"posicionFin": X:623.0005 Y:353.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Prueba3","posicion": X:512.0002 Y:335.3471 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:35:04","usuario":-1}]}
+**Finalizar Edicion TextoPrueba3
+ Mover entidad Default
+-Actualizar relacion 7
+--Enviar edicion nombre Entidad Default
+Enviado canal1 1
+ Mover entidad Default
+-Actualizar relacion 7
+**Iniciar Edicion EntidadPrueba2
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"ROger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":176.0,"height":210.0,"posicion": X:406.04492 Y:288.99997 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:33:51","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":255.0,"height":258.0,"posicion": X:793.7217 Y:288.0139 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:33:53","usuario":-1},{"CREAR_OBJETO":{"id":7,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:526.0 Y:314.0 Z:0.0 W:1.0,"posicionFin": X:629.0 Y:312.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":261.0,"height":100.0,"posicion": X:576.86035 Y:313.65277 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:33:55","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:400.9999 Y:316.99982 Z:0.0 W:1.0,"posicionFin": X:623.0005 Y:353.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:512.0002 Y:335.3471 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:34:01","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:400.9999 Y:316.99982 Z:0.0 W:1.0,"posicionFin": X:623.0005 Y:353.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Prueba","textoFin":"Default","posicion": X:512.0002 Y:335.3471 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:34:10","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:400.9999 Y:316.99982 Z:0.0 W:1.0,"posicionFin": X:623.0005 Y:353.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:512.0002 Y:335.3471 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:34:27","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:400.9999 Y:316.99982 Z:0.0 W:1.0,"posicionFin": X:623.0005 Y:353.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Prueba3","posicion": X:512.0002 Y:335.3471 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:34:55","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:400.9999 Y:316.99982 Z:0.0 W:1.0,"posicionFin": X:623.0005 Y:353.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Prueba3","posicion": X:512.0002 Y:335.3471 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:35:04","usuario":-1},{"EDITAR_OBJETO":{"id":4,"nombre":"Prueba2","atributos":{"0":"Id"},"posicion": X:787.7222 Y:329.0138 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:35:13","usuario":-1}]}
+**Terminar Edicion EntidadPrueba2
+**Iniciar Edicion EntidadPrueba2
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"ROger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":176.0,"height":210.0,"posicion": X:406.04492 Y:288.99997 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:33:51","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":255.0,"height":258.0,"posicion": X:793.7217 Y:288.0139 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:33:53","usuario":-1},{"CREAR_OBJETO":{"id":7,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:526.0 Y:314.0 Z:0.0 W:1.0,"posicionFin": X:629.0 Y:312.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":261.0,"height":100.0,"posicion": X:576.86035 Y:313.65277 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:33:55","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:400.9999 Y:316.99982 Z:0.0 W:1.0,"posicionFin": X:623.0005 Y:353.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:512.0002 Y:335.3471 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:34:01","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:400.9999 Y:316.99982 Z:0.0 W:1.0,"posicionFin": X:623.0005 Y:353.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Prueba","textoFin":"Default","posicion": X:512.0002 Y:335.3471 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:34:10","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:400.9999 Y:316.99982 Z:0.0 W:1.0,"posicionFin": X:623.0005 Y:353.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:512.0002 Y:335.3471 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:34:27","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:400.9999 Y:316.99982 Z:0.0 W:1.0,"posicionFin": X:623.0005 Y:353.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Prueba3","posicion": X:512.0002 Y:335.3471 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:34:55","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:400.9999 Y:316.99982 Z:0.0 W:1.0,"posicionFin": X:623.0005 Y:353.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Prueba3","posicion": X:512.0002 Y:335.3471 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:35:04","usuario":-1},{"EDITAR_OBJETO":{"id":4,"nombre":"Prueba2","atributos":{"0":"Id"},"posicion": X:787.7222 Y:329.0138 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:35:13","usuario":-1},{"EDITAR_OBJETO":{"id":4,"nombre":"Prueba2","atributos":{"0":"Id","1":"atributo"},"posicion": X:787.7222 Y:329.0138 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:35:16","usuario":-1}]}
+**Terminar Edicion EntidadPrueba2
+**Iniciar Edicion EntidadPrueba2
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"ROger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":176.0,"height":210.0,"posicion": X:406.04492 Y:288.99997 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:33:51","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":255.0,"height":258.0,"posicion": X:793.7217 Y:288.0139 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:33:53","usuario":-1},{"CREAR_OBJETO":{"id":7,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:526.0 Y:314.0 Z:0.0 W:1.0,"posicionFin": X:629.0 Y:312.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":261.0,"height":100.0,"posicion": X:576.86035 Y:313.65277 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:33:55","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:400.9999 Y:316.99982 Z:0.0 W:1.0,"posicionFin": X:623.0005 Y:353.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:512.0002 Y:335.3471 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:34:01","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:400.9999 Y:316.99982 Z:0.0 W:1.0,"posicionFin": X:623.0005 Y:353.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Prueba","textoFin":"Default","posicion": X:512.0002 Y:335.3471 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:34:10","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:400.9999 Y:316.99982 Z:0.0 W:1.0,"posicionFin": X:623.0005 Y:353.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:512.0002 Y:335.3471 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:34:27","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:400.9999 Y:316.99982 Z:0.0 W:1.0,"posicionFin": X:623.0005 Y:353.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Prueba3","posicion": X:512.0002 Y:335.3471 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:34:55","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:400.9999 Y:316.99982 Z:0.0 W:1.0,"posicionFin": X:623.0005 Y:353.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Prueba3","posicion": X:512.0002 Y:335.3471 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:35:04","usuario":-1},{"EDITAR_OBJETO":{"id":4,"nombre":"Prueba2","atributos":{"0":"Id"},"posicion": X:787.7222 Y:329.0138 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:35:13","usuario":-1},{"EDITAR_OBJETO":{"id":4,"nombre":"Prueba2","atributos":{"0":"Id","1":"atributo"},"posicion": X:787.7222 Y:329.0138 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:35:16","usuario":-1},{"EDITAR_OBJETO":{"id":4,"nombre":"Prueba2","atributos":{"0":"Id","1":"atributo","2":"atributo"},"posicion": X:787.7222 Y:329.0138 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:35:17","usuario":-1}]}
+**Terminar Edicion EntidadPrueba2
+Enviado canal11
+**Iniciar Edicion cardinalidad
+-Actualizar cardinalidad relacion 7
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"ROger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":176.0,"height":210.0,"posicion": X:406.04492 Y:288.99997 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:33:51","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":255.0,"height":258.0,"posicion": X:793.7217 Y:288.0139 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:33:53","usuario":-1},{"CREAR_OBJETO":{"id":7,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:526.0 Y:314.0 Z:0.0 W:1.0,"posicionFin": X:629.0 Y:312.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":261.0,"height":100.0,"posicion": X:576.86035 Y:313.65277 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:33:55","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:400.9999 Y:316.99982 Z:0.0 W:1.0,"posicionFin": X:623.0005 Y:353.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:512.0002 Y:335.3471 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:34:01","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:400.9999 Y:316.99982 Z:0.0 W:1.0,"posicionFin": X:623.0005 Y:353.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Prueba","textoFin":"Default","posicion": X:512.0002 Y:335.3471 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:34:10","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:400.9999 Y:316.99982 Z:0.0 W:1.0,"posicionFin": X:623.0005 Y:353.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:512.0002 Y:335.3471 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:34:27","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:400.9999 Y:316.99982 Z:0.0 W:1.0,"posicionFin": X:623.0005 Y:353.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Prueba3","posicion": X:512.0002 Y:335.3471 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:34:55","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:400.9999 Y:316.99982 Z:0.0 W:1.0,"posicionFin": X:623.0005 Y:353.0 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Prueba3","posicion": X:512.0002 Y:335.3471 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:35:04","usuario":-1},{"EDITAR_OBJETO":{"id":4,"nombre":"Prueba2","atributos":{"0":"Id"},"posicion": X:787.7222 Y:329.0138 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:35:13","usuario":-1},{"EDITAR_OBJETO":{"id":4,"nombre":"Prueba2","atributos":{"0":"Id","1":"atributo"},"posicion": X:787.7222 Y:329.0138 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:35:16","usuario":-1},{"EDITAR_OBJETO":{"id":4,"nombre":"Prueba2","atributos":{"0":"Id","1":"atributo","2":"atributo"},"posicion": X:787.7222 Y:329.0138 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:35:17","usuario":-1},{"EDITAR_OBJETO":{"id":7,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio": X:400.9999 Y:316.99982 Z:0.0 W:1.0,"posicionFin": X:623.00055 Y:352.99994 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Prueba3","posicion": X:512.00024 Y:335.34708 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:35:26","usuario":-1}]}
+**Finalizar Edicion cardinalidad
+-Actualizar cardinalidad relacion 7
+-Actualizar cardinalidad relacion 7
+-Actualizar cardinalidad relacion 7
+-Actualizar cardinalidad relacion 7
+Ya no hay mas acciones que deshacer
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+295 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+686 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+Inicio evento de: Evento de Login 
+recibido:  1 null
+No hay sesion activa
+Fin evento de: Evento de Login 
+Inicio evento de: Evento de Login 
+recibido:  1 Roger
+Fin evento de: Evento de Login 
+Inicio evento de: Evento de Login 
+recibido:  1 null
+ya hizo login
+Fin evento de: Evento de Login 
+Inicio evento de: Evento de Login 
+recibido:  2 Roger2
+Fin evento de: Evento de Login 
+Inicio evento de: Evento de Login 
+recibido:  2 null
+ya hizo login
+Fin evento de: Evento de Login 
+Inicio evento de: Evento de Login 
+recibido:  3 Roger
+Fin evento de: Evento de Login 
+Inicio evento de: Evento de Login 
+recibido:  3 null
+ya hizo login
+Fin evento de: Evento de Login 
+Rectangle
+height: 288 width:231
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"Roger2","canal_SocketIO":"canal2"}},{"usuario":{"id":3,"id_pluma":3,"nombres":"Roger","canal_SocketIO":"canal3"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":231.0,"height":288.0,"posicion": X:407.53027 Y:416.2083 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:40:36","usuario":-1}]}
+ Mover entidad Default
+--Enviar edicion nombre Entidad Default
+Enviado canal1 1
+ Mover entidad Default
+-Escuchando en body por relacion en entidad Default
+--Enviar edicion  cuerpo Entidad Default
+Enviado canal11
+BORRAR W: 0.0 H: 0.0 Entidad Default Resultado(2 Relacion,-2 Borado):0
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+Rectangle
+height: 331 width:252
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"Roger2","canal_SocketIO":"canal2"}},{"usuario":{"id":3,"id_pluma":3,"nombres":"Roger","canal_SocketIO":"canal3"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":231.0,"height":288.0,"posicion": X:407.53027 Y:416.2083 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:40:36","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":252.0,"height":288.0,"posicion": X:730.8418 Y:271.24997 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:48:06","usuario":-1}]}
+Line
+height: 31 width:221
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"Roger2","canal_SocketIO":"canal2"}},{"usuario":{"id":3,"id_pluma":3,"nombres":"Roger","canal_SocketIO":"canal3"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":231.0,"height":288.0,"posicion": X:407.53027 Y:416.2083 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:40:36","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":252.0,"height":288.0,"posicion": X:730.8418 Y:271.24997 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:48:06","usuario":-1},{"CREAR_OBJETO":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:381.72775 Y:269.7467 Z:0.0 W:1.0,"posicionFin": X:568.5521 Y:242.366 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":221.0,"height":100.0,"posicion": X:475.4999 Y:257.5 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:48:11","usuario":-1}]}
+-Mover relacion 6
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"Roger2","canal_SocketIO":"canal2"}},{"usuario":{"id":3,"id_pluma":3,"nombres":"Roger","canal_SocketIO":"canal3"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":231.0,"height":288.0,"posicion": X:407.53027 Y:416.2083 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:40:36","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":252.0,"height":288.0,"posicion": X:730.8418 Y:271.24997 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:48:06","usuario":-1},{"CREAR_OBJETO":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:381.72775 Y:269.7467 Z:0.0 W:1.0,"posicionFin": X:568.5521 Y:242.366 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":221.0,"height":100.0,"posicion": X:475.4999 Y:257.5 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:48:11","usuario":-1},{"EDITAR_OBJETO":{"id":6,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:381.72775 Y:269.7467 Z:0.0 W:1.0,"posicionFin": X:568.5521 Y:242.366 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:475.4999 Y:257.5 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:48:13","usuario":-1}]}
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+Line
+height: 213 width:347
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"Roger2","canal_SocketIO":"canal2"}},{"usuario":{"id":3,"id_pluma":3,"nombres":"Roger","canal_SocketIO":"canal3"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":231.0,"height":288.0,"posicion": X:407.53027 Y:416.2083 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:40:36","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":252.0,"height":288.0,"posicion": X:730.8418 Y:271.24997 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:48:06","usuario":-1},{"CREAR_OBJETO":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:381.72775 Y:269.7467 Z:0.0 W:1.0,"posicionFin": X:568.5521 Y:242.366 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":221.0,"height":100.0,"posicion": X:475.4999 Y:257.5 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:48:11","usuario":-1},{"EDITAR_OBJETO":{"id":6,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:381.72775 Y:269.7467 Z:0.0 W:1.0,"posicionFin": X:568.5521 Y:242.366 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:475.4999 Y:257.5 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:48:13","usuario":-1},{"CREAR_OBJETO":{"id":12,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:383.7474 Y:370.141 Z:0.0 W:1.0,"posicionFin": X:688.7261 Y:557.7466 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":307.0,"height":213.0,"posicion": X:536.00006 Y:462.50012 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:50:46","usuario":-1}]}
+-Eliminar relacion 12
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"Roger2","canal_SocketIO":"canal2"}},{"usuario":{"id":3,"id_pluma":3,"nombres":"Roger","canal_SocketIO":"canal3"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":231.0,"height":288.0,"posicion": X:407.53027 Y:416.2083 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:40:36","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":252.0,"height":288.0,"posicion": X:730.8418 Y:271.24997 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:48:06","usuario":-1},{"CREAR_OBJETO":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:381.72775 Y:269.7467 Z:0.0 W:1.0,"posicionFin": X:568.5521 Y:242.366 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":221.0,"height":100.0,"posicion": X:475.4999 Y:257.5 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:48:11","usuario":-1},{"EDITAR_OBJETO":{"id":6,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:381.72775 Y:269.7467 Z:0.0 W:1.0,"posicionFin": X:568.5521 Y:242.366 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:475.4999 Y:257.5 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:48:13","usuario":-1},{"CREAR_OBJETO":{"id":12,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:383.7474 Y:370.141 Z:0.0 W:1.0,"posicionFin": X:688.7261 Y:557.7466 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":307.0,"height":213.0,"posicion": X:536.00006 Y:462.50012 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:50:46","usuario":-1},{"BORRAR_OBJETO":{"id":12,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:383.7474 Y:370.141 Z:0.0 W:1.0,"posicionFin": X:688.7261 Y:557.7466 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","posicion": X:536.00006 Y:462.50012 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:50:48","usuario":-1}]}
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+Polyline (2)
+height: 110 width:154
+Line
+height: 124 width:194
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+ Mover entidad Default
+-Actualizar relacion 6
+--Enviar Edicion Texto Flotante8
+ID OWNER ::6
+**Iniciar Edicion Textosada
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"Roger2","canal_SocketIO":"canal2"}},{"usuario":{"id":3,"id_pluma":3,"nombres":"Roger","canal_SocketIO":"canal3"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":231.0,"height":288.0,"posicion": X:407.53027 Y:416.2083 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:40:36","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":252.0,"height":288.0,"posicion": X:730.8418 Y:271.24997 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:48:06","usuario":-1},{"CREAR_OBJETO":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:381.72775 Y:269.7467 Z:0.0 W:1.0,"posicionFin": X:568.5521 Y:242.366 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":221.0,"height":100.0,"posicion": X:475.4999 Y:257.5 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:48:11","usuario":-1},{"EDITAR_OBJETO":{"id":6,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:381.72775 Y:269.7467 Z:0.0 W:1.0,"posicionFin": X:568.5521 Y:242.366 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:475.4999 Y:257.5 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:48:13","usuario":-1},{"CREAR_OBJETO":{"id":12,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:383.7474 Y:370.141 Z:0.0 W:1.0,"posicionFin": X:688.7261 Y:557.7466 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":307.0,"height":213.0,"posicion": X:536.00006 Y:462.50012 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:50:46","usuario":-1},{"BORRAR_OBJETO":{"id":12,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:383.7474 Y:370.141 Z:0.0 W:1.0,"posicionFin": X:688.7261 Y:557.7466 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","posicion": X:536.00006 Y:462.50012 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:50:48","usuario":-1},{"EDITAR_OBJETO":{"id":6,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:384.72766 Y:209.74686 Z:0.0 W:1.0,"posicionFin": X:589.5527 Y:231.36578 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"sada","posicion": X:487.38293 Y:222.49303 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:51:08","usuario":-1}]}
+**Finalizar Edicion Textosada
+ Mover entidad Default
+-Actualizar relacion 6
+--Enviar edicion nombre Entidad Default
+Enviado canal1 1
+ Mover entidad Default
+-Actualizar relacion 6
+**Iniciar Edicion EntidadHola
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"Roger2","canal_SocketIO":"canal2"}},{"usuario":{"id":3,"id_pluma":3,"nombres":"Roger","canal_SocketIO":"canal3"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":231.0,"height":288.0,"posicion": X:407.53027 Y:416.2083 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:40:36","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":252.0,"height":288.0,"posicion": X:730.8418 Y:271.24997 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:48:06","usuario":-1},{"CREAR_OBJETO":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:381.72775 Y:269.7467 Z:0.0 W:1.0,"posicionFin": X:568.5521 Y:242.366 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":221.0,"height":100.0,"posicion": X:475.4999 Y:257.5 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:48:11","usuario":-1},{"EDITAR_OBJETO":{"id":6,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:381.72775 Y:269.7467 Z:0.0 W:1.0,"posicionFin": X:568.5521 Y:242.366 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:475.4999 Y:257.5 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:48:13","usuario":-1},{"CREAR_OBJETO":{"id":12,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:383.7474 Y:370.141 Z:0.0 W:1.0,"posicionFin": X:688.7261 Y:557.7466 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":307.0,"height":213.0,"posicion": X:536.00006 Y:462.50012 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:50:46","usuario":-1},{"BORRAR_OBJETO":{"id":12,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:383.7474 Y:370.141 Z:0.0 W:1.0,"posicionFin": X:688.7261 Y:557.7466 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","posicion": X:536.00006 Y:462.50012 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:50:48","usuario":-1},{"EDITAR_OBJETO":{"id":6,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:384.72766 Y:209.74686 Z:0.0 W:1.0,"posicionFin": X:589.5527 Y:231.36578 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"sada","posicion": X:487.38293 Y:222.49303 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:51:08","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Hola","atributos":{"0":"Id"},"posicion": X:232.52975 Y:280.20825 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:51:18","usuario":-1}]}
+**Terminar Edicion EntidadHola
+**Iniciar Edicion EntidadHola
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"Roger2","canal_SocketIO":"canal2"}},{"usuario":{"id":3,"id_pluma":3,"nombres":"Roger","canal_SocketIO":"canal3"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":231.0,"height":288.0,"posicion": X:407.53027 Y:416.2083 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:40:36","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":252.0,"height":288.0,"posicion": X:730.8418 Y:271.24997 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:48:06","usuario":-1},{"CREAR_OBJETO":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:381.72775 Y:269.7467 Z:0.0 W:1.0,"posicionFin": X:568.5521 Y:242.366 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":221.0,"height":100.0,"posicion": X:475.4999 Y:257.5 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:48:11","usuario":-1},{"EDITAR_OBJETO":{"id":6,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:381.72775 Y:269.7467 Z:0.0 W:1.0,"posicionFin": X:568.5521 Y:242.366 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:475.4999 Y:257.5 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:48:13","usuario":-1},{"CREAR_OBJETO":{"id":12,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:383.7474 Y:370.141 Z:0.0 W:1.0,"posicionFin": X:688.7261 Y:557.7466 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":307.0,"height":213.0,"posicion": X:536.00006 Y:462.50012 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:50:46","usuario":-1},{"BORRAR_OBJETO":{"id":12,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:383.7474 Y:370.141 Z:0.0 W:1.0,"posicionFin": X:688.7261 Y:557.7466 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","posicion": X:536.00006 Y:462.50012 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:50:48","usuario":-1},{"EDITAR_OBJETO":{"id":6,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:384.72766 Y:209.74686 Z:0.0 W:1.0,"posicionFin": X:589.5527 Y:231.36578 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"sada","posicion": X:487.38293 Y:222.49303 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:51:08","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Hola","atributos":{"0":"Id"},"posicion": X:232.52975 Y:280.20825 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:51:18","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Hola","atributos":{"0":"Id"},"posicion": X:232.52975 Y:280.20825 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:51:51","usuario":-1}]}
+**Terminar Edicion EntidadHola
+Inicio evento de: Evento de Login 
+recibido:  1 null
+ya hizo login
+Fin evento de: Evento de Login 
+ Mover entidad Default
+-Actualizar relacion 6
+--Enviar edicion nombre Entidad Default
+Enviado canal1 1
+ Mover entidad Default
+-Actualizar relacion 6
+-Escuchando en body por relacion en entidad Default
+--Enviar edicion  cuerpo Entidad Default
+Enviado canal11
+BORRAR W: 0.0 H: 0.0 Entidad Default Resultado(2 Relacion,-2 Borado):0
+**Iniciar Edicion EntidadDefault
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"Roger2","canal_SocketIO":"canal2"}},{"usuario":{"id":3,"id_pluma":3,"nombres":"Roger","canal_SocketIO":"canal3"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":231.0,"height":288.0,"posicion": X:407.53027 Y:416.2083 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:40:36","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":252.0,"height":288.0,"posicion": X:730.8418 Y:271.24997 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:48:06","usuario":-1},{"CREAR_OBJETO":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:381.72775 Y:269.7467 Z:0.0 W:1.0,"posicionFin": X:568.5521 Y:242.366 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":221.0,"height":100.0,"posicion": X:475.4999 Y:257.5 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:48:11","usuario":-1},{"EDITAR_OBJETO":{"id":6,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:381.72775 Y:269.7467 Z:0.0 W:1.0,"posicionFin": X:568.5521 Y:242.366 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:475.4999 Y:257.5 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:48:13","usuario":-1},{"CREAR_OBJETO":{"id":12,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:383.7474 Y:370.141 Z:0.0 W:1.0,"posicionFin": X:688.7261 Y:557.7466 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":307.0,"height":213.0,"posicion": X:536.00006 Y:462.50012 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:50:46","usuario":-1},{"BORRAR_OBJETO":{"id":12,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:383.7474 Y:370.141 Z:0.0 W:1.0,"posicionFin": X:688.7261 Y:557.7466 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","posicion": X:536.00006 Y:462.50012 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:50:48","usuario":-1},{"EDITAR_OBJETO":{"id":6,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:384.72766 Y:209.74686 Z:0.0 W:1.0,"posicionFin": X:589.5527 Y:231.36578 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"sada","posicion": X:487.38293 Y:222.49303 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:51:08","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Hola","atributos":{"0":"Id"},"posicion": X:232.52975 Y:280.20825 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:51:18","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Hola","atributos":{"0":"Id"},"posicion": X:232.52975 Y:280.20825 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:51:51","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Id","1":"atributo"},"posicion": X:232.53003 Y:280.20825 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:52:49","usuario":-1}]}
+**Terminar Edicion EntidadDefault
+**Iniciar Edicion EntidadDefault
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"Roger2","canal_SocketIO":"canal2"}},{"usuario":{"id":3,"id_pluma":3,"nombres":"Roger","canal_SocketIO":"canal3"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":231.0,"height":288.0,"posicion": X:407.53027 Y:416.2083 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:40:36","usuario":-1},{"CREAR_OBJETO":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":252.0,"height":288.0,"posicion": X:730.8418 Y:271.24997 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:48:06","usuario":-1},{"CREAR_OBJETO":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:381.72775 Y:269.7467 Z:0.0 W:1.0,"posicionFin": X:568.5521 Y:242.366 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":221.0,"height":100.0,"posicion": X:475.4999 Y:257.5 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:48:11","usuario":-1},{"EDITAR_OBJETO":{"id":6,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:381.72775 Y:269.7467 Z:0.0 W:1.0,"posicionFin": X:568.5521 Y:242.366 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"Default","posicion": X:475.4999 Y:257.5 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:48:13","usuario":-1},{"CREAR_OBJETO":{"id":12,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:383.7474 Y:370.141 Z:0.0 W:1.0,"posicionFin": X:688.7261 Y:557.7466 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":307.0,"height":213.0,"posicion": X:536.00006 Y:462.50012 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:50:46","usuario":-1},{"BORRAR_OBJETO":{"id":12,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:383.7474 Y:370.141 Z:0.0 W:1.0,"posicionFin": X:688.7261 Y:557.7466 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","posicion": X:536.00006 Y:462.50012 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:50:48","usuario":-1},{"EDITAR_OBJETO":{"id":6,"cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio": X:384.72766 Y:209.74686 Z:0.0 W:1.0,"posicionFin": X:589.5527 Y:231.36578 Z:0.0 W:1.0,"objetoInicio":2,"objetoFin":4,"textoInicio":"Default","textoFin":"sada","posicion": X:487.38293 Y:222.49303 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:51:08","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Hola","atributos":{"0":"Id"},"posicion": X:232.52975 Y:280.20825 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:51:18","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Hola","atributos":{"0":"Id"},"posicion": X:232.52975 Y:280.20825 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:51:51","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Id","1":"atributo"},"posicion": X:232.53003 Y:280.20825 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:52:49","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Default","atributos":{"0":"Id","1":"atributo","2":"atributo"},"posicion": X:232.53003 Y:280.20825 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:52:50","usuario":-1}]}
+**Terminar Edicion EntidadDefault
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+406 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+891 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+Inicio evento de: Evento de Login 
+recibido:  1 null
+No hay sesion activa
+Fin evento de: Evento de Login 
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+359 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+859 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+Inicio evento de: Evento de Login 
+recibido:  1 ROger
+Fin evento de: Evento de Login 
+Inicio evento de: Evento de Login 
+recibido:  1 null
+ya hizo login
+Fin evento de: Evento de Login 
+Rectangle
+height: 230 width:175
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"ROger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":175.0,"height":230.0,"posicion": X:352.07715 Y:294.91666 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:55:07","usuario":-1}]}
+ Mover entidad Default
+--Enviar edicion nombre Entidad Default
+Enviado canal1 1
+ Mover entidad Default
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+375 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+844 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+Inicio evento de: Evento de Login 
+recibido:  1 null
+No hay sesion activa
+Fin evento de: Evento de Login 
+Inicio evento de: Evento de Login 
+recibido:  1 Roger
+Fin evento de: Evento de Login 
+Inicio evento de: Evento de Login 
+recibido:  1 null
+ya hizo login
+Fin evento de: Evento de Login 
+Rectangle
+height: 254 width:229
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":229.0,"height":254.0,"posicion": X:442.18848 Y:357.04166 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:55:53","usuario":-1}]}
+ Mover entidad Default
+--Enviar edicion nombre Entidad Default
+Enviado canal1 1
+ Mover entidad Default
+**Iniciar Edicion EntidadHola
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":229.0,"height":254.0,"posicion": X:442.18848 Y:357.04166 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:55:53","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Hola","atributos":{"0":"Id"},"posicion": X:442.1885 Y:357.04175 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:56:00","usuario":-1}]}
+**Terminar Edicion EntidadHola
+java.lang.IndexOutOfBoundsException: Index: 4, Size: 4
+	at java.util.ArrayList.rangeCheck(Unknown Source)
+	at java.util.ArrayList.get(Unknown Source)
+	at org.mt4j.components.visibleComponents.widgets.MTTextArea.drawCharactersGL(MTTextArea.java:631)
+	at org.mt4j.components.visibleComponents.widgets.MTTextArea.drawComponent(MTTextArea.java:540)
+	at org.mt4j.components.MTCanvas.drawUpdateRecursive(MTCanvas.java:405)
+	at org.mt4j.components.MTCanvas.drawUpdateRecursive(MTCanvas.java:416)
+	at org.mt4j.components.MTCanvas.drawUpdateRecursive(MTCanvas.java:416)
+	at org.mt4j.components.MTCanvas.drawUpdateRecursive(MTCanvas.java:416)
+	at org.mt4j.components.MTCanvas.drawUpdateRecursive(MTCanvas.java:416)
+	at org.mt4j.components.MTCanvas.drawUpdateRecursive(MTCanvas.java:378)
+	at org.mt4j.components.MTCanvas.drawAndUpdateCanvas(MTCanvas.java:311)
+	at org.mt4j.sceneManagement.AbstractScene.drawAndUpdate(AbstractScene.java:172)
+	at org.mt4j.MTApplication.runApplication(MTApplication.java:785)
+	at org.mt4j.MTApplication.draw(MTApplication.java:671)
+	at processing.core.PApplet.handleDraw(Unknown Source)
+	at processing.core.PApplet.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+java.lang.IndexOutOfBoundsException: Index: 5, Size: 4
+	at java.util.ArrayList.rangeCheck(Unknown Source)
+	at java.util.ArrayList.get(Unknown Source)
+	at org.mt4j.components.visibleComponents.widgets.MTTextArea.drawCharactersGL(MTTextArea.java:631)
+	at org.mt4j.components.visibleComponents.widgets.MTTextArea.drawComponent(MTTextArea.java:540)
+	at org.mt4j.components.MTCanvas.drawUpdateRecursive(MTCanvas.java:405)
+	at org.mt4j.components.MTCanvas.drawUpdateRecursive(MTCanvas.java:416)
+	at org.mt4j.components.MTCanvas.drawUpdateRecursive(MTCanvas.java:416)
+	at org.mt4j.components.MTCanvas.drawUpdateRecursive(MTCanvas.java:416)
+	at org.mt4j.components.MTCanvas.drawUpdateRecursive(MTCanvas.java:416)
+	at org.mt4j.components.MTCanvas.drawUpdateRecursive(MTCanvas.java:378)
+	at org.mt4j.components.MTCanvas.drawAndUpdateCanvas(MTCanvas.java:311)
+	at org.mt4j.sceneManagement.AbstractScene.drawAndUpdate(AbstractScene.java:172)
+	at org.mt4j.MTApplication.runApplication(MTApplication.java:785)
+	at org.mt4j.MTApplication.draw(MTApplication.java:671)
+	at processing.core.PApplet.handleDraw(Unknown Source)
+	at processing.core.PApplet.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Line
+height: 22 width:183
+ Mover entidad Default
+ Mover entidad Default
+ Mover entidad Default
+--Enviar edicion nombre Entidad Default
+Enviado canal1 1
+ Mover entidad Default
+**Iniciar Edicion EntidadHola
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":229.0,"height":254.0,"posicion": X:442.18848 Y:357.04166 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:55:53","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Hola","atributos":{"0":"Id"},"posicion": X:442.1885 Y:357.04175 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:56:00","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Hola","atributos":{"0":"Id"},"posicion": X:442.18832 Y:357.04163 Z:0.0 W:1.0},"tiempo":"2014-12-08 16:57:14","usuario":-1}]}
+**Terminar Edicion EntidadHola
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - Platform: "Windows 8.1" -> Version: "6.3" -> JVM Bit: "64"
+INFO - MT4j window dimensions: "1024 X 720"
+INFO - Maximum framerate: "60"
+INFO - OpenGL Version: "3.1.0 - Build 9.17.10.3347" - Vendor: "Intel" - Renderer: "Intel(R) HD Graphics 3000"
+INFO - Non power of two texture sizes allowed: "true"
+INFO - OpenGL Framebuffer Object Extension available: "true"
+INFO - Vertical Sync enabled: "false"
+INFO - Initializing TUIO input on port: 3333
+INFO - Loading new font "SansSerif" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+Directorio: C:\Users\Roger
+5000
+INFO - Loading new font "SourceSansPro-Semibold.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/Roger/Desktop/newMT4J/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+359 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+890 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
+Inicio evento de: Evento de Login 
+recibido:  1 null
+No hay sesion activa
+Fin evento de: Evento de Login 
+Inicio evento de: Evento de Login 
+recibido:  1 Roger
+Fin evento de: Evento de Login 
+Inicio evento de: Evento de Login 
+recibido:  1 null
+ya hizo login
+Fin evento de: Evento de Login 
+Inicio evento de: Evento de Login 
+recibido:  2 Roger
+Fin evento de: Evento de Login 
+Inicio evento de: Evento de Login 
+recibido:  2 null
+ya hizo login
+Fin evento de: Evento de Login 
+Inicio evento de: Evento de Login 
+recibido:  3 Roger
+Fin evento de: Evento de Login 
+Inicio evento de: Evento de Login 
+recibido:  3 null
+ya hizo login
+Fin evento de: Evento de Login 
+Rectangle
+height: 300 width:195
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"Roger","canal_SocketIO":"canal2"}},{"usuario":{"id":3,"id_pluma":3,"nombres":"Roger","canal_SocketIO":"canal3"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":195.0,"height":288.0,"posicion": X:375.84277 Y:331.40277 Z:0.0 W:1.0},"tiempo":"2014-12-08 17:00:47","usuario":-1}]}
+ Mover entidad Default
+--Enviar edicion nombre Entidad Default
+Enviado canal1 1
+ Mover entidad Default
+ Mover entidad Default
+--Enviar edicion nombre Entidad Default
+Enviado canal1 1
+ Mover entidad Default
+**Iniciar Edicion EntidadPrueba
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"Roger","canal_SocketIO":"canal2"}},{"usuario":{"id":3,"id_pluma":3,"nombres":"Roger","canal_SocketIO":"canal3"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":195.0,"height":288.0,"posicion": X:375.84277 Y:331.40277 Z:0.0 W:1.0},"tiempo":"2014-12-08 17:00:47","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Prueba","atributos":{"0":"Id"},"posicion": X:375.84283 Y:331.4029 Z:0.0 W:1.0},"tiempo":"2014-12-08 17:01:02","usuario":-1}]}
+**Terminar Edicion EntidadPrueba
+**Iniciar Edicion EntidadHola
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"Roger","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"Roger","canal_SocketIO":"canal2"}},{"usuario":{"id":3,"id_pluma":3,"nombres":"Roger","canal_SocketIO":"canal3"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1024,"display-heigth":720},"datos":[{"CREAR_OBJETO":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":{"0":"Id"},"width":195.0,"height":288.0,"posicion": X:375.84277 Y:331.40277 Z:0.0 W:1.0},"tiempo":"2014-12-08 17:00:47","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Prueba","atributos":{"0":"Id"},"posicion": X:375.84283 Y:331.4029 Z:0.0 W:1.0},"tiempo":"2014-12-08 17:01:02","usuario":-1},{"EDITAR_OBJETO":{"id":2,"nombre":"Hola","atributos":{"0":"Id"},"posicion": X:375.84283 Y:331.4029 Z:0.0 W:1.0},"tiempo":"2014-12-08 17:01:18","usuario":-1}]}
+**Terminar Edicion EntidadHola

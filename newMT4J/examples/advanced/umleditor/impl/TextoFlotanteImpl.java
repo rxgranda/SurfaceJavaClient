@@ -563,4 +563,12 @@ public class TextoFlotanteImpl extends MTComponent implements ObjetoUMLGraph {
 	}
 
 
+
+	@Override
+	public void undoEditActions() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
 }

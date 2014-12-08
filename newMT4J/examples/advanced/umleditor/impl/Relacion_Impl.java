@@ -564,7 +564,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 				
 					//	System.out.println("Reconocer:");
 						ObjetoUML obj=recognizer.reconocerObjeto();
-						if (true){//obj ==ObjetoUML.DELETE_OBJECT_GESTURE&&obj.getWidth()>40&&obj.getHeight()>40){
+						if (obj ==ObjetoUML.DELETE_OBJECT_GESTURE&&obj.getWidth()>40&&obj.getHeight()>40){
 							
 							
 							int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID)!=null)?(int)cursor.sessionID:Usuario.ID_DEFAULT_USER;
@@ -784,7 +784,9 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 	}
 	@Override
 	public void actualizarEtiquetas() {
-		// TODO Auto-generated method stub
+		((TextoFlotante)textoflotInicio).getFigura().actualizarEtiquetas();
+		((TextoFlotante)textoflotFin).getFigura().actualizarEtiquetas();
+		
 		
 	}
 	
@@ -868,6 +870,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		}
 		return ubicacion;
 	}
+	// cardinalidadSwitch=true cambiar cardinalidad inicio
 	public synchronized void actualizarCardinalidad(final int cardinalidad,boolean cardinalidadSwitch){
 		System.out.println("-Actualizar cardinalidad relacion "+ ((Relacion)objeto).getId());
 
@@ -1079,6 +1082,16 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 	public void undoAddActions() {
 		//server.getNamespace("/login").getBroadcastOperations().sendEvent("eraseElement",new RelacionAdapter(((Relacion)objeto),Usuario.ID_DEFAULT_USER));		
 		removerRelacion(Usuario.ID_DEFAULT_USER,false);		
+	}
+	@Override
+	public void undoEditActions() {
+		
+		actualizarEtiquetas();	
+		//actualizar cardinalidad
+		this.actualizarCardinalidad(((Relacion)objeto).getCardinalidadInicio(), true);
+		this.actualizarCardinalidad(((Relacion)objeto).getCardinalidadFin(), false);
+
+		
 	}
 
 

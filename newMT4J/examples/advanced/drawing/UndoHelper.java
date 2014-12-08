@@ -48,7 +48,7 @@ public class UndoHelper {
 				case EDITAR_OBJETO_ACTION:
 					
 						objetoAnterior.restaurar(accion.objeto);
-					
+						objetoAnterior.getFigura().undoEditActions();
 					break;
 				case BORRAR_OBJETO_ACTION:			
 					objetoAnterior.getFigura().undoDeleteActions();

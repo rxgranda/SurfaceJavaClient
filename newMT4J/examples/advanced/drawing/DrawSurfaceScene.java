@@ -312,16 +312,17 @@ public class DrawSurfaceScene extends AbstractScene {
 					//System.out.println(arg1.getId()+" "+arg1.getNombre());
 					System.out.println("**Iniciar Edicion Entidad"+ arg1.getNombre());
 
-					ObjetoUML objeto=listaRecognizer.get(arg1.getIdUsuario()).getObjetoUML(arg1.getId());
+					//listaRecognizer.get(arg1.getIdUsuario());
+					ObjetoUML objeto=UMLFacade.getObjetoUML(arg1.getId());
 					//System.out.println("objeto "+objeto);
 					if(objeto instanceof Entidad){
 						Entidad entidad=(Entidad)objeto;
+						UndoHelper.agregarAccion(UndoHelper.EDITAR_OBJETO_ACTION, objeto);
 						arg1.actualizar(entidad);
 						//System.out.println("Nombre objeto:"+entidad.getNombre());
 						objeto.getFigura().actualizarEtiquetas();
-						
-						server.getNamespace("/login").getBroadcastOperations().sendEvent("syncEdition",new EntidadAdapter(((Entidad)objeto),arg1.getIdUsuario(),-1));
 						UMLDataSaver.agregarAccion(UMLDataSaver.EDITAR_OBJETO_ACTION, objeto,listaUsuarios.get(arg1.getIdUsuario()) );
+						server.getNamespace("/login").getBroadcastOperations().sendEvent("syncEdition",new EntidadAdapter(((Entidad)objeto),arg1.getIdUsuario(),-1));
 					}
 					}catch (Exception e){
 						System.out.println("ERROR endEdition Listener");	
@@ -337,16 +338,17 @@ public class DrawSurfaceScene extends AbstractScene {
 					AckRequest arg2){
 				System.out.println("**Iniciar Edicion Texto"+ arg1.getNombre());
 					try{
+				//	listaRecognizer.get(arg1.getIdUsuario());
 					//System.out.println(arg1.getId()+" "+arg1.getNombre());
-					ObjetoUML objeto=listaRecognizer.get(arg1.getIdUsuario()).getObjetoUML(arg1.getId());
+					ObjetoUML objeto=UMLFacade.getObjetoUML(arg1.getId());
 					//System.out.println("objeto "+objeto);
 					if(objeto instanceof TextoFlotante){
 						TextoFlotante textflot=(TextoFlotante)objeto;
 						if (textflot.getOwner() != null){
 							ObjetoUML tem = textflot.getOwner();
-							if (tem instanceof Relacion){
-								arg1.actualizar(textflot);
-								
+							UndoHelper.agregarAccion(UndoHelper.EDITAR_OBJETO_ACTION, tem);
+							if (tem instanceof Relacion){								
+								arg1.actualizar(textflot);								
 								objeto.getFigura().actualizarEtiquetas();
 								UMLDataSaver.agregarAccion(UMLDataSaver.EDITAR_OBJETO_ACTION, tem,listaUsuarios.get(arg1.getIdUsuario()));
 							}
@@ -372,11 +374,13 @@ public class DrawSurfaceScene extends AbstractScene {
 				System.out.println("**Iniciar Edicion cardinalidad");
 
 					try{
+					//listaRecognizer.get(cardinalidadAdpter.getIdUsuario());
 					//System.out.println(cardinalidadAdpter.getId()+" "+cardinalidadAdpter.getCardinalidad());
-					ObjetoUML objeto=listaRecognizer.get(cardinalidadAdpter.getIdUsuario()).getObjetoUML(cardinalidadAdpter.getId());
+					ObjetoUML objeto=UMLFacade.getObjetoUML(cardinalidadAdpter.getId());
 					//System.out.println("objeto "+objeto);
 					if(objeto instanceof Relacion){
 						Relacion relacion=(Relacion)objeto;
+						UndoHelper.agregarAccion(UndoHelper.EDITAR_OBJETO_ACTION, objeto);
 						//System.out.println("CARD :" + cardinalidadAdpter.getCardinalidad() + "CARD SWITCH:" + cardinalidadAdpter.isCardinalidadSwitch());
 						((Relacion_Impl)relacion.getFigura()).actualizarCardinalidad(cardinalidadAdpter.getCardinalidad(), cardinalidadAdpter.isCardinalidadSwitch());																
 						UMLDataSaver.agregarAccion(UMLDataSaver.EDITAR_OBJETO_ACTION, objeto,listaUsuarios.get(cardinalidadAdpter.getIdUsuario()) );

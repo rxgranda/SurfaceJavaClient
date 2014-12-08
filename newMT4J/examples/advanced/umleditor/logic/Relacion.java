@@ -144,6 +144,8 @@ public class Relacion extends ObjetoUML  {
 	public ObjetoUML clonar(){
 		Relacion clon=new Relacion(this.getPersona());	
 		clon.setTextoInicio(((UndoInterface)this.getTextoInicio()).clonar());
+		clon.setCardinalidadInicio(this.getCardinalidadInicio());
+		clon.setCardinalidadInicio(this.getCardinalidadFin());
 		clon.setTextoFin(((UndoInterface)this.getTextoFin()).clonar());
 		return clon;		
 	}
@@ -152,6 +154,9 @@ public class Relacion extends ObjetoUML  {
 		if(objeto instanceof Relacion){			
 			((UndoInterface) this.getTextoInicio()).restaurar(((Relacion) objeto).getTextoInicio());
 			((UndoInterface) this.getTextoFin()).restaurar(((Relacion) objeto).getTextoFin());
+			this.setCardinalidadInicio(((Relacion) objeto).getCardinalidadInicio());
+			this.setCardinalidadFin(((Relacion) objeto).getCardinalidadFin());
+
 
 		}				
 	}

@@ -605,7 +605,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 						
 						
 					
-								if (true){//obj ==ObjetoUML.DELETE_OBJECT_GESTURE&&obj.getWidth()>50&&obj.getHeight()>30){
+								if (obj ==ObjetoUML.DELETE_OBJECT_GESTURE&&obj.getWidth()>50&&obj.getHeight()>30){
 									if(puedeBorrarEntidad()){
 										UndoHelper.agregarAccion(UndoHelper.BORRAR_OBJETO_ACTION,objeto);
 										int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID)!=null)?(int)cursor.sessionID:Usuario.ID_DEFAULT_USER;															
@@ -889,5 +889,13 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 	@Override
 	public void undoAddActions() {
 		removerEntidad(Usuario.ID_DEFAULT_USER);					
+	}
+
+
+
+	@Override
+	public void undoEditActions() {
+		this.actualizarEtiquetas();		
+		server.getNamespace("/login").getBroadcastOperations().sendEvent("syncEdition",new EntidadAdapter(((Entidad)objeto),Usuario.ID_DEFAULT_USER,-1));		
 	}
 }
