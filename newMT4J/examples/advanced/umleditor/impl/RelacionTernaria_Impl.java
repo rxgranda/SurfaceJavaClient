@@ -330,7 +330,7 @@ public class RelacionTernaria_Impl extends MTComponent implements ObjetoUMLGraph
 			//al mover las relaciones y las esquinas de la relacion multiple
 			if((int)(v.x)==(int)(esquina.getKey().x) && (int)(v.y)==(int)(esquina.getKey().y)){
 				System.out.println("Ingreso he hizo TRUE el valor de una esquina");
-				esquinas.replace(esquina.getKey(), true);
+				esquinas.put(esquina.getKey(), true);
 				break;
 			}
 		    
@@ -360,7 +360,7 @@ public class RelacionTernaria_Impl extends MTComponent implements ObjetoUMLGraph
 			}
 		}
 		//hacemos falsa esa posicion y evitar que otro la tome
-		esquinas.replace(dArr.get(dArr_aux[i]), false);
+		esquinas.put(dArr.get(dArr_aux[i]), false);
 		return dArr.get(dArr_aux[i]);
 	}
 	
