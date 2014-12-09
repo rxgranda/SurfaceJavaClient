@@ -11,6 +11,7 @@ import org.mt4j.util.math.Vector3D;
 import advanced.drawing.DrawSurfaceScene;
 import advanced.umleditor.logic.Entidad;
 import advanced.umleditor.logic.ObjetoUML;
+import advanced.umleditor.logic.RelacionTernaria;
 import advanced.umleditor.logic.TextoFlotante;
 import advanced.umleditor.logic.Usuario;
 import advanced.umleditor.logic.Relacion;
@@ -81,6 +82,7 @@ public class UMLFacade {
 	public ObjetoUML reconocerObjeto(){
 		////System.out.println("Numero de muestrassssssss"+numMuestas);
 		int resultado=recognizer.recognize();
+		
 		if(resultado!=ObjetoUML.INVALIDO&&this.numMuestas>40){	
 			int width=(int)(maxX-minX);
 			int height=(int)(maxY-minY);
@@ -90,31 +92,13 @@ public class UMLFacade {
 					////System.out.println("Entidad mal reconocida");
 					reiniciar();
 					objeto=ObjetoUML.OBJETO_INVALIDO;
+					
 					return objeto;
 				}
 			}
 				
 			objeto=UMLCollection.anadirObjeto(resultado,persona );
 			System.out.println("height: " + height+ " width:" + width );
-			
-			if(width < DrawSurfaceScene.MIN_WIDTH){
-				width = (int)DrawSurfaceScene.MIN_WIDTH;
-			}
-			if (height < DrawSurfaceScene.MIN_HEIGHT){				
-				height = (int)DrawSurfaceScene.MIN_HEIGHT;
-			}
-			if (width > DrawSurfaceScene.MAX_WIDTH){
-				width = (int)DrawSurfaceScene.MAX_WIDTH;
-			}
-			if (height > DrawSurfaceScene.MAX_HEIGHT){
-				height = (int)DrawSurfaceScene.MAX_HEIGHT;
-			}
-			//// Calcular centroide,posicion y dimensiones
-			this.getObjeto().setCentroide((int)((acumCentroideX/numMuestas) -5.0f),(int)((acumCentroideY/numMuestas) -5.0f));	
-			this.getObjeto().setWidth(width);
-			this.getObjeto().setHeight(height);
-			this.getObjeto().setPosicion(new Vector3D((int)(this.getObjeto().getCentroide().x- (maxX-minX)/2),(int)	(this.getObjeto().getCentroide().y-(maxY-minY)/2)));		
-			
 			
 			//Caso de que sea una linea, se debe conocer posicion inicial y final
 			
@@ -123,11 +107,42 @@ public class UMLFacade {
 				
 			}
 			if (objeto.getTipo()==ObjetoUML.ENTIDAD){
+				
+				
+				if(width < DrawSurfaceScene.MIN_WIDTH){
+					width = (int)DrawSurfaceScene.MIN_WIDTH;
+				}
+				if (height < DrawSurfaceScene.MIN_HEIGHT){				
+					height = (int)DrawSurfaceScene.MIN_HEIGHT;
+				}
+				if (width > DrawSurfaceScene.MAX_WIDTH){
+					width = (int)DrawSurfaceScene.MAX_WIDTH;
+				}
+				if (height > DrawSurfaceScene.MAX_HEIGHT){
+					height = (int)DrawSurfaceScene.MAX_HEIGHT;
+				}
 				((Entidad)objeto).setNombre("Default");
 				ArrayList<String> atributos=new ArrayList<String>();
 				atributos.add("Id");
 				((Entidad)objeto).setAtributos(atributos);
 			}	
+			if (objeto.getTipo()==ObjetoUML.RELACION_MULTIPLE){
+				if(width < DrawSurfaceScene.MIN_WIDTH){
+					width = (int)DrawSurfaceScene.MIN_WIDTH-15;
+					height = width;
+				}
+				
+				
+				System.out.println("retorna objeto RELACION MULTIPLE");
+				//((RelacionMultiple)objeto).inicializarDimensiones((int)primerX, (int) primerY, (int)ultimoX, (int) ultimoY);
+				
+			}
+			//// Calcular centroide,posicion y dimensiones
+			this.getObjeto().setCentroide((int)((acumCentroideX/numMuestas) -5.0f),(int)((acumCentroideY/numMuestas) -5.0f));	
+			this.getObjeto().setWidth(width);
+			this.getObjeto().setHeight(height);
+			this.getObjeto().setPosicion(new Vector3D((int)(this.getObjeto().getCentroide().x- (maxX-minX)/2),(int)	(this.getObjeto().getCentroide().y-(maxY-minY)/2)));		
+			
 			//// Para calcular centroide,posicion y dimensiones de una nueva figura
 			reiniciar();
 			return objeto;

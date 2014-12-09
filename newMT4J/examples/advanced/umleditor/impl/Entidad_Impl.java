@@ -8,6 +8,7 @@ import java.util.Map;
 import org.mt4j.MTApplication;
 import org.mt4j.components.MTCanvas;
 import org.mt4j.components.MTComponent;
+import org.mt4j.components.TransformSpace;
 import org.mt4j.components.interfaces.IMTComponent3D;
 import org.mt4j.components.visibleComponents.font.FontManager;
 import org.mt4j.components.visibleComponents.font.IFont;
@@ -43,6 +44,7 @@ import advanced.umleditor.UMLFacade;
 import advanced.umleditor.logic.Entidad;
 import advanced.umleditor.logic.ObjetoUML;
 import advanced.umleditor.logic.Relacion;
+import advanced.umleditor.logic.RelacionTernaria;
 import advanced.umleditor.logic.TextoFlotante;
 import advanced.umleditor.logic.Usuario;
 import advanced.umleditor.socketio.EntidadAdapter;
@@ -61,9 +63,10 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 	
 
 	SocketIOServer server;
-	ObjetoUML objeto;
 
-	
+	public ObjetoUML objeto;
+
+
 	
 	public Entidad_Impl(final MTApplication mtApp,final MTComponent container, final MTCanvas canvas, final UMLFacade recognizer,final ObjetoUML objeto, final SocketIOServer server) {
 
@@ -221,13 +224,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 			}
 		});
 		
-		
-		  
-	      
-		
-		
-		
-		
+
 		
 		//ComponentHelper.getCenterPointGlobal()
 		
@@ -395,7 +392,17 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 				System.out.println(" Mover entidad "+ ((Entidad)objeto).getNombre());
 			//	System.out.println("Fin evento de: Mover entidad Usuario:"+cursor.sessionID );
 				
-				rectangulo.setPositionGlobal(rectangulo.getCenterPointGlobal().addLocal(de.getTranslationVect()));
+				InputCursor cursor = de.getDragCursor();
+				Vector3D pos = cursor.getPosition();
+				Vector3D posFinal = de.getTranslationVect();
+				
+				if((pos.y<0)||pos.y>=(container.getBounds().getHeightXY(TransformSpace.RELATIVE_TO_PARENT))){
+					posFinal.y=0;
+				}
+				if((pos.x<0)||pos.x>=(container.getBounds().getWidthXY(TransformSpace.RELATIVE_TO_PARENT))){
+					posFinal.x=0;
+				}
+				rectangulo.setPositionGlobal(rectangulo.getCenterPointGlobal().addLocal(posFinal));
 				objeto.setPosicion(rectangulo.getCenterPointGlobal());
 				halo.setPositionGlobal(rectangulo.getCenterPointGlobal());
 //// TEST
@@ -593,7 +600,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 						///canvas.removeChild(body);
 						//rectangulo.addChild(body);
 						ObjetoUML obj=recognizer.reconocerObjeto();
-						System.out.println("BORRAR W: "+obj.getWidth()+" H: "+obj.getHeight()+" Entidad "+((Entidad)obj).getNombre());
+						//System.out.println("BORRAR W: "+obj.getWidth()+" H: "+obj.getHeight()+" Entidad "+((Entidad)obj).getNombre());
 						if (obj ==ObjetoUML.DELETE_OBJECT_GESTURE&&obj.getWidth()>50&&obj.getHeight()>30){
 							
 							System.out.println("-Iniciar borrado Entidad "+ ((Entidad)objeto).getNombre());
@@ -602,13 +609,22 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 							int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID)!=null)?(int)cursor.sessionID:Usuario.ID_DEFAULT_USER;
 							server.getNamespace("/login").getBroadcastOperations().sendEvent("eraseElement",new EntidadAdapter(((Entidad)objeto),idUsuario,ObjetoUML.EDIT_HEADER));
 							Iterator iterRelacion = UMLCollection.getListaUML().entrySet().iterator();
+							System.out.println("tamanio de LISTA COLLECTION: "+UMLCollection.getListaUML().size());
 						    while (iterRelacion.hasNext()) {
 						        Map.Entry pairs = (Map.Entry)iterRelacion.next();
 						        ObjetoUML objuml= (ObjetoUML)pairs.getValue();
 						        if(objuml instanceof Relacion){
 						        	Relacion reluml = (Relacion)objuml;
+						        	
 						        	//System.out.println(reluml);
 						        	if(reluml.getObjetoInicio()!=null && reluml.getObjetoFin()!=null){
+						        		
+						        		//Object objeto_aux = reluml.getObjetoInicio();
+						        		
+						        		//if(objeto_aux instanceof RelacionMultiple)
+						        			//System.out.println("ESTE ES UN OBJETO RELACION MULTIPLE");
+						        		
+						        		
 						        		
 						        		//System.out.println(reluml.getObjetoInicio().getId());
 							        	if (reluml.getObjetoInicio().getId() == objeto.getId() || reluml.getObjetoFin().getId() == objeto.getId()){
@@ -798,12 +814,14 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 
 	public synchronized void removerRelaciones(int idUsuario){
 		LinkedList listaInicio=obtenerDatos(RELACIONES_INICIO_KEYWORD);
+		//
 		if(listaInicio!=null){
+			System.out.println("tamanio de la lista de inicio: "+listaInicio.size());
 			for(Object o:listaInicio){
 				if(o instanceof ObjetoUMLGraph){
 					//((Relacion)objeto)
 
-					((Relacion_Impl)o).removerRelacion(idUsuario,true);
+					((Relacion_Impl)o).removerRelacion(idUsuario, true);
 					//System.out.println("ELIMINAR INICIO.........................................");
 
 				}
@@ -814,13 +832,15 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 		
 		LinkedList listaFin=obtenerDatos(RELACIONES_FIN_KEYWORD);
 		if(listaFin!=null){
+			System.out.println("tamanio de la lista de fin: "+listaFin.size());
 			for(Object o:listaFin){
 				if(o instanceof ObjetoUMLGraph){
 					//((Relacion)objeto)
-
-					((Relacion_Impl)o).removerRelacion(idUsuario,true);
-				//	System.out.println("ELIMINAR FIN.........................................");
-
+					
+					//envio el parametro false, para que en caso de que sea una relacion multiple del otro lado,
+					//la pueda manejar 
+					((Relacion_Impl)o).removerRelacion(idUsuario, true);
+				
 					}
 			}
 			listaFin.clear();
