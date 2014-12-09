@@ -49,24 +49,24 @@ public class UMLRecognizer {
 							else
 								return ObjetoUML.DELETE_GESTURE;	
 						}else if(shapeLabel.contains("Polyline")){
-							String str = new String(shapeLabel);      
-							str = str.replaceAll("[^0-9]+", " ");
+							//String str = new String(shapeLabel);      
+							//str = str.replaceAll("[^0-9]+", " ");
 							//Arrays.asList(str.trim().split(" "));
-							int numPolyLine=Integer.parseInt(str.trim().split(" ")[0]);
-							if (numPolyLine>3){ // Si es un polyline mayor a 4 para evitar el borrado involuntario					 
+							//int numPolyLine=Integer.parseInt(str.trim().split(" ")[0]);
+							//if (numPolyLine>3){ // Si es un polyline mayor a 4 para evitar el borrado involuntario					 
 								if(modo_edicion)
 									return ObjetoUML.RELACION;
 								else
 									return ObjetoUML.DELETE_GESTURE;								
-							}
-							if(numPolyLine>1){
-								if(modo_edicion)
-									return ObjetoUML.RELACION;
-								else
-									return ObjetoUML.DELETE_GESTURE;	
-							}
+							//}
+							//if(numPolyLine>1){
+								//if(modo_edicion)
+							//		return ObjetoUML.RELACION;
+								//else
+									//return ObjetoUML.DELETE_GESTURE;	
+							//}
 							
-							return ObjetoUML.INVALIDO;
+							//return ObjetoUML.INVALIDO;
 						}else if((shapeLabel.contains("Wave"))){
 							if(!isEditMode())
 								return ObjetoUML.DELETE_GESTURE;	
@@ -75,12 +75,14 @@ public class UMLRecognizer {
 					}
 				}
 			}
-			stroke=new Stroke();
+			stroke=new Stroke();						
 			return ObjetoUML.INVALIDO;
 		}catch (Exception e){
 			e.printStackTrace();
 		}
-		return ObjetoUML.INVALIDO;	
+		
+		return ObjetoUML.INVALIDO;
+		
 	}
 	
 	public void delete_mode(){
