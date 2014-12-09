@@ -19,6 +19,7 @@ import javax.swing.JFrame;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 import org.mt4j.MTApplication;
+import org.mt4j.components.MTCanvas;
 import org.mt4j.components.MTComponent;
 import org.mt4j.components.TransformSpace;
 import org.mt4j.components.interfaces.IMTComponent3D;
@@ -56,10 +57,12 @@ import advanced.umleditor.UMLCollection;
 import advanced.umleditor.impl.Entidad_Impl;
 import advanced.umleditor.impl.HaloHelper;
 import advanced.umleditor.impl.ObjetoUMLGraph;
+import advanced.umleditor.impl.RelacionTernaria_Impl;
 import advanced.umleditor.impl.Relacion_Impl;
 import advanced.umleditor.impl.TextoFlotanteImpl;
 import advanced.umleditor.logic.Entidad;
 import advanced.umleditor.logic.ObjetoUML;
+import advanced.umleditor.logic.RelacionTernaria;
 import advanced.umleditor.logic.TextoFlotante;
 import advanced.umleditor.logic.Usuario;
 import advanced.umleditor.logic.Relacion;
@@ -126,6 +129,8 @@ public class DrawSurfaceScene extends AbstractScene {
 	private int paso=-1;
 	
 	private ArrayList<int[]> listaCoordenadasPlayer1;
+
+	
 
 	
 	
@@ -290,11 +295,13 @@ public class DrawSurfaceScene extends AbstractScene {
 		this.getCanvas().setDepthBufferDisabled(true);
 		listaCoordenadasPlayer1 = new ArrayList<int[]>();
 		DEG_TO_RAD = (float) (180.0/Math.PI);
+
 		MIN_HEIGHT = (float) mtApplication.height * MT4jSettings.getMinimumHeightRatio();
 		MIN_WIDTH = (float) mtApplication.width * MT4jSettings.getMinimumWidthRatio();
 		MAX_HEIGHT = (float) mtApplication.height * MT4jSettings.getMaximumHeightRatio();
 		MAX_WIDTH = (float) mtApplication.width * MT4jSettings.getMaximumWidthRatio();		
 		
+
 		/*
 		 * this.drawShape = getDefaultBrush(); this.localBrushCenter =
 		 * drawShape.getCenterPointLocal(); this.brushWidthHalf =
@@ -428,7 +435,9 @@ public class DrawSurfaceScene extends AbstractScene {
 		listaHaloHelper.put(defaultUser, helper);
 		listaUsuarios.put(Usuario.ID_DEFAULT_USER, defaultUser);
 		
-
+		
+		
+		
 		// Proyecto
 		this.getCanvas().registerInputProcessor(new TapProcessor(mtApplication));
 		this.getCanvas().addGestureListener(TapProcessor.class, new IGestureEventListener() {
@@ -465,7 +474,7 @@ public class DrawSurfaceScene extends AbstractScene {
 				return false;
 			}
 		});
-		
+
 		this.getCanvas().addInputListener(new IMTInputEventListener() {
 			public boolean processInputEvent(MTInputEvent inEvt) {
 				if (inEvt instanceof AbstractCursorInputEvt) {
@@ -474,13 +483,16 @@ public class DrawSurfaceScene extends AbstractScene {
 					final InputCursor m = posEvt.getCursor();
 					final Usuario currentUser=(listaUsuarios.get((int)m.sessionID)!=null)?listaUsuarios.get((int)m.sessionID):defaultUser;				
 					
+					
 					if(currentUser!=null){
 					IMTComponent3D componente = m.getTarget();
-
-					//System.out.println(componente.toString());
+					
+					
+					System.out.println("COMPONENTE: "+componente.toString());
 				
 					
 					IMTComponent3D currentComponent = (IMTComponent3D) getCanvas().getComponentAt((int) m.getPosition().x,(int) m.getPosition().y);
+					System.out.println("CURRENT: "+currentComponent.toString());
 					//Object entidad = null,entidad2=null;
 					
 					//switch para establecer relaciones entre entidades
@@ -499,6 +511,7 @@ public class DrawSurfaceScene extends AbstractScene {
 						listaHaloHelper.put(currentUser,helper);
 						break;
 					case AbstractCursorInputEvt.INPUT_UPDATED:
+						 	
 						if(componente!=currentComponent){
 							 Object entidad2=((MTComponent)currentComponent).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
 							 listaHaloHelper.get(currentUser).setHoverFueraHalo(true);
@@ -507,20 +520,52 @@ public class DrawSurfaceScene extends AbstractScene {
 								((ObjetoUMLGraph)entidad2).getHalo().sendToFront();
 								
 								////System.out.println("Pintandoooooo");
-								LinkedList listaVisitados=(LinkedList) ((MTComponent)componente).getUserData(ObjetoUMLGraph.COMPONENTES_VISITADOS_KEYWORD);
+								//@SuppressWarnings("rawtypes")
+								LinkedList listaVisitados=(LinkedList<MTComponent>) ((MTComponent)componente).getUserData(ObjetoUMLGraph.COMPONENTES_VISITADOS_KEYWORD);
+								
+								//Obtiene ultimo componente
+								Object ultimo=null;
 								if(listaVisitados==null){
 									listaVisitados=new LinkedList<MTComponent>();
 									((MTComponent)componente).setUserData(ObjetoUMLGraph.COMPONENTES_VISITADOS_KEYWORD,listaVisitados);
 									
 								}
+								
+								if(listaVisitados.size()>0)
+								ultimo=listaVisitados.getLast();
+								
+								if(ultimo!=null && !ultimo.equals(entidad2))
+								listaHaloHelper.get(currentUser).setHoverFin(m.getPosition());
+							
 								listaVisitados.add(entidad2);
+								
+								 
+								if(ultimo!=null)
+								System.out.println("ULTIMO: "+ultimo.toString());
+								
 								if (listaHaloHelper.get(currentUser).getHoverFin().equalsVector(new Vector3D()))
+									//System.out.println("hover fin IGUAL A NEW VECTOR");
 									listaHaloHelper.get(currentUser).setHoverFin(m.getPosition());
+								
+								ultimo=(IMTComponent3D) currentComponent;
+								if(ultimo!=null)
+									System.out.println("ULTIMO2: "+ultimo.toString());
+								
+							}else{
+								//Aqui reinicio el punto final de la linea relacion 
+								//Esto corrige bug relacion entidad intermedia
+								listaHaloHelper.get(currentUser).setHoverFin(new Vector3D());
 							}
+
 							
 						}else{
 							listaHaloHelper.get(currentUser).setHoverInicio(m.getPosition());
+							
 						}
+						System.out.println("hover inicio "+listaHaloHelper.get(currentUser).getHoverInicio());
+						System.out.println("hover fin "+listaHaloHelper.get(currentUser).getHoverFin());
+						
+						
 						/*Entidad_Impl alt_ent=(Entidad_Impl) ((MTComponent)currentComponent).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
 						if(componente==currentComponent){
 							listaHaloHelper.get(currentUser).setHoverInicio(m.getPosition());
@@ -539,13 +584,22 @@ public class DrawSurfaceScene extends AbstractScene {
 							////System.out.println("Pintandoooooo");
 						}
 						if(componente!=currentComponent){
-							 Object entidad2=((MTComponent)currentComponent).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
+					//		if (listaHaloHelper.get(currentUser).getHoverFin().equalsVector(new Vector3D()))
+						//		listaHaloHelper.get(currentUser).setHoverFin(m.getPosition());	
+						
+							Object entidad2=((MTComponent)currentComponent).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
 							if (entidad2 instanceof ObjetoUMLGraph){
 								((MTPolygon)((ObjetoUMLGraph)entidad2).getHalo()).setFillColor(ObjetoUMLGraph.haloDeSelected);
 								
 							}
+							
+							
 						}
+						//AQUI YO
+						System.out.println("hover inicio "+listaHaloHelper.get(currentUser).getHoverInicio());
+						System.out.println("hover fin "+listaHaloHelper.get(currentUser).getHoverFin());
 						
+						//HASTA AQUI
 						
 						LinkedList <MTComponent>listaVisitados=(LinkedList) ((MTComponent)componente).getUserData(ObjetoUMLGraph.COMPONENTES_VISITADOS_KEYWORD);
 						if(listaVisitados!=null){
@@ -675,8 +729,7 @@ public class DrawSurfaceScene extends AbstractScene {
 										 //System.out.println("Ojooo: ID: " + m.sessionID);
 										//Usuario currentUser=listaUsuarios.get((int)m.sessionID);
 										UMLFacade recognizer=listaRecognizer.get(currentUser.getIdPluma());
-										recognizer.anadirPunto(currentPos.x,
-												currentPos.y);
+										recognizer.anadirPunto(currentPos.x,currentPos.y);
 										// centroideX+=currentPos.x;centroideY+=currentPos.y;
 										// numMuestras++;
 
@@ -803,9 +856,9 @@ public class DrawSurfaceScene extends AbstractScene {
 							// int resultado=recognizer.recognize();
 							limpiarPuntosCanvas(currentUser);
 							UMLFacade recognizer=listaRecognizer.get(currentUser.getIdPluma());
-							final ObjetoUML objeto=recognizer
-									.reconocerObjeto();
+							final ObjetoUML objeto=recognizer.reconocerObjeto();
 							final int tipo_objeto = objeto.getTipo();
+							//System.out.println("tipo objeto: "+tipo_objeto);
 							// if(resultado==UMLCollection.INVALIDO){
 							
 							// }else{
@@ -813,9 +866,6 @@ public class DrawSurfaceScene extends AbstractScene {
 							// eliminarPuntos();
 							// }
 
-						//	System.out.println("Termino Input");
-						//	System.out.println("tamano lista!!: " + listaPuntos.get(currentUser).size());
-						//System.out.println("Puntoooooooooooo"+listaPuntos.get(currentUser).size());
 							if( listaPuntos.get(currentUser).size() < 200 ){
 
 								
@@ -851,7 +901,7 @@ public class DrawSurfaceScene extends AbstractScene {
 								// MTRoundRectangle(recognizer.getPosicion().x,recognizer.getPosicion().y,0,
 								// recognizer.getWidth(),
 								// recognizer.getHeigth(), 1, 1, mtApp);
-								UMLFacade componentRecognizer=listaComponentRecognizer.get(currentUser);
+								UMLFacade componentRecognizer = listaComponentRecognizer.get(currentUser);
 
 								switch (tipo_objeto) {
 
@@ -861,14 +911,16 @@ public class DrawSurfaceScene extends AbstractScene {
 									objeto.setFigura(diagrama);
 									UMLDataSaver.agregarAccion(UMLDataSaver.AGREGAR_OBJETO_ACTION,objeto,currentUser);
 									UndoHelper.agregarAccion(UndoHelper.AGREGAR_OBJETO_ACTION, objeto);
-								//	UndoHelper.imprimirStack();
+
 									//anadirObjeto(diagrama.getFigura());
 									break;
 								case ObjetoUML.RELACION:
 									final IMTComponent3D destino=getCanvas().getComponentAt((int)m.getCurrentEvtPosX(), (int)m.getCurrentEvtPosY());
 									if(componente instanceof MTPolygon && destino instanceof MTPolygon){ //verificar si el componente inicial y final son Instancias de Polygon(Diagrama entidad)
+										
 										Object entidad1=((MTComponent)componente).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
 										Object entidad2=((MTComponent)destino).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
+
 										if(entidad1!=null&&entidad2!=null&&entidad1 instanceof ObjetoUMLGraph && entidad2 instanceof ObjetoUMLGraph ){
 											
 											//Reubicar objeto relacion
@@ -917,13 +969,9 @@ public class DrawSurfaceScene extends AbstractScene {
 											
 											((Relacion)objeto).setTextoInicio(objetotextoInicio);
 											((Relacion)objeto).setTextoFin(objetotextoFin);
-											
-											
-											
-
-											
-											ObjetoUMLGraph linea= new Relacion_Impl(mtApp,container, getCanvas(),objeto,componentRecognizer,server);
-											//((MTPolygon)((ObjetoUMLGraph)entidad1).getHalo()).setFillColor(ObjetoUMLGraph.haloDeSelected);											
+	
+											ObjetoUMLGraph linea= new Relacion_Impl(mtApp, container, getCanvas(), objeto, componentRecognizer, server);
+											//((MTPolygon)((ObjetoUMLGraph)entidad1).getHalo()).setFillColor(ObjetoUMLGraph.haloDeSelected);	 										
 											//((MTPolygon)((ObjetoUMLGraph)entidad2).getHalo()).setFillColor(ObjetoUMLGraph.haloDeSelected);
 											((ObjetoUMLGraph)entidad1).guardarDatos(ObjetoUMLGraph.RELACIONES_INICIO_KEYWORD, linea);
 											((ObjetoUMLGraph)entidad2).guardarDatos(ObjetoUMLGraph.RELACIONES_FIN_KEYWORD, linea);
@@ -933,9 +981,125 @@ public class DrawSurfaceScene extends AbstractScene {
 											UndoHelper.agregarAccion(UndoHelper.AGREGAR_OBJETO_ACTION, objeto);
 
 											//anadirObjeto(linea.getFigura());
+											
 										}
+										
+										
+
+										/**Este el codigo que permite unir relacion_multiples con las entidades, pero yendo desde una  relacion multiple
+										 * hasta una entidad */
+										Object entidad1_aux=((MTComponent)componente).getUserData(ObjetoUMLGraph.RELACION_MULTIPLE_KEYWORD);
+										Object entidad2_aux=((MTComponent)destino).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
+										System.out.println("imprimiendo entidad1_aux: "+entidad1_aux);
+										if(entidad1_aux!=null&&entidad2_aux!=null){ //verificar si el componente inicial y final son Instancias de Polygon(Diagrama entidad)
+											//System.out.println("SE IDENTIFICARON OBJETOS  - DIAMANTE Y ENTIDAD");
+											if(((RelacionTernaria_Impl)entidad1_aux).cont<=0)//termina de ejecutar este caso cuando 
+											{
+												break;
+											}else
+											{
+												((RelacionTernaria_Impl)entidad1_aux).disminuirContador();
+												
+												HaloHelper helper=listaHaloHelper.get(currentUser);
+												  //System.out.println("try resize");
+												  if(!helper.getHoverInicio().equalsVector(new Vector3D())&&!helper.getHoverFin().equalsVector(new Vector3D()))
+												  {
+													  System.out.println("imprimiendo get hover inicio: " + helper.getHoverInicio());
+													 ((Relacion)objeto).setInicio(((RelacionTernaria_Impl)entidad1_aux).devolverPuntoMasCercanoYDisponible(helper.getHoverInicio()));
+													 ((Relacion)objeto).setFin(helper.getHoverFin());
+													 listaHaloHelper.remove(currentUser);
+													 helper=new HaloHelper();
+													 listaHaloHelper.put(currentUser, helper);
+													 System.out.println("resize done!!!!!!!!!!!");
+												  }
+												
+												
+												/**Colocacion de Texto flotante a la relacion*/
+												TextoFlotante objetotextoInicio = (TextoFlotante)recognizer.aniadirTextoFlotante(((MTRoundRectangle)componente).getCenterPointGlobal());
+												TextoFlotante objetotextoFin = (TextoFlotante)recognizer.aniadirTextoFlotante(((AbstractShape)destino).getCenterPointGlobal());
+												objetotextoInicio.setOwner(((Relacion)objeto)); 
+												objetotextoFin.setOwner(((Relacion)objeto)); 
+												
+												((Relacion)objeto).setTextoInicio(objetotextoInicio);
+												((Relacion)objeto).setTextoFin(objetotextoFin);
+												
+												((Relacion)objeto).setObjetoInicio(((ObjetoUMLGraph)entidad1_aux).getObjetoUML());
+												((Relacion)objeto).setObjetoFin(((ObjetoUMLGraph)entidad2_aux).getObjetoUML());
+												ObjetoUMLGraph linea= new Relacion_Impl(mtApp, container, getCanvas(), objeto, componentRecognizer, server);
+												((ObjetoUMLGraph)entidad1_aux).guardarDatos(ObjetoUMLGraph.RELACIONES_INICIO_KEYWORD, linea);
+												((ObjetoUMLGraph)entidad2_aux).guardarDatos(ObjetoUMLGraph.RELACIONES_FIN_KEYWORD, linea);
+												
+												objeto.setFigura(linea);
+												
+												
+												
+											}
+											
+										}
+										
+										/**Este el codigo que permite unir relacion_multiples con las entidades, pero yendo desde una entidad
+										 * hasta un relacion multiple*/
+										Object entidad1_aux1=((MTComponent)componente).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
+										Object entidad2_aux1=((MTComponent)destino).getUserData(ObjetoUMLGraph.RELACION_MULTIPLE_KEYWORD);
+										if(entidad1_aux1!=null&&entidad2_aux1!=null){ //verificar si el componente inicial y final son Instancias de Polygon(Diagrama entidad)
+											//System.out.println("SE IDENTIFICARON OBJETOS  - DIAMANTE Y ENTIDAD");
+											if(((RelacionTernaria_Impl)entidad2_aux1).cont<=0)//termina de ejecutar este caso cuando 
+											{
+												break;
+											}else
+											{
+												((RelacionTernaria_Impl)entidad2_aux1).disminuirContador();
+												
+												HaloHelper helper=listaHaloHelper.get(currentUser);
+												  //System.out.println("try resize");
+												  if(!helper.getHoverInicio().equalsVector(new Vector3D())&&!helper.getHoverFin().equalsVector(new Vector3D()))
+												  {
+													 ((Relacion)objeto).setInicio(helper.getHoverInicio());
+													 ((Relacion)objeto).setFin(((RelacionTernaria_Impl)entidad1_aux).devolverPuntoMasCercanoYDisponible(helper.getHoverFin()));
+													 listaHaloHelper.remove(currentUser);
+													 helper=new HaloHelper();
+													 listaHaloHelper.put(currentUser, helper);
+													 System.out.println("resize done!!!!!!!!!!!");
+												  }
+												
+												
+												/**Colocacion de Texto flotante a la relacion*/
+												TextoFlotante objetotextoInicio = (TextoFlotante)recognizer.aniadirTextoFlotante(((MTRoundRectangle)componente).getCenterPointGlobal());
+												TextoFlotante objetotextoFin = (TextoFlotante)recognizer.aniadirTextoFlotante(((AbstractShape)destino).getCenterPointGlobal());
+												objetotextoInicio.setOwner(((Relacion)objeto)); 
+												objetotextoFin.setOwner(((Relacion)objeto)); 
+												
+												((Relacion)objeto).setTextoInicio(objetotextoInicio);
+												((Relacion)objeto).setTextoFin(objetotextoFin);
+												
+												((Relacion)objeto).setObjetoInicio(((ObjetoUMLGraph)entidad1_aux1).getObjetoUML());
+												((Relacion)objeto).setObjetoFin(((ObjetoUMLGraph)entidad2_aux1).getObjetoUML());
+												ObjetoUMLGraph linea= new Relacion_Impl(mtApp, container, getCanvas(), objeto, componentRecognizer, server);
+												((ObjetoUMLGraph)entidad1_aux1).guardarDatos(ObjetoUMLGraph.RELACIONES_INICIO_KEYWORD, linea);
+												((ObjetoUMLGraph)entidad2_aux1).guardarDatos(ObjetoUMLGraph.RELACIONES_FIN_KEYWORD, linea);
+												
+												objeto.setFigura(linea);
+												
+												
+												
+											}
+											
+										}
+										
+										
+										
+										
+										
 										}
 									break;
+									
+								case ObjetoUML.RELACION_MULTIPLE:
+									ObjetoUMLGraph relacion_multiple = new RelacionTernaria_Impl(mtApp, getCanvas(), container, objeto, componentRecognizer);
+									objeto.setFigura(relacion_multiple);
+									System.out.println("DIAMANTEEEEEEE!!");
+									break;
+									
+									
 								default:
 									break;
 								}
@@ -951,6 +1115,8 @@ public class DrawSurfaceScene extends AbstractScene {
 			}
 		});
 
+		//agregamos boton para relacion multiple
+		//setBotonRelacionMultiple(container, mtApp, getCanvas());
 	}
 
 	public void setBrush(AbstractShape brush) {
@@ -1128,6 +1294,7 @@ public class DrawSurfaceScene extends AbstractScene {
 		return true;
 	}
 	
+
 	public void setListaPencil(MTEllipse[] lista){
 		listaPencil=lista;		
 	}
@@ -1145,4 +1312,5 @@ public class DrawSurfaceScene extends AbstractScene {
 		}
 		
 	}
+
 }

@@ -30,6 +30,7 @@ public interface ObjetoUMLGraph extends UndoActions{
 	public static final String HALO_HOVER_INICIO_KEYWORD = "hoverInicio";
 	public static final String HALO_HOVER_FIN_KEYWORD = "hoverFin";
 	public static final String TEXTO_FLOTANTE_KEYWORD = "textoFlotante";
+	public static final String RELACION_MULTIPLE_KEYWORD = "relacion-multiple";
 	public static int TAP_AND_HOLD_TIME=1000;
 	public static final int TAMANO_CARDINALIDAD=35;
 

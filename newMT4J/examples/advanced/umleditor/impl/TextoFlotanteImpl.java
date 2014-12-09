@@ -370,7 +370,7 @@ public class TextoFlotanteImpl extends MTComponent implements ObjetoUMLGraph {
 								final InputCursor m = th.getCursor();
 								String canal=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?MainDrawingScene.getListaUsuarios().get((int)m.sessionID).getCanal():"canal1";
 								int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?(int)m.sessionID:-1;
-								System.out.println("--Enviar Edicion Texto Flotante"+ (objeto).getId());
+
 
 								server.getRoomOperations(canal).sendEvent("startEdition",new TextoFlotanteAdapter(((TextoFlotante)objeto),idUsuario));						
 								//System.out.println("Enviado "+canal+""+server.getRoomOperations(canal).getClients().size());

@@ -8,6 +8,7 @@ import java.util.Map;
 import org.mt4j.MTApplication;
 import org.mt4j.components.MTCanvas;
 import org.mt4j.components.MTComponent;
+import org.mt4j.components.TransformSpace;
 import org.mt4j.components.interfaces.IMTComponent3D;
 import org.mt4j.components.visibleComponents.font.FontManager;
 import org.mt4j.components.visibleComponents.font.IFont;
@@ -44,6 +45,7 @@ import advanced.umleditor.UMLFacade;
 import advanced.umleditor.logic.Entidad;
 import advanced.umleditor.logic.ObjetoUML;
 import advanced.umleditor.logic.Relacion;
+import advanced.umleditor.logic.RelacionTernaria;
 import advanced.umleditor.logic.TextoFlotante;
 import advanced.umleditor.logic.Usuario;
 import advanced.umleditor.socketio.EntidadAdapter;
@@ -63,9 +65,10 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 	private final MTComponent container;
 
 	SocketIOServer server;
-	ObjetoUML objeto;
 
-	
+	public ObjetoUML objeto;
+
+
 	
 	public Entidad_Impl(final MTApplication mtApp,final MTComponent container, final MTCanvas canvas, final UMLFacade recognizer,final ObjetoUML objeto, final SocketIOServer server) {
 
@@ -226,13 +229,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 			}
 		});
 		
-		
-		  
-	      
-		
-		
-		
-		
+
 		
 		//ComponentHelper.getCenterPointGlobal()
 		
@@ -400,7 +397,17 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 				System.out.println(" Mover entidad "+ ((Entidad)objeto).getNombre());
 			//	System.out.println("Fin evento de: Mover entidad Usuario:"+cursor.sessionID );
 				
-				rectangulo.setPositionGlobal(rectangulo.getCenterPointGlobal().addLocal(de.getTranslationVect()));
+				InputCursor cursor = de.getDragCursor();
+				Vector3D pos = cursor.getPosition();
+				Vector3D posFinal = de.getTranslationVect();
+				
+				if((pos.y<0)||pos.y>=(container.getBounds().getHeightXY(TransformSpace.RELATIVE_TO_PARENT))){
+					posFinal.y=0;
+				}
+				if((pos.x<0)||pos.x>=(container.getBounds().getWidthXY(TransformSpace.RELATIVE_TO_PARENT))){
+					posFinal.x=0;
+				}
+				rectangulo.setPositionGlobal(rectangulo.getCenterPointGlobal().addLocal(posFinal));
 				objeto.setPosicion(rectangulo.getCenterPointGlobal());
 				halo.setPositionGlobal(rectangulo.getCenterPointGlobal());
 				
@@ -612,6 +619,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 										removerEntidad(idUsuario);	
 									}
 								}
+
 							
 						
 						break;
@@ -818,6 +826,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 		
 		
 		LinkedList listaInicio=obtenerDatos(RELACIONES_INICIO_KEYWORD);
+		//
 		if(listaInicio!=null){
 			synchronized (listaInicio) {							
 				for(Object o:listaInicio){
@@ -829,7 +838,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 						//System.out.println("ELIMINAR INICIO.........................................");
 	
 					}
-	
+
 				}
 				listaInicio.clear();
 			}
@@ -848,6 +857,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 						}
 				}
 				listaFin.clear();
+
 			}
 		}
 

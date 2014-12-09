@@ -19,6 +19,7 @@ public abstract class ObjetoUML  implements UndoInterface{
 	public static final int  RELACION=2;
 	public static final int	 TEXTOFLOTANTE =3;
 	public static final int CARDINALIDAD = 4;
+	public static final int RELACION_MULTIPLE = 5;
 	public static  final int EDIT_HEADER = 1;
 	public static final int EDIT_ATTS  = 2;
 	public  static ObjetoUML OBJETO_INVALIDO=new ObjetoInvalido(new Usuario()) ;

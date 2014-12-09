@@ -18,7 +18,9 @@ public class UMLRecognizer {
 
 	public UMLRecognizer(){		
 		PaleoConfig config = new PaleoConfig();
-		config = new PaleoConfig(PaleoConfig.Option.Line,PaleoConfig.Option.Polyline,PaleoConfig.Option.Wave, PaleoConfig.Option.Rectangle);		
+
+		config = new PaleoConfig(PaleoConfig.Option.Line,PaleoConfig.Option.Polyline,PaleoConfig.Option.Wave, PaleoConfig.Option.Rectangle, PaleoConfig.Option.Diamond);		
+
 		recognizer = new PaleoSketchRecognizer(config);
 		stroke = new Stroke();	    		
 	}
@@ -43,8 +45,10 @@ public class UMLRecognizer {
 						String shapeLabel=result.getBestShape().getInterpretation().label;						
 						if(shapeLabel.equals("Rectangle"))					
 							return ObjetoUML.ENTIDAD;
+
 						else if(shapeLabel.equals("Line")){	
 							if(modo_edicion)
+
 								return ObjetoUML.RELACION;
 							else
 								return ObjetoUML.DELETE_GESTURE;	
@@ -67,6 +71,13 @@ public class UMLRecognizer {
 							//}
 							
 							//return ObjetoUML.INVALIDO;
+						}else if(shapeLabel.equals("Diamond")){
+							System.out.println("RETORNA RELACION MULTIPLE");	
+							if(modo_edicion)
+								return ObjetoUML.RELACION_MULTIPLE;
+							else
+								return ObjetoUML.DELETE_GESTURE;
+							
 						}else if((shapeLabel.contains("Wave"))){
 							if(!isEditMode())
 								return ObjetoUML.DELETE_GESTURE;	
