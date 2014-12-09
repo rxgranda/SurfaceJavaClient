@@ -302,11 +302,18 @@ public class MTSceneMenu extends MTRectangle{
 //								sceneTexture.destroy(); //destroys also the MTSceneWindow and with it the scene
 //								logger.debug("--> CLOSE!");
 //							}
-							if (sceneTexture.restore()){
+							//if (sceneTexture.restore()){
 //								app.removeScene(scene); //FIXME wont work if the scene has a transition because we cant remove the still active scene
 //								destroy(); //this will be destroyed with the scene
-								sceneTexture.destroy(); //destroys also the MTSceneWindow and with it the scene
-								logger.debug("--> CLOSE!");
+								//sceneTexture.destroy(); //destroys also the MTSceneWindow and with it the scene
+								//logger.debug("--> CLOSE!");
+								System.out.println("--> MODO BORRAR!");
+								if(getScene() instanceof MainDrawingScene ){
+									System.out.println("--> Cambiar modo!");
+									InputCursor m=de.getDragCursor();
+									MainDrawingScene.modo_borrar(m.sessionID);
+								///}
+								
 							}
 						}
 						

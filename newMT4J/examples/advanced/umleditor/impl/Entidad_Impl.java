@@ -605,7 +605,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 						
 						
 					
-								if (obj ==ObjetoUML.DELETE_OBJECT_GESTURE&&obj.getWidth()>50&&obj.getHeight()>30){
+								if (obj ==ObjetoUML.DELETE_OBJECT_GESTURE&&obj.getWidth()>10&&obj.getHeight()>10){
 									if(puedeBorrarEntidad()){
 										UndoHelper.agregarAccion(UndoHelper.BORRAR_OBJETO_ACTION,objeto);
 										int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID)!=null)?(int)cursor.sessionID:Usuario.ID_DEFAULT_USER;															

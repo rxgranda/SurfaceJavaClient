@@ -18,7 +18,7 @@ public class UMLRecognizer {
 
 	public UMLRecognizer(){		
 		PaleoConfig config = new PaleoConfig();
-		config = new PaleoConfig(PaleoConfig.Option.Line,PaleoConfig.Option.Polyline, PaleoConfig.Option.Circle,PaleoConfig.Option.Wave, PaleoConfig.Option.Rectangle);		
+		config = new PaleoConfig(PaleoConfig.Option.Line,PaleoConfig.Option.Polyline,PaleoConfig.Option.Wave, PaleoConfig.Option.Rectangle);		
 		recognizer = new PaleoSketchRecognizer(config);
 		stroke = new Stroke();	    		
 	}
@@ -29,6 +29,7 @@ public class UMLRecognizer {
 	public void reiniciar(){
 		// Para iniciar un nuevo trazo
 		stroke = new Stroke();	
+		edit_mode();
 	}
 	public int  recognize(){
 		try{
@@ -42,9 +43,12 @@ public class UMLRecognizer {
 						String shapeLabel=result.getBestShape().getInterpretation().label;						
 						if(shapeLabel.equals("Rectangle"))					
 							return ObjetoUML.ENTIDAD;
-						else if(shapeLabel.equals("Line"))	
-							return ObjetoUML.RELACION;
-						else if(shapeLabel.contains("Polyline")){
+						else if(shapeLabel.equals("Line")){	
+							if(modo_edicion)
+								return ObjetoUML.RELACION;
+							else
+								return ObjetoUML.DELETE_GESTURE;	
+						}else if(shapeLabel.contains("Polyline")){
 							String str = new String(shapeLabel);      
 							str = str.replaceAll("[^0-9]+", " ");
 							//Arrays.asList(str.trim().split(" "));
@@ -55,13 +59,18 @@ public class UMLRecognizer {
 								else
 									return ObjetoUML.DELETE_GESTURE;								
 							}
-							if(numPolyLine>1)
-								return ObjetoUML.RELACION;
+							if(numPolyLine>1){
+								if(modo_edicion)
+									return ObjetoUML.RELACION;
+								else
+									return ObjetoUML.DELETE_GESTURE;	
+							}
 							
 							return ObjetoUML.INVALIDO;
 						}else if((shapeLabel.contains("Wave"))){
-							if(!modo_edicion)
-								return ObjetoUML.DELETE_GESTURE;														
+							if(!isEditMode())
+								return ObjetoUML.DELETE_GESTURE;	
+							System.out.println("No retorno delete "+isEditMode());
 						}
 					}
 				}
@@ -75,9 +84,11 @@ public class UMLRecognizer {
 	}
 	
 	public void delete_mode(){
+		System.out.println("Cambiar a modo borrar");
 		modo_edicion=false;
 	}
 	public void edit_mode(){
+		System.out.println("Cambiar a modo edicion");
 		modo_edicion=true;
 	}
 	

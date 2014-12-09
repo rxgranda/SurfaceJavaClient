@@ -113,9 +113,9 @@ public class DrawSurfaceScene extends AbstractScene {
 	public static final int nroPtsConfirmaClick = 6;
 	public static float MIN_HEIGHT, MIN_WIDTH,MAX_WIDTH,MAX_HEIGHT ;
 	
-	Map< Integer, UMLFacade> listaRecognizer=new HashMap<Integer, UMLFacade>();
-	Map< Integer, UMLFacade> listaComponentes=new HashMap<Integer, UMLFacade>();
-	Map< Usuario, UMLFacade> listaComponentRecognizer=new HashMap<Usuario, UMLFacade>();
+	static Map< Integer, UMLFacade> listaRecognizer=new HashMap<Integer, UMLFacade>();
+	static Map< Integer, UMLFacade> listaComponentes=new HashMap<Integer, UMLFacade>();
+	static Map< Usuario, UMLFacade> listaComponentRecognizer=new HashMap<Usuario, UMLFacade>();
 	Map< Usuario, HaloHelper> listaHaloHelper=new HashMap<Usuario, HaloHelper>();
 	Map< Usuario, ArrayList<Vector3D>> listaPuntos=new HashMap<Usuario, ArrayList<Vector3D>>();
 	private AbstractShape [] listaPencil; 
@@ -1130,5 +1130,17 @@ public class DrawSurfaceScene extends AbstractScene {
 	
 	public void setListaPencil(MTEllipse[] lista){
 		listaPencil=lista;		
+	}
+	
+	public static void setModoBorrar( int idUsuario){
+		try {
+			Usuario currentUser=(MainDrawingScene.getListaUsuarios().containsKey(idUsuario))?MainDrawingScene.getListaUsuarios().get(idUsuario):MainDrawingScene.getListaUsuarios().get(Usuario.ID_DEFAULT_USER);
+			UMLFacade componentRecognizer=listaComponentRecognizer.get(currentUser);
+			componentRecognizer.cambiarModo();
+			//System.out.println("Intentando cambiar modo");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 	}
 }

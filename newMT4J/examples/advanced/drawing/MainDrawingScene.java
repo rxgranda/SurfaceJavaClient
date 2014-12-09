@@ -430,7 +430,8 @@ public class MainDrawingScene extends AbstractScene {
 		UndoHelper.deshacerAccion();
 	}
 	
-	public static  synchronized void modo_borrar(){
+	public static  synchronized void modo_borrar(long idUsuario){
+		DrawSurfaceScene.setModoBorrar((int)idUsuario);
 		//UndoHelper.deshacerAccion();
 	}
 }

@@ -150,6 +150,7 @@ public class UMLFacade {
 		primerX=0;
 		primerY=0;
 		this.recognizer.reiniciar();
+	
 	}
 	
 	public Vector3D getPosicion(){
@@ -184,6 +185,11 @@ public class UMLFacade {
 		
 	}
 	
+	public void cambiarModo(){
+		
+			recognizer.delete_mode();
+		
+	}
 	
 	
 }
