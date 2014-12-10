@@ -154,8 +154,9 @@ public class MTSceneMenu extends MTRectangle{
 		overlayGroup = new MTOverlayContainer(app, "Window Menu Overlay Group");
 		
 		if (menuImage == null){
-			menuImage = app.loadImage(MT4jSettings.getInstance().getDefaultImagesPath() +
-					"blackRoundSolidCorner64sh2.png");
+			String altImagesPath = "data" + MTApplication.separator ;	
+			menuImage = app.loadImage( altImagesPath+
+					"topMenu.png");
 		}
 		
 		if (MT4jSettings.getInstance().isOpenGlMode()){
@@ -181,7 +182,7 @@ public class MTSceneMenu extends MTRectangle{
 		//CLOSE BUTTON
 //		Vector3D a = new Vector3D(-width * 1.2f, height/2f);
 		Vector3D a = new Vector3D(-width * 1.55f, 0);
-		a.rotateZ(PApplet.radians(90));
+		a.rotateZ(PApplet.radians(-170));
 		final MTRectangle borrarButton = new MTRectangle(app, x + a.x, y + a.y, buttonWidth, buttonHeight);
 		
 		if (borrarButtonImage == null){
@@ -207,7 +208,7 @@ public class MTSceneMenu extends MTRectangle{
 		if (this.windowedScene){
 			//RESTORE BUTTON
 			Vector3D b = new Vector3D(-width * 1.55f, 0);
-			b.rotateZ(PApplet.radians(10));
+			b.rotateZ(PApplet.radians(-10));
 			final MTRectangle guardarButton = new MTRectangle(app, x + b.x, y + b.y, buttonWidth, buttonHeight);
 			
 			if (guardarButtonImage == null){
@@ -229,7 +230,7 @@ public class MTSceneMenu extends MTRectangle{
 			this.addChild(guardarButton);
 			////
 			Vector3D c = new Vector3D(-width * 1.55f, 0);
-			c.rotateZ(PApplet.radians(50));
+			c.rotateZ(PApplet.radians(-90));
 			final MTRectangle deshacerButton = new MTRectangle(app, x + c.x, y + c.y, buttonWidth, buttonHeight);
 			
 			if (deshacerButtonImage== null){
