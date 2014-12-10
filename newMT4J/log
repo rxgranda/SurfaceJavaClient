@@ -16,25 +16,25 @@ SLF4J: Class path contains multiple SLF4J bindings.
 SLF4J: Found binding in [jar:file:/C:/Users/admin/Documents/Optitrack/Client/optitracksurfaceclient/Sr%20Core/lib/slf4j-simple-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
 SLF4J: Found binding in [jar:file:/C:/Users/admin/Documents/Optitrack/Client/optitracksurfaceclient/newMT4J/mt4jLibs/uber-netty-socketio-1.7.3-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
 SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
-328 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
-819 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
-Inicio evento de: Evento de Login 
-recibido:  1 null
-No hay sesion activa
-Fin evento de: Evento de Login 
+323 [Animation Thread] INFO com.corundumstudio.socketio.SocketIOServer - Session store / pubsub factory used: MemoryStoreFactory (local session store only)
+820 [nioEventLoopGroup-2-1] INFO com.corundumstudio.socketio.SocketIOServer - SocketIO server started at port: 3323
 Inicio evento de: Evento de Login 
 recibido:  2 null
 No hay sesion activa
 Fin evento de: Evento de Login 
 Inicio evento de: Evento de Login 
-recibido:  1 hshshs
+recibido:  1 null
+No hay sesion activa
+Fin evento de: Evento de Login 
+Inicio evento de: Evento de Login 
+recibido:  1 gjjhhjhjh
 Fin evento de: Evento de Login 
 Inicio evento de: Evento de Login 
 recibido:  1 null
 ya hizo login
 Fin evento de: Evento de Login 
 Inicio evento de: Evento de Login 
-recibido:  2 uxhsnsn
+recibido:  2 kjgkjhlk
 Fin evento de: Evento de Login 
 Inicio evento de: Evento de Login 
 recibido:  2 null
@@ -42,18 +42,1198 @@ ya hizo login
 Fin evento de: Evento de Login 
 Rectangle
 entrandooooooo
-height: 367 width:278
+height: 270 width:214
 ES RELACIONNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
 Cambiar a modo edicion
 INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
 INFO - Loading new font "SourceSansPro-Light.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
-{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"hshshs","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"uxhsnsn","canal_SocketIO":"canal2"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1920,"display-heigth":1080},"datos":[{"accion":"CREAR_OBJETO","propiedades":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1106.2344,797.0972,0.0,1.0],"width":278.0,"height":367.0},"tiempo":"2014-12-10 15:41:46","usuario":2}]}
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"gjjhhjhjh","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"kjgkjhlk","canal_SocketIO":"canal2"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1920,"display-heigth":1080},"datos":[{"accion":"CREAR_OBJETO","propiedades":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1005.76044,654.9259,0.0,1.0],"width":214.0,"height":270.0},"tiempo":"2014-12-10 16:04:48","usuario":1}]}
 Rectangle
 entrandooooooo
-height: 339 width:286
+height: 246 width:250
 ES RELACIONNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
 Cambiar a modo edicion
-{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"hshshs","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"uxhsnsn","canal_SocketIO":"canal2"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1920,"display-heigth":1080},"datos":[{"accion":"CREAR_OBJETO","propiedades":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1106.2344,797.0972,0.0,1.0],"width":278.0,"height":367.0},"tiempo":"2014-12-10 15:41:46","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[292.49475,794.125,0.0,1.0],"width":286.0,"height":339.0},"tiempo":"2014-12-10 15:41:51","usuario":1}]}
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"gjjhhjhjh","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"kjgkjhlk","canal_SocketIO":"canal2"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1920,"display-heigth":1080},"datos":[{"accion":"CREAR_OBJETO","propiedades":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1005.76044,654.9259,0.0,1.0],"width":214.0,"height":270.0},"tiempo":"2014-12-10 16:04:48","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1390.7449,638.0833,0.0,1.0],"width":250.0,"height":246.0},"tiempo":"2014-12-10 16:04:51","usuario":2}]}
+-Escuchando en body por relacion en entidad Default
+entrandooooooo
+Cambiar a modo edicion
+BORRAR W: 0.0 H: 0.0 Entidad Default Resultado(2 Relacion,-2 Borado):0
+Polyline (2)
+entrandooooooo
+height: 29 width:298
+Cambiar a modo edicion
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"gjjhhjhjh","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"kjgkjhlk","canal_SocketIO":"canal2"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1920,"display-heigth":1080},"datos":[{"accion":"CREAR_OBJETO","propiedades":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1005.76044,654.9259,0.0,1.0],"width":214.0,"height":270.0},"tiempo":"2014-12-10 16:04:48","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1390.7449,638.0833,0.0,1.0],"width":250.0,"height":246.0},"tiempo":"2014-12-10 16:04:51","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1148.3768,696.8317,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":298.0,"height":29.0},"tiempo":"2014-12-10 16:04:54","usuario":1}]}
+Enviado canal11
+Enviado canal21
+**Iniciar Edicion cardinalidad
+objeto advanced.umleditor.logic.Relacion@1904653
+-Actualizar cardinalidad relacion 6
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"gjjhhjhjh","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"kjgkjhlk","canal_SocketIO":"canal2"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1920,"display-heigth":1080},"datos":[{"accion":"CREAR_OBJETO","propiedades":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1005.76044,654.9259,0.0,1.0],"width":214.0,"height":270.0},"tiempo":"2014-12-10 16:04:48","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1390.7449,638.0833,0.0,1.0],"width":250.0,"height":246.0},"tiempo":"2014-12-10 16:04:51","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1148.3768,696.8317,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":298.0,"height":29.0},"tiempo":"2014-12-10 16:04:54","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_CERO_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:05:09","usuario":1}]}
+**Finalizar Edicion cardinalidad
+Enviado canal11
+Escribiendo C:\Users\admin/gjjhhjhjh_kjgkjhlk_2014-12-10_16-04.scti
+Inicio evento de: Evento de Login 
+recibido:  1 null
+ya hizo login
+Fin evento de: Evento de Login 
+Inicio evento de: Evento de Login 
+recibido:  2 null
+ya hizo login
+Fin evento de: Evento de Login 
+Enviado canal11
+Enviado canal21
+**Iniciar Edicion cardinalidad
+objeto advanced.umleditor.logic.Relacion@1904653
+-Actualizar cardinalidad relacion 6
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"gjjhhjhjh","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"kjgkjhlk","canal_SocketIO":"canal2"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1920,"display-heigth":1080},"datos":[{"accion":"CREAR_OBJETO","propiedades":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1005.76044,654.9259,0.0,1.0],"width":214.0,"height":270.0},"tiempo":"2014-12-10 16:04:48","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1390.7449,638.0833,0.0,1.0],"width":250.0,"height":246.0},"tiempo":"2014-12-10 16:04:51","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1148.3768,696.8317,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":298.0,"height":29.0},"tiempo":"2014-12-10 16:04:54","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_CERO_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:05:09","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:07:59","usuario":1}]}
+**Finalizar Edicion cardinalidad
+entrandooooooo
+Cambiar a modo edicion
+Enviado canal21
+Enviado canal11
+**Iniciar Edicion cardinalidad
+objeto advanced.umleditor.logic.Relacion@1904653
+-Actualizar cardinalidad relacion 6
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"gjjhhjhjh","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"kjgkjhlk","canal_SocketIO":"canal2"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1920,"display-heigth":1080},"datos":[{"accion":"CREAR_OBJETO","propiedades":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1005.76044,654.9259,0.0,1.0],"width":214.0,"height":270.0},"tiempo":"2014-12-10 16:04:48","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1390.7449,638.0833,0.0,1.0],"width":250.0,"height":246.0},"tiempo":"2014-12-10 16:04:51","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1148.3768,696.8317,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":298.0,"height":29.0},"tiempo":"2014-12-10 16:04:54","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_CERO_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:05:09","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:07:59","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_MUCHOS","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:25","usuario":2}]}
+**Finalizar Edicion cardinalidad
+**Iniciar Edicion cardinalidad
+objeto advanced.umleditor.logic.Relacion@1904653
+-Actualizar cardinalidad relacion 6
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"gjjhhjhjh","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"kjgkjhlk","canal_SocketIO":"canal2"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1920,"display-heigth":1080},"datos":[{"accion":"CREAR_OBJETO","propiedades":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1005.76044,654.9259,0.0,1.0],"width":214.0,"height":270.0},"tiempo":"2014-12-10 16:04:48","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1390.7449,638.0833,0.0,1.0],"width":250.0,"height":246.0},"tiempo":"2014-12-10 16:04:51","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1148.3768,696.8317,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":298.0,"height":29.0},"tiempo":"2014-12-10 16:04:54","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_CERO_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:05:09","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:07:59","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_MUCHOS","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:25","usuario":2},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:40","usuario":1}]}
+**Finalizar Edicion cardinalidad
+Enviado canal11
+Enviado canal21
+Enviado canal11
+**Iniciar Edicion cardinalidad
+objeto advanced.umleditor.logic.Relacion@1904653
+-Actualizar cardinalidad relacion 6
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"gjjhhjhjh","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"kjgkjhlk","canal_SocketIO":"canal2"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1920,"display-heigth":1080},"datos":[{"accion":"CREAR_OBJETO","propiedades":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1005.76044,654.9259,0.0,1.0],"width":214.0,"height":270.0},"tiempo":"2014-12-10 16:04:48","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1390.7449,638.0833,0.0,1.0],"width":250.0,"height":246.0},"tiempo":"2014-12-10 16:04:51","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1148.3768,696.8317,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":298.0,"height":29.0},"tiempo":"2014-12-10 16:04:54","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_CERO_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:05:09","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:07:59","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_MUCHOS","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:25","usuario":2},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:40","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:58","usuario":1}]}
+**Finalizar Edicion cardinalidad
+Enviado canal21
+**Iniciar Edicion cardinalidad
+objeto advanced.umleditor.logic.Relacion@1904653
+-Actualizar cardinalidad relacion 6
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"gjjhhjhjh","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"kjgkjhlk","canal_SocketIO":"canal2"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1920,"display-heigth":1080},"datos":[{"accion":"CREAR_OBJETO","propiedades":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1005.76044,654.9259,0.0,1.0],"width":214.0,"height":270.0},"tiempo":"2014-12-10 16:04:48","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1390.7449,638.0833,0.0,1.0],"width":250.0,"height":246.0},"tiempo":"2014-12-10 16:04:51","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1148.3768,696.8317,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":298.0,"height":29.0},"tiempo":"2014-12-10 16:04:54","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_CERO_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:05:09","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:07:59","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_MUCHOS","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:25","usuario":2},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:40","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:58","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:09:15","usuario":1}]}
+**Finalizar Edicion cardinalidad
+**Iniciar Edicion cardinalidad
+objeto advanced.umleditor.logic.Relacion@1904653
+-Actualizar cardinalidad relacion 6
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"gjjhhjhjh","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"kjgkjhlk","canal_SocketIO":"canal2"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1920,"display-heigth":1080},"datos":[{"accion":"CREAR_OBJETO","propiedades":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1005.76044,654.9259,0.0,1.0],"width":214.0,"height":270.0},"tiempo":"2014-12-10 16:04:48","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1390.7449,638.0833,0.0,1.0],"width":250.0,"height":246.0},"tiempo":"2014-12-10 16:04:51","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1148.3768,696.8317,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":298.0,"height":29.0},"tiempo":"2014-12-10 16:04:54","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_CERO_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:05:09","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:07:59","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_MUCHOS","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:25","usuario":2},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:40","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:58","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:09:15","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:09:28","usuario":1}]}
+**Finalizar Edicion cardinalidad
+Escribiendo C:\Users\admin/gjjhhjhjh_kjgkjhlk_2014-12-10_16-04.scti
+Line
+entrandooooooo
+height: 119 width:160
+Cambiar a modo edicion
+Polyline (3)
+entrandooooooo
+height: 122 width:169
+Cambiar a modo edicion
+Polyline (4)
+entrandooooooo
+height: 220 width:220
+Cambiar a modo edicion
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"gjjhhjhjh","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"kjgkjhlk","canal_SocketIO":"canal2"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1920,"display-heigth":1080},"datos":[{"accion":"CREAR_OBJETO","propiedades":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1005.76044,654.9259,0.0,1.0],"width":214.0,"height":270.0},"tiempo":"2014-12-10 16:04:48","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1390.7449,638.0833,0.0,1.0],"width":250.0,"height":246.0},"tiempo":"2014-12-10 16:04:51","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1148.3768,696.8317,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":298.0,"height":29.0},"tiempo":"2014-12-10 16:04:54","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_CERO_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:05:09","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:07:59","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_MUCHOS","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:25","usuario":2},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:40","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:58","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:09:15","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:09:28","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":35,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1265.7449,480.0833,0.0,1.0],"posicionFin":[1515.7449,480.0833,0.0,1.0],"objetoInicio":4,"objetoFin":4,"textoInicio":"","textoFin":"","width":220.0,"height":220.0},"tiempo":"2014-12-10 16:11:16","usuario":2}]}
+-Escuchando en body por relacion en entidad Default
+Polyline (4)
+entrandooooooo
+height: 45 width:127
+Cambiar a modo edicion
+BORRAR W: 127.0 H: 45.0 Entidad Default Resultado(2 Relacion,-2 Borado):2
+Polyline (4)
+entrandooooooo
+height: 45 width:127
+Cambiar a modo edicion
+-Escuchando en body por relacion en entidad Default
+-Escuchando en body por relacion en entidad Default
+Polyline (7)
+entrandooooooo
+height: 82 width:74
+Cambiar a modo edicion
+BORRAR W: 74.0 H: 82.0 Entidad Default Resultado(2 Relacion,-2 Borado):2
+Polyline (7)
+entrandooooooo
+height: 82 width:74
+Cambiar a modo edicion
+-Escuchando en body por relacion en entidad Default
+entrandooooooo
+Cambiar a modo edicion
+BORRAR W: 0.0 H: 0.0 Entidad Default Resultado(2 Relacion,-2 Borado):0
+Polyline (6)
+entrandooooooo
+height: 113 width:187
+Cambiar a modo edicion
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"gjjhhjhjh","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"kjgkjhlk","canal_SocketIO":"canal2"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1920,"display-heigth":1080},"datos":[{"accion":"CREAR_OBJETO","propiedades":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1005.76044,654.9259,0.0,1.0],"width":214.0,"height":270.0},"tiempo":"2014-12-10 16:04:48","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1390.7449,638.0833,0.0,1.0],"width":250.0,"height":246.0},"tiempo":"2014-12-10 16:04:51","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1148.3768,696.8317,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":298.0,"height":29.0},"tiempo":"2014-12-10 16:04:54","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_CERO_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:05:09","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:07:59","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_MUCHOS","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:25","usuario":2},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:40","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:58","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:09:15","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:09:28","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":35,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1265.7449,480.0833,0.0,1.0],"posicionFin":[1515.7449,480.0833,0.0,1.0],"objetoInicio":4,"objetoFin":4,"textoInicio":"","textoFin":"","width":220.0,"height":220.0},"tiempo":"2014-12-10 16:11:16","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":45,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[273.79834,544.56995,0.0,1.0],"posicionFin":[487.79834,544.56995,0.0,1.0],"objetoInicio":2,"objetoFin":2,"textoInicio":"","textoFin":"","width":187.0,"height":113.0},"tiempo":"2014-12-10 16:11:35","usuario":1}]}
+Polyline (2)
+entrandooooooo
+height: 32 width:195
+Cambiar a modo edicion
+BORRAR W: 195.0 H: 32.0 Entidad Default Resultado(2 Relacion,-2 Borado):2
+Polyline (2)
+entrandooooooo
+height: 32 width:195
+Cambiar a modo edicion
+-Escuchando en body por relacion en entidad Default
+Polyline (2)
+entrandooooooo
+height: 72 width:231
+Cambiar a modo edicion
+BORRAR W: 231.0 H: 72.0 Entidad Default Resultado(2 Relacion,-2 Borado):2
+Polyline (2)
+entrandooooooo
+height: 72 width:231
+Cambiar a modo edicion
+Line
+entrandooooooo
+height: 8 width:112
+Cambiar a modo edicion
+--> MODO BORRAR!
+--> Cambiar modo!
+Cambiar a modo borrar
+Cambiar a modo borrar
+-Mover relacion 6
+entrandooooooo
+Cambiar a modo edicion
+ES BORRRADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+-Eliminar relacion 6
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"gjjhhjhjh","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"kjgkjhlk","canal_SocketIO":"canal2"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1920,"display-heigth":1080},"datos":[{"accion":"CREAR_OBJETO","propiedades":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1005.76044,654.9259,0.0,1.0],"width":214.0,"height":270.0},"tiempo":"2014-12-10 16:04:48","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1390.7449,638.0833,0.0,1.0],"width":250.0,"height":246.0},"tiempo":"2014-12-10 16:04:51","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1148.3768,696.8317,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":298.0,"height":29.0},"tiempo":"2014-12-10 16:04:54","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_CERO_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:05:09","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:07:59","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_MUCHOS","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:25","usuario":2},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:40","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:58","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:09:15","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:09:28","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":35,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1265.7449,480.0833,0.0,1.0],"posicionFin":[1515.7449,480.0833,0.0,1.0],"objetoInicio":4,"objetoFin":4,"textoInicio":"","textoFin":"","width":220.0,"height":220.0},"tiempo":"2014-12-10 16:11:16","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":45,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[273.79834,544.56995,0.0,1.0],"posicionFin":[487.79834,544.56995,0.0,1.0],"objetoInicio":2,"objetoFin":2,"textoInicio":"","textoFin":"","width":187.0,"height":113.0},"tiempo":"2014-12-10 16:11:35","usuario":1},{"accion":"BORRAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[605.75134,584.8091,0.0,1.0],"posicionFin":[1391.3682,637.4026,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":785.6168,"height":29.0},"tiempo":"2014-12-10 16:11:45","usuario":1}]}
+ingresa al if de propagacion
+imprimiendo objeto fin: advanced.umleditor.logic.Entidad@98594d
+entrandooooooo
+Cambiar a modo edicion
+ES BORRRADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+--Enviar edicion nombre Entidad Default
+Enviado canal2 0
+Inicio evento de: Evento de Login 
+recibido:  1 null
+ya hizo login
+Fin evento de: Evento de Login 
+Polyline (3)
+entrandooooooo
+height: 156 width:889
+Cambiar a modo edicion
+Line
+entrandooooooo
+height: 6 width:82
+Cambiar a modo edicion
+Line
+entrandooooooo
+height: 27 width:367
+Cambiar a modo edicion
+-Escuchando en body por relacion en entidad Default
+Line
+entrandooooooo
+height: 106 width:922
+Cambiar a modo edicion
+BORRAR W: 922.0 H: 106.0 Entidad Default Resultado(2 Relacion,-2 Borado):2
+Line
+entrandooooooo
+height: 106 width:922
+Cambiar a modo edicion
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"gjjhhjhjh","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"kjgkjhlk","canal_SocketIO":"canal2"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1920,"display-heigth":1080},"datos":[{"accion":"CREAR_OBJETO","propiedades":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1005.76044,654.9259,0.0,1.0],"width":214.0,"height":270.0},"tiempo":"2014-12-10 16:04:48","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1390.7449,638.0833,0.0,1.0],"width":250.0,"height":246.0},"tiempo":"2014-12-10 16:04:51","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1148.3768,696.8317,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":298.0,"height":29.0},"tiempo":"2014-12-10 16:04:54","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_CERO_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:05:09","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:07:59","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_MUCHOS","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:25","usuario":2},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:40","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:58","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:09:15","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:09:28","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":35,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1265.7449,480.0833,0.0,1.0],"posicionFin":[1515.7449,480.0833,0.0,1.0],"objetoInicio":4,"objetoFin":4,"textoInicio":"","textoFin":"","width":220.0,"height":220.0},"tiempo":"2014-12-10 16:11:16","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":45,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[273.79834,544.56995,0.0,1.0],"posicionFin":[487.79834,544.56995,0.0,1.0],"objetoInicio":2,"objetoFin":2,"textoInicio":"","textoFin":"","width":187.0,"height":113.0},"tiempo":"2014-12-10 16:11:35","usuario":1},{"accion":"BORRAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[605.75134,584.8091,0.0,1.0],"posicionFin":[1391.3682,637.4026,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":785.6168,"height":29.0},"tiempo":"2014-12-10 16:11:45","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":63,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[607.4534,568.0592,0.0,1.0],"posicionFin":[1413.9265,648.25665,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":922.0,"height":106.0},"tiempo":"2014-12-10 16:12:24","usuario":2}]}
+Inicio evento de: Evento de Login 
+recibido:  2 null
+ya hizo login
+Fin evento de: Evento de Login 
+--Enviar edicion nombre Entidad Default
+Enviado canal1 1
+-Mover relacion 63
+Polyline (7)
+entrandooooooo
+height: 106 width:139
+Cambiar a modo edicion
+Line
+entrandooooooo
+height: 106 width:139
+Cambiar a modo edicion
+--Enviar edicion nombre Entidad Default
+Enviado canal2 1
+**Iniciar Edicion EntidadDefaultttttt
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"gjjhhjhjh","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"kjgkjhlk","canal_SocketIO":"canal2"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1920,"display-heigth":1080},"datos":[{"accion":"CREAR_OBJETO","propiedades":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1005.76044,654.9259,0.0,1.0],"width":214.0,"height":270.0},"tiempo":"2014-12-10 16:04:48","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1390.7449,638.0833,0.0,1.0],"width":250.0,"height":246.0},"tiempo":"2014-12-10 16:04:51","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1148.3768,696.8317,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":298.0,"height":29.0},"tiempo":"2014-12-10 16:04:54","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_CERO_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:05:09","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:07:59","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_MUCHOS","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:25","usuario":2},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:40","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:58","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:09:15","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:09:28","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":35,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1265.7449,480.0833,0.0,1.0],"posicionFin":[1515.7449,480.0833,0.0,1.0],"objetoInicio":4,"objetoFin":4,"textoInicio":"","textoFin":"","width":220.0,"height":220.0},"tiempo":"2014-12-10 16:11:16","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":45,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[273.79834,544.56995,0.0,1.0],"posicionFin":[487.79834,544.56995,0.0,1.0],"objetoInicio":2,"objetoFin":2,"textoInicio":"","textoFin":"","width":187.0,"height":113.0},"tiempo":"2014-12-10 16:11:35","usuario":1},{"accion":"BORRAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[605.75134,584.8091,0.0,1.0],"posicionFin":[1391.3682,637.4026,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":785.6168,"height":29.0},"tiempo":"2014-12-10 16:11:45","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":63,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[607.4534,568.0592,0.0,1.0],"posicionFin":[1413.9265,648.25665,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":922.0,"height":106.0},"tiempo":"2014-12-10 16:12:24","usuario":2},{"accion":"EDITAR_OBJETO","propiedades":{"id":4,"tipo":"Entidad","nombre":"Defaultttttt","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1622.4801,586.9712,0.0,1.0],"width":250.0,"height":246.0},"tiempo":"2014-12-10 16:13:09","usuario":2}]}
+**Terminar Edicion EntidadDefaultttttt
+Escribiendo C:\Users\admin/gjjhhjhjh_kjgkjhlk_2014-12-10_16-04.scti
+Polyline (7)
+entrandooooooo
+height: 110 width:64
+Cambiar a modo edicion
+Line
+entrandooooooo
+height: 137 width:1012
+Cambiar a modo edicion
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"gjjhhjhjh","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"kjgkjhlk","canal_SocketIO":"canal2"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1920,"display-heigth":1080},"datos":[{"accion":"CREAR_OBJETO","propiedades":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1005.76044,654.9259,0.0,1.0],"width":214.0,"height":270.0},"tiempo":"2014-12-10 16:04:48","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1390.7449,638.0833,0.0,1.0],"width":250.0,"height":246.0},"tiempo":"2014-12-10 16:04:51","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1148.3768,696.8317,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":298.0,"height":29.0},"tiempo":"2014-12-10 16:04:54","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_CERO_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:05:09","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:07:59","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_MUCHOS","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:25","usuario":2},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:40","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:58","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:09:15","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:09:28","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":35,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1265.7449,480.0833,0.0,1.0],"posicionFin":[1515.7449,480.0833,0.0,1.0],"objetoInicio":4,"objetoFin":4,"textoInicio":"","textoFin":"","width":220.0,"height":220.0},"tiempo":"2014-12-10 16:11:16","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":45,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[273.79834,544.56995,0.0,1.0],"posicionFin":[487.79834,544.56995,0.0,1.0],"objetoInicio":2,"objetoFin":2,"textoInicio":"","textoFin":"","width":187.0,"height":113.0},"tiempo":"2014-12-10 16:11:35","usuario":1},{"accion":"BORRAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[605.75134,584.8091,0.0,1.0],"posicionFin":[1391.3682,637.4026,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":785.6168,"height":29.0},"tiempo":"2014-12-10 16:11:45","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":63,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[607.4534,568.0592,0.0,1.0],"posicionFin":[1413.9265,648.25665,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":922.0,"height":106.0},"tiempo":"2014-12-10 16:12:24","usuario":2},{"accion":"EDITAR_OBJETO","propiedades":{"id":4,"tipo":"Entidad","nombre":"Defaultttttt","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1622.4801,586.9712,0.0,1.0],"width":250.0,"height":246.0},"tiempo":"2014-12-10 16:13:09","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":73,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1461.7144,734.08203,0.0,1.0],"posicionFin":[613.1202,621.8585,0.0,1.0],"objetoInicio":4,"objetoFin":2,"textoInicio":"","textoFin":"","width":1012.0,"height":137.0},"tiempo":"2014-12-10 16:14:04","usuario":2}]}
+Rectangle
+entrandooooooo
+height: 258 width:256
+ES RELACIONNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+Cambiar a modo edicion
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"gjjhhjhjh","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"kjgkjhlk","canal_SocketIO":"canal2"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1920,"display-heigth":1080},"datos":[{"accion":"CREAR_OBJETO","propiedades":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1005.76044,654.9259,0.0,1.0],"width":214.0,"height":270.0},"tiempo":"2014-12-10 16:04:48","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1390.7449,638.0833,0.0,1.0],"width":250.0,"height":246.0},"tiempo":"2014-12-10 16:04:51","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1148.3768,696.8317,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":298.0,"height":29.0},"tiempo":"2014-12-10 16:04:54","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_CERO_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:05:09","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:07:59","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_MUCHOS","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:25","usuario":2},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:40","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:58","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:09:15","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:09:28","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":35,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1265.7449,480.0833,0.0,1.0],"posicionFin":[1515.7449,480.0833,0.0,1.0],"objetoInicio":4,"objetoFin":4,"textoInicio":"","textoFin":"","width":220.0,"height":220.0},"tiempo":"2014-12-10 16:11:16","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":45,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[273.79834,544.56995,0.0,1.0],"posicionFin":[487.79834,544.56995,0.0,1.0],"objetoInicio":2,"objetoFin":2,"textoInicio":"","textoFin":"","width":187.0,"height":113.0},"tiempo":"2014-12-10 16:11:35","usuario":1},{"accion":"BORRAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[605.75134,584.8091,0.0,1.0],"posicionFin":[1391.3682,637.4026,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":785.6168,"height":29.0},"tiempo":"2014-12-10 16:11:45","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":63,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[607.4534,568.0592,0.0,1.0],"posicionFin":[1413.9265,648.25665,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":922.0,"height":106.0},"tiempo":"2014-12-10 16:12:24","usuario":2},{"accion":"EDITAR_OBJETO","propiedades":{"id":4,"tipo":"Entidad","nombre":"Defaultttttt","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1622.4801,586.9712,0.0,1.0],"width":250.0,"height":246.0},"tiempo":"2014-12-10 16:13:09","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":73,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1461.7144,734.08203,0.0,1.0],"posicionFin":[613.1202,621.8585,0.0,1.0],"objetoInicio":4,"objetoFin":2,"textoInicio":"","textoFin":"","width":1012.0,"height":137.0},"tiempo":"2014-12-10 16:14:04","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":79,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[688.4219,824.3426,0.0,1.0],"width":256.0,"height":258.0},"tiempo":"2014-12-10 16:14:12","usuario":1}]}
+Rectangle
+entrandooooooo
+height: 244 width:240
+ES RELACIONNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+Cambiar a modo edicion
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"gjjhhjhjh","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"kjgkjhlk","canal_SocketIO":"canal2"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1920,"display-heigth":1080},"datos":[{"accion":"CREAR_OBJETO","propiedades":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1005.76044,654.9259,0.0,1.0],"width":214.0,"height":270.0},"tiempo":"2014-12-10 16:04:48","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1390.7449,638.0833,0.0,1.0],"width":250.0,"height":246.0},"tiempo":"2014-12-10 16:04:51","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1148.3768,696.8317,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":298.0,"height":29.0},"tiempo":"2014-12-10 16:04:54","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_CERO_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:05:09","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:07:59","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_MUCHOS","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:25","usuario":2},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:40","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:58","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:09:15","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:09:28","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":35,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1265.7449,480.0833,0.0,1.0],"posicionFin":[1515.7449,480.0833,0.0,1.0],"objetoInicio":4,"objetoFin":4,"textoInicio":"","textoFin":"","width":220.0,"height":220.0},"tiempo":"2014-12-10 16:11:16","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":45,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[273.79834,544.56995,0.0,1.0],"posicionFin":[487.79834,544.56995,0.0,1.0],"objetoInicio":2,"objetoFin":2,"textoInicio":"","textoFin":"","width":187.0,"height":113.0},"tiempo":"2014-12-10 16:11:35","usuario":1},{"accion":"BORRAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[605.75134,584.8091,0.0,1.0],"posicionFin":[1391.3682,637.4026,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":785.6168,"height":29.0},"tiempo":"2014-12-10 16:11:45","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":63,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[607.4534,568.0592,0.0,1.0],"posicionFin":[1413.9265,648.25665,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":922.0,"height":106.0},"tiempo":"2014-12-10 16:12:24","usuario":2},{"accion":"EDITAR_OBJETO","propiedades":{"id":4,"tipo":"Entidad","nombre":"Defaultttttt","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1622.4801,586.9712,0.0,1.0],"width":250.0,"height":246.0},"tiempo":"2014-12-10 16:13:09","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":73,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1461.7144,734.08203,0.0,1.0],"posicionFin":[613.1202,621.8585,0.0,1.0],"objetoInicio":4,"objetoFin":2,"textoInicio":"","textoFin":"","width":1012.0,"height":137.0},"tiempo":"2014-12-10 16:14:04","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":79,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[688.4219,824.3426,0.0,1.0],"width":256.0,"height":258.0},"tiempo":"2014-12-10 16:14:12","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":81,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1646.4062,842.1759,0.0,1.0],"width":240.0,"height":244.0},"tiempo":"2014-12-10 16:14:18","usuario":2}]}
+Polyline (5)
+entrandooooooo
+height: 187 width:417
+Cambiar a modo edicion
+Rectangle
+entrandooooooo
+height: 162 width:171
+ES RELACIONNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+Cambiar a modo edicion
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"gjjhhjhjh","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"kjgkjhlk","canal_SocketIO":"canal2"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1920,"display-heigth":1080},"datos":[{"accion":"CREAR_OBJETO","propiedades":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1005.76044,654.9259,0.0,1.0],"width":214.0,"height":270.0},"tiempo":"2014-12-10 16:04:48","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1390.7449,638.0833,0.0,1.0],"width":250.0,"height":246.0},"tiempo":"2014-12-10 16:04:51","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1148.3768,696.8317,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":298.0,"height":29.0},"tiempo":"2014-12-10 16:04:54","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_CERO_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:05:09","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:07:59","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_MUCHOS","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:25","usuario":2},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:40","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:58","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:09:15","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:09:28","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":35,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1265.7449,480.0833,0.0,1.0],"posicionFin":[1515.7449,480.0833,0.0,1.0],"objetoInicio":4,"objetoFin":4,"textoInicio":"","textoFin":"","width":220.0,"height":220.0},"tiempo":"2014-12-10 16:11:16","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":45,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[273.79834,544.56995,0.0,1.0],"posicionFin":[487.79834,544.56995,0.0,1.0],"objetoInicio":2,"objetoFin":2,"textoInicio":"","textoFin":"","width":187.0,"height":113.0},"tiempo":"2014-12-10 16:11:35","usuario":1},{"accion":"BORRAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[605.75134,584.8091,0.0,1.0],"posicionFin":[1391.3682,637.4026,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":785.6168,"height":29.0},"tiempo":"2014-12-10 16:11:45","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":63,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[607.4534,568.0592,0.0,1.0],"posicionFin":[1413.9265,648.25665,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":922.0,"height":106.0},"tiempo":"2014-12-10 16:12:24","usuario":2},{"accion":"EDITAR_OBJETO","propiedades":{"id":4,"tipo":"Entidad","nombre":"Defaultttttt","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1622.4801,586.9712,0.0,1.0],"width":250.0,"height":246.0},"tiempo":"2014-12-10 16:13:09","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":73,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1461.7144,734.08203,0.0,1.0],"posicionFin":[613.1202,621.8585,0.0,1.0],"objetoInicio":4,"objetoFin":2,"textoInicio":"","textoFin":"","width":1012.0,"height":137.0},"tiempo":"2014-12-10 16:14:04","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":79,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[688.4219,824.3426,0.0,1.0],"width":256.0,"height":258.0},"tiempo":"2014-12-10 16:14:12","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":81,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1646.4062,842.1759,0.0,1.0],"width":240.0,"height":244.0},"tiempo":"2014-12-10 16:14:18","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":84,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1236.0547,828.30554,0.0,1.0],"width":171.0,"height":162.0},"tiempo":"2014-12-10 16:14:30","usuario":2}]}
+Polyline (2)
+entrandooooooo
+height: 125 width:82
+Cambiar a modo edicion
+Polyline (4)
+entrandooooooo
+height: 265 width:283
+Cambiar a modo edicion
+Diamond
+entrandooooooo
+height: 184 width:274
+Cambiar a modo edicion
+DIBUJA RELACION MULTIPLE
+Diamond
+entrandooooooo
+height: 238 width:259
+Cambiar a modo edicion
+DIBUJA RELACION MULTIPLE
+Polyline (3)
+entrandooooooo
+height: 40 width:47
+Cambiar a modo edicion
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@b7c9c5]
+RECONOCE TRAZO EN ROMBO!!
+Reconocer:
+Polyline (3)
+entrandooooooo
+height: 633 width:497
+Cambiar a modo edicion
+BORRARAAA 497.0H633.0Cclass advanced.umleditor.logic.Relacion
+-Escuchando en body por relacion en entidad Default
+entrandooooooo
+Cambiar a modo edicion
+BORRAR W: 0.0 H: 0.0 Entidad Default Resultado(2 Relacion,-2 Borado):0
+Line
+entrandooooooo
+height: 335 width:419
+Cambiar a modo edicion
+Polyline (2)
+entrandooooooo
+height: 133 width:201
+Cambiar a modo edicion
+Line
+entrandooooooo
+height: 313 width:428
+Cambiar a modo edicion
+-Escuchando en body por relacion en entidad Defaultttttt
+entrandooooooo
+Cambiar a modo edicion
+BORRAR W: 0.0 H: 0.0 Entidad Defaultttttt Resultado(2 Relacion,-2 Borado):0
+Line
+entrandooooooo
+height: 435 width:680
+Cambiar a modo edicion
+Polyline (2)
+entrandooooooo
+height: 139 width:263
+Cambiar a modo edicion
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"gjjhhjhjh","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"kjgkjhlk","canal_SocketIO":"canal2"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1920,"display-heigth":1080},"datos":[{"accion":"CREAR_OBJETO","propiedades":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1005.76044,654.9259,0.0,1.0],"width":214.0,"height":270.0},"tiempo":"2014-12-10 16:04:48","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1390.7449,638.0833,0.0,1.0],"width":250.0,"height":246.0},"tiempo":"2014-12-10 16:04:51","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1148.3768,696.8317,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":298.0,"height":29.0},"tiempo":"2014-12-10 16:04:54","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_CERO_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:05:09","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:07:59","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_MUCHOS","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:25","usuario":2},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:40","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:58","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:09:15","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:09:28","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":35,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1265.7449,480.0833,0.0,1.0],"posicionFin":[1515.7449,480.0833,0.0,1.0],"objetoInicio":4,"objetoFin":4,"textoInicio":"","textoFin":"","width":220.0,"height":220.0},"tiempo":"2014-12-10 16:11:16","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":45,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[273.79834,544.56995,0.0,1.0],"posicionFin":[487.79834,544.56995,0.0,1.0],"objetoInicio":2,"objetoFin":2,"textoInicio":"","textoFin":"","width":187.0,"height":113.0},"tiempo":"2014-12-10 16:11:35","usuario":1},{"accion":"BORRAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[605.75134,584.8091,0.0,1.0],"posicionFin":[1391.3682,637.4026,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":785.6168,"height":29.0},"tiempo":"2014-12-10 16:11:45","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":63,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[607.4534,568.0592,0.0,1.0],"posicionFin":[1413.9265,648.25665,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":922.0,"height":106.0},"tiempo":"2014-12-10 16:12:24","usuario":2},{"accion":"EDITAR_OBJETO","propiedades":{"id":4,"tipo":"Entidad","nombre":"Defaultttttt","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1622.4801,586.9712,0.0,1.0],"width":250.0,"height":246.0},"tiempo":"2014-12-10 16:13:09","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":73,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1461.7144,734.08203,0.0,1.0],"posicionFin":[613.1202,621.8585,0.0,1.0],"objetoInicio":4,"objetoFin":2,"textoInicio":"","textoFin":"","width":1012.0,"height":137.0},"tiempo":"2014-12-10 16:14:04","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":79,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[688.4219,824.3426,0.0,1.0],"width":256.0,"height":258.0},"tiempo":"2014-12-10 16:14:12","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":81,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1646.4062,842.1759,0.0,1.0],"width":240.0,"height":244.0},"tiempo":"2014-12-10 16:14:18","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":84,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1236.0547,828.30554,0.0,1.0],"width":171.0,"height":162.0},"tiempo":"2014-12-10 16:14:30","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":100,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1495.7317,868.4594,0.0,1.0],"posicionFin":[1352.791,842.3138,0.0,1.0],"objetoInicio":81,"objetoFin":84,"textoInicio":"","textoFin":"","width":263.0,"height":139.0},"tiempo":"2014-12-10 16:14:56","usuario":2}]}
+Line
+entrandooooooo
+height: 46 width:227
+Cambiar a modo edicion
+true
+Line
+entrandooooooo
+height: 413 width:188
+Cambiar a modo edicion
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Reconocer:
+Polyline (5)
+entrandooooooo
+height: 81 width:319
+Cambiar a modo edicion
+BORRARAAA 319.0H81.0Cclass advanced.umleditor.logic.Relacion
+Polyline (2)
+entrandooooooo
+height: 403 width:157
+Cambiar a modo edicion
+entrandooooooo
+Cambiar a modo edicion
+-Escuchando en body por relacion en entidad Default
+entrandooooooo
+Cambiar a modo edicion
+BORRAR W: 0.0 H: 0.0 Entidad Default Resultado(2 Relacion,-2 Borado):0
+Line
+entrandooooooo
+height: 607 width:224
+Cambiar a modo edicion
+-Escuchando en body por relacion en entidad Default
+entrandooooooo
+Cambiar a modo edicion
+BORRAR W: 0.0 H: 0.0 Entidad Default Resultado(2 Relacion,-2 Borado):0
+entrandooooooo
+Cambiar a modo edicion
+Polyline (5)
+entrandooooooo
+height: 110 width:77
+Cambiar a modo edicion
+-Escuchando en body por relacion en entidad Default
+Line
+entrandooooooo
+height: 458 width:511
+Cambiar a modo edicion
+BORRAR W: 511.0 H: 458.0 Entidad Default Resultado(2 Relacion,-2 Borado):2
+Line
+entrandooooooo
+height: 458 width:511
+Cambiar a modo edicion
+-Escuchando en body por relacion en entidad Default
+--Enviar edicion  cuerpo Entidad Default
+Enviado canal20
+Polyline (8)
+entrandooooooo
+height: 23 width:22
+Cambiar a modo edicion
+BORRAR W: 22.0 H: 23.0 Entidad Default Resultado(2 Relacion,-2 Borado):2
+Line
+entrandooooooo
+height: 24 width:22
+Cambiar a modo edicion
+Line
+entrandooooooo
+height: 27 width:78
+Cambiar a modo edicion
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Reconocer:
+entrandooooooo
+Cambiar a modo edicion
+BORRARAAA 0.0H0.0Cclass advanced.umleditor.logic.ObjetoInvalido
+Polyline (2)
+entrandooooooo
+height: 516 width:271
+Cambiar a modo edicion
+Line
+entrandooooooo
+height: 381 width:1027
+Cambiar a modo edicion
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"gjjhhjhjh","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"kjgkjhlk","canal_SocketIO":"canal2"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1920,"display-heigth":1080},"datos":[{"accion":"CREAR_OBJETO","propiedades":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1005.76044,654.9259,0.0,1.0],"width":214.0,"height":270.0},"tiempo":"2014-12-10 16:04:48","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1390.7449,638.0833,0.0,1.0],"width":250.0,"height":246.0},"tiempo":"2014-12-10 16:04:51","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1148.3768,696.8317,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":298.0,"height":29.0},"tiempo":"2014-12-10 16:04:54","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_CERO_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:05:09","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:07:59","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_MUCHOS","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:25","usuario":2},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:40","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:58","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:09:15","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:09:28","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":35,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1265.7449,480.0833,0.0,1.0],"posicionFin":[1515.7449,480.0833,0.0,1.0],"objetoInicio":4,"objetoFin":4,"textoInicio":"","textoFin":"","width":220.0,"height":220.0},"tiempo":"2014-12-10 16:11:16","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":45,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[273.79834,544.56995,0.0,1.0],"posicionFin":[487.79834,544.56995,0.0,1.0],"objetoInicio":2,"objetoFin":2,"textoInicio":"","textoFin":"","width":187.0,"height":113.0},"tiempo":"2014-12-10 16:11:35","usuario":1},{"accion":"BORRAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[605.75134,584.8091,0.0,1.0],"posicionFin":[1391.3682,637.4026,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":785.6168,"height":29.0},"tiempo":"2014-12-10 16:11:45","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":63,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[607.4534,568.0592,0.0,1.0],"posicionFin":[1413.9265,648.25665,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":922.0,"height":106.0},"tiempo":"2014-12-10 16:12:24","usuario":2},{"accion":"EDITAR_OBJETO","propiedades":{"id":4,"tipo":"Entidad","nombre":"Defaultttttt","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1622.4801,586.9712,0.0,1.0],"width":250.0,"height":246.0},"tiempo":"2014-12-10 16:13:09","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":73,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1461.7144,734.08203,0.0,1.0],"posicionFin":[613.1202,621.8585,0.0,1.0],"objetoInicio":4,"objetoFin":2,"textoInicio":"","textoFin":"","width":1012.0,"height":137.0},"tiempo":"2014-12-10 16:14:04","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":79,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[688.4219,824.3426,0.0,1.0],"width":256.0,"height":258.0},"tiempo":"2014-12-10 16:14:12","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":81,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1646.4062,842.1759,0.0,1.0],"width":240.0,"height":244.0},"tiempo":"2014-12-10 16:14:18","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":84,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1236.0547,828.30554,0.0,1.0],"width":171.0,"height":162.0},"tiempo":"2014-12-10 16:14:30","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":100,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1495.7317,868.4594,0.0,1.0],"posicionFin":[1352.791,842.3138,0.0,1.0],"objetoInicio":81,"objetoFin":84,"textoInicio":"","textoFin":"","width":263.0,"height":139.0},"tiempo":"2014-12-10 16:14:56","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":122,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1520.2715,772.5744,0.0,1.0],"posicionFin":[567.3493,407.38773,0.0,1.0],"objetoInicio":81,"objetoFin":2,"textoInicio":"","textoFin":"","width":1027.0,"height":381.0},"tiempo":"2014-12-10 16:15:37","usuario":2}]}
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Reconocer:
+entrandooooooo
+Cambiar a modo edicion
+BORRARAAA 0.0H0.0Cclass advanced.umleditor.logic.ObjetoInvalido
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Reconocer:
+entrandooooooo
+Cambiar a modo edicion
+BORRARAAA 0.0H0.0Cclass advanced.umleditor.logic.ObjetoInvalido
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Reconocer:
+entrandooooooo
+Cambiar a modo edicion
+BORRARAAA 0.0H0.0Cclass advanced.umleditor.logic.ObjetoInvalido
+Inicio evento de: Evento de Login 
+recibido:  2 null
+ya hizo login
+Fin evento de: Evento de Login 
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Reconocer:
+entrandooooooo
+Cambiar a modo edicion
+BORRARAAA 0.0H0.0Cclass advanced.umleditor.logic.ObjetoInvalido
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Reconocer:
+entrandooooooo
+Cambiar a modo edicion
+BORRARAAA 0.0H0.0Cclass advanced.umleditor.logic.ObjetoInvalido
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Reconocer:
+Line
+entrandooooooo
+height: 429 width:428
+Cambiar a modo edicion
+BORRARAAA 428.0H429.0Cclass advanced.umleditor.logic.Relacion
+Line
+entrandooooooo
+height: 507 width:398
+Cambiar a modo edicion
+-Escuchando en body por relacion en entidad Default
+Polyline (6)
+entrandooooooo
+height: 128 width:78
+Cambiar a modo edicion
+BORRAR W: 78.0 H: 128.0 Entidad Default Resultado(2 Relacion,-2 Borado):2
+Polyline (5)
+entrandooooooo
+height: 368 width:684
+Cambiar a modo edicion
+Line
+entrandooooooo
+height: 526 width:387
+Cambiar a modo edicion
+Polyline (5)
+entrandooooooo
+height: 61 width:29
+Cambiar a modo edicion
 --> MODO BORRAR!
 --> Cambiar modo!
 Cambiar a modo borrar
@@ -62,33 +1242,74 @@ Cambiar a modo borrar
 entrandooooooo
 Cambiar a modo edicion
 BORRAR W: 0.0 H: 0.0 Entidad Default Resultado(2 Relacion,-2 Borado):0
+Line
+entrandooooooo
+height: 31 width:80
+Cambiar a modo edicion
 entrandooooooo
 Cambiar a modo edicion
 ES BORRRADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
--Escuchando en body por relacion en entidad Default
-Wave
-No retorno delete true
 entrandooooooo
 Cambiar a modo edicion
-BORRAR W: 0.0 H: 0.0 Entidad Default Resultado(2 Relacion,-2 Borado):0
-Wave
-No retorno delete true
+Polyline (4)
+entrandooooooo
+height: 42 width:353
+Cambiar a modo edicion
+Polyline (5)
+entrandooooooo
+height: 74 width:121
+Cambiar a modo edicion
+Polyline (5)
+entrandooooooo
+height: 104 width:116
+Cambiar a modo edicion
 entrandooooooo
 Cambiar a modo edicion
--Escuchando en body por relacion en entidad Default
 Polyline (6)
 entrandooooooo
-height: 106 width:184
-Cambiar a modo edicion
-BORRAR W: 184.0 H: 106.0 Entidad Default Resultado(2 Relacion,-2 Borado):2
-Polyline (7)
-entrandooooooo
-height: 254 width:218
+height: 75 width:152
 Cambiar a modo edicion
 Line
 entrandooooooo
-height: 29 width:100
+height: 27 width:293
 Cambiar a modo edicion
+entrandooooooo
+Cambiar a modo edicion
+Polyline (2)
+entrandooooooo
+height: 41 width:114
+Cambiar a modo edicion
+Polyline (3)
+entrandooooooo
+height: 48 width:171
+Cambiar a modo edicion
+Polyline (4)
+entrandooooooo
+height: 54 width:141
+Cambiar a modo edicion
+--> MODO BORRAR!
+--> Cambiar modo!
+Cambiar a modo borrar
+Cambiar a modo borrar
+Line
+entrandooooooo
+height: 306 width:735
+Cambiar a modo edicion
+entrandooooooo
+Cambiar a modo edicion
+ES BORRRADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+--> MODO BORRAR!
+--> Cambiar modo!
+Cambiar a modo borrar
+Cambiar a modo borrar
+-Mover relacion 106
+Line
+entrandooooooo
+height: 97 width:258
+Cambiar a modo edicion
+entrandooooooo
+Cambiar a modo edicion
+ES BORRRADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
 --> MODO BORRAR!
 --> Cambiar modo!
 Cambiar a modo borrar
@@ -99,8 +1320,739 @@ Cambiar a modo edicion
 ES BORRRADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
 BORRAR W: 0.0 H: 0.0 Entidad Default Resultado(2 Relacion,-2 Borado):0
 -Iniciar borrado Entidad Default
-{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"hshshs","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"uxhsnsn","canal_SocketIO":"canal2"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1920,"display-heigth":1080},"datos":[{"accion":"CREAR_OBJETO","propiedades":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1106.2344,797.0972,0.0,1.0],"width":278.0,"height":367.0},"tiempo":"2014-12-10 15:41:46","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[292.49475,794.125,0.0,1.0],"width":286.0,"height":339.0},"tiempo":"2014-12-10 15:41:51","usuario":1},{"accion":"BORRAR_OBJETO","propiedades":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[292.49475,794.125,0.0,1.0],"width":286.0,"height":339.0},"tiempo":"2014-12-10 15:42:17","usuario":1}]}
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"gjjhhjhjh","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"kjgkjhlk","canal_SocketIO":"canal2"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1920,"display-heigth":1080},"datos":[{"accion":"CREAR_OBJETO","propiedades":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1005.76044,654.9259,0.0,1.0],"width":214.0,"height":270.0},"tiempo":"2014-12-10 16:04:48","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1390.7449,638.0833,0.0,1.0],"width":250.0,"height":246.0},"tiempo":"2014-12-10 16:04:51","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1148.3768,696.8317,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":298.0,"height":29.0},"tiempo":"2014-12-10 16:04:54","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_CERO_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:05:09","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:07:59","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_MUCHOS","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:25","usuario":2},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:40","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:58","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:09:15","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:09:28","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":35,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1265.7449,480.0833,0.0,1.0],"posicionFin":[1515.7449,480.0833,0.0,1.0],"objetoInicio":4,"objetoFin":4,"textoInicio":"","textoFin":"","width":220.0,"height":220.0},"tiempo":"2014-12-10 16:11:16","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":45,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[273.79834,544.56995,0.0,1.0],"posicionFin":[487.79834,544.56995,0.0,1.0],"objetoInicio":2,"objetoFin":2,"textoInicio":"","textoFin":"","width":187.0,"height":113.0},"tiempo":"2014-12-10 16:11:35","usuario":1},{"accion":"BORRAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[605.75134,584.8091,0.0,1.0],"posicionFin":[1391.3682,637.4026,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":785.6168,"height":29.0},"tiempo":"2014-12-10 16:11:45","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":63,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[607.4534,568.0592,0.0,1.0],"posicionFin":[1413.9265,648.25665,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":922.0,"height":106.0},"tiempo":"2014-12-10 16:12:24","usuario":2},{"accion":"EDITAR_OBJETO","propiedades":{"id":4,"tipo":"Entidad","nombre":"Defaultttttt","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1622.4801,586.9712,0.0,1.0],"width":250.0,"height":246.0},"tiempo":"2014-12-10 16:13:09","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":73,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1461.7144,734.08203,0.0,1.0],"posicionFin":[613.1202,621.8585,0.0,1.0],"objetoInicio":4,"objetoFin":2,"textoInicio":"","textoFin":"","width":1012.0,"height":137.0},"tiempo":"2014-12-10 16:14:04","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":79,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[688.4219,824.3426,0.0,1.0],"width":256.0,"height":258.0},"tiempo":"2014-12-10 16:14:12","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":81,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1646.4062,842.1759,0.0,1.0],"width":240.0,"height":244.0},"tiempo":"2014-12-10 16:14:18","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":84,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1236.0547,828.30554,0.0,1.0],"width":171.0,"height":162.0},"tiempo":"2014-12-10 16:14:30","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":100,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1495.7317,868.4594,0.0,1.0],"posicionFin":[1352.791,842.3138,0.0,1.0],"objetoInicio":81,"objetoFin":84,"textoInicio":"","textoFin":"","width":263.0,"height":139.0},"tiempo":"2014-12-10 16:14:56","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":122,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1520.2715,772.5744,0.0,1.0],"posicionFin":[567.3493,407.38773,0.0,1.0],"objetoInicio":81,"objetoFin":2,"textoInicio":"","textoFin":"","width":1027.0,"height":381.0},"tiempo":"2014-12-10 16:15:37","usuario":2},{"accion":"BORRAR_OBJETO","propiedades":{"id":79,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[143.02039,527.3487,0.0,1.0],"width":256.0,"height":258.0},"tiempo":"2014-12-10 16:16:42","usuario":1}]}
 entrandooooooo
 Cambiar a modo edicion
 ES BORRRADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
-Escribiendo C:\Users\admin/hshshs_uxhsnsn_2014-12-10_15-41.scti
+Escribiendo C:\Users\admin/gjjhhjhjh_kjgkjhlk_2014-12-10_16-04.scti
+--> MODO BORRAR!
+--> Cambiar modo!
+Cambiar a modo borrar
+Cambiar a modo borrar
+Polyline (2)
+entrandooooooo
+height: 765 width:265
+Cambiar a modo edicion
+Polyline (6)
+entrandooooooo
+height: 34 width:22
+Cambiar a modo edicion
+--> MODO BORRAR!
+--> Cambiar modo!
+Cambiar a modo borrar
+Cambiar a modo borrar
+-Mover relacion 100
+INFO - Loading new font "SourceSansPro-BoldIt.otf" with factory: org.mt4j.components.visibleComponents.font.fontFactories.BitmapFontFactory
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"gjjhhjhjh","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"kjgkjhlk","canal_SocketIO":"canal2"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1920,"display-heigth":1080},"datos":[{"accion":"CREAR_OBJETO","propiedades":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1005.76044,654.9259,0.0,1.0],"width":214.0,"height":270.0},"tiempo":"2014-12-10 16:04:48","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1390.7449,638.0833,0.0,1.0],"width":250.0,"height":246.0},"tiempo":"2014-12-10 16:04:51","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1148.3768,696.8317,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":298.0,"height":29.0},"tiempo":"2014-12-10 16:04:54","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_CERO_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:05:09","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:07:59","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_MUCHOS","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:25","usuario":2},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:40","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:58","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:09:15","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:09:28","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":35,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1265.7449,480.0833,0.0,1.0],"posicionFin":[1515.7449,480.0833,0.0,1.0],"objetoInicio":4,"objetoFin":4,"textoInicio":"","textoFin":"","width":220.0,"height":220.0},"tiempo":"2014-12-10 16:11:16","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":45,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[273.79834,544.56995,0.0,1.0],"posicionFin":[487.79834,544.56995,0.0,1.0],"objetoInicio":2,"objetoFin":2,"textoInicio":"","textoFin":"","width":187.0,"height":113.0},"tiempo":"2014-12-10 16:11:35","usuario":1},{"accion":"BORRAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[605.75134,584.8091,0.0,1.0],"posicionFin":[1391.3682,637.4026,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":785.6168,"height":29.0},"tiempo":"2014-12-10 16:11:45","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":63,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[607.4534,568.0592,0.0,1.0],"posicionFin":[1413.9265,648.25665,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":922.0,"height":106.0},"tiempo":"2014-12-10 16:12:24","usuario":2},{"accion":"EDITAR_OBJETO","propiedades":{"id":4,"tipo":"Entidad","nombre":"Defaultttttt","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1622.4801,586.9712,0.0,1.0],"width":250.0,"height":246.0},"tiempo":"2014-12-10 16:13:09","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":73,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1461.7144,734.08203,0.0,1.0],"posicionFin":[613.1202,621.8585,0.0,1.0],"objetoInicio":4,"objetoFin":2,"textoInicio":"","textoFin":"","width":1012.0,"height":137.0},"tiempo":"2014-12-10 16:14:04","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":79,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[688.4219,824.3426,0.0,1.0],"width":256.0,"height":258.0},"tiempo":"2014-12-10 16:14:12","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":81,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1646.4062,842.1759,0.0,1.0],"width":240.0,"height":244.0},"tiempo":"2014-12-10 16:14:18","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":84,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1236.0547,828.30554,0.0,1.0],"width":171.0,"height":162.0},"tiempo":"2014-12-10 16:14:30","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":100,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1495.7317,868.4594,0.0,1.0],"posicionFin":[1352.791,842.3138,0.0,1.0],"objetoInicio":81,"objetoFin":84,"textoInicio":"","textoFin":"","width":263.0,"height":139.0},"tiempo":"2014-12-10 16:14:56","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":122,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1520.2715,772.5744,0.0,1.0],"posicionFin":[567.3493,407.38773,0.0,1.0],"objetoInicio":81,"objetoFin":2,"textoInicio":"","textoFin":"","width":1027.0,"height":381.0},"tiempo":"2014-12-10 16:15:37","usuario":2},{"accion":"BORRAR_OBJETO","propiedades":{"id":79,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[143.02039,527.3487,0.0,1.0],"width":256.0,"height":258.0},"tiempo":"2014-12-10 16:16:42","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":100,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[1427.9548,820.31323,0.0,1.0],"posicionFin":[1319.1337,799.427,0.0,1.0],"objetoInicio":81,"objetoFin":84,"textoInicio":"Default","textoFin":"Default","width":108.82117,"height":139.0},"tiempo":"2014-12-10 16:17:00","usuario":2}]}
+entrandooooooo
+Cambiar a modo edicion
+entrandooooooo
+Cambiar a modo edicion
+ES BORRRADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+Polyline (2)
+entrandooooooo
+height: 14 width:12
+Cambiar a modo edicion
+entrandooooooo
+Cambiar a modo edicion
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Reconocer:
+entrandooooooo
+Cambiar a modo edicion
+BORRARAAA 0.0H0.0Cclass advanced.umleditor.logic.ObjetoInvalido
+Line
+entrandooooooo
+height: 221 width:474
+Cambiar a modo edicion
+--> MODO BORRAR!
+--> Cambiar modo!
+Cambiar a modo borrar
+Cambiar a modo borrar
+entrandooooooo
+Cambiar a modo edicion
+-Mover relacion 100
+Line
+entrandooooooo
+height: 64 width:203
+Cambiar a modo edicion
+Line
+entrandooooooo
+height: 64 width:199
+Cambiar a modo edicion
+--> MODO BORRAR!
+--> Cambiar modo!
+Cambiar a modo borrar
+Cambiar a modo borrar
+entrandooooooo
+Cambiar a modo edicion
+ES BORRRADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+--> MODO BORRAR!
+--> Cambiar modo!
+Cambiar a modo borrar
+Cambiar a modo borrar
+-Mover relacion 100
+Wave
+No retorno delete true
+entrandooooooo
+Cambiar a modo edicion
+entrandooooooo
+Cambiar a modo edicion
+ES BORRRADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+--> MODO BORRAR!
+--> Cambiar modo!
+Cambiar a modo borrar
+Cambiar a modo borrar
+Inicio evento de: Evento de Login 
+recibido:  2 null
+ya hizo login
+Fin evento de: Evento de Login 
+entrandooooooo
+Cambiar a modo edicion
+ES BORRRADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+--> MODO BORRAR!
+--> Cambiar modo!
+Cambiar a modo borrar
+Cambiar a modo borrar
+entrandooooooo
+Cambiar a modo edicion
+ES BORRRADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+--> MODO BORRAR!
+--> Cambiar modo!
+Cambiar a modo borrar
+Cambiar a modo borrar
+--> MODO BORRAR!
+--> Cambiar modo!
+Cambiar a modo borrar
+Cambiar a modo borrar
+-Mover relacion 100
+Polyline (8)
+entrandooooooo
+height: 131 width:210
+Cambiar a modo edicion
+entrandooooooo
+Cambiar a modo edicion
+ES BORRRADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+-Mover relacion 100
+entrandooooooo
+Cambiar a modo edicion
+Polyline (2)
+entrandooooooo
+height: 9 width:13
+Cambiar a modo edicion
+Line
+entrandooooooo
+height: 73 width:5
+Cambiar a modo edicion
+--> MODO BORRAR!
+--> Cambiar modo!
+Cambiar a modo borrar
+Cambiar a modo borrar
+-Mover relacion 100
+-Mover relacion 106
+Line
+entrandooooooo
+height: 150 width:977
+Cambiar a modo edicion
+entrandooooooo
+Cambiar a modo edicion
+ES BORRRADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+entrandooooooo
+Cambiar a modo edicion
+Polyline (7)
+entrandooooooo
+height: 52 width:34
+Cambiar a modo edicion
+-Mover relacion 100
+entrandooooooo
+Cambiar a modo edicion
+Polyline (2)
+entrandooooooo
+height: 32 width:56
+Cambiar a modo edicion
+--> MODO BORRAR!
+--> Cambiar modo!
+Cambiar a modo borrar
+Cambiar a modo borrar
+-Mover relacion 106
+Polyline (9)
+entrandooooooo
+height: 117 width:209
+Cambiar a modo edicion
+entrandooooooo
+Cambiar a modo edicion
+ES BORRRADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+--> MODO BORRAR!
+--> Cambiar modo!
+Cambiar a modo borrar
+Cambiar a modo borrar
+-Mover relacion 106
+Polyline (8)
+entrandooooooo
+height: 153 width:241
+Cambiar a modo edicion
+entrandooooooo
+Cambiar a modo edicion
+ES BORRRADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+--> MODO BORRAR!
+--> Cambiar modo!
+Cambiar a modo borrar
+Cambiar a modo borrar
+-Mover relacion 106
+Line
+entrandooooooo
+height: 54 width:142
+Cambiar a modo edicion
+entrandooooooo
+Cambiar a modo edicion
+ES BORRRADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+--> MODO BORRAR!
+--> Cambiar modo!
+Cambiar a modo borrar
+Cambiar a modo borrar
+-Mover relacion 106
+Polyline (8)
+entrandooooooo
+height: 91 width:139
+Cambiar a modo edicion
+entrandooooooo
+Cambiar a modo edicion
+ES BORRRADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+--> MODO BORRAR!
+--> Cambiar modo!
+Cambiar a modo borrar
+Cambiar a modo borrar
+-Mover relacion 63
+Line
+entrandooooooo
+height: 126 width:239
+Cambiar a modo edicion
+entrandooooooo
+Cambiar a modo edicion
+ES BORRRADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+Polyline (3)
+entrandooooooo
+height: 505 width:22
+Cambiar a modo edicion
+Polyline (5)
+entrandooooooo
+height: 21 width:9
+Cambiar a modo edicion
+--> MODO BORRAR!
+--> Cambiar modo!
+Cambiar a modo borrar
+Cambiar a modo borrar
+-Mover relacion 112
+entrandooooooo
+Cambiar a modo edicion
+ES BORRRADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+-Eliminar relacion 112
+{"metadata":{"usuarios":[{"usuario":{"id":1,"id_pluma":1,"nombres":"gjjhhjhjh","canal_SocketIO":"canal1"}},{"usuario":{"id":2,"id_pluma":2,"nombres":"kjgkjhlk","canal_SocketIO":"canal2"}},{"id":-1,"id_pluma":-1,"nombres":"default","canal_SocketIO":"canal1"}],"display-width":1920,"display-heigth":1080},"datos":[{"accion":"CREAR_OBJETO","propiedades":{"id":2,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1005.76044,654.9259,0.0,1.0],"width":214.0,"height":270.0},"tiempo":"2014-12-10 16:04:48","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":4,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1390.7449,638.0833,0.0,1.0],"width":250.0,"height":246.0},"tiempo":"2014-12-10 16:04:51","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1148.3768,696.8317,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":298.0,"height":29.0},"tiempo":"2014-12-10 16:04:54","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_CERO_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:05:09","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:07:59","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_MUCHOS","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:25","usuario":2},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:40","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:08:58","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:09:15","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[843.67035,701.8287,0.0,1.0],"posicionFin":[1242.5482,687.29584,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":398.87787,"height":29.0},"tiempo":"2014-12-10 16:09:28","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":35,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1265.7449,480.0833,0.0,1.0],"posicionFin":[1515.7449,480.0833,0.0,1.0],"objetoInicio":4,"objetoFin":4,"textoInicio":"","textoFin":"","width":220.0,"height":220.0},"tiempo":"2014-12-10 16:11:16","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":45,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[273.79834,544.56995,0.0,1.0],"posicionFin":[487.79834,544.56995,0.0,1.0],"objetoInicio":2,"objetoFin":2,"textoInicio":"","textoFin":"","width":187.0,"height":113.0},"tiempo":"2014-12-10 16:11:35","usuario":1},{"accion":"BORRAR_OBJETO","propiedades":{"id":6,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_MUCHOS","cardinalidadFIN":"CARDINALIDAD_CERO_UNO","posicionInicio":[605.75134,584.8091,0.0,1.0],"posicionFin":[1391.3682,637.4026,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":785.6168,"height":29.0},"tiempo":"2014-12-10 16:11:45","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":63,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[607.4534,568.0592,0.0,1.0],"posicionFin":[1413.9265,648.25665,0.0,1.0],"objetoInicio":2,"objetoFin":4,"textoInicio":"","textoFin":"","width":922.0,"height":106.0},"tiempo":"2014-12-10 16:12:24","usuario":2},{"accion":"EDITAR_OBJETO","propiedades":{"id":4,"tipo":"Entidad","nombre":"Defaultttttt","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1622.4801,586.9712,0.0,1.0],"width":250.0,"height":246.0},"tiempo":"2014-12-10 16:13:09","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":73,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1461.7144,734.08203,0.0,1.0],"posicionFin":[613.1202,621.8585,0.0,1.0],"objetoInicio":4,"objetoFin":2,"textoInicio":"","textoFin":"","width":1012.0,"height":137.0},"tiempo":"2014-12-10 16:14:04","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":79,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[688.4219,824.3426,0.0,1.0],"width":256.0,"height":258.0},"tiempo":"2014-12-10 16:14:12","usuario":1},{"accion":"CREAR_OBJETO","propiedades":{"id":81,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1646.4062,842.1759,0.0,1.0],"width":240.0,"height":244.0},"tiempo":"2014-12-10 16:14:18","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":84,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[1236.0547,828.30554,0.0,1.0],"width":171.0,"height":162.0},"tiempo":"2014-12-10 16:14:30","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":100,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1495.7317,868.4594,0.0,1.0],"posicionFin":[1352.791,842.3138,0.0,1.0],"objetoInicio":81,"objetoFin":84,"textoInicio":"","textoFin":"","width":263.0,"height":139.0},"tiempo":"2014-12-10 16:14:56","usuario":2},{"accion":"CREAR_OBJETO","propiedades":{"id":122,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFin":"CARDINALIDAD_UNO","posicionInicio":[1520.2715,772.5744,0.0,1.0],"posicionFin":[567.3493,407.38773,0.0,1.0],"objetoInicio":81,"objetoFin":2,"textoInicio":"","textoFin":"","width":1027.0,"height":381.0},"tiempo":"2014-12-10 16:15:37","usuario":2},{"accion":"BORRAR_OBJETO","propiedades":{"id":79,"tipo":"Entidad","nombre":"Default","atributos":[{"indice":0,"nombre_atributo":"Id"}],"posicion":[143.02039,527.3487,0.0,1.0],"width":256.0,"height":258.0},"tiempo":"2014-12-10 16:16:42","usuario":1},{"accion":"EDITAR_OBJETO","propiedades":{"id":100,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[1427.9548,820.31323,0.0,1.0],"posicionFin":[1319.1337,799.427,0.0,1.0],"objetoInicio":81,"objetoFin":84,"textoInicio":"Default","textoFin":"Default","width":108.82117,"height":139.0},"tiempo":"2014-12-10 16:17:00","usuario":2},{"accion":"BORRAR_OBJETO","propiedades":{"id":112,"tipo":"Relacion","cardinalidadInicio":"CARDINALIDAD_UNO","cardinalidadFIN":"CARDINALIDAD_UNO","posicionInicio":[772.9321,727.4535,0.0,1.0],"posicionFin":[939.0,293.0,0.0,1.0],"objetoInicio":84,"objetoFin":89,"textoInicio":"","textoFin":"","width":166.06787,"height":607.0},"tiempo":"2014-12-10 16:18:54","usuario":1}]}
+ingresa al if de propagacion
+imprimiendo objeto fin: advanced.umleditor.logic.RelacionTernaria@cf9c64
+ESTAMOS BORRANDO DE UNA RELACION MULTIPLE INIIIIIIIIIIIIIICIO
+ESTAMOS BORRANDO DE UNA RELACION MULTIPLE FIIIIIIIIIN
+entrandooooooo
+Cambiar a modo edicion
+ES BORRRADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+--> MODO BORRAR!
+--> Cambiar modo!
+Cambiar a modo borrar
+Cambiar a modo borrar
+-Mover relacion 122
+Line
+entrandooooooo
+height: 82 width:255
+Cambiar a modo edicion
+entrandooooooo
+Cambiar a modo edicion
+ES BORRRADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+--> MODO BORRAR!
+--> Cambiar modo!
+Cambiar a modo borrar
+Cambiar a modo borrar
+entrandooooooo
+Cambiar a modo edicion
+ES BORRRADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+--> MODO BORRAR!
+--> Cambiar modo!
+Cambiar a modo borrar
+Cambiar a modo borrar
+-Mover relacion 63
+Line
+entrandooooooo
+height: 128 width:264
+Cambiar a modo edicion
+entrandooooooo
+Cambiar a modo edicion
+ES BORRRADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+Inicio evento de: Evento de Login 
+recibido:  1 null
+ya hizo login
+Fin evento de: Evento de Login 
+--> MODO BORRAR!
+--> Cambiar modo!
+Cambiar a modo borrar
+Cambiar a modo borrar
+-Mover relacion 106
+Wave
+No retorno delete true
+entrandooooooo
+Cambiar a modo edicion
+entrandooooooo
+Cambiar a modo edicion
+ES BORRRADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Gesture"Polygon" [org.mt4j.components.visibleComponents.shapes.MTRoundRectangle@689af4]
+RECONOCE TRAZO EN ROMBO!!
+Reconocer:
+Polyline (6)
+entrandooooooo
+height: 144 width:125
+Cambiar a modo edicion
+BORRARAAA 125.0H144.0Cclass advanced.umleditor.logic.Relacion
+--> MODO BORRAR!
+--> Cambiar modo!
+Cambiar a modo borrar
+Cambiar a modo borrar
+-Mover relacion 63
+Line
+entrandooooooo
+height: 126 width:305
+Cambiar a modo edicion
+entrandooooooo
+Cambiar a modo edicion
+ES BORRRADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+Escribiendo C:\Users\admin/gjjhhjhjh_kjgkjhlk_2014-12-10_16-04.scti
+Polyline (4)
+entrandooooooo
+height: 162 width:378
+Cambiar a modo edicion
+Polyline (3)
+entrandooooooo
+height: 96 width:64
+Cambiar a modo edicion
+Polyline (2)
+entrandooooooo
+height: 99 width:84
+Cambiar a modo edicion
+Polyline (6)
+entrandooooooo
+height: 86 width:159
+Cambiar a modo edicion
+Inicio evento de: Evento de Login 
+recibido:  1 null
+ya hizo login
+Fin evento de: Evento de Login 
+-Escuchando en body por relacion en entidad Default
+entrandooooooo
+Cambiar a modo edicion
+BORRAR W: 0.0 H: 0.0 Entidad Default Resultado(2 Relacion,-2 Borado):0
+Line
+entrandooooooo
+height: 83 width:9
+Cambiar a modo edicion
+-Escuchando en body por relacion en entidad Default
+Line
+entrandooooooo
+height: 108 width:204
+Cambiar a modo edicion
+BORRAR W: 204.0 H: 108.0 Entidad Default Resultado(2 Relacion,-2 Borado):2
+Line
+entrandooooooo
+height: 108 width:204
+Cambiar a modo edicion
+-Escuchando en body por relacion en entidad Default
+Line
+entrandooooooo
+height: 129 width:528
+Cambiar a modo edicion
+BORRAR W: 528.0 H: 129.0 Entidad Default Resultado(2 Relacion,-2 Borado):2
+Line
+entrandooooooo
+height: 129 width:528
+Cambiar a modo edicion
+-Escuchando en body por relacion en entidad Default
+Line
+entrandooooooo
+height: 106 width:459
+Cambiar a modo edicion
+BORRAR W: 459.0 H: 106.0 Entidad Default Resultado(2 Relacion,-2 Borado):2
+Line
+entrandooooooo
+height: 106 width:456
+Cambiar a modo edicion
+entrandooooooo
+Cambiar a modo edicion
+Escribiendo C:\Users\admin/gjjhhjhjh_kjgkjhlk_2014-12-10_16-04.scti
+Polyline (3)
+entrandooooooo
+height: 14 width:19
+Cambiar a modo edicion
+Polyline (2)
+entrandooooooo
+height: 17 width:8
+Cambiar a modo edicion
+Polyline (3)
+entrandooooooo
+height: 7 width:12
+Cambiar a modo edicion
+Polyline (4)
+entrandooooooo
+height: 11 width:24
+Cambiar a modo edicion
+Polyline (3)
+entrandooooooo
+height: 14 width:60
+Cambiar a modo edicion
+Wave
+No retorno delete true
+entrandooooooo
+Cambiar a modo edicion
+--> MODO BORRAR!
+--> Cambiar modo!
+Cambiar a modo borrar
+Cambiar a modo borrar
+-Mover relacion 63
+Wave
+No retorno delete true
+entrandooooooo
+Cambiar a modo edicion
+entrandooooooo
+Cambiar a modo edicion
+ES BORRRADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+entrandooooooo
+Cambiar a modo edicion
+Polyline (6)
+entrandooooooo
+height: 37 width:35
+Cambiar a modo edicion
+Polyline (2)
+entrandooooooo
+height: 26 width:12
+Cambiar a modo edicion
+Polyline (4)
+entrandooooooo
+height: 28 width:80
+Cambiar a modo edicion
+Line
+entrandooooooo
+height: 45 width:102
+Cambiar a modo edicion
+Line
+entrandooooooo
+height: 27 width:101
+Cambiar a modo edicion
+Polyline (10)
+entrandooooooo
+height: 62 width:128
+Cambiar a modo edicion
+Polyline (10)
+entrandooooooo
+height: 60 width:51
+Cambiar a modo edicion
+Line
+entrandooooooo
+height: 36 width:182
+Cambiar a modo edicion
+Polyline (2)
+entrandooooooo
+height: 48 width:198
+Cambiar a modo edicion
+Polyline (10)
+entrandooooooo
+height: 33 width:98
+Cambiar a modo edicion
+entrandooooooo
+Cambiar a modo edicion
+-Escuchando en body por relacion en entidad Default
+entrandooooooo
+Cambiar a modo edicion
+BORRAR W: 0.0 H: 0.0 Entidad Default Resultado(2 Relacion,-2 Borado):0
+Line
+entrandooooooo
+height: 147 width:92
+Cambiar a modo edicion
+Polyline (4)
+entrandooooooo
+height: 185 width:184
+Cambiar a modo edicion
+Line
+entrandooooooo
+height: 42 width:53
+Cambiar a modo edicion
+Polyline (3)
+entrandooooooo
+height: 40 width:238
+Cambiar a modo edicion
+Polyline (5)
+entrandooooooo
+height: 46 width:222
+Cambiar a modo edicion
+Polyline (2)
+entrandooooooo
+height: 1033 width:376
+Cambiar a modo edicion
+Polyline (4)
+entrandooooooo
+height: 563 width:733
+Cambiar a modo edicion
+Line
+entrandooooooo
+height: 218 width:177
+Cambiar a modo edicion
+Polyline (3)
+entrandooooooo
+height: 153 width:83
+Cambiar a modo edicion
+Inicio evento de: Evento de Login 
+recibido:  1 null
+ya hizo login
+Fin evento de: Evento de Login 
+Escribiendo C:\Users\admin/gjjhhjhjh_kjgkjhlk_2014-12-10_16-04.scti
+entrandooooooo
+Cambiar a modo edicion
+entrandooooooo
+Cambiar a modo edicion
+Escribiendo C:\Users\admin/gjjhhjhjh_kjgkjhlk_2014-12-10_16-04.scti
+Inicio evento de: Evento de Login 
+recibido:  2 null
+ya hizo login
+Fin evento de: Evento de Login 

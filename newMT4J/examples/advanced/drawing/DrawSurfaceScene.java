@@ -387,7 +387,7 @@ public class DrawSurfaceScene extends AbstractScene {
 					//listaRecognizer.get(cardinalidadAdpter.getIdUsuario());
 					//System.out.println(cardinalidadAdpter.getId()+" "+cardinalidadAdpter.getCardinalidad());
 					ObjetoUML objeto=UMLFacade.getObjetoUML(cardinalidadAdpter.getId());
-					//System.out.println("objeto "+objeto);
+					System.out.println("objeto "+objeto);
 					if(objeto instanceof Relacion){
 						Relacion relacion=(Relacion)objeto;
 						UndoHelper.agregarAccion(UndoHelper.EDITAR_OBJETO_ACTION, objeto);
