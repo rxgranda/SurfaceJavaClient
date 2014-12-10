@@ -33,10 +33,10 @@ public class StartDrawExample extends MTApplication{
 	        char key = e.getKeyChar();
 	        if (e.getID() == KeyEvent.KEY_PRESSED) {
 	              if (key =='s') {
-	                  UMLDataSaver.guardarEnArchivo();
+	                  UMLDataSaver.guardar();
 	              }
 	              if (key =='l') {
-	                  SessionLoader.verifySessionJSON("/home/bruno/workspace/andamios/optitracksurfaceclient/newMT4J/hola.json");
+	                  SessionLoader.verifySessionJSON("hola.json");
 	              }
 	              else{
 	                  

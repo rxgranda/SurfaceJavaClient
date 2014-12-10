@@ -29,6 +29,7 @@ import org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragEven
 import org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragProcessor;
 import org.mt4j.input.inputProcessors.componentProcessors.rotateProcessor.RotateProcessor;
 import org.mt4j.input.inputProcessors.componentProcessors.scaleProcessor.ScaleProcessor;
+import org.mt4j.input.inputProcessors.globalProcessors.CursorTracer;
 import org.mt4j.sceneManagement.Iscene;
 import org.mt4j.util.MT4jSettings;
 import org.mt4j.util.MTColor;
@@ -87,13 +88,13 @@ public class MTSceneMenu extends MTRectangle{
 	private static PImage menuImage;
 	
 	/** The close button image. */
-	private static PImage closeButtonImage;
-	
-	/** The restore button image. */
-	private static PImage restoreButtonImage;
+	private static PImage borrarButtonImage;
 	
 	/** The restore button image. */
 	private static PImage guardarButtonImage;
+	
+	/** The restore button image. */
+	private static PImage deshacerButtonImage;
 	
 	
 	//TODO maybe add minimize mode -> dont show scene but dont destroy it -> maby keep it in a MTList
@@ -153,8 +154,9 @@ public class MTSceneMenu extends MTRectangle{
 		overlayGroup = new MTOverlayContainer(app, "Window Menu Overlay Group");
 		
 		if (menuImage == null){
-			menuImage = app.loadImage(MT4jSettings.getInstance().getDefaultImagesPath() +
-					"blackRoundSolidCorner64sh2.png");
+			String altImagesPath = "data" + MTApplication.separator ;	
+			menuImage = app.loadImage( altImagesPath+
+					"topMenu.png");
 		}
 		
 		if (MT4jSettings.getInstance().isOpenGlMode()){
@@ -180,22 +182,25 @@ public class MTSceneMenu extends MTRectangle{
 		//CLOSE BUTTON
 //		Vector3D a = new Vector3D(-width * 1.2f, height/2f);
 		Vector3D a = new Vector3D(-width * 1.55f, 0);
-		a.rotateZ(PApplet.radians(90));
-		final MTRectangle closeButton = new MTRectangle(app, x + a.x, y + a.y, buttonWidth, buttonHeight);
+		a.rotateZ(PApplet.radians(-170));
+		final MTRectangle borrarButton = new MTRectangle(app, x + a.x, y + a.y, buttonWidth, buttonHeight);
 		
-		if (closeButtonImage == null){
-			closeButtonImage = app.loadImage(MT4jSettings.getInstance().getDefaultImagesPath() +
-					"closeButton64.png");
+		if (borrarButtonImage == null){
+			/*borrarButtonImage = app.loadImage(MT4jSettings.getInstance().getDefaultImagesPath() +
+					"borrar.png");*/
+			String altImagesPath = "data" + MTApplication.separator ;	
+			borrarButtonImage = app.loadImage( altImagesPath+
+					"borrador.png");
 		}
 		
-		closeButton.setTexture(closeButtonImage);
-		closeButton.setFillColor(new MTColor(255, 255, 255, buttonOpacity));
-		closeButton.setNoStroke(true);
-		closeButton.setVisible(false);
-		closeButton.removeAllGestureEventListeners(DragProcessor.class);
-		closeButton.removeAllGestureEventListeners(RotateProcessor.class);
-		closeButton.removeAllGestureEventListeners(ScaleProcessor.class);
-		this.addChild(closeButton);
+		borrarButton.setTexture(borrarButtonImage);
+		borrarButton.setFillColor(new MTColor(255, 255, 255, buttonOpacity));
+		borrarButton.setNoStroke(true);
+		borrarButton.setVisible(false);
+		borrarButton.removeAllGestureEventListeners(DragProcessor.class);
+		borrarButton.removeAllGestureEventListeners(RotateProcessor.class);
+		borrarButton.removeAllGestureEventListeners(ScaleProcessor.class);
+		this.addChild(borrarButton);
 		
 		//Check if this menu belongs to a window Scene (MTSceneWindow)
 		//or was added to a normal scene
@@ -203,28 +208,13 @@ public class MTSceneMenu extends MTRectangle{
 		if (this.windowedScene){
 			//RESTORE BUTTON
 			Vector3D b = new Vector3D(-width * 1.55f, 0);
-			b.rotateZ(PApplet.radians(10));
-			final MTRectangle restoreButton = new MTRectangle(app, x + b.x, y + b.y, buttonWidth, buttonHeight);
+			b.rotateZ(PApplet.radians(-10));
+			final MTRectangle guardarButton = new MTRectangle(app, x + b.x, y + b.y, buttonWidth, buttonHeight);
 			
-			if (restoreButtonImage == null){
-				restoreButtonImage = app.loadImage(MT4jSettings.getInstance().getDefaultImagesPath() +
+			if (guardarButtonImage == null){
+				/*guardarButtonImage = app.loadImage(MT4jSettings.getInstance().getDefaultImagesPath() +
 						"restoreButton64.png");
-			}
-			
-			restoreButton.setTexture(restoreButtonImage);
-			restoreButton.setFillColor(new MTColor(255, 255, 255, buttonOpacity));
-			restoreButton.setNoStroke(true);
-			restoreButton.setVisible(false);
-			restoreButton.removeAllGestureEventListeners(DragProcessor.class);
-			restoreButton.removeAllGestureEventListeners(RotateProcessor.class);
-			restoreButton.removeAllGestureEventListeners(ScaleProcessor.class);			
-			this.addChild(restoreButton);
-			////
-			Vector3D c = new Vector3D(-width * 1.55f, 0);
-			c.rotateZ(PApplet.radians(50));
-			final MTRectangle guardarButton = new MTRectangle(app, x + c.x, y + c.y, buttonWidth, buttonHeight);
-			
-			if (guardarButtonImage== null){
+						*/
 				String altImagesPath = "data" + MTApplication.separator ;	
 				guardarButtonImage = app.loadImage( altImagesPath+
 						"guardar.png");
@@ -239,75 +229,110 @@ public class MTSceneMenu extends MTRectangle{
 			guardarButton.removeAllGestureEventListeners(ScaleProcessor.class);			
 			this.addChild(guardarButton);
 			////
+			Vector3D c = new Vector3D(-width * 1.55f, 0);
+			c.rotateZ(PApplet.radians(-90));
+			final MTRectangle deshacerButton = new MTRectangle(app, x + c.x, y + c.y, buttonWidth, buttonHeight);
+			
+			if (deshacerButtonImage== null){
+				String altImagesPath = "data" + MTApplication.separator ;	
+				deshacerButtonImage = app.loadImage( altImagesPath+
+						"undo.png");
+			}
+			
+			deshacerButton.setTexture(deshacerButtonImage);
+			deshacerButton.setFillColor(new MTColor(255, 255, 255, buttonOpacity));
+			deshacerButton.setNoStroke(true);
+			deshacerButton.setVisible(false);
+			deshacerButton.removeAllGestureEventListeners(DragProcessor.class);
+			deshacerButton.removeAllGestureEventListeners(RotateProcessor.class);
+			deshacerButton.removeAllGestureEventListeners(ScaleProcessor.class);			
+			this.addChild(deshacerButton);
+			////
 			menuShape.addGestureListener(DragProcessor.class, new IGestureEventListener() {
 				public boolean processGestureEvent(MTGestureEvent ge) {
 					DragEvent de = (DragEvent)ge;
 					switch (de.getId()) {
 					case MTGestureEvent.GESTURE_STARTED:
-						restoreButton.setVisible(true);
-						closeButton.setVisible(true);
 						guardarButton.setVisible(true);
-						unhighlightButton(closeButton, buttonOpacity);
-						unhighlightButton(restoreButton, buttonOpacity);
+						borrarButton.setVisible(true);
+						deshacerButton.setVisible(true);
+						unhighlightButton(borrarButton, buttonOpacity);
 						unhighlightButton(guardarButton, buttonOpacity);
+						unhighlightButton(deshacerButton, buttonOpacity);
 						break;
 					case MTGestureEvent.GESTURE_UPDATED:
 						//Mouse over effect
-						if (closeButton.containsPointGlobal(de.getTo())){
-							highlightButton(closeButton);
+						if (borrarButton.containsPointGlobal(de.getTo())){
+							highlightButton(borrarButton);
 						}else{
-							unhighlightButton(closeButton, buttonOpacity);
-						}
-						if (restoreButton.containsPointGlobal(de.getTo())){
-							highlightButton(restoreButton);
-						}else{
-							unhighlightButton(restoreButton, buttonOpacity);
+							unhighlightButton(borrarButton, buttonOpacity);
 						}
 						if (guardarButton.containsPointGlobal(de.getTo())){
 							highlightButton(guardarButton);
 						}else{
 							unhighlightButton(guardarButton, buttonOpacity);
 						}
+						if (deshacerButton.containsPointGlobal(de.getTo())){
+							highlightButton(deshacerButton);
+						}else{
+							unhighlightButton(deshacerButton, buttonOpacity);
+						}
 						break;
 					case MTGestureEvent.GESTURE_ENDED:
-						unhighlightButton(closeButton, buttonOpacity);
-						unhighlightButton(restoreButton, buttonOpacity);
+						unhighlightButton(borrarButton, buttonOpacity);
 						unhighlightButton(guardarButton, buttonOpacity);
+						unhighlightButton(deshacerButton, buttonOpacity);
 						
 						InputCursor cursor = de.getDragCursor();
-						Vector3D guardarBotonIntersection = guardarButton.getIntersectionGlobal(Tools3D.getCameraPickRay(getRenderer(), restoreButton, cursor.getCurrentEvtPosX(), cursor.getCurrentEvtPosY()));
-						if (guardarBotonIntersection != null){
+						Vector3D deshacerBotonIntersection = deshacerButton.getIntersectionGlobal(Tools3D.getCameraPickRay(getRenderer(), guardarButton, cursor.getCurrentEvtPosX(), cursor.getCurrentEvtPosY()));
+						if (deshacerBotonIntersection != null){
+							
+							if(getScene() instanceof MainDrawingScene ){								
+								MainDrawingScene.deshacer();
+							}
+							
+						
+						}
+						
+						Vector3D guardarButtonIntersection = guardarButton.getIntersectionGlobal(Tools3D.getCameraPickRay(getRenderer(), guardarButton, cursor.getCurrentEvtPosX(), cursor.getCurrentEvtPosY()));
+						if (guardarButtonIntersection != null){
+							logger.debug("--> RESTORE!");
+							//MTSceneMenu.this.sceneTexture.restore();
+							// Para deshacer
 							if(getScene() instanceof MainDrawingScene ){
 								MainDrawingScene escena=(MainDrawingScene)getScene();
 								escena.guardar();
 							}
-							System.out.println("Holaaaaaaaaaaaaaaaaaaaaaa");
+							
+							
 						}
-						
-						Vector3D restoreButtonIntersection = restoreButton.getIntersectionGlobal(Tools3D.getCameraPickRay(getRenderer(), restoreButton, cursor.getCurrentEvtPosX(), cursor.getCurrentEvtPosY()));
-						if (restoreButtonIntersection != null){
-							logger.debug("--> RESTORE!");
-							MTSceneMenu.this.sceneTexture.restore();
-						}
-						Vector3D closeButtonIntersection = closeButton.getIntersectionGlobal(Tools3D.getCameraPickRay(getRenderer(), closeButton, cursor.getCurrentEvtPosX(), cursor.getCurrentEvtPosY()));
-						if (closeButtonIntersection != null){
+						Vector3D borrarButtonIntersection = borrarButton.getIntersectionGlobal(Tools3D.getCameraPickRay(getRenderer(), borrarButton, cursor.getCurrentEvtPosX(), cursor.getCurrentEvtPosY()));
+						if (borrarButtonIntersection != null){
 //							if (app.popScene()){
 //								app.removeScene(scene); //FIXME wont work if the scene has a transition because we cant remove the still active scene
 ////								destroy(); //this will be destroyed with the scene
 //								sceneTexture.destroy(); //destroys also the MTSceneWindow and with it the scene
 //								logger.debug("--> CLOSE!");
 //							}
-							if (sceneTexture.restore()){
+							//if (sceneTexture.restore()){
 //								app.removeScene(scene); //FIXME wont work if the scene has a transition because we cant remove the still active scene
 //								destroy(); //this will be destroyed with the scene
-								sceneTexture.destroy(); //destroys also the MTSceneWindow and with it the scene
-								logger.debug("--> CLOSE!");
+								//sceneTexture.destroy(); //destroys also the MTSceneWindow and with it the scene
+								//logger.debug("--> CLOSE!");
+								System.out.println("--> MODO BORRAR!");
+								if(getScene() instanceof MainDrawingScene ){
+									System.out.println("--> Cambiar modo!");
+									InputCursor m=de.getDragCursor();							
+									MainDrawingScene.modo_borrar(m.sessionID);
+									CursorTracer.cambiarCursorImage(m.sessionID);
+								///}
+								
 							}
 						}
 						
-						restoreButton.setVisible(false);
-						closeButton.setVisible(false);
 						guardarButton.setVisible(false);
+						borrarButton.setVisible(false);
+						deshacerButton.setVisible(false);
 						break;
 					default:
 						break;
@@ -322,22 +347,22 @@ public class MTSceneMenu extends MTRectangle{
 						DragEvent de = (DragEvent)ge;
 						switch (de.getId()) {
 						case MTGestureEvent.GESTURE_STARTED:
-							closeButton.setVisible(true);
-							unhighlightButton(closeButton, buttonOpacity);
+							borrarButton.setVisible(true);
+							unhighlightButton(borrarButton, buttonOpacity);
 							break;
 						case MTGestureEvent.GESTURE_UPDATED:
 							//Mouse over effect
-							if (closeButton.containsPointGlobal(de.getTo())){
-								highlightButton(closeButton);
+							if (borrarButton.containsPointGlobal(de.getTo())){
+								highlightButton(borrarButton);
 							}else{
-								unhighlightButton(closeButton, buttonOpacity);
+								unhighlightButton(borrarButton, buttonOpacity);
 							}
 							break;
 						case MTGestureEvent.GESTURE_ENDED:
-							unhighlightButton(closeButton, buttonOpacity);
+							unhighlightButton(borrarButton, buttonOpacity);
 							
 							InputCursor cursor = de.getDragCursor();
-							Vector3D closeButtonIntersection = closeButton.getIntersectionGlobal(Tools3D.getCameraPickRay(getRenderer(), closeButton, cursor.getCurrentEvtPosX(), cursor.getCurrentEvtPosY()));
+							Vector3D closeButtonIntersection = borrarButton.getIntersectionGlobal(Tools3D.getCameraPickRay(getRenderer(), borrarButton, cursor.getCurrentEvtPosX(), cursor.getCurrentEvtPosY()));
 							if (closeButtonIntersection != null){
 								if (app.popScene()){
 									destroy(); //Destroy this
@@ -345,7 +370,7 @@ public class MTSceneMenu extends MTRectangle{
 									logger.debug("--> CLOSE!");
 								}
 							}
-							closeButton.setVisible(false);
+							borrarButton.setVisible(false);
 							break;
 						default:
 							break;

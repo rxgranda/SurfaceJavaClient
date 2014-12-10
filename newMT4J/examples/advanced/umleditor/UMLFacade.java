@@ -133,7 +133,7 @@ public class UMLFacade {
 				}
 				
 				
-				System.out.println("retorna objeto RELACION MULTIPLE");
+				//System.out.println("retorna objeto RELACION MULTIPLE");
 				//((RelacionMultiple)objeto).inicializarDimensiones((int)primerX, (int) primerY, (int)ultimoX, (int) ultimoY);
 				
 			}
@@ -165,6 +165,7 @@ public class UMLFacade {
 		primerX=0;
 		primerY=0;
 		this.recognizer.reiniciar();
+	
 	}
 	
 	public Vector3D getPosicion(){
@@ -199,6 +200,11 @@ public class UMLFacade {
 		
 	}
 	
+	public void cambiarModo(){
+		
+			recognizer.delete_mode();
+		
+	}
 	
 	
 }

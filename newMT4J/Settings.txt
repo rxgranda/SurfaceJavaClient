@@ -28,5 +28,5 @@ OpenGLAntialiasing=0
 #                 - ER MODELO LOGICO Properties-
 #Comentar valores para guardar por default
 #Intervalo de tiempo para guardar una copia del modelo logico (ms)
-TiempoBackup=5000
+TiempoBackup=180000
 #DirectorioBackup='C:\Users\Roger\Desktop\eclipse'

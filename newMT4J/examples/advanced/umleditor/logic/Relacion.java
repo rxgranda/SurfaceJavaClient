@@ -1,12 +1,14 @@
 package advanced.umleditor.logic;
 
+import java.util.ArrayList;
+
 import org.hamcrest.core.IsInstanceOf;
 import org.mt4j.util.math.Vector3D;
 
 import advanced.umleditor.impl.ObjetoUMLGraph;
 import advanced.umleditor.impl.TextoFlotanteImpl;
 
-public class Relacion extends ObjetoUML {
+public class Relacion extends ObjetoUML  {
 
 	public final static int CARDINALIDAD_UNO=1;
 	public final static int CARDINALIDAD_CERO_UNO=2;
@@ -41,7 +43,7 @@ public class Relacion extends ObjetoUML {
 		return fin;
 	}
 
-	public void setFin(Vector3D fin) {
+	public synchronized void setFin(Vector3D fin) {
 		this.fin = fin;
 	}
 	
@@ -50,7 +52,7 @@ public class Relacion extends ObjetoUML {
 		return nombre;
 	}
 
-	public void setNombre(String nombre) {
+	public synchronized void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 	
@@ -59,7 +61,7 @@ public class Relacion extends ObjetoUML {
 		return inicio;
 	}
 
-	public void setInicio(Vector3D inicio) {
+	public synchronized void setInicio(Vector3D inicio) {
 		this.inicio = inicio;
 	}
 
@@ -67,7 +69,7 @@ public class Relacion extends ObjetoUML {
 		return objetoInicio;
 	}
 
-	public void setObjetoInicio(ObjetoUML objetoInicio) {
+	public synchronized void setObjetoInicio(ObjetoUML objetoInicio) {
 		this.objetoInicio = objetoInicio;
 	}
 
@@ -75,7 +77,7 @@ public class Relacion extends ObjetoUML {
 		return objetoFin;
 	}
 
-	public void setObjetoFin(ObjetoUML objetoFin) {
+	public synchronized void setObjetoFin(ObjetoUML objetoFin) {
 		this.objetoFin = objetoFin;
 	}
 
@@ -83,7 +85,7 @@ public class Relacion extends ObjetoUML {
 		return cardinalidadInicio;
 	}
 
-	public void setCardinalidadInicio(int cardinalidadInicio) {
+	public synchronized void setCardinalidadInicio(int cardinalidadInicio) {
 		this.cardinalidadInicio = cardinalidadInicio;
 	}
 
@@ -91,21 +93,21 @@ public class Relacion extends ObjetoUML {
 		return cardinalidadFin;
 	}
 
-	public void setCardinalidadFin(int cardinalidadFin) {
+	public synchronized void setCardinalidadFin(int cardinalidadFin) {
 		this.cardinalidadFin = cardinalidadFin;
 	}
 	public ObjetoUML getTextoFin() {
 		return textoFin;
 	}
 
-	public void setTextoFin(ObjetoUML textoFin) {
+	public synchronized void setTextoFin(ObjetoUML textoFin) {
 		this.textoFin = textoFin;
 	}
 	public ObjetoUML getTextoInicio() {
 		return textoInicio;
 	}
 
-	public void setTextoInicio(ObjetoUML textoInicio) {
+	public synchronized void setTextoInicio(ObjetoUML textoInicio) {
 		this.textoInicio = textoInicio;
 	}
 	
@@ -138,5 +140,25 @@ public class Relacion extends ObjetoUML {
 	}
 
 
+	@Override
+	public ObjetoUML clonar(){
+		Relacion clon=new Relacion(this.getPersona());	
+		clon.setTextoInicio(((UndoInterface)this.getTextoInicio()).clonar());
+		clon.setCardinalidadInicio(this.getCardinalidadInicio());
+		clon.setCardinalidadInicio(this.getCardinalidadFin());
+		clon.setTextoFin(((UndoInterface)this.getTextoFin()).clonar());
+		return clon;		
+	}
+	@Override
+	public void restaurar(ObjetoUML objeto){
+		if(objeto instanceof Relacion){			
+			((UndoInterface) this.getTextoInicio()).restaurar(((Relacion) objeto).getTextoInicio());
+			((UndoInterface) this.getTextoFin()).restaurar(((Relacion) objeto).getTextoFin());
+			this.setCardinalidadInicio(((Relacion) objeto).getCardinalidadInicio());
+			this.setCardinalidadFin(((Relacion) objeto).getCardinalidadFin());
+
+
+		}				
+	}
 	
 }

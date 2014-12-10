@@ -9,7 +9,7 @@ import org.mt4j.util.MTColor;
 
 import advanced.umleditor.logic.ObjetoUML;
 
-public interface ObjetoUMLGraph {
+public interface ObjetoUMLGraph extends UndoActions{
 	public static final MTColor azul=new MTColor(76, 96, 245);
 	public static final MTColor rojo=new MTColor(240, 0, 0);
 	public static final MTColor headerColor=new MTColor(2,196,238);//new MTColor(45,137,239);
@@ -18,8 +18,8 @@ public interface ObjetoUMLGraph {
 	public static final MTColor resizeButtonColor=new MTColor(255,255,255,0);
 	public static final MTColor selectedObject = new MTColor(253,205,161);
 	public static final MTColor nonselectedObject =new MTColor(255,255,255);
-	public static final MTColor haloSelected =new MTColor(255,255,255,255);//new MTColor(148,214,247,10);// new MTColor(200,200,200);//
-	public static final MTColor haloDeSelected =new MTColor(255,255,255); // new MTColor(200,200,200);//	
+	public static final MTColor haloSelected =new MTColor(148,214,247,10);//new MTColor(255,255,255,255);//new MTColor(148,214,247,10);// new MTColor(200,200,200);//
+	public static final MTColor haloDeSelected =new MTColor(255,255,255,0); // new MTColor(200,200,200);// new MTColor(200,200,200);//	
 	public static final MTColor transparent = new MTColor(100,100,100);//
 	
 	public static final int haloWidth=75;

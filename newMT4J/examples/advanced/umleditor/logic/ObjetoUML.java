@@ -12,7 +12,7 @@ import org.mt4j.util.math.Vector3D;
 import advanced.umleditor.UMLRecognizer;
 import advanced.umleditor.impl.ObjetoUMLGraph;
 
-public abstract class ObjetoUML {
+public abstract class ObjetoUML  implements UndoInterface{
 	public static final int  INVALIDO=-1;
 	public static final int  DELETE_GESTURE=-2;
 	public static final int  ENTIDAD=1;
@@ -22,7 +22,6 @@ public abstract class ObjetoUML {
 	public static final int RELACION_MULTIPLE = 5;
 	public static  final int EDIT_HEADER = 1;
 	public static final int EDIT_ATTS  = 2;
-	private static Calendar calendar = Calendar.getInstance();	
 	public  static ObjetoUML OBJETO_INVALIDO=new ObjetoInvalido(new Usuario()) ;
 	public static ObjetoUML DELETE_OBJECT_GESTURE= new DeleteObject(new Usuario());
 	private ObjetoUMLGraph figura;
@@ -62,7 +61,7 @@ public abstract class ObjetoUML {
 	}
 
 
-	public void setWidth(float width) {
+	public synchronized void setWidth(float width) {
 		this.width = width;
 	}
 
@@ -72,7 +71,7 @@ public abstract class ObjetoUML {
 	}
 
 
-	public void setHeight(float heigth) {
+	public synchronized void setHeight(float heigth) {
 		this.heigth = heigth;
 	}
 
@@ -84,7 +83,7 @@ public abstract class ObjetoUML {
 		this.centroide = nVector;
 	}
 
-	public void setCentroide(float x,float y) {		
+	public synchronized void setCentroide(float x,float y) {		
 		this.centroide = new Vector3D(x,y,0);
 		
 	}
@@ -100,7 +99,7 @@ public abstract class ObjetoUML {
 	}
 
 
-	public void setPosicion(Vector3D posicion) {
+	public synchronized void setPosicion(Vector3D posicion) {
 		this.posicion = posicion;
 	}
 
@@ -130,7 +129,7 @@ public abstract class ObjetoUML {
 	}
 
 
-	public void setBorrado(boolean borrado) {
+	public synchronized void setBorrado(boolean borrado) {
 		this.borrado = borrado;
 	}
 
@@ -179,6 +178,13 @@ public abstract class ObjetoUML {
 		this.persona = persona;
 	}
 
+	@Override
+	public ObjetoUML clonar(){
+		return null;
+	}
+	@Override
+	public void restaurar(ObjetoUML objeto){		
+	}
 
 	
 	/*public int getIdPersona() {
