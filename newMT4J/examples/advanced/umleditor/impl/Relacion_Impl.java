@@ -565,7 +565,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 				
 					//	System.out.println("Reconocer:");
 						ObjetoUML obj=recognizer.reconocerObjeto();
-						if (obj ==ObjetoUML.DELETE_OBJECT_GESTURE&&obj.getWidth()>40&&obj.getHeight()>40){
+						if (obj ==ObjetoUML.DELETE_OBJECT_GESTURE){//&&obj.getWidth()>40&&obj.getHeight()>40){
 							
 							
 							int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID)!=null)?(int)cursor.sessionID:Usuario.ID_DEFAULT_USER;
@@ -842,19 +842,22 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		
 		if(!propagacion){
 
+
 		System.out.println("ingresa al if de propagacion");
 		Object inicio=((Relacion)this.objeto).getObjetoInicio();
 		if(inicio instanceof Entidad){
 			((Entidad)inicio).getFigura().eliminarDatos(RELACIONES_INICIO_KEYWORD, this);
-			
-		}else{
-			System.out.println("no hace nada aqui");
 
 			
-		}
+			}else{
+				System.out.println("no hace nada aqui");
+
+			
+			}
 
 		Object fin=((Relacion)this.objeto).getObjetoFin();
 		System.out.println("imprimiendo objeto fin: "+fin);
+		
 		if(fin instanceof Entidad){
 			((Entidad)fin).getFigura().eliminarDatos(RELACIONES_FIN_KEYWORD, this);
 			//System.out.println("ESTAMOS BORRANDO DE UNA ENTIDAD FIIIIIIIIIN");
@@ -876,12 +879,13 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 	
 		}
 		
+
 		if(((Relacion)objeto).getObjetoInicio() instanceof Entidad && ((Relacion)objeto).getObjetoFin() instanceof Entidad){
 			if(((Relacion)objeto).getObjetoInicio()==((Relacion)objeto).getObjetoFin()){
 				((Entidad)((Relacion)objeto).getObjetoInicio()).setTieneRelacionRecursiva(false);
 			}
 		}
-		
+
 		
 	}
 	

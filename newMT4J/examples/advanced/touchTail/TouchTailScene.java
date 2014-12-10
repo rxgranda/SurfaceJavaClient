@@ -45,21 +45,16 @@ public class TouchTailScene extends AbstractScene {
 		this.registerGlobalInputProcessor(new CursorTracer(mtApp, this));
 	}
 
-	public void keyEvent(KeyEvent e){
-		if (e.getID() != KeyEvent.KEY_PRESSED)
+	public void KeyEvent(KeyEvent e){
+		int evtID = e.getID();
+		if (evtID != KeyEvent.KEY_PRESSED)
 			return;
 		switch (e.getKeyCode()){
-		case KeyEvent.VK_F:
-			System.out.println("FPS: " + mtApp.frameRate);
+		case KeyEvent.VK_BACK_SPACE:
+			System.out.println("hola");
 			break;
-		case KeyEvent.VK_SPACE:
-			tails.clearTails();
-		case KeyEvent.VK_PLUS:
-			getSceneCam().zoomAmount(5);
-			getSceneCam().update();
-			break;
-		default:
-			break;
+			default:
+				break;
 		}
 	}
 	

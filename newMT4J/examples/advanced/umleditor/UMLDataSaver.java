@@ -17,6 +17,7 @@ import java.util.Set;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 import org.mt4j.MTApplication;
@@ -95,11 +96,15 @@ public class UMLDataSaver implements Runnable {
 	
 	
 	public static synchronized void agregarAccion(final int tipoAccion, ObjetoUML objeto, Usuario user){
-		Calendar cal = Calendar.getInstance();    	
+		Calendar cal = Calendar.getInstance();
+		
+		JSONArray coordenadasPosicion,coordenadasInicio, coordenadasFin, atributos;
     	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     	String time=sdf.format(cal.getTime());
     	LinkedHashMap objetoContainer=new LinkedHashMap();
 		LinkedHashMap objetoMap=new LinkedHashMap();
+		
+		
 		switch (tipoAccion) {
 		case AGREGAR_OBJETO_ACTION:	
 			objetoMap.put("id", objeto.getId());
@@ -109,15 +114,26 @@ public class UMLDataSaver implements Runnable {
 				if(objeto instanceof Entidad){
 					LinkedHashMap mapaAtributos=new LinkedHashMap();
 					objetoMap.put("nombre", ((Entidad)objeto).getNombre());
+					atributos = new JSONArray();
 					int index=0;
 					for(String atributo:((Entidad)objeto).getAtributos()){
-						mapaAtributos.put(index, atributo);
+						JSONObject atributoJSON =new JSONObject();
+						atributoJSON.put("indice", index);
+						atributoJSON.put("nombre_atributo",atributo);
+						atributos.add(atributoJSON);
 						index++;
 					}
 					
-					objetoMap.put("atributos",mapaAtributos );
+					objetoMap.put("atributos",atributos );
 					
 				}
+				coordenadasPosicion = new JSONArray();
+				coordenadasPosicion.add(objeto.getPosicion().x);
+				coordenadasPosicion.add(objeto.getPosicion().y);
+				coordenadasPosicion.add(objeto.getPosicion().z);
+				coordenadasPosicion.add(objeto.getPosicion().w);
+				objetoMap.put("posicion", coordenadasPosicion);
+				
 				break;
 			
 			case ObjetoUML.RELACION:
@@ -165,9 +181,25 @@ public class UMLDataSaver implements Runnable {
 						break;
 					}
 					objetoMap.put("cardinalidadInicio", cardinalidadInicio);
-					objetoMap.put("cardinalidadFIN", cardinalidadFin);
-					objetoMap.put("posicionInicio", relacion.getInicio());
-					objetoMap.put("posicionFin", relacion.getFin());
+					objetoMap.put("cardinalidadFin", cardinalidadFin);
+					
+					coordenadasInicio = new JSONArray();
+					coordenadasInicio.add(relacion.getInicio().x);
+					coordenadasInicio.add(relacion.getInicio().y);
+					coordenadasInicio.add(relacion.getInicio().z);
+					coordenadasInicio.add(relacion.getInicio().w);
+
+					coordenadasFin = new JSONArray();
+					coordenadasFin.add(relacion.getFin().x);
+					coordenadasFin.add(relacion.getFin().y);
+					coordenadasFin.add(relacion.getFin().z);
+					coordenadasFin.add(relacion.getFin().w);
+
+					
+					objetoMap.put("posicionInicio", coordenadasInicio);
+					objetoMap.put("posicionFin", coordenadasFin);
+					
+					
 					objetoMap.put("objetoInicio", relacion.getObjetoInicio().getId());
 					objetoMap.put("objetoFin", relacion.getObjetoFin().getId());
 					objetoMap.put("textoInicio", relacion.getLabelTextoInicio());
@@ -183,30 +215,45 @@ public class UMLDataSaver implements Runnable {
 			//objetoMap.put("creacion", objeto.getTiempoCreacion());
 			objetoMap.put("width", objeto.getWidth());
 			objetoMap.put("height", objeto.getHeight());
-			objetoMap.put("posicion", objeto.getPosicion());
-			objetoContainer.put("CREAR_OBJETO", objetoMap);
+
+
+			//objetoContainer.put("EDITAR_OBJETO", objetoMap);
 			
+			objetoContainer.put("accion", "CREAR_OBJETO");
+			objetoContainer.put("propiedades", objetoMap);
 			
 			
 			break;
 		case EDITAR_OBJETO_ACTION:
+			
 			objetoMap.put("id", objeto.getId());
 			switch (objeto.getTipo()) {
 			case ObjetoUML.ENTIDAD:
+				objetoMap.put("tipo", "Entidad");
 				if(objeto instanceof Entidad){
 					LinkedHashMap mapaAtributos=new LinkedHashMap();
 					objetoMap.put("nombre", ((Entidad)objeto).getNombre());
+					atributos = new JSONArray();
 					int index=0;
 					for(String atributo:((Entidad)objeto).getAtributos()){
-						mapaAtributos.put(index, atributo);
+						JSONObject atributoJSON =new JSONObject();
+						atributoJSON.put("indice", index);
+						atributoJSON.put("nombre_atributo",atributo);
+						atributos.add(atributoJSON);
 						index++;
-					}					
-					objetoMap.put("atributos",mapaAtributos );					
+					}
+					
+					objetoMap.put("atributos",atributos );				
 				}
-				objetoMap.put("posicion", objeto.getPosicion());
-				objetoContainer.put("EDITAR_OBJETO", objetoMap);
+				coordenadasPosicion = new JSONArray();
+				coordenadasPosicion.add(objeto.getPosicion().x);
+				coordenadasPosicion.add(objeto.getPosicion().y);
+				coordenadasPosicion.add(objeto.getPosicion().z);
+				coordenadasPosicion.add(objeto.getPosicion().w);
+				objetoMap.put("posicion", coordenadasPosicion);
 				break;
 			case ObjetoUML.RELACION:
+				objetoMap.put("tipo", "Relacion");
 				if(objeto instanceof Relacion){
 					Relacion relacion=((Relacion)objeto);
 					String cardinalidadInicio="",cardinalidadFin="";
@@ -251,8 +298,25 @@ public class UMLDataSaver implements Runnable {
 					}
 					objetoMap.put("cardinalidadInicio", cardinalidadInicio);
 					objetoMap.put("cardinalidadFIN", cardinalidadFin);
-					objetoMap.put("posicionInicio", relacion.getInicio());
-					objetoMap.put("posicionFin", relacion.getFin());
+					
+					coordenadasInicio = new JSONArray();
+					
+					coordenadasInicio.add(relacion.getInicio().x);
+					coordenadasInicio.add(relacion.getInicio().y);
+					coordenadasInicio.add(relacion.getInicio().z);
+					coordenadasInicio.add(relacion.getInicio().w);
+
+					coordenadasFin = new JSONArray();
+					
+					coordenadasFin.add(relacion.getFin().x);
+					coordenadasFin.add(relacion.getFin().y);
+					coordenadasFin.add(relacion.getFin().z);
+					coordenadasFin.add(relacion.getFin().w);
+
+					
+					objetoMap.put("posicionInicio", coordenadasInicio);
+					objetoMap.put("posicionFin", coordenadasFin);
+					
 					objetoMap.put("objetoInicio", relacion.getObjetoInicio().getId());
 					objetoMap.put("objetoFin", relacion.getObjetoFin().getId());
 					objetoMap.put("textoInicio", relacion.getLabelTextoInicio());
@@ -262,39 +326,60 @@ public class UMLDataSaver implements Runnable {
 					
 					
 				}
-				
-				objetoMap.put("posicion", objeto.getPosicion());
-				objetoContainer.put("EDITAR_OBJETO", objetoMap);
+
+
 			
 				break;
 			default:
+				
+				
 				break;
 			}
+		objetoMap.put("width", objeto.getWidth());
+		objetoMap.put("height", objeto.getHeight());
+		objetoContainer.put("accion", "EDITAR_OBJETO");		
+		objetoContainer.put("propiedades", objetoMap);
+		
 		break;
 		case BORRAR_OBJETO_ACTION:
 			
 		//	System.out.println("GUARDANDO BORRADO");
 			objetoMap.put("id", objeto.getId());
+			
 			switch (objeto.getTipo()) {
 			
 			case ObjetoUML.ENTIDAD:
+				objetoMap.put("tipo", "Entidad");
 				if(objeto instanceof Entidad){
 					LinkedHashMap mapaAtributos=new LinkedHashMap();
 					objetoMap.put("nombre", ((Entidad)objeto).getNombre());
+					atributos = new JSONArray();
 					int index=0;
 					for(String atributo:((Entidad)objeto).getAtributos()){
-						mapaAtributos.put(index, atributo);
+						JSONObject atributoJSON =new JSONObject();
+						atributoJSON.put("indice", index);
+						atributoJSON.put("nombre_atributo",atributo);
+						atributos.add(atributoJSON);
 						index++;
-					}					
-					objetoMap.put("atributos",mapaAtributos );					
+					}
+					
+					objetoMap.put("atributos",atributos );
+					coordenadasPosicion = new JSONArray();
+					coordenadasPosicion.add(objeto.getPosicion().x);
+					coordenadasPosicion.add(objeto.getPosicion().y);
+					coordenadasPosicion.add(objeto.getPosicion().z);
+					coordenadasPosicion.add(objeto.getPosicion().w);
+					objetoMap.put("posicion", coordenadasPosicion);
+					
+					
 				}
-				objetoMap.put("posicion", objeto.getPosicion());
-				objetoContainer.put("BORRAR_OBJETO", objetoMap);
+
 				
 				
 				
 				break;
 			case ObjetoUML.RELACION:
+				objetoMap.put("tipo", "Relacion");
 				if(objeto instanceof Relacion){
 					Relacion relacion=((Relacion)objeto);
 					String cardinalidadInicio="",cardinalidadFin="";
@@ -339,8 +424,23 @@ public class UMLDataSaver implements Runnable {
 					}
 					objetoMap.put("cardinalidadInicio", cardinalidadInicio);
 					objetoMap.put("cardinalidadFIN", cardinalidadFin);
-					objetoMap.put("posicionInicio", relacion.getInicio());
-					objetoMap.put("posicionFin", relacion.getFin());
+					
+					coordenadasInicio = new JSONArray();
+					coordenadasInicio.add(relacion.getInicio().x);
+					coordenadasInicio.add(relacion.getInicio().y);
+					coordenadasInicio.add(relacion.getInicio().z);
+					coordenadasInicio.add(relacion.getInicio().w);
+
+					coordenadasFin = new JSONArray();
+					coordenadasFin.add(relacion.getFin().x);
+					coordenadasFin.add(relacion.getFin().y);
+					coordenadasFin.add(relacion.getFin().z);
+					coordenadasFin.add(relacion.getFin().w);
+
+					
+					objetoMap.put("posicionInicio", coordenadasInicio);
+					objetoMap.put("posicionFin", coordenadasFin);
+					
 					objetoMap.put("objetoInicio", relacion.getObjetoInicio().getId());
 					objetoMap.put("objetoFin", relacion.getObjetoFin().getId());
 					objetoMap.put("textoInicio", relacion.getLabelTextoInicio());
@@ -350,15 +450,18 @@ public class UMLDataSaver implements Runnable {
 					
 					
 				}
-				objetoMap.put("posicion", objeto.getPosicion());
-				objetoContainer.put("BORRAR_OBJETO", objetoMap);				
+			
 							
 				break;
 			default:
 				break;
 				
 			}
-			
+			objetoMap.put("width", objeto.getWidth());
+			objetoMap.put("height", objeto.getHeight());
+			objetoContainer.put("accion", "BORRAR_OBJETO");
+			objetoContainer.put("propiedades", objetoMap);
+				
 			break;
 		default:
 			break;
@@ -407,10 +510,13 @@ public class UMLDataSaver implements Runnable {
 		fileChooser.setDialogTitle("Specify a file to save");
 		
 		int userSelection = fileChooser.showSaveDialog(parentFrame);
-		if (userSelection == JFileChooser.APPROVE_OPTION) {
+	//BRUNO
+	if (userSelection == JFileChooser.APPROVE_OPTION) {
 			File fileToSave = fileChooser.getSelectedFile();
 			System.out.println("Save as file: " + fileToSave.getAbsolutePath());
+
 			String dir_archivo=fileToSave.getAbsolutePath()+DEFAULT_FILE_EXTENSION_BACKUP;
+
 		//
 		//parentFrame.toFront();
 		//parentFrame.setAlwaysOnTop(true);
@@ -446,7 +552,7 @@ public class UMLDataSaver implements Runnable {
 			}
 		
 		
-		}
+	//	}
 		return true;
 		*/
 		return true;

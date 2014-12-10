@@ -65,7 +65,6 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 	private final MTComponent container;
 
 	SocketIOServer server;
-
 	public ObjetoUML objeto;
 
 
@@ -490,8 +489,8 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 									String canal=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?MainDrawingScene.getListaUsuarios().get((int)m.sessionID).getCanal():Usuario.CANAL_DEFAULT_USER;
 									int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?(int)m.sessionID:Usuario.ID_DEFAULT_USER;
 
-									//server.getRoomOperations(canal).sendEvent("startEdition",new EntidadAdapter(((Entidad)objeto),idUsuario,objeto.EDIT_HEADER));						
-									server.getNamespace("/login").getBroadcastOperations().sendEvent("startEdition",new EntidadAdapter(((Entidad)objeto),idUsuario,objeto.EDIT_HEADER));						
+									server.getRoomOperations(canal).sendEvent("startEdition",new EntidadAdapter(((Entidad)objeto),idUsuario,objeto.EDIT_HEADER));						
+									//server.getNamespace("/login").getBroadcastOperations().sendEvent("startEdition",new EntidadAdapter(((Entidad)objeto),idUsuario,objeto.EDIT_HEADER));						
 
 									System.out.println("--Enviar edicion nombre Entidad "+ ((Entidad)objeto).getNombre());
 									System.out.println("Enviado "+canal+" "+server.getRoomOperations(canal).getClients().size());
@@ -612,7 +611,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 						
 						
 					
-								if (obj ==ObjetoUML.DELETE_OBJECT_GESTURE&&obj.getWidth()>10&&obj.getHeight()>10){
+								if (obj ==ObjetoUML.DELETE_OBJECT_GESTURE){//&&obj.getWidth()>10&&obj.getHeight()>10){
 									if(puedeBorrarEntidad()){
 										UndoHelper.agregarAccion(UndoHelper.BORRAR_OBJETO_ACTION,objeto);
 										int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID)!=null)?(int)cursor.sessionID:Usuario.ID_DEFAULT_USER;															

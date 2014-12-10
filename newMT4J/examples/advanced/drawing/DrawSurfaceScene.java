@@ -1,5 +1,6 @@
 package advanced.drawing;
 
+import java.awt.event.KeyEvent;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -50,6 +51,7 @@ import org.mt4j.util.math.ToolsMath;
 import org.mt4j.util.math.Vector3D;
 import org.mt4j.util.math.Vertex;
 
+import advanced.drawing.UndoHelper;
 import advanced.umleditor.UMLDataSaver;
 import advanced.umleditor.UMLFacade;
 import advanced.umleditor.UMLRecognizer;
@@ -300,8 +302,7 @@ public class DrawSurfaceScene extends AbstractScene {
 		MIN_WIDTH = (float) mtApplication.width * MT4jSettings.getMinimumWidthRatio();
 		MAX_HEIGHT = (float) mtApplication.height * MT4jSettings.getMaximumHeightRatio();
 		MAX_WIDTH = (float) mtApplication.width * MT4jSettings.getMaximumWidthRatio();		
-		
-
+	
 		/*
 		 * this.drawShape = getDefaultBrush(); this.localBrushCenter =
 		 * drawShape.getCenterPointLocal(); this.brushWidthHalf =
@@ -311,7 +312,7 @@ public class DrawSurfaceScene extends AbstractScene {
 		 */
 		
 		SocketIONamespace userListener = MainDrawingScene.getLoginListener();	        	        
-		userListener.addEventListener("endEdition", EntidadAdapter.class, new DataListener<EntidadAdapter>() {
+		userListener.addEventListener("endEditionEntidad", EntidadAdapter.class, new DataListener<EntidadAdapter>() {
 			@Override
 			public void onData(SocketIOClient arg0, EntidadAdapter arg1,
 					AckRequest arg2){
@@ -357,6 +358,7 @@ public class DrawSurfaceScene extends AbstractScene {
 							if (tem instanceof Relacion){								
 								arg1.actualizar(textflot);								
 								objeto.getFigura().actualizarEtiquetas();
+								server.getNamespace("/login").getBroadcastOperations().sendEvent("syncEdition",new TextoFlotanteAdapter(((TextoFlotante)objeto),arg1.getIdUsuario()));
 								UMLDataSaver.agregarAccion(UMLDataSaver.EDITAR_OBJETO_ACTION, tem,listaUsuarios.get(arg1.getIdUsuario()));
 							}
 						}
@@ -373,7 +375,7 @@ public class DrawSurfaceScene extends AbstractScene {
 		
 		
 		
-		userListener.addEventListener("cardinalidadEdition", CardinalidadAdapter.class, new DataListener<CardinalidadAdapter>() {
+		userListener.addEventListener("endCardinalidadEdition", CardinalidadAdapter.class, new DataListener<CardinalidadAdapter>() {
 			
 			@Override
 			public void onData(SocketIOClient arg0,  CardinalidadAdapter cardinalidadAdpter,
@@ -1160,9 +1162,11 @@ public class DrawSurfaceScene extends AbstractScene {
 	}
 
 	public void onEnter() {
+		
 	}
 
 	public void onLeave() {
+		
 	}
 	
 	public void anadirObjeto(MTComponent o){
@@ -1189,7 +1193,7 @@ public class DrawSurfaceScene extends AbstractScene {
 		}
 
 		
-	
+
 	public void keyPressed() {
 			//System.out.println("PRESSED");
 			//guardarEnArchivo(UMLDataSaver.getJsonMap());
@@ -1199,7 +1203,6 @@ public class DrawSurfaceScene extends AbstractScene {
 		UMLDataSaver.guardar();
 		return true;
 	}
-	
 
 	public void setListaPencil(MTEllipse[] lista){
 		listaPencil=lista;		
