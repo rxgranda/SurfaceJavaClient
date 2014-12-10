@@ -826,19 +826,20 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		
 		if(!propagacion){
 	
-		System.out.println("ingresa al if de propagacion");
-		Object inicio=((Relacion)this.objeto).getObjetoInicio();
-		if(inicio instanceof Entidad){
-			((Entidad)inicio).getFigura().eliminarDatos(RELACIONES_INICIO_KEYWORD, this);
+			System.out.println("ingresa al if de propagacion");
+			Object inicio=((Relacion)this.objeto).getObjetoInicio();
+			if(inicio instanceof Entidad){
+				((Entidad)inicio).getFigura().eliminarDatos(RELACIONES_INICIO_KEYWORD, this);
 			
-		}else{
-			System.out.println("no hace nada aqui");
+			}else{
+				System.out.println("no hace nada aqui");
 
 			
-		}
+			}
 
 		Object fin=((Relacion)this.objeto).getObjetoFin();
 		System.out.println("imprimiendo objeto fin: "+fin);
+		
 		if(fin instanceof Entidad){
 			((Entidad)fin).getFigura().eliminarDatos(RELACIONES_FIN_KEYWORD, this);
 			System.out.println("ESTAMOS BORRANDO DE UNA ENTIDAD FIIIIIIIIIN");
@@ -858,10 +859,10 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		
 		//Entidad fin=((Entidad)((Relacion)this.objeto).getObjetoFin());
 		//fin.getFigura().eliminarDatos(RELACIONES_FIN_KEYWORD, this);
-		UMLDataSaver.agregarAccion(UMLDataSaver.BORRAR_OBJETO_ACTION, objeto, MainDrawingScene.getListaUsuarios().get(idUsuario) );
+		
 
 		}
-	
+		UMLDataSaver.agregarAccion(UMLDataSaver.BORRAR_OBJETO_ACTION, objeto, MainDrawingScene.getListaUsuarios().get(idUsuario) );
 		
 		
 	}

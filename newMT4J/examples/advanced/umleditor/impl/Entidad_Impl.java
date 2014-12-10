@@ -63,7 +63,6 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 	
 
 	SocketIOServer server;
-
 	public ObjetoUML objeto;
 
 

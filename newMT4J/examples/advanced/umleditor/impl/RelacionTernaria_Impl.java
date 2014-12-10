@@ -51,13 +51,14 @@ public class RelacionTernaria_Impl extends MTComponent implements ObjetoUMLGraph
 	ObjetoUML objeto;
 	public boolean relacion_activa = true;
 	public int cont = 4;
-	//este arreglo nos sirve para identificar que puntos están libres del rombo
+	//este arreglo nos sirve para identificar que puntos estï¿½n libres del rombo
 	//private boolean[] puntos= new boolean[] {true, true, true, true};//false, punto2=false, punto3=false, punto4=false;
 	public Vector3D v_punto1;
 	public Vector3D v_punto2;
 	public Vector3D v_punto3;
 	public Vector3D v_punto4;
 	private Map<Vector3D, Boolean> esquinas = new HashMap<Vector3D, Boolean>();
+	
 	static float constante_rombo;
 	
 	
@@ -85,7 +86,7 @@ public class RelacionTernaria_Impl extends MTComponent implements ObjetoUMLGraph
 		System.out.println("DIBUJA RELACION MULTIPLE");
 		//.. y lo rotamos 90 grados para que se vea como rombo en la canvas..
 		
-		//.. luego seteamos parámetros generales
+		//.. luego seteamos parï¿½metros generales
 		rombo.setPickable(false);
 		rombo.setFillColor(new MTColor(255,255,255));
 		rombo.setNoStroke(false);
@@ -330,7 +331,7 @@ public class RelacionTernaria_Impl extends MTComponent implements ObjetoUMLGraph
 			//al mover las relaciones y las esquinas de la relacion multiple
 			if((int)(v.x)==(int)(esquina.getKey().x) && (int)(v.y)==(int)(esquina.getKey().y)){
 				System.out.println("Ingreso he hizo TRUE el valor de una esquina");
-				esquinas.replace(esquina.getKey(), true);
+				esquinas.put(esquina.getKey(), true);
 				break;
 			}
 		    
@@ -360,7 +361,7 @@ public class RelacionTernaria_Impl extends MTComponent implements ObjetoUMLGraph
 			}
 		}
 		//hacemos falsa esa posicion y evitar que otro la tome
-		esquinas.replace(dArr.get(dArr_aux[i]), false);
+		esquinas.put(dArr.get(dArr_aux[i]), false);
 		return dArr.get(dArr_aux[i]);
 	}
 	

@@ -1,6 +1,11 @@
 package advanced.drawing;
 
+import java.awt.event.KeyEvent;
+
 import org.mt4j.MTApplication;
+
+import advanced.umleditor.SessionLoader;
+import advanced.umleditor.UMLDataSaver;
 
 public class StartDrawExample extends MTApplication{
 	/**
@@ -22,6 +27,22 @@ public class StartDrawExample extends MTApplication{
 //		this.addScene(scene);
 //		this.frameRate(50);
 	}
+	 @Override
+	    protected void handleKeyEvent(KeyEvent e) {
+		 System.out.println("hola");
+	        char key = e.getKeyChar();
+	        if (e.getID() == KeyEvent.KEY_PRESSED) {
+	              if (key =='s') {
+	                  UMLDataSaver.guardarEnArchivo();
+	              }
+	              if (key =='l') {
+	                  SessionLoader.verifySessionJSON("/home/bruno/workspace/andamios/optitracksurfaceclient/newMT4J/hola.json");
+	              }
+	              else{
+	                  
+	              }
+	        }
+	    } 
 	
 }
 
