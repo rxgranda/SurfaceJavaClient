@@ -95,6 +95,7 @@ public class MainDrawingScene extends AbstractScene {
 	
 
 	private static Map<Integer, Usuario> listaUsuarios = new HashMap<Integer, Usuario>();
+	private static Map<Integer, Boolean> listaUsuariosModo = new HashMap<Integer, Boolean>();
 	private static Map<String, Usuario> listaUsuariosXCanales= new HashMap<String, Usuario>();
 
 
@@ -409,6 +410,7 @@ public class MainDrawingScene extends AbstractScene {
 				user.setEstado(1);
 				user.setCanal("canal"+user.getIdPluma());			
 				listaUsuarios.put(user.getIdPluma(), user);
+				listaUsuariosModo.put(user.getIdPluma(), false);
 				listaUsuariosXCanales.put(user.getCanal(), user);
 				txtUsuarios.setText("Usuarios Activos: "+ listaUsuarios.size());
 	
@@ -430,10 +432,21 @@ public class MainDrawingScene extends AbstractScene {
 		if(application_stated)
 			UndoHelper.deshacerAccion();
 	}
-	
 	public static  synchronized void modo_borrar(long idUsuario){
-		if(application_stated)
-			DrawSurfaceScene.setModoBorrar((int)idUsuario);
+		if(application_stated){
+			DrawSurfaceScene.setModoBorrar((int)idUsuario);			
+			synchronized (listaUsuariosModo) {
+				listaUsuariosModo.put((int)idUsuario, true);
+			}
+			
+
+		}
 		//UndoHelper.deshacerAccion();
+	}
+	
+	public static void cambiarModoBorrar(long idUsuario){
+		synchronized (listaUsuariosModo) {
+			listaUsuariosModo.put((int)idUsuario, false);
+		}
 	}
 }

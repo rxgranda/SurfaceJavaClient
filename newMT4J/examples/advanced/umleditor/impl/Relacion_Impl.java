@@ -471,7 +471,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		
 		halo=new MTRoundRectangle(objeto
 				.getPosicion().x-ObjetoUMLGraph.haloWidth/2, objeto
-				.getPosicion().y-ObjetoUMLGraph.haloWidth/2, 1, objeto
+				.getPosicion().y-ObjetoUMLGraph.haloWidth/2, 3, objeto
 				.getWidth()+ObjetoUMLGraph.haloWidth,
 				objeto.getHeight()+ObjetoUMLGraph.haloWidth, 1, 1, mtApp);		
 
@@ -770,6 +770,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		}		
 		halo.setVertices(haloVertex);
 		halo.setFillColor(ObjetoUMLGraph.haloSelected);
+		halo.sendToFront();
 		
 	}
 	@Override
@@ -870,9 +871,18 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 			
 			System.out.println("ESTAMOS BORRANDO DE UNA RELACION MULTIPLE FIIIIIIIIIN");
 		}
-		
+		/// deshacer boolean de relacion recursiva
+				
 	
 		}
+		
+		if(((Relacion)objeto).getObjetoInicio() instanceof Entidad && ((Relacion)objeto).getObjetoFin() instanceof Entidad){
+			if(((Relacion)objeto).getObjetoInicio()==((Relacion)objeto).getObjetoFin()){
+				((Entidad)((Relacion)objeto).getObjetoInicio()).setTieneRelacionRecursiva(false);
+			}
+		}
+		
+		
 	}
 	
 	@Override
@@ -1106,12 +1116,32 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 
 	@Override
 	public void undoDeleteActions() {
-		halo.setVisible(true);
-		halo.setPickable(true);
+		
 		container.addChild(linea);
 		((Relacion)objeto).getObjetoInicio().getFigura().guardarDatos(ObjetoUMLGraph.RELACIONES_INICIO_KEYWORD, this);
 		((Relacion)objeto).getObjetoFin().getFigura().guardarDatos(ObjetoUMLGraph.RELACIONES_FIN_KEYWORD, this);
-
+		if(((Relacion)objeto).getObjetoInicio() instanceof Entidad && ((Relacion)objeto).getObjetoFin() instanceof Entidad){
+			if(((Relacion)objeto).getObjetoInicio()==((Relacion)objeto).getObjetoFin()){
+				Entidad oEntidad=((Entidad)((Relacion)objeto).getObjetoInicio());
+				oEntidad.setTieneRelacionRecursiva(true);
+				 Vector3D puntoInicio=new Vector3D(oEntidad.getPosicion()).getAdded(new Vector3D(-oEntidad.getWidth()/2,-oEntidad.getHeight()/2-ObjetoUMLGraph.TAMANO_CARDINALIDAD));
+				  Vector3D puntoFin=new Vector3D(oEntidad.getPosicion()).getAdded(new Vector3D(oEntidad.getWidth()/2,-oEntidad.getHeight()/2-ObjetoUMLGraph.TAMANO_CARDINALIDAD));
+				  ((Relacion)objeto).setInicio(puntoInicio);
+				  ((Relacion)objeto).setFin(puntoFin);
+			}else{
+				Entidad oEntidadI=((Entidad)((Relacion)objeto).getObjetoInicio());
+				Entidad oEntidadF=((Entidad)((Relacion)objeto).getObjetoFin());
+		
+				 Vector3D puntoInicio=new Vector3D(oEntidadI.getPosicion()).getAdded(new Vector3D(oEntidadI.getWidth()/2+ObjetoUMLGraph.TAMANO_CARDINALIDAD,0));
+				  Vector3D puntoFin=new Vector3D(oEntidadF.getPosicion()).getAdded(new Vector3D(-oEntidadF.getWidth()/2-ObjetoUMLGraph.TAMANO_CARDINALIDAD,0));
+				  ((Relacion)objeto).setInicio(puntoInicio);
+				  ((Relacion)objeto).setFin(puntoFin);
+			}
+		}
+		actualizarRelacion();
+		halo.setVisible(true);
+		halo.setPickable(true);
+		halo.setPositionGlobal(linea.getCenterPointGlobal());
 		System.out.println("Tratando de hacer undo");
 		//container.removeChild(halo);		
 		
@@ -1129,6 +1159,8 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		//actualizar cardinalidad
 		this.actualizarCardinalidad(((Relacion)objeto).getCardinalidadInicio(), true);
 		this.actualizarCardinalidad(((Relacion)objeto).getCardinalidadFin(), false);
+		
+		
 
 		
 	}

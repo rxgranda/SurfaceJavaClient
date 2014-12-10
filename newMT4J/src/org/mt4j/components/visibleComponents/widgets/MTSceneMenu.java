@@ -29,6 +29,7 @@ import org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragEven
 import org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragProcessor;
 import org.mt4j.input.inputProcessors.componentProcessors.rotateProcessor.RotateProcessor;
 import org.mt4j.input.inputProcessors.componentProcessors.scaleProcessor.ScaleProcessor;
+import org.mt4j.input.inputProcessors.globalProcessors.CursorTracer;
 import org.mt4j.sceneManagement.Iscene;
 import org.mt4j.util.MT4jSettings;
 import org.mt4j.util.MTColor;
@@ -320,8 +321,9 @@ public class MTSceneMenu extends MTRectangle{
 								System.out.println("--> MODO BORRAR!");
 								if(getScene() instanceof MainDrawingScene ){
 									System.out.println("--> Cambiar modo!");
-									InputCursor m=de.getDragCursor();
+									InputCursor m=de.getDragCursor();							
 									MainDrawingScene.modo_borrar(m.sessionID);
+									CursorTracer.cambiarCursorImage(m.sessionID);
 								///}
 								
 							}

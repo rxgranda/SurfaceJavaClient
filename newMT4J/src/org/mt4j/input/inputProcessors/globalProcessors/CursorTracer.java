@@ -34,6 +34,7 @@ import org.mt4j.util.MTColor;
 import org.mt4j.util.math.Vector3D;
 
 import processing.core.PApplet;
+import processing.core.PImage;
 
 /**
  * The Class CursorTracer. A global input processor tracking all AbstractCursorInputEvt events and
@@ -142,14 +143,44 @@ public class CursorTracer extends AbstractGlobalInputProcessor{
 	 * 
 	 * @return the abstract shape
 	 */
+	
+	protected AbstractShape createDisplayComponentBorrarImage(PApplet applet, Vector3D position){
+				
+		MTEllipse displayShape =new CursorEllipse(applet, position, 20, 20);
+		if (eraserImage== null){
+			String altImagesPath = "data" + MTApplication.separator ;	
+			eraserImage = app.loadImage( altImagesPath+
+					"eraser.png");
+		}
+		displayShape.setPickable(false);
+		displayShape.setNoStroke(true);
+		displayShape.setTexture(eraserImage);
+		//displayShape.setDrawSmooth(true);
+		//displayShape.setStrokeWeight(2);
+		//displayShape.setStrokeColor(new MTColor(100, 130, 220, 255));
+		return displayShape;
+	}
 	protected AbstractShape createDisplayComponent(PApplet applet, Vector3D position){
-		MTEllipse displayShape = new CursorEllipse(applet, position, 15, 15);
+		
+		
+		MTEllipse displayShape = new CursorEllipse(applet, position, 15, 15);		
 		displayShape.setPickable(false);
 		displayShape.setNoFill(true);
 		displayShape.setDrawSmooth(true);
 		displayShape.setStrokeWeight(2);
 		displayShape.setStrokeColor(new MTColor(100, 130, 220, 255));
 		return displayShape;
+	}
+	private static Map<Integer, Integer> listaUsuariosModo=new HashMap<Integer, Integer>();
+	private static PImage eraserImage;
+
+	
+	
+
+	public static void cambiarCursorImage(long sessionID){		
+		synchronized (listaUsuariosModo) {
+			listaUsuariosModo.put((int)sessionID,(int)sessionID);
+		}
 	}
 	
 	private class CursorEllipse extends MTEllipse{
@@ -181,7 +212,22 @@ public class CursorTracer extends AbstractGlobalInputProcessor{
 			AbstractShape displayShape = null;
 			switch (cursorEvt.getId()) {
 			case AbstractCursorInputEvt.INPUT_STARTED:
-				displayShape = createDisplayComponent(app, position);
+				if((listaUsuariosModo.isEmpty()))
+					displayShape = createDisplayComponent(app, position);
+				else{
+					if(listaUsuariosModo.containsKey((int)c.sessionID)){
+						displayShape = createDisplayComponentBorrarImage(app, position);
+						synchronized (listaUsuariosModo) {
+							try {
+								listaUsuariosModo.remove((int)c.sessionID);
+							} catch (Exception e) {
+								e.printStackTrace();
+							}							
+						}
+					}else{
+						displayShape = createDisplayComponent(app, position);
+					}
+				}
 				cursorIDToDisplayShape.put(c, displayShape);
 				overlayGroup.addChild(displayShape);
 				displayShape.setPositionGlobal(position);
