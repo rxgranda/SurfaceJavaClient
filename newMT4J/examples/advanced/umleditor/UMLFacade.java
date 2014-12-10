@@ -22,6 +22,7 @@ public class UMLFacade {
 	
 	private Usuario persona;
 	private UMLRecognizer recognizer;
+	private boolean modo_borrador=false;
 	
 	
 	//Util
@@ -81,6 +82,13 @@ public class UMLFacade {
 	
 	public ObjetoUML reconocerObjeto(){
 		////System.out.println("Numero de muestrassssssss"+numMuestas);
+		if(isModo_borrador()){
+			reiniciar();
+			System.out.println("ES BORRADORRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR");
+			
+			objeto=ObjetoUML.DELETE_OBJECT_GESTURE;
+			return objeto;
+		}
 		int resultado=recognizer.recognize();
 		System.out.println("entrandooooooo");
 		if(resultado!=ObjetoUML.INVALIDO&&this.numMuestas>40){	
@@ -96,11 +104,7 @@ public class UMLFacade {
 					return objeto;
 				}
 			}
-			if(resultado==ObjetoUML.DELETE_GESTURE){
-				reiniciar();
-				System.out.println("ES BORRRADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
-				return ObjetoUML.DELETE_OBJECT_GESTURE;
-			}
+		
 				
 			objeto=UMLCollection.anadirObjeto(resultado,persona );
 			System.out.println("height: " + height+ " width:" + width );
@@ -113,7 +117,6 @@ public class UMLFacade {
 			}
 			if (objeto.getTipo()==ObjetoUML.ENTIDAD){
 				
-				System.out.println("ES RELACIONNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN");
 				if(width < DrawSurfaceScene.MIN_WIDTH){
 					width = (int)DrawSurfaceScene.MIN_WIDTH;
 				}
@@ -170,6 +173,7 @@ public class UMLFacade {
 		primerX=0;
 		primerY=0;
 		this.recognizer.reiniciar();
+		this.setModo_borrador(false);
 	
 	}
 	
@@ -205,13 +209,17 @@ public class UMLFacade {
 		
 	}
 	
-	public void cambiarModo(){
-		
-			recognizer.delete_mode();
-		
+
+
+
+	public boolean isModo_borrador() {
+		return modo_borrador;
 	}
-	public boolean isModoBorrado(){
-		return !recognizer.isEditMode();
+
+
+
+	public void setModo_borrador(boolean modo_borrador) {
+		this.modo_borrador = modo_borrador;
 	}
 	
 	

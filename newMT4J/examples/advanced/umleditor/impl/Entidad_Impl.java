@@ -606,14 +606,13 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 						//ystem.out.println("Reconocer:");
 						///canvas.removeChild(body);
 						//rectangulo.addChild(body);
-					//	ObjetoUML obj=recognizer.reconocerObjeto();
+						ObjetoUML obj=recognizer.reconocerObjeto();
 						//System.out.println("BORRAR W: "+obj.getWidth()+" H: "+obj.getHeight()+" Entidad "+((Entidad)objeto).getNombre()+" Resultado(2 Relacion,-2 Borado):"+obj.getTipo());
 						
 						
 					
-								if (recognizer.isModoBorrado()){//&&obj.getWidth()>10&&obj.getHeight()>10){
+								if (obj==ObjetoUML.DELETE_OBJECT_GESTURE){//&&obj.getWidth()>10&&obj.getHeight()>10){
 									if(puedeBorrarEntidad()){
-										recognizer.reiniciar();
 										UndoHelper.agregarAccion(UndoHelper.BORRAR_OBJETO_ACTION,objeto);
 										int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID)!=null)?(int)cursor.sessionID:Usuario.ID_DEFAULT_USER;															
 										removerEntidad(idUsuario);	

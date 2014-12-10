@@ -1215,8 +1215,8 @@ public class DrawSurfaceScene extends AbstractScene {
 			Usuario currentUser=(MainDrawingScene.getListaUsuarios().containsKey(idUsuario))?MainDrawingScene.getListaUsuarios().get(idUsuario):MainDrawingScene.getListaUsuarios().get(Usuario.ID_DEFAULT_USER);
 			UMLFacade componentRecognizer=listaComponentRecognizer.get(currentUser);
 			UMLFacade recognizer=(listaRecognizer.containsKey(idUsuario))?listaRecognizer.get(idUsuario):listaRecognizer.get(Usuario.ID_DEFAULT_USER);
-			componentRecognizer.cambiarModo();
-			recognizer.cambiarModo();
+			componentRecognizer.setModo_borrador(true);
+			recognizer.setModo_borrador(true);
 			//System.out.println("Intentando cambiar modo");
 		} catch (Exception e) {
 			e.printStackTrace();
