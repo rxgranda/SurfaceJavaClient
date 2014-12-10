@@ -27,6 +27,7 @@ public class StartDrawExample extends MTApplication{
 //		this.addScene(scene);
 //		this.frameRate(50);
 	}
+	/*
 	 @Override
 	    protected void handleKeyEvent(KeyEvent e) {
 		 System.out.println("hola");
@@ -36,14 +37,14 @@ public class StartDrawExample extends MTApplication{
 	                  UMLDataSaver.guardar();
 	              }
 	              if (key =='l') {
-	                  SessionLoader.verifySessionJSON("hola.json");
+	                //  System.out.println(SessionLoader.verifySessionJSON("C:/Users/admin/Documents/prueba.scti"));
 	              }
 	              else{
 	                  
 	              }
 	        }
 	    } 
-	
+	*/
 }
 
 
