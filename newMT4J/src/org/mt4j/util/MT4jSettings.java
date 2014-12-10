@@ -30,7 +30,7 @@ public class MT4jSettings {
 	
 	//////// CTI /////////
 	
-	public static long tiempoBackup;
+	public static long tiempoBackup=180000;
 	public static String directorioBackup="";
 	public static float MinimumHeightRatio = 0.14f;
 	public static float MinimumWidthRatio =0.08f;

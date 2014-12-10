@@ -66,6 +66,7 @@ public class MainDrawingScene extends AbstractScene {
 	private static Thread backupHelper;
 	private MTEllipse pencilBrush;// Dibujar Trazos
 	private MTEllipse pencilBrush2; // Borrar trazos
+	private MTEllipse [] listaPencil=new MTEllipse[6] ; 
 	private DrawSurfaceScene drawingScene;
 	private MTRectangle container;	
 	private static MTTextField txtUsuarios;
@@ -277,6 +278,57 @@ public class MainDrawingScene extends AbstractScene {
 		pencilBrush.setStrokeColor(new MTColor(0, 0, 0, 255));
 		pencilBrush.setFillColor(new MTColor(255, 255, 255, 255));
 
+		
+		MTEllipse plumaRoja = new MTEllipse(pa, new Vector3D(brushImage.width/2f,brushImage.height/2f,0), brushImage.width/2f, brushImage.width/2f, 60);
+		plumaRoja.setPickable(false);
+		plumaRoja.setNoFill(false);
+		plumaRoja.setNoStroke(true);
+		plumaRoja.setDrawSmooth(true);
+		plumaRoja.setStrokeColor(new MTColor(255, 0, 0));
+		plumaRoja.setFillColor(new MTColor(255, 0, 0));
+		
+		MTEllipse plumaAzul= new MTEllipse(pa, new Vector3D(brushImage.width/2f,brushImage.height/2f,0), brushImage.width/2f, brushImage.width/2f, 60);
+		plumaAzul.setPickable(false);
+		plumaAzul.setNoFill(false);
+		plumaAzul.setNoStroke(true);
+		plumaAzul.setDrawSmooth(true);
+		plumaAzul.setStrokeColor(new MTColor(0, 0, 255));
+		plumaAzul.setFillColor(new MTColor(0, 0, 255));
+		
+		MTEllipse plumaNaranja= new MTEllipse(pa, new Vector3D(brushImage.width/2f,brushImage.height/2f,0), brushImage.width/2f, brushImage.width/2f, 60);
+		plumaNaranja.setPickable(false);
+		plumaNaranja.setNoFill(false);
+		plumaNaranja.setNoStroke(true);
+		plumaNaranja.setDrawSmooth(true);
+		plumaNaranja.setStrokeColor(new MTColor(250,136,5));
+		plumaNaranja.setFillColor(new MTColor(250,136,5));
+		
+		MTEllipse plumaAmarilla= new MTEllipse(pa, new Vector3D(brushImage.width/2f,brushImage.height/2f,0), brushImage.width/2f, brushImage.width/2f, 60);
+		plumaAmarilla.setPickable(false);
+		plumaAmarilla.setNoFill(false);
+		plumaAmarilla.setNoStroke(true);
+		plumaAmarilla.setDrawSmooth(true);
+		plumaAmarilla.setStrokeColor(new MTColor(0,0,0));
+		plumaAmarilla.setFillColor(new MTColor(219,227,0));
+		
+		MTEllipse plumaVerde = new MTEllipse(pa, new Vector3D(brushImage.width/2f,brushImage.height/2f,0), brushImage.width/2f, brushImage.width/2f, 60);
+		plumaVerde.setPickable(false);
+		plumaVerde.setNoFill(false);
+		plumaVerde.setNoStroke(true);
+		plumaVerde.setDrawSmooth(true);
+		plumaVerde.setStrokeColor(new MTColor(9, 173, 31));
+		plumaVerde.setFillColor(new MTColor(9, 173, 31));
+		
+		
+		listaPencil[0]=pencilBrush;
+		listaPencil[1]=plumaRoja;
+		listaPencil[2]=plumaAzul;
+		listaPencil[3]=plumaVerde;
+		listaPencil[4]=plumaNaranja;
+		listaPencil[5]=plumaAmarilla;
+		
+		drawingScene.setListaPencil(listaPencil);
+		
 
 		pencilBrush2 = new MTEllipse(pa, new Vector3D(brushImage.width/2f,brushImage.height/2f,0), brushImage.width/2f, brushImage.width/2f, 60);
 		pencilBrush2.setPickable(false);
@@ -373,4 +425,17 @@ public class MainDrawingScene extends AbstractScene {
 		}
 		
 	}
+	
+	public static  synchronized void deshacer(){
+		if(application_stated)
+			UndoHelper.deshacerAccion();
+	}
+	public static  synchronized void modo_borrar(long idUsuario){
+		if(application_stated){
+			DrawSurfaceScene.setModoBorrar((int)idUsuario);						
+		}
+		//UndoHelper.deshacerAccion();
+	}
+	
+	
 }

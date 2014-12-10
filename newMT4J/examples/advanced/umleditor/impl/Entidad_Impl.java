@@ -38,6 +38,7 @@ import com.corundumstudio.socketio.SocketIOServer;
 
 import advanced.drawing.DrawSurfaceScene;
 import advanced.drawing.MainDrawingScene;
+import advanced.drawing.UndoHelper;
 import advanced.umleditor.UMLCollection;
 import advanced.umleditor.UMLDataSaver;
 import advanced.umleditor.UMLFacade;
@@ -60,7 +61,8 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 	private MTTextField headerField;
 	private MTTextArea  bodyField;
 	MTEllipse botonResize=null,botonResize2=null,botonResize3=null,botonResize4=null;
-	
+	private final MTCanvas canvas;
+	private final MTComponent container;
 
 	SocketIOServer server;
 
@@ -79,15 +81,18 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 		rectangulo.setFillColor(new MTColor(255,255,255));
 		rectangulo.setStrokeColor(new MTColor(0, 0, 0));
 		rectangulo.setNoStroke(true);
-		this.objeto=objeto;
 		
+		this.objeto=objeto;		
 		this.server=server;
+		this.canvas=canvas;
+		this.container=container;
+		
 		halo=new MTRoundRectangle(objeto
 				.getPosicion().x-ObjetoUMLGraph.haloWidth/2, objeto
-				.getPosicion().y-ObjetoUMLGraph.haloWidth/2, 1, objeto
+				.getPosicion().y-ObjetoUMLGraph.haloWidth/2, 0, objeto
 				.getWidth()+ObjetoUMLGraph.haloWidth,
 				objeto.getHeight()+ObjetoUMLGraph.haloWidth, 1, 1, mtApp);									
-		halo.setNoFill(true); // Hacerlo invisible
+	//	halo.setNoFill(true); // Hacerlo invisible
 		halo.setFillColor(ObjetoUMLGraph.haloDeSelected);
 		halo.removeAllGestureEventListeners();
 		
@@ -389,7 +394,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 				//objeto.setPosicion(objeto.getPosicion().getAdded(de.getTranslationVect()));
 				//rectangulo.setPositionGlobal(objeto.getPosicion());
 		//		halo.setPositionGlobal(new Vector3D(objeto.getPosicion().x,objeto.getPosicion().y));
-				System.out.println(" Mover entidad "+ ((Entidad)objeto).getNombre());
+				//System.out.println(" Mover entidad "+ ((Entidad)objeto).getNombre());
 			//	System.out.println("Fin evento de: Mover entidad Usuario:"+cursor.sessionID );
 				
 				InputCursor cursor = de.getDragCursor();
@@ -405,8 +410,9 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 				rectangulo.setPositionGlobal(rectangulo.getCenterPointGlobal().addLocal(posFinal));
 				objeto.setPosicion(rectangulo.getCenterPointGlobal());
 				halo.setPositionGlobal(rectangulo.getCenterPointGlobal());
+				
 //// TEST
-				//MainDrawingScene.clear();
+				MainDrawingScene.clear();
 /// TEST
 				LinkedList listaInicio=obtenerDatos(RELACIONES_INICIO_KEYWORD);
 				if(listaInicio!=null){
@@ -484,7 +490,9 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 									String canal=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?MainDrawingScene.getListaUsuarios().get((int)m.sessionID).getCanal():Usuario.CANAL_DEFAULT_USER;
 									int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)m.sessionID)!=null)?(int)m.sessionID:Usuario.ID_DEFAULT_USER;
 
-									server.getRoomOperations(canal).sendEvent("startEdition",new EntidadAdapter(((Entidad)objeto),idUsuario,objeto.EDIT_HEADER));						
+									//server.getRoomOperations(canal).sendEvent("startEdition",new EntidadAdapter(((Entidad)objeto),idUsuario,objeto.EDIT_HEADER));						
+									server.getNamespace("/login").getBroadcastOperations().sendEvent("startEdition",new EntidadAdapter(((Entidad)objeto),idUsuario,objeto.EDIT_HEADER));						
+
 									System.out.println("--Enviar edicion nombre Entidad "+ ((Entidad)objeto).getNombre());
 									System.out.println("Enviado "+canal+" "+server.getRoomOperations(canal).getClients().size());
 									break;
@@ -600,52 +608,20 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 						///canvas.removeChild(body);
 						//rectangulo.addChild(body);
 						ObjetoUML obj=recognizer.reconocerObjeto();
-						//System.out.println("BORRAR W: "+obj.getWidth()+" H: "+obj.getHeight()+" Entidad "+((Entidad)obj).getNombre());
-						if (obj ==ObjetoUML.DELETE_OBJECT_GESTURE&&obj.getWidth()>50&&obj.getHeight()>30){
+						System.out.println("BORRAR W: "+obj.getWidth()+" H: "+obj.getHeight()+" Entidad "+((Entidad)objeto).getNombre()+" Resultado(2 Relacion,-2 Borado):"+obj.getTipo());
+						
+						
+					
+								if (obj ==ObjetoUML.DELETE_OBJECT_GESTURE&&obj.getWidth()>10&&obj.getHeight()>10){
+									if(puedeBorrarEntidad()){
+										UndoHelper.agregarAccion(UndoHelper.BORRAR_OBJETO_ACTION,objeto);
+										int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID)!=null)?(int)cursor.sessionID:Usuario.ID_DEFAULT_USER;															
+										removerEntidad(idUsuario);	
+									}
+								}
+
 							
-							System.out.println("-Iniciar borrado Entidad "+ ((Entidad)objeto).getNombre());
-
-							String canal=(MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID)!=null)?MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID).getCanal():Usuario.CANAL_DEFAULT_USER;
-							int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID)!=null)?(int)cursor.sessionID:Usuario.ID_DEFAULT_USER;
-							server.getNamespace("/login").getBroadcastOperations().sendEvent("eraseElement",new EntidadAdapter(((Entidad)objeto),idUsuario,ObjetoUML.EDIT_HEADER));
-							Iterator iterRelacion = UMLCollection.getListaUML().entrySet().iterator();
-							System.out.println("tamanio de LISTA COLLECTION: "+UMLCollection.getListaUML().size());
-						    while (iterRelacion.hasNext()) {
-						        Map.Entry pairs = (Map.Entry)iterRelacion.next();
-						        ObjetoUML objuml= (ObjetoUML)pairs.getValue();
-						        if(objuml instanceof Relacion){
-						        	Relacion reluml = (Relacion)objuml;
-						        	
-						        	//System.out.println(reluml);
-						        	if(reluml.getObjetoInicio()!=null && reluml.getObjetoFin()!=null){
-						        		
-						        		//Object objeto_aux = reluml.getObjetoInicio();
-						        		
-						        		//if(objeto_aux instanceof RelacionMultiple)
-						        			//System.out.println("ESTE ES UN OBJETO RELACION MULTIPLE");
-						        		
-						        		
-						        		
-						        		//System.out.println(reluml.getObjetoInicio().getId());
-							        	if (reluml.getObjetoInicio().getId() == objeto.getId() || reluml.getObjetoFin().getId() == objeto.getId()){
-							        		server.getNamespace("/login").getBroadcastOperations().sendEvent("eraseElement",new RelacionAdapter(((Relacion)reluml),idUsuario));
-							        		
-							        	}
-						        	}
-						        }
-						         // avoids a ConcurrentModificationException
-						    }
-						    UMLDataSaver.agregarAccion(UMLDataSaver.BORRAR_OBJETO_ACTION, objeto,MainDrawingScene.getListaUsuarios().get(idUsuario) );
-							//container.removeChild(rectangulo);
-						  //  halo.setFillColor(new MTColor(255,255,255));
-							
-							rectangulo.removeFromParent();
-							halo.removeFromParent();
-									
-
-							removerRelaciones(idUsuario);
-
-						}
+						
 						break;
 					default:
 						break;
@@ -760,7 +736,10 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 			listaDatos= new LinkedList<Object>();
 			halo.setUserData(keyword, listaDatos);
 		}
-		listaDatos.add(datos);
+		synchronized (listaDatos) {
+			listaDatos.add(datos);
+		}
+		
 
 	}
 
@@ -812,38 +791,74 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 	}
 
 
-	public synchronized void removerRelaciones(int idUsuario){
+	public synchronized void removerEntidad(int idUsuario){
+		
+		/////////////////////////////////////////////////////////////////////
+		System.out.println("-Iniciar borrado Entidad "+ ((Entidad)objeto).getNombre());
+		server.getNamespace("/login").getBroadcastOperations().sendEvent("eraseElement",new EntidadAdapter(((Entidad)objeto),idUsuario,ObjetoUML.EDIT_HEADER));
+		/*Iterator iterRelacion = UMLCollection.getListaUML().entrySet().iterator();
+	    while (iterRelacion.hasNext()) {
+	        Map.Entry pairs = (Map.Entry)iterRelacion.next();
+	        ObjetoUML objuml= (ObjetoUML)pairs.getValue();
+	        if(objuml instanceof Relacion){
+	        	Relacion reluml = (Relacion)objuml;
+	        	//System.out.println(reluml);
+	        	if(reluml.getObjetoInicio()!=null && reluml.getObjetoFin()!=null){
+	        		
+	        		//System.out.println(reluml.getObjetoInicio().getId());
+		        	if (reluml.getObjetoInicio().getId() == objeto.getId() || reluml.getObjetoFin().getId() == objeto.getId()){
+		        		server.getNamespace("/login").getBroadcastOperations().sendEvent("eraseElement",new RelacionAdapter(((Relacion)reluml),idUsuario));
+		        		
+		        	}
+	        	}
+	        }
+	         // avoids a ConcurrentModificationException
+	    }*/
+	    UMLDataSaver.agregarAccion(UMLDataSaver.BORRAR_OBJETO_ACTION, objeto,MainDrawingScene.getListaUsuarios().get(idUsuario) );
+
+	  
+		objeto.setBorrado(true);
+		rectangulo.removeFromParent();
+		halo.removeFromParent();
+
+		////////////////////////////////////////////////////////////////////
+		
+		
+		
 		LinkedList listaInicio=obtenerDatos(RELACIONES_INICIO_KEYWORD);
 		//
 		if(listaInicio!=null){
-			System.out.println("tamanio de la lista de inicio: "+listaInicio.size());
-			for(Object o:listaInicio){
-				if(o instanceof ObjetoUMLGraph){
-					//((Relacion)objeto)
-
-					((Relacion_Impl)o).removerRelacion(idUsuario, true);
-					//System.out.println("ELIMINAR INICIO.........................................");
+			synchronized (listaInicio) {							
+				for(Object o:listaInicio){
+					if(o instanceof ObjetoUMLGraph){
+						//((Relacion)objeto)
+	
+						((Relacion_Impl)o).removerRelacion(idUsuario,true);
+						
+						//System.out.println("ELIMINAR INICIO.........................................");
+	
+					}
 
 				}
-
+				listaInicio.clear();
 			}
-			listaInicio.clear();
 		}
 		
 		LinkedList listaFin=obtenerDatos(RELACIONES_FIN_KEYWORD);
 		if(listaFin!=null){
-			System.out.println("tamanio de la lista de fin: "+listaFin.size());
-			for(Object o:listaFin){
-				if(o instanceof ObjetoUMLGraph){
-					//((Relacion)objeto)
-					
-					//envio el parametro false, para que en caso de que sea una relacion multiple del otro lado,
-					//la pueda manejar 
-					((Relacion_Impl)o).removerRelacion(idUsuario, true);
-				
-					}
+			synchronized (listaFin) {						
+				for(Object o:listaFin){
+					if(o instanceof ObjetoUMLGraph){
+						//((Relacion)objeto)
+	
+						((Relacion_Impl)o).removerRelacion(idUsuario,true);										
+					//	System.out.println("ELIMINAR FIN.........................................");
+	
+						}
+				}
+				listaFin.clear();
+
 			}
-			listaFin.clear();
 		}
 
 	}
@@ -853,11 +868,44 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 		//System.out.println("ENTIDAD........ENTIDA... ENTIDAD....."+ objeto.getId());
 		LinkedList listaDatos=(LinkedList<Object>) halo.getUserData(keyword);
 		if(listaDatos!=null){
-			if(listaDatos.contains(datos)){
-				listaDatos.remove(datos);
+			synchronized (listaDatos) {						
+				if(listaDatos.contains(datos)){
+					listaDatos.remove(datos);
+				}
 			}
 		}
 		
 		
+	}
+
+
+ boolean puedeBorrarEntidad(){
+	LinkedList listaInicio=obtenerDatos(RELACIONES_INICIO_KEYWORD);
+	LinkedList listaFin=obtenerDatos(RELACIONES_FIN_KEYWORD);
+	boolean validarLista1=(listaInicio==null)?true:((listaInicio.isEmpty())?true:false);
+	boolean validarLista2=(listaFin==null)?true:((listaFin.isEmpty())?true:false);
+	return 	validarLista1&&validarLista2;
+ }
+	@Override
+	public void undoDeleteActions() {
+		objeto.setBorrado(false);
+		container.addChild(rectangulo);
+		canvas.addChild(halo);		
+		
+	}
+
+
+
+	@Override
+	public void undoAddActions() {
+		removerEntidad(Usuario.ID_DEFAULT_USER);					
+	}
+
+
+
+	@Override
+	public void undoEditActions() {
+		this.actualizarEtiquetas();		
+		server.getNamespace("/login").getBroadcastOperations().sendEvent("syncEdition",new EntidadAdapter(((Entidad)objeto),Usuario.ID_DEFAULT_USER,-1));		
 	}
 }

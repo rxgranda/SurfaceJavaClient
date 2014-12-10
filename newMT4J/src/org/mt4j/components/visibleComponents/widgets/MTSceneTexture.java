@@ -351,10 +351,10 @@ public class MTSceneTexture extends MTRectangle {
 	public void addSceneMenu(){
 		if (sceneMenu == null){
 			float menuWidth = 64;
-			float menuHeight = 64;
+			float menuHeight = 32;
 //			this.sceneMenu = new MTSceneMenu(this, app.width-menuWidth/2f, 0-menuHeight/2f, menuWidth, menuHeight, app);
 //			this.sceneMenu = new MTSceneMenu(this, app.width-menuWidth, 0, menuWidth, menuHeight, app);
-			this.sceneMenu = new MTSceneMenu(app, this, app.width-menuWidth, app.height-menuHeight, menuWidth, menuHeight);
+			this.sceneMenu = new MTSceneMenu(app, this, app.width/2-menuWidth/2, 0, menuWidth, menuHeight);
 			this.sceneMenu.setVisible(false);
 		}
 		
