@@ -157,7 +157,7 @@ public class UMLFacade {
 		return objeto;		
 	}
 		
-	private void reiniciar(){
+	public void reiniciar(){
 		this.minX=100000000;
 		this.minY=10000000;
 		this.maxX=0;
@@ -209,6 +209,9 @@ public class UMLFacade {
 		
 			recognizer.delete_mode();
 		
+	}
+	public boolean isModoBorrado(){
+		return !recognizer.isEditMode();
 	}
 	
 	
