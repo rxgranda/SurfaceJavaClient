@@ -82,7 +82,7 @@ public class UMLFacade {
 	public ObjetoUML reconocerObjeto(){
 		////System.out.println("Numero de muestrassssssss"+numMuestas);
 		int resultado=recognizer.recognize();
-		
+		System.out.println("entrandooooooo");
 		if(resultado!=ObjetoUML.INVALIDO&&this.numMuestas>40){	
 			int width=(int)(maxX-minX);
 			int height=(int)(maxY-minY);
@@ -96,6 +96,11 @@ public class UMLFacade {
 					return objeto;
 				}
 			}
+			if(resultado==ObjetoUML.DELETE_GESTURE){
+				reiniciar();
+				System.out.println("ES BORRRADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
+				return ObjetoUML.DELETE_OBJECT_GESTURE;
+			}
 				
 			objeto=UMLCollection.anadirObjeto(resultado,persona );
 			System.out.println("height: " + height+ " width:" + width );
@@ -108,7 +113,7 @@ public class UMLFacade {
 			}
 			if (objeto.getTipo()==ObjetoUML.ENTIDAD){
 				
-				
+				System.out.println("ES RELACIONNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN");
 				if(width < DrawSurfaceScene.MIN_WIDTH){
 					width = (int)DrawSurfaceScene.MIN_WIDTH;
 				}

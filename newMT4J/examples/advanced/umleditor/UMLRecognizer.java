@@ -40,7 +40,7 @@ public class UMLRecognizer {
 					IRecognitionResult result = recognizer.recognize(stroke);	
 
 					//if(result.getBestShape().label.equalsLowerCase("line"))
-					if(result.getBestShape() != null&&stroke.getPoints().size()>40){
+					if(result.getBestShape() != null&&stroke.getPoints().size()>40&&isEditMode()){
 						System.out.println(result.getBestShape().getInterpretation().label);
 						String shapeLabel=result.getBestShape().getInterpretation().label;						
 						if(shapeLabel.equals("Rectangle"))					
@@ -86,8 +86,11 @@ public class UMLRecognizer {
 					}
 				}
 			}
-			stroke=new Stroke();						
-			return ObjetoUML.INVALIDO;
+			stroke=new Stroke();	
+			if(!isEditMode())
+				return ObjetoUML.DELETE_GESTURE;	
+			else
+				return ObjetoUML.INVALIDO;
 		}catch (Exception e){
 			e.printStackTrace();
 		}
@@ -101,7 +104,7 @@ public class UMLRecognizer {
 		modo_edicion=false;
 	}
 	public void edit_mode(){
-		//System.out.println("Cambiar a modo edicion");
+		System.out.println("Cambiar a modo edicion");
 		modo_edicion=true;
 	}
 	

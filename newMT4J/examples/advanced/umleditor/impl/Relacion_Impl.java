@@ -565,7 +565,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 				
 					//	System.out.println("Reconocer:");
 						ObjetoUML obj=recognizer.reconocerObjeto();
-						if (obj ==ObjetoUML.DELETE_OBJECT_GESTURE&&obj.getWidth()>40&&obj.getHeight()>40){
+						if (obj ==ObjetoUML.DELETE_OBJECT_GESTURE){//&&obj.getWidth()>40&&obj.getHeight()>40){
 							
 							
 							int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID)!=null)?(int)cursor.sessionID:Usuario.ID_DEFAULT_USER;
