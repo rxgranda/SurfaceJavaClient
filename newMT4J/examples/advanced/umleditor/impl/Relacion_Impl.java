@@ -38,6 +38,7 @@ import org.mt4j.util.math.Vertex;
 import com.corundumstudio.socketio.SocketIOServer;
 
 import advanced.drawing.MainDrawingScene;
+import advanced.drawing.UndoHelper;
 import advanced.umleditor.UMLCollection;
 import advanced.umleditor.UMLDataSaver;
 import advanced.umleditor.UMLFacade;
@@ -62,6 +63,8 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 	private final MTLine linea ;
 	private final ObjetoUML objeto;
 	final MTRoundRectangle halo;
+	final MTComponent container;
+	final MTCanvas canvas;
 	static float DISTANCIA_FROM_NODE = 0.5f;
 	
 	private  ObjetoUML textoflotInicio;
@@ -92,7 +95,8 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 	public Relacion_Impl(final MTApplication mtApp, final MTComponent container, final MTCanvas canvas, final ObjetoUML objeto, final UMLFacade recognizer,final SocketIOServer server) {
 		super(mtApp);
 		this.mtApp=mtApp;
-		
+		this.canvas=canvas;
+		this.container=container;
 		////
 		Vertex a= new Vertex(),b= new Vertex();
 		Vertex []c=new Vertex[2];
@@ -467,7 +471,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		
 		halo=new MTRoundRectangle(objeto
 				.getPosicion().x-ObjetoUMLGraph.haloWidth/2, objeto
-				.getPosicion().y-ObjetoUMLGraph.haloWidth/2, 0, objeto
+				.getPosicion().y-ObjetoUMLGraph.haloWidth/2, 1, objeto
 				.getWidth()+ObjetoUMLGraph.haloWidth,
 				objeto.getHeight()+ObjetoUMLGraph.haloWidth, 1, 1, mtApp);		
 
@@ -477,9 +481,9 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		
 		
 		
-		halo.setNoFill(true);
+		//halo.setNoFill(true);
 		
-	//	halo.setFillColor(ObjetoUMLGraph.haloSelected);
+		halo.setFillColor(ObjetoUMLGraph.haloSelected);
 		
 		halo.removeAllGestureEventListeners();		
 		halo.setNoStroke(false);
@@ -564,13 +568,13 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 						if (obj ==ObjetoUML.DELETE_OBJECT_GESTURE&&obj.getWidth()>40&&obj.getHeight()>40){
 							
 							
-							String canal=(MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID)!=null)?MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID).getCanal():Usuario.CANAL_DEFAULT_USER;
 							int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID)!=null)?(int)cursor.sessionID:Usuario.ID_DEFAULT_USER;
 							
 							
-							server.getNamespace("/login").getBroadcastOperations().sendEvent("eraseElement",new RelacionAdapter(((Relacion)objeto),idUsuario));
 							
 							 //server.getNamespace("/login").getBroadcastOperations().sendEvent("broad",new RelacionAdapter(((Relacion)objeto),idUsuario));
+							
+							UndoHelper.agregarAccion(UndoHelper.BORRAR_OBJETO_ACTION, objeto);
 
 							removerRelacion(idUsuario, false);
 
@@ -617,6 +621,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		
 		LinkedList<TextoFlotanteImpl> textosflotantes = new LinkedList<TextoFlotanteImpl>();
 		linea.setUserData(ObjetoUMLGraph.TEXTO_FLOTANTE_KEYWORD, textosflotantes);
+		halo.sendToFront();
 		//this.actualizarRelacion();
 	}
 	@Override
@@ -780,7 +785,9 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 	}
 	@Override
 	public void actualizarEtiquetas() {
-		// TODO Auto-generated method stub
+		((TextoFlotante)textoflotInicio).getFigura().actualizarEtiquetas();
+		((TextoFlotante)textoflotFin).getFigura().actualizarEtiquetas();
+		
 		
 	}
 	
@@ -788,12 +795,20 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 	public synchronized void removerRelacion(int idUsuario, boolean propagacion){
 
 		System.out.println("-Eliminar relacion "+ ((Relacion)objeto).getId());
+		
+		/////////////////////////////////////////////////////////////////////////
+		server.getNamespace("/login").getBroadcastOperations().sendEvent("eraseElement",new RelacionAdapter(((Relacion)objeto),idUsuario));
+		UMLDataSaver.agregarAccion(UMLDataSaver.BORRAR_OBJETO_ACTION, objeto,MainDrawingScene.getListaUsuarios().get(idUsuario) );
 
-		LinkedList<TextoFlotanteImpl> textosflotantes = (LinkedList<TextoFlotanteImpl>)linea.getUserData(ObjetoUMLGraph.TEXTO_FLOTANTE_KEYWORD);
-		for (TextoFlotanteImpl textoflot : textosflotantes ){
-			
-			textoflot.removeGrafico();
-			
+		/////////////////////////////////////////////////////////////////////////
+
+		/*LinkedList<TextoFlotanteImpl> textosflotantes = (LinkedList<TextoFlotanteImpl>)linea.getUserData(ObjetoUMLGraph.TEXTO_FLOTANTE_KEYWORD);
+		synchronized (textosflotantes) {					
+			for (TextoFlotanteImpl textoflot : textosflotantes ){
+				
+				textoflot.removeGrafico();
+				
+			}
 		}
 		/*
 		MTComponent bus = linea.getChildByName("TextoFlotanteImplINICIO");
@@ -825,7 +840,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		}
 		
 		if(!propagacion){
-	
+
 		System.out.println("ingresa al if de propagacion");
 		Object inicio=((Relacion)this.objeto).getObjetoInicio();
 		if(inicio instanceof Entidad){
@@ -856,15 +871,10 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 			System.out.println("ESTAMOS BORRANDO DE UNA RELACION MULTIPLE FIIIIIIIIIN");
 		}
 		
-		//Entidad fin=((Entidad)((Relacion)this.objeto).getObjetoFin());
-		//fin.getFigura().eliminarDatos(RELACIONES_FIN_KEYWORD, this);
-		UMLDataSaver.agregarAccion(UMLDataSaver.BORRAR_OBJETO_ACTION, objeto, MainDrawingScene.getListaUsuarios().get(idUsuario) );
-
-		}
 	
-		
-		
+		}
 	}
+	
 	@Override
 	public void eliminarDatos(String keyword, Object datos) {
 		// TODO Auto-generated method stub
@@ -899,6 +909,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		}
 		return ubicacion;
 	}
+	// cardinalidadSwitch=true cambiar cardinalidad inicio
 	public synchronized void actualizarCardinalidad(final int cardinalidad,boolean cardinalidadSwitch){
 		System.out.println("-Actualizar cardinalidad relacion "+ ((Relacion)objeto).getId());
 
@@ -1090,6 +1101,36 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 																							
 			return false;
 		}
+	}
+
+
+	@Override
+	public void undoDeleteActions() {
+		halo.setVisible(true);
+		halo.setPickable(true);
+		container.addChild(linea);
+		((Relacion)objeto).getObjetoInicio().getFigura().guardarDatos(ObjetoUMLGraph.RELACIONES_INICIO_KEYWORD, this);
+		((Relacion)objeto).getObjetoFin().getFigura().guardarDatos(ObjetoUMLGraph.RELACIONES_FIN_KEYWORD, this);
+
+		System.out.println("Tratando de hacer undo");
+		//container.removeChild(halo);		
+		
+		
+	}
+	@Override
+	public void undoAddActions() {
+		//server.getNamespace("/login").getBroadcastOperations().sendEvent("eraseElement",new RelacionAdapter(((Relacion)objeto),Usuario.ID_DEFAULT_USER));		
+		removerRelacion(Usuario.ID_DEFAULT_USER,false);		
+	}
+	@Override
+	public void undoEditActions() {
+		
+		actualizarEtiquetas();	
+		//actualizar cardinalidad
+		this.actualizarCardinalidad(((Relacion)objeto).getCardinalidadInicio(), true);
+		this.actualizarCardinalidad(((Relacion)objeto).getCardinalidadFin(), false);
+
+		
 	}
 
 

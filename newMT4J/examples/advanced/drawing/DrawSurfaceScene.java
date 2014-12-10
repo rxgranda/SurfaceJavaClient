@@ -116,11 +116,13 @@ public class DrawSurfaceScene extends AbstractScene {
 	public static final int nroPtsConfirmaClick = 6;
 	public static float MIN_HEIGHT, MIN_WIDTH,MAX_WIDTH,MAX_HEIGHT ;
 	
-	Map< Integer, UMLFacade> listaRecognizer=new HashMap<Integer, UMLFacade>();
-	Map< Integer, UMLFacade> listaComponentes=new HashMap<Integer, UMLFacade>();
-	Map< Usuario, UMLFacade> listaComponentRecognizer=new HashMap<Usuario, UMLFacade>();
+	static Map< Integer, UMLFacade> listaRecognizer=new HashMap<Integer, UMLFacade>();
+	static Map< Integer, UMLFacade> listaComponentes=new HashMap<Integer, UMLFacade>();
+	static Map< Usuario, UMLFacade> listaComponentRecognizer=new HashMap<Usuario, UMLFacade>();
 	Map< Usuario, HaloHelper> listaHaloHelper=new HashMap<Usuario, HaloHelper>();
 	Map< Usuario, ArrayList<Vector3D>> listaPuntos=new HashMap<Usuario, ArrayList<Vector3D>>();
+	private AbstractShape [] listaPencil; 
+
 	
 	
 	
@@ -317,16 +319,17 @@ public class DrawSurfaceScene extends AbstractScene {
 					//System.out.println(arg1.getId()+" "+arg1.getNombre());
 					System.out.println("**Iniciar Edicion Entidad"+ arg1.getNombre());
 
-					ObjetoUML objeto=listaRecognizer.get(arg1.getIdUsuario()).getObjetoUML(arg1.getId());
+					//listaRecognizer.get(arg1.getIdUsuario());
+					ObjetoUML objeto=UMLFacade.getObjetoUML(arg1.getId());
 					//System.out.println("objeto "+objeto);
 					if(objeto instanceof Entidad){
 						Entidad entidad=(Entidad)objeto;
+						UndoHelper.agregarAccion(UndoHelper.EDITAR_OBJETO_ACTION, objeto);
 						arg1.actualizar(entidad);
 						//System.out.println("Nombre objeto:"+entidad.getNombre());
 						objeto.getFigura().actualizarEtiquetas();
-						
-						server.getNamespace("/login").getBroadcastOperations().sendEvent("syncEdition",new EntidadAdapter(((Entidad)objeto),arg1.getIdUsuario(),-1));
 						UMLDataSaver.agregarAccion(UMLDataSaver.EDITAR_OBJETO_ACTION, objeto,listaUsuarios.get(arg1.getIdUsuario()) );
+						server.getNamespace("/login").getBroadcastOperations().sendEvent("syncEdition",new EntidadAdapter(((Entidad)objeto),arg1.getIdUsuario(),-1));
 					}
 					}catch (Exception e){
 						System.out.println("ERROR endEdition Listener");	
@@ -342,16 +345,17 @@ public class DrawSurfaceScene extends AbstractScene {
 					AckRequest arg2){
 				System.out.println("**Iniciar Edicion Texto"+ arg1.getNombre());
 					try{
+				//	listaRecognizer.get(arg1.getIdUsuario());
 					//System.out.println(arg1.getId()+" "+arg1.getNombre());
-					ObjetoUML objeto=listaRecognizer.get(arg1.getIdUsuario()).getObjetoUML(arg1.getId());
+					ObjetoUML objeto=UMLFacade.getObjetoUML(arg1.getId());
 					//System.out.println("objeto "+objeto);
 					if(objeto instanceof TextoFlotante){
 						TextoFlotante textflot=(TextoFlotante)objeto;
 						if (textflot.getOwner() != null){
 							ObjetoUML tem = textflot.getOwner();
-							if (tem instanceof Relacion){
-								arg1.actualizar(textflot);
-								
+							UndoHelper.agregarAccion(UndoHelper.EDITAR_OBJETO_ACTION, tem);
+							if (tem instanceof Relacion){								
+								arg1.actualizar(textflot);								
 								objeto.getFigura().actualizarEtiquetas();
 								UMLDataSaver.agregarAccion(UMLDataSaver.EDITAR_OBJETO_ACTION, tem,listaUsuarios.get(arg1.getIdUsuario()));
 							}
@@ -377,11 +381,13 @@ public class DrawSurfaceScene extends AbstractScene {
 				System.out.println("**Iniciar Edicion cardinalidad");
 
 					try{
+					//listaRecognizer.get(cardinalidadAdpter.getIdUsuario());
 					//System.out.println(cardinalidadAdpter.getId()+" "+cardinalidadAdpter.getCardinalidad());
-					ObjetoUML objeto=listaRecognizer.get(cardinalidadAdpter.getIdUsuario()).getObjetoUML(cardinalidadAdpter.getId());
+					ObjetoUML objeto=UMLFacade.getObjetoUML(cardinalidadAdpter.getId());
 					//System.out.println("objeto "+objeto);
 					if(objeto instanceof Relacion){
 						Relacion relacion=(Relacion)objeto;
+						UndoHelper.agregarAccion(UndoHelper.EDITAR_OBJETO_ACTION, objeto);
 						//System.out.println("CARD :" + cardinalidadAdpter.getCardinalidad() + "CARD SWITCH:" + cardinalidadAdpter.isCardinalidadSwitch());
 						((Relacion_Impl)relacion.getFigura()).actualizarCardinalidad(cardinalidadAdpter.getCardinalidad(), cardinalidadAdpter.isCardinalidadSwitch());																
 						UMLDataSaver.agregarAccion(UMLDataSaver.EDITAR_OBJETO_ACTION, objeto,listaUsuarios.get(cardinalidadAdpter.getIdUsuario()) );
@@ -508,9 +514,11 @@ public class DrawSurfaceScene extends AbstractScene {
 						 	
 						if(componente!=currentComponent){
 							 Object entidad2=((MTComponent)currentComponent).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
-							if (entidad2 instanceof ObjetoUMLGraph){
+							 listaHaloHelper.get(currentUser).setHoverFueraHalo(true);
+							 if (entidad2 instanceof ObjetoUMLGraph){
 								((MTPolygon)((ObjetoUMLGraph)entidad2).getHalo()).setFillColor(ObjetoUMLGraph.haloSelected);
 								((ObjetoUMLGraph)entidad2).getHalo().sendToFront();
+								
 								////System.out.println("Pintandoooooo");
 								//@SuppressWarnings("rawtypes")
 								LinkedList listaVisitados=(LinkedList<MTComponent>) ((MTComponent)componente).getUserData(ObjetoUMLGraph.COMPONENTES_VISITADOS_KEYWORD);
@@ -786,7 +794,29 @@ public class DrawSurfaceScene extends AbstractScene {
 										 * brushes.length-1)); AbstractShape
 										 * brushToDraw = brushes[brushIndex];
 										 */
-										AbstractShape brushToDraw = drawShape;
+										AbstractShape brushToDraw ;
+										switch (currentUser.getIdPluma()) { // escoger  el color de la pluma de acuerdo al idUsuario
+										case 1: // Rojo
+											brushToDraw=listaPencil[1];
+											break;
+										case 2: // Azul
+											brushToDraw=listaPencil[2];
+											break;
+										case 3: // Verde
+											brushToDraw=listaPencil[3];
+											break;
+										case 4: // Naranja
+											brushToDraw=listaPencil[4];
+											break;
+										case 5: // Amarillo
+											brushToDraw=listaPencil[5];
+											break;
+										default: // Negro
+											brushToDraw = drawShape;
+											//brushToDraw=listaPencil[5];
+											break;
+										}
+										
 
 										// Draw brush
 										brushToDraw.drawComponent(mtApp.g);
@@ -880,7 +910,8 @@ public class DrawSurfaceScene extends AbstractScene {
 									ObjetoUMLGraph diagrama= new Entidad_Impl(mtApp,container,getCanvas() ,componentRecognizer,objeto,server);									
 									objeto.setFigura(diagrama);
 									UMLDataSaver.agregarAccion(UMLDataSaver.AGREGAR_OBJETO_ACTION,objeto,currentUser);
-									
+									UndoHelper.agregarAccion(UndoHelper.AGREGAR_OBJETO_ACTION, objeto);
+
 									//anadirObjeto(diagrama.getFigura());
 									break;
 								case ObjetoUML.RELACION:
@@ -889,20 +920,43 @@ public class DrawSurfaceScene extends AbstractScene {
 										
 										Object entidad1=((MTComponent)componente).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
 										Object entidad2=((MTComponent)destino).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
-										if(entidad1!=null&&entidad2!=null&&entidad1 instanceof ObjetoUMLGraph && entidad2 instanceof ObjetoUMLGraph && entidad1!=entidad2){
-											System.out.println("SE IDENTIFICARON OBJETOS  - ENTIDAD Y ENTIDAD");
+
+										if(entidad1!=null&&entidad2!=null&&entidad1 instanceof ObjetoUMLGraph && entidad2 instanceof ObjetoUMLGraph ){
+											
 											//Reubicar objeto relacion
 											  HaloHelper helper=listaHaloHelper.get(currentUser);
 											  //System.out.println("try resize");
-											  if(!helper.getHoverInicio().equalsVector(new Vector3D())&&!helper.getHoverFin().equalsVector(new Vector3D()))
-											  {
-												 ((Relacion)objeto).setInicio(helper.getHoverInicio());
-												 ((Relacion)objeto).setFin(helper.getHoverFin());
-												 listaHaloHelper.remove(currentUser);
-												 helper=new HaloHelper();
-												 listaHaloHelper.put(currentUser, helper);
-												 System.out.println("resize done!!!!!!!!!!!");
+											  
+											  if(entidad1!=entidad2){
+												  if(!helper.getHoverInicio().equalsVector(new Vector3D())&&!helper.getHoverFin().equalsVector(new Vector3D()))
+												  {
+													 ((Relacion)objeto).setInicio(helper.getHoverInicio());
+													 ((Relacion)objeto).setFin(helper.getHoverFin());
+													 listaHaloHelper.remove(currentUser);
+													 helper=new HaloHelper();
+													 listaHaloHelper.put(currentUser, helper);
+													// System.out.println("resize done!!!!!!!!!!!");
+												  }
+											  }else{
+												 
+												  if(entidad1 instanceof Entidad_Impl){	
+													 Entidad oEntidad= (Entidad)((Entidad_Impl)entidad1).getObjetoUML();
+													  if(!oEntidad.isTieneRelacionRecursiva()&&listaHaloHelper.get(currentUser).isHoverFueraHalo()){// Si aun no tiene relacion recursiva
+														  
+														  Vector3D puntoInicio=new Vector3D(oEntidad.getPosicion()).getAdded(new Vector3D(-oEntidad.getWidth()/2,-oEntidad.getHeight()/2-ObjetoUMLGraph.TAMANO_CARDINALIDAD));
+														  Vector3D puntoFin=new Vector3D(oEntidad.getPosicion()).getAdded(new Vector3D(oEntidad.getWidth()/2,-oEntidad.getHeight()/2-ObjetoUMLGraph.TAMANO_CARDINALIDAD));
+														  ((Relacion)objeto).setInicio(puntoInicio);
+														  ((Relacion)objeto).setFin(puntoFin);
 
+														  ((Entidad)((Entidad_Impl)entidad1).getObjetoUML()).setTieneRelacionRecursiva(true);
+														 
+													  	} else{// si ya tiene relacion recursiva
+													  		 break;
+													  	}
+														  
+												  }
+													  
+												  
 											  }
 											//
 											((Relacion)objeto).setObjetoInicio(((ObjetoUMLGraph)entidad1).getObjetoUML());
@@ -924,6 +978,7 @@ public class DrawSurfaceScene extends AbstractScene {
 
 											objeto.setFigura(linea);	
 											UMLDataSaver.agregarAccion(UMLDataSaver.AGREGAR_OBJETO_ACTION,objeto, currentUser);
+											UndoHelper.agregarAccion(UndoHelper.AGREGAR_OBJETO_ACTION, objeto);
 
 											//anadirObjeto(linea.getFigura());
 											
@@ -1239,9 +1294,23 @@ public class DrawSurfaceScene extends AbstractScene {
 		return true;
 	}
 	
+
+	public void setListaPencil(MTEllipse[] lista){
+		listaPencil=lista;		
+	}
 	
-	
-	
-	
-	
+	public static void setModoBorrar( int idUsuario){
+		try {
+			Usuario currentUser=(MainDrawingScene.getListaUsuarios().containsKey(idUsuario))?MainDrawingScene.getListaUsuarios().get(idUsuario):MainDrawingScene.getListaUsuarios().get(Usuario.ID_DEFAULT_USER);
+			UMLFacade componentRecognizer=listaComponentRecognizer.get(currentUser);
+			UMLFacade recognizer=(listaRecognizer.containsKey(idUsuario))?listaRecognizer.get(idUsuario):listaRecognizer.get(Usuario.ID_DEFAULT_USER);
+			componentRecognizer.cambiarModo();
+			recognizer.cambiarModo();
+			//System.out.println("Intentando cambiar modo");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+
 }

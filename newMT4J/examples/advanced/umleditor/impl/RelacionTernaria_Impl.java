@@ -418,6 +418,33 @@ public class RelacionTernaria_Impl extends MTComponent implements ObjetoUMLGraph
 		// TODO Auto-generated method stub
 
 	}
+
+
+
+
+	@Override
+	public void undoDeleteActions() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+
+	@Override
+	public void undoAddActions() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+
+	@Override
+	public void undoEditActions() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 	
