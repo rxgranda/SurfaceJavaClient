@@ -2,8 +2,11 @@ package advanced.umleditor;
 
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -16,6 +19,7 @@ import javax.swing.JFrame;
 
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
+import org.mt4j.MTApplication;
 import org.mt4j.util.MT4jSettings;
 
 import advanced.umleditor.logic.Entidad;
@@ -39,13 +43,19 @@ public class UMLDataSaver implements Runnable {
 	public static final int GRAPHICAL_ACTION=2;
 	
 	private static Map jsonMap;	
-
+	public static String DEFAULT_FILE_NAME_BACKUP="";
+	public static String DEFAULT_FILE_EXTENSION_BACKUP=".scti";
 	private static Map metadata;	
 	private static ArrayList datos;
+	
+
 
 	
 	public UMLDataSaver(Map<Integer, Usuario> listaUsuarios, int appWidth, int appHeigth){
-		USER_BACKUP_DIRECTORY=MT4jSettings.directorioBackup ;
+		USER_BACKUP_DIRECTORY=MT4jSettings.directorioBackup ;		
+		Calendar cal = Calendar.getInstance();    	
+    	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd_HH-mm");
+    	
 		jsonMap=new LinkedHashMap();	
 		metadata=new LinkedHashMap();	
 		datos=new ArrayList();	
@@ -71,7 +81,9 @@ public class UMLDataSaver implements Runnable {
 			usuarioMap.put("canal_SocketIO", user.getCanal());
 			usuarioContainer.put(USER_KEYWORD, usuarioMap);
 			usuariosMapList.add( usuarioContainer);
+			DEFAULT_FILE_NAME_BACKUP+=user.getNombres().trim()+"_";
 		}
+		DEFAULT_FILE_NAME_BACKUP+=sdf.format(cal.getTime())+DEFAULT_FILE_EXTENSION_BACKUP;
 		defaultUser.put("id",new Integer(Usuario.ID_DEFAULT_USER));
 		defaultUser.put("id_pluma", Usuario.ID_DEFAULT_USER);
 		defaultUser.put("nombres", Usuario.NOMBRE_DEFAULT_USER);
@@ -361,7 +373,21 @@ public class UMLDataSaver implements Runnable {
 		int a=0;
 	}
 	
-	public static synchronized void guardar(String directorio){
+	public static  void escribirArchivo(String nombreArchivo){
+		System.out.println("Escribiendo "+ nombreArchivo);
+		PrintWriter writer;
+		try {
+			writer = new PrintWriter(nombreArchivo, "UTF-8");
+			String copy=new String (JSONValue.toJSONString(jsonMap));
+			writer.write(copy);
+			writer.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 	
@@ -374,7 +400,7 @@ public class UMLDataSaver implements Runnable {
 		UMLDataSaver.jsonMap = jsonMap;
 	}
 	
-	public static boolean guardarEnArchivo(){
+	public static boolean guardar(){
 		System.out.println("Iniciar Guardado....");
 		JFrame parentFrame = new JFrame();
 		JFileChooser fileChooser = new JFileChooser();
@@ -384,17 +410,17 @@ public class UMLDataSaver implements Runnable {
 		if (userSelection == JFileChooser.APPROVE_OPTION) {
 			File fileToSave = fileChooser.getSelectedFile();
 			System.out.println("Save as file: " + fileToSave.getAbsolutePath());
-			String dir_archivo=fileToSave.getAbsolutePath()+".json";
+			String dir_archivo=fileToSave.getAbsolutePath()+DEFAULT_FILE_EXTENSION_BACKUP;
 		//
 		//parentFrame.toFront();
 		//parentFrame.setAlwaysOnTop(true);
 		//
 			
-		System.out.println("JSON 1 Guardado");
+		System.out.println("Guardando...");
 		
-		
-
-		String jsonText = JSONValue.toJSONString(jsonMap);
+		escribirArchivo(dir_archivo);
+		}
+	/*	//String jsonText = JSONValue.toJSONString(jsonMap);
 
 		// Escribo el String en archivo .json
 			BufferedWriter writer = null;
@@ -422,15 +448,18 @@ public class UMLDataSaver implements Runnable {
 		
 		}
 		return true;
-		
+		*/
+		return true;
 	}
 
 	@Override
 	public void run() {
 		while(true){
-			try {						
-				guardar(USER_BACKUP_DIRECTORY);
+			try {			
 				Thread.sleep(MT4jSettings.tiempoBackup);
+				escribirArchivo(USER_BACKUP_DIRECTORY+MTApplication.separator +DEFAULT_FILE_NAME_BACKUP);
+				
+				
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				System.out.println("Error al guardar el archivo");

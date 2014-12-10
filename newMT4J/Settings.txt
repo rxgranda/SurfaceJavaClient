@@ -3,7 +3,7 @@ Frametitle=MT Application
 #Renderer: OpenGL: 1 P3D: 2
 Renderer=1
 #Fullscreen:'true' or 'false'
-Fullscreen=true
+Fullscreen=false
 #Switch for using fullscreen exclusive mode 
 #(if not exclusive, mt4j just uses an undecorated window, other windows can overlap it)
 FullscreenExclusive=false
@@ -28,5 +28,5 @@ OpenGLAntialiasing=0
 #                 - ER MODELO LOGICO Properties-
 #Comentar valores para guardar por default
 #Intervalo de tiempo para guardar una copia del modelo logico (ms)
-TiempoBackup=5000
+TiempoBackup=180000
 #DirectorioBackup='C:\Users\Roger\Desktop\eclipse'

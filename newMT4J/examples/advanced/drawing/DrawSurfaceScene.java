@@ -1290,7 +1290,7 @@ public class DrawSurfaceScene extends AbstractScene {
 		}*/
 		
 		
-		UMLDataSaver.guardarEnArchivo();
+		UMLDataSaver.guardar();
 		return true;
 	}
 	
