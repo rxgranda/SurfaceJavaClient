@@ -665,7 +665,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		return null;
 	}
 	public synchronized void actualizarRelacion(){
-		System.out.println("-Actualizar relacion "+ ((Relacion)objeto).getId());
+		//System.out.println("-Actualizar relacion "+ ((Relacion)objeto).getId());
 
 		float width=java.lang.Math.abs(((Relacion)objeto).getInicio().x-((Relacion)objeto).getFin().x);
 		objeto.setWidth(width);
@@ -837,7 +837,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 			//a ejecutar el metodo de aumentar contador
 			((RelacionTernaria_Impl)(((RelacionTernaria)inicio_aux).getFigura())).aumentarContador();
 			((RelacionTernaria_Impl)(((RelacionTernaria)inicio_aux).getFigura())).reestablecerPuntoDeRelacion(((Relacion)this.objeto).getInicio());
-			System.out.println("ESTAMOS BORRANDO DE UNA RELACION MULTIPLE INIIIIIIIIIIIIIICIO");
+			System.out.println(" BORRANDO DE UNA RELACION MULTIPLE INIIIIIIIIIIIIIICIO");
 		}
 		
 		if(!propagacion){
@@ -857,7 +857,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		System.out.println("imprimiendo objeto fin: "+fin);
 		if(fin instanceof Entidad){
 			((Entidad)fin).getFigura().eliminarDatos(RELACIONES_FIN_KEYWORD, this);
-			System.out.println("ESTAMOS BORRANDO DE UNA ENTIDAD FIIIIIIIIIN");
+			//System.out.println("ESTAMOS BORRANDO DE UNA ENTIDAD FIIIIIIIIIN");
 		}else{
 			
 			Object fin_aux=((Relacion)this.objeto).getObjetoFin();

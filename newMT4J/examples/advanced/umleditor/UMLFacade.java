@@ -133,7 +133,7 @@ public class UMLFacade {
 				}
 				
 				
-				System.out.println("retorna objeto RELACION MULTIPLE");
+				//System.out.println("retorna objeto RELACION MULTIPLE");
 				//((RelacionMultiple)objeto).inicializarDimensiones((int)primerX, (int) primerY, (int)ultimoX, (int) ultimoY);
 				
 			}

@@ -439,7 +439,7 @@ public class DrawSurfaceScene extends AbstractScene {
 		
 		
 		// Proyecto
-		this.getCanvas().registerInputProcessor(new TapProcessor(mtApplication));
+		/*this.getCanvas().registerInputProcessor(new TapProcessor(mtApplication));
 		this.getCanvas().addGestureListener(TapProcessor.class, new IGestureEventListener() {
 			public boolean processGestureEvent(MTGestureEvent ge) {
 				TapEvent de = (TapEvent)ge;
@@ -461,11 +461,11 @@ public class DrawSurfaceScene extends AbstractScene {
 					//System.out.println("ONE CLCIK END!!");
 					
 					//if(listaConfirmarPunto.size() < nroPtsConfirmaClick){
-						/*//System.out.println("CLICCCCKKKKKKKKK!!!!!");
+						/* //System.out.println("CLICCCCKKKKKKKKK!!!!!");
 						UMLFacade recognizer=listaRecognizer.get(currentUser.getIdPluma());
 						ObjetoUML objeto = recognizer.aniadirTextoFlotante(m.getPosition());
 						TextoFlotanteImpl teximpl = new TextoFlotanteImpl(mtApp, container, getCanvas(), recognizer, objeto, server);
-						objeto.setFigura(teximpl);*/
+						objeto.setFigura(teximpl);* /
 					//}
 					break;
 				default:
@@ -474,7 +474,7 @@ public class DrawSurfaceScene extends AbstractScene {
 				return false;
 			}
 		});
-
+*/
 		this.getCanvas().addInputListener(new IMTInputEventListener() {
 			public boolean processInputEvent(MTInputEvent inEvt) {
 				if (inEvt instanceof AbstractCursorInputEvt) {
@@ -488,11 +488,11 @@ public class DrawSurfaceScene extends AbstractScene {
 					IMTComponent3D componente = m.getTarget();
 					
 					
-					System.out.println("COMPONENTE: "+componente.toString());
+					//System.out.println("COMPONENTE: "+componente.toString());
 				
 					
 					IMTComponent3D currentComponent = (IMTComponent3D) getCanvas().getComponentAt((int) m.getPosition().x,(int) m.getPosition().y);
-					System.out.println("CURRENT: "+currentComponent.toString());
+					//System.out.println("CURRENT: "+currentComponent.toString());
 					//Object entidad = null,entidad2=null;
 					
 					//switch para establecer relaciones entre entidades
@@ -540,16 +540,18 @@ public class DrawSurfaceScene extends AbstractScene {
 								listaVisitados.add(entidad2);
 								
 								 
-								if(ultimo!=null)
-								System.out.println("ULTIMO: "+ultimo.toString());
+								if(ultimo!=null){
+								//System.out.println("ULTIMO: "+ultimo.toString());
+								}
 								
 								if (listaHaloHelper.get(currentUser).getHoverFin().equalsVector(new Vector3D()))
 									//System.out.println("hover fin IGUAL A NEW VECTOR");
 									listaHaloHelper.get(currentUser).setHoverFin(m.getPosition());
 								
 								ultimo=(IMTComponent3D) currentComponent;
-								if(ultimo!=null)
-									System.out.println("ULTIMO2: "+ultimo.toString());
+								if(ultimo!=null){
+									//System.out.println("ULTIMO2: "+ultimo.toString());
+								}
 								
 							}else{
 								//Aqui reinicio el punto final de la linea relacion 
@@ -562,8 +564,8 @@ public class DrawSurfaceScene extends AbstractScene {
 							listaHaloHelper.get(currentUser).setHoverInicio(m.getPosition());
 							
 						}
-						System.out.println("hover inicio "+listaHaloHelper.get(currentUser).getHoverInicio());
-						System.out.println("hover fin "+listaHaloHelper.get(currentUser).getHoverFin());
+						//System.out.println("hover inicio "+listaHaloHelper.get(currentUser).getHoverInicio());
+						//System.out.println("hover fin "+listaHaloHelper.get(currentUser).getHoverFin());
 						
 						
 						/*Entidad_Impl alt_ent=(Entidad_Impl) ((MTComponent)currentComponent).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
@@ -596,8 +598,8 @@ public class DrawSurfaceScene extends AbstractScene {
 							
 						}
 						//AQUI YO
-						System.out.println("hover inicio "+listaHaloHelper.get(currentUser).getHoverInicio());
-						System.out.println("hover fin "+listaHaloHelper.get(currentUser).getHoverFin());
+						//System.out.println("hover inicio "+listaHaloHelper.get(currentUser).getHoverInicio());
+						//System.out.println("hover fin "+listaHaloHelper.get(currentUser).getHoverFin());
 						
 						//HASTA AQUI
 						
@@ -990,7 +992,7 @@ public class DrawSurfaceScene extends AbstractScene {
 										 * hasta una entidad */
 										Object entidad1_aux=((MTComponent)componente).getUserData(ObjetoUMLGraph.RELACION_MULTIPLE_KEYWORD);
 										Object entidad2_aux=((MTComponent)destino).getUserData(ObjetoUMLGraph.ENTIDADES_KEYWORD);
-										System.out.println("imprimiendo entidad1_aux: "+entidad1_aux);
+										//System.out.println("imprimiendo entidad1_aux: "+entidad1_aux);
 										if(entidad1_aux!=null&&entidad2_aux!=null){ //verificar si el componente inicial y final son Instancias de Polygon(Diagrama entidad)
 											//System.out.println("SE IDENTIFICARON OBJETOS  - DIAMANTE Y ENTIDAD");
 											if(((RelacionTernaria_Impl)entidad1_aux).cont<=0)//termina de ejecutar este caso cuando 
@@ -1004,13 +1006,13 @@ public class DrawSurfaceScene extends AbstractScene {
 												  //System.out.println("try resize");
 												  if(!helper.getHoverInicio().equalsVector(new Vector3D())&&!helper.getHoverFin().equalsVector(new Vector3D()))
 												  {
-													  System.out.println("imprimiendo get hover inicio: " + helper.getHoverInicio());
+													//  System.out.println("imprimiendo get hover inicio: " + helper.getHoverInicio());
 													 ((Relacion)objeto).setInicio(((RelacionTernaria_Impl)entidad1_aux).devolverPuntoMasCercanoYDisponible(helper.getHoverInicio()));
 													 ((Relacion)objeto).setFin(helper.getHoverFin());
 													 listaHaloHelper.remove(currentUser);
 													 helper=new HaloHelper();
 													 listaHaloHelper.put(currentUser, helper);
-													 System.out.println("resize done!!!!!!!!!!!");
+													 //System.out.println("resize done!!!!!!!!!!!");
 												  }
 												
 												
@@ -1059,7 +1061,7 @@ public class DrawSurfaceScene extends AbstractScene {
 													 listaHaloHelper.remove(currentUser);
 													 helper=new HaloHelper();
 													 listaHaloHelper.put(currentUser, helper);
-													 System.out.println("resize done!!!!!!!!!!!");
+													 //System.out.println("resize done!!!!!!!!!!!");
 												  }
 												
 												
@@ -1096,7 +1098,7 @@ public class DrawSurfaceScene extends AbstractScene {
 								case ObjetoUML.RELACION_MULTIPLE:
 									ObjetoUMLGraph relacion_multiple = new RelacionTernaria_Impl(mtApp, getCanvas(), container, objeto, componentRecognizer);
 									objeto.setFigura(relacion_multiple);
-									System.out.println("DIAMANTEEEEEEE!!");
+									//System.out.println("DIAMANTEEEEEEE!!");
 									break;
 									
 									
@@ -1189,107 +1191,11 @@ public class DrawSurfaceScene extends AbstractScene {
 		
 	
 	public void keyPressed() {
-			System.out.println("PRESSED");
+			//System.out.println("PRESSED");
 			//guardarEnArchivo(UMLDataSaver.getJsonMap());
 	}
 		
-	public boolean guardar(){
-
-		/*
-		System.out.println("Guardado");
-=======
-		//System.out.println("Guardado");
->>>>>>> 1df44e59e182f84e44e72f715fcd4046372c3b37
-		JFrame parentFrame = new JFrame();
-		JFileChooser fileChooser = new JFileChooser();
-		fileChooser.setDialogTitle("Specify a file to save");
-		
-		int userSelection = fileChooser.showSaveDialog(parentFrame);
-		if (userSelection == JFileChooser.APPROVE_OPTION) {
-			File fileToSave = fileChooser.getSelectedFile();
-			//System.out.println("Save as file: " + fileToSave.getAbsolutePath());
-			String dir_archivo=fileToSave.getAbsolutePath()+".json";
-		//
-		parentFrame.toFront();
-		parentFrame.setAlwaysOnTop(true);
-		//
-			
-		//System.out.println("JSON 1 Guardado");
-		JSONObject jsonPlayer1 = new JSONObject();
-		
-		/*jsonPlayer1.put("name","foo");
-		jsonPlayer1.put("num",new Integer(100));
-		jsonPlayer1.put("balance",new Double(1000.21));
-		jsonPlayer1.put("is_vip",new Boolean(true));* /
-		//jsonPlayer1.put("coordenadas",listaCoordenadasPlayer1.get(i)[0]+"/"+listaCoordenadasPlayer1.get(i)[0]);
-		Map obj=new LinkedHashMap();	
-		obj.put("width",mtApp.getWidth());
-		obj.put("height",mtApp.getHeight());
-		Map valorMap;
-		List  listaTotal = new LinkedList();
-		List  listaPuntos = new LinkedList();
-		// no deberia ser estatico.
-		java.util.Date date= new java.util.Date();
-		
-		int numpasos = contarPasos();
-		//System.out.println("NumPasos: "+numpasos+"\n");
-		
-		for(int a=0; a<contarPasos();a++)
-		{
-			// Para una Persona
-			valorMap  = new LinkedHashMap();
-			valorMap.put("id",1);
-			valorMap.put("idpersona",1);
-			valorMap.put("forma", "rectangle");
-			valorMap.put("tiempoini", (new Timestamp(date.getTime())).toString() );
-			valorMap.put("tiempofin", (new Timestamp(date.getTime())).toString() );
-			
-			
-			listaPuntos = new LinkedList();
-			for(int i=0;i<listaCoordenadasPlayer1.size();i++)
-			{
-				if(Math.floor(listaCoordenadasPlayer1.get(i)[2]+0.5)==a)
-				{
-					listaPuntos.add(listaCoordenadasPlayer1.get(i)[0]+"-"+listaCoordenadasPlayer1.get(i)[1]);			
-				}
-			}
-			
-			valorMap.put("puntos", listaPuntos);
-	
-			obj.put("paso"+a,valorMap);
-		}
-		//Fin de contruccion de JSON.
-		
-		String jsonText = JSONValue.toJSONString(obj);
-		System.out.print(jsonText);
-		
-		// Escribo el String en archivo .json
-			BufferedWriter writer = null;
-			try {
-						writer = new BufferedWriter( new FileWriter(dir_archivo));
-						writer.write( jsonText);
-						//System.out.println("Guardado archivo .json");
-			} catch (IOException e) {
-						// TODO Auto-generated catch block
-				//System.out.println("Error");
-						e.printStackTrace();
-			}finally
-			{
-				//System.out.println("Error2");
-						try
-					    {
-					        if ( writer != null)
-					        writer.close( );
-					    }
-					    catch ( IOException e)
-					    {
-					    }
-			}
-		
-		
-		}*/
-		
-		
+	public boolean guardar(){		
 		UMLDataSaver.guardar();
 		return true;
 	}

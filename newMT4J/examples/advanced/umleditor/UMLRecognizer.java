@@ -72,7 +72,7 @@ public class UMLRecognizer {
 							
 							//return ObjetoUML.INVALIDO;
 						}else if(shapeLabel.equals("Diamond")){
-							System.out.println("RETORNA RELACION MULTIPLE");	
+							//System.out.println("RETORNA RELACION MULTIPLE");	
 							if(modo_edicion)
 								return ObjetoUML.RELACION_MULTIPLE;
 							else
@@ -101,7 +101,7 @@ public class UMLRecognizer {
 		modo_edicion=false;
 	}
 	public void edit_mode(){
-		System.out.println("Cambiar a modo edicion");
+		//System.out.println("Cambiar a modo edicion");
 		modo_edicion=true;
 	}
 	

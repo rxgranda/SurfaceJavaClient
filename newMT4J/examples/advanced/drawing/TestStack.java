@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class TestStack {
 
-	public static void main(String []args){
+	public void main(String []args){
 		Stack<String> stack = new Stack<String>(){
 		    private static final long serialVersionUID = 1L;
 		    public String push(String item) {

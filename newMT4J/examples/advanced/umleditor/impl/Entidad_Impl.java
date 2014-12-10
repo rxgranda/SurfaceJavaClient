@@ -394,7 +394,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 				//objeto.setPosicion(objeto.getPosicion().getAdded(de.getTranslationVect()));
 				//rectangulo.setPositionGlobal(objeto.getPosicion());
 		//		halo.setPositionGlobal(new Vector3D(objeto.getPosicion().x,objeto.getPosicion().y));
-				System.out.println(" Mover entidad "+ ((Entidad)objeto).getNombre());
+				//System.out.println(" Mover entidad "+ ((Entidad)objeto).getNombre());
 			//	System.out.println("Fin evento de: Mover entidad Usuario:"+cursor.sessionID );
 				
 				InputCursor cursor = de.getDragCursor();
