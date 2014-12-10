@@ -71,6 +71,7 @@ import advanced.umleditor.logic.Relacion;
 import advanced.umleditor.logic.Usuario;
 import advanced.umleditor.socketio.CardinalidadAdapter;
 import advanced.umleditor.socketio.EntidadAdapter;
+import advanced.umleditor.socketio.RelacionAdapter;
 import advanced.umleditor.socketio.TextoFlotanteAdapter;
 import processing.core.PApplet;
 
@@ -392,6 +393,7 @@ public class DrawSurfaceScene extends AbstractScene {
 						UndoHelper.agregarAccion(UndoHelper.EDITAR_OBJETO_ACTION, objeto);
 						//System.out.println("CARD :" + cardinalidadAdpter.getCardinalidad() + "CARD SWITCH:" + cardinalidadAdpter.isCardinalidadSwitch());
 						((Relacion_Impl)relacion.getFigura()).actualizarCardinalidad(cardinalidadAdpter.getCardinalidad(), cardinalidadAdpter.isCardinalidadSwitch());																
+						server.getNamespace("/login").getBroadcastOperations().sendEvent("syncEdition",new CardinalidadAdapter(((Relacion)objeto),cardinalidadAdpter.isCardinalidadSwitch(),cardinalidadAdpter.getIdUsuario()));
 						UMLDataSaver.agregarAccion(UMLDataSaver.EDITAR_OBJETO_ACTION, objeto,listaUsuarios.get(cardinalidadAdpter.getIdUsuario()) );
 					}
 					}catch (Exception e){
