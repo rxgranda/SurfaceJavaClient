@@ -37,6 +37,7 @@ import org.mt4j.util.math.Vertex;
 
 import com.corundumstudio.socketio.SocketIOServer;
 
+import advanced.drawing.DrawSurfaceScene;
 import advanced.drawing.MainDrawingScene;
 import advanced.drawing.UndoHelper;
 import advanced.umleditor.UMLCollection;
@@ -92,7 +93,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 	
 	
 	
-	public Relacion_Impl(final MTApplication mtApp, final MTComponent container, final MTCanvas canvas, final ObjetoUML objeto, final UMLFacade recognizer,final SocketIOServer server) {
+	public Relacion_Impl(final MTApplication mtApp, final MTComponent container, final MTCanvas canvas, final ObjetoUML objeto,final SocketIOServer server) {
 		super(mtApp);
 		this.mtApp=mtApp;
 		this.canvas=canvas;
@@ -469,6 +470,50 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		linea.addChild(ini);
 		linea.addChild(fin);
 		
+		
+		
+		ini.addInputListener(new IMTInputEventListener() {
+			public boolean processInputEvent(MTInputEvent inEvt) {
+				if (inEvt instanceof AbstractCursorInputEvt) { //Most input events in MT4j are an instance of AbstractCursorInputEvt (mouse, multi-touch..)
+					AbstractCursorInputEvt cursorInputEvt = (AbstractCursorInputEvt) inEvt;
+					InputCursor cursor = cursorInputEvt.getCursor();
+					IMTComponent3D target = cursorInputEvt.getTargetComponent();
+					//System.out.println("RECTANGULOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");										
+					for(IMTInputEventListener a:halo.getInputListeners()){
+						a.processInputEvent(inEvt);							 
+					}					
+					for(IMTInputEventListener a:canvas.getInputListeners()){
+						a.processInputEvent(inEvt);							 
+					}		
+				}else{
+					//handle other input events
+				}
+				return false;
+			}
+		});
+		
+		fin.addInputListener(new IMTInputEventListener() {
+			public boolean processInputEvent(MTInputEvent inEvt) {
+				if (inEvt instanceof AbstractCursorInputEvt) { //Most input events in MT4j are an instance of AbstractCursorInputEvt (mouse, multi-touch..)
+					AbstractCursorInputEvt cursorInputEvt = (AbstractCursorInputEvt) inEvt;
+					InputCursor cursor = cursorInputEvt.getCursor();
+					IMTComponent3D target = cursorInputEvt.getTargetComponent();
+					//System.out.println("RECTANGULOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");										
+					//inEvt.setTarget(halo);						
+					for(IMTInputEventListener a:halo.getInputListeners()){
+						a.processInputEvent(inEvt);							 
+					}					
+					for(IMTInputEventListener a:canvas.getInputListeners()){
+						a.processInputEvent(inEvt);							 
+					}		
+				}else{
+					//handle other input events
+				}
+				return false;
+			}
+		});
+	
+		
 		halo=new MTRoundRectangle(objeto
 				.getPosicion().x-ObjetoUMLGraph.haloWidth/2, objeto
 				.getPosicion().y-ObjetoUMLGraph.haloWidth/2, 3, objeto
@@ -496,9 +541,10 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 					//System.out.println("Listener..............");
 					
 					//
+					UMLFacade recognizer=DrawSurfaceScene.getUserComponentRecognizer((int)cursor.sessionID);
 					
-					
-					
+					if (recognizer==null)
+						System.out.println("NULLLLLLLLLLLLLLLLLLLLLL");
 					switch (cursorInputEvt.getId()) {
 					case AbstractCursorInputEvt.INPUT_STARTED:
 						System.out.println("-Mover relacion "+ ((Relacion)objeto).getId());
@@ -556,6 +602,50 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 								MTRoundRectangle textFin = (MTRoundRectangle)(teximplfin.rectangulo);
 								//textFin.setPositionRelativeToParent(new Vector3D(fin.getCenterPointGlobal().x -DISTANCIA_FROM_NODE*distancia.length(), fin.getCenterPointGlobal().y + 20, fin.getCenterPointGlobal().z));
 								textFin.setPositionGlobal(R2pos);
+								
+								
+								((MTComponent)textInicio).addInputListener(new IMTInputEventListener() {
+									public boolean processInputEvent(MTInputEvent inEvt) {
+										if (inEvt instanceof AbstractCursorInputEvt) { //Most input events in MT4j are an instance of AbstractCursorInputEvt (mouse, multi-touch..)
+											AbstractCursorInputEvt cursorInputEvt = (AbstractCursorInputEvt) inEvt;
+											InputCursor cursor = cursorInputEvt.getCursor();
+											IMTComponent3D target = cursorInputEvt.getTargetComponent();
+											//System.out.println("RECTANGULOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");										
+											//inEvt.setTarget(halo);						
+											for(IMTInputEventListener a:halo.getInputListeners()){
+												a.processInputEvent(inEvt);							 
+											}					
+											for(IMTInputEventListener a:canvas.getInputListeners()){
+												a.processInputEvent(inEvt);							 
+											}		
+										}else{
+											//handle other input events
+										}
+										return false;
+									}
+								});
+								
+								((MTComponent)textFin).addInputListener(new IMTInputEventListener() {
+									public boolean processInputEvent(MTInputEvent inEvt) {
+										if (inEvt instanceof AbstractCursorInputEvt) { //Most input events in MT4j are an instance of AbstractCursorInputEvt (mouse, multi-touch..)
+											AbstractCursorInputEvt cursorInputEvt = (AbstractCursorInputEvt) inEvt;
+											InputCursor cursor = cursorInputEvt.getCursor();
+											IMTComponent3D target = cursorInputEvt.getTargetComponent();
+											//System.out.println("RECTANGULOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");										
+											//inEvt.setTarget(halo);						
+											for(IMTInputEventListener a:halo.getInputListeners()){
+												a.processInputEvent(inEvt);							 
+											}					
+											for(IMTInputEventListener a:canvas.getInputListeners()){
+												a.processInputEvent(inEvt);							 
+											}		
+										}else{
+											//handle other input events
+										}
+										return false;
+									}
+								});
+								
 								
 								UMLDataSaver.agregarAccion(UMLDataSaver.EDITAR_OBJETO_ACTION, objeto, objeto.getPersona());
 							}

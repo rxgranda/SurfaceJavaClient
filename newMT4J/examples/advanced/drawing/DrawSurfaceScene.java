@@ -976,7 +976,7 @@ public class DrawSurfaceScene extends AbstractScene {
 											((Relacion)objeto).setTextoInicio(objetotextoInicio);
 											((Relacion)objeto).setTextoFin(objetotextoFin);
 	
-											ObjetoUMLGraph linea= new Relacion_Impl(mtApp, container, getCanvas(), objeto, componentRecognizer, server);
+											ObjetoUMLGraph linea= new Relacion_Impl(mtApp, container, getCanvas(), objeto, server);
 											//((MTPolygon)((ObjetoUMLGraph)entidad1).getHalo()).setFillColor(ObjetoUMLGraph.haloDeSelected);	 										
 											//((MTPolygon)((ObjetoUMLGraph)entidad2).getHalo()).setFillColor(ObjetoUMLGraph.haloDeSelected);
 											((ObjetoUMLGraph)entidad1).guardarDatos(ObjetoUMLGraph.RELACIONES_INICIO_KEYWORD, linea);
@@ -1031,7 +1031,7 @@ public class DrawSurfaceScene extends AbstractScene {
 												
 												((Relacion)objeto).setObjetoInicio(((ObjetoUMLGraph)entidad1_aux).getObjetoUML());
 												((Relacion)objeto).setObjetoFin(((ObjetoUMLGraph)entidad2_aux).getObjetoUML());
-												ObjetoUMLGraph linea= new Relacion_Impl(mtApp, container, getCanvas(), objeto, componentRecognizer, server);
+												ObjetoUMLGraph linea= new Relacion_Impl(mtApp, container, getCanvas(), objeto, server);
 												((ObjetoUMLGraph)entidad1_aux).guardarDatos(ObjetoUMLGraph.RELACIONES_INICIO_KEYWORD, linea);
 												((ObjetoUMLGraph)entidad2_aux).guardarDatos(ObjetoUMLGraph.RELACIONES_FIN_KEYWORD, linea);
 												
@@ -1080,7 +1080,7 @@ public class DrawSurfaceScene extends AbstractScene {
 												
 												((Relacion)objeto).setObjetoInicio(((ObjetoUMLGraph)entidad1_aux1).getObjetoUML());
 												((Relacion)objeto).setObjetoFin(((ObjetoUMLGraph)entidad2_aux1).getObjetoUML());
-												ObjetoUMLGraph linea= new Relacion_Impl(mtApp, container, getCanvas(), objeto, componentRecognizer, server);
+												ObjetoUMLGraph linea= new Relacion_Impl(mtApp, container, getCanvas(), objeto, server);
 												((ObjetoUMLGraph)entidad1_aux1).guardarDatos(ObjetoUMLGraph.RELACIONES_INICIO_KEYWORD, linea);
 												((ObjetoUMLGraph)entidad2_aux1).guardarDatos(ObjetoUMLGraph.RELACIONES_FIN_KEYWORD, linea);
 												
@@ -1222,6 +1222,13 @@ public class DrawSurfaceScene extends AbstractScene {
 			e.printStackTrace();
 		}
 		
+	}
+
+	
+	public static UMLFacade getUserComponentRecognizer(int idUsuario){
+		Usuario currentUser=(MainDrawingScene.getListaUsuarios().containsKey(idUsuario))?MainDrawingScene.getListaUsuarios().get(idUsuario):MainDrawingScene.getListaUsuarios().get(Usuario.ID_DEFAULT_USER);
+		UMLFacade componentRecognizer=listaComponentRecognizer.get(currentUser);
+		return componentRecognizer;
 	}
 
 }
