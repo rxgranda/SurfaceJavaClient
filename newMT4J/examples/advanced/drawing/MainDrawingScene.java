@@ -83,8 +83,15 @@ public class MainDrawingScene extends AbstractScene {
 	 * */
 
 	
-	public static final MTColor blanco=new MTColor(255,255,255);
-	public static final MTColor negro=new MTColor(0,0,0);
+	public static final MTColor BLANCO=new MTColor(255,255,255);
+	public static final MTColor NEGRO=new MTColor(0,0,0);
+	public static final MTColor ROJO=new MTColor(255,0,0);
+	public static final MTColor AZUL=new MTColor(0,0,255);
+	public static final MTColor VERDE=new MTColor(9, 173, 31);
+	public static final MTColor NARANJA=new MTColor(250,136,5);
+	public static final MTColor AMARILLO=new MTColor(153,0,102);
+	
+
 	
 	
 	public static SocketIOServer server;
@@ -136,7 +143,7 @@ public class MainDrawingScene extends AbstractScene {
 		login=new MTRectangle(pa.width/2-100,pa.height/2+100,0, 200, 100, pa);
 		login.setFillColor(loginColorDisabled);
 		//login.setFillColor(loginColor);
-		login.setStrokeColor(blanco);
+		login.setStrokeColor(BLANCO);
 
 		//CAMBIO
 
@@ -149,7 +156,7 @@ public class MainDrawingScene extends AbstractScene {
 
 		final MTTextField texto = new MTTextField(pa.width/2-90,pa.height/2+120,200,200,loginFont, pa);
 		texto.setText("Start App");
-		texto.setFontColor(blanco);
+		texto.setFontColor(BLANCO);
 		texto.setPickable(false);
 		texto.setNoFill(true);
 		texto.setNoStroke(true);
@@ -157,7 +164,7 @@ public class MainDrawingScene extends AbstractScene {
 
 		txtUsuarios = new MTTextField(pa.width/2-93,pa.height/2+50,200,200,txtFont, pa);
 		txtUsuarios.setText("Usuarios Activos: "+ listaUsuarios.size());
-		txtUsuarios.setFontColor(blanco);
+		txtUsuarios.setFontColor(BLANCO);
 		txtUsuarios.setPickable(false);
 		txtUsuarios.setNoFill(true);
 		txtUsuarios.setNoStroke(true);
@@ -174,16 +181,16 @@ public class MainDrawingScene extends AbstractScene {
 					switch (te.getTapID()) {
 					case TapEvent.BUTTON_DOWN:
 						//System.out.println("Button down state on " + target);
-						rectangle.setFillColor(negro);
+						rectangle.setFillColor(NEGRO);
 						break;
 					case TapEvent.BUTTON_UP:
 						//System.out.println("Button up state on " + target);
 						rectangle.setFillColor(loginColor);
-						texto.setFontColor(blanco);
+						texto.setFontColor(BLANCO);
 						break;
 					case TapEvent.BUTTON_CLICKED:
 						//System.out.println("Button clicked state on " + target);
-						rectangle.setFillColor(negro);
+						rectangle.setFillColor(NEGRO);
 						
 						UMLDataSaver helper= new UMLDataSaver(listaUsuarios, pa.width, pa.height);
 						backupHelper= new Thread(helper);
@@ -286,24 +293,24 @@ public class MainDrawingScene extends AbstractScene {
 		plumaRoja.setNoFill(false);
 		plumaRoja.setNoStroke(true);
 		plumaRoja.setDrawSmooth(true);
-		plumaRoja.setStrokeColor(new MTColor(255, 0, 0));
-		plumaRoja.setFillColor(new MTColor(255, 0, 0));
+		plumaRoja.setStrokeColor(ROJO);
+		plumaRoja.setFillColor(ROJO);
 		
 		MTEllipse plumaAzul= new MTEllipse(pa, new Vector3D(brushImage.width/2f,brushImage.height/2f,0), brushImage.width/2f, brushImage.width/2f, 60);
 		plumaAzul.setPickable(false);
 		plumaAzul.setNoFill(false);
 		plumaAzul.setNoStroke(true);
 		plumaAzul.setDrawSmooth(true);
-		plumaAzul.setStrokeColor(new MTColor(0, 0, 255));
-		plumaAzul.setFillColor(new MTColor(0, 0, 255));
+		plumaAzul.setStrokeColor(AZUL);
+		plumaAzul.setFillColor(AZUL);
 		
 		MTEllipse plumaNaranja= new MTEllipse(pa, new Vector3D(brushImage.width/2f,brushImage.height/2f,0), brushImage.width/2f, brushImage.width/2f, 60);
 		plumaNaranja.setPickable(false);
 		plumaNaranja.setNoFill(false);
 		plumaNaranja.setNoStroke(true);
 		plumaNaranja.setDrawSmooth(true);
-		plumaNaranja.setStrokeColor(new MTColor(250,136,5));
-		plumaNaranja.setFillColor(new MTColor(250,136,5));
+		plumaNaranja.setStrokeColor(NARANJA);
+		plumaNaranja.setFillColor(NARANJA);
 		
 		MTEllipse plumaAmarilla= new MTEllipse(pa, new Vector3D(brushImage.width/2f,brushImage.height/2f,0), brushImage.width/2f, brushImage.width/2f, 60);
 		plumaAmarilla.setPickable(false);
@@ -311,15 +318,15 @@ public class MainDrawingScene extends AbstractScene {
 		plumaAmarilla.setNoStroke(true);
 		plumaAmarilla.setDrawSmooth(true);
 		plumaAmarilla.setStrokeColor(new MTColor(0,0,0));
-		plumaAmarilla.setFillColor(new MTColor(219,227,0));
+		plumaAmarilla.setFillColor(AMARILLO);
 		
 		MTEllipse plumaVerde = new MTEllipse(pa, new Vector3D(brushImage.width/2f,brushImage.height/2f,0), brushImage.width/2f, brushImage.width/2f, 60);
 		plumaVerde.setPickable(false);
 		plumaVerde.setNoFill(false);
 		plumaVerde.setNoStroke(true);
 		plumaVerde.setDrawSmooth(true);
-		plumaVerde.setStrokeColor(new MTColor(9, 173, 31));
-		plumaVerde.setFillColor(new MTColor(9, 173, 31));
+		plumaVerde.setStrokeColor(VERDE);
+		plumaVerde.setFillColor(VERDE);
 		
 		
 		listaPencil[0]=pencilBrush;
@@ -452,5 +459,36 @@ public class MainDrawingScene extends AbstractScene {
 	
 	public static UMLFacade getUserComponentRecognizer(int idUsuario){
 			return DrawSurfaceScene.getUserComponentRecognizer(idUsuario);
+	}
+	
+	public static final MTColor getUserColor(int idUser){
+		MTColor color;
+		switch (idUser) {
+		case 1:
+			color=ROJO;
+			break;
+
+		case 2:
+			color=AZUL;
+			break;
+
+		case 3:
+			color=VERDE;
+			break;
+
+		case 4:
+			color=NARANJA;
+			break;
+
+		case 5:
+			color=AMARILLO;
+			break;
+
+
+		default:
+			color=NEGRO;
+			break;
+		}
+		return color;
 	}
 }

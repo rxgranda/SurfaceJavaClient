@@ -90,14 +90,15 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 	private static final int CARDINALIDAD_LOCATION_ARRIBA=3;
 	private static final int CARDINALIDAD_LOCATION_ABAJO=4;
 
+	private  final MTColor userColor;
 	
 	
-	
-	public Relacion_Impl(final MTApplication mtApp, final MTComponent container, final MTCanvas canvas, final ObjetoUML objeto,final SocketIOServer server) {
+	public Relacion_Impl(final MTApplication mtApp, final MTComponent container, final MTCanvas canvas, final ObjetoUML objeto,final SocketIOServer server, final MTColor userColor) {
 		super(mtApp);
 		this.mtApp=mtApp;
 		this.canvas=canvas;
 		this.container=container;
+		this.userColor=userColor;
 		////
 		Vertex a= new Vertex(),b= new Vertex();
 		Vertex []c=new Vertex[2];
@@ -109,9 +110,10 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		linea= new MTLine(mtApp,a,b);	
 		linea.setVertices(c);
 		linea.setPickable(false);
-		linea.setFillColor(new MTColor(0, 0, 0));
-		linea.setStrokeColor(new MTColor(0, 0, 0));
 		linea.setNoStroke(false);
+
+		linea.setFillColor(this.userColor);
+		linea.setStrokeColor(this.userColor);
 		this.objeto=objeto;
 		this.textoflotInicio =((Relacion)objeto).getTextoInicio();
 		this.textoflotFin =((Relacion)objeto).getTextoFin();
