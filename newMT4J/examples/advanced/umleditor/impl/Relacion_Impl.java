@@ -1253,6 +1253,14 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		this.actualizarCardinalidad(((Relacion)objeto).getCardinalidadInicio(), true);
 		this.actualizarCardinalidad(((Relacion)objeto).getCardinalidadFin(), false);
 		
+		//hacer broadcast para texto de inicio y fin
+		server.getNamespace("/login").getBroadcastOperations().sendEvent("syncEdition",new TextoFlotanteAdapter(((TextoFlotante)textoflotInicio),Usuario.ID_DEFAULT_USER));
+		server.getNamespace("/login").getBroadcastOperations().sendEvent("syncEdition",new TextoFlotanteAdapter(((TextoFlotante)textoflotFin),Usuario.ID_DEFAULT_USER));
+
+		//hacer broadcast para cardinalidad inicio y fin
+		server.getNamespace("/login").getBroadcastOperations().sendEvent("syncEdition",new CardinalidadAdapter(((Relacion)objeto),true,Usuario.ID_DEFAULT_USER));
+		server.getNamespace("/login").getBroadcastOperations().sendEvent("syncEdition",new CardinalidadAdapter(((Relacion)objeto),false,Usuario.ID_DEFAULT_USER));
+
 		
 
 		

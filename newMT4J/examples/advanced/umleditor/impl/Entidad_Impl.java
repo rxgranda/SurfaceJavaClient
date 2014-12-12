@@ -891,13 +891,14 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 		container.addChild(rectangulo);
 		canvas.addChild(halo);		
 		
+		
 	}
 
 
 
 	@Override
 	public void undoAddActions() {
-		removerEntidad(Usuario.ID_DEFAULT_USER);					
+		removerEntidad(Usuario.ID_DEFAULT_USER);	
 	}
 
 
