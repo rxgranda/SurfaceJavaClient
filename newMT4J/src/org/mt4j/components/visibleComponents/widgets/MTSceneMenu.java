@@ -92,6 +92,10 @@ public class MTSceneMenu extends MTRectangle{
 	/** The close button image. */
 	private static PImage borrarButtonImage;
 	
+	
+	/** The close button image. */
+	private static PImage editButtonImage;
+	
 	/** The restore button image. */
 	private static PImage guardarButtonImage;
 	
@@ -195,6 +199,9 @@ public class MTSceneMenu extends MTRectangle{
 					"borrador.png");
 		}
 		
+		
+	
+		
 		borrarButton.setTexture(borrarButtonImage);
 		borrarButton.setFillColor(new MTColor(255, 255, 255, buttonOpacity));
 		borrarButton.setNoStroke(true);
@@ -203,6 +210,32 @@ public class MTSceneMenu extends MTRectangle{
 		borrarButton.removeAllGestureEventListeners(RotateProcessor.class);
 		borrarButton.removeAllGestureEventListeners(ScaleProcessor.class);
 		this.addChild(borrarButton);
+		
+		
+		
+		
+		
+	final MTRectangle editarButton = new MTRectangle(app, app.width/2 +180 -buttonWidth/2, 20, buttonWidth, buttonHeight);
+		
+		
+		
+		
+		if (editButtonImage == null){
+			/*borrarButtonImage = app.loadImage(MT4jSettings.getInstance().getDefaultImagesPath() +
+					"borrar.png");*/
+			String altImagesPath = "data" + MTApplication.separator ;	
+			editButtonImage = app.loadImage( altImagesPath+
+					"borrador.png");
+		}
+		
+		editarButton.setTexture(editButtonImage);
+		editarButton.setFillColor(new MTColor(255, 255, 255, buttonOpacity));
+		editarButton.setNoStroke(true);
+		editarButton.setVisible(true);
+		editarButton.removeAllGestureEventListeners(DragProcessor.class);
+		editarButton.removeAllGestureEventListeners(RotateProcessor.class);
+		editarButton.removeAllGestureEventListeners(ScaleProcessor.class);
+		this.addChild(editarButton);
 		
 		//Check if this menu belongs to a window Scene (MTSceneWindow)
 		//or was added to a normal scene
@@ -320,8 +353,7 @@ public class MTSceneMenu extends MTRectangle{
 					case MTGestureEvent.GESTURE_UPDATED:
 						break;
 					case MTGestureEvent.GESTURE_ENDED:
-						if (te.isTapped()){
-									
+					
 							if(getScene() instanceof MainDrawingScene ){
 								System.out.println("--> Cambiar modo!");
 								InputCursor m=te.getCursor();							
@@ -329,7 +361,7 @@ public class MTSceneMenu extends MTRectangle{
 								unhighlightButton(borrarButton, buttonOpacity);
 									
 							
-							}
+						
 							
 						
 						}
@@ -340,6 +372,36 @@ public class MTSceneMenu extends MTRectangle{
 				}
 			});
 			
+			
+			editarButton.registerInputProcessor(new TapProcessor(app));
+			editarButton.addGestureListener(TapProcessor.class, new IGestureEventListener() {
+				public boolean processGestureEvent(MTGestureEvent ge) {
+					TapEvent te = (TapEvent)ge;
+					switch (te.getId()) {
+					case MTGestureEvent.GESTURE_STARTED:
+						highlightButton(editarButton);
+						break;
+					case MTGestureEvent.GESTURE_UPDATED:
+						break;
+					case MTGestureEvent.GESTURE_ENDED:
+					
+							if(getScene() instanceof MainDrawingScene ){
+								System.out.println("--> Cambiar modo BORRAR!");
+								InputCursor m=te.getCursor();							
+								MainDrawingScene.setEditMode(m.sessionID);
+								unhighlightButton(editarButton, buttonOpacity);
+									
+							
+						
+							
+						
+						}
+						//tapOnly.setFillColor(textAreaColor);
+						break;
+					}
+					return false;
+				}
+			});
 			////
 			/*menuShape.addGestureListener(DragProcessor.class, new IGestureEventListener() {
 				public boolean processGestureEvent(MTGestureEvent ge) {
