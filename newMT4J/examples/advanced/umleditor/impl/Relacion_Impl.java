@@ -37,6 +37,7 @@ import org.mt4j.util.math.Vertex;
 
 import com.corundumstudio.socketio.SocketIOServer;
 
+import advanced.drawing.DrawSurfaceScene;
 import advanced.drawing.MainDrawingScene;
 import advanced.drawing.UndoHelper;
 import advanced.umleditor.UMLCollection;
@@ -89,14 +90,15 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 	private static final int CARDINALIDAD_LOCATION_ARRIBA=3;
 	private static final int CARDINALIDAD_LOCATION_ABAJO=4;
 
+	private  final MTColor userColor;
 	
 	
-	
-	public Relacion_Impl(final MTApplication mtApp, final MTComponent container, final MTCanvas canvas, final ObjetoUML objeto, final UMLFacade recognizer,final SocketIOServer server) {
+	public Relacion_Impl(final MTApplication mtApp, final MTComponent container, final MTCanvas canvas, final ObjetoUML objeto,final SocketIOServer server, final MTColor userColor) {
 		super(mtApp);
 		this.mtApp=mtApp;
 		this.canvas=canvas;
 		this.container=container;
+		this.userColor=userColor;
 		////
 		Vertex a= new Vertex(),b= new Vertex();
 		Vertex []c=new Vertex[2];
@@ -108,9 +110,10 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		linea= new MTLine(mtApp,a,b);	
 		linea.setVertices(c);
 		linea.setPickable(false);
-		linea.setFillColor(new MTColor(0, 0, 0));
-		linea.setStrokeColor(new MTColor(0, 0, 0));
 		linea.setNoStroke(false);
+
+		linea.setFillColor(this.userColor);
+		linea.setStrokeColor(this.userColor);
 		this.objeto=objeto;
 		this.textoflotInicio =((Relacion)objeto).getTextoInicio();
 		this.textoflotFin =((Relacion)objeto).getTextoFin();
@@ -469,6 +472,50 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		linea.addChild(ini);
 		linea.addChild(fin);
 		
+		
+		
+		ini.addInputListener(new IMTInputEventListener() {
+			public boolean processInputEvent(MTInputEvent inEvt) {
+				if (inEvt instanceof AbstractCursorInputEvt) { //Most input events in MT4j are an instance of AbstractCursorInputEvt (mouse, multi-touch..)
+					AbstractCursorInputEvt cursorInputEvt = (AbstractCursorInputEvt) inEvt;
+					InputCursor cursor = cursorInputEvt.getCursor();
+					IMTComponent3D target = cursorInputEvt.getTargetComponent();
+					//System.out.println("RECTANGULOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");										
+					for(IMTInputEventListener a:halo.getInputListeners()){
+						a.processInputEvent(inEvt);							 
+					}					
+					for(IMTInputEventListener a:canvas.getInputListeners()){
+						a.processInputEvent(inEvt);							 
+					}		
+				}else{
+					//handle other input events
+				}
+				return false;
+			}
+		});
+		
+		fin.addInputListener(new IMTInputEventListener() {
+			public boolean processInputEvent(MTInputEvent inEvt) {
+				if (inEvt instanceof AbstractCursorInputEvt) { //Most input events in MT4j are an instance of AbstractCursorInputEvt (mouse, multi-touch..)
+					AbstractCursorInputEvt cursorInputEvt = (AbstractCursorInputEvt) inEvt;
+					InputCursor cursor = cursorInputEvt.getCursor();
+					IMTComponent3D target = cursorInputEvt.getTargetComponent();
+					//System.out.println("RECTANGULOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");										
+					//inEvt.setTarget(halo);						
+					for(IMTInputEventListener a:halo.getInputListeners()){
+						a.processInputEvent(inEvt);							 
+					}					
+					for(IMTInputEventListener a:canvas.getInputListeners()){
+						a.processInputEvent(inEvt);							 
+					}		
+				}else{
+					//handle other input events
+				}
+				return false;
+			}
+		});
+	
+		
 		halo=new MTRoundRectangle(objeto
 				.getPosicion().x-ObjetoUMLGraph.haloWidth/2, objeto
 				.getPosicion().y-ObjetoUMLGraph.haloWidth/2, 3, objeto
@@ -496,9 +543,10 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 					//System.out.println("Listener..............");
 					
 					//
+					UMLFacade recognizer= MainDrawingScene.getUserComponentRecognizer((int)cursor.sessionID);
 					
-					
-					
+					if (recognizer==null)
+						System.out.println("NULLLLLLLLLLLLLLLLLLLLLL");
 					switch (cursorInputEvt.getId()) {
 					case AbstractCursorInputEvt.INPUT_STARTED:
 						System.out.println("-Mover relacion "+ ((Relacion)objeto).getId());
@@ -557,6 +605,50 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 								//textFin.setPositionRelativeToParent(new Vector3D(fin.getCenterPointGlobal().x -DISTANCIA_FROM_NODE*distancia.length(), fin.getCenterPointGlobal().y + 20, fin.getCenterPointGlobal().z));
 								textFin.setPositionGlobal(R2pos);
 								
+								
+								((MTComponent)textInicio).addInputListener(new IMTInputEventListener() {
+									public boolean processInputEvent(MTInputEvent inEvt) {
+										if (inEvt instanceof AbstractCursorInputEvt) { //Most input events in MT4j are an instance of AbstractCursorInputEvt (mouse, multi-touch..)
+											AbstractCursorInputEvt cursorInputEvt = (AbstractCursorInputEvt) inEvt;
+											InputCursor cursor = cursorInputEvt.getCursor();
+											IMTComponent3D target = cursorInputEvt.getTargetComponent();
+											//System.out.println("RECTANGULOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");										
+											//inEvt.setTarget(halo);						
+											for(IMTInputEventListener a:halo.getInputListeners()){
+												a.processInputEvent(inEvt);							 
+											}					
+											for(IMTInputEventListener a:canvas.getInputListeners()){
+												a.processInputEvent(inEvt);							 
+											}		
+										}else{
+											//handle other input events
+										}
+										return false;
+									}
+								});
+								
+								((MTComponent)textFin).addInputListener(new IMTInputEventListener() {
+									public boolean processInputEvent(MTInputEvent inEvt) {
+										if (inEvt instanceof AbstractCursorInputEvt) { //Most input events in MT4j are an instance of AbstractCursorInputEvt (mouse, multi-touch..)
+											AbstractCursorInputEvt cursorInputEvt = (AbstractCursorInputEvt) inEvt;
+											InputCursor cursor = cursorInputEvt.getCursor();
+											IMTComponent3D target = cursorInputEvt.getTargetComponent();
+											//System.out.println("RECTANGULOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");										
+											//inEvt.setTarget(halo);						
+											for(IMTInputEventListener a:halo.getInputListeners()){
+												a.processInputEvent(inEvt);							 
+											}					
+											for(IMTInputEventListener a:canvas.getInputListeners()){
+												a.processInputEvent(inEvt);							 
+											}		
+										}else{
+											//handle other input events
+										}
+										return false;
+									}
+								});
+								
+								
 								UMLDataSaver.agregarAccion(UMLDataSaver.EDITAR_OBJETO_ACTION, objeto, objeto.getPersona());
 							}
 
@@ -566,11 +658,10 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 					//	System.out.println("Reconocer:");
 						ObjetoUML obj=recognizer.reconocerObjeto();
 						if (obj ==ObjetoUML.DELETE_OBJECT_GESTURE){//&&obj.getWidth()>40&&obj.getHeight()>40){
-							
-							
+														
 							int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID)!=null)?(int)cursor.sessionID:Usuario.ID_DEFAULT_USER;
 							
-							
+							MainDrawingScene.setEditMode(cursor.sessionID);
 							
 							 //server.getNamespace("/login").getBroadcastOperations().sendEvent("broad",new RelacionAdapter(((Relacion)objeto),idUsuario));
 							
@@ -1164,6 +1255,14 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		this.actualizarCardinalidad(((Relacion)objeto).getCardinalidadInicio(), true);
 		this.actualizarCardinalidad(((Relacion)objeto).getCardinalidadFin(), false);
 		
+		//hacer broadcast para texto de inicio y fin
+		server.getNamespace("/login").getBroadcastOperations().sendEvent("syncEdition",new TextoFlotanteAdapter(((TextoFlotante)textoflotInicio),Usuario.ID_DEFAULT_USER));
+		server.getNamespace("/login").getBroadcastOperations().sendEvent("syncEdition",new TextoFlotanteAdapter(((TextoFlotante)textoflotFin),Usuario.ID_DEFAULT_USER));
+
+		//hacer broadcast para cardinalidad inicio y fin
+		server.getNamespace("/login").getBroadcastOperations().sendEvent("syncEdition",new CardinalidadAdapter(((Relacion)objeto),true,Usuario.ID_DEFAULT_USER));
+		server.getNamespace("/login").getBroadcastOperations().sendEvent("syncEdition",new CardinalidadAdapter(((Relacion)objeto),false,Usuario.ID_DEFAULT_USER));
+
 		
 
 		

@@ -129,9 +129,7 @@ public class DrawSurfaceScene extends AbstractScene {
 	
 	
 	
-	private int paso=-1;
-	
-	private ArrayList<int[]> listaCoordenadasPlayer1;
+
 
 	
 
@@ -296,7 +294,6 @@ public class DrawSurfaceScene extends AbstractScene {
 		this.container = container;
 
 		this.getCanvas().setDepthBufferDisabled(true);
-		listaCoordenadasPlayer1 = new ArrayList<int[]>();
 		DEG_TO_RAD = (float) (180.0/Math.PI);
 
 		MIN_HEIGHT = (float) mtApplication.height * MT4jSettings.getMinimumHeightRatio();
@@ -635,12 +632,10 @@ public class DrawSurfaceScene extends AbstractScene {
 									Vector3D pos = new Vector3D(posEvt.getX(),
 											posEvt.getY(), 0);
 									
-									if(posEvt.getId()==0)
-										paso++;
+									
 									
 									//System.out.println("posEvt: "+posEvt.getId()+"");
 									
-									listaCoordenadasPlayer1.add(new int[]{Math.round(posEvt.getX()),Math.round(posEvt.getY()),paso});// X,Y,IdCursor
 								
 									// Proyecto
 									// //System.out.println("ID: " + m.sessionID);
@@ -913,7 +908,7 @@ public class DrawSurfaceScene extends AbstractScene {
 
 								case ObjetoUML.ENTIDAD:
 									
-									ObjetoUMLGraph diagrama= new Entidad_Impl(mtApp,container,getCanvas() ,componentRecognizer,objeto,server);									
+									ObjetoUMLGraph diagrama= new Entidad_Impl(mtApp,container,getCanvas(),objeto,server, MainDrawingScene.getUserColor(currentUser.getIdPluma()));									
 									objeto.setFigura(diagrama);
 									UMLDataSaver.agregarAccion(UMLDataSaver.AGREGAR_OBJETO_ACTION,objeto,currentUser);
 									UndoHelper.agregarAccion(UndoHelper.AGREGAR_OBJETO_ACTION, objeto);
@@ -976,7 +971,7 @@ public class DrawSurfaceScene extends AbstractScene {
 											((Relacion)objeto).setTextoInicio(objetotextoInicio);
 											((Relacion)objeto).setTextoFin(objetotextoFin);
 	
-											ObjetoUMLGraph linea= new Relacion_Impl(mtApp, container, getCanvas(), objeto, componentRecognizer, server);
+											ObjetoUMLGraph linea= new Relacion_Impl(mtApp, container, getCanvas(), objeto, server,MainDrawingScene.getUserColor(currentUser.getIdPluma()));
 											//((MTPolygon)((ObjetoUMLGraph)entidad1).getHalo()).setFillColor(ObjetoUMLGraph.haloDeSelected);	 										
 											//((MTPolygon)((ObjetoUMLGraph)entidad2).getHalo()).setFillColor(ObjetoUMLGraph.haloDeSelected);
 											((ObjetoUMLGraph)entidad1).guardarDatos(ObjetoUMLGraph.RELACIONES_INICIO_KEYWORD, linea);
@@ -1031,7 +1026,7 @@ public class DrawSurfaceScene extends AbstractScene {
 												
 												((Relacion)objeto).setObjetoInicio(((ObjetoUMLGraph)entidad1_aux).getObjetoUML());
 												((Relacion)objeto).setObjetoFin(((ObjetoUMLGraph)entidad2_aux).getObjetoUML());
-												ObjetoUMLGraph linea= new Relacion_Impl(mtApp, container, getCanvas(), objeto, componentRecognizer, server);
+												ObjetoUMLGraph linea= new Relacion_Impl(mtApp, container, getCanvas(), objeto, server,MainDrawingScene.getUserColor(currentUser.getIdPluma()));
 												((ObjetoUMLGraph)entidad1_aux).guardarDatos(ObjetoUMLGraph.RELACIONES_INICIO_KEYWORD, linea);
 												((ObjetoUMLGraph)entidad2_aux).guardarDatos(ObjetoUMLGraph.RELACIONES_FIN_KEYWORD, linea);
 												
@@ -1080,7 +1075,7 @@ public class DrawSurfaceScene extends AbstractScene {
 												
 												((Relacion)objeto).setObjetoInicio(((ObjetoUMLGraph)entidad1_aux1).getObjetoUML());
 												((Relacion)objeto).setObjetoFin(((ObjetoUMLGraph)entidad2_aux1).getObjetoUML());
-												ObjetoUMLGraph linea= new Relacion_Impl(mtApp, container, getCanvas(), objeto, componentRecognizer, server);
+												ObjetoUMLGraph linea= new Relacion_Impl(mtApp, container, getCanvas(), objeto, server,MainDrawingScene.getUserColor(currentUser.getIdPluma()));
 												((ObjetoUMLGraph)entidad1_aux1).guardarDatos(ObjetoUMLGraph.RELACIONES_INICIO_KEYWORD, linea);
 												((ObjetoUMLGraph)entidad2_aux1).guardarDatos(ObjetoUMLGraph.RELACIONES_FIN_KEYWORD, linea);
 												
@@ -1176,23 +1171,7 @@ public class DrawSurfaceScene extends AbstractScene {
 		
 	}
 	
-	// Cuenta cuantos pasos se dibujaron. Cuantas figuras. Para poder visualizarlo por pasos en la app web.
-		public int contarPasos()
-		{
-			int numpasos=1;
-			double pasoActual =  listaCoordenadasPlayer1.get(0)[2];
-			for(int i=0;i<listaCoordenadasPlayer1.size();i++)
-			{
-				if(pasoActual !=  listaCoordenadasPlayer1.get(i)[2])
-				{
-					numpasos++;
-					pasoActual=listaCoordenadasPlayer1.get(i)[2];
-				}
-			}
-			
-			return numpasos;
-			
-		}
+	
 
 		
 
@@ -1222,6 +1201,26 @@ public class DrawSurfaceScene extends AbstractScene {
 			e.printStackTrace();
 		}
 		
+	}
+
+	public static void setModoEdicion( int idUsuario){
+		try {
+			Usuario currentUser=(MainDrawingScene.getListaUsuarios().containsKey(idUsuario))?MainDrawingScene.getListaUsuarios().get(idUsuario):MainDrawingScene.getListaUsuarios().get(Usuario.ID_DEFAULT_USER);
+			UMLFacade componentRecognizer=listaComponentRecognizer.get(currentUser);
+			UMLFacade recognizer=(listaRecognizer.containsKey(idUsuario))?listaRecognizer.get(idUsuario):listaRecognizer.get(Usuario.ID_DEFAULT_USER);
+			componentRecognizer.setModo_borrador(false);
+			recognizer.setModo_borrador(false);
+			//System.out.println("Intentando cambiar modo");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public static UMLFacade getUserComponentRecognizer(int idUsuario){
+		Usuario currentUser=(MainDrawingScene.getListaUsuarios().containsKey(idUsuario))?MainDrawingScene.getListaUsuarios().get(idUsuario):MainDrawingScene.getListaUsuarios().get(Usuario.ID_DEFAULT_USER);
+		UMLFacade componentRecognizer=listaComponentRecognizer.get(currentUser);
+		return componentRecognizer;
 	}
 
 }

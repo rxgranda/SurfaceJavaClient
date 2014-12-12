@@ -69,7 +69,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 
 
 	
-	public Entidad_Impl(final MTApplication mtApp,final MTComponent container, final MTCanvas canvas, final UMLFacade recognizer,final ObjetoUML objeto, final SocketIOServer server) {
+	public Entidad_Impl(final MTApplication mtApp,final MTComponent container, final MTCanvas canvas,final ObjetoUML objeto, final SocketIOServer server, final MTColor userColor) {
 
 		super(mtApp);
 		rectangulo = new MTRoundRectangle(objeto
@@ -78,8 +78,10 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 				.getWidth(),
 				objeto.getHeight(), 1, 1, mtApp);									
 		rectangulo.setFillColor(new MTColor(255,255,255));
-		rectangulo.setStrokeColor(new MTColor(0, 0, 0));
-		rectangulo.setNoStroke(true);
+		rectangulo.setNoStroke(false);
+		rectangulo.setStrokeColor(userColor);
+		rectangulo.setStrokeWeight(borderWidth);
+		
 		
 		this.objeto=objeto;		
 		this.server=server;
@@ -149,8 +151,10 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 				.getWidth(),
 				(int)(objeto.getHeight()*0.25), 1, 1, mtApp);									
 		header.setFillColor(ObjetoUMLGraph.headerColor);
-		header.setStrokeColor(ObjetoUMLGraph.headerColor);
 		header.setNoStroke(false);
+		
+		header.setStrokeColor(ObjetoUMLGraph.transparent);
+		//header.setStrokeWeight(0);
 
 		//header.setPickable(false);
 		header.removeAllGestureEventListeners();
@@ -171,8 +175,10 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 				.getWidth(),(int)(
 						objeto.getHeight()*0.75), 1, 1, mtApp);									
 		body.setFillColor(new MTColor(255, 255, 255));
-		body.setStrokeColor(ObjetoUMLGraph.bodyColor);
 		body.setNoStroke(false);
+		body.setStrokeColor(ObjetoUMLGraph.transparent);
+		//body.setStrokeWeight(0);
+
 
 		//body.setPickable(false);									
 		body.removeAllGestureEventListeners();
@@ -590,8 +596,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 				if (inEvt instanceof AbstractCursorInputEvt) { //Most input events in MT4j are an instance of AbstractCursorInputEvt (mouse, multi-touch..)
 					AbstractCursorInputEvt cursorInputEvt = (AbstractCursorInputEvt) inEvt;
 					InputCursor cursor = cursorInputEvt.getCursor();
-					IMTComponent3D target = cursorInputEvt.getTargetComponent();
-					//
+					UMLFacade recognizer=MainDrawingScene.getUserComponentRecognizer((int)cursor.sessionID);
 					switch (cursorInputEvt.getId()) {
 					case AbstractCursorInputEvt.INPUT_STARTED:
 						recognizer.anadirPunto(cursor.getCurrentEvtPosX(), cursor.getCurrentEvtPosY());
@@ -613,6 +618,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 					
 								if (obj==ObjetoUML.DELETE_OBJECT_GESTURE){//&&obj.getWidth()>10&&obj.getHeight()>10){
 									if(puedeBorrarEntidad()){
+										MainDrawingScene.setEditMode(cursor.sessionID);
 										UndoHelper.agregarAccion(UndoHelper.BORRAR_OBJETO_ACTION,objeto);
 										int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID)!=null)?(int)cursor.sessionID:Usuario.ID_DEFAULT_USER;															
 										removerEntidad(idUsuario);	
@@ -891,13 +897,14 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 		container.addChild(rectangulo);
 		canvas.addChild(halo);		
 		
+		
 	}
 
 
 
 	@Override
 	public void undoAddActions() {
-		removerEntidad(Usuario.ID_DEFAULT_USER);					
+		removerEntidad(Usuario.ID_DEFAULT_USER);	
 	}
 
 

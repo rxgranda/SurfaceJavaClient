@@ -35,12 +35,12 @@ public static boolean verifySessionJSON(String jsonfilename){
 			    	String nombreAccion = (String)accion.get("accion");
 			    	JSONObject propiedades = (JSONObject)accion.get("propiedades");
 			    	
-			    	long object_id = (long)propiedades.get("id");
+			    	long object_id = (Long)propiedades.get("id");
 		    		String tipo =  (String)propiedades.get("tipo");
-		    		double width = (double)propiedades.get("width");
-		    		double height = (double)propiedades.get("height");
+		    		double width = (Double)propiedades.get("width");
+		    		double height = (Double)propiedades.get("height");
 		    		String tiempo = (String)accion.get("tiempo");
-		    		long usuario = (long)accion.get("usuario");
+		    		long usuario = (Long)accion.get("usuario");
 		    		validarObjetoUMLJSON(propiedades,tipo);
 			   }
 		  
@@ -75,15 +75,15 @@ static boolean validarObjetoUMLJSON(JSONObject jsonObj, String tipo) throws Pars
 	    for (Object dato : atributosEntidad)
 	    {
 	    	JSONObject atributo = (JSONObject)dato;
-	    	long indice = (long)atributo.get("indice");
+	    	long indice = (Long)atributo.get("indice");
 	    	String nombre_atributo = (String)atributo.get("nombre_atributo");
 	    }
 	    
 	    JSONArray posicion = (JSONArray)jsonObj.get("posicion");
-		double xCoord = (double)posicion.get(0);
-		double yCoord = (double)posicion.get(1);
-		double zCoord = (double)posicion.get(2);
-		double wXoord = (double)posicion.get(3);
+		double xCoord = (Double)posicion.get(0);
+		double yCoord = (Double)posicion.get(1);
+		double zCoord = (Double)posicion.get(2);
+		double wXoord = (Double)posicion.get(3);
 	
 		return true; 
 	
@@ -94,16 +94,16 @@ static boolean validarObjetoUMLJSON(JSONObject jsonObj, String tipo) throws Pars
 		String textoInicio = (String)jsonObj.get("textoInicio");
 		String textoFin = (String)jsonObj.get("textoFin");
 		JSONArray posicionInicio = (JSONArray)jsonObj.get("posicionInicio");
-		double xCoordIni = (double)posicionInicio.get(0);
-		double yCoordIni = (double)posicionInicio.get(1);
-		double zCoordIni = (double)posicionInicio.get(2);
-		double wXoordIni = (double)posicionInicio.get(3);
+		double xCoordIni = (Double)posicionInicio.get(0);
+		double yCoordIni = (Double)posicionInicio.get(1);
+		double zCoordIni = (Double)posicionInicio.get(2);
+		double wXoordIni = (Double)posicionInicio.get(3);
 		
 		JSONArray posicionFin = (JSONArray)jsonObj.get("posicionInicio");
-		double xCoordFin = (double)posicionFin.get(0);
-		double yCoordFin = (double)posicionFin.get(1);
-		double zCoordFin = (double)posicionFin.get(2);
-		double wXoordFin = (double)posicionFin.get(3);		
+		double xCoordFin = (Double)posicionFin.get(0);
+		double yCoordFin = (Double)posicionFin.get(1);
+		double zCoordFin = (Double)posicionFin.get(2);
+		double wXoordFin = (Double)posicionFin.get(3);		
 		
 		
 		return true;

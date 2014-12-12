@@ -39,6 +39,7 @@ public class UMLFacade {
 	
 	
 	public void anadirPunto(float x,float y){
+		if(!modo_borrador){
 		recognizer.addPoint(x, y);
 		
 		if(minX>x)
@@ -61,6 +62,7 @@ public class UMLFacade {
 		numMuestas++;
 		if (numMuestas>5000){
 			reiniciar();
+		}
 		}
 			
 	}
@@ -90,7 +92,7 @@ public class UMLFacade {
 			return objeto;
 		}
 		int resultado=recognizer.recognize();
-		System.out.println("entrandooooooo");
+		System.out.println("entrandooooooo"+ resultado);
 		if(resultado!=ObjetoUML.INVALIDO&&this.numMuestas>40){	
 			int width=(int)(maxX-minX);
 			int height=(int)(maxY-minY);
@@ -173,7 +175,7 @@ public class UMLFacade {
 		primerX=0;
 		primerY=0;
 		this.recognizer.reiniciar();
-		this.setModo_borrador(false);
+		//this.setModo_borrador(false);
 	
 	}
 	

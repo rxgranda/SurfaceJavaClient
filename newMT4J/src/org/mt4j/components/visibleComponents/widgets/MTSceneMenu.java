@@ -29,6 +29,8 @@ import org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragEven
 import org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragProcessor;
 import org.mt4j.input.inputProcessors.componentProcessors.rotateProcessor.RotateProcessor;
 import org.mt4j.input.inputProcessors.componentProcessors.scaleProcessor.ScaleProcessor;
+import org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapEvent;
+import org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapProcessor;
 import org.mt4j.input.inputProcessors.globalProcessors.CursorTracer;
 import org.mt4j.sceneManagement.Iscene;
 import org.mt4j.util.MT4jSettings;
@@ -156,7 +158,7 @@ public class MTSceneMenu extends MTRectangle{
 		if (menuImage == null){
 			String altImagesPath = "data" + MTApplication.separator ;	
 			menuImage = app.loadImage( altImagesPath+
-					"topMenu.png");
+					"menutop2.png");
 		}
 		
 		if (MT4jSettings.getInstance().isOpenGlMode()){
@@ -177,13 +179,13 @@ public class MTSceneMenu extends MTRectangle{
 		
 		float buttonWidth = 60;
 		float buttonHeight = 60;
-		final float buttonOpacity = 170;
+		final float buttonOpacity = 150;
 		
 		//CLOSE BUTTON
 //		Vector3D a = new Vector3D(-width * 1.2f, height/2f);
 		Vector3D a = new Vector3D(-width * 1.55f, 0);
 		a.rotateZ(PApplet.radians(-170));
-		final MTRectangle borrarButton = new MTRectangle(app, x + a.x, y + a.y, buttonWidth, buttonHeight);
+		final MTRectangle borrarButton = new MTRectangle(app, app.width/2 +120 -buttonWidth/2, 20, buttonWidth, buttonHeight);
 		
 		if (borrarButtonImage == null){
 			/*borrarButtonImage = app.loadImage(MT4jSettings.getInstance().getDefaultImagesPath() +
@@ -196,7 +198,7 @@ public class MTSceneMenu extends MTRectangle{
 		borrarButton.setTexture(borrarButtonImage);
 		borrarButton.setFillColor(new MTColor(255, 255, 255, buttonOpacity));
 		borrarButton.setNoStroke(true);
-		borrarButton.setVisible(false);
+		borrarButton.setVisible(true);
 		borrarButton.removeAllGestureEventListeners(DragProcessor.class);
 		borrarButton.removeAllGestureEventListeners(RotateProcessor.class);
 		borrarButton.removeAllGestureEventListeners(ScaleProcessor.class);
@@ -209,7 +211,7 @@ public class MTSceneMenu extends MTRectangle{
 			//RESTORE BUTTON
 			Vector3D b = new Vector3D(-width * 1.55f, 0);
 			b.rotateZ(PApplet.radians(-10));
-			final MTRectangle guardarButton = new MTRectangle(app, x + b.x, y + b.y, buttonWidth, buttonHeight);
+			final MTRectangle guardarButton = new MTRectangle(app, app.width/2 -120 -buttonWidth/2,20 , buttonWidth, buttonHeight);
 			
 			if (guardarButtonImage == null){
 				/*guardarButtonImage = app.loadImage(MT4jSettings.getInstance().getDefaultImagesPath() +
@@ -223,15 +225,15 @@ public class MTSceneMenu extends MTRectangle{
 			guardarButton.setTexture(guardarButtonImage);
 			guardarButton.setFillColor(new MTColor(255, 255, 255, buttonOpacity));
 			guardarButton.setNoStroke(true);
-			guardarButton.setVisible(false);
+			guardarButton.setVisible(true);
 			guardarButton.removeAllGestureEventListeners(DragProcessor.class);
 			guardarButton.removeAllGestureEventListeners(RotateProcessor.class);
 			guardarButton.removeAllGestureEventListeners(ScaleProcessor.class);			
 			this.addChild(guardarButton);
 			////
-			Vector3D c = new Vector3D(-width * 1.55f, 0);
+			Vector3D c = new Vector3D(-width * .55f, 0);
 			c.rotateZ(PApplet.radians(-90));
-			final MTRectangle deshacerButton = new MTRectangle(app, x + c.x, y + c.y, buttonWidth, buttonHeight);
+			final MTRectangle deshacerButton = new MTRectangle(app,app.width/2 -buttonWidth/2, 20, buttonWidth, buttonHeight);
 			
 			if (deshacerButtonImage== null){
 				String altImagesPath = "data" + MTApplication.separator ;	
@@ -242,13 +244,104 @@ public class MTSceneMenu extends MTRectangle{
 			deshacerButton.setTexture(deshacerButtonImage);
 			deshacerButton.setFillColor(new MTColor(255, 255, 255, buttonOpacity));
 			deshacerButton.setNoStroke(true);
-			deshacerButton.setVisible(false);
+			deshacerButton.setVisible(true);
 			deshacerButton.removeAllGestureEventListeners(DragProcessor.class);
 			deshacerButton.removeAllGestureEventListeners(RotateProcessor.class);
 			deshacerButton.removeAllGestureEventListeners(ScaleProcessor.class);			
 			this.addChild(deshacerButton);
+			
+			
+			
+			deshacerButton.registerInputProcessor(new TapProcessor(app));
+			deshacerButton.addGestureListener(TapProcessor.class, new IGestureEventListener() {
+				public boolean processGestureEvent(MTGestureEvent ge) {
+					TapEvent te = (TapEvent)ge;
+					switch (te.getId()) {
+					case MTGestureEvent.GESTURE_STARTED:
+						highlightButton(deshacerButton);
+						break;
+					case MTGestureEvent.GESTURE_UPDATED:
+						break;
+					case MTGestureEvent.GESTURE_ENDED:
+						if (te.isTapped()){
+													
+							if(getScene() instanceof MainDrawingScene ){
+								unhighlightButton(deshacerButton, buttonOpacity);
+								MainDrawingScene.deshacer();
+							}
+						
+						}
+						//tapOnly.setFillColor(textAreaColor);
+						break;
+					}
+					return false;
+				}
+			});
+			
+			
+			guardarButton.registerInputProcessor(new TapProcessor(app));
+			guardarButton.addGestureListener(TapProcessor.class, new IGestureEventListener() {
+				public boolean processGestureEvent(MTGestureEvent ge) {
+					TapEvent te = (TapEvent)ge;
+					switch (te.getId()) {
+					case MTGestureEvent.GESTURE_STARTED:
+						highlightButton(guardarButton);
+						break;
+					case MTGestureEvent.GESTURE_UPDATED:
+						break;
+					case MTGestureEvent.GESTURE_ENDED:
+						if (te.isTapped()){
+													
+							if(getScene() instanceof MainDrawingScene ){
+								unhighlightButton(guardarButton, buttonOpacity);
+								MainDrawingScene escena=(MainDrawingScene)getScene();
+								escena.guardar();
+							}
+						
+						}
+						//tapOnly.setFillColor(textAreaColor);
+						break;
+					}
+					return false;
+				}
+			});
+			
+			
+			
+
+			borrarButton.registerInputProcessor(new TapProcessor(app));
+			borrarButton.addGestureListener(TapProcessor.class, new IGestureEventListener() {
+				public boolean processGestureEvent(MTGestureEvent ge) {
+					TapEvent te = (TapEvent)ge;
+					switch (te.getId()) {
+					case MTGestureEvent.GESTURE_STARTED:
+						highlightButton(borrarButton);
+						break;
+					case MTGestureEvent.GESTURE_UPDATED:
+						break;
+					case MTGestureEvent.GESTURE_ENDED:
+						if (te.isTapped()){
+									
+							if(getScene() instanceof MainDrawingScene ){
+								System.out.println("--> Cambiar modo!");
+								InputCursor m=te.getCursor();							
+								MainDrawingScene.setDeleteMode(m.sessionID);
+								unhighlightButton(borrarButton, buttonOpacity);
+									
+							
+							}
+							
+						
+						}
+						//tapOnly.setFillColor(textAreaColor);
+						break;
+					}
+					return false;
+				}
+			});
+			
 			////
-			menuShape.addGestureListener(DragProcessor.class, new IGestureEventListener() {
+			/*menuShape.addGestureListener(DragProcessor.class, new IGestureEventListener() {
 				public boolean processGestureEvent(MTGestureEvent ge) {
 					DragEvent de = (DragEvent)ge;
 					switch (de.getId()) {
@@ -323,8 +416,7 @@ public class MTSceneMenu extends MTRectangle{
 								if(getScene() instanceof MainDrawingScene ){
 									System.out.println("--> Cambiar modo!");
 									InputCursor m=de.getDragCursor();							
-									MainDrawingScene.modo_borrar(m.sessionID);
-									CursorTracer.cambiarCursorImage(m.sessionID);
+									MainDrawingScene.setDeleteMode(m.sessionID);
 								///}
 								
 							}
@@ -340,6 +432,9 @@ public class MTSceneMenu extends MTRectangle{
 					return false;
 				}
 			});
+			
+			
+			*/
 		}else{
 			if (scene != null){
 				menuShape.addGestureListener(DragProcessor.class, new IGestureEventListener() {

@@ -20,7 +20,8 @@ public interface ObjetoUMLGraph extends UndoActions{
 	public static final MTColor nonselectedObject =new MTColor(255,255,255);
 	public static final MTColor haloSelected =new MTColor(255,255,255,0);//new MTColor(148,214,247,10);//new MTColor(255,255,255,255);//new MTColor(148,214,247,10);// new MTColor(200,200,200);//
 	public static final MTColor haloDeSelected =new MTColor(255,255,255,0); // new MTColor(200,200,200);// new MTColor(200,200,200);//	
-	public static final MTColor transparent = new MTColor(100,100,100);//
+	public static final MTColor transparent = new MTColor(255,255,255,0);//
+	public static final float borderWidth=7f;
 	
 	public static final int haloWidth=75;
 	public static final String RELACIONES_INICIO_KEYWORD = "relaciones-inicio";
