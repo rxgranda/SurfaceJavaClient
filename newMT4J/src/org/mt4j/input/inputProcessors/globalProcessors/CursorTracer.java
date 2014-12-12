@@ -174,10 +174,18 @@ public class CursorTracer extends AbstractGlobalInputProcessor{
 	private static Map<Integer, Integer> listaUsuariosModo=new HashMap<Integer, Integer>();
 	private static PImage eraserImage;
 
-	
+	public static void editModeCursor(long sessionID){		
+		synchronized (listaUsuariosModo) {
+			try {
+				listaUsuariosModo.remove((int)sessionID);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}							
+		}
+	}
 	
 
-	public static void cambiarCursorImage(long sessionID){		
+	public static void deleteModeCursor(long sessionID){		
 		synchronized (listaUsuariosModo) {
 			listaUsuariosModo.put((int)sessionID,(int)sessionID);
 		}
@@ -216,14 +224,7 @@ public class CursorTracer extends AbstractGlobalInputProcessor{
 					displayShape = createDisplayComponent(app, position);
 				else{
 					if(listaUsuariosModo.containsKey((int)c.sessionID)){
-						displayShape = createDisplayComponentBorrarImage(app, position);
-						synchronized (listaUsuariosModo) {
-							try {
-								listaUsuariosModo.remove((int)c.sessionID);
-							} catch (Exception e) {
-								e.printStackTrace();
-							}							
-						}
+						displayShape = createDisplayComponentBorrarImage(app, position);						
 					}else{
 						displayShape = createDisplayComponent(app, position);
 					}

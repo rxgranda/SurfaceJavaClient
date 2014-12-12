@@ -48,6 +48,7 @@ import org.mt4j.util.math.Vertex;
 import org.mt4j.util.opengl.GLFBO;
 
 import advanced.umleditor.UMLDataSaver;
+import advanced.umleditor.UMLFacade;
 import advanced.umleditor.logic.Usuario;
 
 import com.corundumstudio.socketio.AckRequest;
@@ -432,12 +433,24 @@ public class MainDrawingScene extends AbstractScene {
 		if(application_stated)
 			UndoHelper.deshacerAccion();
 	}
-	public static  synchronized void modo_borrar(long idUsuario){
+	public static  synchronized void setDeleteMode(long idUsuario){
 		if(application_stated){
-			DrawSurfaceScene.setModoBorrar((int)idUsuario);						
+			DrawSurfaceScene.setModoBorrar((int)idUsuario);	
+			CursorTracer.deleteModeCursor(idUsuario);
+
 		}
 		//UndoHelper.deshacerAccion();
 	}
 	
+	public static  synchronized void setEditMode(long idUsuario){
+		if(application_stated){
+			DrawSurfaceScene.setModoEdicion((int)idUsuario);
+			CursorTracer.editModeCursor(idUsuario);
+		}
+		//UndoHelper.deshacerAccion();
+	}
 	
+	public static UMLFacade getUserComponentRecognizer(int idUsuario){
+			return DrawSurfaceScene.getUserComponentRecognizer(idUsuario);
+	}
 }

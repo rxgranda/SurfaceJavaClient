@@ -69,7 +69,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 
 
 	
-	public Entidad_Impl(final MTApplication mtApp,final MTComponent container, final MTCanvas canvas, final UMLFacade recognizer,final ObjetoUML objeto, final SocketIOServer server) {
+	public Entidad_Impl(final MTApplication mtApp,final MTComponent container, final MTCanvas canvas,final ObjetoUML objeto, final SocketIOServer server) {
 
 		super(mtApp);
 		rectangulo = new MTRoundRectangle(objeto
@@ -590,8 +590,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 				if (inEvt instanceof AbstractCursorInputEvt) { //Most input events in MT4j are an instance of AbstractCursorInputEvt (mouse, multi-touch..)
 					AbstractCursorInputEvt cursorInputEvt = (AbstractCursorInputEvt) inEvt;
 					InputCursor cursor = cursorInputEvt.getCursor();
-					IMTComponent3D target = cursorInputEvt.getTargetComponent();
-					//
+					UMLFacade recognizer=MainDrawingScene.getUserComponentRecognizer((int)cursor.sessionID);
 					switch (cursorInputEvt.getId()) {
 					case AbstractCursorInputEvt.INPUT_STARTED:
 						recognizer.anadirPunto(cursor.getCurrentEvtPosX(), cursor.getCurrentEvtPosY());
@@ -613,6 +612,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 					
 								if (obj==ObjetoUML.DELETE_OBJECT_GESTURE){//&&obj.getWidth()>10&&obj.getHeight()>10){
 									if(puedeBorrarEntidad()){
+										MainDrawingScene.setEditMode(cursor.sessionID);
 										UndoHelper.agregarAccion(UndoHelper.BORRAR_OBJETO_ACTION,objeto);
 										int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID)!=null)?(int)cursor.sessionID:Usuario.ID_DEFAULT_USER;															
 										removerEntidad(idUsuario);	

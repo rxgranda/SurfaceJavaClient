@@ -323,8 +323,7 @@ public class MTSceneMenu extends MTRectangle{
 								if(getScene() instanceof MainDrawingScene ){
 									System.out.println("--> Cambiar modo!");
 									InputCursor m=de.getDragCursor();							
-									MainDrawingScene.modo_borrar(m.sessionID);
-									CursorTracer.cambiarCursorImage(m.sessionID);
+									MainDrawingScene.setDeleteMode(m.sessionID);
 								///}
 								
 							}
