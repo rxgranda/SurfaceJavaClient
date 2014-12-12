@@ -317,7 +317,7 @@ public class MainDrawingScene extends AbstractScene {
 		plumaAmarilla.setNoFill(false);
 		plumaAmarilla.setNoStroke(true);
 		plumaAmarilla.setDrawSmooth(true);
-		plumaAmarilla.setStrokeColor(new MTColor(0,0,0));
+		plumaAmarilla.setStrokeColor(AMARILLO);
 		plumaAmarilla.setFillColor(AMARILLO);
 		
 		MTEllipse plumaVerde = new MTEllipse(pa, new Vector3D(brushImage.width/2f,brushImage.height/2f,0), brushImage.width/2f, brushImage.width/2f, 60);
