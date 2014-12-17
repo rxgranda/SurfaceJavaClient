@@ -189,7 +189,7 @@ public class MTSceneMenu extends MTRectangle{
 //		Vector3D a = new Vector3D(-width * 1.2f, height/2f);
 		Vector3D a = new Vector3D(-width * 1.55f, 0);
 		a.rotateZ(PApplet.radians(-170));
-		final MTRectangle borrarButton = new MTRectangle(app, app.width/2 +120 -buttonWidth/2, 20, buttonWidth, buttonHeight);
+		final MTRectangle borrarButton = new MTRectangle(app, app.width/2 +150 -buttonWidth/2, 20, buttonWidth, buttonHeight);
 		
 		if (borrarButtonImage == null){
 			/*borrarButtonImage = app.loadImage(MT4jSettings.getInstance().getDefaultImagesPath() +
@@ -215,7 +215,7 @@ public class MTSceneMenu extends MTRectangle{
 		
 		
 		
-	final MTRectangle editarButton = new MTRectangle(app, app.width/2 +180 -buttonWidth/2, 20, buttonWidth, buttonHeight);
+	final MTRectangle editarButton = new MTRectangle(app, app.width/2 +50 -buttonWidth/2, 20, buttonWidth, buttonHeight);
 		
 		
 		
@@ -244,7 +244,7 @@ public class MTSceneMenu extends MTRectangle{
 			//RESTORE BUTTON
 			Vector3D b = new Vector3D(-width * 1.55f, 0);
 			b.rotateZ(PApplet.radians(-10));
-			final MTRectangle guardarButton = new MTRectangle(app, app.width/2 -120 -buttonWidth/2,20 , buttonWidth, buttonHeight);
+			final MTRectangle guardarButton = new MTRectangle(app, app.width/2 -150 -buttonWidth/2,20 , buttonWidth, buttonHeight);
 			
 			if (guardarButtonImage == null){
 				/*guardarButtonImage = app.loadImage(MT4jSettings.getInstance().getDefaultImagesPath() +
@@ -266,7 +266,7 @@ public class MTSceneMenu extends MTRectangle{
 			////
 			Vector3D c = new Vector3D(-width * .55f, 0);
 			c.rotateZ(PApplet.radians(-90));
-			final MTRectangle deshacerButton = new MTRectangle(app,app.width/2 -buttonWidth/2, 20, buttonWidth, buttonHeight);
+			final MTRectangle deshacerButton = new MTRectangle(app,app.width/2 -50 -buttonWidth/2, 20, buttonWidth, buttonHeight);
 			
 			if (deshacerButtonImage== null){
 				String altImagesPath = "data" + MTApplication.separator ;	
