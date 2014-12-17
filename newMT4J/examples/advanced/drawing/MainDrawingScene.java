@@ -147,7 +147,7 @@ public class MainDrawingScene extends AbstractScene {
 
 		//CAMBIO
 
-		login.setEnabled(true);
+		login.setEnabled(false);
 		login.setNoStroke(true);
 		this.getCanvas().addChild(login);
 
