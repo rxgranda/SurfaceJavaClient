@@ -69,13 +69,13 @@ public class UMLRecognizer {
 							//}
 							
 							//return ObjetoUML.INVALIDO;
-						}else if(shapeLabel.equals("Diamond")){
+						}/*else if(shapeLabel.equals("Diamond")){
 							//System.out.println("RETORNA RELACION MULTIPLE");	
 							
 								return ObjetoUML.RELACION_MULTIPLE;
 						
 							
-						}/*else if((shapeLabel.contains("Wave"))){
+						}*//*else if((shapeLabel.contains("Wave"))){
 							if(!isEditMode())
 								return ObjetoUML.RELACION;	
 							System.out.println("No retorno delete "+isEditMode());

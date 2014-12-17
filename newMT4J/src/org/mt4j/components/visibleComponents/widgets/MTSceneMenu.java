@@ -158,6 +158,7 @@ public class MTSceneMenu extends MTRectangle{
 		this.setFillColor(new MTColor(255,255,255,150));
 		
 		overlayGroup = new MTOverlayContainer(app, "Window Menu Overlay Group");
+//		MTRectangle container=new MTRectangle(app, app.width/2 +150 -width/2, 20, buttonWidth, height);
 		
 		if (menuImage == null){
 			String altImagesPath = "data" + MTApplication.separator ;	

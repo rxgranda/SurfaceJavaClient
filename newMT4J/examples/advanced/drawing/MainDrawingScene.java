@@ -481,7 +481,7 @@ public class MainDrawingScene extends AbstractScene {
 			break;
 
 		case 5:
-			color=AMARILLO;
+			color=NEGRO;
 			break;
 
 
