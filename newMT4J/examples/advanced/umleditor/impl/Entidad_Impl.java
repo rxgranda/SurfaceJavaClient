@@ -403,63 +403,70 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 			//	System.out.println("Fin evento de: Mover entidad Usuario:"+cursor.sessionID );
 				
 				InputCursor cursor = de.getDragCursor();
-				Vector3D pos = cursor.getPosition();
-				Vector3D posFinal = de.getTranslationVect();
-				
-				if((pos.y<0)||pos.y>=(container.getBounds().getHeightXY(TransformSpace.RELATIVE_TO_PARENT))){
-					posFinal.y=0;
-				}
-				if((pos.x<0)||pos.x>=(container.getBounds().getWidthXY(TransformSpace.RELATIVE_TO_PARENT))){
-					posFinal.x=0;
-				}
-				rectangulo.setPositionGlobal(rectangulo.getCenterPointGlobal().addLocal(posFinal));
-				objeto.setPosicion(rectangulo.getCenterPointGlobal());
-				halo.setPositionGlobal(rectangulo.getCenterPointGlobal());
-				
-//// TEST
-				MainDrawingScene.clear();
-/// TEST
-				LinkedList listaInicio=obtenerDatos(RELACIONES_INICIO_KEYWORD);
-				if(listaInicio!=null){
-					for(Object o:listaInicio){
-						if(o instanceof ObjetoUMLGraph){
-							//((Relacion)objeto)
-							Relacion objeto_relacion=(Relacion) ((Relacion_Impl)o).getObjetoUML();
-							//objeto_relacion.setPosicion(objeto_relacion.getPosicion().getAdded(de.getFrom().getSubtracted(de.getTo())));
-							objeto_relacion.setInicio(objeto_relacion.getInicio().getAdded(de.getTranslationVect()));
-							((Relacion_Impl)o).actualizarRelacion();
-						}
-
+				UMLFacade recognizer=MainDrawingScene.getUserComponentRecognizer((int)cursor.sessionID);
+				if(!recognizer.isModo_borrador()){
+					Vector3D pos = cursor.getPosition();
+					Vector3D posFinal = de.getTranslationVect();
+					
+					if((pos.y<0)||pos.y>=(container.getBounds().getHeightXY(TransformSpace.RELATIVE_TO_PARENT))){
+						posFinal.y=0;
 					}
-				}
-
-				LinkedList listaFin=obtenerDatos(RELACIONES_FIN_KEYWORD);
-				if(listaFin!=null){
-					for(Object o:listaFin){
-						if(o instanceof ObjetoUMLGraph){
-							//((Relacion)objeto)
-							Relacion objeto_relacion=(Relacion) ((Relacion_Impl)o).getObjetoUML();
-							//objeto_relacion.setPosicion(objeto_relacion.getPosicion().getAdded(de.getFrom().getSubtracted(de.getTo())));
-							objeto_relacion.setFin(objeto_relacion.getFin().getAdded(de.getTranslationVect()));
-							((Relacion_Impl)o).actualizarRelacion();
-						}
-
+					if((pos.x<0)||pos.x>=(container.getBounds().getWidthXY(TransformSpace.RELATIVE_TO_PARENT))){
+						posFinal.x=0;
 					}
+					rectangulo.setPositionGlobal(rectangulo.getCenterPointGlobal().addLocal(posFinal));
+					objeto.setPosicion(rectangulo.getCenterPointGlobal());
+					halo.setPositionGlobal(rectangulo.getCenterPointGlobal());
+					
+	//// TEST
+					MainDrawingScene.clear();
+	/// TEST
+					LinkedList listaInicio=obtenerDatos(RELACIONES_INICIO_KEYWORD);
+					if(listaInicio!=null){
+						for(Object o:listaInicio){
+							if(o instanceof ObjetoUMLGraph){
+								//((Relacion)objeto)
+								Relacion objeto_relacion=(Relacion) ((Relacion_Impl)o).getObjetoUML();
+								//objeto_relacion.setPosicion(objeto_relacion.getPosicion().getAdded(de.getFrom().getSubtracted(de.getTo())));
+								objeto_relacion.setInicio(objeto_relacion.getInicio().getAdded(de.getTranslationVect()));
+								((Relacion_Impl)o).actualizarRelacion();
+							}
+	
+						}
+					}
+	
+					LinkedList listaFin=obtenerDatos(RELACIONES_FIN_KEYWORD);
+					if(listaFin!=null){
+						for(Object o:listaFin){
+							if(o instanceof ObjetoUMLGraph){
+								//((Relacion)objeto)
+								Relacion objeto_relacion=(Relacion) ((Relacion_Impl)o).getObjetoUML();
+								//objeto_relacion.setPosicion(objeto_relacion.getPosicion().getAdded(de.getFrom().getSubtracted(de.getTo())));
+								objeto_relacion.setFin(objeto_relacion.getFin().getAdded(de.getTranslationVect()));
+								((Relacion_Impl)o).actualizarRelacion();
+							}
+	
+						}
+					}
+				}else{
+					switch (de.getId()) {
+						case AbstractCursorInputEvt.INPUT_STARTED:																
+								recognizer.anadirPunto(cursor.getCurrentEvtPosX(), cursor.getCurrentEvtPosY());						
+							break;
+						case AbstractCursorInputEvt.INPUT_UPDATED:
+							break;
+						case AbstractCursorInputEvt.INPUT_ENDED:
+							ObjetoUML obj=recognizer.reconocerObjeto();
+							//System.out.println("BORRAR W: "+obj.getWidth()+" H: "+obj.getHeight()+" Entidad "+((Entidad)objeto).getNombre()+" Resultado(2 Relacion,-2 Borado):"+obj.getTipo());																
+							if (obj==ObjetoUML.DELETE_OBJECT_GESTURE){//&&obj.getWidth()>10&&obj.getHeight()>10){
+								borrarStub(objeto, (int)cursor.sessionID);
+							}
+							break;
+						default:
+							break;
+						}
 				}
-
-
-				/*switch (de.getId()) {
-					case AbstractCursorInputEvt.INPUT_STARTED:
-						canvas.removeChild(halo);
-						break;
-					case AbstractCursorInputEvt.INPUT_UPDATED:
-						break;
-					case AbstractCursorInputEvt.INPUT_ENDED:
-						canvas.addChild(canvas);
-						break;
-					default:
-						break;
-					}*/
+				
 				return false;
 			}
 		});
@@ -617,12 +624,8 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 						
 					
 								if (obj==ObjetoUML.DELETE_OBJECT_GESTURE){//&&obj.getWidth()>10&&obj.getHeight()>10){
-									if(puedeBorrarEntidad()){
-										MainDrawingScene.setEditMode(cursor.sessionID);
-										UndoHelper.agregarAccion(UndoHelper.BORRAR_OBJETO_ACTION,objeto);
-										int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID)!=null)?(int)cursor.sessionID:Usuario.ID_DEFAULT_USER;															
-										removerEntidad(idUsuario);	
-									}
+
+									borrarStub(objeto, (int)cursor.sessionID);
 								}
 
 							
@@ -913,5 +916,13 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 	public void undoEditActions() {
 		this.actualizarEtiquetas();		
 		server.getNamespace("/login").getBroadcastOperations().sendEvent("syncEdition",new EntidadAdapter(((Entidad)objeto),Usuario.ID_DEFAULT_USER,-1));		
+	}
+	void borrarStub(ObjetoUML objeto,int userID){
+		if(puedeBorrarEntidad()){			
+			MainDrawingScene.setEditMode(userID);
+			UndoHelper.agregarAccion(UndoHelper.BORRAR_OBJETO_ACTION,objeto);
+			int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)userID)!=null)?(int)userID:Usuario.ID_DEFAULT_USER;															
+			removerEntidad(idUsuario);	
+		}
 	}
 }
