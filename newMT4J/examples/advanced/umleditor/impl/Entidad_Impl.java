@@ -919,7 +919,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 	}
 	void borrarStub(ObjetoUML objeto,int userID){
 		if(puedeBorrarEntidad()){			
-			MainDrawingScene.setEditMode(userID);
+			//MainDrawingScene.setEditMode(userID);
 			UndoHelper.agregarAccion(UndoHelper.BORRAR_OBJETO_ACTION,objeto);
 			int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)userID)!=null)?(int)userID:Usuario.ID_DEFAULT_USER;															
 			removerEntidad(idUsuario);	

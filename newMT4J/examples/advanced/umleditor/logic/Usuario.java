@@ -10,6 +10,13 @@ public class Usuario {
 	private String canal;
 	private int estado;
 
+	private int creacionesEntidades;
+	private int eliminacionesEntidades;
+	private int edicionesEntidades;
+	
+	private int creacionesRelaciones;
+	private int eliminacionesRelaciones;
+	private int edicionesRelaciones;
 	
 	public Usuario() {
 		super();
@@ -55,6 +62,54 @@ public class Usuario {
 
 	public void setEstado(int estado) {
 		this.estado = estado;
+	}
+
+	public int getCreacionesEntidades() {
+		return creacionesEntidades;
+	}
+
+	public void agregarCreacionEntidades() {
+		this.creacionesEntidades ++;
+	}
+
+	public int getEliminacionesEntidades() {
+		return eliminacionesEntidades;
+	}
+
+	public void agregarElimininacionEntidades() {
+		this.eliminacionesEntidades++;
+	}
+
+	public int getEdicionesEntidades() {
+		return edicionesEntidades;
+	}
+
+	public void agregarEdicionEntidades() {
+		this.edicionesEntidades++;
+	}
+
+	public int getCreacionesRelaciones() {
+		return creacionesRelaciones;
+	}
+
+	public void agregarCreacionRelacion() {
+		this.creacionesRelaciones ++;
+	}
+
+	public int getEliminacionesRelaciones() {
+		return eliminacionesRelaciones;
+	}
+
+	public void agregarEliminacionRelacion() {
+		this.eliminacionesRelaciones ++;
+	}
+
+	public int getEdicionesRelaciones() {
+		return edicionesRelaciones;
+	}
+
+	public void agregarEdicionRelacion() {
+		this.edicionesRelaciones ++;
 	}
 
 

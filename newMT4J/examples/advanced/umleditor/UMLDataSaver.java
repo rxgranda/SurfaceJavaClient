@@ -14,15 +14,20 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
+import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 import org.mt4j.MTApplication;
 import org.mt4j.util.MT4jSettings;
+import org.mt4j.util.math.Vector3D;
 
+import advanced.drawing.MainDrawingScene;
+import advanced.umleditor.impl.HaloHelper;
 import advanced.umleditor.logic.Entidad;
 import advanced.umleditor.logic.ObjetoUML;
 import advanced.umleditor.logic.Relacion;
@@ -107,9 +112,11 @@ public class UMLDataSaver implements Runnable {
 		
 		switch (tipoAccion) {
 		case AGREGAR_OBJETO_ACTION:	
+			
 			objetoMap.put("id", objeto.getId());
 			switch (objeto.getTipo()) {
 			case ObjetoUML.ENTIDAD:
+				user.agregarCreacionEntidades();
 				objetoMap.put("tipo", "Entidad");
 				if(objeto instanceof Entidad){
 					LinkedHashMap mapaAtributos=new LinkedHashMap();
@@ -137,6 +144,7 @@ public class UMLDataSaver implements Runnable {
 				break;
 			
 			case ObjetoUML.RELACION:
+				user.agregarCreacionRelacion();
 				objetoMap.put("tipo", "Relacion");
 				if(objeto instanceof Relacion){
 					Relacion relacion=((Relacion)objeto);
@@ -229,6 +237,7 @@ public class UMLDataSaver implements Runnable {
 			objetoMap.put("id", objeto.getId());
 			switch (objeto.getTipo()) {
 			case ObjetoUML.ENTIDAD:
+				user.agregarEdicionEntidades();
 				objetoMap.put("tipo", "Entidad");
 				if(objeto instanceof Entidad){
 					LinkedHashMap mapaAtributos=new LinkedHashMap();
@@ -253,6 +262,7 @@ public class UMLDataSaver implements Runnable {
 				objetoMap.put("posicion", coordenadasPosicion);
 				break;
 			case ObjetoUML.RELACION:
+				user.agregarEdicionRelacion();
 				objetoMap.put("tipo", "Relacion");
 				if(objeto instanceof Relacion){
 					Relacion relacion=((Relacion)objeto);
@@ -349,6 +359,7 @@ public class UMLDataSaver implements Runnable {
 			switch (objeto.getTipo()) {
 			
 			case ObjetoUML.ENTIDAD:
+				user.agregarElimininacionEntidades();
 				objetoMap.put("tipo", "Entidad");
 				if(objeto instanceof Entidad){
 					LinkedHashMap mapaAtributos=new LinkedHashMap();
@@ -379,6 +390,7 @@ public class UMLDataSaver implements Runnable {
 				
 				break;
 			case ObjetoUML.RELACION:
+				user.agregarEliminacionRelacion();
 				objetoMap.put("tipo", "Relacion");
 				if(objeto instanceof Relacion){
 					Relacion relacion=((Relacion)objeto);
@@ -525,7 +537,22 @@ public class UMLDataSaver implements Runnable {
 		System.out.println("Guardando...");
 		
 		escribirArchivo(dir_archivo);
+		String resumen=new String("RESUMEN DEL TRABAJO");
+		
+		
+		Set<Integer> keys=MainDrawingScene.getListaUsuarios().keySet();
+		for (Integer key:keys){
+			//System.out.println("Usuariossss:   "+key);
+			// Proyecto
+			Usuario user=MainDrawingScene.getListaUsuarios().get(key);
+			resumen+="\n**  Usuario: "+user.getNombres().toUpperCase()+"  **\n\t     Total Entidades creadas="+user.getCreacionesEntidades()+"\n\t     Total Edicion de Entidades ="+user.getEdicionesEntidades()+"\n\t     Total Entidades Eliminadas="+user.getEliminacionesEntidades()+"\n\t     Total Relaciones creadas="+user.getCreacionesRelaciones()+"\n\t     Total Edicion Relaciones ="+user.getEdicionesRelaciones()+"\n\t     Total Relaciones Eliminadas="+user.getEliminacionesRelaciones();
+
+		
 		}
+		resumen+="";
+		
+		JOptionPane.showMessageDialog(null,resumen ,"Resumen",  JOptionPane.INFORMATION_MESSAGE);
+	}
 	/*	//String jsonText = JSONValue.toJSONString(jsonMap);
 
 		// Escribo el String en archivo .json

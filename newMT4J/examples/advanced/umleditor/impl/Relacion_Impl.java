@@ -662,7 +662,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 														
 							int idUsuario=(MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID)!=null)?(int)cursor.sessionID:Usuario.ID_DEFAULT_USER;
 							
-							MainDrawingScene.setEditMode(cursor.sessionID);
+							//MainDrawingScene.setEditMode(cursor.sessionID);
 							
 							 //server.getNamespace("/login").getBroadcastOperations().sendEvent("broad",new RelacionAdapter(((Relacion)objeto),idUsuario));
 							
