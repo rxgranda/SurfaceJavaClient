@@ -225,7 +225,7 @@ public class MTSceneMenu extends MTRectangle{
 					"borrar.png");*/
 			String altImagesPath = "data" + MTApplication.separator ;	
 			editButtonImage = app.loadImage( altImagesPath+
-					"borrador.png");
+					"pen.png");
 		}
 		
 		editarButton.setTexture(editButtonImage);
@@ -296,14 +296,13 @@ public class MTSceneMenu extends MTRectangle{
 					case MTGestureEvent.GESTURE_UPDATED:
 						break;
 					case MTGestureEvent.GESTURE_ENDED:
-						if (te.isTapped()){
-													
+							
 							if(getScene() instanceof MainDrawingScene ){
 								unhighlightButton(deshacerButton, buttonOpacity);
 								MainDrawingScene.deshacer();
 							}
 						
-						}
+					
 						//tapOnly.setFillColor(textAreaColor);
 						break;
 					}
@@ -323,7 +322,7 @@ public class MTSceneMenu extends MTRectangle{
 					case MTGestureEvent.GESTURE_UPDATED:
 						break;
 					case MTGestureEvent.GESTURE_ENDED:
-						if (te.isTapped()){
+					
 													
 							if(getScene() instanceof MainDrawingScene ){
 								unhighlightButton(guardarButton, buttonOpacity);
@@ -331,7 +330,7 @@ public class MTSceneMenu extends MTRectangle{
 								escena.guardar();
 							}
 						
-						}
+					
 						//tapOnly.setFillColor(textAreaColor);
 						break;
 					}
