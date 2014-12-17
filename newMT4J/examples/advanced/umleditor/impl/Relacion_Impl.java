@@ -114,6 +114,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 
 		linea.setFillColor(this.userColor);
 		linea.setStrokeColor(this.userColor);
+		linea.setStrokeWeight(3);
 		this.objeto=objeto;
 		this.textoflotInicio =((Relacion)objeto).getTextoInicio();
 		this.textoflotFin =((Relacion)objeto).getTextoFin();
