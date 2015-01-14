@@ -917,7 +917,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		t2.getHalo().removeFromParent();
 		//linea.removeChild(bus2);
 		//textoflotInicio.setFigura(null);*/
-		
+		objeto.setVisible(false);
 		linea.removeFromParent();
 		//container.removeChild(halo);		
 		halo.setVisible(false);
@@ -1238,7 +1238,11 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		halo.setVisible(true);
 		halo.setPickable(true);
 		halo.setPositionGlobal(linea.getCenterPointGlobal());
+		objeto.setVisible(true);
+		UMLDataSaver.agregarAccion(UMLDataSaver.EDITAR_OBJETO_ACTION, objeto,MainDrawingScene.getListaUsuarios().get(Usuario.ID_DEFAULT_USER) );
 		System.out.println("Tratando de hacer undo");
+		
+		
 		//container.removeChild(halo);		
 		
 		
@@ -1263,6 +1267,7 @@ public class Relacion_Impl extends MTComponent implements ObjetoUMLGraph{
 		//hacer broadcast para cardinalidad inicio y fin
 		server.getNamespace("/login").getBroadcastOperations().sendEvent("syncEdition",new CardinalidadAdapter(((Relacion)objeto),true,Usuario.ID_DEFAULT_USER));
 		server.getNamespace("/login").getBroadcastOperations().sendEvent("syncEdition",new CardinalidadAdapter(((Relacion)objeto),false,Usuario.ID_DEFAULT_USER));
+		UMLDataSaver.agregarAccion(UMLDataSaver.EDITAR_OBJETO_ACTION, objeto,MainDrawingScene.getListaUsuarios().get(Usuario.ID_DEFAULT_USER) );
 
 		
 

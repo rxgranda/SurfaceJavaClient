@@ -448,6 +448,12 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 	
 						}
 					}
+					
+					
+					if(de.getId()==AbstractCursorInputEvt.INPUT_ENDED){
+						Usuario currentUser=(MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID)!=null)?MainDrawingScene.getListaUsuarios().get((int)cursor.sessionID):MainDrawingScene.getListaUsuarios().get(Usuario.ID_DEFAULT_USER);
+						UMLDataSaver.agregarAccion(UMLDataSaver.MOVER_OBJETO_ACTION, objeto,currentUser );
+					}
 				}else{
 					switch (de.getId()) {
 						case AbstractCursorInputEvt.INPUT_STARTED:																
@@ -825,7 +831,7 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 	    UMLDataSaver.agregarAccion(UMLDataSaver.BORRAR_OBJETO_ACTION, objeto,MainDrawingScene.getListaUsuarios().get(idUsuario) );
 
 	  
-		objeto.setBorrado(true);
+		objeto.setVisible(false);
 		rectangulo.removeFromParent();
 		halo.removeFromParent();
 
@@ -896,10 +902,10 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
  }
 	@Override
 	public void undoDeleteActions() {
-		objeto.setBorrado(false);
+		objeto.setVisible(true);
 		container.addChild(rectangulo);
 		canvas.addChild(halo);		
-		
+		UMLDataSaver.agregarAccion(UMLDataSaver.EDITAR_OBJETO_ACTION, objeto,MainDrawingScene.getListaUsuarios().get(Usuario.ID_DEFAULT_USER) );
 		
 	}
 
@@ -914,7 +920,8 @@ public class Entidad_Impl extends MTComponent implements ObjetoUMLGraph {
 
 	@Override
 	public void undoEditActions() {
-		this.actualizarEtiquetas();		
+		this.actualizarEtiquetas();
+		UMLDataSaver.agregarAccion(UMLDataSaver.EDITAR_OBJETO_ACTION, objeto,MainDrawingScene.getListaUsuarios().get(Usuario.ID_DEFAULT_USER) );
 		server.getNamespace("/login").getBroadcastOperations().sendEvent("syncEdition",new EntidadAdapter(((Entidad)objeto),Usuario.ID_DEFAULT_USER,-1));		
 	}
 	void borrarStub(ObjetoUML objeto,int userID){

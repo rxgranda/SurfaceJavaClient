@@ -11,6 +11,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.Map;
 import java.util.Set;
 
@@ -28,6 +29,8 @@ import org.mt4j.util.math.Vector3D;
 
 import advanced.drawing.MainDrawingScene;
 import advanced.umleditor.impl.HaloHelper;
+import advanced.umleditor.impl.ObjetoUMLGraph;
+import advanced.umleditor.impl.Relacion_Impl;
 import advanced.umleditor.logic.Entidad;
 import advanced.umleditor.logic.ObjetoUML;
 import advanced.umleditor.logic.Relacion;
@@ -69,6 +72,8 @@ public class UMLDataSaver implements Runnable {
 		ArrayList usuariosMapList=new ArrayList();
 		Set<Integer> keys=listaUsuarios.keySet();
 		Map defaultUser=new LinkedHashMap();
+		//Map defaultUserContainer=new LinkedHashMap();
+
 
 		
 		jsonMap.put("metadata",metadata);		
@@ -80,13 +85,13 @@ public class UMLDataSaver implements Runnable {
 		for (Integer key:keys){
 			Usuario user=listaUsuarios.get(key);
 			Map usuarioMap=new LinkedHashMap();
-			Map usuarioContainer=new LinkedHashMap();
+		//	Map usuarioContainer=new LinkedHashMap();
 			usuarioMap.put("id", user.getIdPluma());
 			usuarioMap.put("id_pluma", user.getIdPluma());
 			usuarioMap.put("nombres", user.getNombres());
 			usuarioMap.put("canal_SocketIO", user.getCanal());
-			usuarioContainer.put(USER_KEYWORD, usuarioMap);
-			usuariosMapList.add( usuarioContainer);
+			//usuarioContainer.put(USER_KEYWORD, usuarioMap);
+			usuariosMapList.add( usuarioMap);
 			DEFAULT_FILE_NAME_BACKUP+=user.getNombres().trim()+"_";
 		}
 		DEFAULT_FILE_NAME_BACKUP+=sdf.format(cal.getTime())+DEFAULT_FILE_EXTENSION_BACKUP;
@@ -94,6 +99,7 @@ public class UMLDataSaver implements Runnable {
 		defaultUser.put("id_pluma", Usuario.ID_DEFAULT_USER);
 		defaultUser.put("nombres", Usuario.NOMBRE_DEFAULT_USER);
 		defaultUser.put("canal_SocketIO", Usuario.CANAL_DEFAULT_USER);
+		//defaultUserContainer.put(USER_KEYWORD, defaultUser);
 		usuariosMapList.add( defaultUser);
 						
 		
@@ -223,6 +229,7 @@ public class UMLDataSaver implements Runnable {
 			//objetoMap.put("creacion", objeto.getTiempoCreacion());
 			objetoMap.put("width", objeto.getWidth());
 			objetoMap.put("height", objeto.getHeight());
+			objetoMap.put("visible", objeto.isVisible());
 
 
 			//objetoContainer.put("EDITAR_OBJETO", objetoMap);
@@ -347,6 +354,7 @@ public class UMLDataSaver implements Runnable {
 			}
 		objetoMap.put("width", objeto.getWidth());
 		objetoMap.put("height", objeto.getHeight());
+		objetoMap.put("visible", objeto.isVisible());
 		objetoContainer.put("accion", "EDITAR_OBJETO");		
 		objetoContainer.put("propiedades", objetoMap);
 		
@@ -471,9 +479,106 @@ public class UMLDataSaver implements Runnable {
 			}
 			objetoMap.put("width", objeto.getWidth());
 			objetoMap.put("height", objeto.getHeight());
+			objetoMap.put("visible", objeto.isVisible());
 			objetoContainer.put("accion", "BORRAR_OBJETO");
 			objetoContainer.put("propiedades", objetoMap);
 				
+			break;
+		case MOVER_OBJETO_ACTION:
+			objetoMap.put("id", objeto.getId());
+			switch (objeto.getTipo()) {
+			
+			case ObjetoUML.ENTIDAD:
+				
+				objetoMap.put("tipo", "Entidad");
+				if(objeto instanceof Entidad){					
+					coordenadasPosicion = new JSONArray();
+					coordenadasPosicion.add(objeto.getPosicion().x);
+					coordenadasPosicion.add(objeto.getPosicion().y);
+					coordenadasPosicion.add(objeto.getPosicion().z);
+					coordenadasPosicion.add(objeto.getPosicion().w);
+					objetoMap.put("posicion", coordenadasPosicion);		
+					
+					//objeto.getFigura().obtenerDatos(ObjetoUMLGraph.RELACIONES_INICIO_KEYWORD);
+					JSONArray listaRelaciones = new JSONArray();
+					
+					LinkedList listaInicio=objeto.getFigura().obtenerDatos(ObjetoUMLGraph.RELACIONES_INICIO_KEYWORD);
+					if(listaInicio!=null){
+						for(Object o:listaInicio){
+							if(o instanceof ObjetoUMLGraph){
+								//((Relacion)objeto)
+								Relacion objeto_relacion=(Relacion) ((Relacion_Impl)o).getObjetoUML();
+								//objeto_relacion.setPosicion(objeto_relacion.getPosicion().getAdded(de.getFrom().getSubtracted(de.getTo())));
+								LinkedHashMap relacion=new LinkedHashMap();
+								relacion.put("id",objeto_relacion.getId());
+								JSONArray coordenadasInicioRel = new JSONArray();
+								JSONArray coordenadasFinRel = new JSONArray();
+								
+								coordenadasInicioRel.add(objeto_relacion.getInicio().x);
+								coordenadasInicioRel.add(objeto_relacion.getInicio().y);
+								coordenadasInicioRel.add(objeto_relacion.getInicio().z);
+								coordenadasInicioRel.add(objeto_relacion.getInicio().w);
+								relacion.put("posicionInicio", coordenadasInicioRel);		
+								
+								
+								
+								coordenadasFinRel.add(objeto_relacion.getFin().x);
+								coordenadasFinRel.add(objeto_relacion.getFin().y);
+								coordenadasFinRel.add(objeto_relacion.getFin().z);
+								coordenadasFinRel.add(objeto_relacion.getFin().w);
+								
+								relacion.put("posicionFin", coordenadasFinRel);
+								listaRelaciones.add(relacion);
+								
+							}	
+						}
+					}
+	
+					LinkedList listaFin=objeto.getFigura().obtenerDatos(ObjetoUMLGraph.RELACIONES_FIN_KEYWORD);
+					if(listaFin!=null){
+						for(Object o:listaFin){
+							if(o instanceof ObjetoUMLGraph){
+								//((Relacion)objeto)
+								Relacion objeto_relacion=(Relacion) ((Relacion_Impl)o).getObjetoUML();
+								//objeto_relacion.setPosicion(objeto_relacion.getPosicion().getAdded(de.getFrom().getSubtracted(de.getTo())));
+								LinkedHashMap relacion=new LinkedHashMap();
+								relacion.put("id",objeto_relacion.getId());
+								JSONArray coordenadasInicioRel = new JSONArray();
+								JSONArray coordenadasFinRel = new JSONArray();
+								
+								coordenadasInicioRel.add(objeto_relacion.getInicio().x);
+								coordenadasInicioRel.add(objeto_relacion.getInicio().y);
+								coordenadasInicioRel.add(objeto_relacion.getInicio().z);
+								coordenadasInicioRel.add(objeto_relacion.getInicio().w);
+								relacion.put("posicionInicio", coordenadasInicioRel);		
+								
+								
+								
+								coordenadasFinRel.add(objeto_relacion.getFin().x);
+								coordenadasFinRel.add(objeto_relacion.getFin().y);
+								coordenadasFinRel.add(objeto_relacion.getFin().z);
+								coordenadasFinRel.add(objeto_relacion.getFin().w);
+								
+								relacion.put("posicionFin", coordenadasFinRel);
+								listaRelaciones.add(relacion);								
+							}	
+						}
+					}
+					objetoMap.put("relaciones",listaRelaciones );
+					
+				}												
+				break;
+				default:
+					break;
+			}
+			
+			
+			objetoMap.put("width", objeto.getWidth());
+			objetoMap.put("height", objeto.getHeight());
+			objetoMap.put("visible", objeto.isVisible());
+			objetoContainer.put("accion", "MOVER_OBJETO");
+			objetoContainer.put("propiedades", objetoMap);
+			
 			break;
 		default:
 			break;

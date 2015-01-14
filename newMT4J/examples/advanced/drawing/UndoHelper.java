@@ -41,7 +41,7 @@ public class UndoHelper {
 			synchronized (objetoAnterior) {
 				switch (accion.tipoAcccion) {
 				case AGREGAR_OBJETO_ACTION:	
-					objetoAnterior.setBorrado(true);
+					objetoAnterior.setVisible(true);
 					objetoAnterior.getFigura().undoAddActions();
 					// Hacer invisible el MTComponent
 					break;

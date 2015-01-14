@@ -31,7 +31,7 @@ public abstract class ObjetoUML  implements UndoInterface{
 	private Vector3D posicion;
 	private float width,heigth;
 	private int tipo;
-	private boolean borrado=true;
+	private boolean visible=true;
 	private boolean tieneRelacion=false;
 	private Usuario persona;
 
@@ -124,13 +124,13 @@ public abstract class ObjetoUML  implements UndoInterface{
 	}
 
 
-	public boolean isBorrado() {
-		return borrado;
+	public boolean isVisible() {
+		return visible;
 	}
 
 
-	public synchronized void setBorrado(boolean borrado) {
-		this.borrado = borrado;
+	public synchronized void setVisible(boolean borrado) {
+		this.visible = borrado;
 	}
 
 
