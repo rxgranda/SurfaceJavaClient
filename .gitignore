@@ -27,3 +27,4 @@ log
 
 newMT4J/bin/.gitignore
 newMT4J/bin/*
+newMT4J/log2.txt
